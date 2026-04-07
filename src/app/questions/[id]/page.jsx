@@ -54,25 +54,41 @@ export default function QuestionPage({ params }) {
   const relatedTests  = getRelatedTests(question.id)
   const relatedTopics = getRelatedTopics(question)
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [{
-      '@type': 'Question',
-      name:    question.q,
+  const quizSchema = {
+    '@context':   'https://schema.org',
+    '@type':      'Quiz',
+    name:         question.q,
+    description:  question.explanation,
+    educationalLevel: 'beginner',
+    about: { '@type': 'Thing', name: chapter?.title ?? 'Life in the UK Test' },
+    hasPart: [{
+      '@type':          'Question',
+      text:             question.q,
+      suggestedAnswer:  question.options
+        .filter((_, i) => i !== question.answer)
+        .map(opt => ({ '@type': 'Answer', text: opt })),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `${question.options[question.answer]}. ${question.explanation}`,
+        text:    question.options[question.answer],
+        comment: { '@type': 'Comment', text: question.explanation },
       },
     }],
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type':    'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home',            item: 'https://passtheuktest.co.uk' },
+      { '@type': 'ListItem', position: 2, name: chapter?.title ?? 'Practice', item: `https://passtheuktest.co.uk/practice/${question.chapter}` },
+      { '@type': 'ListItem', position: 3, name: `Question ${question.id}`, item: `https://passtheuktest.co.uk/questions/${question.id}` },
+    ],
+  }
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(quizSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-2xl mx-auto px-4 py-6">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-ink-muted mb-6">

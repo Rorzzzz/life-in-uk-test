@@ -44,7 +44,19 @@ export default function StudyChapterPage({ params }) {
   const topicSlugs = (CHAPTER_TOPICS[ch.id] ?? []).slice(0, 2)
   const topics    = topicSlugs.map(slug => TOPICS.find(t => t.slug === slug)).filter(Boolean)
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type':    'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home',        item: 'https://passtheuktest.co.uk' },
+      { '@type': 'ListItem', position: 2, name: 'Study Guide', item: 'https://passtheuktest.co.uk/study' },
+      { '@type': 'ListItem', position: 3, name: ch.title,      item: `https://passtheuktest.co.uk/study/${params.chapter}` },
+    ],
+  }
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-ink-muted mb-6">
@@ -134,5 +146,6 @@ export default function StudyChapterPage({ params }) {
         )}
       </div>
     </div>
+    </>
   )
 }

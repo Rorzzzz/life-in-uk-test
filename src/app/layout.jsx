@@ -5,6 +5,7 @@ import { GameProvider } from '@/context/GameContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 import Navbar from '@/components/layout/Navbar'
 import BottomNav from '@/components/layout/BottomNav'
+import Footer from '@/components/layout/Footer'
 import './globals.css'
 
 // Clash Display — local variable font
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
 
+          <Footer />
           <BottomNav />
         </GameProvider>
         </ThemeProvider>
