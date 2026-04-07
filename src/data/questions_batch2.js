@@ -20,7 +20,7 @@ export const QUESTIONS_BATCH2 = [
   },
   {
     id: 277, chapter: 1,
-    q: 'Which TWO of the following are offered by the UK to its residents?',
+    q: 'Which of the following is offered by the UK to its residents?',
     options: ['Freedom from unfair discrimination', 'Free housing for all', 'A right to a fair trial', 'Guaranteed employment'],
     answer: 0,
     explanation: 'The UK offers: freedom of belief and religion, freedom of speech, freedom from unfair discrimination, a right to a fair trial, and a right to join in the election of a government. Free housing and guaranteed employment are not among these.',
@@ -949,7 +949,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 379, chapter: 3,
     q: 'Who defeated Napoleon at the Battle of Waterloo in 1815?',
-    options: ['Wellington and Blücher', 'The Duke of Wellington', 'The Duke of Wellington and the Prussian forces under Field Marshal Blücher', 'The British Navy'],
+    options: ['Marshal Ney of France', 'The Duke of Wellington alone', 'The Duke of Wellington and the Prussian forces under Field Marshal Blücher', 'The British Navy'],
     answer: 2,
     explanation: 'Napoleon was defeated at the Battle of Waterloo in 1815 by the Duke of Wellington\'s forces and the Prussian army under Field Marshal Blücher. This ended the Napoleonic Wars.',
     difficulty: 'medium',
@@ -1115,8 +1115,8 @@ export const QUESTIONS_BATCH2 = [
   },
   {
     id: 397, chapter: 4,
-    q: 'Which famous horse race is held at Royal Ascot?',
-    options: ['The Derby', 'The Grand National', 'Royal Ascot races', 'The Gold Cup'],
+    q: 'Royal Ascot is a prestigious annual event in which sport?',
+    options: ['Golf', 'Tennis', 'Horse racing', 'Cricket'],
     answer: 2,
     explanation: 'Royal Ascot is one of Britain\'s most famous horse racing events, held annually at Ascot Racecourse in Berkshire. It is attended by the Royal Family and is as much a fashion event as a sporting one.',
     difficulty: 'medium',

@@ -39,9 +39,9 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 454, chapter: 1,
     q: 'Where can you find the forms needed to apply for permanent residence?',
-    options: ['Your local council office', 'The UK Border Agency website', 'The Life in the UK test centre', 'The Citizens Advice Bureau'],
+    options: ['Your local council office', 'The gov.uk website (UK Visas and Immigration)', 'The Life in the UK test centre', 'The Citizens Advice Bureau'],
     answer: 1,
-    explanation: 'All the forms needed to apply for permanent residence and a list of fees can be found on the UK Border Agency website (www.ukba.homeoffice.gov.uk).',
+    explanation: 'All the forms needed to apply for permanent residence and a list of fees can be found on the UK Visas and Immigration (UKVI) section of gov.uk.',
     difficulty: 'hard',
     tags: ['permanent residence', 'ukba', 'forms', 'application'],
   },
