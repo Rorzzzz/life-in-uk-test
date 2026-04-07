@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import localFont from 'next/font/local'
 import { JetBrains_Mono } from 'next/font/google'
 import { GameProvider } from '@/context/GameContext'
@@ -70,6 +71,13 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${clashDisplay.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
     >
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XN3L6SC1QL" strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XN3L6SC1QL');
+      `}</Script>
       <body className="font-body antialiased bg-surface text-ink" suppressHydrationWarning>
         <ThemeProvider>
         <GameProvider>
