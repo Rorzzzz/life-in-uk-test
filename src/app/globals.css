@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Design Tokens ───────────────────────────────────────────────────── */
+:root {
+  /* Dark theme (default) */
+  --surface:        #0d0f1a;
+  --surface-card:   #131629;
+  --surface-raised: #1a1e33;
+  --surface-border: #252a45;
+
+  --ink:            #f0f2ff;
+  --ink-muted:      #8892b0;
+  --ink-faint:      #4a5180;
+
+  --brand-400:      #6ba3ff;
+  --brand-500:      #3381ff;
+  --brand-600:      #1a66e8;
+  --brand-900:      #0a1a3a;
+
+  --success:        #22d07a;
+  --danger:         #ff4d6d;
+  --warning:        #f59e0b;
+  --xp:             #f59e0b;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --surface:        #f4f5fb;
+  --surface-card:   #ffffff;
+  --surface-raised: #eef0f8;
+  --surface-border: #d8dce8;
+
+  --ink:            #0d0f1a;
+  --ink-muted:      #4a5180;
+  --ink-faint:      #9aa0c0;
+
+  --brand-400:      #1a66e8;
+  --brand-500:      #3381ff;
+  --brand-600:      #1a66e8;
+  --brand-900:      #e6eeff;
+
+  --success:        #16a057;
+  --danger:         #e0304a;
+  --warning:        #d97706;
+  --xp:             #d97706;
+}
+
+/* ── Fonts (loaded via next/font in layout.jsx as CSS variables) ─────────── */
+/* Clash Display → var(--font-clash) */
+/* Satoshi       → var(--font-satoshi) */
+/* JetBrains Mono → var(--font-jetbrains) */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-body antialiased;
+    /* Subtle radial gradient for atmosphere */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(51,129,255,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 85% 85%, rgba(245,158,11,0.05) 0%, transparent 50%);
+    min-height: 100dvh;
+  }
+
+  * {
+    border-color: var(--surface-border);
+  }
+
+  ::selection {
+    background-color: rgba(51,129,255,0.3);
+    @apply text-ink;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--surface-border); border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--ink-faint); }
+}
+
+@layer components {
+  /* ── Cards ────────────────────────────────────────────────────────────── */
+  .card {
+    @apply bg-card border border-border rounded-2xl;
+  }
+  .card-raised {
+    @apply bg-raised border border-border rounded-2xl;
+  }
+
+  /* ── Buttons ──────────────────────────────────────────────────────────── */
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-400 active:bg-brand-600
+           text-white font-body font-medium
+           px-5 py-2.5 rounded-xl
+           transition-all duration-150 active:scale-95
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-400 focus-visible:ring-offset-2
+           focus-visible:ring-offset-surface
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100;
+    box-shadow: 0 4px 20px rgba(51,129,255,0.25);
+  }
+
+  .btn-ghost {
+    @apply border border-border hover:bg-raised
+           text-ink-muted hover:text-ink font-body
+           px-5 py-2.5 rounded-xl
+           transition-all duration-150 active:scale-95
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-400 focus-visible:ring-offset-2
+           focus-visible:ring-offset-surface
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  /* ── Answer buttons ───────────────────────────────────────────────────── */
+  .answer-btn {
+    @apply w-full text-left p-4 rounded-xl
+           border border-border bg-card
+           transition-all duration-150 cursor-pointer
+           font-body text-ink text-base
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-400;
+  }
+  .answer-btn-correct {
+    border-color: var(--success) !important;
+    background-color: color-mix(in srgb, var(--success) 10%, transparent) !important;
+  }
+  .answer-btn-wrong {
+    border-color: var(--danger) !important;
+    background-color: color-mix(in srgb, var(--danger) 10%, transparent) !important;
+  }
+  .answer-btn-reveal {
+    border-color: color-mix(in srgb, var(--success) 40%, transparent) !important;
+    background-color: color-mix(in srgb, var(--success) 5%, transparent) !important;
+  }
+
+  /* ── Badges ───────────────────────────────────────────────────────────── */
+  .xp-badge {
+    @apply inline-flex items-center gap-1.5
+           bg-xp/10 text-xp border border-xp/20
+           text-xs font-mono font-medium
+           px-2.5 py-1 rounded-full;
+  }
+  .streak-badge {
+    @apply inline-flex items-center gap-1.5
+           bg-orange-500/10 text-orange-400 border border-orange-500/20
+           text-xs font-mono font-medium
+           px-2.5 py-1 rounded-full;
+  }
+
+  /* ── Progress ─────────────────────────────────────────────────────────── */
+  .progress-bar {
+    @apply h-1.5 bg-raised rounded-full overflow-hidden;
+  }
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-brand-600 to-brand-400
+           rounded-full transition-all duration-500 ease-out;
+  }
+
+  /* ── Topic pills ──────────────────────────────────────────────────────── */
+  .topic-pill {
+    @apply inline-flex items-center gap-1.5
+           text-xs font-mono px-2.5 py-1 rounded-full border
+           transition-colors duration-150;
+  }
+}
+
+@layer utilities {
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-300 to-brand-500 bg-clip-text text-transparent;
+  }
+
+  /* Glow utilities */
+  .glow-brand {
+    box-shadow: 0 0 30px rgba(51,129,255,0.25);
+  }
+  .glow-success {
+    box-shadow: 0 0 20px rgba(34,208,122,0.3);
+  }
+  .glow-xp {
+    box-shadow: 0 0 20px rgba(245,158,11,0.3);
+  }
+
+  /* Safe area for mobile bottom nav */
+  .pb-nav {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+  .h-nav {
+    height: calc(72px + env(safe-area-inset-bottom));
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Framer Motion respects this via its own hook, but belt-and-braces: */
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Print styles ────────────────────────────────────────────────────────── */
+@media print {
+  header, nav, footer,
+  .print\:hidden { display: none !important; }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12px;
+  }
+
+  .bg-card, .bg-surface, .bg-raised {
+    background: white !important;
+  }
+}

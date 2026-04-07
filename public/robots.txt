@@ -1,0 +1,16 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /exam
+Disallow: /progress
+Disallow: /weak-spots
+Disallow: /flashcards
+
+# Host
+Host: https://passtheuktest.co.uk
+
+# Sitemaps
+Sitemap: https://passtheuktest.co.uk/sitemap.xml
