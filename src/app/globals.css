@@ -4,7 +4,29 @@
 
 /* ── CSS Design Tokens ───────────────────────────────────────────────────── */
 :root {
-  /* Dark theme (default) */
+  /* Light theme (default) */
+  --surface:        #f4f5fb;
+  --surface-card:   #ffffff;
+  --surface-raised: #eef0f8;
+  --surface-border: #d8dce8;
+
+  --ink:            #0d0f1a;
+  --ink-muted:      #4a5180;
+  --ink-faint:      #9aa0c0;
+
+  --brand-400:      #1a66e8;
+  --brand-500:      #3381ff;
+  --brand-600:      #1a66e8;
+  --brand-900:      #e6eeff;
+
+  --success:        #16a057;
+  --danger:         #e0304a;
+  --warning:        #d97706;
+  --xp:             #d97706;
+}
+
+/* Dark theme — JS-controlled */
+[data-theme="dark"] {
   --surface:        #0d0f1a;
   --surface-card:   #131629;
   --surface-raised: #1a1e33;
@@ -25,26 +47,28 @@
   --xp:             #f59e0b;
 }
 
-/* Light theme */
-[data-theme="light"] {
-  --surface:        #f4f5fb;
-  --surface-card:   #ffffff;
-  --surface-raised: #eef0f8;
-  --surface-border: #d8dce8;
+/* Dark theme — CSS fallback before JS hydrates (respects OS setting) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface:        #0d0f1a;
+    --surface-card:   #131629;
+    --surface-raised: #1a1e33;
+    --surface-border: #252a45;
 
-  --ink:            #0d0f1a;
-  --ink-muted:      #4a5180;
-  --ink-faint:      #9aa0c0;
+    --ink:            #f0f2ff;
+    --ink-muted:      #8892b0;
+    --ink-faint:      #4a5180;
 
-  --brand-400:      #1a66e8;
-  --brand-500:      #3381ff;
-  --brand-600:      #1a66e8;
-  --brand-900:      #e6eeff;
+    --brand-400:      #6ba3ff;
+    --brand-500:      #3381ff;
+    --brand-600:      #1a66e8;
+    --brand-900:      #0a1a3a;
 
-  --success:        #16a057;
-  --danger:         #e0304a;
-  --warning:        #d97706;
-  --xp:             #d97706;
+    --success:        #22d07a;
+    --danger:         #ff4d6d;
+    --warning:        #f59e0b;
+    --xp:             #f59e0b;
+  }
 }
 
 /* ── Fonts (loaded via next/font in layout.jsx as CSS variables) ─────────── */

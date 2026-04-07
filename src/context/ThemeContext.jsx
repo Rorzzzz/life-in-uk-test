@@ -2,21 +2,24 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 
-const ThemeContext = createContext({ theme: 'dark', toggleTheme: () => {} })
+const ThemeContext = createContext({ theme: 'light', toggleTheme: () => {} })
 
 function loadTheme() {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return 'light'
   try {
-    return localStorage.getItem('passport_theme') ?? 'dark'
+    const saved = localStorage.getItem('passport_theme')
+    if (saved) return saved
+    // No saved preference — respect OS setting, default to light
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   } catch {
-    return 'dark'
+    return 'light'
   }
 }
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
-  // Hydrate from localStorage after mount
+  // Hydrate from localStorage / system preference after mount
   useEffect(() => {
     setTheme(loadTheme())
   }, [])
