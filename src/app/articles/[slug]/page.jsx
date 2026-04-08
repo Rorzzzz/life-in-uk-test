@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import { getAllPublishedSlugs, getArticleBySlug } from '@/lib/articles'
 import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
 
@@ -65,15 +66,15 @@ const components = {
   ),
   hr: () => <hr className="border-border my-6" />,
   table: ({ children }) => (
-    <div className="overflow-x-auto mb-4">
+    <div className="overflow-x-auto mb-6 rounded-xl border border-border">
       <table className="w-full text-sm border-collapse">{children}</table>
     </div>
   ),
   th: ({ children }) => (
-    <th className="text-left p-3 bg-raised text-ink font-semibold border border-border">{children}</th>
+    <th className="text-left px-4 py-3 bg-raised text-ink font-semibold text-xs uppercase tracking-wide border-b border-border">{children}</th>
   ),
   td: ({ children }) => (
-    <td className="p-3 text-ink-muted border border-border">{children}</td>
+    <td className="px-4 py-3 text-ink-muted border-b border-border last:border-b-0 leading-snug">{children}</td>
   ),
 }
 
@@ -130,7 +131,11 @@ export default function ArticlePage({ params }) {
 
         {/* Article body */}
         <article className="prose-custom">
-          <MDXRemote source={article.content} components={components} />
+          <MDXRemote
+            source={article.content}
+            components={components}
+            options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          />
         </article>
 
         {/* CTA — drives to practice */}
