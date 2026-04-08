@@ -1,4 +1,4 @@
-# PassPort — CLAUDE.md
+# PassTheUKTest — CLAUDE.md
 # Read this at the start of EVERY session before touching any code.
 # Then read PROGRESS.md to see current state.
 
@@ -6,7 +6,7 @@
 
 ## 1. MISSION
 
-Build **PassPort** — the best Life in the UK citizenship test prep app on the internet.
+Build **PassTheUKTest** — the best Life in the UK citizenship test prep app on the internet.
 Free. Gamified. Adaptive. Mobile-first. **SEO-first.** No paywall until traffic grows.
 
 Beat lifeintheuktestweb.co.uk (400K+ monthly visitors, no gamification, ugly, bad SEO).
@@ -219,9 +219,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const chapter = CHAPTERS.find(c => c.id === parseInt(params.chapter))
   return {
-    title: `${chapter.title} Practice — PassPort Life in the UK Test`,
+    title: `${chapter.title} Practice — PassTheUKTest Life in the UK Test`,
     description: `Practice ${chapter.title} questions for your Life in the UK citizenship test. Free, adaptive, with detailed explanations.`,
-    alternates: { canonical: `https://passport-lituk.com/practice/${params.chapter}` },
+    alternates: { canonical: `https://passtheuktest.co.uk/practice/${params.chapter}` },
   }
 }
 
@@ -270,10 +270,10 @@ import BottomNav from '@/components/layout/BottomNav'
 import './globals.css'
 
 export const metadata = {
-  title: { default: 'PassPort — Free Life in the UK Test Practice 2026',
-           template: '%s — PassPort' },
+  title: { default: 'PassTheUKTest — Free Life in the UK Test Practice 2026',
+           template: '%s — PassTheUKTest' },
   description: 'The smartest way to prepare...',
-  metadataBase: new URL('https://passport-lituk.com'),
+  metadataBase: new URL('https://passtheuktest.co.uk'),
 }
 
 export default function RootLayout({ children }) {
@@ -297,7 +297,7 @@ export default function RootLayout({ children }) {
 function loadState() {
   if (typeof window === 'undefined') return DEFAULT_STATE
   try {
-    const raw = localStorage.getItem('passport_v1')
+    const raw = localStorage.getItem('passtheuktest_v1')
     return raw ? JSON.parse(raw) : DEFAULT_STATE
   } catch {
     return DEFAULT_STATE
@@ -346,11 +346,11 @@ Hard rules:
 ### Every SSG page needs this metadata shape:
 ```js
 {
-  title: '[Specific title] — PassPort Life in the UK Test',
+  title: '[Specific title] — PassTheUKTest Life in the UK Test',
   description: '[Under 155 chars, includes keyword]',
   openGraph: { title, description, url, type: 'website' },
   twitter: { card: 'summary_large_image' },
-  alternates: { canonical: 'https://passport-lituk.com/[path]' },
+  alternates: { canonical: 'https://passtheuktest.co.uk/[path]' },
 }
 ```
 
@@ -382,7 +382,7 @@ GameContext.jsx (must be 'use client'):
 // Provides to all client components:
 { state, dispatch, addXP, recordAnswer, completeChapter, completeExam, unlockBadge }
 
-// localStorage key: 'passport_v1'
+// localStorage key: 'passtheuktest_v1'
 // Persist: useEffect watching state → localStorage.setItem
 // Load: useState initialiser with loadState() function
 // Migration: migrateState() on every load
