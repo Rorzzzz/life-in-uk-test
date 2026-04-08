@@ -8,6 +8,7 @@ Disallow: /exam
 Disallow: /progress
 Disallow: /weak-spots
 Disallow: /flashcards
+Disallow: /daily
 
 # Host
 Host: https://passtheuktest.co.uk
