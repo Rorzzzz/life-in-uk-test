@@ -72,8 +72,8 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${clashDisplay.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
     >
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XN3L6SC1QL" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">{`
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XN3L6SC1QL" strategy="lazyOnload" />
+      <Script id="google-analytics" strategy="lazyOnload">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
