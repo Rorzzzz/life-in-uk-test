@@ -137,7 +137,6 @@ export default function HomeDashboard({ chapters }) {
       {/* SEO text links */}
       <div className="flex flex-wrap justify-center gap-1 pb-2">
         {[
-          { href: '/articles/what-is-the-life-in-the-uk-test', label: 'What Is the Test?' },
           { href: '/faq',               label: 'FAQ' },
           { href: '/cheat-sheet',       label: 'Cheat Sheet' },
           { href: '/test-centres',      label: 'Test Centres' },
