@@ -8,7 +8,7 @@ module.exports = {
       { userAgent: '*', disallow: ['/exam', '/progress', '/weak-spots', '/flashcards'] },
     ],
   },
-  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards'],
+  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
