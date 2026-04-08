@@ -21,10 +21,11 @@ module.exports = {
     }
     const isQuestion = path.startsWith('/questions/')
     const isChapter  = path.startsWith('/practice/') || path.startsWith('/study/')
+    const isArticle  = path.startsWith('/articles/')
     return {
       loc: path,
-      changefreq: isQuestion ? 'monthly' : isChapter ? 'weekly' : 'weekly',
-      priority: priorities[path]?.priority ?? (isQuestion ? 0.8 : isChapter ? 0.9 : 0.7),
+      changefreq: isArticle ? 'weekly' : isQuestion ? 'monthly' : isChapter ? 'weekly' : 'weekly',
+      priority: priorities[path]?.priority ?? (isArticle ? 0.9 : isQuestion ? 0.8 : isChapter ? 0.9 : 0.7),
       lastmod: new Date().toISOString(),
     }
   },
