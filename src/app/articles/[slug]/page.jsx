@@ -67,14 +67,17 @@ const components = {
   hr: () => <hr className="border-border my-6" />,
   table: ({ children }) => (
     <div className="overflow-x-auto mb-6 rounded-xl border border-border">
-      <table className="w-full text-sm border-collapse">{children}</table>
+      <table className="w-full text-sm">{children}</table>
     </div>
   ),
   th: ({ children }) => (
-    <th className="text-left px-4 py-3 bg-raised text-ink font-semibold text-xs uppercase tracking-wide border-b border-border">{children}</th>
+    <th className="text-left px-4 py-3 bg-raised text-xs font-semibold uppercase tracking-wide text-ink-muted border-b border-border">{children}</th>
+  ),
+  tr: ({ children }) => (
+    <tr className="border-b border-border last:border-b-0">{children}</tr>
   ),
   td: ({ children }) => (
-    <td className="px-4 py-3 text-ink-muted border-b border-border last:border-b-0 leading-snug">{children}</td>
+    <td className="px-4 py-3 text-ink-muted leading-snug">{children}</td>
   ),
 }
 
