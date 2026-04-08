@@ -93,8 +93,8 @@ export default function ArticlePage({ params }) {
     description: article.description,
     datePublished: article.date,
     dateModified: article.date,
-    author: { '@type': 'Organization', name: 'PassPort', url: 'https://passtheuktest.co.uk' },
-    publisher: { '@type': 'Organization', name: 'PassPort', url: 'https://passtheuktest.co.uk' },
+    author: { '@type': 'Organization', name: 'PassTheUKTest', url: 'https://passtheuktest.co.uk' },
+    publisher: { '@type': 'Organization', name: 'PassTheUKTest', url: 'https://passtheuktest.co.uk' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://passtheuktest.co.uk/articles/${params.slug}` },
   }
 

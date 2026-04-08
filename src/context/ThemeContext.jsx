@@ -7,7 +7,7 @@ const ThemeContext = createContext({ theme: 'light', toggleTheme: () => {} })
 function loadTheme() {
   if (typeof window === 'undefined') return 'light'
   try {
-    const saved = localStorage.getItem('passport_theme')
+    const saved = localStorage.getItem('passtheuktest_theme')
     if (saved) return saved
     // No saved preference — respect OS setting, default to light
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
@@ -36,7 +36,7 @@ export function ThemeProvider({ children }) {
       root.classList.remove('light')
     }
     try {
-      localStorage.setItem('passport_theme', theme)
+      localStorage.setItem('passtheuktest_theme', theme)
     } catch {}
   }, [theme])
 

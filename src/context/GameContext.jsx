@@ -23,7 +23,7 @@ const DEFAULT_STATE = {
 }
 
 // ─── localStorage helpers ─────────────────────────────────────────────────────
-const STORAGE_KEY = 'passport_v1'
+const STORAGE_KEY = 'passtheuktest_v1'
 
 function loadState() {
   if (typeof window === 'undefined') return DEFAULT_STATE
