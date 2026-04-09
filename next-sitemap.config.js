@@ -5,10 +5,10 @@ module.exports = {
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },
-      { userAgent: '*', disallow: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily'] },
+      { userAgent: '*', disallow: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily'], allow: ['/exam-format'] },
     ],
   },
-  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
+  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/exam/info', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,

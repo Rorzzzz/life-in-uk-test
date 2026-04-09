@@ -4,6 +4,7 @@ Allow: /
 
 # *
 User-agent: *
+Allow: /exam-format
 Disallow: /exam
 Disallow: /progress
 Disallow: /weak-spots
