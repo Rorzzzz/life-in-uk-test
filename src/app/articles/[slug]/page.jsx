@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import { getAllPublishedSlugs, getArticleBySlug } from '@/lib/articles'
 import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export async function generateStaticParams() {
   return getAllPublishedSlugs()
@@ -100,6 +101,7 @@ export default function ArticlePage({ params }) {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Articles', path: '/articles' }, { name: article.title, path: `/articles/${params.slug}` }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="max-w-2xl mx-auto px-4 py-8 pb-24">

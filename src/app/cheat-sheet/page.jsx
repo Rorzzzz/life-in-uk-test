@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHEAT_SHEET } from '@/data/cheatSheet'
 import PrintButton from './PrintButton'
 
@@ -10,7 +11,9 @@ export const metadata = {
 
 export default function CheatSheetPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Cheat Sheet', path: '/cheat-sheet' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-display font-bold text-ink">Cheat Sheet</h1>
@@ -128,5 +131,6 @@ export default function CheatSheetPage() {
         <Link href="/practice" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Practice Questions</Link>
       </div>
     </div>
+    </>
   )
 }

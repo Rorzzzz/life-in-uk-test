@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
   title: 'Life in the UK Test Pass Rate 2026 — Statistics & Facts',
@@ -8,7 +9,9 @@ export const metadata = {
 
 export default function PassRatePage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Pass Rate', path: '/pass-rate' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">Life in the UK Test Pass Rate</h1>
       <p className="text-ink-muted text-base mb-8">Around 67% of candidates pass on their first attempt. Here is what the statistics mean and how to make sure you are in the majority.</p>
 
@@ -128,5 +131,6 @@ export default function PassRatePage() {
         <Link href="/faq" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">FAQ</Link>
       </div>
     </div>
+    </>
   )
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { getAllArticles } from '@/lib/articles'
 import { BookOpen, Clock, ChevronRight } from 'lucide-react'
 
@@ -24,7 +25,9 @@ export default function ArticlesIndexPage() {
   const articles = getAllArticles()
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 pb-24">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Articles', path: '/articles' }]} />
+      <div className="max-w-3xl mx-auto px-4 py-8 pb-24">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-brand-400 text-sm font-medium mb-2">
@@ -94,5 +97,6 @@ export default function ArticlesIndexPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

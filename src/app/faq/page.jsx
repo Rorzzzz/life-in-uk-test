@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FAQS, getFAQsByCategory, FAQ_CATEGORIES } from '@/data/faqs'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
   title: 'Life in the UK Test FAQ — 35 Questions Answered',
@@ -22,6 +23,7 @@ export default function FAQPage() {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'FAQ', path: '/faq' }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

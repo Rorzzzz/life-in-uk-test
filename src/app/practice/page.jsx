@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHAPTERS, getByChapter } from '@/data/questions'
 
 export const metadata = {
@@ -14,7 +15,9 @@ export default function PracticePage() {
   }))
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Practice', path: '/practice' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-1">Practice</h1>
       <p className="text-ink-muted text-base mb-6">Choose a chapter to practise, or start an adaptive session.</p>
 
@@ -51,5 +54,6 @@ export default function PracticePage() {
         </Link>
       </div>
     </div>
+    </>
   )
 }

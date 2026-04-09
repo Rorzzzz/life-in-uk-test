@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { STUDY_CHAPTERS } from '@/data/studyGuide'
 import { CHAPTERS } from '@/data/questions'
 
@@ -10,7 +11,9 @@ export const metadata = {
 
 export default function StudyPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Study Guide', path: '/study' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-1">Study Guide</h1>
       <p className="text-ink-muted text-base mb-6">
         All 5 chapters of the official handbook, summarised for quick revision.
@@ -45,5 +48,6 @@ export default function StudyPage() {
         </Link>
       </div>
     </div>
+    </>
   )
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
   title: 'Life in the UK Test Format — How the Test Works',
@@ -8,7 +9,9 @@ export const metadata = {
 
 export default function ExamFormatPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Exam Format', path: '/exam-format' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">Life in the UK Test Format</h1>
       <p className="text-ink-muted text-base mb-8">Everything you need to know about how the test works.</p>
 
@@ -72,5 +75,6 @@ export default function ExamFormatPage() {
         <Link href="/how-to-pass" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">How to pass</Link>
       </div>
     </div>
+    </>
   )
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { TEST_CENTRES, REGIONS, getCentresByRegion, getGoogleMapsURL } from '@/data/testCentres'
 import { MapPin } from 'lucide-react'
 
@@ -10,7 +11,9 @@ export const metadata = {
 
 export default function TestCentresPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Test Centres', path: '/test-centres' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">Test Centres</h1>
       <p className="text-ink-muted text-base mb-6">
         {TEST_CENTRES.length} approved Life in the UK test centres across the UK.
@@ -57,5 +60,6 @@ export default function TestCentresPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

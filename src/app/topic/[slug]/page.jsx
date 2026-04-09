@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { TOPICS, getTopicBySlug, getTopicQuestions } from '@/data/topics'
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 function getTopicTests(slug) {
   const idx = TOPICS.findIndex(t => t.slug === slug)
@@ -34,7 +35,9 @@ export default function TopicPage({ params }) {
   const otherTopics  = TOPICS.filter(t => t.slug !== params.slug).slice(0, 2)
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: topic.title, path: `/topic/${params.slug}` }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-ink-muted mb-6">
         <Link href="/" className="px-2 py-1 hover:text-ink active:opacity-70 rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Home</Link>
         <span>/</span>
@@ -102,5 +105,6 @@ export default function TopicPage({ params }) {
         <Link href="/faq" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">FAQ</Link>
       </div>
     </div>
+    </>
   )
 }

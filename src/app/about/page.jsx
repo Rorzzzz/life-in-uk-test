@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
   title: 'About Pass the UK Test — Free Life in the UK Test Practice',
@@ -8,7 +9,9 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-10">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-10">
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-ink-muted mb-6">
         <Link href="/" className="px-2 py-1 hover:text-ink rounded transition-colors">Home</Link>
         <span>/</span>
@@ -77,5 +80,6 @@ export default function AboutPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

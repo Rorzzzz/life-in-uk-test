@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { QUESTIONS } from '@/data/questions'
 
 export const metadata = {
@@ -13,7 +14,9 @@ export default function HardestQuestionsPage() {
   const questions = [...hard, ...medium].slice(0, 50)
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Hardest Questions', path: '/hardest-questions' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">Hardest Questions</h1>
       <p className="text-ink-muted text-base mb-6">
         These are the questions most people get wrong. Master these and you will pass.
@@ -65,5 +68,6 @@ export default function HardestQuestionsPage() {
         <Link href="/cheat-sheet" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Cheat Sheet</Link>
       </div>
     </div>
+    </>
   )
 }

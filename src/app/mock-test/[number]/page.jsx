@@ -3,6 +3,7 @@ import { MOCK_TEST_NUMBERS, getMockTest, getMockTestMeta } from '@/data/mockTest
 import { TOPICS } from '@/data/topics'
 import Link from 'next/link'
 import MockTestClient from './MockTestClient'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 function getRelatedTests(n) {
   const others = []
@@ -38,6 +39,7 @@ export default function MockTestPage({ params }) {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Mock Tests', path: '/mock-test' }, { name: `Mock Test ${n}`, path: `/mock-test/${n}` }]} />
       <MockTestClient testNumber={n} questions={questions} />
 
       {/* Internal links — shown below the test */}

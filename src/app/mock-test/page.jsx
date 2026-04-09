@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
 
 export const metadata = {
@@ -11,7 +12,9 @@ export default function MockTestIndexPage() {
   const tests = Array.from({ length: MOCK_TEST_COUNT }, (_, i) => i + 1)
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Mock Tests', path: '/mock-test' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       <div className="mb-6">
         <h1 className="text-2xl font-display font-bold text-ink mb-2">Mock Tests</h1>
         <p className="text-ink-muted">
@@ -63,5 +66,6 @@ export default function MockTestIndexPage() {
         </Link>
       </div>
     </div>
+    </>
   )
 }

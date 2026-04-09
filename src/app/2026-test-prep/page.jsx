@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { QUESTION_COUNT } from '@/data/questions'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
 
@@ -51,7 +52,9 @@ const TIMELINE = [
 
 export default function TestPrep2026Page() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: '2026 Test Prep', path: '/2026-test-prep' }]} />
+      <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Hero */}
       <div className="mb-8">
         <div className="inline-block bg-brand-500/10 text-brand-400 text-xs font-semibold px-3 py-1 rounded-full mb-3">
@@ -164,5 +167,6 @@ export default function TestPrep2026Page() {
         ))}
       </div>
     </div>
+    </>
   )
 }

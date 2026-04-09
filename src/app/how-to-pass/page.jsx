@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
   title: 'How to Pass the Life in the UK Test — Study Strategy Guide 2026',
@@ -24,6 +25,7 @@ export default function HowToPassPage() {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'How to Pass', path: '/how-to-pass' }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
