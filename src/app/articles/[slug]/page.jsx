@@ -93,7 +93,7 @@ export default function ArticlePage({ params }) {
     description: article.description,
     datePublished: article.date,
     dateModified: article.date,
-    author: { '@type': 'Organization', name: 'PassTheUKTest', url: 'https://passtheuktest.co.uk' },
+    author: { '@type': 'Person', name: 'PassTheUKTest Editorial Team', url: 'https://passtheuktest.co.uk/about' },
     publisher: { '@type': 'Organization', name: 'PassTheUKTest', url: 'https://passtheuktest.co.uk' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://passtheuktest.co.uk/articles/${params.slug}` },
   }
@@ -170,6 +170,14 @@ export default function ArticlePage({ params }) {
             <Link href="/exam-format" className="text-sm text-brand-400 hover:underline">Exam format</Link>
             <Link href="/how-to-pass" className="text-sm text-brand-400 hover:underline">How to pass</Link>
             <Link href="/articles" className="text-sm text-brand-400 hover:underline">All articles</Link>
+          </div>
+          <p className="text-xs text-ink-muted mt-4 mb-2 font-medium uppercase tracking-wide">Practice by topic</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link href="/practice/1" className="text-sm text-brand-400 hover:underline">Values &amp; Principles</Link>
+            <Link href="/practice/2" className="text-sm text-brand-400 hover:underline">What is the UK?</Link>
+            <Link href="/practice/3" className="text-sm text-brand-400 hover:underline">British History</Link>
+            <Link href="/practice/4" className="text-sm text-brand-400 hover:underline">Modern Society</Link>
+            <Link href="/practice/5" className="text-sm text-brand-400 hover:underline">Government &amp; Law</Link>
           </div>
         </div>
       </div>

@@ -30,9 +30,9 @@ export default function HomeDashboard({ chapters }) {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-display font-bold text-ink">
-            Pass<span className="text-brand-500">TheUKTest</span>
+            Life in the UK Test <span className="text-brand-500">Practice</span>
           </h1>
-          <p className="text-base text-ink-muted">Life in the UK Test Prep</p>
+          <p className="text-base text-ink-muted">Free prep — 570 questions, mock exams, adaptive learning</p>
         </div>
         <div className="text-right">
           <p className="text-xs text-ink-muted">Readiness</p>
@@ -128,6 +128,24 @@ export default function HomeDashboard({ chapters }) {
                   {ch.title}
                 </p>
               </div>
+              <ChevronRight size={14} className="text-ink-muted flex-shrink-0" />
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Popular guides */}
+      <div className="mb-4">
+        <p className="text-xs text-ink-muted font-medium uppercase tracking-wide mb-2">Popular guides</p>
+        <div className="space-y-1.5">
+          {[
+            { href: '/articles/what-is-the-life-in-the-uk-test',            label: 'What is the Life in the UK test?' },
+            { href: '/articles/how-to-pass-the-life-in-the-uk-test-first-time', label: 'How to pass first time' },
+            { href: '/articles/how-much-does-the-life-in-the-uk-test-cost', label: 'How much does the test cost?' },
+            { href: '/articles/how-to-book-the-life-in-the-uk-test',        label: 'How to book the test' },
+          ].map(({ href, label }) => (
+            <Link key={href} href={href} className="flex items-center justify-between bg-card border border-border rounded-xl px-4 py-2.5 text-sm text-ink hover:bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+              <span>{label}</span>
               <ChevronRight size={14} className="text-ink-muted flex-shrink-0" />
             </Link>
           ))}

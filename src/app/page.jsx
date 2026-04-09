@@ -33,8 +33,6 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      {/* sr-only H1 for SEO — visual heading is in HomeDashboard */}
-      <h1 className="sr-only">Free Life in the UK Test Practice 2026 — Pass First Time</h1>
       <HomeDashboard chapters={CHAPTERS} />
     </>
   )

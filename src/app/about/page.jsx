@@ -19,9 +19,17 @@ export default function AboutPage() {
 
       <div className="prose-custom space-y-6 text-base text-ink leading-relaxed">
         <p>
-          <strong>PassTheUKTest</strong> is a free study platform built to help people pass the
-          Life in the UK citizenship test on their first attempt. We believe that preparing for
-          this important milestone should be accessible to everyone — not locked behind a paywall.
+          <strong>PassTheUKTest</strong> was built by someone who went through the Life in the UK
+          test process firsthand and found the existing study tools outdated, expensive, and
+          ineffective. The result is a free, modern platform that uses adaptive learning and
+          gamification to help candidates pass first time — no paywall, no login required.
+        </p>
+
+        <p className="text-ink-muted">
+          Every article and practice question on this site is written and reviewed against the
+          official <em>Life in the United Kingdom: A Guide for New Residents</em> handbook (3rd edition)
+          and verified against current GOV.UK guidance. Content is reviewed regularly to ensure
+          accuracy as official guidance changes.
         </p>
 
         <h2 className="text-xl font-display font-bold text-ink">What we offer</h2>
