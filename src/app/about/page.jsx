@@ -28,7 +28,7 @@ export default function AboutPage() {
             My name is <strong className="text-ink">Rory Stephenson</strong>. I built PassTheUKTest
             after going through the Life in the UK test process myself. Like most people preparing
             for it, I started by searching for practice sites — and found the same handful of tools
-            everyone uses: slow, cluttered, phone-unfriendly, and almost all of them hiding the
+            everyone uses: slow, cluttered, mobile-unfriendly, and almost all of them hiding the
             useful features behind a subscription.
           </p>
           <p className="text-ink-muted mt-3">
