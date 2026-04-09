@@ -30,9 +30,9 @@ export default function HomeDashboard({ chapters }) {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-display font-bold text-ink">
-            Life in the UK Test <span className="text-brand-500">Practice</span>
+            Free Life in the UK Test Practice <span className="text-brand-500">2026</span>
           </h1>
-          <p className="text-base text-ink-muted">Free prep — 570 questions, mock exams, adaptive learning</p>
+          <p className="text-base text-ink-muted">Pass first time — 570 questions, mock exams, adaptive learning</p>
         </div>
         <div className="text-right">
           <p className="text-xs text-ink-muted">Readiness</p>
