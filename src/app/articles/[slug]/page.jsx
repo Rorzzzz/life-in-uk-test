@@ -94,7 +94,7 @@ export default function ArticlePage({ params }) {
     description: article.description,
     datePublished: article.date,
     dateModified: article.date,
-    author: { '@type': 'Person', name: 'PassTheUKTest Editorial Team', url: 'https://passtheuktest.co.uk/about' },
+    author: { '@type': 'Person', name: 'Rory Stephenson', url: 'https://passtheuktest.co.uk/about' },
     publisher: { '@type': 'Organization', name: 'PassTheUKTest', url: 'https://passtheuktest.co.uk' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://passtheuktest.co.uk/articles/${params.slug}` },
   }

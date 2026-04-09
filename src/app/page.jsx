@@ -14,6 +14,15 @@ const orgSchema = {
   url:        'https://passtheuktest.co.uk',
   logo:       'https://passtheuktest.co.uk/icon.svg',
   sameAs:     [],
+  contactPoint: {
+    '@type':       'ContactPoint',
+    email:         'admin@passtheuktest.co.uk',
+    contactType:   'customer support',
+  },
+  founder: {
+    '@type': 'Person',
+    name:    'Rory Stephenson',
+  },
 }
 
 const websiteSchema = {

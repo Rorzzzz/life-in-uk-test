@@ -23,6 +23,9 @@ export default function Footer() {
             <p className="text-xs text-ink-muted mt-1">
               Free Life in the UK citizenship test practice. Not affiliated with UKVI.
             </p>
+            <a href="mailto:admin@passtheuktest.co.uk" className="text-xs text-ink-muted hover:text-ink transition-colors mt-0.5 block">
+              admin@passtheuktest.co.uk
+            </a>
           </div>
 
           <nav aria-label="Footer navigation">

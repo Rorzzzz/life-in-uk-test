@@ -85,6 +85,16 @@ export default function TermsPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-xl font-display font-bold text-ink mb-3">8. Contact</h2>
+          <p className="text-ink-muted">
+            For queries about these terms, email{' '}
+            <a href="mailto:admin@passtheuktest.co.uk" className="text-brand-400 underline hover:text-brand-300">
+              admin@passtheuktest.co.uk
+            </a>. Site operated by Rory Stephenson.
+          </p>
+        </section>
+
       </div>
 
       <div className="mt-8 pt-6 border-t border-border">

@@ -89,8 +89,10 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-xl font-display font-bold text-ink mb-3">6. Contact</h2>
           <p className="text-ink-muted">
-            For privacy-related queries, please use the contact form on our{' '}
-            <Link href="/about" className="text-brand-400 underline hover:text-brand-300">About page</Link>.
+            For privacy-related queries, email{' '}
+            <a href="mailto:admin@passtheuktest.co.uk" className="text-brand-400 underline hover:text-brand-300">
+              admin@passtheuktest.co.uk
+            </a>. Site operated by Rory Stephenson.
           </p>
         </section>
 
