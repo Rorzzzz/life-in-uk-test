@@ -43,7 +43,7 @@ export default function QuestionCard({
   useEffect(() => {
     if (answered && explanationRef.current) {
       setTimeout(() => {
-        explanationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        explanationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
       }, 150)
     }
   }, [answered])
