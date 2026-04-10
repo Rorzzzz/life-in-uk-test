@@ -51,14 +51,23 @@ function saveState(state) {
 // ─── Streak helpers ───────────────────────────────────────────────────────────
 const STREAK_THRESHOLD = 5 // questions per day needed to maintain streak
 
+// Use local date to avoid UTC/BST mismatch between midnight and 1am
+function localDateStr(date = new Date()) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+}
+
+function localYesterdayStr() {
+  const d = new Date()
+  d.setDate(d.getDate() - 1)
+  return localDateStr(d)
+}
+
 // Called on every RECORD_ANSWER — handles day rollover and threshold check
 function updateStreak(state) {
-  const today = new Date().toISOString().split('T')[0]
+  const today = localDateStr()
   if (state.lastActiveDate === today) return state // already updated today
 
-  const yesterday = new Date()
-  yesterday.setDate(yesterday.getDate() - 1)
-  const yesterdayStr = yesterday.toISOString().split('T')[0]
+  const yesterdayStr = localYesterdayStr()
 
   // Check if yesterday's threshold was met before we reset questionsToday
   const metThreshold = (state.questionsToday ?? 0) >= STREAK_THRESHOLD
@@ -70,10 +79,8 @@ function updateStreak(state) {
 
 // Called on app load — resets streak to 0 if last active was >1 day ago
 function checkStreakIntegrity(state) {
-  const today = new Date().toISOString().split('T')[0]
-  const yesterday = new Date()
-  yesterday.setDate(yesterday.getDate() - 1)
-  const yesterdayStr = yesterday.toISOString().split('T')[0]
+  const today = localDateStr()
+  const yesterdayStr = localYesterdayStr()
 
   const isValid = state.lastActiveDate === today || state.lastActiveDate === yesterdayStr
   if (!isValid && state.streak > 0) {
