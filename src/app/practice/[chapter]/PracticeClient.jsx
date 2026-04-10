@@ -13,7 +13,7 @@ export default function PracticeClient({ chapter, questions }) {
   const router = useRouter()
 
   const [started, setStarted]       = useState(false)
-  const [session]                   = useState(() => buildAdaptiveSession(state.progress, { chapterId: chapter.id }))
+  const [session, setSession]       = useState(() => buildAdaptiveSession(state.progress, { chapterId: chapter.id }))
   const [index, setIndex]           = useState(0)
   const [correct, setCorrect]       = useState(0)
   const [done, setDone]             = useState(false)
@@ -33,6 +33,13 @@ export default function PracticeClient({ chapter, questions }) {
     }
   }
 
+  function handleNewSession() {
+    setSession(buildAdaptiveSession(state.progress, { chapterId: chapter.id }))
+    setIndex(0)
+    setCorrect(0)
+    setDone(false)
+  }
+
   if (done) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-6">
@@ -40,8 +47,9 @@ export default function PracticeClient({ chapter, questions }) {
           score={correct}
           total={session.length}
           xpEarned={correct * 10 + 25}
-          onRetry={() => { setIndex(0); setCorrect(0); setDone(false) }}
+          onRetry={handleNewSession}
           onHome={() => router.push('/')}
+          onChangeChapter={() => router.push('/practice')}
         />
       </div>
     )
