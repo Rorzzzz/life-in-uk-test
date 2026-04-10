@@ -19,7 +19,7 @@ export default function PracticePage() {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Practice', path: '/practice' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-1">Practice</h1>
-      <p className="text-ink-muted text-base mb-6">Choose a chapter to practise, and start your adaptive learning session.</p>
+      <p className="text-ink-muted text-base mb-6">Choose a chapter to practise and start your adaptive learning session.</p>
 
       <div className="flex flex-col gap-3">
         {chapterStats.map(ch => (
