@@ -26,6 +26,7 @@ export default function QuestionCard({
   const [showXP, setShowXP]         = useState(false)
   const { recordAnswer, state }     = useGame()
   const { toggle, isSpeaking, isSupported } = useAudioNarration()
+  const explanationRef              = useRef(null)
 
   // Reset on new question
   useEffect(() => {
@@ -35,6 +36,15 @@ export default function QuestionCard({
     setXpGained(0)
     setShowXP(false)
   }, [question?.id])
+
+  // Scroll explanation + Next button into view on mobile when answer is revealed
+  useEffect(() => {
+    if (answered && explanationRef.current) {
+      setTimeout(() => {
+        explanationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }, 150)
+    }
+  }, [answered])
 
   function handleAnswer(index) {
     if (answered) return
@@ -132,13 +142,15 @@ export default function QuestionCard({
 
       {/* Explanation */}
       {answered && (
-        <ExplanationPanel
-          isCorrect={selected === question.answer}
-          explanation={question.explanation}
-          xpGained={xpGained}
-          questionId={question.id}
-          onNext={onNext}
-        />
+        <div ref={explanationRef}>
+          <ExplanationPanel
+            isCorrect={selected === question.answer}
+            explanation={question.explanation}
+            xpGained={xpGained}
+            questionId={question.id}
+            onNext={onNext}
+          />
+        </div>
       )}
     </div>
   )
