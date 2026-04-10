@@ -9,11 +9,25 @@ import ProgressBar from '@/components/ui/ProgressBar'
 import ProgressRing from '@/components/ui/ProgressRing'
 import Link from 'next/link'
 
+const STAT_LINKS = [
+  { key: 'answered', label: 'Questions Answered', icon: '📝', href: '/mastery'   },
+  { key: 'correct',  label: 'Correct Answers',    icon: '✅', href: '/mastery'   },
+  { key: 'accuracy', label: 'Accuracy',           icon: '🎯', href: '/readiness' },
+  { key: 'streak',   label: 'Current Streak',     icon: '🔥', href: '/readiness' },
+]
+
 export default function ProgressPage() {
   const { xp, level, levelPct, xpToNext, totalAnswered, totalCorrect, accuracy, chapterMastery, unlockedBadges } = useProgress()
   const { streak, questionsToday, streakThreshold } = useStreak()
   const { score: readiness, tier } = useReadiness()
   const { unlockedBadges: badges, lockedBadges, totalBadges } = useBadges()
+
+  const statValues = {
+    answered: totalAnswered,
+    correct:  totalCorrect,
+    accuracy: `${accuracy}%`,
+    streak:   `${streak} days`,
+  }
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6 space-y-5">
@@ -25,33 +39,28 @@ export default function ProgressPage() {
           <span className="font-display font-bold text-xl" style={{ color: tier.colour }}>{readiness}%</span>
         </ProgressRing>
         <div className="flex-1">
-          <p className="text-xs text-ink-muted uppercase tracking-wide mb-1">Readiness Score</p>
+          <p className="text-xs text-ink-muted uppercase tracking-wide mb-1">Readiness Score →</p>
           <p className="font-display font-bold text-xl text-ink">{tier.label} {tier.emoji}</p>
-          <p className="text-xs text-ink-muted">Based on mastery, coverage & streak → tap to learn more</p>
+          <p className="text-xs text-ink-muted">Based on mastery, coverage & streak</p>
         </div>
       </Link>
 
       {/* Stats */}
       <div className="grid grid-cols-2 gap-3">
-        {[
-          { label: 'Questions Answered', value: totalAnswered, icon: '📝' },
-          { label: 'Correct Answers',    value: totalCorrect,  icon: '✅' },
-          { label: 'Accuracy',           value: `${accuracy}%`, icon: '🎯' },
-          { label: 'Current Streak',     value: `${streak} days`, icon: '🔥' },
-        ].map(({ label, value, icon }) => (
-          <div key={label} className="bg-card rounded-2xl p-4">
+        {STAT_LINKS.map(({ key, label, icon, href }) => (
+          <Link key={key} href={href} className="bg-card rounded-2xl p-4 hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
             <p className="text-2xl mb-1">{icon}</p>
-            <p className="font-mono font-bold text-xl text-ink">{value}</p>
-            <p className="text-xs text-ink-muted">{label}</p>
-          </div>
+            <p className="font-mono font-bold text-xl text-ink">{statValues[key]}</p>
+            <p className="text-xs text-ink-muted">{label} →</p>
+          </Link>
         ))}
       </div>
 
       {/* Level */}
-      <div className="bg-card rounded-2xl p-5">
+      <Link href="/xp" className="bg-card rounded-2xl p-5 block hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <p className="font-display font-bold text-ink">Level {level.level}</p>
+            <p className="font-display font-bold text-ink">Level {level.level} →</p>
             <p className="text-sm text-ink-muted">{level.title}</p>
           </div>
           <div className="text-right">
@@ -60,11 +69,15 @@ export default function ProgressPage() {
           </div>
         </div>
         <ProgressBar value={levelPct} colour="#f59e0b" height={8} ariaLabel={`Level ${level.level} progress`} />
-      </div>
+      </Link>
 
       {/* Chapter mastery */}
       <div className="bg-card rounded-2xl p-5">
-        <h2 className="font-semibold text-ink mb-4">Chapter Mastery</h2>
+        <div className="flex items-center justify-between mb-4">
+          <Link href="/mastery" className="font-semibold text-ink hover:text-brand-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
+            Chapter Mastery →
+          </Link>
+        </div>
         <div className="space-y-4">
           {CHAPTERS.map(ch => {
             const mastery = chapterMastery(ch.id)
@@ -86,26 +99,28 @@ export default function ProgressPage() {
       {/* Badges */}
       <div className="bg-card rounded-2xl p-5">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-semibold text-ink">Badges</h2>
+          <Link href="/badges" className="font-semibold text-ink hover:text-brand-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
+            Badges →
+          </Link>
           <span className="text-xs text-ink-muted">{badges.length}/{totalBadges}</span>
         </div>
         <div className="grid grid-cols-4 gap-3">
           {badges.map(b => (
-            <div key={b.id} className="flex flex-col items-center gap-1" title={b.name}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+            <Link key={b.id} href="/badges" className="flex flex-col items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-xl" title={b.name}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl hover:opacity-80 transition-opacity"
                 style={{ backgroundColor: `${b.colour}22` }}>
                 {b.icon}
               </div>
               <p className="text-[9px] text-ink-muted text-center leading-tight">{b.name}</p>
-            </div>
+            </Link>
           ))}
           {lockedBadges.map(b => (
-            <div key={b.id} className="flex flex-col items-center gap-1 opacity-30" title={`Locked: ${b.description}`}>
+            <Link key={b.id} href="/badges" className="flex flex-col items-center gap-1 opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-xl" title={`Locked: ${b.description}`}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-border">
                 🔒
               </div>
               <p className="text-[9px] text-ink-muted text-center leading-tight">{b.name}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
