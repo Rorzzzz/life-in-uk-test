@@ -32,26 +32,17 @@ export default function ExplanationPanel({ isCorrect, explanation, xpGained, que
       <p className="text-base text-ink-muted leading-relaxed mb-4">{explanation}</p>
 
       {/* Links + Next */}
-      <div className="flex items-center justify-between gap-2 flex-wrap">
-        <div className="flex gap-1">
-          {[
-            { href: '/cheat-sheet', label: 'Cheat Sheet' },
-            { href: '/faq',         label: 'FAQ' },
-            { href: `/questions/${questionId}`, label: 'View page' },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="px-3 py-2 text-xs text-brand-400 hover:text-brand-300 active:opacity-70 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
+      <div className="flex items-center justify-between gap-2">
+        <Link
+          href="/cheat-sheet"
+          className="px-3 py-2 text-xs text-brand-400 hover:text-brand-300 active:opacity-70 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+        >
+          Cheat Sheet
+        </Link>
         {onNext && (
           <button
             onClick={onNext}
-            className="flex items-center gap-1 px-5 py-2.5 text-base font-semibold text-brand-500 hover:text-brand-400 active:opacity-70 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            className="flex items-center gap-1 px-5 py-2.5 text-base font-semibold text-brand-500 hover:text-brand-400 active:opacity-70 rounded-lg border border-brand-500/40 hover:border-brand-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
           >
             Next <ChevronRight size={16} />
           </button>
