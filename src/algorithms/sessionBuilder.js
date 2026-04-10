@@ -45,10 +45,11 @@ export function buildAdaptiveSession(progressMap, options = {}) {
 
   let session = [...dueSlice, ...weakSlice, ...newSlice]
 
-  // Top up from others if session is short
+  // Top up from others AND unused new questions if session is short
   if (session.length < size) {
-    const topUp = shuffle(others).slice(0, size - session.length)
-    session = [...session, ...topUp]
+    const used = new Set(session.map(q => q.id))
+    const topUpPool = shuffle([...others, ...newQs].filter(q => !used.has(q.id)))
+    session = [...session, ...topUpPool.slice(0, size - session.length)]
   }
 
   // Final shuffle so bucket order isn't obvious to user
