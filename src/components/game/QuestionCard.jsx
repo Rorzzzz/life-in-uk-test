@@ -27,14 +27,16 @@ export default function QuestionCard({
   const { recordAnswer, state }     = useGame()
   const { toggle, isSpeaking, isSupported } = useAudioNarration()
   const explanationRef              = useRef(null)
+  const topRef                      = useRef(null)
 
-  // Reset on new question
+  // Reset on new question and scroll back to top
   useEffect(() => {
     setSelected(null)
     setAnswered(false)
     setStartTime(Date.now())
     setXpGained(0)
     setShowXP(false)
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [question?.id])
 
   // Scroll explanation + Next button into view on mobile when answer is revealed
@@ -72,7 +74,7 @@ export default function QuestionCard({
   if (!question) return null
 
   return (
-    <div className="flex flex-col gap-4">
+    <div ref={topRef} className="flex flex-col gap-4">
       <XPPopup amount={xpGained} visible={showXP} onHide={() => setShowXP(false)} />
 
       {/* Progress */}

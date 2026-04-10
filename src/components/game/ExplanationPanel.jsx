@@ -51,9 +51,9 @@ export default function ExplanationPanel({ isCorrect, explanation, xpGained, que
         {onNext && (
           <button
             onClick={onNext}
-            className="flex items-center gap-2 px-5 py-3 text-base font-semibold bg-brand-500 text-white hover:bg-brand-600 active:opacity-70 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-brand-500 hover:text-brand-400 active:opacity-70 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
           >
-            Next <ChevronRight size={18} />
+            Next <ChevronRight size={16} />
           </button>
         )}
       </div>
