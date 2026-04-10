@@ -34,12 +34,12 @@ export default function HomeDashboard({ chapters }) {
           </h1>
           <p className="text-base text-ink-muted">Pass first time — 570 questions, mock exams, adaptive learning</p>
         </div>
-        <div className="text-right">
+        <Link href="/readiness" className="text-right group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg p-1">
           <p className="text-xs text-ink-muted">Readiness</p>
-          <p className="text-2xl font-display font-bold" style={{ color: tier.colour }}>
+          <p className="text-2xl font-display font-bold group-hover:opacity-80 transition-opacity" style={{ color: tier.colour }}>
             {readiness}%
           </p>
-        </div>
+        </Link>
       </div>
 
       {/* Quick links */}
@@ -68,11 +68,11 @@ export default function HomeDashboard({ chapters }) {
           { label: 'Streak',    value: `${streak}d`,          colour: '#ff4d6d', icon: streak > 3 ? '🔥' : '○' },
           { label: 'Accuracy',  value: `${accuracy}%`,        colour: '#22d07a', icon: '🎯' },
         ].map(({ label, value, colour, icon }) => (
-          <div key={label} className="bg-card rounded-2xl p-4 text-center">
+          <Link key={label} href="/progress" className="bg-card rounded-2xl p-4 text-center hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
             <p className="text-xl mb-0.5">{icon}</p>
             <p className="font-mono font-bold text-lg" style={{ color: colour }}>{value}</p>
             <p className="text-[10px] text-ink-muted uppercase tracking-wide">{label}</p>
-          </div>
+          </Link>
         ))}
       </div>
 

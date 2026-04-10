@@ -20,16 +20,16 @@ export default function ProgressPage() {
       <h1 className="text-2xl font-display font-bold text-ink">Your Progress</h1>
 
       {/* Readiness */}
-      <div className="bg-card rounded-2xl p-5 flex items-center gap-5">
+      <Link href="/readiness" className="bg-card rounded-2xl p-5 flex items-center gap-5 hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 block">
         <ProgressRing value={readiness} size={90} strokeWidth={8} colour={tier.colour} ariaLabel={`Readiness score: ${readiness}%`}>
           <span className="font-display font-bold text-xl" style={{ color: tier.colour }}>{readiness}%</span>
         </ProgressRing>
-        <div>
+        <div className="flex-1">
           <p className="text-xs text-ink-muted uppercase tracking-wide mb-1">Readiness Score</p>
           <p className="font-display font-bold text-xl text-ink">{tier.label} {tier.emoji}</p>
-          <p className="text-xs text-ink-muted">Based on mastery, coverage & streak</p>
+          <p className="text-xs text-ink-muted">Based on mastery, coverage & streak → tap to learn more</p>
         </div>
-      </div>
+      </Link>
 
       {/* Stats */}
       <div className="grid grid-cols-2 gap-3">
