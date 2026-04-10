@@ -40,10 +40,18 @@ export default function QuestionCard({
   }, [question?.id])
 
   // Scroll explanation + Next button into view on mobile when answer is revealed
+  // Extra offset accounts for the 64px fixed BottomNav
   useEffect(() => {
     if (answered && explanationRef.current) {
       setTimeout(() => {
-        explanationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        const el = explanationRef.current
+        if (!el) return
+        const rect = el.getBoundingClientRect()
+        const bottomNavHeight = 72 // h-16 (64px) + a little breathing room
+        const scrollBy = rect.bottom - window.innerHeight + bottomNavHeight
+        if (scrollBy > 0) {
+          window.scrollBy({ top: scrollBy, behavior: 'smooth' })
+        }
       }, 150)
     }
   }, [answered])
