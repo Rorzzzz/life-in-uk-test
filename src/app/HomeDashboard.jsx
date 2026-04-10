@@ -91,10 +91,10 @@ export default function HomeDashboard({ chapters }) {
       <div className="bg-card rounded-2xl p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-semibold text-ink">Today&apos;s goal</span>
-          <span className="text-xs text-ink-muted font-mono">{questionsToday}/{streakThreshold} questions</span>
+          <span className="text-xs text-ink-muted font-mono">{Math.min(questionsToday, streakThreshold)}/{streakThreshold} questions</span>
         </div>
         <ProgressBar
-          value={(questionsToday / streakThreshold) * 100}
+          value={Math.min((questionsToday / streakThreshold) * 100, 100)}
           colour={questionsToday >= streakThreshold ? '#22d07a' : '#f59e0b'}
           height={8}
           animated={false}
