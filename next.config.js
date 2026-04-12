@@ -35,6 +35,13 @@ const nextConfig = {
   // Redirects for clean URLs
   async redirects() {
     return [
+      // www → non-www (belt-and-braces alongside Vercel domain redirect)
+      {
+        source: '/(.*)',
+        has: [{ type: 'host', value: 'www.passtheuktest.co.uk' }],
+        destination: 'https://passtheuktest.co.uk/:path*',
+        permanent: true,
+      },
       // Redirect /test → /practice for SEO-friendly URL
       { source: '/test', destination: '/practice', permanent: true },
     ]
