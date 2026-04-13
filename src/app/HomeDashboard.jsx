@@ -2,10 +2,11 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { BookOpen, Layers, ClipboardList, TrendingUp, Zap, Star, ChevronRight } from 'lucide-react'
+import { BookOpen, Layers, ClipboardList, TrendingUp, Zap, Star, ChevronRight, Target } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { useStreak } from '@/hooks/useStreak'
 import { useReadiness } from '@/hooks/useReadiness'
+import { useWeakSpots } from '@/hooks/useWeakSpots'
 import ProgressRing from '@/components/ui/ProgressRing'
 import ProgressBar from '@/components/ui/ProgressBar'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
@@ -19,6 +20,7 @@ const QUICK_LINKS = [
 
 export default function HomeDashboard({ chapters }) {
   const { xp, level, levelPct, xpToNext, streak, totalAnswered, accuracy } = useProgress()
+  const { count: weakCount } = useWeakSpots()
   const { questionsToday, streakThreshold } = useStreak()
   const { score: readiness, tier } = useReadiness()
 
@@ -42,6 +44,27 @@ export default function HomeDashboard({ chapters }) {
           <p className="text-[10px] text-ink-muted leading-tight mt-0.5">How prepared you are for the real test</p>
         </Link>
       </div>
+
+      {/* Weak spots alert — only shown when user has questions to drill */}
+      {weakCount > 0 && (
+        <Link href="/weak-spots" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
+          <motion.div
+            className="bg-danger/10 border border-danger/30 rounded-2xl p-4 flex items-center justify-between gap-3"
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-danger/20">
+                <Target size={20} className="text-danger" />
+              </div>
+              <div>
+                <p className="font-semibold text-ink text-base">Weak Spots</p>
+                <p className="text-sm text-ink-muted">{weakCount} question{weakCount !== 1 ? 's' : ''} to drill</p>
+              </div>
+            </div>
+            <ChevronRight size={16} className="text-ink-muted flex-shrink-0" />
+          </motion.div>
+        </Link>
+      )}
 
       {/* Quick links */}
       <div className="grid grid-cols-2 gap-3">
