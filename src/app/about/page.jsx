@@ -29,77 +29,62 @@ export default function AboutPage() {
         <span className="px-2 py-1 text-ink">About</span>
       </nav>
 
-      <h1 className="text-3xl font-display font-bold text-ink mb-8">About PassTheUKTest</h1>
+      {/* Person-first lead */}
+      <div className="flex items-start gap-4 mb-8">
+        <div className="w-14 h-14 rounded-2xl bg-brand-500/20 flex items-center justify-center text-xl font-bold text-brand-400 flex-shrink-0">R</div>
+        <div>
+          <h1 className="text-2xl font-display font-bold text-ink mb-1">Rory Stephenson</h1>
+          <p className="text-sm text-ink-muted">Built PassTheUKTest · Passed the Life in the UK test · admin@passtheuktest.co.uk</p>
+        </div>
+      </div>
 
       <div className="space-y-8 text-base text-ink leading-relaxed">
 
         <section>
-          <h2 className="text-xl font-display font-bold text-ink mb-3">Who built this</h2>
-          <p className="text-ink-muted">
-            My name is <strong className="text-ink">Rory Stephenson</strong>. I built PassTheUKTest
-            after going through the Life in the UK test process myself. Like most people preparing
-            for it, I started by searching for practice sites — and found the same handful of tools
-            everyone uses: slow, cluttered, mobile-unfriendly, and almost all of them hiding the
-            useful features behind a subscription.
+          <p className="text-ink-muted text-lg leading-relaxed">
+            PassTheUKTest was built by <strong className="text-ink">Rory Stephenson</strong> after going through the Life in the UK test himself. He passed first time — but the experience of searching for decent free practice resources and finding only slow, cluttered sites with paywalled features motivated him to build something better.
           </p>
-          <p className="text-ink-muted mt-3">
-            I passed first time. But the experience of preparing for the test made me want to build
-            something better — a free resource I would actually have wanted to use.
+          <p className="text-ink-muted mt-4">
+            The goal was simple: build the resource he wished had existed when he was preparing. Free, adaptive, mobile-first, and honest about what the test actually requires.
           </p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-display font-bold text-ink mb-3">Why I built it</h2>
-          <p className="text-ink-muted">
-            The Life in the UK test is a real barrier for a lot of people. It is not especially
-            difficult if you prepare properly, but the material is dense, the official handbook is
-            dry, and most people do not have weeks to study. What you need is something that helps
-            you learn efficiently — that shows you what you do not know, keeps you coming back, and
-            does not charge you for the privilege.
-          </p>
-          <p className="text-ink-muted mt-3">
-            PassTheUKTest is completely free. No subscription, no trial that converts to a charge,
-            no account required. Every question, every mock test, every study tool — free. That was
-            a deliberate decision, not a placeholder until we add a paywall. The people taking this
-            test are already paying £50 to UKVI and often much more in wider immigration costs.
-            They do not need another bill.
-          </p>
+        <section className="bg-card rounded-2xl p-5">
+          <h2 className="text-base font-semibold text-ink mb-4">What the site offers</h2>
+          <ul className="space-y-2.5 text-sm text-ink-muted">
+            {[
+              '570 practice questions drawn directly from the official handbook',
+              'Adaptive learning — questions you find hard appear more often',
+              '45 mock exams replicating real test conditions (24 Qs, 45 mins)',
+              'Spaced repetition flashcards using the SM-2 algorithm',
+              'XP, streaks, levels and badges to keep you motivated',
+              'Cheat sheet of key dates, names and facts — printable before your test',
+              'Study guides for all 5 handbook chapters',
+              'Articles covering every practical question about the test process',
+              'Everything free — no subscription, no login, no paywall',
+            ].map(item => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-success flex-shrink-0 mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section>
-          <h2 className="text-xl font-display font-bold text-ink mb-3">What makes this different</h2>
+          <h2 className="text-xl font-display font-bold text-ink mb-3">Why free?</h2>
           <p className="text-ink-muted">
-            The established sites in this space have a consistent problem: they charge monthly
-            subscriptions, make cancellation difficult, and have the Trustpilot reviews to prove it.
-            The most commonly used one — lifeintheuktestweb.co.uk — has hundreds of complaints
-            about unexpected charges and auto-renewals. That should not be how test preparation
-            works.
-          </p>
-          <p className="text-ink-muted mt-3">
-            Beyond the business model, the products themselves have not meaningfully improved in
-            years. The same static question lists, the same format, nothing that adapts to what you
-            actually need to work on.
-          </p>
-          <p className="text-ink-muted mt-3">
-            This site uses spaced repetition — the same technique used by medical students and
-            language learners — to surface questions you find difficult more often and back off on
-            ones you have already learned. Your progress is tracked locally in your browser. Nothing
-            is sent to a server. Nothing is stored against an account.
+            The people taking this test are already paying £50 to UKVI and often significantly more in wider immigration costs — solicitor fees, application fees, biometric appointments. Adding another subscription on top of that is unnecessary. Every feature on this site is free and will remain free.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-display font-bold text-ink mb-3">How the content is produced</h2>
           <p className="text-ink-muted">
-            Every question on this site is drawn from the official{' '}
-            <em>Life in the United Kingdom: A Guide for New Residents</em> handbook, third edition —
-            the only book the real test draws from. Questions are written against the handbook
-            directly, checked for accuracy, and each has a written explanation so you understand
-            why the answer is correct, not just what it is.
+            Every question is drawn from the official <em>Life in the United Kingdom: A Guide for New Residents</em> handbook, third edition — the only source the real test uses. Questions are written against the handbook directly, each with a written explanation. Articles are written against GOV.UK guidance and reviewed when official information changes.
           </p>
           <p className="text-ink-muted mt-3">
-            Articles are written against GOV.UK guidance and updated when official information
-            changes. If you spot something that looks wrong, email me directly.
+            If you spot something that looks wrong, email directly: <a href="mailto:admin@passtheuktest.co.uk" className="text-brand-400 hover:underline">admin@passtheuktest.co.uk</a>. Every correction is read and actioned.
           </p>
         </section>
 

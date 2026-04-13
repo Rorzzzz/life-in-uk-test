@@ -13,7 +13,9 @@ export default function PassRatePage() {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Pass Rate', path: '/pass-rate' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">Life in the UK Test Pass Rate</h1>
-      <p className="text-ink-muted text-base mb-8">Around 67% of candidates pass on their first attempt. Here is what the statistics mean and how to make sure you are in the majority.</p>
+      <p className="text-ink-muted text-base mb-8">
+        Around 67% of candidates pass on their first attempt — estimated from published test volume data and Home Office figures cited in academic research, covering over 1.6 million tests taken since the current format launched in 2005.
+      </p>
 
       <div className="grid grid-cols-2 gap-3 mb-8">
         {[
@@ -34,7 +36,7 @@ export default function PassRatePage() {
         <div className="bg-card rounded-2xl p-5">
           <h2 className="font-semibold text-ink mb-2">What is the Life in the UK test pass rate?</h2>
           <p className="text-base text-ink-muted leading-relaxed">
-            Approximately 67% of candidates pass the Life in the UK test on their first attempt. This means around 1 in 3 people fail and need to retake it. The UK Home Office does not publish official pass rate statistics, but figures from test preparation organisations and industry sources consistently suggest a first-attempt pass rate of 65–70%.
+            Approximately 67% of candidates pass the Life in the UK test on their first attempt — estimated from published test volume data and Home Office figures cited in academic research covering over 1.6 million tests since 2005. The most reliable single data point is 70.9% across 906,464 tests taken between 2005 and 2009 (cited in the Wikipedia article on the Life in the UK test). More recent industry estimates place the current first-attempt rate at 65–70%.
           </p>
         </div>
 
