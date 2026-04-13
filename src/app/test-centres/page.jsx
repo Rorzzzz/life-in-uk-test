@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { TEST_CENTRES, REGIONS, getCentresByRegion, getGoogleMapsURL } from '@/data/testCentres'
-import { MapPin } from 'lucide-react'
+import { MapPin, AlertTriangle } from 'lucide-react'
 
 export const metadata = {
   title: 'Life in the UK Test Centres — All 60+ UK Locations',
@@ -15,9 +15,29 @@ export default function TestCentresPage() {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Test Centres', path: '/test-centres' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">Test Centres</h1>
-      <p className="text-ink-muted text-base mb-6">
-        {TEST_CENTRES.length} approved Life in the UK test centres across the UK.
+      <p className="text-ink-muted text-base mb-4">
+        {TEST_CENTRES.length} approved Life in the UK test centres across the UK. Last verified: April 2026.
       </p>
+
+      {/* Safety disclaimer */}
+      <div className="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-4 mb-6 flex gap-3">
+        <AlertTriangle size={18} className="text-amber-400 flex-shrink-0 mt-0.5" />
+        <div>
+          <p className="text-sm font-semibold text-ink mb-1">Always verify before you travel</p>
+          <p className="text-sm text-ink-muted">
+            Test centre addresses change. <strong className="text-ink">Do not rely solely on this list.</strong> Always check the address on your booking confirmation email and verify against the official{' '}
+            <a
+              href="https://www.gov.uk/life-in-the-uk-test"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:underline"
+            >
+              GOV.UK booking page
+            </a>{' '}
+            before you travel. Arriving at the wrong location could mean losing your £50 fee.
+          </p>
+        </div>
+      </div>
 
       {REGIONS.map(region => {
         const centres = getCentresByRegion(region)
@@ -36,12 +56,12 @@ export default function TestCentresPage() {
                       </p>
                     </div>
                     <a
-                      href={getGoogleMapsURL(centre)}
+                      href="https://www.gov.uk/life-in-the-uk-test"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-2 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 whitespace-nowrap font-medium rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                     >
-                      Map →
+                      Book →
                     </a>
                   </div>
                 </div>
