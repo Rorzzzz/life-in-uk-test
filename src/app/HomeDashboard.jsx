@@ -39,6 +39,7 @@ export default function HomeDashboard({ chapters }) {
           <p className="text-2xl font-display font-bold group-hover:opacity-80 transition-opacity" style={{ color: tier.colour }}>
             {readiness}%
           </p>
+          <p className="text-[10px] text-ink-muted leading-tight mt-0.5">based on accuracy &amp; coverage</p>
         </Link>
       </div>
 
