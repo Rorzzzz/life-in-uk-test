@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { getMockTest, EXAM_DURATION_SECONDS } from '@/data/mockTests'
+import { CHAPTERS } from '@/data/questions'
 import { useGame } from '@/context/GameContext'
 import QuestionCard from '@/components/game/QuestionCard'
 import TimerBar from '@/components/game/TimerBar'
@@ -21,9 +22,10 @@ export default function ExamPage() {
   useEffect(() => {
     setQuestions(getMockTest(Math.floor(Math.random() * 45) + 1))
   }, [])
-  const [index, setIndex]       = useState(0)
-  const [correct, setCorrect]   = useState(0)
-  const correctRef              = useRef(0)
+  const [index, setIndex]          = useState(0)
+  const [correct, setCorrect]      = useState(0)
+  const correctRef                 = useRef(0)
+  const [wrongByChapter, setWrongByChapter] = useState({})
   const [timeLeft, setTimeLeft] = useState(EXAM_DURATION_SECONDS)
   const [started, setStarted]   = useState(false)
   const [done, setDone]         = useState(false)
@@ -44,6 +46,11 @@ export default function ExamPage() {
   function handleAnswer(isCorrect) {
     if (isCorrect) {
       setCorrect(c => { correctRef.current = c + 1; return c + 1 })
+    } else {
+      const chapter = questions[index]?.chapter
+      if (chapter) {
+        setWrongByChapter(prev => ({ ...prev, [chapter]: (prev[chapter] ?? 0) + 1 }))
+      }
     }
   }
 
@@ -88,12 +95,16 @@ export default function ExamPage() {
           score={correct}
           total={questions.length}
           xpEarned={correct === questions.length ? 200 : correct >= 18 ? 100 : 0}
-          onRetry={() => { setIndex(0); setCorrect(0); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS) }}
+          onRetry={() => { setIndex(0); setCorrect(0); setWrongByChapter({}); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS) }}
           onHome={() => router.push('/')}
           onDifferentTest={() => {
             const n = Math.floor(Math.random() * 45) + 1
             router.push(`/mock-test/${n}`)
           }}
+          weakChapters={CHAPTERS
+            .filter(ch => wrongByChapter[ch.id] > 0)
+            .sort((a, b) => (wrongByChapter[b.id] ?? 0) - (wrongByChapter[a.id] ?? 0))
+            .map(ch => ({ id: ch.id, title: ch.title, colour: ch.colour, wrong: wrongByChapter[ch.id] }))}
           isExam
         />
       </div>

@@ -7,9 +7,20 @@ export const metadata = {
   alternates: { canonical: 'https://passtheuktest.co.uk/about' },
 }
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Rory Stephenson',
+  url: 'https://passtheuktest.co.uk/about',
+  email: 'admin@passtheuktest.co.uk',
+  description: 'Creator of PassTheUKTest. Passed the Life in the UK citizenship test and built the site to provide a free, high-quality alternative to subscription-based test prep services.',
+  knowsAbout: ['Life in the UK Test', 'British Citizenship', 'ILR', 'UK Immigration'],
+}
+
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]} />
       <div className="max-w-2xl mx-auto px-4 py-10">
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-ink-muted mb-6">
@@ -32,8 +43,8 @@ export default function AboutPage() {
             useful features behind a subscription.
           </p>
           <p className="text-ink-muted mt-3">
-            I passed. But the experience of preparing for the test made me want to build something
-            better — something I would actually have wanted to use.
+            I passed first time. But the experience of preparing for the test made me want to build
+            something better — a free resource I would actually have wanted to use.
           </p>
         </section>
 

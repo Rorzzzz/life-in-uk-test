@@ -125,6 +125,11 @@ export default function ArticlePage({ params }) {
                 {article.readTime}
               </span>
             )}
+            {article.date && (
+              <span className="text-xs text-ink-muted">
+                Last reviewed: {new Date(article.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
+              </span>
+            )}
           </div>
           <h1 className="text-2xl font-display font-bold text-ink leading-snug mb-3">
             {article.title}
