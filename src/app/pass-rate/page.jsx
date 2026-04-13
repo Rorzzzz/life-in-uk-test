@@ -39,6 +39,28 @@ export default function PassRatePage() {
         </div>
 
         <div className="bg-card rounded-2xl p-5">
+          <h2 className="font-semibold text-ink mb-2">What the historical data actually shows</h2>
+          <p className="text-base text-ink-muted leading-relaxed mb-3">
+            The most reliable published figure comes from the period 2005–2009, when the current test format was introduced. According to data cited in academic research and the Wikipedia article on the Life in the UK test, <strong className="text-ink">906,464 tests were taken between 2005 and 2009, with a pass rate of 70.9%</strong>.
+          </p>
+          <p className="text-base text-ink-muted leading-relaxed mb-3">
+            The Home Office does not routinely publish pass rate statistics. Figures obtained through Freedom of Information requests and referenced in parliamentary questions suggest the pass rate has remained broadly stable in the 65–72% range since the test was introduced, with some variation year on year.
+          </p>
+          <div className="bg-raised rounded-xl p-4 border-l-4 border-brand-500">
+            <p className="text-sm font-semibold text-ink mb-1">Key sourced figure</p>
+            <p className="text-sm text-ink-muted">70.9% pass rate across 906,464 tests taken between 2005 and 2009 — the only large-scale published dataset for this test.</p>
+            <a
+              href="https://en.wikipedia.org/wiki/Life_in_the_United_Kingdom_test"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-brand-400 hover:underline mt-1 inline-block"
+            >
+              Source: Wikipedia — Life in the United Kingdom test →
+            </a>
+          </div>
+        </div>
+
+        <div className="bg-card rounded-2xl p-5">
           <h2 className="font-semibold text-ink mb-2">How does the pass rate compare to the pass mark?</h2>
           <p className="text-base text-ink-muted leading-relaxed mb-3">
             The pass mark is 75% — you need to answer 18 out of 24 questions correctly. Despite this not being an especially high threshold, a third of candidates still fail. This tells you something important: the test is not hard because the questions are tricky — it is hard because the content requires specific factual recall of dates, names, and numbers that general knowledge does not cover.
@@ -113,6 +135,25 @@ export default function PassRatePage() {
           </p>
         </div>
 
+      </div>
+
+      <div className="mt-8 bg-raised rounded-2xl p-4 border border-border">
+        <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Sources & references</p>
+        <ul className="space-y-2 text-sm text-ink-muted">
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Life_in_the_United_Kingdom_test" target="_blank" rel="noopener noreferrer" className="text-brand-400 hover:underline">Wikipedia — Life in the United Kingdom test</a>
+            <span className="text-ink-muted"> — 906,464 tests taken 2005–2009, 70.9% pass rate</span>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/life-in-the-uk-test" target="_blank" rel="noopener noreferrer" className="text-brand-400 hover:underline">GOV.UK — Life in the UK test</a>
+            <span className="text-ink-muted"> — Official test information, pass mark, booking</span>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/government/publications/life-in-the-united-kingdom-a-guide-for-new-residents" target="_blank" rel="noopener noreferrer" className="text-brand-400 hover:underline">Home Office — Life in the United Kingdom: A Guide for New Residents</a>
+            <span className="text-ink-muted"> — Official handbook, 3rd edition</span>
+          </li>
+        </ul>
+        <p className="text-xs text-ink-muted mt-3">Last reviewed: April 2026. Pass rate statistics are not officially published by the Home Office. The 70.9% figure reflects 2005–2009 data; current estimates are based on industry sources.</p>
       </div>
 
       <div className="mt-8 grid grid-cols-2 gap-3">
