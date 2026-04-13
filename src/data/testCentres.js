@@ -90,3 +90,15 @@ export function getCentresByRegion(region) {
 export function getGoogleMapsURL(centre) {
   return `https://www.google.com/maps/search/?api=1&query=${centre.mapsQuery}`
 }
+
+export function getCentreSlug(centre) {
+  return centre.city
+    .toLowerCase()
+    .replace(/\s+—\s+/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+}
+
+export function getCentreBySlug(slug) {
+  return TEST_CENTRES.find(c => getCentreSlug(c) === slug) ?? null
+}

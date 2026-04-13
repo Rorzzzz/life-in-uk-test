@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
-import { TEST_CENTRES, REGIONS, getCentresByRegion, getGoogleMapsURL } from '@/data/testCentres'
+import { TEST_CENTRES, REGIONS, getCentresByRegion, getCentreSlug } from '@/data/testCentres'
 import { MapPin, AlertTriangle } from 'lucide-react'
 
 export const metadata = {
@@ -46,7 +46,7 @@ export default function TestCentresPage() {
             <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">{region}</h2>
             <div className="space-y-2">
               {centres.map(centre => (
-                <div key={centre.id} className="bg-card rounded-xl p-4">
+                <Link key={centre.id} href={`/test-centres/${getCentreSlug(centre)}`} className="block bg-card rounded-xl p-4 hover:bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
                       <p className="font-semibold text-ink text-base">{centre.city}</p>
@@ -55,16 +55,11 @@ export default function TestCentresPage() {
                         {centre.address}
                       </p>
                     </div>
-                    <a
-                      href="https://www.gov.uk/life-in-the-uk-test"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3 py-2 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 whitespace-nowrap font-medium rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-                    >
-                      Book →
-                    </a>
+                    <span className="text-sm text-brand-400 whitespace-nowrap font-medium flex-shrink-0">
+                      View →
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
