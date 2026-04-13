@@ -137,7 +137,10 @@ export default function HomeDashboard({ chapters }) {
 
       {/* Popular guides */}
       <div className="mb-4">
-        <p className="text-xs text-ink-muted font-medium uppercase tracking-wide mb-2">Popular guides</p>
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-xs text-ink-muted font-medium uppercase tracking-wide">Popular guides</p>
+          <Link href="/articles" className="text-xs text-brand-400 hover:text-brand-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">View all →</Link>
+        </div>
         <div className="space-y-1.5">
           {[
             { href: '/articles/what-is-the-life-in-the-uk-test',            label: 'What is the Life in the UK test?' },

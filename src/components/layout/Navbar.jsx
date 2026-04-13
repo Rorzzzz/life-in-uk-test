@@ -29,6 +29,7 @@ export default function Navbar() {
             { href: '/practice',  label: 'Practice' },
             { href: '/study',     label: 'Study' },
             { href: '/exam',      label: 'Mock Exam' },
+            { href: '/articles',  label: 'Articles' },
             { href: '/progress',  label: 'Progress' },
           ].map(({ href, label }) => {
             const active = href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href)
