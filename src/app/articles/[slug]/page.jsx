@@ -134,14 +134,6 @@ export default function ArticlePage({ params }) {
           <h1 className="text-2xl font-display font-bold text-ink leading-snug mb-3">
             {article.title}
           </h1>
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-7 h-7 rounded-full bg-brand-500/20 flex items-center justify-center text-xs font-bold text-brand-400 flex-shrink-0">R</div>
-            <div className="text-xs text-ink-muted">
-              Written by{' '}
-              <a href="/about" className="text-ink font-medium hover:text-brand-400 transition-colors">Rory Stephenson</a>
-              {' '}— passed the Life in the UK test and built this site as a free alternative to subscription-based test prep.
-            </div>
-          </div>
           <p className="text-ink-muted leading-relaxed">
             {article.description}
           </p>
@@ -194,6 +186,16 @@ export default function ArticlePage({ params }) {
             <Link href="/practice/4" className="text-sm text-brand-400 hover:underline">Modern Society</Link>
             <Link href="/practice/5" className="text-sm text-brand-400 hover:underline">Government &amp; Law</Link>
           </div>
+        </div>
+
+        {/* Author byline */}
+        <div className="mt-6 flex items-center gap-2">
+          <div className="w-7 h-7 rounded-full bg-brand-500/20 flex items-center justify-center text-xs font-bold text-brand-400 flex-shrink-0">R</div>
+          <p className="text-xs text-ink-muted">
+            Written by{' '}
+            <a href="/about" className="text-ink font-medium hover:text-brand-400 transition-colors">Rory Stephenson</a>
+            {' '}— passed the Life in the UK test and built this site as a free alternative to subscription-based test prep.
+          </p>
         </div>
       </div>
     </>
