@@ -97,6 +97,19 @@ export default function TestCentreCityPage({ params }) {
           </a>
         </div>
 
+        {/* Google Maps embed */}
+        <div className="rounded-2xl overflow-hidden border border-border mb-4" style={{ height: '220px' }}>
+          <iframe
+            title={`Map of ${cityName} test centre`}
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(centre.address)}&output=embed&zoom=15`}
+            width="100%"
+            height="220"
+            style={{ border: 0, display: 'block' }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
         {/* Safety disclaimer */}
         <div className="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-4 mb-6 flex gap-3">
           <AlertTriangle size={16} className="text-amber-400 flex-shrink-0 mt-0.5" />

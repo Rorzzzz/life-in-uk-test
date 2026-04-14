@@ -2,6 +2,7 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { TEST_CENTRES, REGIONS, getCentresByRegion, getCentreSlug } from '@/data/testCentres'
 import { MapPin, AlertTriangle } from 'lucide-react'
+import PostcodeSearch from '@/components/ui/PostcodeSearch'
 
 export const metadata = {
   title: 'Life in the UK Test Centres — All 60+ UK Locations',
@@ -18,6 +19,8 @@ export default function TestCentresPage() {
       <p className="text-ink-muted text-base mb-4">
         {TEST_CENTRES.length} approved Life in the UK test centres across the UK. Last verified: April 2026.
       </p>
+
+      <PostcodeSearch />
 
       {/* Safety disclaimer */}
       <div className="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-4 mb-6 flex gap-3">
