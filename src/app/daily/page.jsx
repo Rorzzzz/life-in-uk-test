@@ -47,8 +47,8 @@ export default function DailyPage() {
       <div className="flex items-center gap-2 mb-6">
         <span className="text-2xl">📅</span>
         <div>
-          <h1 className="font-display font-bold text-ink">Daily 5</h1>
-          <p className="text-xs text-ink-muted">Spaced repetition review</p>
+          <h1 className="font-display font-bold text-ink">Daily Life in the UK Test Review</h1>
+          <p className="text-xs text-ink-muted">Spaced repetition — 5 questions a day</p>
         </div>
       </div>
       {questions[index] && (

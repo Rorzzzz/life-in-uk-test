@@ -28,7 +28,7 @@ export default function XPPage() {
       </nav>
 
       <div>
-        <h1 className="text-2xl font-display font-bold text-ink mb-1">XP & Levels</h1>
+        <h1 className="text-2xl font-display font-bold text-ink mb-1">Life in the UK Test XP &amp; Levels</h1>
         <p className="text-ink-muted text-sm">Earn XP every time you answer correctly. Level up as you go.</p>
       </div>
 

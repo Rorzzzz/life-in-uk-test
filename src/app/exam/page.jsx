@@ -67,7 +67,7 @@ export default function ExamPage() {
       <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col items-center text-center gap-6">
         <p className="text-5xl">🎓</p>
         <div>
-          <h1 className="text-2xl font-display font-bold text-ink mb-2">Mock Exam</h1>
+          <h1 className="text-2xl font-display font-bold text-ink mb-2">Life in the UK Mock Exam — 24 Questions, 45 Minutes</h1>
           <p className="text-ink-muted">24 questions · 45 minutes · Pass mark: 18/24 (75%)</p>
         </div>
         <div className="bg-card rounded-2xl p-5 text-left w-full max-w-sm space-y-3">

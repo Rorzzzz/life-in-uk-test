@@ -27,7 +27,7 @@ export default function BadgesPage() {
       </nav>
 
       <div>
-        <h1 className="text-2xl font-display font-bold text-ink mb-1">Badges</h1>
+        <h1 className="text-2xl font-display font-bold text-ink mb-1">Life in the UK Test Badges &amp; Achievements</h1>
         <p className="text-ink-muted text-sm">{unlockedIds.size} of {BADGES.length} unlocked</p>
       </div>
 

@@ -49,7 +49,7 @@ export default function WeakSpotsPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
-      <h1 className="text-2xl font-display font-bold text-ink mb-1">Weak Spots</h1>
+      <h1 className="text-2xl font-display font-bold text-ink mb-1">Life in the UK Test — Practice Your Weak Spots</h1>
       <p className="text-ink-muted text-base mb-6">{count} questions where you need more practice</p>
 
       <button
