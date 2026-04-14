@@ -19,7 +19,7 @@ export default function HowToPassPage() {
       { '@type': 'HowToStep', name: 'Study chapter by chapter',     text: 'Focus on one chapter at a time. History (Chapter 3) is the longest and hardest — spend the most time here.' },
       { '@type': 'HowToStep', name: 'Practise daily',               text: 'Do at least 20-30 practice questions every day. Use Pass the UK Test\'s adaptive learning to focus on your weak spots.' },
       { '@type': 'HowToStep', name: 'Take mock exams',              text: 'When scoring 90%+ on practice questions, start taking full mock exams (24 questions, 45 minutes).' },
-      { '@type': 'HowToStep', name: 'Book when ready',              text: 'Book your test at lifeintheuktestsupport.co.uk when consistently passing mock exams.' },
+      { '@type': 'HowToStep', name: 'Book when ready',              text: 'Book your test at gov.uk/life-in-the-uk-test when consistently passing mock exams.' },
     ],
   }
 

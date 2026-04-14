@@ -115,7 +115,7 @@ export default function TestCentreCityPage({ params }) {
               { icon: '🎯', label: 'Pass mark', value: '18/24 (75%)' },
               { icon: '💷', label: 'Cost', value: '£50 per attempt' },
               { icon: '⚡', label: 'Results', value: 'Shown immediately' },
-              { icon: '📄', label: 'ID required', value: 'Passport or BRP' },
+              { icon: '📄', label: 'ID required', value: 'Passport (or pre-2025 BRP)' },
             ].map(({ icon, label, value }) => (
               <div key={label} className="flex items-start gap-2">
                 <span className="text-base">{icon}</span>
@@ -133,7 +133,7 @@ export default function TestCentreCityPage({ params }) {
           <h2 className="font-semibold text-ink mb-3">What to bring to {cityName}</h2>
           <ul className="space-y-2">
             {[
-              'Valid passport or Biometric Residence Permit (BRP) — driving licences are not accepted',
+              'Valid passport, pre-2025 BRP, or EU/EEA national identity card — eVisas and driving licences are not accepted',
               'Your booking confirmation email or reference number',
               'Arrive at least 15 minutes before your appointment time',
             ].map(item => (

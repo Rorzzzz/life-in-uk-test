@@ -37,7 +37,7 @@ export const FAQS = [
   {
     id: 6,
     question: 'What ID do you need for the Life in the UK test?',
-    answer: 'You must bring a valid photo ID to your test: a passport, biometric residence permit (BRP), or national identity card. A driving licence is not accepted as ID.',
+    answer: 'You must bring a valid physical photo ID: a passport, a pre-2025 Biometric Residence Permit (BRP), or a national identity card (EU/EEA). An eVisa is not valid — it is a digital record, not a physical document. A driving licence is not accepted.',
     category: 'About the Test',
   },
   {
@@ -75,7 +75,7 @@ export const FAQS = [
   {
     id: 12,
     question: 'How do you book the Life in the UK test?',
-    answer: 'Book online at lifeintheuktestsupport.co.uk (the official government booking service). You will need to create an account and choose a test centre and date. Payment is £50 by card.',
+    answer: 'Book online at gov.uk/life-in-the-uk-test (the official GOV.UK booking page). You will need to create an account and choose a test centre and date. Payment is £50 by card.',
     category: 'Booking',
   },
   {
@@ -119,7 +119,7 @@ export const FAQS = [
   {
     id: 19,
     question: 'What should you bring to the Life in the UK test?',
-    answer: 'Bring your booking confirmation (email printout or on your phone) and a valid photo ID (passport or BRP). Arrive 15 minutes early. You cannot bring notes, phones, or any study materials into the exam room.',
+    answer: 'Bring your booking confirmation (email printout or on your phone) and a valid physical photo ID — passport, pre-2025 BRP, or EU/EEA national identity card. An eVisa is not valid ID. Arrive 15 minutes early. You cannot bring notes, phones, or any study materials into the exam room.',
     category: 'Test Day',
   },
   {

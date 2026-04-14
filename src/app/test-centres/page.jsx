@@ -68,7 +68,7 @@ export default function TestCentresPage() {
 
       <div className="bg-brand-500/10 border border-brand-500/30 rounded-2xl p-5 mt-6">
         <p className="font-semibold text-ink mb-1">Book your test</p>
-        <p className="text-base text-ink-muted mb-3">Official booking at lifeintheuktestsupport.co.uk. Cost: £50.</p>
+        <p className="text-base text-ink-muted mb-3">Official booking at gov.uk/life-in-the-uk-test. Cost: £50.</p>
         <div className="flex gap-2 flex-wrap">
           <Link href="/faq" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">FAQ about booking</Link>
           <Link href="/how-to-pass" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">How to prepare</Link>
