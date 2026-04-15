@@ -81,13 +81,13 @@ export default function HomeDashboard({ chapters }) {
       {/* Stats row */}
       <div className="grid grid-cols-3 gap-3">
         {[
-          { label: 'XP',        value: xp.toLocaleString(),  colour: '#f59e0b', icon: '⚡' },
-          { label: 'Streak',    value: `${streak}d`,          colour: '#ff4d6d', icon: streak > 3 ? '🔥' : '○' },
-          { label: 'Accuracy',  value: `${accuracy}%`,        colour: '#22d07a', icon: '🎯' },
-        ].map(({ label, value, colour, icon }) => (
+          { label: 'XP',        value: xp.toLocaleString(),  className: 'text-xp',      icon: '⚡' },
+          { label: 'Streak',    value: `${streak}d`,          className: 'text-danger',  icon: streak > 3 ? '🔥' : '○' },
+          { label: 'Accuracy',  value: `${accuracy}%`,        className: 'text-success', icon: '🎯' },
+        ].map(({ label, value, className, icon }) => (
           <Link key={label} href="/progress" className="bg-card rounded-2xl p-4 text-center hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
             <p className="text-xl mb-0.5">{icon}</p>
-            <p className="font-mono font-bold text-lg" style={{ color: colour }}>{value}</p>
+            <p className={`font-mono font-bold text-lg ${className}`}>{value}</p>
             <p className="text-[10px] text-ink-muted uppercase tracking-wide">{label}</p>
           </Link>
         ))}

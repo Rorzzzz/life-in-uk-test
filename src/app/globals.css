@@ -19,10 +19,10 @@
   --brand-600:      #1a66e8;
   --brand-900:      #e6eeff;
 
-  --success:        #16a057;
-  --danger:         #e0304a;
-  --warning:        #d97706;
-  --xp:             #d97706;
+  --success:        #0d7a41;
+  --danger:         #b91c3c;
+  --warning:        #b45309;
+  --xp:             #b45309;
 }
 
 /* Dark theme — JS-controlled */
