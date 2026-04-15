@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
@@ -43,7 +43,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
     <AnimatePresence>
       {isOpen && (
         <>
-          <motion.div
+          <m.div
             className="fixed inset-0 bg-black/60 z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -51,7 +51,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
             onClick={onClose}
             aria-hidden="true"
           />
-          <motion.div
+          <m.div
             ref={panelRef}
             role="dialog"
             aria-modal="true"
@@ -66,7 +66,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
               <h2 id={titleId} className="text-xl font-display font-bold text-ink mb-4">{title}</h2>
             )}
             {children}
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

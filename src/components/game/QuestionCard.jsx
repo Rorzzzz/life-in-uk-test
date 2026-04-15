@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import { Volume2, VolumeX } from 'lucide-react'
 import clsx from 'clsx'
 import AnswerButton from './AnswerButton'
@@ -109,7 +109,7 @@ export default function QuestionCard({
 
       {/* Question */}
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={question.id}
           className="bg-card rounded-2xl p-5 border border-border"
           initial={{ opacity: 0, y: 8 }}
@@ -147,7 +147,7 @@ export default function QuestionCard({
               />
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </AnimatePresence>
 
       {/* Explanation */}

@@ -1,10 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import clsx from 'clsx'
 
 export default function ProgressBar({
-  value = 0,        // 0–100
+  value = 0,
   max = 100,
   colour = '#3381ff',
   height = 8,
@@ -33,12 +32,13 @@ export default function ProgressBar({
         className="w-full bg-border rounded-full overflow-hidden"
         style={{ height }}
       >
-        <motion.div
+        <div
           className="h-full rounded-full"
-          style={{ backgroundColor: colour }}
-          initial={animated ? { width: 0 } : { width: `${pct}%` }}
-          animate={{ width: `${pct}%` }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          style={{
+            backgroundColor: colour,
+            width: `${pct}%`,
+            transition: animated ? 'width 0.6s ease-out' : 'none',
+          }}
         />
       </div>
     </div>

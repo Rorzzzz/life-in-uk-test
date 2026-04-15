@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Link from 'next/link'
 import { Target } from 'lucide-react'
 import Button from '@/components/ui/Button'
@@ -15,7 +15,7 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
   const colour  = passed ? '#22d07a' : '#ff4d6d'
 
   return (
-    <motion.div
+    <m.div
       className="flex flex-col items-center text-center gap-6 py-8"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -102,6 +102,6 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
         )}
       </div>
       {footer && <div className="w-full">{footer}</div>}
-    </motion.div>
+    </m.div>
   )
 }

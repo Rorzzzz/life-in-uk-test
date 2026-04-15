@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import { useBadges } from '@/hooks/useBadges'
 import { useEffect } from 'react'
 
@@ -24,7 +24,7 @@ export default function BadgeUnlock() {
       )}
       <AnimatePresence>
         {newBadges.slice(0, 1).map(badge => (
-          <motion.div
+          <m.div
             key={badge.id}
             aria-hidden="true"
             className="fixed top-20 inset-x-4 z-50 mx-auto max-w-sm"
@@ -40,7 +40,7 @@ export default function BadgeUnlock() {
                 <p className="text-xs text-ink-muted">{badge.description}</p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </AnimatePresence>
     </>

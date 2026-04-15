@@ -1,12 +1,12 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 
 export default function XPPopup({ amount, visible, onHide }) {
   return (
     <AnimatePresence>
       {visible && amount > 0 && (
-        <motion.div
+        <m.div
           className="fixed top-1/3 left-1/2 z-50 pointer-events-none"
           initial={{ opacity: 1, y: 0, x: '-50%' }}
           animate={{ opacity: 0, y: -60, x: '-50%' }}
@@ -17,7 +17,7 @@ export default function XPPopup({ amount, visible, onHide }) {
           <span className="text-2xl font-display font-bold text-xp drop-shadow-lg">
             +{amount} XP
           </span>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   )

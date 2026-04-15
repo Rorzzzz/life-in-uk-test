@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 
 // Shared content blocks — used by both the real faces and the invisible spacer
 function FrontContent({ question }) {
@@ -62,7 +62,7 @@ export default function FlashCard({ question }) {
       {...wrapperProps}
       style={{ perspective: '1200px', WebkitPerspective: '1200px' }}
     >
-      <motion.div
+      <m.div
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{ duration: 0.45, ease: 'easeInOut' }}
         style={{
@@ -106,7 +106,7 @@ export default function FlashCard({ question }) {
         >
           <BackContent question={question} />
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

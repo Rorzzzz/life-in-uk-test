@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function TimerBar({ secondsRemaining, totalSeconds }) {
   const pct = Math.max((secondsRemaining / totalSeconds) * 100, 0)
@@ -24,7 +24,7 @@ export default function TimerBar({ secondsRemaining, totalSeconds }) {
         aria-live="off"
         className="w-full h-2 bg-border rounded-full overflow-hidden"
       >
-        <motion.div
+        <m.div
           className="h-full rounded-full"
           style={{ backgroundColor: colour }}
           animate={{ width: `${pct}%` }}

@@ -1,9 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 export default function ProgressRing({
-  value = 0,      // 0–100
+  value = 0,
   size = 80,
   strokeWidth = 6,
   colour = '#3381ff',
@@ -36,8 +34,8 @@ export default function ProgressRing({
           stroke={trackColour}
           strokeWidth={strokeWidth}
         />
-        {/* Progress */}
-        <motion.circle
+        {/* Progress — CSS transition replaces Framer Motion */}
+        <circle
           cx={size / 2}
           cy={size / 2}
           r={r}
@@ -46,9 +44,8 @@ export default function ProgressRing({
           strokeWidth={strokeWidth}
           strokeLinecap="round"
           strokeDasharray={circumference}
-          initial={{ strokeDashoffset: circumference }}
-          animate={{ strokeDashoffset: offset }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          strokeDashoffset={offset}
+          style={{ transition: 'stroke-dashoffset 0.8s ease-out' }}
         />
       </svg>
       {children && (

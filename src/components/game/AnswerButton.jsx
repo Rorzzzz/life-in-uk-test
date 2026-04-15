@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import clsx from 'clsx'
 
 export default function AnswerButton({ option, index, state, onClick, disabled }) {
@@ -15,7 +15,7 @@ export default function AnswerButton({ option, index, state, onClick, disabled }
   }
 
   return (
-    <motion.button
+    <m.button
       onClick={() => !disabled && onClick(index)}
       disabled={disabled && !state}
       className={clsx(
@@ -41,6 +41,6 @@ export default function AnswerButton({ option, index, state, onClick, disabled }
         {state === 'incorrect' && <span className="sr-only"> — incorrect</span>}
         {state === 'missed'    && <span className="sr-only"> — correct answer (not selected)</span>}
       </span>
-    </motion.button>
+    </m.button>
   )
 }
