@@ -21,7 +21,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 277, chapter: 1,
     q: 'Which of the following is offered by the UK to its residents?',
-    options: ['Freedom from unfair discrimination', 'Free housing for all', 'A right to a fair trial', 'Guaranteed employment'],
+    options: ['Freedom from unfair discrimination', 'Free housing provided for all residents regardless of income', 'A guaranteed right to a fair and public trial in all circumstances', 'Guaranteed employment and a job placement for all residents'],
     answer: 0,
     explanation: 'The UK offers: freedom of belief and religion, freedom of speech, freedom from unfair discrimination, a right to a fair trial, and a right to join in the election of a government. Free housing and guaranteed employment are not among these.',
     difficulty: 'medium',
@@ -57,7 +57,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 281, chapter: 1,
     q: 'The Life in the UK test is based on which publication?',
-    options: ['The British Constitution document', 'Life in the United Kingdom: A Guide for New Residents, 3rd edition', 'The current edition of the Highway Code', 'The UK Border Agency\'s official annual report'],
+    options: ['The British Constitution document, which sets out all citizens\' fundamental rights', 'Life in the United Kingdom: A Guide for New Residents, 3rd edition', 'The current edition of the Highway Code, including all road and traffic laws', 'The UK Border Agency\'s official annual report on immigration and settlement'],
     answer: 1,
     explanation: 'The Life in the UK test is entirely based on the official handbook "Life in the United Kingdom: A Guide for New Residents, 3rd edition". All questions come from this book.',
     difficulty: 'easy',
@@ -84,7 +84,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 284, chapter: 1,
     q: 'Which of the following best describes why passing the Life in the UK test is important?',
-    options: ['It qualifies you for a higher starting salary', 'It shows you are ready for permanent residence and have knowledge of UK life', 'It officially exempts you from further English language tests', 'It automatically grants you British citizenship'],
+    options: ['It qualifies you for a higher starting salary in many professional fields', 'It shows you are ready for permanent residence and have knowledge of UK life', 'It officially exempts you from sitting further English language proficiency tests', 'It automatically grants you full British citizenship and a UK passport'],
     answer: 1,
     explanation: 'Passing the Life in the UK test is part of demonstrating that you are ready to become a permanent migrant. It shows you have a broad knowledge of the culture, laws and history of the UK.',
     difficulty: 'easy',
@@ -93,7 +93,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 285, chapter: 1,
     q: 'British values are described as being based on:',
-    options: ['Recent government policy and legislation', 'History, traditions and customs, protected by law and expectations', 'Regulations made by the European Union', 'Guidelines set by the United Nations'],
+    options: ['Recent government policy and legislation passed since the year 2000', 'History, traditions and customs, protected by law and expectations', 'Official regulations and directives formally issued by the European Union', 'International guidelines formally agreed upon and set by the United Nations'],
     answer: 1,
     explanation: 'British values are based on history and traditions and are protected by law, customs and expectations. They have evolved over centuries and are embedded in British institutions.',
     difficulty: 'medium',
@@ -111,7 +111,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 287, chapter: 1,
     q: 'Which of the following is TRUE about the responsibilities of UK residents?',
-    options: ['Only citizens have responsibilities; residents do not', 'Residents must join a political party', 'Both residents and citizens share the same responsibilities', 'Responsibilities only apply to people born in the UK'],
+    options: ['Only citizens have responsibilities; long-term residents do not', 'Residents must join a registered political party as part of integration', 'Both residents and citizens share the same responsibilities', 'Responsibilities only apply to people who were born in the United Kingdom'],
     answer: 2,
     explanation: 'The responsibilities and freedoms described apply to all those living in the UK — citizens and permanent residents alike. Everyone is expected to respect and support fundamental British values.',
     difficulty: 'medium',
@@ -120,7 +120,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 288, chapter: 1,
     q: '"Participation in community life" as a British principle means:',
-    options: ['Attending a church or place of worship regularly', 'Being active in your community through volunteering and civic engagement', 'Speaking English in all public places and settings', 'Paying your taxes on time and following the law'],
+    options: ['Attending a registered church or official place of worship on a regular basis', 'Being active in your community through volunteering and civic engagement', 'Speaking only English in all public places and community settings at all times', 'Paying all your taxes on time, filing returns correctly and following the law'],
     answer: 1,
     explanation: 'Participation in community life encourages people to be active members of their communities — volunteering, joining local groups, helping neighbours and taking part in civic life.',
     difficulty: 'medium',
@@ -138,7 +138,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 290, chapter: 1,
     q: 'Which of the following correctly describes "democracy" as a British value?',
-    options: ['A system where the monarch makes all decisions', 'A system where the people choose their government through free elections', 'A system where the courts decide government policy', 'A system where only property owners vote'],
+    options: ['A system where the monarch makes all political decisions on behalf of parliament', 'A system where the people choose their government through free elections', 'A system where the courts decide and set all government policy without elections', 'A system where only landowners and property owners are entitled to cast a vote'],
     answer: 1,
     explanation: 'Democracy means that the people choose their government through free and fair elections. It is one of the five fundamental principles of British life.',
     difficulty: 'easy',
@@ -156,7 +156,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 292, chapter: 1,
     q: 'What is the ESOL course in English with Citizenship?',
-    options: ['A course available only for university-level students', 'A course for those below Entry Level 3 English, covering language and UK life', 'A course that replaces the Life in the UK test for all applicants', 'A course run directly by the Home Office for new arrivals'],
+    options: ['A language course available exclusively for students enrolled at UK universities', 'A course for those below Entry Level 3 English, covering language and UK life', 'A course that fully replaces the Life in the UK test for all eligible applicants', 'An intensive course run directly by the Home Office for newly arrived migrants'],
     answer: 1,
     explanation: 'The ESOL course in English with Citizenship is an alternative path for those whose English is below ESOL Entry Level 3. It helps improve English while learning about life in the UK.',
     difficulty: 'hard',
@@ -165,7 +165,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 293, chapter: 1,
     q: 'Which of the following is a right offered by the UK to its residents?',
-    options: ['A right to own property', 'A right to join in the election of a government', 'A right to free university education', 'A right to free legal advice'],
+    options: ['A right to own private property and land within the UK', 'A right to join in the election of a government', 'A right to receive free university education and fully funded tuition', 'A right to access free legal advice and professional legal representation'],
     answer: 1,
     explanation: 'A right to join in the election of a government (i.e., the right to vote) is one of the five key rights offered by the UK. The others are freedom of speech, religion, freedom from discrimination, and a fair trial.',
     difficulty: 'easy',
@@ -174,7 +174,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 294, chapter: 1,
     q: 'What is the role of the handbook "Life in the United Kingdom: A Guide for New Residents"?',
-    options: ['A travel guide for tourists visiting the UK', 'The official guide covering everything needed to pass the Life in the UK test', 'A legal document that officially grants permanent residency', 'A listing of all UK laws that residents are required to follow'],
+    options: ['A travel and sightseeing guide published for tourists visiting the United Kingdom', 'The official guide covering everything needed to pass the Life in the UK test', 'A legal document that is officially signed when a resident is granted permanent residency', 'A comprehensive listing of all UK laws that all residents are legally required to follow'],
     answer: 1,
     explanation: 'The handbook is designed to help people integrate into society, play a full role in their local community, and pass the Life in the UK test. It covers history, culture, law and values.',
     difficulty: 'easy',
@@ -183,7 +183,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 295, chapter: 1,
     q: 'Which of the following correctly states a responsibility of UK residents?',
-    options: ['To attend a registered place of worship each week', 'To look after the area where you live and care for the environment', 'To vote in every national and local election', 'To volunteer for the armed forces if requested'],
+    options: ['To attend a registered place of worship or religious gathering each week', 'To look after the area where you live and care for the environment', 'To vote in every national, regional and local election you are eligible for', 'To formally volunteer for the armed forces whenever officially requested'],
     answer: 1,
     explanation: 'Looking after the area in which you live and the environment is listed as a responsibility of UK residents. Voting is a right, and attending worship or military service are not listed responsibilities.',
     difficulty: 'easy',
@@ -197,7 +197,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 296, chapter: 2,
     q: 'When used in the handbook, the word "British" refers to:',
-    options: ['Only people who were born in England', 'Only people who were born in Great Britain', 'Everyone in the UK — England, Scotland, Wales and Northern Ireland', 'Only those who currently hold a British passport'],
+    options: ['Only people who were born and have always lived in England specifically', 'Only people who were born and raised in Great Britain but not Northern Ireland', 'Everyone in the UK — England, Scotland, Wales and Northern Ireland', 'Only those who currently hold a valid and up-to-date British passport'],
     answer: 2,
     explanation: 'In the handbook, "Britain", "British Isles" or "British" are used to refer to everyone in the UK — all four nations of England, Scotland, Wales and Northern Ireland.',
     difficulty: 'medium',
@@ -215,7 +215,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 298, chapter: 2,
     q: 'What is the difference between "Great Britain" and "the United Kingdom"?',
-    options: ['They mean exactly the same thing', 'Great Britain includes Northern Ireland; the UK does not', 'Great Britain is England, Scotland and Wales; the UK also includes Northern Ireland', 'The UK is simply the formal official name for Great Britain'],
+    options: ['They mean exactly the same thing and are completely interchangeable in use', 'Great Britain includes Northern Ireland while the UK formally does not include it', 'Great Britain is England, Scotland and Wales; the UK also includes Northern Ireland', 'The United Kingdom is merely the longer and more formal official name for Great Britain'],
     answer: 2,
     explanation: '"Great Britain" refers only to England, Scotland and Wales. The United Kingdom (full name: United Kingdom of Great Britain and Northern Ireland) also includes Northern Ireland.',
     difficulty: 'medium',
@@ -251,7 +251,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 302, chapter: 2,
     q: 'Wales is NOT represented on the Union Flag. This is because:',
-    options: ['Wales refused to be included in the Union Flag', 'Wales was already united with England before the Union Flag was created', 'The Welsh dragon symbol is too complex to include on the flag', 'Wales has its own separate flag and chose not to join the Union Flag'],
+    options: ['Wales formally refused and declined to be included when the Union Flag was designed', 'Wales was already united with England before the Union Flag was created', 'The Welsh dragon is considered far too complex and detailed to fit on the flag', 'Wales has its own separate flag and chose not to join the Union Flag'],
     answer: 1,
     explanation: 'Wales is not on the Union Flag because Wales had already been united with England before the flag was created. The flag combines England, Scotland and Ireland — Wales was already incorporated into England\'s cross.',
     difficulty: 'hard',
@@ -287,7 +287,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 306, chapter: 2,
     q: 'What does "devolved powers" mean for Scotland, Wales and Northern Ireland?',
-    options: ['They can make their own laws in certain areas without needing Westminster to approve', 'They are fully and completely independent from the UK government', 'They must follow exactly the same laws as England in every area', 'They can only pass laws about local roads and public parks'],
+    options: ['They can make their own laws in certain areas without needing Westminster to approve', 'They are fully and completely independent from the UK government in all matters', 'They must follow exactly the same laws as England in every single policy area', 'They can only pass minor laws about local roads, parks and council facilities'],
     answer: 0,
     explanation: 'Devolved powers means that Scotland, Wales and Northern Ireland can make their own laws and decisions in defined areas (such as health and education in Scotland) without needing the Westminster Parliament to agree.',
     difficulty: 'medium',
@@ -355,7 +355,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 313, chapter: 3,
     q: 'Which groups of people invaded Britain after the Romans left?',
-    options: ['The Normans and the Vikings', 'The Jutes, Angles and Saxons from northern Europe', 'The Celts and the Picts', 'The Franks and the Visigoths'],
+    options: ['The Normans from northern France and the Vikings from Scandinavia', 'The Jutes, Angles and Saxons from northern Europe', 'The native Celtic Britons and the Pictish people from north of the wall', 'The Franks and the Visigoths, both Germanic tribes from mainland Europe'],
     answer: 1,
     explanation: 'After the Romans left in 410 AD, Britain was invaded by the Jutes, Angles and Saxons from what are now Germany, Denmark and the Netherlands. Together these groups are known as the Anglo-Saxons.',
     difficulty: 'medium',
@@ -364,7 +364,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 314, chapter: 3,
     q: 'Where did the Anglo-Saxons originally come from?',
-    options: ['France and Spain in southern Europe', 'Northern Europe — present-day Germany, Denmark and the Netherlands', 'Scandinavia only — Norway, Sweden and Denmark', 'Italy, Greece and other Mediterranean countries'],
+    options: ['France and Spain in southern Europe, which later became rivals of Britain', 'Northern Europe — present-day Germany, Denmark and the Netherlands', 'Scandinavia only — specifically Norway, Sweden and Denmark in the far north', 'Italy, Greece and various other Mediterranean countries on the southern coast'],
     answer: 1,
     explanation: 'The Anglo-Saxons came from northern Europe — the areas that are now Germany, Denmark and the Netherlands. The Angles gave their name to "England" (Angle-land).',
     difficulty: 'medium',
@@ -373,7 +373,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 315, chapter: 3,
     q: 'Who was King Alfred the Great?',
-    options: ['The first Norman king of England after 1066', 'A 9th-century Anglo-Saxon king who defeated the Vikings and championed scholarship', 'The English king who signed and agreed to the Magna Carta', 'The first of the Tudor dynasty to rule England'],
+    options: ['The first Norman king of England who came to power following the conquest of 1066', 'A 9th-century Anglo-Saxon king who defeated the Vikings and championed scholarship', 'The English king who agreed to and formally signed the Magna Carta at Runnymede', 'The first monarch of the Tudor dynasty, who defeated Richard III at Bosworth Field'],
     answer: 1,
     explanation: 'King Alfred the Great was a 9th-century Anglo-Saxon king who successfully repelled Danish Viking invasions. He is also known for promoting learning and literacy, establishing a legal code.',
     difficulty: 'medium',
@@ -391,7 +391,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 317, chapter: 3,
     q: 'What was the Black Death?',
-    options: ['A type of coal-burning that polluted medieval cities', 'A devastating plague that killed about a third of England\'s population in 1348', 'A period of economic depression in the 14th century', 'A war between England and France'],
+    options: ['A type of polluting coal-smoke that darkened the skies over medieval English cities', 'A devastating plague that killed about a third of England\'s population in 1348', 'A long period of severe economic depression that affected England in the 14th century', 'A prolonged and devastating war fought between England and France in the 14th century'],
     answer: 1,
     explanation: 'The Black Death was a devastating plague (most likely bubonic plague) that reached Britain in 1348. It killed about a third of England\'s population and had a similar impact on Scotland and Wales.',
     difficulty: 'easy',
@@ -400,7 +400,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 318, chapter: 3,
     q: 'What was a "pocket borough" in the 18th century?',
-    options: ['A small market town trading goods stored in pockets and bags', 'A constituency controlled by one wealthy family who chose the local MP', 'A borough that was officially exempt from paying taxation', 'A secret underground meeting place used by politicians'],
+    options: ['A small market town where travelling merchants traded goods carried in bags', 'A constituency controlled by one wealthy family who chose the local MP', 'A borough area that had been officially declared fully exempt from all taxation', 'A secret underground location where politicians held private political meetings'],
     answer: 1,
     explanation: 'A "pocket borough" was a constituency where a single wealthy family controlled who became MP — the votes were "in their pocket". Similarly, "rotten boroughs" had very few voters.',
     difficulty: 'hard',
@@ -418,7 +418,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 320, chapter: 3,
     q: 'Which Welsh rebellions were finally defeated by the English in the Middle Ages?',
-    options: ['The legendary Arthurian rebellions of the Dark Ages', 'The last Welsh rebellions, finally defeated by the mid-15th century', 'The uprising led by Owen Glendower in the 15th century', 'The rebellions of Welsh princes against Norman rule'],
+    options: ['The legendary Arthurian uprisings said to have occurred in the early Dark Ages', 'The last Welsh rebellions, finally defeated by the mid-15th century', 'The major uprising famously led by Owen Glendower against English rule', 'The long series of rebellions by the Welsh princes against early Norman rule'],
     answer: 1,
     explanation: 'By the middle of the 15th century, the last Welsh rebellions had been defeated. English laws and the English language were introduced after Edward I of England annexed Wales to the Crown in the 13th century.',
     difficulty: 'hard',
@@ -445,7 +445,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 323, chapter: 3,
     q: 'Why was Mary I called "Bloody Mary"?',
-    options: ['She launched costly wars against both France and Spain', 'She executed hundreds of Protestants when restoring Catholicism to England', 'She was renowned for her passion for hunting and falconry', 'She executed three of her six husbands'],
+    options: ['She launched devastating and costly military wars against the nations of France and Spain', 'She executed hundreds of Protestants when restoring Catholicism to England', 'She was celebrated at court for her great passion and skill in hunting and falconry', 'She had three of her six successive husbands executed during her reign as queen'],
     answer: 1,
     explanation: 'Mary I earned the nickname "Bloody Mary" because she had around 280 Protestants burned at the stake as heretics during her attempt to restore Catholicism to England after the break with Rome.',
     difficulty: 'medium',
@@ -481,7 +481,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 327, chapter: 3,
     q: 'What was "the Restoration"?',
-    options: ['The rebuilding of London after the Great Fire of 1666', 'Charles II was invited to return as king in 1660, restoring the monarchy', 'Restoring the Catholic Church to power under Queen Mary I', 'The rebuilding of Parliament after it was damaged by bombing'],
+    options: ['The rebuilding of London after it was devastated by the Great Fire of 1666', 'Charles II was invited to return as king in 1660, restoring the monarchy', 'Restoring the Roman Catholic Church back to full power in England under Queen Mary I', 'The rebuilding of Parliament after it was badly damaged by wartime bombing'],
     answer: 1,
     explanation: 'The Restoration refers to the return of the monarchy in 1660 when Charles II was invited back to be king after the death of Cromwell. The republic (Commonwealth) had lasted about 11 years.',
     difficulty: 'medium',
@@ -490,7 +490,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 328, chapter: 3,
     q: 'What did the Bill of Rights of 1689 confirm?',
-    options: ['That Parliament could override the king on any issue', 'That the monarch could not keep a standing army without Parliament\'s consent', 'That all citizens had equal rights before the law', 'That the Church of England was the only official religion'],
+    options: ['That Parliament could freely override and veto the monarch\'s decisions on any issue', 'That the monarch could not keep a standing army without Parliament\'s consent', 'That all citizens were guaranteed equal and enforceable rights before the law', 'That the Church of England was to be the only legally recognised official religion'],
     answer: 1,
     explanation: 'The Bill of Rights (1689) confirmed the rights of Parliament and set limits on the monarch\'s power — for example, the king could not raise taxes without Parliament\'s agreement.',
     difficulty: 'medium',
@@ -508,7 +508,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 330, chapter: 3,
     q: 'From 1695, what was significant about newspapers in Britain?',
-    options: ['They were made free for everyone to read', 'They were allowed to operate without a government licence, establishing a free press', 'They were required to publish the debates of Parliament', 'They became the main form of communication for the government'],
+    options: ['They were made completely free and widely available for everyone in Britain to read', 'They were allowed to operate without a government licence, establishing a free press', 'They were legally required to publish full transcripts of all parliamentary debates', 'They became the primary and official form of communication used by the government'],
     answer: 1,
     explanation: 'From 1695, newspapers were allowed to operate without a government licence. This was an important step in establishing a free press — newspapers not controlled by the government.',
     difficulty: 'medium',
@@ -562,7 +562,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 336, chapter: 3,
     q: 'What was Adam Smith\'s famous contribution to human thought?',
-    options: ['He developed the theory of evolution', 'He developed the theory of free market economics in "The Wealth of Nations"', 'He invented the steam engine', 'He wrote the theory of gravity'],
+    options: ['He developed the groundbreaking scientific theory of evolution by natural selection', 'He developed the theory of free market economics in "The Wealth of Nations"', 'He invented and built the first practical and commercially successful steam engine', 'He first described and mathematically proved the universal theory of gravity'],
     answer: 1,
     explanation: 'Adam Smith was a Scottish economist who wrote "The Wealth of Nations" (1776), which developed the theory of free market economics. He is considered the father of modern economics.',
     difficulty: 'hard',
@@ -571,7 +571,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 337, chapter: 3,
     q: 'What was the "Enclosure" movement during the Agricultural Revolution?',
-    options: ['Building walls around cities to protect them', 'The process of converting common land and open fields into private farm land', 'The act of sending farm animals to enclosed pens in winter', 'Building greenhouses to grow crops year-round'],
+    options: ['The construction of high stone walls around cities to protect them from attack', 'The process of converting common land and open fields into private farm land', 'The practice of driving farm animals into enclosed pens and barns during winter', 'The construction of glass greenhouses and hothouses to grow food crops year-round'],
     answer: 1,
     explanation: 'The Enclosure movement involved converting common land and open fields (which many poor farmers had relied on) into private enclosed farmland. This forced many people off the land and into cities.',
     difficulty: 'hard',
@@ -589,7 +589,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 339, chapter: 3,
     q: 'Which cities became important during the Industrial Revolution?',
-    options: ['Oxford and Cambridge', 'Manchester, Leeds, Birmingham and Sheffield', 'London and Bristol only', 'Edinburgh and Glasgow'],
+    options: ['Oxford and Cambridge, the famous historic university towns', 'Manchester, Leeds, Birmingham and Sheffield', 'London and Bristol only, as the two main trading and port cities', 'Edinburgh and Glasgow, the two principal cities of Scotland'],
     answer: 1,
     explanation: 'Cities like Manchester, Leeds, Birmingham and Sheffield grew rapidly during the Industrial Revolution as centres of textile and metal manufacturing. Many were in the north and Midlands of England.',
     difficulty: 'medium',
@@ -598,7 +598,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 340, chapter: 3,
     q: 'Isambard Kingdom Brunel was born in:',
-    options: ['Manchester', 'Scotland', 'Portsmouth, England', 'Wales'],
+    options: ['Manchester, in the industrial north of England', 'Scotland, most likely Edinburgh or Glasgow', 'Portsmouth, England', 'Wales, most likely Cardiff or Swansea'],
     answer: 2,
     explanation: 'Isambard Kingdom Brunel was originally from Portsmouth, England. He was a brilliant engineer who built the Great Western Railway, tunnels, bridges and ships including the SS Great Britain.',
     difficulty: 'hard',
@@ -607,7 +607,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 341, chapter: 3,
     q: 'What was the "British Empire" at its height?',
-    options: ['An empire limited to European territory only', 'The largest empire in history, covering about a quarter of the world\'s land', 'A powerful empire controlling most of Asia and Africa', 'An empire that controlled only naval trade routes globally'],
+    options: ['An empire that was strictly limited to European territories and nearby colonies', 'The largest empire in history, covering about a quarter of the world\'s land', 'A powerful but regionally limited empire controlling most of Asia and Africa', 'An empire that controlled only the world\'s major naval and maritime trade routes'],
     answer: 1,
     explanation: 'At its height around 1920, the British Empire was the largest empire in history, covering about a quarter of the world\'s land and ruling around a quarter of the world\'s population.',
     difficulty: 'medium',
@@ -688,7 +688,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 350, chapter: 3,
     q: 'During the Great Depression, which UK industries were most badly affected?',
-    options: ['Finance and banking', 'Traditional heavy industries like shipbuilding', 'Tourism and hospitality', 'Agriculture and farming'],
+    options: ['Finance, banking and insurance in the City of London', 'Traditional heavy industries like shipbuilding', 'Tourism and hospitality in coastal and rural holiday destinations', 'Agriculture, farming and rural food production across the UK'],
     answer: 1,
     explanation: 'Traditional heavy industries such as shipbuilding were badly affected by the Great Depression. However, new industries including automobile and aviation manufacturing developed during this period.',
     difficulty: 'medium',
@@ -706,7 +706,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 352, chapter: 3,
     q: 'What was the Harrier jump jet known for?',
-    options: ['Being the first jet aircraft', 'Being capable of taking off vertically', 'Breaking the sound barrier', 'Flying across the Atlantic'],
+    options: ['Being the world\'s first operational jet-powered combat aircraft', 'Being capable of taking off vertically', 'Breaking the sound barrier on its very first test flight', 'Flying non-stop across the Atlantic Ocean without refuelling'],
     answer: 1,
     explanation: 'The Harrier jump jet was a British aircraft known for being capable of taking off and landing vertically (VTOL — Vertical Take-Off and Landing). It was an important military innovation.',
     difficulty: 'medium',
@@ -724,7 +724,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 354, chapter: 3,
     q: 'In 1947, which countries were granted independence from Britain?',
-    options: ['Egypt and Iraq in the Middle East', 'India, Pakistan and Ceylon (Sri Lanka) among others', 'Australia and New Zealand in the Pacific', 'South Africa and Nigeria in Africa'],
+    options: ['Egypt and Iraq, two major nations in the Middle East region', 'India, Pakistan and Ceylon (Sri Lanka) among others', 'Australia and New Zealand, the two major Pacific British territories', 'South Africa and Nigeria, two of the largest British territories in Africa'],
     answer: 1,
     explanation: 'In 1947, independence was granted to nine countries including India, Pakistan and Ceylon (now Sri Lanka). This was the beginning of decolonisation of the British Empire.',
     difficulty: 'medium',
@@ -733,7 +733,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 355, chapter: 3,
     q: 'Harold Macmillan was famous for which speech about the British Empire?',
-    options: ['The "Iron Curtain" speech', 'The "Wind of Change" speech about decolonisation and independence', 'The "Blood, Toil, Tears and Sweat" speech', 'The "This was their finest hour" speech'],
+    options: ['The "Iron Curtain" speech, delivered by Winston Churchill in Missouri', 'The "Wind of Change" speech about decolonisation and independence', 'The "Blood, Toil, Tears and Sweat" speech delivered at the very start of the war', 'The "This was their finest hour" speech, given to Parliament in World War Two'],
     answer: 1,
     explanation: 'Harold Macmillan, Conservative Prime Minister in the 1950s-60s, gave his famous "Wind of Change" speech about the independence movement sweeping through the British Empire in Africa.',
     difficulty: 'hard',
@@ -760,7 +760,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 358, chapter: 3,
     q: 'Margaret Thatcher privatised many industries. Which of the following is an example?',
-    options: ['The National Health Service', 'British Telecom and British Gas', 'The BBC', 'The Bank of England'],
+    options: ['The National Health Service, the publicly funded healthcare system', 'British Telecom and British Gas', 'The BBC national public service broadcaster', 'The Bank of England, the UK\'s central bank'],
     answer: 1,
     explanation: 'Thatcher\'s government privatised many nationalised industries including British Telecom, British Gas, British Steel, British Airways and water and electricity companies — selling them to private investors.',
     difficulty: 'medium',
@@ -814,7 +814,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 364, chapter: 3,
     q: 'What did the Great Reform Act of 1832 do?',
-    options: ['It gave women the right to vote', 'It abolished slavery throughout the Empire', 'It began to reform Parliament by eliminating "rotten boroughs" and giving more people the vote', 'It established the House of Lords'],
+    options: ['It gave women aged 30 and over who owned property the right to vote in elections', 'It officially abolished slavery throughout all territories of the British Empire', 'It began to reform Parliament by eliminating "rotten boroughs" and giving more people the vote', 'It formally established the House of Lords as the unelected upper chamber of Parliament'],
     answer: 2,
     explanation: 'The Great Reform Act of 1832 began to reform Parliament. It abolished or reduced many "rotten boroughs" (with few voters) and gave the vote to more men, particularly in the growing industrial cities.',
     difficulty: 'medium',
@@ -832,7 +832,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 366, chapter: 3,
     q: 'What was the significance of the Representation of the People Act 1918?',
-    options: ['It gave every person over 18 the right to vote immediately', 'It gave women over 30 with property qualifications and all men over 21 the vote', 'It established the use of the secret ballot in all elections', 'It gave women the right to stand for election to Parliament'],
+    options: ['It gave every person aged over 18 in the UK the immediate right to vote in elections', 'It gave women over 30 with property qualifications and all men over 21 the vote', 'It established and introduced the use of a secret ballot in all national elections', 'It gave all women — regardless of age or property — the right to stand for Parliament'],
     answer: 1,
     explanation: 'The Representation of the People Act 1918 was a landmark law giving women over 30 who met property qualifications the right to vote for the first time, and giving all men over 21 the right to vote.',
     difficulty: 'medium',
@@ -859,7 +859,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 369, chapter: 3,
     q: 'What was the Dunkirk evacuation significant for?',
-    options: ['It was a major British military victory over the German army', 'It rescued about 300,000 Allied soldiers from the French beaches in 1940', 'It was the D-Day Allied invasion of German-occupied France', 'It marked the arrival of American troops and equipment in Britain'],
+    options: ['It was a major British military victory over the advancing German army in France', 'It rescued about 300,000 Allied soldiers from the French beaches in 1940', 'It was the D-Day Allied invasion that liberated German-occupied Normandy, France', 'It marked the large-scale arrival of American troops and military equipment in Britain'],
     answer: 1,
     explanation: 'The Dunkirk evacuation in May–June 1940 rescued approximately 300,000 Allied soldiers from the beaches of northern France using naval vessels and civilian boats. It was a desperate retreat that became a symbol of resilience.',
     difficulty: 'medium',
@@ -868,7 +868,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 370, chapter: 3,
     q: 'What was D-Day?',
-    options: ['The day Germany declared war on Britain', 'The Allied invasion of Normandy, France on 6 June 1944', 'The day Japan surrendered in 1945', 'The day France surrendered to Germany'],
+    options: ['The day Germany officially declared war on Britain at the outbreak of WWII', 'The Allied invasion of Normandy, France on 6 June 1944', 'The day Japan formally surrendered to the Allied forces in 1945', 'The day France officially capitulated and surrendered to Germany in 1940'],
     answer: 1,
     explanation: 'D-Day was the Allied invasion of Normandy, France on 6 June 1944. It was the largest seaborne invasion in history and marked the beginning of the liberation of Western Europe from Nazi Germany.',
     difficulty: 'medium',
@@ -904,7 +904,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 374, chapter: 3,
     q: 'What significant political event happened in the UK in 2016?',
-    options: ['Scotland voted for independence', 'The UK voted to leave the European Union in a referendum (Brexit)', 'The first SNP government was elected', 'The monarchy was abolished in a referendum'],
+    options: ['Scotland held a referendum and voted for full independence from the UK', 'The UK voted to leave the European Union in a referendum (Brexit)', 'The first ever SNP majority government was elected to the Scottish Parliament', 'The UK monarchy was formally abolished following a national referendum vote'],
     answer: 1,
     explanation: 'In 2016, a referendum was held on the UK\'s membership of the European Union. The UK voted to leave the EU ("Brexit") by 52% to 48%.',
     difficulty: 'easy',
@@ -981,7 +981,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 382, chapter: 4,
     q: 'John Constable is famous for his paintings of:',
-    options: ['Industrial scenes of Manchester', 'The English countryside, particularly in Suffolk', 'London street scenes', 'Naval battles'],
+    options: ['Gritty industrial scenes of Manchester and northern England', 'The English countryside, particularly in Suffolk', 'Vibrant London street scenes and views of the Thames', 'Dramatic naval battles and seascapes of the British coastline'],
     answer: 1,
     explanation: 'John Constable (1776–1837) was famous for his paintings of the English countryside, particularly around the Stour Valley in Suffolk. His most famous work is "The Hay Wain".',
     difficulty: 'medium',
@@ -1044,7 +1044,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 389, chapter: 4,
     q: 'What is the "West End" in London famous for?',
-    options: ['Its financial institutions and banks', 'Its theatre district, including many famous theatres', 'Its markets and street food', 'Its universities and museums'],
+    options: ['Its financial institutions, stock exchange and major banks', 'Its theatre district, including many famous theatres', 'Its colourful markets, street food stalls and independent shops', 'Its world-renowned universities, colleges and famous museums'],
     answer: 1,
     explanation: 'The West End of London is famous for its theatre district, containing many of the world\'s most famous theatres. West End shows are internationally renowned for their quality.',
     difficulty: 'easy',
@@ -1062,7 +1062,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 391, chapter: 4,
     q: 'What is "Cockney" rhyming slang?',
-    options: ['A regional dialect spoken in rural Wales', 'A form of slang from London where words are replaced by rhyming phrases', 'A traditional style of poetry originating in Scotland', 'A Midlands dialect of spoken English'],
+    options: ['A distinctive regional dialect and accent spoken in the rural villages of Wales', 'A form of slang from London where words are replaced by rhyming phrases', 'A traditional and historic style of spoken poetry with origins in Scotland', 'A distinctive Midlands dialect of spoken English used in Birmingham and the area'],
     answer: 1,
     explanation: 'Cockney rhyming slang is a form of slang that originated in London\'s East End. Words are replaced by phrases that rhyme with them (e.g., "plates of meat" = feet, "dog and bone" = phone).',
     difficulty: 'medium',
@@ -1071,7 +1071,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 392, chapter: 4,
     q: 'Which of the following is a traditional Christmas custom in the UK?',
-    options: ['Leaving shoes out for presents', 'Giving and receiving Christmas cards and presents', 'Attending midnight mass is compulsory', 'Lighting fireworks on Christmas Eve'],
+    options: ['Leaving shoes outside the door at night to collect presents', 'Giving and receiving Christmas cards and presents', 'Attending midnight mass on Christmas Eve as a legal requirement', 'Lighting a large fireworks display in the garden on Christmas Eve'],
     answer: 1,
     explanation: 'Giving and receiving Christmas cards and presents is a well-established British Christmas tradition. Boxing Day (26 December) is also a public holiday in the UK.',
     difficulty: 'easy',
@@ -1080,7 +1080,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 393, chapter: 4,
     q: 'What is "Boxing Day"?',
-    options: ['A public holiday for watching live boxing matches', 'The day after Christmas Day (26 December), a public holiday in the UK', 'The day when Christmas gift boxes are traditionally opened', 'The day when Christmas decorations are taken down and stored'],
+    options: ['A public holiday set aside specifically for watching live televised boxing matches', 'The day after Christmas Day (26 December), a public holiday in the UK', 'The day when Christmas gift boxes are traditionally and ceremonially opened', 'The day when all Christmas decorations are traditionally taken down and stored away'],
     answer: 1,
     explanation: 'Boxing Day is 26 December, the day after Christmas Day. It is a public holiday in the UK. The name may come from the tradition of giving gift boxes to servants or the poor.',
     difficulty: 'easy',
@@ -1089,7 +1089,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 394, chapter: 4,
     q: 'What is "Shrove Tuesday" (Pancake Day)?',
-    options: ['The first day of the Advent season before Christmas', 'The day before Lent begins, traditionally marked by eating pancakes', 'A Scottish winter festival celebrated in February', 'A medieval jousting and sporting tournament'],
+    options: ['The first official day of the Advent season that leads up to Christmas', 'The day before Lent begins, traditionally marked by eating pancakes', 'A traditional Scottish winter festival celebrated each year in February', 'A medieval jousting competition and sporting tournament held in town squares'],
     answer: 1,
     explanation: 'Shrove Tuesday (also called Pancake Day) is the day before Ash Wednesday, the start of Lent. It was traditionally a day to use up rich foods before the Lenten fast, hence eating pancakes.',
     difficulty: 'medium',
@@ -1215,7 +1215,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 408, chapter: 4,
     q: 'Which of the following describes the Church of Scotland?',
-    options: ['It is part of the Church of England', 'It is a Presbyterian church, separate from the Church of England', 'It is a Catholic church', 'It is the official church of the UK government'],
+    options: ['It is a constituent part of the Church of England and follows Anglican doctrine', 'It is a Presbyterian church, separate from the Church of England', 'It is a Catholic church with direct ties to the Vatican in Rome', 'It is the single official national church of the entire UK government'],
     answer: 1,
     explanation: 'The Church of Scotland is a Presbyterian church, separate from the Church of England (which is Anglican/Episcopalian). The Church of Scotland has no bishops and is governed by its General Assembly.',
     difficulty: 'hard',
@@ -1247,7 +1247,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 411, chapter: 5,
     q: 'What is a "by-election" triggered by?',
-    options: ['A general election result being formally challenged', 'The death or resignation of an MP, requiring a new vote in that constituency', 'The Prime Minister deciding to call a snap general election', 'A local council passing a motion of no confidence in an MP'],
+    options: ['A general election result being formally challenged or overturned in the courts', 'The death or resignation of an MP, requiring a new vote in that constituency', 'The Prime Minister deciding to dissolve Parliament and call a snap general election', 'A local council formally passing a motion of no confidence in their local MP'],
     answer: 1,
     explanation: 'A by-election is held in a constituency when the MP dies, resigns or is otherwise unable to continue. Only voters in that constituency vote in a by-election.',
     difficulty: 'medium',
@@ -1256,7 +1256,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 412, chapter: 5,
     q: 'What does a local councillor do?',
-    options: ['They represent their constituency in the national Parliament', 'They represent their ward on the local council and decide on local services', 'They are appointed by the government to run local services', 'They act as judges in local courts'],
+    options: ['They represent their constituency in the national Parliament as an elected MP', 'They represent their ward on the local council and decide on local services', 'They are appointed and paid by central government to run all local services', 'They act as trained judges in local magistrate and county courts'],
     answer: 1,
     explanation: 'Local councillors are elected to represent their ward (area) on the local council. Councils provide local services such as schools, housing, roads, parks, libraries and social care.',
     difficulty: 'medium',
@@ -1265,7 +1265,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 413, chapter: 5,
     q: 'What does the UK\'s unwritten constitution rely on?',
-    options: ['A single written document like the American Constitution', 'Acts of Parliament, common law, conventions and authoritative works combined', 'The Bible and centuries of Christian tradition', 'Treaties and agreements signed with other countries'],
+    options: ['A single written document, as used in the American or French constitutions', 'Acts of Parliament, common law, conventions and authoritative works combined', 'The Bible and centuries of established Christian tradition and church law', 'International treaties and formal agreements signed with other countries'],
     answer: 1,
     explanation: 'Unlike many countries, the UK does not have a single written constitution. Instead it relies on a combination of Acts of Parliament, court judgments (common law), conventions and authoritative written sources.',
     difficulty: 'hard',
@@ -1274,7 +1274,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 414, chapter: 5,
     q: 'What is the role of the House of Lords in the legislative process?',
-    options: ['To elect the Prime Minister directly', 'To examine, amend and sometimes delay but not permanently block Commons bills', 'To make all final and binding decisions on new legislation', 'To represent the interests of the devolved nations of the UK'],
+    options: ['To elect the Prime Minister directly in a formal vote by all peers', 'To examine, amend and sometimes delay but not permanently block Commons bills', 'To make all the final and binding decisions about which new legislation becomes law', 'To formally represent the interests and concerns of the devolved nations of the UK'],
     answer: 1,
     explanation: 'The House of Lords scrutinises and can amend legislation passed by the House of Commons. It can delay bills but cannot permanently block legislation passed by the elected Commons.',
     difficulty: 'medium',
@@ -1283,7 +1283,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 415, chapter: 5,
     q: 'Who appoints the Prime Minister?',
-    options: ['Parliament holds a vote to elect the new PM', 'The monarch formally appoints the PM after the general election result', 'The Cabinet members collectively select the new PM', 'The British public vote directly to elect the PM'],
+    options: ['Parliament holds a formal vote to collectively elect the new Prime Minister', 'The monarch formally appoints the PM after the general election result', 'The Cabinet members collectively deliberate and select who should be the new PM', 'The British public vote directly in a special election to choose the new PM'],
     answer: 1,
     explanation: 'The monarch formally appoints the Prime Minister, inviting the leader of the party that can command a majority in the House of Commons to form a government.',
     difficulty: 'medium',
@@ -1310,7 +1310,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 418, chapter: 5,
     q: 'What is the Electoral Commission?',
-    options: ['The government body that counts and certifies votes', 'An independent body that regulates elections and political parties in the UK', 'A parliamentary committee of MPs that oversees elections', 'The government department that administers postal votes'],
+    options: ['The government body solely responsible for counting and certifying all votes cast', 'An independent body that regulates elections and political parties in the UK', 'A parliamentary select committee of MPs with responsibility for overseeing elections', 'The government department responsible for administering and organising postal votes'],
     answer: 1,
     explanation: 'The Electoral Commission is an independent body that regulates elections and referendums in the UK. It registers political parties and candidates and sets rules about spending on campaigns.',
     difficulty: 'hard',
@@ -1328,7 +1328,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 420, chapter: 5,
     q: 'The BBC is funded primarily by:',
-    options: ['Advertising revenue from commercial broadcasts', 'The television licence fee paid by households with a TV', 'Direct grants from the government each year', 'Annual subscription fees from viewers'],
+    options: ['Advertising revenue earned from commercial broadcasts and sponsorship deals', 'The television licence fee paid by households with a TV', 'Direct grants provided by the government from public taxation each year', 'Annual subscription fees paid by individual viewers who choose to subscribe'],
     answer: 1,
     explanation: 'The BBC is primarily funded by the television licence fee. All households that watch live TV or use BBC iPlayer must pay the licence fee. The BBC is not funded by advertising.',
     difficulty: 'easy',
@@ -1355,7 +1355,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 423, chapter: 5,
     q: 'What is "primary legislation"?',
-    options: ['The most important laws passed by Parliament (Acts of Parliament)', 'Laws passed by local councils', 'Laws made by the courts through judgments', 'The rules made by government departments'],
+    options: ['The most important laws passed by Parliament (Acts of Parliament)', 'Local bylaws and minor regulations passed by local councils for their area', 'Laws and precedents made by the courts through their judgments over time', 'Secondary rules and regulations made by government departments and ministers'],
     answer: 0,
     explanation: 'Primary legislation refers to Acts of Parliament — laws that are debated and passed by Parliament. "Secondary legislation" (statutory instruments) is made by the government under authority from primary legislation.',
     difficulty: 'hard',
@@ -1364,7 +1364,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 424, chapter: 5,
     q: 'What happens if no party wins an overall majority in a general election?',
-    options: ['A second election must be called and held immediately', 'The largest party governs as a minority, or parties may form a coalition', 'The outgoing government remains in power indefinitely', 'The unelected House of Lords chooses who should govern'],
+    options: ['A second full general election must be called and held within a short period', 'The largest party governs as a minority, or parties may form a coalition', 'The outgoing government automatically remains in office indefinitely with no change', 'The unelected House of Lords convenes and collectively chooses who should govern'],
     answer: 1,
     explanation: 'If no party wins an overall majority ("hung Parliament"), the largest party may try to govern as a minority government, or parties may negotiate a coalition (as happened in 2010 with Conservatives and Liberal Democrats).',
     difficulty: 'medium',
@@ -1373,7 +1373,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 425, chapter: 5,
     q: 'What is the Green Belt?',
-    options: ['An environmental award presented to the cleanest cities', 'A zone around cities where development is restricted to protect countryside', 'An organisation responsible for managing national parks', 'A designated cycle route around major UK cities'],
+    options: ['A prestigious environmental award presented annually to the UK\'s cleanest cities', 'A zone around cities where development is restricted to protect countryside', 'A government organisation responsible for managing and maintaining national parks', 'A designated cycle route that runs around the outer areas of major UK cities'],
     answer: 1,
     explanation: 'The Green Belt is a zone around many British cities where planning permission for development is heavily restricted, preserving open countryside and preventing urban sprawl.',
     difficulty: 'hard',
@@ -1391,7 +1391,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 427, chapter: 5,
     q: 'The Freedom of Information Act 2000 gives:',
-    options: ['The press the right to publish anything without restriction', 'The public the right to access information held by public authorities', 'Government the right to keep all information secret', 'Police the right to access personal data'],
+    options: ['The press the unrestricted right to publish any and all information freely', 'The public the right to access information held by public authorities', 'The government the right to keep all sensitive information permanently secret', 'The police the right to access any personal data they require from citizens'],
     answer: 1,
     explanation: 'The Freedom of Information Act 2000 gives the public the right to access information held by public authorities (government departments, local councils, NHS bodies, etc.) subject to certain exemptions.',
     difficulty: 'hard',
@@ -1400,7 +1400,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 428, chapter: 5,
     q: 'What is the role of the Crown Prosecution Service (CPS)?',
-    options: ['To defend those accused of crimes in court', 'To prosecute criminal cases in England and Wales after police investigation', 'To manage and run the national prison service', 'To provide free legal representation to the public'],
+    options: ['To represent and defend people accused of crimes in a court of law', 'To prosecute criminal cases in England and Wales after police investigation', 'To manage, run and fund the national prison service for convicted offenders', 'To provide free and fully funded legal representation to all members of the public'],
     answer: 1,
     explanation: 'The Crown Prosecution Service decides whether to bring criminal prosecutions in England and Wales, based on the evidence gathered by the police. It acts on behalf of the Crown (the state) in criminal cases.',
     difficulty: 'medium',
@@ -1409,7 +1409,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 429, chapter: 5,
     q: 'What is the minimum wage in the UK?',
-    options: ['The same for all workers regardless of age', 'Set by law and varies by age, with the National Living Wage for those 21 and over', 'Set by individual employers with no legal minimum', 'The same across all UK regions regardless of cost of living'],
+    options: ['The same flat rate for all workers regardless of age, location or experience', 'Set by law and varies by age, with the National Living Wage for those 21 and over', 'Set freely by individual employers with absolutely no legal minimum requirement', 'The same flat rate across all regions of the UK regardless of the local cost of living'],
     answer: 1,
     explanation: 'The National Minimum Wage is set by law and varies by age. The National Living Wage (the highest rate) applies to workers aged 21 and over. Rates are reviewed annually.',
     difficulty: 'medium',
@@ -1418,7 +1418,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 430, chapter: 5,
     q: 'Which of the following is a responsibility when renting a property?',
-    options: ['You must pay Council Tax in most circumstances', 'The landlord always pays all bills', 'You don\'t need to have a tenancy agreement', 'You can sublet without telling your landlord'],
+    options: ['You must pay Council Tax in most circumstances', 'The landlord is always fully responsible for paying all household utility bills', 'You don\'t need to have a tenancy agreement in writing', 'You can freely sublet the property without informing your landlord'],
     answer: 0,
     explanation: 'In most circumstances, tenants are responsible for paying Council Tax. It is a local tax based on the value of the property and pays for local services.',
     difficulty: 'medium',
@@ -1427,7 +1427,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 431, chapter: 5,
     q: 'What is the DVLA?',
-    options: ['The Department for Vehicle Licensing and Administration', 'The Driver and Vehicle Licensing Agency — handling licences and vehicle registration', 'The Department for Vehicle and Law Administration', 'The Driver and Vehicle Law Agency'],
+    options: ['The Department for Vehicle Licensing and Administration, managing road safety policy', 'The Driver and Vehicle Licensing Agency — handling licences and vehicle registration', 'The Department for Vehicle and Law Administration, handling all road traffic offences', 'The Driver and Vehicle Law Agency, which manages speeding fines and traffic laws'],
     answer: 1,
     explanation: 'The DVLA (Driver and Vehicle Licensing Agency) is the government body responsible for issuing driving licences and registering vehicles. You must register your vehicle with the DVLA.',
     difficulty: 'easy',
@@ -1472,7 +1472,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 436, chapter: 5,
     q: 'What is the "Oath of Allegiance"?',
-    options: ['A promise made by all British people when they turn 18', 'An oath taken by new citizens, soldiers, judges and MPs pledging loyalty to the King', 'An oath taken by immigrants on arrival in the UK', 'A promise made by local councillors to serve their community'],
+    options: ['A formal promise made by all British-born people when they turn 18 years old', 'An oath taken by new citizens, soldiers, judges and MPs pledging loyalty to the King', 'A formal oath that all new immigrants are required to take upon arrival in the UK', 'A formal promise made by elected local councillors to faithfully serve their community'],
     answer: 1,
     explanation: 'The Oath of Allegiance is taken by new citizens at the citizenship ceremony, as well as by soldiers, judges and MPs. It pledges loyalty to the King and his successors.',
     difficulty: 'hard',
@@ -1481,7 +1481,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 437, chapter: 5,
     q: 'What is the purpose of a census in the UK?',
-    options: ['To decide how many MPs each constituency should have', 'To gather population data to help plan schools, hospitals and other services', 'To calculate how much tax each region should contribute', 'To record the religious beliefs of all UK residents'],
+    options: ['To officially decide how many MPs each constituency should have in Parliament', 'To gather population data to help plan schools, hospitals and other services', 'To accurately calculate and determine how much tax each UK region should contribute', 'To officially record the religious beliefs and affiliations of all UK residents'],
     answer: 1,
     explanation: 'The UK census (held every 10 years, with the last in 2021) collects detailed data about the population. This information is used to plan public services like schools, hospitals and transport.',
     difficulty: 'medium',
@@ -1499,7 +1499,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 439, chapter: 5,
     q: 'What is the International Monetary Fund (IMF)?',
-    options: ['A European banking and finance organisation', 'An international body promoting monetary cooperation and financial stability', 'A UK financial body that sets domestic interest rates', 'The central bank serving the United Nations system'],
+    options: ['A European banking and finance organisation that regulates major EU banks', 'An international body promoting monetary cooperation and financial stability', 'A UK government financial body that independently sets domestic interest rates', 'The dedicated central bank that exclusively serves the United Nations system'],
     answer: 1,
     explanation: 'The IMF is an international organisation of 190 countries that promotes global monetary cooperation, financial stability and international trade. The UK is a member.',
     difficulty: 'hard',
@@ -1508,7 +1508,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 440, chapter: 5,
     q: 'What are "quangos"?',
-    options: ['A type of government minister or secretary', 'Bodies that carry out government functions independently, at arm\'s length', 'A type of government-funded local charity', 'A formal committee advising Parliament on policy'],
+    options: ['A type of senior government minister or departmental secretary of state', 'Bodies that carry out government functions independently, at arm\'s length', 'A type of government-funded local charity or community interest organisation', 'A formal standing committee that advises Parliament and ministers on policy areas'],
     answer: 1,
     explanation: 'Quangos (Quasi-Autonomous Non-Governmental Organisations) are bodies that carry out government functions but operate at arm\'s length from ministers. Examples include the Environment Agency and Ofsted.',
     difficulty: 'hard',
@@ -1526,7 +1526,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 442, chapter: 5,
     q: 'What is "voluntary work" and why is it important in the UK?',
-    options: ['Work done without a formal employment contract', 'Unpaid work that strengthens communities and benefits wider society', 'Work that the employer can end at any time without notice', 'Part-time work done alongside a main full-time job'],
+    options: ['Work done for an employer without a formal or legally binding employment contract', 'Unpaid work that strengthens communities and benefits wider society', 'Work arrangements that an employer is permitted to end at any time without notice', 'Part-time paid work that someone takes on alongside their main full-time job'],
     answer: 1,
     explanation: 'Voluntary work (volunteering) means giving time and skills without pay to help others. It is highly valued in the UK for strengthening communities, supporting charities and enabling civic participation.',
     difficulty: 'easy',
@@ -1544,7 +1544,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 444, chapter: 5,
     q: 'What is the role of the Welsh Parliament (Senedd)?',
-    options: ['To make laws for the whole of the United Kingdom', 'To make laws and policy for Wales on devolved matters like health and education', 'To provide the UK government with advice on Welsh affairs', 'To manage the economy and finances of Wales'],
+    options: ['To make laws and set policy for the whole of the United Kingdom on all matters', 'To make laws and policy for Wales on devolved matters like health and education', 'To provide formal advice and recommendations to the UK government on Welsh affairs', 'To independently manage and control the economy and public finances of Wales'],
     answer: 1,
     explanation: 'The Welsh Parliament (Senedd) makes laws and policies for Wales on devolved matters. These include health, education, agriculture and the environment. UK-wide matters are decided at Westminster.',
     difficulty: 'medium',
@@ -1580,7 +1580,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 448, chapter: 5,
     q: 'The UK\'s "common law" system means:',
-    options: ['The same laws apply equally to both rich and poor', 'Laws are partly based on court judgments and precedents, not Acts alone', 'All laws require common consent from the general population', 'Laws are uniform and identical across all parts of the UK'],
+    options: ['The same laws are applied equally and fairly to both the rich and the poor', 'Laws are partly based on court judgments and precedents, not Acts alone', 'All laws must first obtain common consent and agreement from the general population', 'Laws are fully uniform and identical across every nation and region of the UK'],
     answer: 1,
     explanation: 'Common law is law developed through court judgments and precedents — where judges interpret laws and those interpretations become binding on future courts. It operates alongside statute law (Acts of Parliament).',
     difficulty: 'hard',
@@ -1589,7 +1589,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 449, chapter: 5,
     q: 'What is the "National Minimum Wage" in the UK?',
-    options: ['The average wage paid to workers', 'The minimum hourly rate that employers must legally pay workers', 'A suggested minimum pay guideline for employers', 'The minimum wage paid only to public sector workers'],
+    options: ['The average median wage paid to all full-time workers across the UK', 'The minimum hourly rate that employers must legally pay workers', 'A non-binding suggested minimum pay guideline that employers may choose to follow', 'The minimum hourly wage rate paid only to public sector and government workers'],
     answer: 1,
     explanation: 'The National Minimum Wage is the minimum hourly rate that employers in the UK must legally pay their workers. The National Living Wage (a higher rate) applies to workers aged 21 and over.',
     difficulty: 'easy',
@@ -1598,7 +1598,7 @@ export const QUESTIONS_BATCH2 = [
   {
     id: 450, chapter: 5,
     q: 'What does "the rule of law" require of the government?',
-    options: ['That the government is above the law and can act however it wishes', 'That the government must also obey the law, just like ordinary citizens', 'That the government makes all laws without Parliament\'s input', 'That the government can override court decisions'],
+    options: ['That the government is entirely above the law and can act however it wishes', 'That the government must also obey the law, just like ordinary citizens', 'That the government has the power to make all laws without any Parliament input', 'That the government has the authority to freely override and ignore court decisions'],
     answer: 1,
     explanation: 'The rule of law requires that everyone — including the government — must obey the law. No one is above the law. This principle is fundamental to British democracy and traces back to the Magna Carta.',
     difficulty: 'easy',

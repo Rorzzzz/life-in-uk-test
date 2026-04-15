@@ -30,7 +30,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 453, chapter: 1,
     q: 'After passing the Life in the UK test, what is the next step toward permanent residency?',
-    options: ['You automatically become a permanent resident of the UK', 'You can make a formal application for permanent residence or citizenship', 'You must first complete an ESOL language course', 'You must wait a mandatory 5 more years before applying'],
+    options: ['You automatically and immediately become a permanent resident of the UK', 'You can make a formal application for permanent residence or citizenship', 'You must first complete and pass an ESOL English language course', 'You must wait for a mandatory further 5 years before submitting any application'],
     answer: 1,
     explanation: 'After passing the Life in the UK test, you can make an application for permanent residence or British citizenship. The forms and fees required depend on your personal circumstances.',
     difficulty: 'medium',
@@ -39,7 +39,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 454, chapter: 1,
     q: 'Where can you find the forms needed to apply for permanent residence?',
-    options: ['Your local council office', 'The gov.uk website (UK Visas and Immigration)', 'The Life in the UK test centre', 'The Citizens Advice Bureau'],
+    options: ['Your local council office or nearest town hall', 'The gov.uk website (UK Visas and Immigration)', 'The Life in the UK test centre where you took your test', 'The Citizens Advice Bureau (CAB) near where you live'],
     answer: 1,
     explanation: 'All the forms needed to apply for permanent residence and a list of fees can be found on the UK Visas and Immigration (UKVI) section of gov.uk.',
     difficulty: 'hard',
@@ -48,7 +48,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 455, chapter: 1,
     q: 'Is there a fee to apply for permanent residence or British citizenship?',
-    options: ['No, there is no fee', 'Yes, and the fee varies depending on the type of application', 'Yes, it is a fixed flat fee for all applications', 'Only non-EU applicants pay a fee'],
+    options: ['No, there is no fee of any kind required for this type of application', 'Yes, and the fee varies depending on the type of application', 'Yes, but it is always a fixed flat fee that is the same for every application', 'Only applicants from outside the EU are required to pay any application fee'],
     answer: 1,
     explanation: 'There is a fee for submitting an application for permanent residence or citizenship, and the fee is different for the various types of application.',
     difficulty: 'medium',
@@ -57,7 +57,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 456, chapter: 1,
     q: 'What English language level is required for settlement (permanent residence) applications from October 2013 onwards?',
-    options: ['ESOL Entry Level 2', 'B1 of the Common European Framework (ESOL Entry Level 3)', 'B2 of the Common European Framework', 'No language requirement applies'],
+    options: ['ESOL Entry Level 2, a lower standard than currently required', 'B1 of the Common European Framework (ESOL Entry Level 3)', 'B2 of the Common European Framework, a higher standard than required', 'No language requirement of any kind applies to settlement applications'],
     answer: 1,
     explanation: 'From October 2013, for settlement, applicants must pass the Life in the UK test AND provide evidence of English speaking and listening skills at B1 of the CEFR, equivalent to ESOL Entry Level 3.',
     difficulty: 'hard',
@@ -66,7 +66,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 457, chapter: 1,
     q: 'The glossary at the back of the Life in the UK handbook contains:',
-    options: ['A list of all laws you must follow', 'Key words and phrases to help understand the handbook', 'A list of all test centres', 'A list of ESOL courses available'],
+    options: ['A complete list of all the laws and rules you are required to follow', 'Key words and phrases to help understand the handbook', 'A complete list of all officially registered Life in the UK test centres', 'A full list of all available ESOL language courses and how to enrol'],
     answer: 1,
     explanation: 'The glossary at the back of the handbook contains key words and phrases which you might find helpful when reading the handbook.',
     difficulty: 'easy',
@@ -75,7 +75,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 458, chapter: 1,
     q: 'What is the purpose of "Check that you understand" boxes in the handbook?',
-    options: ['They are the only sections you need to revise thoroughly', 'Guidance to help identify key topics — but knowing only these is not enough to pass', 'They contain the actual questions used in the real test', 'Optional extra reading for students who want a higher score'],
+    options: ['The only sections you need to study thoroughly — everything else can be skipped', 'Guidance to help identify key topics — but knowing only these is not enough to pass', 'Sections where the actual questions from the real Life in the UK test are listed', 'Optional further reading for students who would like to aim for a higher score'],
     answer: 1,
     explanation: 'The "Check that you understand" boxes are guidance to help identify important topics, but the handbook clearly states that just knowing the highlighted things will not be enough to pass — you must understand everything.',
     difficulty: 'medium',
@@ -134,7 +134,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 464, chapter: 2,
     q: 'Which of these is NOT a country that makes up the United Kingdom?',
-    options: ['England', 'The Republic of Ireland', 'Scotland', 'Northern Ireland'],
+    options: ['England, one of the four nations of the UK', 'The Republic of Ireland', 'Scotland, one of the four nations of the UK', 'Northern Ireland, one of the four nations of the UK'],
     answer: 1,
     explanation: 'The Republic of Ireland is NOT part of the United Kingdom. It is a completely independent country. The UK consists of England, Scotland, Wales and Northern Ireland.',
     difficulty: 'easy',
@@ -166,7 +166,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 467, chapter: 3,
     q: 'The term "Plantagenet" refers to:',
-    options: ['A Viking dynasty', 'A royal dynasty that ruled England from Henry II to Richard III', 'A type of medieval weapon', 'The area of France where the Normans came from'],
+    options: ['A Viking dynasty that ruled parts of northern and eastern England', 'A royal dynasty that ruled England from Henry II to Richard III', 'A type of medieval polearm weapon used by English foot soldiers', 'The specific area of northern France from which the Norman conquerors originally came'],
     answer: 1,
     explanation: 'Plantagenet was the royal dynasty that ruled England from Henry II (1154) to Richard III (1485). It included famous kings like Richard I (the Lionheart), John, Henry V and Henry VI.',
     difficulty: 'hard',
@@ -184,7 +184,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 469, chapter: 3,
     q: 'Sir Thomas More was executed by Henry VIII because:',
-    options: ['He was accused of treason against the king in battle', 'He refused to accept Henry VIII as Supreme Head of the Church of England', 'He supported the Spanish Armada', 'He had plotted to assassinate the king'],
+    options: ['He was accused of committing high treason against the king during a battle', 'He refused to accept Henry VIII as Supreme Head of the Church of England', 'He openly supported and aided the Spanish Armada\'s invasion of England', 'He had been involved in a conspiracy to assassinate and overthrow the king'],
     answer: 1,
     explanation: 'Sir Thomas More, a devout Catholic and former Lord Chancellor, refused to acknowledge Henry VIII as the Supreme Head of the Church of England. He was executed for treason in 1535.',
     difficulty: 'hard',
@@ -229,7 +229,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 474, chapter: 3,
     q: 'Samuel Pepys is famous for writing:',
-    options: ['The first novel ever written in the English language', 'A diary of London life in the 17th century covering the Great Plague and Great Fire', 'A definitive history of the English Civil War period', 'The first English-language newspaper published regularly'],
+    options: ['The very first novel ever written and published in the English language in Britain', 'A diary of London life in the 17th century covering the Great Plague and Great Fire', 'A comprehensive and definitive written history of the entire English Civil War period', 'The very first English-language newspaper, published on a regular and consistent basis'],
     answer: 1,
     explanation: 'Samuel Pepys kept a famous diary from 1660 to 1669 that gives a vivid picture of life in 17th-century London, including eyewitness accounts of the Great Plague (1665) and Great Fire of London (1666).',
     difficulty: 'hard',
@@ -292,7 +292,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 481, chapter: 3,
     q: 'The suffragettes used which tactics to campaign for women\'s votes?',
-    options: ['Peaceful petitions and letter-writing campaigns only', 'Direct action: protests, chaining to railings, hunger strikes and property damage', 'Writing formal letters and petitions to Parliament only', 'Attempting to stand as candidates in elections they were excluded from'],
+    options: ['Peaceful petitions and letter-writing campaigns targeting Parliament and the public', 'Direct action: protests, chaining to railings, hunger strikes and property damage', 'Writing only formal letters and carefully worded petitions directly to Parliament', 'Attempting to stand as electoral candidates in the very elections they were excluded from'],
     answer: 1,
     explanation: 'The suffragettes under Emmeline Pankhurst used direct action — demonstrations, chaining themselves to railings, hunger strikes in prison, and property damage — to demand votes for women.',
     difficulty: 'medium',
@@ -328,7 +328,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 485, chapter: 3,
     q: 'John Major succeeded Margaret Thatcher as Prime Minister. What was his main achievement regarding Northern Ireland?',
-    options: ['He signed the Good Friday Agreement', 'He helped establish the Northern Ireland peace process', 'He ended Direct Rule in Northern Ireland', 'He set up the Northern Ireland Assembly'],
+    options: ['He signed and formally agreed to the Good Friday Agreement in 1998', 'He helped establish the Northern Ireland peace process', 'He officially ended Direct Rule and restored devolved government to Northern Ireland', 'He personally set up and launched the Northern Ireland Assembly'],
     answer: 1,
     explanation: 'John Major (Prime Minister 1990–1997) helped establish the Northern Ireland peace process, laying the groundwork that led to the Good Friday Agreement signed by his successor Tony Blair in 1998.',
     difficulty: 'medium',
@@ -337,7 +337,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 486, chapter: 3,
     q: 'The Windrush generation refers to:',
-    options: ['Children evacuated from London and other cities during the Blitz', 'Caribbean migrants who came to Britain from 1948 to help rebuild post-war Britain', 'Soldiers and veterans who returned home from the First World War', 'Welsh miners who migrated to London seeking work in the 1930s'],
+    options: ['Children who were evacuated from London and other cities during the Blitz bombing', 'Caribbean migrants who came to Britain from 1948 to help rebuild post-war Britain', 'Soldiers and veterans who finally returned home from fighting in the First World War', 'Welsh miners and their families who migrated to London in search of work in the 1930s'],
     answer: 1,
     explanation: 'The Windrush generation refers to migrants from the Caribbean (particularly Jamaica) who came to Britain from 1948 onwards, named after the ship HMT Empire Windrush. They were invited to help rebuild post-war Britain.',
     difficulty: 'medium',
@@ -450,7 +450,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 498, chapter: 4,
     q: 'Thomas Hardy\'s novels are typically set in which region of England?',
-    options: ['The industrial north', 'The fictional "Wessex" region (based on rural south-west England)', 'The Scottish Highlands', 'London\'s East End'],
+    options: ['The industrial north of England, depicting factory towns and textile mills', 'The fictional "Wessex" region (based on rural south-west England)', 'The remote and rugged Scottish Highlands, featuring clans and moorland', 'London\'s East End, documenting the poverty and crime of the Victorian era'],
     answer: 1,
     explanation: 'Thomas Hardy (1840–1928) set his novels in a fictional "Wessex" region, based on the rural south-west of England (largely Dorset). His novels include "Far from the Madding Crowd" and "Tess of the d\'Urbervilles".',
     difficulty: 'hard',
@@ -459,7 +459,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 499, chapter: 4,
     q: 'Evelyn Waugh is a celebrated British author known for:',
-    options: ['Science fiction novels', 'Comic and satirical novels including "Brideshead Revisited"', 'Romantic poetry', 'Children\'s adventure stories'],
+    options: ['Dark and imaginative science fiction novels set in a futuristic world', 'Comic and satirical novels including "Brideshead Revisited"', 'Romantic poetry addressed to his many aristocratic patrons', 'Beloved children\'s adventure stories featuring young heroes'],
     answer: 1,
     explanation: 'Evelyn Waugh (1903–1966) was a celebrated British author known for comic and satirical novels. "Brideshead Revisited" (1945) is perhaps his most famous work, set among the English aristocracy.',
     difficulty: 'hard',
@@ -477,7 +477,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 501, chapter: 4,
     q: 'Edward Elgar is famous for composing:',
-    options: ['The National Anthem', '"Land of Hope and Glory" and the "Enigma Variations"', '"Jerusalem"', '"Rule Britannia"'],
+    options: ['The National Anthem, "God Save the King", performed at state events', '"Land of Hope and Glory" and the "Enigma Variations"', '"Jerusalem", the famous poem by William Blake set to music', '"Rule Britannia", the patriotic song dating from the 18th century'],
     answer: 1,
     explanation: 'Edward Elgar (1857–1934) composed "Land of Hope and Glory" (from the Pomp and Circumstance Marches) and the "Enigma Variations". He is one of Britain\'s most celebrated composers.',
     difficulty: 'medium',
@@ -504,7 +504,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 504, chapter: 4,
     q: 'Agatha Christie is famous for:',
-    options: ['Science fiction novels set in space and the future', 'Detective fiction featuring Hercule Poirot and Miss Marple', 'Poems about the First World War and its soldiers', 'Romantic novels set in the Victorian era'],
+    options: ['Science fiction novels set in space and the future', 'Detective fiction featuring Hercule Poirot and Miss Marple', 'Poems about the First World War and its soldiers', 'Sweeping romantic novels set in grand country houses in the Victorian era'],
     answer: 1,
     explanation: 'Agatha Christie (1890–1976) is one of Britain\'s most celebrated crime writers. Her detective novels feature characters like Hercule Poirot and Miss Marple and have sold over a billion copies worldwide.',
     difficulty: 'easy',
@@ -540,7 +540,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 508, chapter: 4,
     q: 'The population of the UK is approximately 67 million. Roughly what proportion lives in England?',
-    options: ['Half', 'Two-thirds', 'Five-sixths', 'Almost all of it — about 84%'],
+    options: ['Roughly half of the total UK population', 'About two-thirds of the total UK population', 'Around five-sixths of the total UK population', 'Almost all of it — about 84%'],
     answer: 3,
     explanation: 'About 84% of the UK\'s population of approximately 67 million lives in England, making England by far the most densely populated part of the UK.',
     difficulty: 'hard',
@@ -558,7 +558,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 510, chapter: 4,
     q: 'Afternoon tea is a British tradition that typically includes:',
-    options: ['Sandwiches, scones and cakes, served with tea', 'A full cooked meal with meat and vegetables', 'A light soup with bread', 'Coffee and biscuits only'],
+    options: ['Sandwiches, scones and cakes, served with tea', 'A full cooked meal with meat and vegetables', 'A light soup served in a bowl with crusty bread on the side', 'Coffee and biscuits only, with no other food served'],
     answer: 0,
     explanation: 'Afternoon tea is a traditional British custom consisting of sandwiches, scones with jam and clotted cream, and cakes, served with tea. It is said to have been introduced by the Duchess of Bedford in the 1840s.',
     difficulty: 'easy',
@@ -594,7 +594,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 514, chapter: 4,
     q: 'Sir Mo Farah is famous for:',
-    options: ['Winning multiple cycling world championships', 'Winning Olympic gold medals in long-distance running (5,000m and 10,000m)', 'Being the first Briton to run a sub-4-minute mile', 'Winning multiple Wimbledon titles'],
+    options: ['Winning multiple successive cycling world championship titles on the road', 'Winning Olympic gold medals in long-distance running (5,000m and 10,000m)', 'Being the first British athlete to run a sub-4-minute mile in competition', 'Winning multiple Wimbledon singles tennis titles during his career'],
     answer: 1,
     explanation: 'Sir Mo Farah is a British long-distance runner who won gold medals in both the 5,000m and 10,000m at the 2012 and 2016 Olympic Games, becoming one of Britain\'s greatest ever athletes.',
     difficulty: 'medium',
@@ -648,7 +648,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 520, chapter: 4,
     q: 'What is the Caledonian Canal?',
-    options: ['An ancient Roman road that ran across central Scotland', 'A canal linking the east and west coasts of Scotland through the Great Glen', 'Scotland\'s longest and deepest sea inlet (sea loch)', 'The main road route through the Scottish Highlands'],
+    options: ['An ancient Roman military road that once ran across the middle of central Scotland', 'A canal linking the east and west coasts of Scotland through the Great Glen', 'Scotland\'s longest and deepest sea inlet, also known as a sea loch or fjord', 'The main A9 road route that runs north through the heart of the Scottish Highlands'],
     answer: 1,
     explanation: 'The Caledonian Canal runs 60 miles through the Great Glen in Scotland, linking the North Sea to the Atlantic Ocean. It was built between 1803 and 1822 and passes through Loch Ness.',
     difficulty: 'hard',
@@ -693,7 +693,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 525, chapter: 4,
     q: 'Guy Fawkes Night is named after:',
-    options: ['A celebrated local hero', 'One of the conspirators in the 1605 Gunpowder Plot', 'A Victorian Prime Minister', 'A Norse god associated with fire'],
+    options: ['A celebrated local hero from the north of England', 'One of the conspirators in the 1605 Gunpowder Plot', 'A Victorian-era Prime Minister who served during the 19th century', 'A Norse god associated with fire, lightning and destruction'],
     answer: 1,
     explanation: 'Guy Fawkes Night (Bonfire Night, 5 November) is named after Guy Fawkes, one of the Catholic conspirators in the 1605 Gunpowder Plot. He was caught guarding the gunpowder beneath Parliament.',
     difficulty: 'easy',
@@ -752,7 +752,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 531, chapter: 5,
     q: 'What is a "life peer"?',
-    options: ['An elected member of the House of Commons serving a lifetime term', 'A member of the House of Lords appointed for life (the title is not inherited)', 'A senior member of the British royal family', 'A senior civil servant awarded an honorary title by the government'],
+    options: ['An elected member of the House of Commons serving a lifetime term', 'A member of the House of Lords appointed for life (the title is not inherited)', 'A senior member of the British royal family serving in a full-time official capacity', 'A senior civil servant awarded an honorary title by the government'],
     answer: 1,
     explanation: 'Life peers are members of the House of Lords appointed (usually by the Prime Minister) for their lifetime only — the title does not pass to their children. Most Lords are life peers.',
     difficulty: 'medium',
@@ -779,7 +779,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 534, chapter: 5,
     q: 'What is an "injunction"?',
-    options: ['A specific type of criminal charge', 'A court order requiring someone to do or stop doing something', 'A type of not-guilty verdict from a court', 'A financial fine imposed by a court'],
+    options: ['A specific type of criminal charge formally laid against a defendant by the prosecution', 'A court order requiring someone to do or stop doing something', 'A type of not-guilty verdict formally issued by a court following a hearing', 'A financial fine imposed by a court as a penalty for breaking the law'],
     answer: 1,
     explanation: 'An injunction is a court order requiring a person or organisation to do something or to stop doing something. It is a remedy available in civil law cases.',
     difficulty: 'hard',
@@ -788,7 +788,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 535, chapter: 5,
     q: 'Citizens Advice is an organisation that:',
-    options: ['A union body that represents workers in pay disputes', 'An organisation providing free, independent advice on legal and other problems', 'A body advising the government on concerns raised by citizens', 'An organisation that prepares people for citizenship tests'],
+    options: ['A union body that represents and negotiates on behalf of workers in pay disputes', 'An organisation providing free, independent advice on legal and other problems', 'A government advisory body formally examining and raising concerns from citizens', 'An organisation that provides preparation courses and materials for citizenship tests'],
     answer: 1,
     explanation: 'Citizens Advice is a network of charities that provides free, confidential and independent advice on legal, financial, housing, employment and other everyday problems.',
     difficulty: 'easy',
@@ -797,7 +797,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 536, chapter: 5,
     q: 'What does the Ombudsman do?',
-    options: ['Manages and controls government spending and budgets', 'Investigates public complaints about unfair treatment by government bodies', 'Oversees and monitors all UK election processes', 'Officially appoints and approves senior judges'],
+    options: ['Manages, monitors and controls all government spending and departmental budgets', 'Investigates public complaints about unfair treatment by government bodies', 'Oversees, administers and monitors all UK general and local election processes', 'Officially appoints, vets and formally approves all senior judges in England'],
     answer: 1,
     explanation: 'The Ombudsman (from the Swedish word for "representative") investigates complaints from members of the public who feel they have been treated unfairly by government departments or other public bodies.',
     difficulty: 'hard',
@@ -815,7 +815,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 538, chapter: 5,
     q: 'What is "judicial review"?',
-    options: ['When senior judges formally review their own past decisions', 'A legal process by which courts check the lawfulness of decisions by public bodies', 'The annual performance review conducted for the senior judiciary', 'A process by which MPs review and scrutinise court decisions'],
+    options: ['A process where senior judges formally review and reconsider their own past judgments', 'A legal process by which courts check the lawfulness of decisions by public bodies', 'The formal annual performance appraisal and review conducted for the senior judiciary', 'A process by which a parliamentary committee reviews and scrutinises recent court decisions'],
     answer: 1,
     explanation: 'Judicial review is a legal process by which the courts supervise the lawfulness of decisions made by public bodies, government departments and other authorities exercising public power.',
     difficulty: 'hard',
@@ -833,7 +833,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 540, chapter: 5,
     q: 'What is the "Privy Council"?',
-    options: ['A secret group that advises the monarch on sensitive legal matters', 'A formal body of senior politicians, judges and others that advises the monarch', 'The private offices and chambers of Parliament', 'The group of senior civil servants who run the civil service'],
+    options: ['A secret group that advises the monarch on sensitive constitutional and legal matters', 'A formal body of senior politicians, judges and others that advises the monarch', 'The private offices, chambers and official working rooms of Parliament', 'The group of senior civil servants who collectively run the UK civil service'],
     answer: 1,
     explanation: 'The Privy Council is a formal body that advises the monarch. Its members include senior politicians, judges and other important figures. In practice, most of its work is done through Orders in Council.',
     difficulty: 'hard',
@@ -842,7 +842,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 541, chapter: 5,
     q: 'Where is the UK\'s Supreme Court located?',
-    options: ['In the Houses of Parliament', 'In Middlesex Guildhall, Parliament Square, London', 'In the Old Bailey, London', 'In the Royal Courts of Justice, London'],
+    options: ['In the Houses of Parliament, Westminster', 'In Middlesex Guildhall, Parliament Square, London', 'At the Old Bailey Crown Court in the City of London', 'In the Royal Courts of Justice on the Strand in London'],
     answer: 1,
     explanation: 'The UK\'s Supreme Court is located in the Middlesex Guildhall on Parliament Square in London, opposite the Houses of Parliament. It was established in 2009, replacing the Appellate Committee of the House of Lords.',
     difficulty: 'hard',
@@ -860,7 +860,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 543, chapter: 5,
     q: 'What is an employment tribunal?',
-    options: ['A government body that sets and enforces minimum wage rules', 'An independent judicial body hearing employment disputes between employers and staff', 'A committee of MPs that reviews and updates employment law', 'A trade union body representing workers in pay disputes'],
+    options: ['A government regulatory body that formally sets and enforces minimum wage rules', 'An independent judicial body hearing employment disputes between employers and staff', 'A parliamentary committee of MPs that reviews, debates and updates employment law', 'A trade union negotiating body that formally represents workers in collective pay disputes'],
     answer: 1,
     explanation: 'An employment tribunal is an independent judicial body that hears disputes between employers and employees, such as claims of unfair dismissal, discrimination or unpaid wages.',
     difficulty: 'medium',
@@ -869,7 +869,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 544, chapter: 5,
     q: 'What is "Ofsted"?',
-    options: ['The Office for Statistics and national Data collection', 'The Office for Standards in Education — the body inspecting schools in England', 'The Office for managing Student Debt and grants', 'The Organisation for Science, Technology and national Development'],
+    options: ['The Office for Statistics and Analysis of national Data collection processes', 'The Office for Standards in Education — the body inspecting schools in England', 'The Office for managing and overseeing Student Debt repayments and grants', 'The Organisation for coordinating national Science, Technology and Development programmes'],
     answer: 1,
     explanation: 'Ofsted (Office for Standards in Education, Children\'s Services and Skills) inspects schools, nurseries, colleges and children\'s services in England and publishes reports on their quality.',
     difficulty: 'medium',
@@ -878,7 +878,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 545, chapter: 5,
     q: 'Which of the following is a role of local government?',
-    options: ['Setting local income tax rates for residents', 'Providing local services like refuse collection, libraries, parks and local roads', 'Running local NHS services and health centres', 'Directly controlling and funding local police forces'],
+    options: ['Setting and collecting local income tax rates and allowances for all residents', 'Providing local services like refuse collection, libraries, parks and local roads', 'Running and administering local NHS services, GP surgeries and health centres', 'Directly controlling, managing and funding all local police forces and services'],
     answer: 1,
     explanation: 'Local government provides a wide range of local services including refuse collection, libraries, parks, local roads and planning. They are funded by Council Tax and grants from central government.',
     difficulty: 'easy',
@@ -887,7 +887,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 546, chapter: 5,
     q: 'What is the Bank of England responsible for?',
-    options: ['Running and directly owning all UK commercial banks', 'Setting monetary policy including interest rates and issuing English banknotes', 'Collecting income tax and other taxes for the government', 'Managing only the national debt and government borrowing'],
+    options: ['Running, regulating and directly owning all UK high-street commercial banks', 'Setting monetary policy including interest rates and issuing English banknotes', 'Collecting income tax, VAT and all other taxes directly on behalf of the government', 'Managing and refinancing only the national debt and all government borrowing'],
     answer: 1,
     explanation: 'The Bank of England is the UK\'s central bank. It sets interest rates (via the Monetary Policy Committee), issues banknotes in England and Wales, and regulates the financial system.',
     difficulty: 'medium',
@@ -896,7 +896,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 547, chapter: 5,
     q: 'What is the "Council Tax"?',
-    options: ['A tax paid to the national government by local councils', 'A local tax paid by most households to fund local government services', 'A tax only paid by businesses in an area', 'A tax on buying and selling property'],
+    options: ['A tax paid to the national government by local councils on their earnings', 'A local tax paid by most households to fund local government services', 'A tax only paid by businesses operating within a local area', 'A tax on buying and selling residential and commercial property'],
     answer: 1,
     explanation: 'Council Tax is a local tax paid by most households that helps fund local government services like refuse collection, schools, parks and roads. The amount varies by area and the value band of the property.',
     difficulty: 'easy',
@@ -905,7 +905,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 548, chapter: 5,
     q: 'What is the difference between Scotland\'s legal system and England and Wales\'s?',
-    options: ['There is no difference — all UK law is identical throughout', 'Scotland has its own distinct legal system with different courts and some different laws', 'Scotland follows separate European law rather than UK law', 'Scotland uses the Napoleonic Code inherited from French influence'],
+    options: ['There is no meaningful legal difference — all UK law is completely identical throughout', 'Scotland has its own distinct legal system with different courts and some different laws', 'Scotland separately follows European Union law rather than the standard UK legal system', 'Scotland uses the Napoleonic Code that was historically inherited from French legal influence'],
     answer: 1,
     explanation: 'Scotland has its own distinct legal system, separate from that of England and Wales. Scottish law has different courts (Sheriff Court, Court of Session), different legal terminology and some different laws.',
     difficulty: 'medium',
@@ -932,7 +932,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 551, chapter: 5,
     q: 'What is meant by "proportional representation"?',
-    options: ['A system giving more votes to larger constituency areas', 'A system where seat share roughly matches each party\'s vote share', 'A quota system ensuring a set proportion of seats go to women', 'A system where the proportion of tax owed matches income level'],
+    options: ['A system giving more votes to larger constituency areas in national elections', 'A system where seat share roughly matches each party\'s vote share', 'A quota system ensuring a set proportion of all parliamentary seats go to women', 'A system where the proportion of income tax owed matches the taxpayer\'s income level'],
     answer: 1,
     explanation: 'Proportional representation (PR) is a voting system where parties win seats in proportion to the share of votes they receive nationally. Scotland, Wales and Northern Ireland use forms of PR for their devolved elections.',
     difficulty: 'medium',
@@ -941,7 +941,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 552, chapter: 5,
     q: 'What is the World Trade Organisation (WTO)?',
-    options: ['A military alliance of democratic nations', 'An international organisation that regulates global trade between nations', 'A regional European trade and customs bloc', 'An organisation that sets global taxation rules and standards'],
+    options: ['A military and security alliance formed between democratic nations worldwide', 'An international organisation that regulates global trade between nations', 'A regional European trading bloc focused on customs and tariff agreements', 'An international body that coordinates and sets global taxation rules and standards'],
     answer: 1,
     explanation: 'The World Trade Organisation (WTO) is an international organisation that regulates global trade between nations. It provides a framework for negotiating trade agreements and resolving trade disputes.',
     difficulty: 'medium',
@@ -950,7 +950,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 553, chapter: 5,
     q: 'What is "Interpol"?',
-    options: ['An international political party organisation', 'An international organisation enabling police cooperation across countries', 'A European body that controls immigration and borders', 'An international criminal court for serious crimes'],
+    options: ['An international political party and campaigning organisation', 'An international organisation enabling police cooperation across countries', 'A European body that controls and enforces immigration and border rules', 'An international criminal court that tries individuals for serious crimes'],
     answer: 1,
     explanation: 'Interpol (International Criminal Police Organisation) is an international organisation that enables police and law enforcement agencies in different countries to cooperate in fighting international crime.',
     difficulty: 'medium',
@@ -959,7 +959,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 554, chapter: 5,
     q: 'What does "due process" mean in the UK legal system?',
-    options: ['Paying a court fee to access the justice system', 'The requirement that laws and legal procedures must be fair and properly applied', 'The formal process of appealing against a court\'s decision', 'The legal requirement to have a qualified lawyer in court'],
+    options: ['Paying an access fee to the court before you can use the UK justice system', 'The requirement that laws and legal procedures must be fair and properly applied', 'The formal legal process of appealing and challenging against a court\'s decision', 'The legal requirement to have a qualified and registered lawyer present in court'],
     answer: 1,
     explanation: 'Due process means that legal proceedings must be conducted according to fair, established rules and principles. Everyone is entitled to a fair hearing and must be treated equally under the law.',
     difficulty: 'hard',
@@ -968,7 +968,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 555, chapter: 5,
     q: 'What is the "European Court of Human Rights" (ECHR)?',
-    options: ['A court of the European Union that hears trade disputes', 'An international court in Strasbourg hearing cases about human rights breaches', 'The UK\'s highest domestic court for constitutional cases', 'A United Nations court that tries war crimes and crimes against humanity'],
+    options: ['A specialist court of the European Union that hears commercial trade disputes', 'An international court in Strasbourg hearing cases about human rights breaches', 'The UK\'s highest domestic court, which hears constitutional and serious civil cases', 'A United Nations court that tries war crimes and crimes against humanity'],
     answer: 1,
     explanation: 'The European Court of Human Rights (ECHR) is based in Strasbourg, France. It is a court of the Council of Europe (not the EU) that hears cases where individuals claim their rights under the European Convention on Human Rights have been violated.',
     difficulty: 'medium',
@@ -977,7 +977,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 556, chapter: 5,
     q: 'What does "innocent until proven guilty" mean?',
-    options: ['Everyone must be treated as guilty when arrested', 'A person accused of a crime is considered innocent unless proven guilty by a court', 'Only people with no criminal record are considered innocent', 'Guilt is decided by the police, not the courts'],
+    options: ['Everyone who is arrested must be treated as guilty until the case is fully resolved', 'A person accused of a crime is considered innocent unless proven guilty by a court', 'Only people with no prior criminal record are treated as innocent by the law and courts', 'Guilt for a crime is determined and decided entirely by the arresting police officers'],
     answer: 1,
     explanation: '"Innocent until proven guilty" (the presumption of innocence) is a fundamental principle of British justice. A person accused of a crime is considered innocent until a court proves them guilty beyond reasonable doubt.',
     difficulty: 'easy',
@@ -995,7 +995,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 558, chapter: 5,
     q: 'What is the purpose of paying National Insurance contributions?',
-    options: ['To fund local council services and infrastructure', 'To build entitlement to state benefits including the State Pension and NHS', 'To fund the national schools and education system', 'To contribute to the UK\'s overseas aid and development budget'],
+    options: ['To fund local council services and all associated public infrastructure projects', 'To build entitlement to state benefits including the State Pension and NHS', 'To fund the national school system and all compulsory state education programmes', 'To contribute directly to the UK\'s overseas foreign aid and development budget'],
     answer: 1,
     explanation: 'National Insurance contributions go towards funding state benefits including the State Pension, Jobseeker\'s Allowance, Maternity Allowance and access to the NHS.',
     difficulty: 'easy',
@@ -1031,7 +1031,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 562, chapter: 5,
     q: 'What is the role of GCHQ?',
-    options: ['Managing the collection of UK taxes and duties', 'Providing intelligence and information to protect national security', 'Regulating banks and the broader financial sector', 'Overseeing and monitoring all national elections'],
+    options: ['Managing and administering the collection of all UK taxes and duties', 'Providing intelligence and information to protect national security', 'Regulating all UK banks and supervising the broader UK financial sector', 'Overseeing, administering and monitoring all UK national and local elections'],
     answer: 1,
     explanation: 'GCHQ (Government Communications Headquarters) is a UK intelligence and security organisation that monitors communications to provide intelligence to protect national security and support the military.',
     difficulty: 'hard',
@@ -1049,7 +1049,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 564, chapter: 5,
     q: 'Who is responsible for foreign intelligence gathering in the UK?',
-    options: ['MI5', 'MI6 (SIS — the Secret Intelligence Service)', 'GCHQ', 'The Metropolitan Police Special Branch'],
+    options: ['MI5 (the domestic Security Service)', 'MI6 (SIS — the Secret Intelligence Service)', 'GCHQ (the signals intelligence agency)', 'The Metropolitan Police Special Branch'],
     answer: 1,
     explanation: 'MI6 (officially known as the Secret Intelligence Service or SIS) is the UK\'s foreign intelligence service, responsible for gathering intelligence overseas to protect the UK\'s national security.',
     difficulty: 'hard',
@@ -1058,7 +1058,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 565, chapter: 5,
     q: 'Which of the following is a legal right of an employee in the UK?',
-    options: ['To receive an annual Christmas or seasonal bonus payment', 'To receive a written statement of employment terms within 2 months of starting', 'To work no more than a 30-hour week by law', 'To receive free meals or refreshments while at work'],
+    options: ['To receive a guaranteed annual Christmas or seasonal bonus payment from the employer', 'To receive a written statement of employment terms within 2 months of starting', 'To work no more than a statutory 30-hour week as enshrined in employment law', 'To receive free daily meals or refreshments from the employer while at work'],
     answer: 1,
     explanation: 'Employees have a legal right to receive a written statement of their employment terms and conditions (sometimes called a contract) within two months of starting work.',
     difficulty: 'medium',
@@ -1067,7 +1067,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 566, chapter: 5,
     q: 'What is "statutory sick pay"?',
-    options: ['Pay given to all staff when the company temporarily closes down', 'A minimum payment that eligible employees receive from their employer when sick', 'Government benefits paid when a worker becomes unemployed', 'A reward bonus paid for not taking any sick days in a year'],
+    options: ['Pay that is automatically given to all staff when the business temporarily closes down', 'A minimum payment that eligible employees receive from their employer when sick', 'Government welfare benefits paid to a worker who has become recently unemployed', 'A reward or attendance bonus paid to employees who take no sick days in a year'],
     answer: 1,
     explanation: 'Statutory sick pay (SSP) is the minimum amount employers must pay eligible employees who are sick. The rate and rules are set by government.',
     difficulty: 'medium',
@@ -1076,7 +1076,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 567, chapter: 5,
     q: 'Which of the following is an example of a "civil wrong" (tort)?',
-    options: ['Murder', 'Theft or burglary', 'Negligence that causes injury to another person', 'Possession of controlled drugs'],
+    options: ['Murder or unlawful killing of another person', 'Theft or residential burglary involving property', 'Negligence that causes injury to another person', 'Possession of controlled or prohibited drugs'],
     answer: 2,
     explanation: 'A tort is a civil wrong — something that causes harm to another person for which the harmed party can seek compensation through the civil courts. Negligence, defamation and trespass are examples of torts.',
     difficulty: 'hard',
@@ -1085,7 +1085,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 568, chapter: 5,
     q: 'The Data Protection Act requires organisations to:',
-    options: ['Share all data with the government on request', 'Handle personal data responsibly and only for specified, lawful purposes', 'Store all data for at least 10 years', 'Share all data with law enforcement automatically'],
+    options: ['Share all personal data with the government whenever formally requested to do so', 'Handle personal data responsibly and only for specified, lawful purposes', 'Store and retain all collected personal data for at least 10 years by law', 'Share all personal data with law enforcement agencies automatically'],
     answer: 1,
     explanation: 'The Data Protection Act (now incorporated into UK GDPR) requires organisations to handle personal data responsibly, keep it secure, only use it for specified lawful purposes, and not keep it longer than necessary.',
     difficulty: 'medium',
@@ -1094,7 +1094,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 569, chapter: 5,
     q: 'What is "community service" as a criminal sentence?',
-    options: ['A prison sentence that is served within the community', 'A non-custodial sentence requiring offenders to do unpaid work for the community', 'A financial fine that is paid directly to the local council', 'A condition requiring attendance at a community centre programme'],
+    options: ['A custodial prison sentence that is partially served out in the community', 'A non-custodial sentence requiring offenders to do unpaid work for the community', 'A financial penalty fine that is paid by the offender directly to the local council', 'A court condition requiring regular attendance at a supervised community programme'],
     answer: 1,
     explanation: 'Community service (now called Community Payback) is a non-custodial sentence that requires offenders to do unpaid work in their community. It is used for less serious offences as an alternative to prison.',
     difficulty: 'medium',
@@ -1103,7 +1103,7 @@ export const QUESTIONS_BATCH3 = [
   {
     id: 570, chapter: 5,
     q: 'What is the role of a "Returning Officer" in an election?',
-    options: ['The officer who physically returns ballot papers to Parliament', 'The official responsible for running the election and declaring the result in a constituency', 'The officer who notifies losing candidates of their defeat', 'The official who manages postal and overseas voter registration'],
+    options: ['The officer who physically transports and returns all completed ballot papers to Parliament', 'The official responsible for running the election and declaring the result in a constituency', 'The officer formally responsible for notifying all losing candidates of their official defeat', 'The official who manages and oversees all postal and overseas voter registration'],
     answer: 1,
     explanation: 'A Returning Officer is the official responsible for conducting the election in a constituency — they manage the polling stations, oversee the count, and formally declare the result.',
     difficulty: 'hard',
