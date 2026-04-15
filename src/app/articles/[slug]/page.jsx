@@ -148,8 +148,18 @@ export default function ArticlePage({ params }) {
           />
         </article>
 
+        {/* Author byline */}
+        <div className="mt-8 flex items-center gap-2">
+          <div className="w-7 h-7 rounded-full bg-brand-500/20 flex items-center justify-center text-xs font-bold text-brand-400 flex-shrink-0">R</div>
+          <p className="text-xs text-ink-muted">
+            Written by{' '}
+            <a href="/about" className="text-ink font-medium hover:text-brand-400 transition-colors">Rory Stephenson</a>
+            {' '}— passed the Life in the UK test and built this site as a free alternative to subscription-based test prep.
+          </p>
+        </div>
+
         {/* CTA — drives to practice */}
-        <div className="mt-10 bg-brand-500/10 border border-brand-500/20 rounded-2xl p-6 text-center">
+        <div className="mt-6 bg-brand-500/10 border border-brand-500/20 rounded-2xl p-6 text-center">
           <p className="text-sm font-medium text-ink mb-1">Ready to put this into practice?</p>
           <p className="text-xs text-ink-muted mb-4">Free practice questions — no login, no paywall.</p>
           <div className="flex gap-3 justify-center flex-wrap">
@@ -188,15 +198,6 @@ export default function ArticlePage({ params }) {
           </div>
         </div>
 
-        {/* Author byline */}
-        <div className="mt-6 flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-brand-500/20 flex items-center justify-center text-xs font-bold text-brand-400 flex-shrink-0">R</div>
-          <p className="text-xs text-ink-muted">
-            Written by{' '}
-            <a href="/about" className="text-ink font-medium hover:text-brand-400 transition-colors">Rory Stephenson</a>
-            {' '}— passed the Life in the UK test and built this site as a free alternative to subscription-based test prep.
-          </p>
-        </div>
       </div>
     </>
   )
