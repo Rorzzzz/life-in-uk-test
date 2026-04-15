@@ -6,6 +6,11 @@ const nextConfig = {
   // Strict mode catches bugs early
   reactStrictMode: true,
 
+  // Inline critical CSS into HTML to eliminate render-blocking stylesheet request
+  experimental: {
+    optimizeCss: true,
+  },
+
   // Image optimisation
   images: {
     formats: ['image/avif', 'image/webp'],
