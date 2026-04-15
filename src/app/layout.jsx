@@ -12,14 +12,16 @@ import './globals.css'
 const clashDisplay = localFont({
   src: '../../public/ClashDisplay-Variable.woff2',
   variable: '--font-clash',
-  display: 'swap',
+  display: 'optional',
+  preload: true,
 })
 
 // Satoshi — local variable font
 const satoshi = localFont({
   src: '../../public/Satoshi-Variable.woff2',
   variable: '--font-satoshi',
-  display: 'swap',
+  display: 'optional',
+  preload: true,
 })
 
 // JetBrains Mono — XP numbers, stats
@@ -66,12 +68,20 @@ export const metadata = {
   },
 }
 
+// Inline script that runs synchronously before hydration to set the theme class,
+// preventing a flash of wrong theme and the forced repaint that delays LCP.
+const themeInitScript = `(function(){try{var t=localStorage.getItem('passtheuktest_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t);}catch(e){}})();`
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${clashDisplay.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* Theme init: runs before hydration to prevent repaint that delays LCP */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XN3L6SC1QL" strategy="lazyOnload" />
       <Script id="google-analytics" strategy="lazyOnload">{`
         window.dataLayer = window.dataLayer || [];
