@@ -20,7 +20,8 @@ export default function ArticlesSearchClient({ articles }) {
     return articles.filter(a =>
       a.title.toLowerCase().includes(q) ||
       a.description?.toLowerCase().includes(q) ||
-      a.category?.toLowerCase().includes(q)
+      a.category?.toLowerCase().includes(q) ||
+      a.plainText?.includes(q)
     )
   }, [query, articles])
 
