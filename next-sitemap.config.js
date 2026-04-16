@@ -3,9 +3,13 @@ module.exports = {
   siteUrl: process.env.SITE_URL || 'https://passtheuktest.co.uk',
   generateRobotsTxt: true,
   robotsTxtOptions: {
+    // Single User-agent block — two blocks is technically invalid and confuses some crawlers
     policies: [
-      { userAgent: '*', allow: '/' },
-      { userAgent: '*', disallow: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily'], allow: ['/exam-format'] },
+      {
+        userAgent: '*',
+        allow: ['/', '/exam-format'],
+        disallow: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily'],
+      },
     ],
   },
   exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/exam/info', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
