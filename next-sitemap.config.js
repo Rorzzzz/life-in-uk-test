@@ -8,7 +8,14 @@ module.exports = {
       {
         userAgent: '*',
         allow: ['/', '/exam-format'],
-        disallow: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily'],
+        disallow: [
+          '/exam',
+          '/progress',
+          '/weak-spots',
+          '/flashcards',
+          '/daily',
+          '/_next/static/media/',  // font files and other static media — not indexable content
+        ],
       },
     ],
   },
