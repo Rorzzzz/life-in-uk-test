@@ -4,7 +4,7 @@ import { QUESTION_COUNT } from '@/data/questions'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
 
 export const metadata = {
-  title: 'Life in the UK Test 2026 — Complete Prep Guide | Pass the UK Test',
+  title: 'Life in the UK Test 2026 — Free Complete Preparation Guide',
   description: 'Everything you need to pass the Life in the UK test in 2026. Practice questions, mock tests, study guides, tips and cheat sheet. Free.',
   openGraph: {
     title: 'Life in the UK Test 2026 — Free Complete Prep Guide',

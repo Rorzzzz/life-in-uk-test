@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
   const topic = getTopicBySlug(params.slug)
   if (!topic) return {}
   return {
-    title: `${topic.title} — Life in the UK Test Questions`,
+    title: `${topic.title} — Free Life in the UK Test Practice Questions`,
     description: topic.description,
     alternates: { canonical: `https://passtheuktest.co.uk/topic/${params.slug}` },
   }

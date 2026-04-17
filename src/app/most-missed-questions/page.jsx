@@ -4,8 +4,8 @@ import { QUESTIONS } from '@/data/questions'
 import { MOST_MISSED_IDS } from '@/data/mostMissed'
 
 export const metadata = {
-  title: 'Most Commonly Failed Life in the UK Test Questions',
-  description: 'The questions that candidates fail most often in the Life in the UK test. Study these to avoid the most common mistakes.',
+  title: 'Most Commonly Failed Life in the UK Test Questions — Study These First',
+  description: 'The questions that candidates fail most often in the Life in the UK test. Study these before anything else to avoid the most common mistakes.',
   alternates: { canonical: 'https://passtheuktest.co.uk/most-missed-questions' },
 }
 

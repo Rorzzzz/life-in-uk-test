@@ -3,7 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
 
 export const metadata = {
-  title: 'Mock Tests — Pass the UK Test',
+  title: 'Life in the UK Mock Tests 2026 — 45 Free Full Practice Exams',
   description: `Practice with ${MOCK_TEST_COUNT} full mock tests for the Life in the UK citizenship test. 24 questions, 45 minutes, pass mark 18/24. Free.`,
   alternates: { canonical: 'https://passtheuktest.co.uk/mock-test' },
 }

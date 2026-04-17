@@ -30,8 +30,8 @@ export async function generateMetadata({ params }) {
   const ch = getChapterBySlug(params.chapter)
   if (!ch) return {}
   return {
-    title: `${ch.title} — Life in the UK Study Guide`,
-    description: `Study guide for ${ch.title} — Life in the UK citizenship test. Key facts, dates, people and explanations.`,
+    title: `${ch.title} — Life in the UK Test Study Notes 2026`,
+    description: `Study notes for ${ch.title} — Life in the UK citizenship test. Key facts, dates, people and explanations to help you pass.`,
     alternates: { canonical: `https://passtheuktest.co.uk/study/${params.chapter}` },
   }
 }

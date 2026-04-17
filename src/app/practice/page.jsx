@@ -3,8 +3,8 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHAPTERS, getByChapter } from '@/data/questions'
 
 export const metadata = {
-  title: 'Practice Tests — Pass the UK Test',
-  description: 'Practice Life in the UK test questions by chapter. Instant feedback, explanations, and XP rewards. Free adaptive practice.',
+  title: 'Life in the UK Test Practice Questions 2026 — Free, 570 Questions',
+  description: 'Practice 570 Life in the UK test questions by chapter. Instant feedback, explanations, and XP rewards. Free adaptive practice.',
   alternates: { canonical: 'https://passtheuktest.co.uk/practice' },
 }
 

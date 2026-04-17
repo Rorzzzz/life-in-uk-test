@@ -4,8 +4,8 @@ import { STUDY_CHAPTERS } from '@/data/studyGuide'
 import { CHAPTERS } from '@/data/questions'
 
 export const metadata = {
-  title: 'Study Guide — Life in the UK Test 2026',
-  description: 'Free study guide covering all 5 chapters of the official Life in the UK handbook. Everything you need to know to pass your citizenship test.',
+  title: 'Life in the UK Test Study Guide 2026 — All Chapters, Free',
+  description: 'Free study guide covering all chapters of the official Life in the UK handbook. Key facts, dates and people — everything you need to pass your citizenship test.',
   alternates: { canonical: 'https://passtheuktest.co.uk/study' },
 }
 

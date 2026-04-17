@@ -5,11 +5,11 @@ import { BookOpen } from 'lucide-react'
 import ArticlesSearchClient from './ArticlesSearchClient'
 
 export const metadata = {
-  title: 'Life in the UK Test Articles & Guides 2026',
+  title: 'Life in the UK Test Guides 2026 — Tips, Study Help & Free Advice',
   description: 'Free guides to help you pass the Life in the UK citizenship test — study tips, test day advice, booking guides and more.',
   alternates: { canonical: 'https://passtheuktest.co.uk/articles' },
   openGraph: {
-    title: 'Life in the UK Test Articles & Guides 2026',
+    title: 'Life in the UK Test Guides 2026 — Tips, Study Help & Free Advice',
     description: 'Free guides to help you pass the Life in the UK citizenship test.',
     url: 'https://passtheuktest.co.uk/articles',
     type: 'website',
