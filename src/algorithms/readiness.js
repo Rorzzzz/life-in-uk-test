@@ -40,5 +40,5 @@ export function getReadinessTier(score) {
   if (score >= 60) return { label: 'Almost ready',         colour: '#3381ff', emoji: '📚' }
   if (score >= 50) return { label: 'Making good progress', colour: '#f59e0b', emoji: '⚡' }
   if (score >= 25) return { label: 'Keep practising',      colour: '#a855f7', emoji: '💪' }
-  return                  { label: 'Just getting started', colour: '#ff4d6d', emoji: '🌱' }
+  return                  { label: 'Just getting started', colour: '#64748b', emoji: '🌱' }
 }
