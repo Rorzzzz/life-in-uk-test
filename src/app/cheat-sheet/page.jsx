@@ -4,20 +4,41 @@ import { CHEAT_SHEET } from '@/data/cheatSheet'
 import PrintButton from './PrintButton'
 
 export const metadata = {
-  title: 'Life in the UK Test Cheat Sheet — Key Dates, Facts & People',
-  description: 'Printable cheat sheet for the Life in the UK test. Key dates, famous people, inventions, patron saints, and capitals — everything to memorise.',
+  title: 'Life in the UK Test Cheat Sheet 2026 — Free Printable',
+  description: 'The most complete free printable cheat sheet for the Life in the UK test. Key dates, patron saints, famous people, arts, music, sports origins and Parliament — all on one page.',
   alternates: { canonical: 'https://passtheuktest.co.uk/cheat-sheet' },
+  openGraph: {
+    title: 'Life in the UK Test Cheat Sheet 2026 — Free Printable',
+    description: 'Key dates, patron saints, famous people, arts, music, sports origins and Parliament — everything to memorise, free and printable.',
+    url: 'https://passtheuktest.co.uk/cheat-sheet',
+    type: 'website',
+  },
 }
 
 export default function CheatSheetPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Life in the UK Test Key Dates Cheat Sheet 2026',
+    description: 'Key dates, facts and people for the Life in the UK citizenship test',
+    numberOfItems: CHEAT_SHEET.keyDates.length,
+    itemListElement: CHEAT_SHEET.keyDates.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.date,
+      description: item.fact,
+    })),
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Cheat Sheet', path: '/cheat-sheet' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-display font-bold text-ink">Cheat Sheet</h1>
-          <p className="text-base text-ink-muted">Print this before your test</p>
+          <h1 className="text-2xl font-display font-bold text-ink">Life in the UK Test Cheat Sheet</h1>
+          <p className="text-base text-ink-muted">Print this before your test — 2026 edition</p>
         </div>
         <PrintButton />
       </div>
@@ -49,6 +70,19 @@ export default function CheatSheetPage() {
         </div>
       </section>
 
+      {/* Parliament */}
+      <section className="mb-8">
+        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Parliament & Government</h2>
+        <div className="space-y-2">
+          {CHEAT_SHEET.parliament.map(item => (
+            <div key={item.fact} className="bg-card rounded-xl p-3 flex items-start gap-3">
+              <span className="font-semibold text-ink text-sm whitespace-nowrap min-w-[140px] flex-shrink-0 pt-0.5">{item.fact}</span>
+              <span className="text-sm text-ink-muted">{item.detail}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Key Numbers */}
       <section className="mb-8">
         <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Key Numbers</h2>
@@ -57,6 +91,51 @@ export default function CheatSheetPage() {
             <div key={item.number} className="bg-card rounded-xl p-3 flex items-start gap-3">
               <span className="font-mono font-bold text-brand-400 text-base whitespace-nowrap min-w-[60px]">{item.number}</span>
               <span className="text-base text-ink-muted">{item.fact}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Arts & Architecture */}
+      <section className="mb-8">
+        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Arts & Architecture</h2>
+        <div className="space-y-2">
+          {CHEAT_SHEET.arts.map(item => (
+            <div key={item.name} className="bg-card rounded-xl p-3 flex items-center gap-3">
+              <div className="flex-1">
+                <p className="font-semibold text-ink text-base">{item.name}</p>
+                <p className="text-sm text-ink-muted">{item.known}</p>
+              </div>
+              <span className="text-xs bg-raised px-2 py-1 rounded-full text-ink-muted shrink-0">{item.category}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Music */}
+      <section className="mb-8">
+        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Music & Composers</h2>
+        <div className="space-y-2">
+          {CHEAT_SHEET.music.map(item => (
+            <div key={item.name} className="bg-card rounded-xl p-3 flex items-center gap-3">
+              <div className="flex-1">
+                <p className="font-semibold text-ink text-base">{item.name}</p>
+                <p className="text-sm text-ink-muted">{item.known}</p>
+              </div>
+              <span className="text-xs font-mono text-ink-muted shrink-0">{item.era}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Sports Origins */}
+      <section className="mb-8">
+        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Sports Origins</h2>
+        <div className="space-y-2">
+          {CHEAT_SHEET.sportsOrigins.map(item => (
+            <div key={item.sport} className="bg-card rounded-xl p-3 flex items-start gap-3">
+              <span className="font-semibold text-ink text-sm whitespace-nowrap min-w-[80px] shrink-0 pt-0.5">{item.sport}</span>
+              <span className="text-sm text-ink-muted">{item.detail}</span>
             </div>
           ))}
         </div>
@@ -94,7 +173,7 @@ export default function CheatSheetPage() {
         </div>
       </section>
 
-      {/* Key Dates — condensed */}
+      {/* Key Dates */}
       <section className="mb-8">
         <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Key Dates</h2>
         <div className="space-y-1.5">

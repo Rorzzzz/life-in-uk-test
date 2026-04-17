@@ -50,7 +50,7 @@ export const CHEAT_SHEET = {
     { number: '24',       fact: 'Questions in the Life in the UK test' },
     { number: '45 mins',  fact: 'Time allowed for the test' },
     { number: '18/24',    fact: 'Pass mark (75%)' },
-    { number: '£50',      fact: 'Test fee per attempt' },
+    { number: '£50–£80',  fact: 'Test fee — £50 standard, £75 out of hours/short notice, £80 Super Priority' },
     { number: '67 million',fact: 'Approximate population of the UK' },
     { number: '650',      fact: 'Members of Parliament (MPs) in the House of Commons' },
     { number: '5 years',  fact: 'Maximum term of a Parliament (since Fixed-term Parliaments Act)' },
@@ -96,6 +96,44 @@ export const CHEAT_SHEET = {
     { nation: 'Scotland',         capital: 'Edinburgh' },
     { nation: 'Wales',            capital: 'Cardiff' },
     { nation: 'Northern Ireland', capital: 'Belfast' },
+  ],
+
+  parliament: [
+    { fact: 'House of Commons',     detail: '650 elected MPs — the elected chamber; holds real power' },
+    { fact: 'House of Lords',       detail: 'Appointed members — not elected; scrutinises and revises legislation' },
+    { fact: 'Life peer',            detail: 'Appointed to the Lords for life — title does not pass to children' },
+    { fact: 'Prime Minister',       detail: 'Leader of the party with a majority in the House of Commons' },
+    { fact: 'Speaker',              detail: 'Chairs debates in the Commons; must remain politically neutral' },
+    { fact: 'Scottish Parliament',  detail: 'Devolved parliament in Edinburgh — established 1999' },
+    { fact: 'The Senedd',           detail: 'Welsh Parliament — devolved government for Wales; established 1999' },
+    { fact: 'NI Assembly',          detail: 'Northern Ireland Assembly — devolved government; established 1999' },
+    { fact: 'Devolution',           detail: 'Transfer of powers from Westminster to Scotland, Wales and NI (1999)' },
+  ],
+
+  arts: [
+    { name: 'J.M.W. Turner',        known: 'The Fighting Temeraire',                      category: 'Painter' },
+    { name: 'John Constable',       known: 'The Hay Wain',                                category: 'Painter' },
+    { name: 'David Hockney',        known: 'A Bigger Splash',                             category: 'Painter' },
+    { name: 'Henry Moore',          known: 'Abstract sculptures of human forms',           category: 'Sculptor' },
+    { name: 'Barbara Hepworth',     known: 'Abstract sculptor, St Ives',                  category: 'Sculptor' },
+    { name: 'Christopher Wren',     known: 'St Paul\'s Cathedral, London',                category: 'Architect' },
+    { name: 'Inigo Jones',          known: 'Introduced classical architecture to England', category: 'Architect' },
+  ],
+
+  music: [
+    { name: 'Edward Elgar',         known: 'Land of Hope and Glory (Pomp and Circumstance)', era: 'Victorian/Edwardian' },
+    { name: 'Benjamin Britten',     known: 'Peter Grimes; The Young Person\'s Guide to the Orchestra', era: '20th century' },
+    { name: 'George Frideric Handel', known: 'Messiah — composed while living in London',  era: '18th century' },
+    { name: 'Henry Purcell',        known: 'Dido and Aeneas',                              era: '17th century' },
+  ],
+
+  sportsOrigins: [
+    { sport: 'Football',            detail: 'Football Association formed 1863 — FA Cup first held 1872' },
+    { sport: 'Rugby',               detail: 'Originated at Rugby School 1823 — Rugby Football Union formed 1871' },
+    { sport: 'Cricket',             detail: 'Established in England 18th century — first Test match 1877' },
+    { sport: 'Tennis',              detail: 'Wimbledon first held 1877 — oldest tennis tournament in the world' },
+    { sport: 'Golf',                detail: 'Originated in Scotland — first Open Championship 1860' },
+    { sport: 'Grand National',      detail: 'Horse race at Aintree — held since 1839' },
   ],
 
   inventions: [
