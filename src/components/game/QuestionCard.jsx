@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { m, AnimatePresence } from 'framer-motion'
 import { Volume2, VolumeX } from 'lucide-react'
 import clsx from 'clsx'
 import AnswerButton from './AnswerButton'
@@ -108,15 +107,9 @@ export default function QuestionCard({
       )}
 
       {/* Question */}
-      <AnimatePresence mode="wait" initial={false}>
-        <m.div
+        <div
           key={question.id}
-          className="bg-card rounded-2xl p-5 border border-border"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.2 }}
-          style={{ willChange: 'opacity, transform' }}
+          className="bg-card rounded-2xl p-5 border border-border animate-slide-up"
         >
           <div className="flex items-start justify-between gap-3 mb-5">
             <h2 className="text-base font-semibold text-ink leading-snug flex-1">
@@ -148,8 +141,7 @@ export default function QuestionCard({
               />
             ))}
           </div>
-        </m.div>
-      </AnimatePresence>
+        </div>
 
       {/* Explanation */}
       {answered && (
