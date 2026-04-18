@@ -36,6 +36,7 @@ export default function QuestionCard({
     setXpGained(0)
     setShowXP(false)
     topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
   }, [question?.id])
 
   // Scroll explanation + Next button into view on mobile when answer is revealed
