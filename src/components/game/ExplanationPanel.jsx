@@ -1,17 +1,12 @@
 'use client'
 
-import { m } from 'framer-motion'
 import { CheckCircle, XCircle, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ExplanationPanel({ isCorrect, explanation, xpGained, questionId, onNext }) {
   return (
-    <m.div
-      className={`rounded-2xl p-5 border-2 ${isCorrect ? 'border-success/30 bg-success/5' : 'border-danger/30 bg-danger/5'}`}
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25 }}
-      style={{ willChange: 'opacity, transform' }}
+    <div
+      className={`rounded-2xl p-5 border-2 animate-slide-up ${isCorrect ? 'border-success/30 bg-success/5' : 'border-danger/30 bg-danger/5'}`}
       aria-live="polite"
       aria-atomic="true"
     >
@@ -49,6 +44,6 @@ export default function ExplanationPanel({ isCorrect, explanation, xpGained, que
           </button>
         )}
       </div>
-    </m.div>
+    </div>
   )
 }
