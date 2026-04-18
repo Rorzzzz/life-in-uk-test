@@ -59,7 +59,7 @@ export default function FlashCard({ question }) {
 
   return (
     <div {...wrapperProps}>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence initial={false}>
         <m.div
           key={flipped ? 'back' : 'front'}
           initial={{ opacity: 0, scale: 0.96 }}

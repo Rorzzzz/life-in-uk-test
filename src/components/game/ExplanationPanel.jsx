@@ -10,7 +10,8 @@ export default function ExplanationPanel({ isCorrect, explanation, xpGained, que
       className={`rounded-2xl p-5 border-2 ${isCorrect ? 'border-success/30 bg-success/5' : 'border-danger/30 bg-danger/5'}`}
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.25 }}
+      style={{ willChange: 'opacity, transform' }}
       aria-live="polite"
       aria-atomic="true"
     >
