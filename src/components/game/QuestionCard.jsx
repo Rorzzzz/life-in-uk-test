@@ -108,7 +108,7 @@ export default function QuestionCard({
       )}
 
       {/* Question */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <m.div
           key={question.id}
           className="bg-card rounded-2xl p-5 border border-border"
@@ -116,6 +116,7 @@ export default function QuestionCard({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
+          style={{ willChange: 'opacity, transform' }}
         >
           <div className="flex items-start justify-between gap-3 mb-5">
             <h2 className="text-base font-semibold text-ink leading-snug flex-1">

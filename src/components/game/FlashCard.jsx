@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { m, useReducedMotion } from 'framer-motion'
+import { m, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 // Shared content blocks — used by both the real faces and the invisible spacer
 function FrontContent({ question }) {
@@ -58,55 +58,23 @@ export default function FlashCard({ question }) {
   }
 
   return (
-    <div
-      {...wrapperProps}
-      style={{ perspective: '1200px', WebkitPerspective: '1200px' }}
-    >
-      <m.div
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.45, ease: 'easeInOut' }}
-        style={{
-          position: 'relative',
-          transformStyle: 'preserve-3d',
-          WebkitTransformStyle: 'preserve-3d',
-        }}
-      >
-        {/*
-          Invisible spacer — stays in normal flow so the container height
-          always matches the currently active face. Both real face cards are
-          absolutely positioned on top of it.
-        */}
-        <div
-          aria-hidden="true"
-          className="p-6 min-h-[220px] flex flex-col items-center justify-center text-center invisible pointer-events-none"
+    <div {...wrapperProps}>
+      <AnimatePresence mode="wait" initial={false}>
+        <m.div
+          key={flipped ? 'back' : 'front'}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.96 }}
+          transition={{ duration: 0.18, ease: 'easeOut' }}
+          style={{ willChange: 'opacity, transform' }}
+          className={flipped
+            ? 'bg-brand-500/10 border border-brand-500/30 rounded-2xl p-6 min-h-[220px] flex flex-col items-center justify-center text-center'
+            : 'bg-card border border-border rounded-2xl p-6 min-h-[220px] flex flex-col items-center justify-center text-center'
+          }
         >
           {flipped ? <BackContent question={question} /> : <FrontContent question={question} />}
-        </div>
-
-        {/* Front face */}
-        <div
-          className="absolute inset-0 bg-card border border-border rounded-2xl p-6 flex flex-col items-center justify-center text-center"
-          style={{
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-          }}
-        >
-          <FrontContent question={question} />
-        </div>
-
-        {/* Back face — pre-rotated 180° so it reads correctly when parent flips */}
-        <div
-          className="absolute inset-0 bg-brand-500/10 border border-brand-500/30 rounded-2xl p-6 flex flex-col items-center justify-center text-center"
-          style={{
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
-            WebkitTransform: 'rotateY(180deg)',
-          }}
-        >
-          <BackContent question={question} />
-        </div>
-      </m.div>
+        </m.div>
+      </AnimatePresence>
     </div>
   )
 }
