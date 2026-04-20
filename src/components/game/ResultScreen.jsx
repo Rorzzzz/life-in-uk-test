@@ -10,7 +10,7 @@ const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
 export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, onDifferentTest, onChangeChapter, weakChapters = [], isExam = false, footer }) {
   const pct     = Math.round((score / total) * 100)
-  const passed  = !isExam || score >= 18
+  const passed  = isExam ? score >= 18 : pct >= 70
   const colour  = passed ? '#22d07a' : '#ff4d6d'
 
   return (
@@ -25,12 +25,14 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
 
       <div>
         <h2 className="text-3xl font-display font-bold text-ink mb-1">
-          {passed ? (isExam ? '🎉 You passed!' : 'Well done!') : 'Keep going!'}
+          {isExam
+            ? (passed ? '🎉 You passed!' : 'Keep going!')
+            : (pct >= 80 ? 'Well done!' : pct >= 50 ? 'Good effort!' : 'Keep practising!')}
         </h2>
         <p className="text-ink-muted">
-          {passed
-            ? `${pct}% — ${isExam ? 'That\'s a pass! Book your real test.' : 'Great work!'}`
-            : `${pct}% — ${isExam ? `Pass mark is 75% (18/24)` : 'Keep practising!'}`
+          {isExam
+            ? (passed ? `${pct}% — That's a pass! Book your real test.` : `${pct}% — Pass mark is 75% (18/24)`)
+            : (passed ? `${pct}% — Great session!` : `${pct}% — Keep going, you'll get there!`)
           }
         </p>
       </div>
