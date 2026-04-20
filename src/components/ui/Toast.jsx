@@ -1,7 +1,5 @@
 'use client'
 
-import { m, AnimatePresence } from 'framer-motion'
-
 export default function Toast({ message, type = 'info', visible }) {
   const colours = {
     success: 'bg-success text-white',
@@ -10,19 +8,13 @@ export default function Toast({ message, type = 'info', visible }) {
     xp:      'bg-xp text-white',
   }
 
+  if (!visible) return null
+
   return (
-    <AnimatePresence>
-      {visible && (
-        <m.div
-          className={`fixed bottom-24 left-1/2 z-50 flex items-center gap-2 rounded-xl px-5 py-3 shadow-lg font-semibold text-sm ${colours[type]}`}
-          initial={{ opacity: 0, y: 20, x: '-50%' }}
-          animate={{ opacity: 1, y: 0, x: '-50%' }}
-          exit={{ opacity: 0, y: 20, x: '-50%' }}
-          transition={{ duration: 0.25 }}
-        >
-          {message}
-        </m.div>
-      )}
-    </AnimatePresence>
+    <div
+      className={`fixed bottom-24 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-xl px-5 py-3 shadow-lg font-semibold text-sm animate-slide-up ${colours[type]}`}
+    >
+      {message}
+    </div>
   )
 }

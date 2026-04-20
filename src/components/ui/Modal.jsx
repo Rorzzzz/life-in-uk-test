@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { m, AnimatePresence } from 'framer-motion'
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
@@ -9,7 +8,6 @@ export default function Modal({ isOpen, onClose, title, children }) {
   const panelRef = useRef(null)
   const titleId  = 'modal-title'
 
-  // Escape to close
   useEffect(() => {
     if (!isOpen) return
     function onKey(e) {
@@ -19,7 +17,6 @@ export default function Modal({ isOpen, onClose, title, children }) {
     return () => document.removeEventListener('keydown', onKey)
   }, [isOpen, onClose])
 
-  // Focus trap
   useEffect(() => {
     if (!isOpen || !panelRef.current) return
     const focusable = Array.from(panelRef.current.querySelectorAll(FOCUSABLE))
@@ -39,36 +36,27 @@ export default function Modal({ isOpen, onClose, title, children }) {
     return () => document.removeEventListener('keydown', trap)
   }, [isOpen])
 
+  if (!isOpen) return null
+
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          <m.div
-            className="fixed inset-0 bg-black/60 z-40"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            aria-hidden="true"
-          />
-          <m.div
-            ref={panelRef}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={title ? titleId : undefined}
-            className="fixed inset-x-4 bottom-0 z-50 bg-card rounded-t-3xl p-6 max-w-lg mx-auto"
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          >
-            {title && (
-              <h2 id={titleId} className="text-xl font-display font-bold text-ink mb-4">{title}</h2>
-            )}
-            {children}
-          </m.div>
-        </>
-      )}
-    </AnimatePresence>
+    <>
+      <div
+        className="fixed inset-0 bg-black/60 z-40 animate-fade-in"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={title ? titleId : undefined}
+        className="fixed inset-x-4 bottom-0 z-50 bg-card rounded-t-3xl p-6 max-w-lg mx-auto animate-slide-up"
+      >
+        {title && (
+          <h2 id={titleId} className="text-xl font-display font-bold text-ink mb-4">{title}</h2>
+        )}
+        {children}
+      </div>
+    </>
   )
 }
