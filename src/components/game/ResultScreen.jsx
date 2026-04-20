@@ -1,6 +1,5 @@
 'use client'
 
-import { m } from 'framer-motion'
 import Link from 'next/link'
 import { Target } from 'lucide-react'
 import Button from '@/components/ui/Button'
@@ -15,11 +14,7 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
   const colour  = passed ? '#22d07a' : '#ff4d6d'
 
   return (
-    <m.div
-      className="flex flex-col items-center text-center gap-6 py-8"
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-    >
+    <div className="flex flex-col items-center text-center gap-6 py-8 animate-fade-in">
       <ConfettiBlast trigger={passed} />
 
       <ProgressRing value={pct} size={120} strokeWidth={10} colour={colour} ariaLabel={`Score: ${score} out of ${total} (${pct}%)`}>
@@ -102,6 +97,6 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
         )}
       </div>
       {footer && <div className="w-full">{footer}</div>}
-    </m.div>
+    </div>
   )
 }
