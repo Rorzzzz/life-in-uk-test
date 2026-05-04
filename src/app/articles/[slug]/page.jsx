@@ -29,9 +29,10 @@ export async function generateMetadata({ params }) {
 }
 
 const CATEGORY_COLOURS = {
-  'Study Tips': 'bg-brand-500/10 text-brand-400',
-  'Test Day':   'bg-success/10 text-success',
-  'Test Info':  'bg-amber-500/10 text-amber-400',
+  'Study Tips':  'bg-brand-500/10 text-brand-400',
+  'Test Day':    'bg-success/10 text-success',
+  'Test Info':   'bg-amber-500/10 text-amber-400',
+  'Immigration': 'bg-purple-500/10 text-purple-400',
 }
 
 // MDX component overrides — maps markdown elements to styled versions

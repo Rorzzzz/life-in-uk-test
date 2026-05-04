@@ -6,9 +6,10 @@ import { Search, Clock, ChevronRight, X } from 'lucide-react'
 import clsx from 'clsx'
 
 const CATEGORY_COLOURS = {
-  'Study Tips': 'bg-brand-500/10 text-brand-400',
-  'Test Day':   'bg-success/10 text-success',
-  'Test Info':  'bg-amber-500/10 text-amber-400',
+  'Study Tips':  'bg-brand-500/10 text-brand-400',
+  'Test Day':    'bg-success/10 text-success',
+  'Test Info':   'bg-amber-500/10 text-amber-400',
+  'Immigration': 'bg-purple-500/10 text-purple-400',
 }
 
 export default function ArticlesSearchClient({ articles }) {
