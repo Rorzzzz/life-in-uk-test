@@ -1,22 +1,29 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, Layers, ClipboardList, TrendingUp, Zap, Star, ChevronRight, Target, Calculator, Languages } from 'lucide-react'
+import { BookOpen, Layers, ClipboardList, Star, ChevronRight, Target, Calculator, Languages, Plane, ShieldCheck, ClipboardCheck, CalendarDays } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { useStreak } from '@/hooks/useStreak'
 import { useReadiness } from '@/hooks/useReadiness'
 import { useWeakSpots } from '@/hooks/useWeakSpots'
-import ProgressRing from '@/components/ui/ProgressRing'
 import ProgressBar from '@/components/ui/ProgressBar'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
 
 const QUICK_LINKS = [
-  { href: '/practice',       label: 'Practice',       icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
-  { href: '/exam',           label: 'Mock Exam',      icon: ClipboardList, colour: '#22d07a', desc: '24 Qs · 45 mins', subDesc: 'Full mock test conditions' },
-  { href: '/study',          label: 'Study Guide',    icon: BookOpen,      colour: '#a855f7', desc: 'All 5 chapters'     },
-  { href: '/flashcards',     label: 'Flashcards',     icon: Star,          colour: '#f59e0b', desc: 'Flip to revise'     },
-  { href: '/ilr-calculator', label: 'ILR Calculator', icon: Calculator,    colour: '#06b6d4', desc: 'When can you apply?', subDesc: 'Get your ILR eligibility date and full cost estimate' },
-  { href: '/b1-check',       label: 'B1 Level Check', icon: Languages,     colour: '#8b5cf6', desc: 'Check your English', subDesc: '15 questions — find out if you are ready to book' },
+  { href: '/practice',   label: 'Practice',    icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
+  { href: '/exam',       label: 'Mock Exam',   icon: ClipboardList, colour: '#22d07a', desc: '24 Qs · 45 mins',    subDesc: 'Full mock test conditions' },
+  { href: '/study',      label: 'Study Guide', icon: BookOpen,      colour: '#a855f7', desc: 'All 5 chapters'      },
+  { href: '/flashcards', label: 'Flashcards',  icon: Star,          colour: '#f59e0b', desc: 'Flip to revise'      },
+]
+
+const TOOL_LINKS = [
+  { href: '/ilr-calculator',       label: 'ILR Calculator',      desc: 'Eligibility & costs',   colour: '#06b6d4', icon: Calculator    },
+  { href: '/absence-calculator',   label: 'Absence Checker',     desc: '180-day rule',          colour: '#f59e0b', icon: Plane         },
+  { href: '/test-exempt',          label: 'Exempt Checker',      desc: 'Do you need the test?', colour: '#22d07a', icon: ShieldCheck   },
+  { href: '/ilr-checklist',        label: 'ILR Checklist',       desc: 'Documents needed',      colour: '#a855f7', icon: ClipboardCheck },
+  { href: '/study-plan-generator', label: 'Study Planner',       desc: 'Personalised plan',     colour: '#3381ff', icon: CalendarDays  },
+  { href: '/citizenship-planner',  label: 'Citizenship Planner', desc: 'Timeline & costs',      colour: '#f43f5e', icon: Star          },
+  { href: '/b1-check',             label: 'B1 Level Check',      desc: 'English level quiz',    colour: '#8b5cf6', icon: Languages     },
 ]
 
 export default function HomeDashboard({ chapters }) {
@@ -182,6 +189,26 @@ export default function HomeDashboard({ chapters }) {
                 </p>
               </div>
               <ChevronRight size={14} className="text-ink-muted flex-shrink-0" />
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Immigration tools */}
+      <div className="mt-6">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wider">Free Tools</h2>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          {TOOL_LINKS.map(({ href, label, desc, colour, icon: Icon }) => (
+            <Link key={href} href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
+              <div className="bg-card rounded-2xl p-4 flex flex-col gap-2 h-full active:scale-[0.98] transition-transform">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${colour}22` }}>
+                  <Icon size={18} style={{ color: colour }} />
+                </div>
+                <p className="font-semibold text-ink text-sm">{label}</p>
+                <p className="text-xs text-ink-muted">{desc}</p>
+              </div>
             </Link>
           ))}
         </div>
