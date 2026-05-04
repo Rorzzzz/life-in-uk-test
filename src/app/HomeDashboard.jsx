@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, Layers, ClipboardList, Star, ChevronRight, Target, Calculator, Languages, Plane, ShieldCheck, ClipboardCheck, CalendarDays } from 'lucide-react'
+import { BookOpen, Layers, ClipboardList, Star, ChevronRight, Target, Calculator, Languages, Plane, ShieldCheck, ClipboardCheck, CalendarDays, Scale, AlertTriangle } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { useStreak } from '@/hooks/useStreak'
 import { useReadiness } from '@/hooks/useReadiness'
@@ -24,6 +24,8 @@ const TOOL_LINKS = [
   { href: '/study-plan-generator', label: 'Study Planner',       desc: 'Personalised plan',     colour: '#3381ff', icon: CalendarDays  },
   { href: '/citizenship-planner',  label: 'Citizenship Planner', desc: 'Timeline & costs',      colour: '#f43f5e', icon: Star          },
   { href: '/b1-check',             label: 'B1 Level Check',      desc: 'English level quiz',    colour: '#8b5cf6', icon: Languages     },
+  { href: '/good-character-check', label: 'Good Character',      desc: 'ILR & citizenship check', colour: '#10b981', icon: Scale         },
+  { href: '/ilr-risk-check',       label: 'ILR Risk Check',      desc: 'Refusal risk assessment', colour: '#f97316', icon: AlertTriangle  },
 ]
 
 export default function HomeDashboard({ chapters }) {
