@@ -158,6 +158,7 @@ export default function AbsenceCalculatorClient() {
             max={todayStr}
             value={qualifyingStart}
             onChange={e => setQualifyingStart(e.target.value)}
+            style={{ colorScheme: 'dark' }}
             className={clsx(
               'w-full h-11 px-3 rounded-xl border border-border bg-raised text-ink text-sm',
               'focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent',
@@ -221,8 +222,9 @@ export default function AbsenceCalculatorClient() {
                           max={todayStr}
                           value={trip.departure}
                           onChange={e => updateTrip(trip.id, 'departure', e.target.value)}
+                          style={{ colorScheme: 'dark' }}
                           className={clsx(
-                            'w-full h-10 px-2 rounded-lg border border-border bg-[#0d0f1a] text-ink text-sm',
+                            'w-full h-10 px-2 rounded-lg border border-border bg-raised text-ink text-sm',
                             'focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent'
                           )}
                         />
@@ -235,8 +237,9 @@ export default function AbsenceCalculatorClient() {
                           max={todayStr}
                           value={trip.return}
                           onChange={e => updateTrip(trip.id, 'return', e.target.value)}
+                          style={{ colorScheme: 'dark' }}
                           className={clsx(
-                            'w-full h-10 px-2 rounded-lg border border-border bg-[#0d0f1a] text-ink text-sm',
+                            'w-full h-10 px-2 rounded-lg border border-border bg-raised text-ink text-sm',
                             'focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent'
                           )}
                         />
