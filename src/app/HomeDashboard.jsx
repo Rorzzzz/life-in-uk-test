@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, Layers, ClipboardList, TrendingUp, Zap, Star, ChevronRight, Target } from 'lucide-react'
+import { BookOpen, Layers, ClipboardList, TrendingUp, Zap, Star, ChevronRight, Target, Calculator, Languages } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { useStreak } from '@/hooks/useStreak'
 import { useReadiness } from '@/hooks/useReadiness'
@@ -11,10 +11,12 @@ import ProgressBar from '@/components/ui/ProgressBar'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
 
 const QUICK_LINKS = [
-  { href: '/practice',   label: 'Practice',   icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
-  { href: '/exam',       label: 'Mock Exam',  icon: ClipboardList, colour: '#22d07a', desc: '24 Qs · 45 mins', subDesc: 'Full mock test conditions' },
-  { href: '/study',      label: 'Study Guide',icon: BookOpen,      colour: '#a855f7', desc: 'All 5 chapters'     },
-  { href: '/flashcards', label: 'Flashcards', icon: Star,          colour: '#f59e0b', desc: 'Flip to revise'     },
+  { href: '/practice',       label: 'Practice',       icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
+  { href: '/exam',           label: 'Mock Exam',      icon: ClipboardList, colour: '#22d07a', desc: '24 Qs · 45 mins', subDesc: 'Full mock test conditions' },
+  { href: '/study',          label: 'Study Guide',    icon: BookOpen,      colour: '#a855f7', desc: 'All 5 chapters'     },
+  { href: '/flashcards',     label: 'Flashcards',     icon: Star,          colour: '#f59e0b', desc: 'Flip to revise'     },
+  { href: '/ilr-calculator', label: 'ILR Calculator', icon: Calculator,    colour: '#06b6d4', desc: 'When can you apply?', subDesc: 'Get your ILR eligibility date and full cost estimate' },
+  { href: '/b1-check',       label: 'B1 Level Check', icon: Languages,     colour: '#8b5cf6', desc: 'Check your English', subDesc: '15 questions — find out if you are ready to book' },
 ]
 
 export default function HomeDashboard({ chapters }) {
