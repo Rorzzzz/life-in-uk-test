@@ -144,9 +144,12 @@ export default function ILRCalculatorClient() {
     const entryDate = new Date(entryDateStr)
     if (isNaN(entryDate.getTime())) return null
 
+    // Resolve visa type inside memo using only the primitive id
+    const vt = VISA_TYPES.find(v => v.id === visaTypeId)
+
     // Eligibility date
     const eligDate = new Date(entryDate)
-    eligDate.setFullYear(eligDate.getFullYear() + visaType.years)
+    eligDate.setFullYear(eligDate.getFullYear() + vt.years)
 
     const isEligible = eligDate <= today
     const diffMonths = monthsDiff(today, eligDate)
@@ -166,7 +169,7 @@ export default function ILRCalculatorClient() {
     const biometrics  = (numAdults + numChildren) * FEES.biometric
 
     const lifeTestCost = (!lifeTestPassed) ? numAdults * FEES.lifeInUkTest : 0
-    const b1TestCost   = (!visaType.b1Exempt && !b1Passed) ? numAdults * FEES.b1Test : 0
+    const b1TestCost   = (!vt.b1Exempt && !b1Passed) ? numAdults * FEES.b1Test : 0
 
     const total = ilrAdults + ilrChildren + biometrics + lifeTestCost + b1TestCost
 
@@ -180,8 +183,9 @@ export default function ILRCalculatorClient() {
       lifeTestCost,
       b1TestCost,
       total,
+      b1Exempt: vt.b1Exempt,
     }
-  }, [entryDateStr, visaTypeId, numAdults, numChildren, lifeTestPassed, b1Passed, visaType])
+  }, [entryDateStr, visaTypeId, numAdults, numChildren, lifeTestPassed, b1Passed])
 
   const fmt = (n) =>
     n.toLocaleString('en-GB', { style: 'currency', currency: 'GBP', minimumFractionDigits: 2 })
