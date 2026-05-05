@@ -36,7 +36,7 @@ const HOURS_OPTIONS = [
 function generatePlan(weeksUntilTest, scoreLevel, hoursPerWeek) {
   const score = SCORE_LEVELS.find(s => s.value === scoreLevel)?.score ?? 0
   const isLowScore = score < 13
-  const isMidScore = score >= 13 && score < 19
+
   const isHighScore = score >= 19
 
   const questionsPerDay = hoursPerWeek >= 7
@@ -326,6 +326,7 @@ export default function StudyPlanClient() {
             min={todayStr}
             value={testDate}
             onChange={e => setTestDate(e.target.value)}
+            style={{ colorScheme: 'dark' }}
             className={clsx(
               'w-full h-11 px-3 rounded-xl border border-border bg-raised text-ink text-sm',
               'focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent'

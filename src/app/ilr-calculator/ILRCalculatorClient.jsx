@@ -263,6 +263,7 @@ export default function ILRCalculatorClient() {
             max={todayStr}
             value={entryDateStr}
             onChange={e => setEntryDateStr(e.target.value)}
+            style={{ colorScheme: 'dark' }}
             className={clsx(
               'w-full h-11 px-3 rounded-xl border border-border bg-raised text-ink text-sm',
               'focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent',
