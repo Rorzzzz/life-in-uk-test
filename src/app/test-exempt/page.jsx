@@ -3,12 +3,12 @@ import ExemptWizardClient from './ExemptWizardClient'
 
 export async function generateMetadata() {
   return {
-    title: 'Am I Exempt from the Life in the UK Test? (2026 Checker)',
-    description: 'Find out in 60 seconds if you need to take the Life in the UK test. Answer 5 questions and get a clear yes or no with a full explanation of your exemption.',
+    title: 'Am I Exempt from the Life in the UK Test? Free Check 2026',
+    description: 'Life in the UK test exemptions apply for age, health, and some nationalities. Answer 5 questions and find out in 60 seconds if you need to take it — free.',
     alternates: { canonical: 'https://passtheuktest.co.uk/test-exempt' },
     openGraph: {
-      title: 'Am I Exempt from the Life in the UK Test? (2026 Checker)',
-      description: 'Find out in 60 seconds if you need to take the Life in the UK test. Answer 5 questions and get a clear yes or no with a full explanation of your exemption.',
+      title: 'Am I Exempt from the Life in the UK Test? Free Check 2026',
+      description: 'Life in the UK test exemptions apply for age, health, and some nationalities. Answer 5 questions and find out in 60 seconds if you need to take it — free.',
       url: 'https://passtheuktest.co.uk/test-exempt',
       type: 'website',
     },

@@ -3,12 +3,12 @@ import ILRCalculatorClient from './ILRCalculatorClient'
 
 export async function generateMetadata() {
   return {
-    title: 'ILR Eligibility Calculator 2026 — When Can You Apply?',
-    description: 'Find out when you can apply for ILR and the total cost. Enter your visa type and arrival date — get your eligibility date and full fee breakdown instantly.',
+    title: 'Free ILR Eligibility Calculator UK — Get Your Date 2026',
+    description: 'Free ILR eligibility calculator for the UK. Enter your visa type and arrival date — get your exact qualifying date and full cost breakdown in seconds.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-calculator' },
     openGraph: {
-      title: 'ILR Eligibility Calculator 2026 — When Can You Apply?',
-      description: 'Find out when you can apply for ILR and the total cost. Enter your visa type and arrival date — get your eligibility date and full fee breakdown instantly.',
+      title: 'Free ILR Eligibility Calculator UK — Get Your Date 2026',
+      description: 'Free ILR eligibility calculator for the UK. Enter your visa type and arrival date — get your exact qualifying date and full cost breakdown in seconds.',
       url: 'https://passtheuktest.co.uk/ilr-calculator',
       type: 'website',
     },

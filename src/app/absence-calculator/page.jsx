@@ -3,12 +3,12 @@ import AbsenceCalculatorClient from './AbsenceCalculatorClient'
 
 export async function generateMetadata() {
   return {
-    title: 'UK Absence Calculator — 180 Day ILR Rule Checker 2026',
-    description: 'Check if your time outside the UK affects your ILR eligibility. Add your trips and instantly see if you have exceeded the 180-day rule in any 12-month period.',
+    title: 'Free UK Absence Calculator — Check Your 180-Day ILR Rule',
+    description: 'Add your trips outside the UK and instantly see if you have breached the 180-day ILR rule in any 12-month period. Free, no login, results in seconds.',
     alternates: { canonical: 'https://passtheuktest.co.uk/absence-calculator' },
     openGraph: {
-      title: 'UK Absence Calculator — 180 Day ILR Rule Checker 2026',
-      description: 'Check if your time outside the UK affects your ILR eligibility. Add your trips and instantly see if you have exceeded the 180-day rule in any 12-month period.',
+      title: 'Free UK Absence Calculator — Check Your 180-Day ILR Rule',
+      description: 'Add your trips outside the UK and instantly see if you have breached the 180-day ILR rule in any 12-month period. Free, no login, results in seconds.',
       url: 'https://passtheuktest.co.uk/absence-calculator',
       type: 'website',
     },

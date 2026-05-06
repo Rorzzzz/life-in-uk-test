@@ -3,12 +3,12 @@ import B1CheckClient from './B1CheckClient'
 
 export async function generateMetadata() {
   return {
-    title: 'B1 English Level Check — Are You Ready for the UK Visa Test?',
-    description: 'Check your B1 English level with 15 practice questions. Vocabulary, grammar and reading comprehension — find out if you are ready to book your official B1 test.',
+    title: 'B1 English Level Check — Free 15-Question Test 2026',
+    description: 'Free B1 English level check — 15 practice questions covering vocabulary, grammar, and reading. Find out if you are ready to book an official UKVI B1 test.',
     alternates: { canonical: 'https://passtheuktest.co.uk/b1-check' },
     openGraph: {
-      title: 'B1 English Level Check — Are You Ready for the UK Visa Test?',
-      description: 'Check your B1 English level with 15 practice questions. Vocabulary, grammar and reading comprehension — find out if you are ready to book your official B1 test.',
+      title: 'B1 English Level Check — Free 15-Question Test 2026',
+      description: 'Free B1 English level check — 15 practice questions covering vocabulary, grammar, and reading. Find out if you are ready to book an official UKVI B1 test.',
       url: 'https://passtheuktest.co.uk/b1-check',
       type: 'website',
     },

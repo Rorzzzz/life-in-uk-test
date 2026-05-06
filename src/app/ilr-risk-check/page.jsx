@@ -3,12 +3,12 @@ import ILRRiskClient from './ILRRiskClient'
 
 export async function generateMetadata() {
   return {
-    title: 'ILR Refusal Risk Checker — Free Assessment 2026',
-    description: 'Check the most common reasons ILR applications are refused. Answer 9 questions about your situation and get a free risk assessment before you apply.',
+    title: 'Free ILR Refusal Risk Checker — Know Before You Apply 2026',
+    description: 'ILR refusal risk checker — find out if your absences, documents, or history could cause a refusal. Answer 9 questions and get a free assessment.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-risk-check' },
     openGraph: {
-      title: 'ILR Refusal Risk Checker — Free Assessment 2026',
-      description: 'Check the most common reasons ILR applications are refused. Answer 9 questions about your situation and get a free risk assessment before you apply.',
+      title: 'Free ILR Refusal Risk Checker — Know Before You Apply 2026',
+      description: 'ILR refusal risk checker — find out if your absences, documents, or history could cause a refusal. Answer 9 questions and get a free assessment.',
       url: 'https://passtheuktest.co.uk/ilr-risk-check',
       type: 'website',
     },

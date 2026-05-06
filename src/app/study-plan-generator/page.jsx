@@ -3,12 +3,12 @@ import StudyPlanClient from './StudyPlanClient'
 
 export async function generateMetadata() {
   return {
-    title: 'Life in the UK Test Study Plan Generator — Free 2026',
-    description: 'Enter your test date and current practice score. Get a free personalised day-by-day study plan for the Life in the UK test — built around your schedule.',
+    title: 'Free Life in the UK Test Study Plan — Personalised 2026',
+    description: 'Free personalised study plan for the Life in the UK test. Enter your test date and score — get a day-by-day schedule built around the time you have left.',
     alternates: { canonical: 'https://passtheuktest.co.uk/study-plan-generator' },
     openGraph: {
-      title: 'Life in the UK Test Study Plan Generator — Free 2026',
-      description: 'Enter your test date and current practice score. Get a free personalised day-by-day study plan for the Life in the UK test — built around your schedule.',
+      title: 'Free Life in the UK Test Study Plan — Personalised 2026',
+      description: 'Free personalised study plan for the Life in the UK test. Enter your test date and score — get a day-by-day schedule built around the time you have left.',
       url: 'https://passtheuktest.co.uk/study-plan-generator',
       type: 'website',
     },

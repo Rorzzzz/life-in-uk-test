@@ -3,12 +3,12 @@ import ILRChecklistClient from './ILRChecklistClient'
 
 export async function generateMetadata() {
   return {
-    title: 'ILR Document Checklist 2026 — What You Need to Apply',
-    description: 'Get your personalised ILR document checklist based on your visa type. Tick off each item before you apply for Indefinite Leave to Remain.',
+    title: 'Free ILR Document Checklist 2026 — By Visa Type, Printable',
+    description: 'Free, personalised ILR document checklist by visa type. Covers Skilled Worker, Family, Long Residence and more. Tick items off as you gather them — printable.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-checklist' },
     openGraph: {
-      title: 'ILR Document Checklist 2026 — What You Need to Apply',
-      description: 'Get your personalised ILR document checklist based on your visa type. Tick off each item before you apply for Indefinite Leave to Remain.',
+      title: 'Free ILR Document Checklist 2026 — By Visa Type, Printable',
+      description: 'Free, personalised ILR document checklist by visa type. Covers Skilled Worker, Family, Long Residence and more. Tick items off as you gather them — printable.',
       url: 'https://passtheuktest.co.uk/ilr-checklist',
       type: 'website',
     },

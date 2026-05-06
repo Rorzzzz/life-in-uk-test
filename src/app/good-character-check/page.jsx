@@ -3,12 +3,12 @@ import GoodCharacterClient from './GoodCharacterClient'
 
 export async function generateMetadata() {
   return {
-    title: 'Good Character Check — ILR & Citizenship Requirement 2026',
-    description: 'Check if your history might affect your ILR or citizenship good character requirement. Answer 6 questions and get a clear assessment — free, no login needed.',
+    title: 'Free Good Character Check — ILR & Citizenship 2026',
+    description: 'Good character is required for ILR and British citizenship. Find out if something in your past might cause a problem — answer 6 questions, free, no login.',
     alternates: { canonical: 'https://passtheuktest.co.uk/good-character-check' },
     openGraph: {
-      title: 'Good Character Check — ILR & Citizenship Requirement 2026',
-      description: 'Check if your history might affect your ILR or citizenship good character requirement. Answer 6 questions and get a clear assessment — free, no login needed.',
+      title: 'Free Good Character Check — ILR & Citizenship 2026',
+      description: 'Good character is required for ILR and British citizenship. Find out if something in your past might cause a problem — answer 6 questions, free, no login.',
       url: 'https://passtheuktest.co.uk/good-character-check',
       type: 'website',
     },
