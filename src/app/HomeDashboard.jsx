@@ -8,6 +8,7 @@ import { useReadiness } from '@/hooks/useReadiness'
 import { useWeakSpots } from '@/hooks/useWeakSpots'
 import ProgressBar from '@/components/ui/ProgressBar'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
+import LiteYouTube from '@/components/ui/LiteYouTube'
 
 const QUICK_LINKS = [
   { href: '/practice',   label: 'Practice',    icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
@@ -214,6 +215,28 @@ export default function HomeDashboard({ chapters }) {
             </Link>
           ))}
         </div>
+      </div>
+
+      {/* YouTube section */}
+      <div className="mt-6">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wider">Watch & Learn</h2>
+          <a
+            href="https://www.youtube.com/@PasstheUKTest"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-brand-400 hover:text-brand-300 transition-colors font-medium"
+          >
+            Subscribe →
+          </a>
+        </div>
+        <LiteYouTube
+          videoId="4XKqOlGB3Bg"
+          title="Free Life in the UK Test Practice 2026 + Mock Exams"
+        />
+        <p className="text-xs text-ink-muted mt-2 text-center">
+          Free Life in the UK Test Practice 2026 + Mock Exams
+        </p>
       </div>
 
       {/* Popular guides */}
