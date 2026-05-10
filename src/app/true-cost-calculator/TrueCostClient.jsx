@@ -48,12 +48,12 @@ const FEES = {
 }
 
 const VISA_ROUTES = [
-  { id: 'skilledWorker', label: 'Skilled Worker / Tier 2', feeKey: 'skilledWorker', hideB1: true,  noIHS: false, noVisa: false },
-  { id: 'familyVisa',    label: 'Family visa (spouse / partner of British citizen)', feeKey: 'familyVisa', hideB1: false, noIHS: false, noVisa: false },
-  { id: 'globalTalent', label: 'Global Talent', feeKey: 'globalTalent', hideB1: false, noIHS: false, noVisa: false },
-  { id: 'ancestry',     label: 'UK Ancestry', feeKey: 'ancestry', hideB1: false, noIHS: false, noVisa: false },
-  { id: 'otherWork',    label: 'Other work visa', feeKey: 'otherWork', hideB1: true,  noIHS: false, noVisa: false },
-  { id: 'euSettled',    label: 'EU / EEA citizen — Settled Status (EUSS)', feeKey: 'skilledWorker', hideB1: false, noIHS: true, noVisa: true },
+  { id: 'skilledWorker', label: 'Skilled Worker / Tier 2', feeKey: 'skilledWorker', hideB1: true,  noIHS: false, noVisa: false, noILR: false },
+  { id: 'familyVisa',    label: 'Family visa (spouse / partner of British citizen)', feeKey: 'familyVisa', hideB1: false, noIHS: false, noVisa: false, noILR: false },
+  { id: 'globalTalent', label: 'Global Talent', feeKey: 'globalTalent', hideB1: false, noIHS: false, noVisa: false, noILR: false },
+  { id: 'ancestry',     label: 'UK Ancestry', feeKey: 'ancestry', hideB1: false, noIHS: false, noVisa: false, noILR: false },
+  { id: 'otherWork',    label: 'Other work visa', feeKey: 'otherWork', hideB1: true,  noIHS: false, noVisa: false, noILR: false },
+  { id: 'euSettled',    label: 'EU / EEA citizen — Settled Status (EUSS)', feeKey: 'skilledWorker', hideB1: false, noIHS: true, noVisa: true, noILR: true },
 ]
 
 // ─── Helper ───────────────────────────────────────────────────────────────────
@@ -166,7 +166,7 @@ export default function TrueCostClient() {
 
   const route = VISA_ROUTES.find(r => r.id === routeId)
   const visaFeePerPerson = FEES[route.feeKey]
-  const totalPersons = numAdults + numChildren
+
   const applicationsCount = renewals + 1 // initial + renewals
 
   const result = useMemo(() => {
@@ -188,9 +188,9 @@ export default function TrueCostClient() {
     const lifeInUkCost = lifeTestPassed ? 0 : numAdults * FEES.lifeInUkTest
     const b1Cost       = (b1Passed || r.hideB1) ? 0 : numAdults * FEES.b1Test
 
-    // ILR
-    const ilrCost       = persons * FEES.ilrPerPerson
-    const biometricCost = persons * FEES.biometricPerPerson
+    // ILR — EU/Settled Status applicants do not pay ILR fee (EUSS is free, Settled Status IS the settlement)
+    const ilrCost       = r.noILR ? 0 : persons * FEES.ilrPerPerson
+    const biometricCost = r.noILR ? 0 : persons * FEES.biometricPerPerson
 
     // Citizenship
     const naturalisationCost   = numAdults * (FEES.naturalisationAdult + FEES.ceremonyFee)
