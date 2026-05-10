@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
 import {
   PoundSterling,
-  CheckCircle2,
   AlertCircle,
   ChevronUp,
   ChevronDown,
@@ -170,25 +169,31 @@ export default function TrueCostClient() {
   const applicationsCount = renewals + 1 // initial + renewals
 
   const result = useMemo(() => {
-    // Visa fees — initial application + renewals for adults (children counted separately below if needed)
-    const totalVisaFees = visaFeePerPerson * numAdults * applicationsCount
+    // Resolve route inside memo using only primitive routeId
+    const r = VISA_ROUTES.find(v => v.id === routeId)
+    const visaFee = FEES[r.feeKey]
+    const appCount = renewals + 1
+    const persons = numAdults + numChildren
+
+    // Visa fees
+    const totalVisaFees = visaFee * numAdults * appCount
 
     // IHS
-    const ihsAdults   = FEES.ihsPerYearAdult * FEES.ihsYears * numAdults * applicationsCount
-    const ihsChildren = FEES.ihsPerYearChild * FEES.ihsYears * numChildren * applicationsCount
+    const ihsAdults   = FEES.ihsPerYearAdult * FEES.ihsYears * numAdults
+    const ihsChildren = FEES.ihsPerYearChild * FEES.ihsYears * numChildren
     const totalIHS    = ihsAdults + ihsChildren
 
     // Tests
     const lifeInUkCost = lifeTestPassed ? 0 : numAdults * FEES.lifeInUkTest
-    const b1Cost       = (b1Passed || route.hideB1) ? 0 : numAdults * FEES.b1Test
+    const b1Cost       = (b1Passed || r.hideB1) ? 0 : numAdults * FEES.b1Test
 
     // ILR
-    const ilrCost       = totalPersons * FEES.ilrPerPerson
-    const biometricCost = totalPersons * FEES.biometricPerPerson
+    const ilrCost       = persons * FEES.ilrPerPerson
+    const biometricCost = persons * FEES.biometricPerPerson
 
     // Citizenship
-    const naturalisationCost    = numAdults * (FEES.naturalisationAdult + FEES.ceremonyFee)
-    const childCitizenshipCost  = numChildren * FEES.childCitizenshipRegistration
+    const naturalisationCost   = numAdults * (FEES.naturalisationAdult + FEES.ceremonyFee)
+    const childCitizenshipCost = numChildren * FEES.childCitizenshipRegistration
 
     // Passport
     const passportCost = wantsPassport
@@ -196,9 +201,8 @@ export default function TrueCostClient() {
       : 0
 
     const grandTotal = totalVisaFees + totalIHS + lifeInUkCost + b1Cost + ilrCost + biometricCost + naturalisationCost + childCitizenshipCost + passportCost
-
-    const perPerson  = totalPersons > 0 ? grandTotal / totalPersons : grandTotal
-    const totalYears = FEES.ihsYears + 1 // qualifying period + citizenship processing
+    const perPerson  = persons > 0 ? grandTotal / persons : grandTotal
+    const totalYears = FEES.ihsYears + 1
 
     return {
       totalVisaFees,
