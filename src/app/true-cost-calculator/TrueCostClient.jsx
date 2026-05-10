@@ -48,11 +48,12 @@ const FEES = {
 }
 
 const VISA_ROUTES = [
-  { id: 'skilledWorker', label: 'Skilled Worker / Tier 2', feeKey: 'skilledWorker', hideB1: true },
-  { id: 'familyVisa',    label: 'Family visa (spouse / partner of British citizen)', feeKey: 'familyVisa', hideB1: false },
-  { id: 'globalTalent', label: 'Global Talent', feeKey: 'globalTalent', hideB1: false },
-  { id: 'ancestry',     label: 'UK Ancestry', feeKey: 'ancestry', hideB1: false },
-  { id: 'otherWork',    label: 'Other work visa', feeKey: 'otherWork', hideB1: true },
+  { id: 'skilledWorker', label: 'Skilled Worker / Tier 2', feeKey: 'skilledWorker', hideB1: true,  noIHS: false, noVisa: false },
+  { id: 'familyVisa',    label: 'Family visa (spouse / partner of British citizen)', feeKey: 'familyVisa', hideB1: false, noIHS: false, noVisa: false },
+  { id: 'globalTalent', label: 'Global Talent', feeKey: 'globalTalent', hideB1: false, noIHS: false, noVisa: false },
+  { id: 'ancestry',     label: 'UK Ancestry', feeKey: 'ancestry', hideB1: false, noIHS: false, noVisa: false },
+  { id: 'otherWork',    label: 'Other work visa', feeKey: 'otherWork', hideB1: true,  noIHS: false, noVisa: false },
+  { id: 'euSettled',    label: 'EU / EEA citizen — Settled Status (EUSS)', feeKey: 'skilledWorker', hideB1: false, noIHS: true, noVisa: true },
 ]
 
 // ─── Helper ───────────────────────────────────────────────────────────────────
@@ -175,12 +176,12 @@ export default function TrueCostClient() {
     const appCount = renewals + 1
     const persons = numAdults + numChildren
 
-    // Visa fees
-    const totalVisaFees = visaFee * numAdults * appCount
+    // Visa fees — EU/EUSS route had free applications, no renewals
+    const totalVisaFees = r.noVisa ? 0 : visaFee * numAdults * appCount
 
-    // IHS
-    const ihsAdults   = FEES.ihsPerYearAdult * FEES.ihsYears * numAdults
-    const ihsChildren = FEES.ihsPerYearChild * FEES.ihsYears * numChildren
+    // IHS — EU/EUSS route was exempt from IHS entirely
+    const ihsAdults   = r.noIHS ? 0 : FEES.ihsPerYearAdult * FEES.ihsYears * numAdults
+    const ihsChildren = r.noIHS ? 0 : FEES.ihsPerYearChild * FEES.ihsYears * numChildren
     const totalIHS    = ihsAdults + ihsChildren
 
     // Tests
@@ -256,12 +257,19 @@ export default function TrueCostClient() {
                   onChange={() => setRouteId(r.id)}
                   className="w-4 h-4 flex-shrink-0 accent-brand-500"
                 />
-                <span className={clsx(
-                  'text-sm font-medium',
-                  routeId === r.id ? 'text-brand-400' : 'text-ink'
-                )}>
-                  {r.label}
-                </span>
+                <div className="flex-1 min-w-0">
+                  <span className={clsx(
+                    'text-sm font-medium block',
+                    routeId === r.id ? 'text-brand-400' : 'text-ink'
+                  )}>
+                    {r.label}
+                  </span>
+                  {r.noIHS && (
+                    <span className="text-xs text-success mt-0.5 block">
+                      ✓ No IHS — EUSS was exempt. No visa renewal fees.
+                    </span>
+                  )}
+                </div>
               </label>
             ))}
           </div>
