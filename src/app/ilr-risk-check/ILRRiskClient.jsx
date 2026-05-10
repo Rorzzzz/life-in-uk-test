@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import clsx from 'clsx'
 import {
   CheckCircle2,
@@ -14,7 +14,7 @@ import {
   ShieldCheck,
   ShieldAlert,
   ShieldX,
-  ExternalLink,
+
 } from 'lucide-react'
 
 // ─── Questions ────────────────────────────────────────────────────────────────
@@ -241,8 +241,6 @@ function QuestionRow({ q, answer, onChange, idx }) {
         {q.options.map((opt, i) => {
           // De-duplicate options with the same label (N/A case)
           const uniqueKey = `${opt.label}-${i}`
-          const isSelected = answer === opt.value && q.options.findIndex(o => o.value === answer) === i
-
           return (
             <button
               key={uniqueKey}
@@ -427,6 +425,20 @@ export default function ILRRiskClient() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
+      {/* EU notice */}
+      <div className="mb-4 flex items-start gap-3 p-4 bg-amber-500/10 border border-amber-500/30 rounded-2xl">
+        <span className="text-amber-400 text-lg flex-shrink-0">🇪🇺</span>
+        <p className="text-sm text-ink-muted leading-relaxed">
+          <span className="font-semibold text-ink">EU citizen with Settled Status?</span>{' '}
+          This tool is for ILR applications only. EU citizens do not apply for ILR — Settled Status is the equivalent.
+          Use our{' '}
+          <Link href="/citizenship-planner" className="text-brand-400 underline hover:text-brand-300">
+            citizenship planner
+          </Link>{' '}
+          for your next steps toward British citizenship.
+        </p>
+      </div>
+
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-1">

@@ -107,7 +107,6 @@ export default function ILRChecklistClient() {
   const [checked, setChecked] = useState({})
 
   const checklist = selectedVisa ? CHECKLISTS[selectedVisa] : null
-  const visaType = VISA_TYPES.find(v => v.id === selectedVisa)
 
   const { checkedCount, totalCount } = useMemo(() => {
     if (!checklist) return { checkedCount: 0, totalCount: 0 }
@@ -127,6 +126,20 @@ export default function ILRChecklistClient() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
+      {/* EU notice */}
+      <div className="mb-4 flex items-start gap-3 p-4 bg-amber-500/10 border border-amber-500/30 rounded-2xl">
+        <span className="text-amber-400 text-lg flex-shrink-0">🇪🇺</span>
+        <p className="text-sm text-ink-muted leading-relaxed">
+          <span className="font-semibold text-ink">EU citizen with Settled Status?</span>{' '}
+          You do not apply for ILR — Settled Status is the equivalent. This checklist is for non-EU routes only.
+          Use our{' '}
+          <Link href="/citizenship-planner" className="text-brand-400 underline hover:text-brand-300">
+            citizenship planner
+          </Link>{' '}
+          for your next steps.
+        </p>
+      </div>
+
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-display font-bold text-ink mb-2">
