@@ -37,10 +37,32 @@ function makeTrip() {
   return { id: nextId++, departure: '', return: '' }
 }
 
+const ROUTES = [
+  {
+    id: 'ilr',
+    label: 'ILR (Skilled Worker, Family, Ancestry, other work routes)',
+    maxPerWindow: 180,
+    windowYears: 1,
+    totalYears: 5,
+    rule: '180 days in any rolling 12-month period',
+    lapseRule: 'ILR lapses after 2 continuous years outside the UK',
+  },
+  {
+    id: 'settled',
+    label: 'EU / EEA Settled Status (EUSS) — citizenship route',
+    maxPerWindow: 450,
+    windowYears: 5,
+    totalYears: 5,
+    rule: '450 days total in the 5-year period, and max 90 days in the final 12 months',
+    lapseRule: 'Settled Status lapses after 5 continuous years outside the UK',
+  },
+]
+
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function AbsenceCalculatorClient() {
   const todayStr = new Date().toISOString().split('T')[0]
 
+  const [routeId, setRouteId] = useState('ilr')
   const [qualifyingStart, setQualifyingStart] = useState('')
   const [trips, setTrips] = useState([makeTrip()])
 
@@ -62,6 +84,7 @@ export default function AbsenceCalculatorClient() {
     const periodStart = new Date(qualifyingStart)
     if (isNaN(periodStart.getTime())) return null
 
+    const route = ROUTES.find(r => r.id === routeId)
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
@@ -80,31 +103,6 @@ export default function AbsenceCalculatorClient() {
       }
     })
 
-    // Slide 12-month window
-    let maxDays = 0
-    let worstStart = null
-    let worstEnd = null
-
-    let checkDate = new Date(periodStart)
-    while (checkDate <= today) {
-      const windowEnd = new Date(checkDate)
-      windowEnd.setFullYear(windowEnd.getFullYear() + 1)
-      windowEnd.setDate(windowEnd.getDate() - 1)
-
-      let count = 0
-      datesOutside.forEach(dateStr => {
-        const d = new Date(dateStr)
-        if (d >= checkDate && d <= windowEnd) count++
-      })
-
-      if (count > maxDays) {
-        maxDays = count
-        worstStart = new Date(checkDate)
-        worstEnd = new Date(windowEnd)
-      }
-      checkDate = new Date(checkDate.getTime() + 86400000)
-    }
-
     // Total days outside UK since qualifying start
     let totalDays = 0
     datesOutside.forEach(dateStr => {
@@ -112,15 +110,78 @@ export default function AbsenceCalculatorClient() {
       if (d >= periodStart && d <= today) totalDays++
     })
 
-    return {
-      totalDays,
-      maxDays,
-      worstStart,
-      worstEnd,
-      isPassing: maxDays <= 180,
-      hasData: datesOutside.size > 0,
+    if (routeId === 'ilr') {
+      // ILR — slide 12-month rolling window, max 180 days
+      let maxDays = 0
+      let worstStart = null
+      let worstEnd = null
+
+      let checkDate = new Date(periodStart)
+      while (checkDate <= today) {
+        const windowEnd = new Date(checkDate)
+        windowEnd.setFullYear(windowEnd.getFullYear() + 1)
+        windowEnd.setDate(windowEnd.getDate() - 1)
+
+        let count = 0
+        datesOutside.forEach(dateStr => {
+          const d = new Date(dateStr)
+          if (d >= checkDate && d <= windowEnd) count++
+        })
+
+        if (count > maxDays) {
+          maxDays = count
+          worstStart = new Date(checkDate)
+          worstEnd = new Date(windowEnd)
+        }
+        checkDate = new Date(checkDate.getTime() + 86400000)
+      }
+
+      return {
+        routeId: 'ilr',
+        totalDays,
+        maxDays,
+        worstStart,
+        worstEnd,
+        isPassing: maxDays <= 180,
+        hasData: datesOutside.size > 0,
+        threshold: 180,
+        rule: route.rule,
+        lapseRule: route.lapseRule,
+      }
+    } else {
+      // Settled Status — max 450 days total in 5 years, max 90 days in final 12 months
+      const fiveYearsAgo = new Date(today)
+      fiveYearsAgo.setFullYear(fiveYearsAgo.getFullYear() - 5)
+      const oneYearAgo = new Date(today)
+      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1)
+
+      let daysLast5Years = 0
+      let daysLast12Months = 0
+      datesOutside.forEach(dateStr => {
+        const d = new Date(dateStr)
+        if (d >= periodStart && d <= today) {
+          if (d >= fiveYearsAgo) daysLast5Years++
+          if (d >= oneYearAgo) daysLast12Months++
+        }
+      })
+
+      const passing5yr = daysLast5Years <= 450
+      const passing12m = daysLast12Months <= 90
+
+      return {
+        routeId: 'settled',
+        totalDays,
+        daysLast5Years,
+        daysLast12Months,
+        isPassing: passing5yr && passing12m,
+        passing5yr,
+        passing12m,
+        hasData: datesOutside.size > 0,
+        rule: route.rule,
+        lapseRule: route.lapseRule,
+      }
     }
-  }, [qualifyingStart, trips])
+  }, [routeId, qualifyingStart, trips])
 
   const hasValidTrip = trips.some(t => t.departure && t.return)
 
@@ -139,6 +200,44 @@ export default function AbsenceCalculatorClient() {
 
       {/* Form card */}
       <div className="bg-card rounded-2xl border border-border p-5 space-y-6 mb-6">
+
+        {/* Route selector */}
+        <fieldset>
+          <legend className="text-sm font-semibold text-ink mb-3">
+            What are you applying for?
+          </legend>
+          <div className="grid gap-2">
+            {ROUTES.map(r => (
+              <label
+                key={r.id}
+                className={clsx(
+                  'flex items-start gap-3 p-3 rounded-xl border cursor-pointer transition-colors min-h-[44px]',
+                  routeId === r.id
+                    ? 'border-brand-500 bg-brand-900'
+                    : 'border-border bg-raised hover:border-brand-400'
+                )}
+              >
+                <input
+                  type="radio"
+                  name="route"
+                  value={r.id}
+                  checked={routeId === r.id}
+                  onChange={() => setRouteId(r.id)}
+                  className="mt-0.5 w-4 h-4 flex-shrink-0 accent-brand-500"
+                />
+                <div className="flex-1 min-w-0">
+                  <span className={clsx(
+                    'text-sm font-medium block',
+                    routeId === r.id ? 'text-brand-400' : 'text-ink'
+                  )}>
+                    {r.label}
+                  </span>
+                  <span className="text-xs text-ink-muted mt-0.5 block">{r.rule}</span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </fieldset>
 
         {/* Qualifying period start */}
         <div>
@@ -290,35 +389,65 @@ export default function AbsenceCalculatorClient() {
                   : <AlertCircle size={24} className="text-danger flex-shrink-0 mt-0.5" />
                 }
                 <div>
-                  {result.isPassing ? (
-                    <>
-                      <p className="font-semibold text-success text-base">
-                        No 12-month window exceeds 180 days
-                      </p>
-                      <p className="text-ink-muted text-sm mt-1">
-                        Your highest absence in any 12-month window is{' '}
-                        <span className="text-ink font-semibold font-mono">{result.maxDays} days</span>.
-                        You are within the 180-day limit.
-                      </p>
-                    </>
+                  {result.routeId === 'ilr' ? (
+                    result.isPassing ? (
+                      <>
+                        <p className="font-semibold text-success text-base">
+                          No 12-month window exceeds 180 days
+                        </p>
+                        <p className="text-ink-muted text-sm mt-1">
+                          Your highest absence in any 12-month window is{' '}
+                          <span className="text-ink font-semibold font-mono">{result.maxDays} days</span>.
+                          You are within the 180-day ILR limit.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-semibold text-danger text-base">
+                          180-day rule may be breached
+                        </p>
+                        <p className="text-ink-muted text-sm mt-1">
+                          Your highest absence in a single 12-month window is{' '}
+                          <span className="text-danger font-semibold font-mono">{result.maxDays} days</span>
+                          {result.worstStart && result.worstEnd && (
+                            <>, in the window{' '}
+                              <span className="text-ink font-medium">
+                                {formatDate(result.worstStart)} — {formatDate(result.worstEnd)}
+                              </span>
+                            </>
+                          )}.
+                          {' '}This exceeds the 180-day limit.
+                        </p>
+                      </>
+                    )
                   ) : (
-                    <>
-                      <p className="font-semibold text-danger text-base">
-                        180-day rule may be breached
-                      </p>
-                      <p className="text-ink-muted text-sm mt-1">
-                        Your highest absence in a single 12-month window is{' '}
-                        <span className="text-danger font-semibold font-mono">{result.maxDays} days</span>
-                        {result.worstStart && result.worstEnd && (
-                          <>, in the window{' '}
-                            <span className="text-ink font-medium">
-                              {formatDate(result.worstStart)} — {formatDate(result.worstEnd)}
-                            </span>
-                          </>
-                        )}.
-                        {' '}This exceeds the 180-day limit.
-                      </p>
-                    </>
+                    result.isPassing ? (
+                      <>
+                        <p className="font-semibold text-success text-base">
+                          Within Settled Status absence limits
+                        </p>
+                        <p className="text-ink-muted text-sm mt-1">
+                          5-year total: <span className="text-ink font-semibold font-mono">{result.daysLast5Years} days</span> (limit: 450) —{' '}
+                          Last 12 months: <span className="text-ink font-semibold font-mono">{result.daysLast12Months} days</span> (limit: 90).
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-semibold text-danger text-base">
+                          Settled Status absence limit may be breached
+                        </p>
+                        {!result.passing5yr && (
+                          <p className="text-ink-muted text-sm mt-1">
+                            5-year total: <span className="text-danger font-semibold font-mono">{result.daysLast5Years} days</span> — exceeds the 450-day limit.
+                          </p>
+                        )}
+                        {!result.passing12m && (
+                          <p className="text-ink-muted text-sm mt-1">
+                            Last 12 months: <span className="text-danger font-semibold font-mono">{result.daysLast12Months} days</span> — exceeds the 90-day limit for the citizenship application year.
+                          </p>
+                        )}
+                      </>
+                    )
                   )}
                 </div>
               </div>
