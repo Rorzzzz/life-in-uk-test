@@ -12,6 +12,25 @@ export default function WeakSpotsPage() {
 
   const [index, setIndex] = useState(0)
   const [practicing, setPracticing] = useState(false)
+  // Snapshot the question list when practice starts — prevents live re-sort
+  // from changing the current question mid-session (Bug 1 fix)
+  const [sessionQuestions, setSessionQuestions] = useState([])
+  const [sessionDone, setSessionDone] = useState(false)
+
+  function startPractice() {
+    setSessionQuestions([...weakQuestions])
+    setIndex(0)
+    setSessionDone(false)
+    setPracticing(true)
+  }
+
+  function handleNext() {
+    if (index >= sessionQuestions.length - 1) {
+      setSessionDone(true)
+    } else {
+      setIndex(i => i + 1)
+    }
+  }
 
   if (!hasWeakSpots) {
     return (
@@ -29,18 +48,45 @@ export default function WeakSpotsPage() {
   }
 
   if (practicing) {
+    if (sessionDone) {
+      return (
+        <div className="max-w-2xl mx-auto px-4 py-6 text-center">
+          <p className="text-5xl mb-4">✅</p>
+          <h1 className="text-2xl font-display font-bold text-ink mb-2">Session complete!</h1>
+          <p className="text-ink-muted mb-6">
+            You practised all {sessionQuestions.length} weak spot{sessionQuestions.length !== 1 ? 's' : ''}.
+            Keep going to improve your accuracy.
+          </p>
+          <div className="flex flex-col gap-3 items-center">
+            <button
+              onClick={startPractice}
+              className="px-6 py-3 bg-brand-500 text-white rounded-xl font-semibold hover:bg-brand-600 active:opacity-80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            >
+              Practice Again
+            </button>
+            <button
+              onClick={() => setPracticing(false)}
+              className="px-6 py-3 text-ink-muted hover:text-ink rounded-xl transition-colors"
+            >
+              Back to Weak Spots
+            </button>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className="max-w-2xl mx-auto px-4 py-6">
         <div className="flex items-center gap-3 mb-6">
           <button onClick={() => setPracticing(false)} className="px-3 py-2 text-sm text-ink-muted hover:text-ink active:opacity-70 rounded-lg hover:bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">← Back</button>
           <h1 className="font-display font-bold text-ink">Weak Spots</h1>
         </div>
-        {weakQuestions[index] && (
+        {sessionQuestions[index] && (
           <QuestionCard
-            question={weakQuestions[index]}
+            question={sessionQuestions[index]}
             questionNumber={index + 1}
-            totalQuestions={weakQuestions.length}
-            onNext={() => setIndex(i => Math.min(weakQuestions.length - 1, i + 1))}
+            totalQuestions={sessionQuestions.length}
+            onNext={handleNext}
           />
         )}
       </div>
@@ -53,7 +99,7 @@ export default function WeakSpotsPage() {
       <p className="text-ink-muted text-base mb-6">{count} questions where you need more practice</p>
 
       <button
-        onClick={() => { setIndex(0); setPracticing(true) }}
+        onClick={startPractice}
         className="w-full py-4 bg-brand-500 text-white font-bold rounded-2xl mb-6 hover:bg-brand-600 active:opacity-80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
       >
         Practice All Weak Spots
