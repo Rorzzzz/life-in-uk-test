@@ -247,16 +247,16 @@ export default function CheatSheetPage() {
           </div>
         </section>
 
+        {/* Night Before section at bottom */}
+        <div className="mb-6">
+          <NightBeforeSection />
+        </div>
+
         {/* Bottom share CTA */}
         <div className="bg-brand-500/10 border border-brand-500/20 rounded-2xl p-5 text-center mb-6">
           <p className="font-semibold text-ink mb-1">Found this useful?</p>
           <p className="text-sm text-ink-muted mb-4">Share with anyone preparing for the Life in the UK test</p>
           <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
-        </div>
-
-        {/* Night Before section repeated at bottom for users who scroll through */}
-        <div className="mb-6">
-          <NightBeforeSection />
         </div>
 
         <div className="bg-card rounded-2xl p-4 mt-4">
