@@ -22,7 +22,7 @@ function ILRCalculatorIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         ILR Eligibility Calculator — When Can You Apply? (2026)
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Use our free ILR eligibility calculator to find out when you can apply for Indefinite Leave to Remain in the UK. Enter your visa type and UK entry date to get your exact eligibility date and a full cost breakdown. Results are based on current Home Office rules.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,17 +42,17 @@ function ILRCalculatorContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What is ILR (Indefinite Leave to Remain)?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Indefinite Leave to Remain gives you a permanent right to live and work in the UK with no time limit on your stay. It is sometimes called settlement. ILR is different from British citizenship — you do not get a British passport, and ILR can lapse if you spend too long outside the UK.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         For most visa routes, you must hold ILR for at least 12 months before you can apply for British citizenship. Getting ILR is the step between a time-limited visa and becoming a British citizen.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         ILR qualifying periods by visa route
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The number of years you must live in the UK before applying for ILR depends on your visa type:
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -67,10 +67,10 @@ function ILRCalculatorContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         The 180-day absence rule
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         During your qualifying period, you must not spend more than 180 days outside the UK in any single 12-month window. This is a rolling window — it is not calculated from 1 January to 31 December. Any consecutive 12-month period is checked.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Short trips add up quickly. Business travel, family visits, and holidays all count. Breaching this rule can make your ILR application ineligible. Use our{' '}
         <Link href="/absence-calculator" className="text-brand underline">absence calculator</Link>{' '}
         to check if any of your trips breach the 180-day limit.

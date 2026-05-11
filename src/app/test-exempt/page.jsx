@@ -22,7 +22,7 @@ function TestExemptIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         Life in the UK Test Exemption Checker — Do You Need to Take It?
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Not everyone needs to take the Life in the UK test. Find out in 60 seconds whether you are exempt by answering 5 questions about your age, nationality, visa type, and health. Get a clear yes or no with a full explanation of your exemption status.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,7 +42,7 @@ function TestExemptContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Who is exempt from the Life in the UK test?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The following groups do not need to take the Life in the UK test when applying for ILR or British citizenship:
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -51,27 +51,27 @@ function TestExemptContent() {
         <li>Long-term physical or mental condition that prevents you from sitting the test — exempt with a doctor&apos;s letter and supporting medical evidence</li>
         <li>Certain nationalities including Australia, Canada, USA, New Zealand, and others (see full list below)</li>
       </ul>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Note: Skilled Worker visa holders are exempt from the B1 English language requirement but are not automatically exempt from the Life in the UK test. These are two separate requirements.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Exempt nationalities (full list)
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Citizens of the following countries are exempt from both the Life in the UK test and the B1 English language requirement when applying for ILR or citizenship:
       </p>
       <p className="text-sm text-ink-muted leading-relaxed mb-3">
         Antigua and Barbuda, Australia, The Bahamas, Barbados, Belize, British Overseas Territories citizens, Canada, Dominica, Grenada, Guyana, Jamaica, Ireland (applying for citizenship only), Malta, New Zealand, St Kitts and Nevis, St Lucia, St Vincent and the Grenadines, Trinidad and Tobago, United States of America.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         This list can change. Always verify your status on GOV.UK before submitting your application.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What does exemption mean in practice?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         If you are exempt from the Life in the UK test, you are also exempt from the B1 English language requirement. You declare your exemption on your ILR or citizenship application form — you do not need to sit a test or obtain a certificate.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">

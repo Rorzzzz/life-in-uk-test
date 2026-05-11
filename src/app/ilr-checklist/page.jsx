@@ -22,7 +22,7 @@ function ILRChecklistIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         ILR Document Checklist 2026 — What You Need to Apply
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Select your visa type to get a personalised, printable checklist of every document you need for your ILR application. The documents required vary depending on your route — Skilled Worker, Family, Long Residence, or other. Tick items off as you gather them.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,7 +42,7 @@ function ILRChecklistContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Documents all ILR applicants need
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Regardless of your visa route, the following documents are required for almost every ILR application:
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -56,13 +56,13 @@ function ILRChecklistContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Why getting documents right matters
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The ILR application fee is £3,226 per person. This fee is not refunded if your application is refused. A refused application means paying again and restarting the process — which can add months to your timeline and thousands of pounds in additional cost.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         UKVI cross-checks travel history, employment records, and financial evidence against other government data. Missing or inconsistent documents are one of the most common reasons for delays and refusals. Preparing a complete, consistent application the first time is essential.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Use our{' '}
         <Link href="/ilr-risk-check" className="text-brand underline">ILR refusal risk checker</Link>{' '}
         to identify any potential issues before you submit.
@@ -71,10 +71,10 @@ function ILRChecklistContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How long does ILR take to process?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Standard ILR processing usually takes within 6 months of your biometric enrolment appointment. A priority service is available for an additional fee and typically gives a faster decision.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         You can check your application status through your UKVI online account. Do not book international travel after submitting your application until your ILR is confirmed — leaving the UK before a decision can complicate your application.
       </p>
 

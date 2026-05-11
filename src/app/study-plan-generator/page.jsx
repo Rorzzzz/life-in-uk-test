@@ -22,7 +22,7 @@ function StudyPlanIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         Life in the UK Test Study Plan Generator — Free Personalised Plan
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Get a free personalised study plan for the Life in the UK test based on your test date and current practice score. Enter your details and we will generate a week-by-week revision schedule showing exactly what to study, when to take mock exams, and how many practice questions to do each day.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,17 +42,17 @@ function StudyPlanContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How long should you study for the Life in the UK test?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Most people need 3–6 weeks of consistent daily study to be ready for the Life in the UK test. The pass rate is approximately 67% — which means one in three candidates fails on their first attempt. Passive reading alone is not enough to pass reliably.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         20 minutes of active practice every day is more effective than a 3-hour session once a week. The brain retains information better through regular, spaced repetition than through cramming. This study plan uses that principle — it breaks your revision into short, daily sessions with rest built in.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What to study (and what not to study)
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         All test questions come from the official Life in the UK handbook (3rd edition). Nothing from outside the handbook appears in the test. Do not rely on third-party summaries or outdated study guides — use the official book.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -61,17 +61,17 @@ function StudyPlanContent() {
         <li>Chapter 4 (A Modern, Thriving Society) covers arts, sport, and culture — consistently underrevised, do not skip it</li>
         <li>Dates, names, and numbers are tested directly — memorise the key ones</li>
       </ul>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Our <Link href="/cheat-sheet" className="text-brand underline">cheat sheet</Link> lists all the key dates, names, and facts worth memorising before your test.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         When are you ready to book?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Book your test when you are consistently scoring 21 or more out of 24 in timed practice — not just the 18/24 pass mark. A 3-question buffer protects you against a harder-than-usual test day. The questions in the real test can vary in difficulty from sitting to sitting.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Take at least 2 full 24-question timed mock exams before booking. Do not book based on a calendar date — book based on your practice scores. If you are not consistently hitting 21+, extend your preparation rather than booking early.
       </p>
 

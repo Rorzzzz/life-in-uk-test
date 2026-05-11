@@ -22,7 +22,7 @@ function ILRRiskIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         ILR Refusal Risk Checker — Free Assessment Before You Apply
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         ILR applications cost £3,226 per person — and the fee is not refunded if refused. Use our free ILR refusal risk checker to identify potential issues before you submit. Answer 9 questions about your qualifying period, documents, and eligibility to get a risk assessment with recommended next steps.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,7 +42,7 @@ function ILRRiskContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Most common reasons ILR applications are refused
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         UKVI publishes refusal reasons and these are well documented through immigration case law. The most common reasons are:
       </p>
       <ol className="text-sm text-ink-muted leading-relaxed space-y-2 mb-3 list-decimal list-inside">
@@ -58,10 +58,10 @@ function ILRRiskContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         The cost of a refused ILR application
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         A refused ILR application is an expensive setback. The £3,226 application fee is not refunded. You must pay the full fee again if you reapply. A refused application is also noted on your immigration record — which can affect future applications including citizenship.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         For a family of two adults, a refusal means at minimum £6,452 in repeat fees — assuming you fix the underlying issue and reapply. This is why identifying and resolving issues before you apply is so important.
       </p>
 

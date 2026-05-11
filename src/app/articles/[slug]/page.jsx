@@ -79,7 +79,7 @@ const components = {
     <tr className="border-b border-border last:border-b-0">{children}</tr>
   ),
   td: ({ children }) => (
-    <td className="px-4 py-3 text-ink-muted leading-snug">{children}</td>
+    <td className="px-4 py-3 text-ink-muted leading-relaxed">{children}</td>
   ),
 }
 
@@ -132,7 +132,7 @@ export default function ArticlePage({ params }) {
               </span>
             )}
           </div>
-          <h1 className="text-2xl font-display font-bold text-ink leading-snug mb-3">
+          <h1 className="text-2xl md:text-3xl font-display font-bold text-ink leading-snug mb-3">
             {article.title}
           </h1>
           <p className="text-ink-muted leading-relaxed">

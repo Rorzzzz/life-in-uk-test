@@ -22,7 +22,7 @@ function GoodCharacterIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         Good Character Check — ILR &amp; Citizenship Requirement 2026
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The good character requirement applies to everyone applying for ILR or British citizenship. Answer 6 questions about your criminal history, immigration record, and financial conduct to get an assessment of how your background might be viewed by the Home Office.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,10 +42,10 @@ function GoodCharacterContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What is the good character requirement?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         UKVI assesses whether applicants are of good character before granting ILR or British citizenship. It is a holistic assessment — there is no single checklist of what passes or fails. The caseworker looks at the full picture of your history in the UK and abroad.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The main factors are: criminal history, immigration conduct, financial honesty (including unpaid taxes and benefit fraud), and civic behaviour. Serious issues do not automatically mean refusal — but they must be declared. Failure to declare something that UKVI later finds is treated more seriously than the original issue.
       </p>
 
@@ -70,13 +70,13 @@ function GoodCharacterContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Spent convictions and citizenship applications
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         For most jobs and DBS checks, spent convictions do not need to be declared. Citizenship applications are an exception. You must declare all convictions on a citizenship application — including spent ones.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Failing to declare a conviction you thought was spent is treated as deception. This is more serious in the eyes of the Home Office than the original conviction itself. If in doubt, declare it.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Use our{' '}
         <Link href="/ilr-risk-check" className="text-brand underline">ILR refusal risk checker</Link>{' '}
         to assess other potential issues before you apply.

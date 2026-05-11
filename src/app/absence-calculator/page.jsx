@@ -22,7 +22,7 @@ function AbsenceCalculatorIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         UK Absence Calculator — Check Your 180-Day ILR Rule
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Use our free absence calculator to check whether your trips outside the UK breach the 180-day rule for ILR eligibility. Enter your qualifying period start date and add each trip — the calculator checks every rolling 12-month window and shows whether you are within the limit.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,43 +42,43 @@ function AbsenceCalculatorContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What is the 180-day rule for ILR?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         During your ILR qualifying period, you must not spend more than 180 days outside the UK in any single 12-month period. This window is rolling — it can start on any date, not just 1 January. Every possible consecutive 12-month period within your qualifying period is checked.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         For example: if you left the UK on 1 January 2025 and returned on 1 July 2025, that is 181 days outside the UK in that particular window. That would be a breach of the rule, even if you were in the UK for all other periods.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How are days outside the UK counted?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Each day you are not physically present in the UK counts as an absence day. Using a conservative approach — which matches UKVI&apos;s practice — your departure day counts as an absence day. Your arrival day back in the UK does not count as an absence.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Short trips add up quickly. A two-week holiday, a week-long business trip, and a few weekend breaks can together amount to over a month of absences per year. Over a 5-year qualifying period, this can become a significant risk if you travel regularly.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What happens if you breach the 180-day rule?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         UKVI can refuse your ILR application if your travel history shows any 12-month window with more than 180 days outside the UK. The £3,226 ILR application fee is not refunded if your application is refused.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         In some cases UKVI may exercise discretion where there were genuine exceptional circumstances — for example, a serious medical emergency that kept you abroad. However, this is rare and not guaranteed. If you have breached the rule, get advice from an OISC-registered immigration adviser before applying.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Breaching the rule does not always mean a permanent bar. You may be able to wait until enough time has passed that the offending 12-month window falls outside your qualifying period.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How to keep track of your absences
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Start recording every trip from the first day of your qualifying period. Note the date you left the UK and the date you returned for every journey, including short trips. UKVI cross-checks your declared travel history against UK border records.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Use this calculator regularly — not just before you apply. Checking your running total every few months means you can adjust your travel plans if you are approaching the limit, rather than discovering a problem when it is too late.
       </p>
 

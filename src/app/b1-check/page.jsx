@@ -22,7 +22,7 @@ function B1CheckIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         Free B1 English Level Check — Are You Ready for Your UK Visa Test?
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Find out if your English is at B1 level with our free 15-question practice quiz. The B1 English test is required for most ILR and British citizenship applications. Answer questions covering vocabulary, grammar, and reading comprehension — and find out if you are ready to book an official UKVI-approved test.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,27 +42,27 @@ function B1CheckContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Why do you need a B1 English test for ILR?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Most ILR applicants must prove they can speak and listen in English at B1 level on the Common European Framework of Reference (CEFR). This is a legal requirement — you cannot submit your ILR application without meeting it unless you are exempt.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Accepted tests for the B1 requirement include Trinity GESE Grade 5, IELTS Life Skills B1, and LANGUAGECERT B1. All tests must be taken with a UKVI-approved provider. Skilled Worker visa holders are generally exempt because they proved English when they applied for their visa. Certain nationalities are also exempt — including citizens of Australia, Canada, the USA, and New Zealand.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What does B1 English level mean?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         B1 is the intermediate level on the CEFR scale. At B1 level you can understand the main points of clear speech on familiar topics. You can manage most everyday situations in English and describe your own experiences, events, and plans.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         For the UKVI B1 test, the focus is on speaking and listening — not writing. You will have a short conversation with a trained assessor and answer questions on everyday topics. You do not need to write an essay or pass a written grammar test to meet this requirement.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How to book an official B1 test
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         You must use a UKVI-approved test provider. The main options are:
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -70,7 +70,7 @@ function B1CheckContent() {
         <li>Trinity College London: in-person at approved test centres across the UK</li>
         <li>IELTS Life Skills B1: in-person at approved test centres — check the British Council or IDP for booking</li>
       </ul>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Results from approved providers are valid for 2 years in most cases. Check GOV.UK for the approved provider list before booking — only tests from approved providers are accepted.
       </p>
 

@@ -22,7 +22,7 @@ function CitizenshipPlannerIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         British Citizenship Planner — Timeline &amp; Cost Calculator 2026
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Find out when you can apply for British citizenship and what it will cost. Enter your ILR date and route to get your exact eligibility date, a month-by-month timeline, and a full breakdown of fees. Updated for April 2026 Home Office fees.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -42,7 +42,7 @@ function CitizenshipPlannerContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How long does it take to get British citizenship?
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The timeline depends on your route to citizenship:
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -56,7 +56,7 @@ function CitizenshipPlannerContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         British citizenship requirements
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         To apply for British citizenship by naturalisation you must meet all of the following:
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -78,7 +78,7 @@ function CitizenshipPlannerContent() {
         <li>British passport (separate, optional): £102 adult / £66.50 child — online application</li>
         <li>None of the application fees are refunded if the application is refused</li>
       </ul>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         A family of two adults and one child applying together faces total costs of approximately £4,678 in application and ceremony fees, before passport costs. Use our{' '}
         <Link href="/ilr-calculator" className="text-brand underline">ILR calculator</Link>{' '}
         to also estimate the cost of the ILR stage.

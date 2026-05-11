@@ -22,7 +22,7 @@ function TrueCostIntro() {
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
         True Cost of Becoming British — Full Journey Calculator
       </h1>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Most people applying for British citizenship only think about the citizenship fee. The real cost — from your first visa to your British passport — is dramatically higher. This calculator adds up every fee in the journey so you can plan ahead.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-2 list-disc list-inside">
@@ -43,7 +43,7 @@ function TrueCostContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Why the true cost is much higher than most people expect
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Most people only budget for the ILR fee and the citizenship fee. But these two costs are only the final stage of a journey that typically spans 6 or more years and involves repeated visa applications, the Immigration Health Surcharge, language and knowledge tests, and biometric enrolment. When you add it all up, the total is often a shock.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -56,7 +56,7 @@ function TrueCostContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         The biggest cost most people forget — the Immigration Health Surcharge
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         The Immigration Health Surcharge (IHS) is paid upfront with every visa application. It is not a small administrative charge — it is a major cost that most people underestimate until they see the bill.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -66,11 +66,11 @@ function TrueCostContent() {
         <li>For a family of four on a 5-year visa, the IHS bill is £18,275 — before any other fee</li>
         <li>You pay the IHS again if you renew — it is not a one-off charge</li>
       </ul>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         Once you have ILR, you stop paying the IHS. That is one of the most significant financial benefits of reaching ILR. For more detail, read our guide to the{' '}
         <Link href="/articles/immigration-health-surcharge-ilr" className="text-brand underline">Immigration Health Surcharge and how it works</Link>.
       </p>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         <strong>EU citizens with Settled Status were exempt from the IHS entirely.</strong>{' '}
         This is one of the three reasons EU citizens pay so much less — the IHS alone would have cost £5,175 per adult on a 5-year visa.
       </p>
@@ -78,7 +78,7 @@ function TrueCostContent() {
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How UK immigration fees have changed
       </h2>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         UK immigration fees have increased sharply over the past 14 years. The ILR fee has more than tripled since 2014, and the citizenship fee has more than doubled. There is no sign of reversal.
       </p>
       <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
@@ -87,7 +87,7 @@ function TrueCostContent() {
         <li>The Immigration Health Surcharge did not exist before 2015</li>
         <li>Every major fee has increased at almost every review point since 2014</li>
       </ul>
-      <p className="text-sm text-ink leading-relaxed mb-3">
+      <p className="text-base text-ink leading-relaxed mb-3">
         If you are in year 1 or 2 of your immigration journey, budget for fees that are higher than today&apos;s figures by the time you reach ILR. Read our article on{' '}
         <Link href="/articles/why-is-ilr-so-expensive" className="text-brand underline">why ILR is so expensive</Link>{' '}
         for the full picture.
