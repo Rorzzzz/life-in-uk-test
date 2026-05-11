@@ -80,7 +80,7 @@ export default function HomeDashboard({ chapters }) {
         <div className="space-y-3">
           {/* New user — Practice is the dominant CTA */}
           <Link href="/practice" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
-            <div className="bg-brand-500/10 border border-brand-500/30 rounded-2xl p-5 flex items-center justify-between gap-4 active:scale-[0.98] transition-transform">
+            <div className="bg-card border border-border rounded-2xl p-5 flex items-center justify-between gap-4 active:scale-[0.98] transition-transform">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-500/20">
                   <Layers size={24} className="text-brand-400" />
