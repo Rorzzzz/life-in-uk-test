@@ -27,6 +27,7 @@ export default function WeakSpotsPage() {
   function handleNext() {
     if (index >= sessionQuestions.length - 1) {
       setSessionDone(true)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       setIndex(i => i + 1)
     }
