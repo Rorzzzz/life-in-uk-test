@@ -60,7 +60,7 @@ export default function HomeDashboard({ chapters }) {
       {/* Weak spots alert — only shown when user has questions to drill */}
       {weakCount > 0 && (
         <Link href="/weak-spots" className="block mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
-          <div className="bg-danger/10 border border-danger/30 rounded-2xl p-4 flex items-center justify-between gap-3 active:scale-[0.98] transition-transform">
+          <div className="bg-card border border-border rounded-2xl p-4 flex items-center justify-between gap-3 active:scale-[0.98] transition-transform">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-danger/20">
                 <Target size={20} className="text-danger" />
