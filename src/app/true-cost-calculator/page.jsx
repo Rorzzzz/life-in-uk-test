@@ -3,12 +3,12 @@ import TrueCostClient from './TrueCostClient'
 
 export async function generateMetadata() {
   return {
-    title: 'True Cost of Becoming British — £11,000 to £50,000+',
-    description: 'Most people only budget for the £1,839 citizenship fee. The real cost — visas, IHS, ILR, and more — ranges from £11,000 to £50,000+. Calculate yours free.',
+    title: 'True Cost of Becoming British — From £2,000 to £50,000+',
+    description: 'EU citizens pay from £2,000. Work visa routes reach £50,000+ for families. Calculate your exact total — every fee from first visa to British passport, free.',
     alternates: { canonical: 'https://passtheuktest.co.uk/true-cost-calculator' },
     openGraph: {
-      title: 'Becoming British Costs £40,000+ — Calculate Yours Free',
-      description: 'Most people only budget for the £1,839 citizenship fee. The real cost — visas, IHS, ILR, and more — reaches £40,000+ per person. Calculate yours free.',
+      title: 'True Cost of Becoming British — From £2,000 to £50,000+',
+      description: 'EU citizens pay from £2,000. Work visa routes reach £50,000+ for families. Calculate your exact total — every fee from first visa to British passport, free.',
       url: 'https://passtheuktest.co.uk/true-cost-calculator',
       type: 'website',
     },
