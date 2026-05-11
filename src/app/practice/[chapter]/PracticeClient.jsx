@@ -28,6 +28,7 @@ export default function PracticeClient({ chapter, questions }) {
     if (index + 1 >= session.length) {
       completeChapter(chapter.id, correct, session.length)
       setDone(true)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       setIndex(i => i + 1)
     }

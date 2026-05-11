@@ -41,6 +41,7 @@ export default function ExamPage() {
   const handleFinish = useCallback((finalCorrect) => {
     setDone(true)
     completeExam(finalCorrect, questions.length, timeLeft)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [questions.length, timeLeft, completeExam])
 
   function handleAnswer(isCorrect) {
