@@ -35,13 +35,16 @@ export default function NightBeforeSection() {
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center justify-between p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
       >
-        <div>
+        <div className="flex-1 min-w-0">
           <p className="font-bold text-ink flex items-center gap-2">
             🌙 Night-Before Quick Revision
           </p>
-          <p className="text-sm text-ink-muted mt-0.5">Top 20 most tested facts — the essentials only</p>
+          <p className="text-sm text-ink-muted mt-0.5">Top 20 most tested facts — tap to expand</p>
         </div>
-        {open ? <ChevronUp size={18} className="text-amber-400 flex-shrink-0" /> : <ChevronDown size={18} className="text-amber-400 flex-shrink-0" />}
+        <div className="flex items-center gap-1.5 ml-3 flex-shrink-0">
+          <span className="text-xs text-amber-400 font-medium">{open ? 'Close' : 'Expand'}</span>
+          {open ? <ChevronUp size={16} className="text-amber-400" /> : <ChevronDown size={16} className="text-amber-400" />}
+        </div>
       </button>
 
       {open && (

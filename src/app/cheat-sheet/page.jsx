@@ -87,9 +87,6 @@ export default function CheatSheetPage() {
           <span>⭐⭐⭐ Almost every test</span>
         </div>
 
-        {/* Night Before Mini Section */}
-        <NightBeforeSection />
-
         {/* Patron Saints */}
         <section className="mb-8 print-section">
           <SectionHeader title="Patron Saints & National Symbols" colour={SECTION_COLOURS.saints} stars="⭐⭐⭐" />
