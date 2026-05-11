@@ -71,13 +71,11 @@ export default function CheatSheetPage() {
 
         {/* Header with action buttons */}
         <div className="mb-4">
-          <h1 className="text-2xl md:text-3xl font-display font-bold text-ink">Life in the UK Test Cheat Sheet</h1>
-          <div className="flex items-center justify-between gap-3 mt-2">
-            <p className="text-base text-ink-muted">Print or save this before your test — 2026 edition</p>
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
-              <PrintButton />
-            </div>
+          <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-1">Life in the UK Test Cheat Sheet</h1>
+          <p className="text-base text-ink-muted mb-3">Print or save this before your test — 2026 edition</p>
+          <div className="flex items-center gap-2">
+            <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
+            <PrintButton />
           </div>
         </div>
 
