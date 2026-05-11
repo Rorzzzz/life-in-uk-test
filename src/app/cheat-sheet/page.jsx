@@ -110,7 +110,10 @@ export default function CheatSheetPage() {
                 </div>
                 <p className="text-sm font-semibold text-ink-muted">{p.saint}</p>
                 <p className="text-xs text-ink-muted mt-1">📅 {p.day}</p>
-                <p className="text-xs text-ink-muted">🌸 {p.flower}</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <Image src={p.flowerImg} alt={p.flower} width={28} height={28} className="rounded-full object-cover" />
+                  <span className="text-xs text-ink-muted">{p.flower}</span>
+                </div>
                 <p className="text-xs text-ink-muted">🎨 {p.colour}</p>
               </div>
             ))}
