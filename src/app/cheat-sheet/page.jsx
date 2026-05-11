@@ -257,6 +257,11 @@ export default function CheatSheetPage() {
           <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
         </div>
 
+        {/* Night Before section repeated at bottom for users who scroll through */}
+        <div className="mb-6">
+          <NightBeforeSection />
+        </div>
+
         <div className="bg-card rounded-2xl p-4 mt-4">
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Practice Tests</p>
           <div className="flex flex-wrap gap-2">
