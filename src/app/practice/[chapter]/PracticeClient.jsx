@@ -24,14 +24,16 @@ export default function PracticeClient({ chapter, questions }) {
     if (isCorrect) setCorrect(c => c + 1)
   }
 
+  function scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
   function handleNext() {
     if (index + 1 >= session.length) {
       completeChapter(chapter.id, correct, session.length)
       setDone(true)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       setIndex(i => i + 1)
     }
+    scrollTop()
   }
 
   function handleNewSession() {
@@ -39,6 +41,7 @@ export default function PracticeClient({ chapter, questions }) {
     setIndex(0)
     setCorrect(0)
     setDone(false)
+    scrollTop()
   }
 
   if (done) {
@@ -87,7 +90,7 @@ export default function PracticeClient({ chapter, questions }) {
         </div>
 
         <button
-          onClick={() => setStarted(true)}
+          onClick={() => { setStarted(true); scrollTop() }}
           className="w-full py-4 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white font-semibold rounded-2xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
         >
           Start session →

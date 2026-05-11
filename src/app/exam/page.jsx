@@ -38,6 +38,8 @@ export default function ExamPage() {
     return () => clearTimeout(t)
   }, [started, done, timeLeft]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  function scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
   const handleFinish = useCallback((finalCorrect) => {
     setDone(true)
     completeExam(finalCorrect, questions.length, timeLeft)
@@ -60,6 +62,7 @@ export default function ExamPage() {
       handleFinish(correctRef.current)
     } else {
       setIndex(i => i + 1)
+      scrollTop()
     }
   }
 
@@ -79,7 +82,7 @@ export default function ExamPage() {
           ))}
         </div>
         <button
-          onClick={() => setStarted(true)}
+          onClick={() => { setStarted(true); scrollTop() }}
           className="w-full max-w-sm py-4 bg-brand-500 text-white font-bold text-lg rounded-2xl hover:bg-brand-600 active:opacity-80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
         >
           Start Mock Exam
@@ -96,7 +99,7 @@ export default function ExamPage() {
           score={correct}
           total={questions.length}
           xpEarned={correct === questions.length ? 200 : correct >= 18 ? 100 : 0}
-          onRetry={() => { setIndex(0); setCorrect(0); setWrongByChapter({}); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS) }}
+          onRetry={() => { setIndex(0); setCorrect(0); setWrongByChapter({}); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS); scrollTop() }}
           onHome={() => router.push('/')}
           onDifferentTest={() => {
             const n = Math.floor(Math.random() * 45) + 1

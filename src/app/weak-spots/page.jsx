@@ -17,20 +17,23 @@ export default function WeakSpotsPage() {
   const [sessionQuestions, setSessionQuestions] = useState([])
   const [sessionDone, setSessionDone] = useState(false)
 
+  function scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
   function startPractice() {
     setSessionQuestions([...weakQuestions])
     setIndex(0)
     setSessionDone(false)
     setPracticing(true)
+    scrollTop()
   }
 
   function handleNext() {
     if (index >= sessionQuestions.length - 1) {
       setSessionDone(true)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       setIndex(i => i + 1)
     }
+    scrollTop()
   }
 
   if (!hasWeakSpots) {
