@@ -14,6 +14,12 @@ const nextConfig = {
   // Image optimisation
   images: {
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+      },
+    ],
   },
 
   // Headers for security + performance

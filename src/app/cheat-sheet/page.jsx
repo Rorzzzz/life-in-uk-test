@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHEAT_SHEET } from '@/data/cheatSheet'
 import PrintButton from './PrintButton'
@@ -97,8 +98,14 @@ export default function CheatSheetPage() {
           <div className="grid grid-cols-2 gap-3">
             {CHEAT_SHEET.patronSaints.map(p => (
               <div key={p.nation} className="bg-card rounded-xl p-4 border-l-4" style={{ borderLeftColor: SECTION_COLOURS.saints }}>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">{p.flag}</span>
+                <div className="flex items-center gap-3 mb-2">
+                  <Image
+                    src={p.flagImg}
+                    alt={`Flag of ${p.nation}`}
+                    width={40}
+                    height={30}
+                    className="rounded-sm flex-shrink-0"
+                  />
                   <p className="font-bold text-ink text-base">{p.nation}</p>
                 </div>
                 <p className="text-sm font-semibold text-ink-muted">{p.saint}</p>
