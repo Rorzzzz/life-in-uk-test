@@ -70,14 +70,14 @@ export default function CheatSheetPage() {
       <div className="max-w-2xl mx-auto px-4 py-6">
 
         {/* Header with action buttons */}
-        <div className="flex items-start justify-between mb-2 gap-4">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-display font-bold text-ink">Life in the UK Test Cheat Sheet</h1>
-            <p className="text-base text-ink-muted mt-1">Print or save this before your test — 2026 edition</p>
-          </div>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <ShareButton url={shareUrl} title={shareTitle} text={shareText} compact />
-            <PrintButton />
+        <div className="mb-4">
+          <h1 className="text-2xl md:text-3xl font-display font-bold text-ink">Life in the UK Test Cheat Sheet</h1>
+          <div className="flex items-center justify-between gap-3 mt-2">
+            <p className="text-base text-ink-muted">Print or save this before your test — 2026 edition</p>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
+              <PrintButton />
+            </div>
           </div>
         </div>
 
