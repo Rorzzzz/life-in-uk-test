@@ -69,10 +69,10 @@ export const CHEAT_SHEET = {
   ],
 
   patronSaints: [
-    { nation: 'England',          saint: 'St George',  day: '23 April',   flower: 'Rose',     colour: 'Red & white' },
-    { nation: 'Scotland',         saint: 'St Andrew',  day: '30 November',flower: 'Thistle',   colour: 'Blue & white' },
-    { nation: 'Wales',            saint: 'St David',   day: '1 March',    flower: 'Daffodil',  colour: 'Red & green' },
-    { nation: 'Northern Ireland', saint: 'St Patrick', day: '17 March',   flower: 'Shamrock',  colour: 'Green & white' },
+    { nation: 'England',          saint: 'St George',  day: '23 April',    flower: 'Rose',     colour: 'Red & white',   flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+    { nation: 'Scotland',         saint: 'St Andrew',  day: '30 November', flower: 'Thistle',   colour: 'Blue & white',  flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿' },
+    { nation: 'Wales',            saint: 'St David',   day: '1 March',     flower: 'Daffodil',  colour: 'Red & green',   flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿' },
+    { nation: 'Northern Ireland', saint: 'St Patrick', day: '17 March',    flower: 'Shamrock',  colour: 'Green & white', flag: '🇬🇧' },
   ],
 
   famousPeople: [

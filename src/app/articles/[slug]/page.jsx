@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 import { getAllPublishedSlugs, getArticleBySlug } from '@/lib/articles'
 import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateStaticParams() {
   return getAllPublishedSlugs()
@@ -114,23 +115,31 @@ export default function ArticlePage({ params }) {
 
         {/* Header */}
         <header className="mb-8">
-          <div className="flex items-center gap-2 mb-3 flex-wrap">
-            {article.category && (
-              <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${CATEGORY_COLOURS[article.category] ?? 'bg-border text-ink-muted'}`}>
-                {article.category}
-              </span>
-            )}
-            {article.readTime && (
-              <span className="flex items-center gap-1 text-xs text-ink-muted">
-                <Clock size={11} />
-                {article.readTime}
-              </span>
-            )}
-            {article.date && (
-              <span className="text-xs text-ink-muted">
-                Last reviewed: {new Date(article.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
-              </span>
-            )}
+          <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap">
+              {article.category && (
+                <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${CATEGORY_COLOURS[article.category] ?? 'bg-border text-ink-muted'}`}>
+                  {article.category}
+                </span>
+              )}
+              {article.readTime && (
+                <span className="flex items-center gap-1 text-xs text-ink-muted">
+                  <Clock size={11} />
+                  {article.readTime}
+                </span>
+              )}
+              {article.date && (
+                <span className="text-xs text-ink-muted">
+                  Last reviewed: {new Date(article.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
+                </span>
+              )}
+            </div>
+            <ShareButton
+              url={`https://passtheuktest.co.uk/articles/${params.slug}`}
+              title={article.title}
+              text={`${article.title} — free guide at passtheuktest.co.uk`}
+              compact
+            />
           </div>
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink leading-snug mb-3">
             {article.title}
@@ -177,6 +186,17 @@ export default function ArticlePage({ params }) {
               Take a mock test
             </Link>
           </div>
+        </div>
+
+        {/* Bottom share */}
+        <div className="flex items-center gap-2 mt-4 mb-2">
+          <span className="text-xs text-ink-muted">Found this useful?</span>
+          <ShareButton
+            url={`https://passtheuktest.co.uk/articles/${params.slug}`}
+            title={article.title}
+            text={`${article.title} — free guide at passtheuktest.co.uk`}
+            compact
+          />
         </div>
 
         {/* Internal links */}

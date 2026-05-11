@@ -2,17 +2,45 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHEAT_SHEET } from '@/data/cheatSheet'
 import PrintButton from './PrintButton'
+import ShareButton from '@/components/ui/ShareButton'
+import NightBeforeSection from './NightBeforeSection'
 
 export const metadata = {
-  title: 'Life in the UK Test Cheat Sheet 2026 — Free Printable',
-  description: 'The most complete free printable cheat sheet for the Life in the UK test. Key dates, patron saints, famous people, arts, music, sports origins and Parliament — all on one page.',
+  title: 'Life in the UK Test Cheat Sheet 2026 — Free Printable & Shareable',
+  description: 'The most complete free cheat sheet for the Life in the UK test. Key dates, patron saints, famous people, inventions, sports origins — with test-likelihood ratings. Free to print, download and share.',
   alternates: { canonical: 'https://passtheuktest.co.uk/cheat-sheet' },
   openGraph: {
     title: 'Life in the UK Test Cheat Sheet 2026 — Free Printable',
-    description: 'Key dates, patron saints, famous people, arts, music, sports origins and Parliament — everything to memorise, free and printable.',
+    description: 'Everything you need to memorise for the Life in the UK test — patron saints, key dates, famous people, inventions and more. Free to print and share.',
     url: 'https://passtheuktest.co.uk/cheat-sheet',
     type: 'website',
   },
+}
+
+// Section colour accents
+const SECTION_COLOURS = {
+  saints:     '#a855f7', // purple
+  capitals:   '#22d07a', // green
+  parliament: '#3381ff', // brand blue
+  numbers:    '#f59e0b', // amber
+  arts:       '#ec4899', // pink
+  music:      '#8b5cf6', // violet
+  sports:     '#06b6d4', // cyan
+  inventions: '#f59e0b', // amber/xp
+  people:     '#3381ff', // blue
+  dates:      '#ff4d6d', // red
+}
+
+function SectionHeader({ title, colour, stars }) {
+  return (
+    <div className="flex items-center justify-between mb-3 border-b pb-2" style={{ borderColor: `${colour}44` }}>
+      <h2 className="text-lg font-display font-bold text-ink flex items-center gap-2">
+        <span className="w-1 h-5 rounded-full flex-shrink-0" style={{ backgroundColor: colour }} />
+        {title}
+      </h2>
+      {stars && <span className="text-xs text-ink-muted" title="How often this topic appears in the test">{stars}</span>}
+    </div>
+  )
 }
 
 export default function CheatSheetPage() {
@@ -30,186 +58,213 @@ export default function CheatSheetPage() {
     })),
   }
 
+  const shareUrl = 'https://passtheuktest.co.uk/cheat-sheet'
+  const shareTitle = 'Life in the UK Test Cheat Sheet 2026 — Free'
+  const shareText = '📚 Free Life in the UK test cheat sheet 2026 — print this before your test! Patron saints, key dates, famous people and more.'
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Cheat Sheet', path: '/cheat-sheet' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-display font-bold text-ink">Life in the UK Test Cheat Sheet</h1>
-          <p className="text-base text-ink-muted">Print this before your test — 2026 edition</p>
+
+        {/* Header with action buttons */}
+        <div className="flex items-start justify-between mb-2 gap-4">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-display font-bold text-ink">Life in the UK Test Cheat Sheet</h1>
+            <p className="text-base text-ink-muted mt-1">Print or save this before your test — 2026 edition</p>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <ShareButton url={shareUrl} title={shareTitle} text={shareText} compact />
+            <PrintButton />
+          </div>
         </div>
-        <PrintButton />
+
+        {/* Star rating legend */}
+        <div className="flex items-center gap-4 mb-6 text-xs text-ink-muted bg-raised rounded-xl px-4 py-2.5">
+          <span className="font-semibold text-ink">Test frequency:</span>
+          <span>⭐ Common</span>
+          <span>⭐⭐ Very common</span>
+          <span>⭐⭐⭐ Almost every test</span>
+        </div>
+
+        {/* Night Before Mini Section */}
+        <NightBeforeSection />
+
+        {/* Patron Saints */}
+        <section className="mb-8 print-section">
+          <SectionHeader title="Patron Saints & National Symbols" colour={SECTION_COLOURS.saints} stars="⭐⭐⭐" />
+          <div className="grid grid-cols-2 gap-3">
+            {CHEAT_SHEET.patronSaints.map(p => (
+              <div key={p.nation} className="bg-card rounded-xl p-4 border-l-4" style={{ borderLeftColor: SECTION_COLOURS.saints }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xl">{p.flag}</span>
+                  <p className="font-bold text-ink text-base">{p.nation}</p>
+                </div>
+                <p className="text-sm font-semibold text-ink-muted">{p.saint}</p>
+                <p className="text-xs text-ink-muted mt-1">📅 {p.day}</p>
+                <p className="text-xs text-ink-muted">🌸 {p.flower}</p>
+                <p className="text-xs text-ink-muted">🎨 {p.colour}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Capitals */}
+        <section className="mb-8">
+          <SectionHeader title="Capitals" colour={SECTION_COLOURS.capitals} stars="⭐⭐" />
+          <div className="grid grid-cols-2 gap-2">
+            {CHEAT_SHEET.capitals.map(c => (
+              <div key={c.nation} className="bg-card rounded-xl p-3 flex justify-between items-center">
+                <span className="text-base text-ink-muted">{c.nation}</span>
+                <span className="font-semibold text-ink text-base">{c.capital}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Parliament */}
+        <section className="mb-8">
+          <SectionHeader title="Parliament & Government" colour={SECTION_COLOURS.parliament} stars="⭐⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.parliament.map(item => (
+              <div key={item.fact} className="bg-card rounded-xl p-3 flex items-start gap-3">
+                <span className="font-semibold text-ink text-sm whitespace-nowrap min-w-[140px] flex-shrink-0 pt-0.5">{item.fact}</span>
+                <span className="text-sm text-ink-muted">{item.detail}</span>
+                {item.stars && <span className="ml-auto text-xs flex-shrink-0">{item.stars}</span>}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Key Numbers */}
+        <section className="mb-8">
+          <SectionHeader title="Key Numbers" colour={SECTION_COLOURS.numbers} stars="⭐⭐⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.keyNumbers.map(item => (
+              <div key={item.number} className="bg-card rounded-xl p-3 flex items-start gap-3">
+                <span className="font-mono font-bold text-base whitespace-nowrap min-w-[70px] flex-shrink-0" style={{ color: SECTION_COLOURS.numbers }}>{item.number}</span>
+                <span className="text-base text-ink-muted">{item.fact}</span>
+                {item.stars && <span className="ml-auto text-xs flex-shrink-0">{item.stars}</span>}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Arts & Architecture */}
+        <section className="mb-8">
+          <SectionHeader title="Arts & Architecture" colour={SECTION_COLOURS.arts} stars="⭐⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.arts.map(item => (
+              <div key={item.name} className="bg-card rounded-xl p-3 flex items-center gap-3">
+                <div className="flex-1">
+                  <p className="font-semibold text-ink text-base">{item.name}</p>
+                  <p className="text-sm text-ink-muted">{item.known}</p>
+                </div>
+                <span className="text-xs bg-raised px-2 py-1 rounded-full text-ink-muted shrink-0">{item.category}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Music */}
+        <section className="mb-8">
+          <SectionHeader title="Music & Composers" colour={SECTION_COLOURS.music} stars="⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.music.map(item => (
+              <div key={item.name} className="bg-card rounded-xl p-3 flex items-center gap-3">
+                <div className="flex-1">
+                  <p className="font-semibold text-ink text-base">{item.name}</p>
+                  <p className="text-sm text-ink-muted">{item.known}</p>
+                </div>
+                <span className="text-xs font-mono text-ink-muted shrink-0">{item.era}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sports Origins */}
+        <section className="mb-8">
+          <SectionHeader title="Sports Origins" colour={SECTION_COLOURS.sports} stars="⭐⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.sportsOrigins.map(item => (
+              <div key={item.sport} className="bg-card rounded-xl p-3 flex items-start gap-3">
+                <span className="font-semibold text-ink text-sm whitespace-nowrap min-w-[80px] shrink-0 pt-0.5">{item.sport}</span>
+                <span className="text-sm text-ink-muted">{item.detail}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Inventions */}
+        <section className="mb-8">
+          <SectionHeader title="British Inventions & Scientists" colour={SECTION_COLOURS.inventions} stars="⭐⭐⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.inventions.map(item => (
+              <div key={item.invention} className="bg-card rounded-xl p-3 flex items-center gap-3">
+                <div className="flex-1">
+                  <p className="font-semibold text-ink text-base">{item.invention}</p>
+                  <p className="text-sm text-ink-muted">{item.inventor}</p>
+                </div>
+                <span className="font-mono font-bold text-base" style={{ color: SECTION_COLOURS.inventions }}>{item.year}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Famous People */}
+        <section className="mb-8">
+          <SectionHeader title="Famous British People" colour={SECTION_COLOURS.people} stars="⭐⭐" />
+          <div className="space-y-2">
+            {CHEAT_SHEET.famousPeople.map(p => (
+              <div key={p.name} className="bg-card rounded-xl p-3">
+                <div className="flex items-center justify-between mb-0.5">
+                  <p className="font-semibold text-ink text-base">{p.name}</p>
+                  <span className="text-sm font-mono text-ink-muted">{p.dates}</span>
+                </div>
+                <p className="text-sm text-ink-muted">{p.known}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Key Dates */}
+        <section className="mb-8">
+          <SectionHeader title="Key Dates" colour={SECTION_COLOURS.dates} stars="⭐⭐⭐" />
+          <div className="space-y-1.5">
+            {CHEAT_SHEET.keyDates.map(item => (
+              <div key={item.date} className="flex items-start gap-3">
+                <span className="font-mono font-bold text-sm whitespace-nowrap w-20 flex-shrink-0 pt-0.5" style={{ color: SECTION_COLOURS.dates }}>{item.date}</span>
+                <span className="text-base text-ink-muted">{item.fact}</span>
+                {item.stars && <span className="ml-auto text-xs flex-shrink-0 pt-0.5">{item.stars}</span>}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Bottom share CTA */}
+        <div className="bg-brand-500/10 border border-brand-500/20 rounded-2xl p-5 text-center mb-6">
+          <p className="font-semibold text-ink mb-1">Found this useful?</p>
+          <p className="text-sm text-ink-muted mb-4">Share with anyone preparing for the Life in the UK test</p>
+          <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
+        </div>
+
+        <div className="bg-card rounded-2xl p-4 mt-4">
+          <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Practice Tests</p>
+          <div className="flex flex-wrap gap-2">
+            {[2, 7, 12, 20].map(n => (
+              <Link key={n} href={`/mock-test/${n}`} className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Mock Test {n}</Link>
+            ))}
+            <Link href="/mock-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">All 45 tests →</Link>
+          </div>
+        </div>
+
+        <div className="flex gap-2 justify-center mt-4 flex-wrap">
+          <Link href="/articles/what-is-the-life-in-the-uk-test" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">What Is the Test?</Link>
+          <Link href="/faq" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Full FAQ</Link>
+          <Link href="/practice" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Practice Questions</Link>
+        </div>
       </div>
-
-      {/* Patron Saints */}
-      <section className="mb-8 print-section">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Patron Saints & National Symbols</h2>
-        <div className="grid grid-cols-2 gap-3">
-          {CHEAT_SHEET.patronSaints.map(p => (
-            <div key={p.nation} className="bg-card rounded-xl p-3">
-              <p className="font-semibold text-ink text-base">{p.nation}</p>
-              <p className="text-sm text-ink-muted">{p.saint} · {p.day}</p>
-              <p className="text-sm text-ink-muted">{p.flower}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Capitals */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Capitals</h2>
-        <div className="grid grid-cols-2 gap-2">
-          {CHEAT_SHEET.capitals.map(c => (
-            <div key={c.nation} className="bg-card rounded-xl p-3 flex justify-between items-center">
-              <span className="text-base text-ink-muted">{c.nation}</span>
-              <span className="font-semibold text-ink text-base">{c.capital}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Parliament */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Parliament & Government</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.parliament.map(item => (
-            <div key={item.fact} className="bg-card rounded-xl p-3 flex items-start gap-3">
-              <span className="font-semibold text-ink text-sm whitespace-nowrap min-w-[140px] flex-shrink-0 pt-0.5">{item.fact}</span>
-              <span className="text-sm text-ink-muted">{item.detail}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Key Numbers */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Key Numbers</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.keyNumbers.map(item => (
-            <div key={item.number} className="bg-card rounded-xl p-3 flex items-start gap-3">
-              <span className="font-mono font-bold text-brand-400 text-base whitespace-nowrap min-w-[60px]">{item.number}</span>
-              <span className="text-base text-ink-muted">{item.fact}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Arts & Architecture */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Arts & Architecture</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.arts.map(item => (
-            <div key={item.name} className="bg-card rounded-xl p-3 flex items-center gap-3">
-              <div className="flex-1">
-                <p className="font-semibold text-ink text-base">{item.name}</p>
-                <p className="text-sm text-ink-muted">{item.known}</p>
-              </div>
-              <span className="text-xs bg-raised px-2 py-1 rounded-full text-ink-muted shrink-0">{item.category}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Music */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Music & Composers</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.music.map(item => (
-            <div key={item.name} className="bg-card rounded-xl p-3 flex items-center gap-3">
-              <div className="flex-1">
-                <p className="font-semibold text-ink text-base">{item.name}</p>
-                <p className="text-sm text-ink-muted">{item.known}</p>
-              </div>
-              <span className="text-xs font-mono text-ink-muted shrink-0">{item.era}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Sports Origins */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Sports Origins</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.sportsOrigins.map(item => (
-            <div key={item.sport} className="bg-card rounded-xl p-3 flex items-start gap-3">
-              <span className="font-semibold text-ink text-sm whitespace-nowrap min-w-[80px] shrink-0 pt-0.5">{item.sport}</span>
-              <span className="text-sm text-ink-muted">{item.detail}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Inventions */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">British Inventions</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.inventions.map(item => (
-            <div key={item.invention} className="bg-card rounded-xl p-3 flex items-center gap-3">
-              <div className="flex-1">
-                <p className="font-semibold text-ink text-base">{item.invention}</p>
-                <p className="text-sm text-ink-muted">{item.inventor}</p>
-              </div>
-              <span className="font-mono font-bold text-xp text-base">{item.year}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Famous People */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Famous British People</h2>
-        <div className="space-y-2">
-          {CHEAT_SHEET.famousPeople.map(p => (
-            <div key={p.name} className="bg-card rounded-xl p-3">
-              <div className="flex items-center justify-between mb-0.5">
-                <p className="font-semibold text-ink text-base">{p.name}</p>
-                <span className="text-sm font-mono text-ink-muted">{p.dates}</span>
-              </div>
-              <p className="text-sm text-ink-muted">{p.known}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Key Dates */}
-      <section className="mb-8">
-        <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">Key Dates</h2>
-        <div className="space-y-1.5">
-          {CHEAT_SHEET.keyDates.map(item => (
-            <div key={item.date} className="flex items-start gap-3">
-              <span className="font-mono font-bold text-brand-400 text-sm whitespace-nowrap w-20 flex-shrink-0 pt-0.5">{item.date}</span>
-              <span className="text-base text-ink-muted">{item.fact}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="bg-card rounded-2xl p-4 mt-4">
-        <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Practice Tests</p>
-        <div className="flex flex-wrap gap-2">
-          {[2, 7, 12, 20].map(n => (
-            <Link key={n} href={`/mock-test/${n}`} className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Mock Test {n}</Link>
-          ))}
-          <Link href="/mock-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">All 45 tests →</Link>
-        </div>
-        <div className="mt-3 pt-3 border-t border-border flex flex-wrap gap-2">
-          {[
-            { slug: 'british-history', title: 'British History',  colour: '#a855f7' },
-            { slug: 'famous-people',   title: 'Famous British People', colour: '#a855f7' },
-          ].map(t => (
-            <Link key={t.slug} href={`/topic/${t.slug}`} className="px-3 py-1.5 text-sm rounded-lg border transition-colors hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" style={{ borderColor: `${t.colour}44`, color: t.colour, backgroundColor: `${t.colour}11` }}>{t.title}</Link>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex gap-2 justify-center mt-4 flex-wrap">
-        <Link href="/articles/what-is-the-life-in-the-uk-test" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">What Is the Test?</Link>
-        <Link href="/faq" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Full FAQ</Link>
-        <Link href="/practice" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Practice Questions</Link>
-      </div>
-    </div>
     </>
   )
 }
