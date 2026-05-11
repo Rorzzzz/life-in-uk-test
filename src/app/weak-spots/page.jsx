@@ -30,10 +30,11 @@ export default function WeakSpotsPage() {
   function handleNext() {
     if (index >= sessionQuestions.length - 1) {
       setSessionDone(true)
+      scrollTop()
     } else {
       setIndex(i => i + 1)
+      // QuestionCard's useEffect handles scrollTop on question change
     }
-    scrollTop()
   }
 
   if (!hasWeakSpots) {

@@ -62,7 +62,7 @@ export default function ExamPage() {
       handleFinish(correctRef.current)
     } else {
       setIndex(i => i + 1)
-      scrollTop()
+      // QuestionCard's useEffect handles scrollTop on question change
     }
   }
 

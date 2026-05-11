@@ -35,7 +35,7 @@ export default function QuestionCard({
     setStartTime(Date.now())
     setXpGained(0)
     setShowXP(false)
-    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     setTimeout(() => { if (document.activeElement instanceof HTMLElement) document.activeElement.blur() }, 50)
   }, [question?.id])
 

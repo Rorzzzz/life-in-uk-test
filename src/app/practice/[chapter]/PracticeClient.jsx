@@ -8,7 +8,7 @@ import QuestionCard from '@/components/game/QuestionCard'
 import ResultScreen from '@/components/game/ResultScreen'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
 
-export default function PracticeClient({ chapter, questions }) {
+export default function PracticeClient({ chapter }) {
   const { state, completeChapter } = useGame()
   const router = useRouter()
 
@@ -32,8 +32,8 @@ export default function PracticeClient({ chapter, questions }) {
       setDone(true)
     } else {
       setIndex(i => i + 1)
+      // QuestionCard's useEffect handles scrollTop on question change
     }
-    scrollTop()
   }
 
   function handleNewSession() {
