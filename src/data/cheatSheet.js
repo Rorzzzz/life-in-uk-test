@@ -72,7 +72,7 @@ export const CHEAT_SHEET = {
     { nation: 'England',          saint: 'St George',  day: '23 April',    flower: 'Rose',     colour: 'Red & white',   flagImg: 'https://flagcdn.com/80x60/gb-eng.png', flowerImg: '/flowers/rose.svg'     },
     { nation: 'Scotland',         saint: 'St Andrew',  day: '30 November', flower: 'Thistle',   colour: 'Blue & white',  flagImg: 'https://flagcdn.com/80x60/gb-sct.png', flowerImg: '/flowers/thistle.svg'  },
     { nation: 'Wales',            saint: 'St David',   day: '1 March',     flower: 'Daffodil',  colour: 'Red & green',   flagImg: 'https://flagcdn.com/80x60/gb-wls.png', flowerImg: '/flowers/daffodil.svg' },
-    { nation: 'Northern Ireland', saint: 'St Patrick', day: '17 March',    flower: 'Shamrock',  colour: 'Green & white', flagImg: 'https://flagcdn.com/80x60/gb-nir.png', flowerImg: '/flowers/shamrock.svg' },
+    { nation: 'Northern Ireland', saint: 'St Patrick', day: '17 March',    flower: 'Shamrock',  colour: 'Red & white',   flagImg: 'https://flagcdn.com/80x60/gb-nir.png', flowerImg: '/flowers/shamrock.svg' },
   ],
 
   famousPeople: [
