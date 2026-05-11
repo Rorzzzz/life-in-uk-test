@@ -1,9 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import { useProgress } from '@/hooks/useProgress'
 import { useStreak } from '@/hooks/useStreak'
 import { useReadiness } from '@/hooks/useReadiness'
 import { useBadges } from '@/hooks/useBadges'
+import { useGame } from '@/context/GameContext'
 import { CHAPTERS } from '@/data/questions'
 import ProgressBar from '@/components/ui/ProgressBar'
 import ProgressRing from '@/components/ui/ProgressRing'
@@ -17,10 +19,12 @@ const STAT_LINKS = [
 ]
 
 export default function ProgressPage() {
-  const { xp, level, levelPct, xpToNext, totalAnswered, totalCorrect, accuracy, chapterMastery, unlockedBadges } = useProgress()
-  const { streak, questionsToday, streakThreshold } = useStreak()
+  const { xp, level, levelPct, xpToNext, totalAnswered, totalCorrect, accuracy, chapterMastery } = useProgress()
+  const { streak } = useStreak()
   const { score: readiness, tier } = useReadiness()
   const { unlockedBadges: badges, lockedBadges, totalBadges } = useBadges()
+  const { resetProgress } = useGame()
+  const [confirmReset, setConfirmReset] = useState(false)
 
   const statValues = {
     answered: totalAnswered,
@@ -124,6 +128,38 @@ export default function ProgressPage() {
           ))}
         </div>
       </div>
+
+      {/* Reset progress */}
+      <div className="bg-card rounded-2xl p-5 border border-border">
+        <p className="font-semibold text-ink mb-1">Reset all progress</p>
+        <p className="text-sm text-ink-muted mb-4">
+          This will delete all your answers, XP, streaks, and badges. It cannot be undone.
+        </p>
+        {confirmReset ? (
+          <div className="flex gap-3">
+            <button
+              onClick={() => { resetProgress(); setConfirmReset(false) }}
+              className="flex-1 py-2.5 bg-danger text-white font-semibold rounded-xl hover:opacity-90 active:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger"
+            >
+              Yes, reset everything
+            </button>
+            <button
+              onClick={() => setConfirmReset(false)}
+              className="flex-1 py-2.5 bg-raised text-ink font-semibold rounded-xl hover:bg-border active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            >
+              Cancel
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={() => setConfirmReset(true)}
+            className="w-full py-2.5 border border-danger/50 text-danger font-semibold rounded-xl hover:bg-danger/10 active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger"
+          >
+            Reset all progress
+          </button>
+        )}
+      </div>
+
     </div>
   )
 }
