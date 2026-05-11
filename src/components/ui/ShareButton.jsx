@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { Share2, Check } from 'lucide-react'
-import clsx from 'clsx'
 
 function WhatsAppIcon() {
   return (
@@ -123,15 +122,10 @@ export default function ShareButton({ url, text }) {
     <div className="relative">
       <button
         onClick={() => setOpen(o => !o)}
-        className={clsx(
-          'flex items-center gap-1.5 px-3 py-2 rounded-xl border transition-colors',
-          'border-brand-500/30 bg-brand-500/8 text-brand-400',
-          'hover:border-brand-500/60 hover:bg-brand-500/15 hover:text-brand-300',
-          'text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500',
-        )}
+        className="flex items-center gap-2 px-4 py-3 bg-card rounded-xl text-sm font-semibold text-ink hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
         aria-label="Share"
       >
-        <Share2 size={14} />
+        <Share2 size={16} />
         <span>Share</span>
       </button>
 
