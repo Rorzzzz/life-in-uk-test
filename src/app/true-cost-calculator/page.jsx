@@ -29,6 +29,7 @@ function TrueCostIntro() {
         <li>All visa renewals included, based on your route and number of renewals</li>
         <li>Immigration Health Surcharge calculated for the full qualifying period</li>
         <li>ILR fee, citizenship fee, and optional passport included</li>
+        <li>EU citizens with Settled Status have a separate route — EUSS was free, no IHS, Settled Status replaced ILR at no cost</li>
         <li>Shareable result — copy your total and send it to anyone</li>
       </ul>
     </div>
@@ -49,7 +50,7 @@ function TrueCostContent() {
         <li>The Immigration Health Surcharge alone can exceed £10,000 for a family of four over the qualifying period</li>
         <li>Visa renewals add thousands of pounds before ILR is even in sight</li>
         <li>The ILR fee of £3,226 per person is one of the highest settlement fees in the world</li>
-        <li>A family of four will typically spend £80,000&ndash;£120,000 over the full immigration journey when all costs are included</li>
+        <li>A family of four on a standard work or family visa typically spends £41,000&ndash;£45,000 in total — EU families with Settled Status pay significantly less</li>
       </ul>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
@@ -68,6 +69,10 @@ function TrueCostContent() {
       <p className="text-sm text-ink leading-relaxed mb-3">
         Once you have ILR, you stop paying the IHS. That is one of the most significant financial benefits of reaching ILR. For more detail, read our guide to the{' '}
         <Link href="/articles/immigration-health-surcharge-ilr" className="text-brand underline">Immigration Health Surcharge and how it works</Link>.
+      </p>
+      <p className="text-sm text-ink leading-relaxed mb-3">
+        <strong>EU citizens with Settled Status were exempt from the IHS entirely.</strong>{' '}
+        This is one of the three reasons EU citizens pay so much less — the IHS alone would have cost £5,175 per adult on a 5-year visa.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
@@ -94,7 +99,7 @@ function TrueCostContent() {
 
       <h3 className="text-sm font-bold text-ink mb-1">What is the total cost of becoming a British citizen?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The total cost depends on your visa route, how many renewals you need, and how many people in your family are applying. For a single adult on the Skilled Worker route with one renewal, the total from first visa to British passport is typically £25,000&ndash;£35,000. For a family of four, the total can easily exceed £80,000. Use the calculator above to get a figure for your specific situation.
+        The total depends on your route. EU citizens with Settled Status pay from around £2,000 per person — the EUSS was free, no IHS was charged, and Settled Status replaced ILR at no cost. On all other routes, a single adult typically pays £12,000–£14,000. A family of four on a standard work or family route typically pays £41,000–£45,000 in total. Use the calculator above to get a figure for your specific situation.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">Is the Immigration Health Surcharge refunded when you get ILR?</h3>
