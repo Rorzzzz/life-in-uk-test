@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import localFont from 'next/font/local'
 import { JetBrains_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import { GameProvider } from '@/context/GameContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 import Navbar from '@/components/layout/Navbar'
@@ -114,6 +115,7 @@ export default function RootLayout({ children }) {
           <BottomNav />
         </GameProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
