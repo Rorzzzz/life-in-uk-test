@@ -48,8 +48,8 @@ export function getMockTest(testNumber) {
 // Returns metadata for a mock test page
 export function getMockTestMeta(testNumber) {
   return {
-    title: `Life in the UK Mock Test ${testNumber} — Free Practice Exam 2026`,
-    description: `Free mock test ${testNumber} of 45 for the Life in the UK citizenship test. 24 questions, 45 minutes, 75% pass mark. Instant results, no sign-up required.`,
+    title: `Life in the UK Mock Test ${testNumber}: 24 Questions, 45 Minutes (Free 2026)`,
+    description: `Recreate real exam conditions with 24 timed questions. See your score instantly and review every answer — completely free, no account needed. Test ${testNumber} of 45.`,
     canonical: `https://passtheuktest.co.uk/mock-test/${testNumber}`,
   }
 }

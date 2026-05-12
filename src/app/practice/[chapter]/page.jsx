@@ -4,11 +4,26 @@ import Link from 'next/link'
 import PracticeClient from './PracticeClient'
 
 const CHAPTER_SEO = {
-  1: { title: 'British Values & Principles',   desc: 'democratic values, rule of law, individual liberty and mutual respect' },
-  2: { title: 'UK Geography & Nations',        desc: 'the four nations, capitals, patron saints and national symbols' },
-  3: { title: 'British History',               desc: 'key dates, battles, monarchs, wars and major historical events' },
-  4: { title: 'Modern British Society',        desc: 'culture, sport, arts, inventions and modern life in the UK' },
-  5: { title: 'UK Government & Law',           desc: 'parliament, elections, courts, rights and your role as a citizen' },
+  1: {
+    title: 'Life in the UK Values & Principles Questions: Free Practice with Answers 2026',
+    metaDesc: 'Master the fundamental British values the test actually asks about. Free questions on democracy, rule of law, individual liberty and mutual respect — with full answers.',
+  },
+  2: {
+    title: 'Life in the UK Geography & Nations Questions: Free Practice with Answers 2026',
+    metaDesc: 'Know every capital, patron saint and national symbol before your test. Free practice questions on the four nations — with instant answers and explanations.',
+  },
+  3: {
+    title: 'Life in the UK History Questions: Free Practice with Answers 2026',
+    metaDesc: 'Master every date, battle and monarch the test actually asks about. 250+ questions on British history — instant answers, full explanations, completely free.',
+  },
+  4: {
+    title: 'Life in the UK Modern Society Questions: Free Practice with Answers 2026',
+    metaDesc: 'Culture, sport, arts and inventions — the topics most people underestimate. Free practice questions on modern British society with instant answers.',
+  },
+  5: {
+    title: 'Life in the UK Government & Law Questions: Free Practice with Answers 2026',
+    metaDesc: 'Parliament, elections, courts and your rights — guaranteed to come up. Free practice questions on UK government and law with full answers and explanations.',
+  },
 }
 
 export async function generateStaticParams() {
@@ -20,14 +35,13 @@ export async function generateMetadata({ params }) {
   const chapter   = CHAPTERS.find(c => c.id === chapterId)
   if (!chapter) return {}
   const seo       = CHAPTER_SEO[chapterId]
-  const questions = getByChapter(chapterId)
   return {
-    title: `${seo.title} Practice Questions — Life in the UK Test 2026`,
-    description: `${questions.length} free practice questions covering ${seo.desc} for the Life in the UK citizenship test. Instant answers and explanations. Pass first time.`,
+    title: seo.title,
+    description: seo.metaDesc,
     alternates: { canonical: `https://passtheuktest.co.uk/practice/${params.chapter}` },
     openGraph: {
-      title: `${seo.title} Practice Questions — Life in the UK Test 2026`,
-      description: `${questions.length} free questions covering ${seo.desc}. Instant answers and explanations.`,
+      title: seo.title,
+      description: seo.metaDesc,
     },
   }
 }
