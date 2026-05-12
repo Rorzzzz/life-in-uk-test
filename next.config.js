@@ -57,6 +57,13 @@ const nextConfig = {
         destination: 'https://passtheuktest.co.uk/:path*',
         permanent: true,
       },
+      // vercel.app → production domain (prevents duplicate indexing)
+      {
+        source: '/(.*)',
+        has: [{ type: 'host', value: 'life-in-uk-test-liart.vercel.app' }],
+        destination: 'https://passtheuktest.co.uk/:path*',
+        permanent: true,
+      },
       // Redirect /test → /practice for SEO-friendly URL
       { source: '/test', destination: '/practice', permanent: true },
     ]
