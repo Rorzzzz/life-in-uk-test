@@ -35,8 +35,8 @@ export default function MockTestClient({ testNumber, questions }) {
 
   const handleFinish = useCallback((finalCorrect) => {
     setDone(true)
-    completeExam(finalCorrect, questions.length, timeLeft)
-  }, [questions.length, timeLeft, completeExam])
+    completeExam(finalCorrect, questions.length, timeLeft, testNumber)
+  }, [questions.length, timeLeft, completeExam, testNumber])
 
   function handleAnswer(isCorrect) {
     if (isCorrect) {

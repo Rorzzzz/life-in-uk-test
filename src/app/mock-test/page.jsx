@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
+import MockTestDashboard from './MockTestDashboard'
+import MockTestGrid from './MockTestGrid'
 
 export const metadata = {
   title: { absolute: 'Free Life in the UK Mock Tests 2026 — 45 Full-Length Practice Exams' },
@@ -47,8 +49,6 @@ const faqSchema = {
 }
 
 export default function MockTestIndexPage() {
-  const tests = Array.from({ length: MOCK_TEST_COUNT }, (_, i) => i + 1)
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
@@ -87,10 +87,13 @@ export default function MockTestIndexPage() {
           </div>
         </div>
 
-        {/* Where to start */}
+        {/* Personalised dashboard — shows readiness + next test for returning users */}
+        <MockTestDashboard />
+
+        {/* First-timer CTA — only shown when no tests done yet (dashboard returns null) */}
         <div className="bg-brand-500/10 border border-brand-500/20 rounded-2xl p-4 mb-6">
           <p className="font-semibold text-ink mb-1">New here? Start with Test 1</p>
-          <p className="text-sm text-ink-muted mb-3">Work through the tests in order. Most people who pass first time score 20+ consistently across at least 5 tests before booking.</p>
+          <p className="text-sm text-ink-muted mb-3">Work through the tests in order. Most people who pass first time score 20+ on at least 5 tests before booking.</p>
           <Link
             href="/mock-test/1"
             className="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-400 active:opacity-70 text-white text-sm font-semibold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
@@ -99,19 +102,8 @@ export default function MockTestIndexPage() {
           </Link>
         </div>
 
-        {/* Test grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-8">
-          {tests.map(n => (
-            <Link
-              key={n}
-              href={`/mock-test/${n}`}
-              className="bg-card border border-border rounded-xl p-3 flex flex-col items-center gap-1 hover:border-brand-500 hover:bg-raised active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-            >
-              <span className="text-xs text-ink-muted font-mono">Test</span>
-              <span className="text-lg font-bold font-mono text-ink">{n}</span>
-            </Link>
-          ))}
-        </div>
+        {/* Test grid — shows pass/fail/score per test for returning users */}
+        <MockTestGrid />
 
         {/* Why use these tests */}
         <div className="bg-card rounded-2xl p-5 mb-6">

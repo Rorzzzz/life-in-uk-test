@@ -17,6 +17,7 @@ const DEFAULT_STATE = {
   perfectExams:    0,
   speedExams:      0,
   chapterScores:   {},    // { [chapterId]: bestScorePercent }
+  testScores:      {},    // { [testNumber]: { score, total, passed, date } }
   progress:        {},    // { [questionId]: SM-2 state }
   unlockedBadges:  [],    // array of badge IDs
   version:         2,
@@ -150,7 +151,7 @@ function gameReducer(state, action) {
     }
 
     case 'COMPLETE_EXAM': {
-      const { score, total, timeRemainingSeconds } = action
+      const { score, total, timeRemainingSeconds, testNumber } = action
       const passed  = score >= 18
       const perfect = score === total
       const fast    = passed && timeRemainingSeconds >= 20 * 60
@@ -158,12 +159,25 @@ function gameReducer(state, action) {
       // +200 XP for perfect 24/24, +100 for any pass, 0 for fail
       const xpGain = perfect ? 200 : passed ? 100 : 0
 
+      const prevBest = state.testScores?.[testNumber]
+      const newTestScores = testNumber ? {
+        ...state.testScores,
+        [testNumber]: {
+          score,
+          total,
+          passed,
+          date: Date.now(),
+          best: prevBest ? Math.max(prevBest.score, score) : score,
+        },
+      } : state.testScores
+
       const next = {
         ...state,
         xp:           state.xp + xpGain,
         examsPassed:  state.examsPassed  + (passed  ? 1 : 0),
         perfectExams: state.perfectExams + (perfect ? 1 : 0),
         speedExams:   state.speedExams   + (fast    ? 1 : 0),
+        testScores:   newTestScores ?? state.testScores,
       }
       return checkBadges(next)
     }
@@ -205,8 +219,8 @@ export function GameProvider({ children }) {
     dispatch({ type: 'COMPLETE_CHAPTER', chapterId, score, total })
   }, [])
 
-  const completeExam = useCallback((score, total, timeRemainingSeconds) => {
-    dispatch({ type: 'COMPLETE_EXAM', score, total, timeRemainingSeconds })
+  const completeExam = useCallback((score, total, timeRemainingSeconds, testNumber) => {
+    dispatch({ type: 'COMPLETE_EXAM', score, total, timeRemainingSeconds, testNumber })
   }, [])
 
   const addXP = useCallback((amount) => {
