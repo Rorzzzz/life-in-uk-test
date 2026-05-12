@@ -131,8 +131,43 @@ export default function ShareButton({ url, text }) {
 
       {open && (
         <>
+          {/* Backdrop */}
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-full mt-2 z-50 bg-card border border-border rounded-2xl shadow-xl p-2 min-w-[190px]">
+
+          {/* Mobile: bottom sheet */}
+          <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border rounded-t-2xl shadow-2xl p-4 pb-8">
+            <div className="w-10 h-1 bg-border rounded-full mx-auto mb-4" />
+            <p className="text-xs font-semibold text-ink-muted uppercase tracking-wider mb-3 px-1">Share</p>
+            <div className="grid grid-cols-2 gap-2">
+              {shareLinks.map(({ label, Icon, colour, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl bg-raised hover:opacity-80 transition-opacity text-sm text-ink"
+                >
+                  <span className="w-8 h-8 rounded-xl flex items-center justify-center text-white flex-shrink-0" style={{ backgroundColor: colour }}>
+                    <Icon />
+                  </span>
+                  {label}
+                </a>
+              ))}
+              <button
+                onClick={handleCopy}
+                className="flex items-center gap-3 px-3 py-3 rounded-xl bg-raised hover:opacity-80 transition-opacity text-sm text-ink col-span-2"
+              >
+                <span className="w-8 h-8 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0">
+                  {copied ? <Check size={14} className="text-success" /> : <Share2 size={14} className="text-ink-muted" />}
+                </span>
+                {copied ? 'Link copied!' : 'Copy link'}
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop: dropdown */}
+          <div className="hidden sm:block absolute right-0 top-full mt-2 z-50 bg-card border border-border rounded-2xl shadow-xl p-2 min-w-[190px]">
             {shareLinks.map(({ label, Icon, colour, href }) => (
               <a
                 key={label}
