@@ -3,21 +3,31 @@ import { CHAPTERS, getByChapter } from '@/data/questions'
 import Link from 'next/link'
 import PracticeClient from './PracticeClient'
 
+const CHAPTER_SEO = {
+  1: { title: 'British Values & Principles',   desc: 'democratic values, rule of law, individual liberty and mutual respect' },
+  2: { title: 'UK Geography & Nations',        desc: 'the four nations, capitals, patron saints and national symbols' },
+  3: { title: 'British History',               desc: 'key dates, battles, monarchs, wars and major historical events' },
+  4: { title: 'Modern British Society',        desc: 'culture, sport, arts, inventions and modern life in the UK' },
+  5: { title: 'UK Government & Law',           desc: 'parliament, elections, courts, rights and your role as a citizen' },
+}
+
 export async function generateStaticParams() {
   return CHAPTERS.map(ch => ({ chapter: ch.id.toString() }))
 }
 
 export async function generateMetadata({ params }) {
-  const chapter = CHAPTERS.find(c => c.id === parseInt(params.chapter))
+  const chapterId = parseInt(params.chapter)
+  const chapter   = CHAPTERS.find(c => c.id === chapterId)
   if (!chapter) return {}
-  const questions = getByChapter(parseInt(params.chapter))
+  const seo       = CHAPTER_SEO[chapterId]
+  const questions = getByChapter(chapterId)
   return {
-    title: `${chapter.title} Practice Questions — Free Life in the UK Test 2026`,
-    description: `${questions.length} free ${chapter.title} practice questions for the Life in the UK citizenship test. Adaptive practice with instant explanations and answers. Pass first time.`,
+    title: `${seo.title} Practice Questions — Life in the UK Test 2026`,
+    description: `${questions.length} free practice questions covering ${seo.desc} for the Life in the UK citizenship test. Instant answers and explanations. Pass first time.`,
     alternates: { canonical: `https://passtheuktest.co.uk/practice/${params.chapter}` },
     openGraph: {
-      title: `${chapter.title} Practice Questions — Life in the UK Test`,
-      description: `${questions.length} free practice questions covering ${chapter.title}. Instant answers and explanations.`,
+      title: `${seo.title} Practice Questions — Life in the UK Test 2026`,
+      description: `${questions.length} free questions covering ${seo.desc}. Instant answers and explanations.`,
     },
   }
 }

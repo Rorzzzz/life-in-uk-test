@@ -45,14 +45,11 @@ export function getMockTest(testNumber) {
   return seededShuffle(selected, seed + 99)
 }
 
-// Returns metadata for a mock test page — unique title per difficulty tier
+// Returns metadata for a mock test page
 export function getMockTestMeta(testNumber) {
-  const difficulty = testNumber <= 15 ? 'Starter' : testNumber <= 30 ? 'Intermediate' : 'Advanced'
-  const topics = ['History', 'Government & Law', 'Modern Society', 'Values & Principles', 'What is the UK']
-  const topic = topics[(testNumber - 1) % 5]
   return {
-    title: `Life in the UK Mock Test ${testNumber} — ${difficulty} (${topic}) | Free 2026`,
-    description: `Free mock test ${testNumber} of 45 for the Life in the UK citizenship test. ${difficulty} level — ${topic} focus. 24 questions, 45 minutes, 75% pass mark. Instant results, no sign-up.`,
+    title: `Life in the UK Mock Test ${testNumber} — Free Practice Exam 2026`,
+    description: `Free mock test ${testNumber} of 45 for the Life in the UK citizenship test. 24 questions, 45 minutes, 75% pass mark. Instant results, no sign-up required.`,
     canonical: `https://passtheuktest.co.uk/mock-test/${testNumber}`,
   }
 }
