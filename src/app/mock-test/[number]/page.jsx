@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { MOCK_TEST_NUMBERS, getMockTest, getMockTestMeta } from '@/data/mockTests'
 import { TOPICS } from '@/data/topics'
+import { CHAPTERS } from '@/data/questions'
 import Link from 'next/link'
 import MockTestClient from './MockTestClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
@@ -41,6 +42,31 @@ export default function MockTestPage({ params }) {
     <>
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Mock Tests', path: '/mock-test' }, { name: `Mock Test ${n}`, path: `/mock-test/${n}` }]} />
       <MockTestClient testNumber={n} questions={questions} />
+
+      {/* Static question list — indexed by Google, gives each test unique content */}
+      <section className="max-w-2xl mx-auto px-4 pb-4">
+        <div className="bg-card rounded-2xl p-5">
+          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wide mb-4">Questions in Mock Test {n}</h2>
+          <div className="space-y-3">
+            {questions.map((q, i) => {
+              const chapter = CHAPTERS.find(c => c.id === q.chapter)
+              return (
+                <Link
+                  key={q.id}
+                  href={`/questions/${q.id}`}
+                  className="flex items-start gap-3 group hover:bg-raised rounded-xl p-2 -mx-2 transition-colors"
+                >
+                  <span className="text-xs font-mono text-ink-muted w-5 flex-shrink-0 pt-0.5">{i + 1}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-ink group-hover:text-brand-400 transition-colors leading-snug">{q.q}</p>
+                    <p className="text-xs text-ink-muted mt-0.5">{chapter?.title}</p>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Internal links — shown below the test */}
       <div className="max-w-2xl mx-auto px-4 pb-8">

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CHAPTERS, getByChapter } from '@/data/questions'
+import Link from 'next/link'
 import PracticeClient from './PracticeClient'
 
 export async function generateStaticParams() {
@@ -9,10 +10,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const chapter = CHAPTERS.find(c => c.id === parseInt(params.chapter))
   if (!chapter) return {}
+  const questions = getByChapter(parseInt(params.chapter))
   return {
-    title: `${chapter.title} Practice Questions — Free Life in the UK Test`,
-    description: `Practice ${chapter.title} questions for your Life in the UK citizenship test. Free adaptive practice with instant explanations.`,
+    title: `${chapter.title} Practice Questions — Free Life in the UK Test 2026`,
+    description: `${questions.length} free ${chapter.title} practice questions for the Life in the UK citizenship test. Adaptive practice with instant explanations and answers. Pass first time.`,
     alternates: { canonical: `https://passtheuktest.co.uk/practice/${params.chapter}` },
+    openGraph: {
+      title: `${chapter.title} Practice Questions — Life in the UK Test`,
+      description: `${questions.length} free practice questions covering ${chapter.title}. Instant answers and explanations.`,
+    },
   }
 }
 
@@ -33,10 +39,47 @@ export default function PracticePage({ params }) {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.slice(0, 10).map(q => ({
+      '@type': 'Question',
+      name: q.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${q.options[q.answer]}. ${q.explanation}`,
+      },
+    })),
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <PracticeClient chapter={chapter} questions={questions} />
+
+      {/* Static question list — indexed by Google, gives each chapter page unique content */}
+      <section className="max-w-2xl mx-auto px-4 pb-10">
+        <div className="bg-card rounded-2xl p-5">
+          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wide mb-1">{chapter.title}</h2>
+          <p className="text-xs text-ink-muted mb-4">{questions.length} questions in this chapter</p>
+          <div className="space-y-2">
+            {questions.map((q, i) => (
+              <Link
+                key={q.id}
+                href={`/questions/${q.id}`}
+                className="flex items-start gap-3 group hover:bg-raised rounded-xl p-2 -mx-2 transition-colors"
+              >
+                <span className="text-xs font-mono text-ink-muted w-5 flex-shrink-0 pt-0.5">{i + 1}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm text-ink group-hover:text-brand-400 transition-colors leading-snug">{q.q}</p>
+                  <p className="text-xs text-brand-400 mt-0.5">Answer: {q.options[q.answer]}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }
