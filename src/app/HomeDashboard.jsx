@@ -12,7 +12,7 @@ import LiteYouTube from '@/components/ui/LiteYouTube'
 
 const QUICK_LINKS = [
   { href: '/practice',   label: 'Practice',    icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
-  { href: '/exam',       label: 'Mock Exam',   icon: ClipboardList, colour: '#22d07a', desc: '24 Qs · 45 mins',    subDesc: 'Full mock test conditions' },
+  { href: '/mock-test',  label: 'Mock Exam',   icon: ClipboardList, colour: '#22d07a', desc: '45 free tests',      subDesc: 'Full exam conditions, instant results' },
   { href: '/study',      label: 'Study Guide', icon: BookOpen,      colour: '#a855f7', desc: 'All 5 chapters'      },
   { href: '/flashcards', label: 'Flashcards',  icon: Star,          colour: '#f59e0b', desc: 'Flip to revise'      },
 ]

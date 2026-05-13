@@ -43,11 +43,14 @@ export default function MockTestPage({ params }) {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Mock Tests', path: '/mock-test' }, { name: `Mock Test ${n}`, path: `/mock-test/${n}` }]} />
       <MockTestClient testNumber={n} questions={questions} />
 
-      {/* Static question list — indexed by Google, gives each test unique content */}
+      {/* Static question list — indexed by Google, collapsible for clean UX */}
       <section className="max-w-2xl mx-auto px-4 pb-4">
-        <div className="bg-card rounded-2xl p-5">
-          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wide mb-4">Questions in Mock Test {n}</h2>
-          <div className="space-y-3">
+        <details className="bg-card rounded-2xl border border-border">
+          <summary className="px-5 py-4 cursor-pointer text-sm font-semibold text-ink-muted uppercase tracking-wide list-none flex items-center justify-between select-none hover:text-ink transition-colors">
+            <span>Questions in this test ({questions.length})</span>
+            <span className="text-xs text-brand-400">View all →</span>
+          </summary>
+          <div className="px-5 pb-5 space-y-3 border-t border-border pt-4">
             {questions.map((q, i) => {
               const chapter = CHAPTERS.find(c => c.id === q.chapter)
               return (
@@ -65,7 +68,7 @@ export default function MockTestPage({ params }) {
               )
             })}
           </div>
-        </div>
+        </details>
       </section>
 
       {/* Internal links — shown below the test */}

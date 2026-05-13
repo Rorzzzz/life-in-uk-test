@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
-export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
+export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, onDifferentTest, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
   const pct     = Math.round((score / total) * 100)
   const passed  = isExam ? score >= 18 : pct >= 70
   const colour  = passed ? '#22d07a' : '#ff4d6d'
@@ -77,6 +77,11 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
         {onChangeChapter && (
           <Button variant="secondary" fullWidth onClick={onChangeChapter}>
             Change chapter
+          </Button>
+        )}
+        {onDifferentTest && (
+          <Button variant="secondary" fullWidth onClick={onDifferentTest}>
+            Try a Different Mock Test
           </Button>
         )}
         <Button variant="secondary" fullWidth onClick={onHome}>
