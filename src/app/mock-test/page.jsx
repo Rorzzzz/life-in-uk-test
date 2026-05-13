@@ -5,15 +5,15 @@ import MockTestDashboard from './MockTestDashboard'
 import MockTestGrid from './MockTestGrid'
 
 export const metadata = {
-  title: { absolute: 'Life in the UK Mock Test 2026 — Free Practice Exam Simulator' },
-  description: 'Free Life in the UK mock tests and practice exams for 2026. Simulate the real Life in the UK exam with 45 full-length tests — 24 questions, 45-minute timer, instant results. No sign-up needed.',
+  title: { absolute: 'Life in the UK Test — Free Practice Tests & Mock Exams 2026' },
+  description: 'Pass the Life in the UK test first time. 45 free online practice tests & mock exams for 2026 — 1,080 questions, instant results, readiness score tracking. No sign-up. No paywall ever.',
   alternates: { canonical: 'https://passtheuktest.co.uk/mock-test' },
   openGraph: {
-    title: 'Life in the UK Mock Test 2026 — Free Practice Exam Simulator',
-    description: '45 free Life in the UK mock tests and practice exams. Simulate real exam conditions — 24 questions, 45-minute timer, instant results.',
+    title: 'Life in the UK Test — Free Practice Tests & Mock Exams 2026',
+    description: 'Pass the Life in the UK test first time. 45 free practice tests & mock exams — 1,080 questions, instant results, readiness tracking. No sign-up.',
     url: 'https://passtheuktest.co.uk/mock-test',
   },
-  keywords: ['life in the uk mock test', 'life in the uk practice exam', 'life in the uk test 2026', 'life in the uk exam', 'life in the uk test practice', 'life in the uk mock exam', 'free life in the uk test'],
+  keywords: ['life in the uk test', 'life in the uk mock test', 'life in the uk practice test', 'life in the uk mock exam', 'life in the uk exam', 'life in the uk test 2026', 'free life in the uk test'],
 }
 
 const FAQS = [
