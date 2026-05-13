@@ -4,11 +4,11 @@ import { QUESTION_COUNT } from '@/data/questions'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
 
 export const metadata = {
-  title: 'Life in the UK Test 2026 — Free Complete Preparation Guide',
-  description: 'Everything you need to pass the Life in the UK test in 2026. Practice questions, mock tests, study guides, tips and cheat sheet. Free.',
+  title: 'How to Prepare for the Life in the UK Test 2026 — Free Complete Guide',
+  description: 'The complete preparation guide for the Life in the UK test 2026. What to study, how long to prepare, expert tips and everything you need to pass first time. Free.',
   openGraph: {
-    title: 'Life in the UK Test 2026 — Free Complete Prep Guide',
-    description: 'Pass the Life in the UK citizenship test in 2026. Free practice questions, mock tests and study guides.',
+    title: 'How to Prepare for the Life in the UK Test 2026 — Free Complete Guide',
+    description: 'Complete preparation guide for the Life in the UK test 2026. What to study, how long to prepare, and tips to pass first time.',
     url: 'https://passtheuktest.co.uk/2026-test-prep',
     type: 'website',
   },

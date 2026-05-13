@@ -66,6 +66,8 @@ const nextConfig = {
       },
       // Redirect /test → /practice for SEO-friendly URL
       { source: '/test', destination: '/practice', permanent: true },
+      // Redirect duplicate 2026 guide article → canonical prep page
+      { source: '/articles/life-in-the-uk-test-2026-guide', destination: '/2026-test-prep', permanent: true },
     ]
   },
 }
