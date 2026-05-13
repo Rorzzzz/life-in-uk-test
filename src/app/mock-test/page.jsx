@@ -5,11 +5,11 @@ import MockTestDashboard from './MockTestDashboard'
 import MockTestGrid from './MockTestGrid'
 
 export const metadata = {
-  title: { absolute: 'Life in the UK Test — Free Practice Tests & Mock Exams 2026' },
+  title: { absolute: 'Life in the UK Test — Free Mock Exams & Practice Tests 2026' },
   description: 'Pass the Life in the UK test first time. 45 free online practice tests & mock exams for 2026 — 1,080 questions, instant results, readiness score tracking. No sign-up. No paywall ever.',
   alternates: { canonical: 'https://passtheuktest.co.uk/mock-test' },
   openGraph: {
-    title: 'Life in the UK Test — Free Practice Tests & Mock Exams 2026',
+    title: 'Life in the UK Test — Free Mock Exams & Practice Tests 2026',
     description: 'Pass the Life in the UK test first time. 45 free practice tests & mock exams — 1,080 questions, instant results, readiness tracking. No sign-up.',
     url: 'https://passtheuktest.co.uk/mock-test',
   },
