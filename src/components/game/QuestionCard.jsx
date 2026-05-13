@@ -69,7 +69,7 @@ export default function QuestionCard({
     if (xp > 0) setShowXP(true)
 
     recordAnswer(question.id, isCorrect, responseMs, question.chapter, countForStreak)
-    onAnswer?.(isCorrect)
+    onAnswer?.(isCorrect, index)
   }
 
   function getButtonState(index) {

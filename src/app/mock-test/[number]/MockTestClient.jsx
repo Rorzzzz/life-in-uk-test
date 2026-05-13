@@ -39,11 +39,11 @@ export default function MockTestClient({ testNumber, questions }) {
     completeExam(finalCorrect, questions.length, timeLeft, testNumber)
   }, [questions.length, timeLeft, completeExam, testNumber])
 
-  function handleAnswer(isCorrect) {
+  function handleAnswer(isCorrect, selectedIndex) {
     if (isCorrect) {
       setCorrect(c => { correctRef.current = c + 1; return c + 1 })
     } else {
-      setWrongQuestions(wq => [...wq, questions[index]])
+      setWrongQuestions(wq => [...wq, { ...questions[index], selectedIndex }])
     }
   }
 

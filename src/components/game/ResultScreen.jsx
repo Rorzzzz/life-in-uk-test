@@ -106,20 +106,19 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
             <p className="text-xs text-ink-muted mb-4">Review these before your next attempt</p>
             <div className="space-y-3 text-left">
               {wrongQuestions.map((q, i) => (
-                <Link
-                  key={q.id}
-                  href={`/questions/${q.id}`}
-                  className="block bg-raised rounded-xl p-4 border border-border hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-                >
+                <div key={q.id} className="bg-raised rounded-xl p-4 border border-border">
                   <p className="text-xs text-ink-muted font-mono mb-1.5">Question {i + 1}</p>
                   <p className="font-semibold text-ink text-sm mb-3">{q.q}</p>
-                  <div className="bg-success/10 border border-success/20 rounded-xl px-3 py-2 mb-2">
+                  <div className="bg-danger/10 border border-danger/20 rounded-xl px-3 py-2 mb-2">
+                    <p className="text-xs text-danger font-semibold mb-0.5">✗ Your answer</p>
+                    <p className="text-sm text-ink">{q.options[q.selectedIndex]}</p>
+                  </div>
+                  <div className="bg-success/10 border border-success/20 rounded-xl px-3 py-2 mb-3">
                     <p className="text-xs text-success font-semibold mb-0.5">✓ Correct answer</p>
                     <p className="text-sm text-ink">{q.options[q.answer]}</p>
                   </div>
                   <p className="text-xs text-ink-muted leading-relaxed">{q.explanation}</p>
-                  <p className="text-xs text-brand-400 mt-2">View full explanation →</p>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
