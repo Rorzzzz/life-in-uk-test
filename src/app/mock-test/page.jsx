@@ -104,6 +104,44 @@ export default function MockTestIndexPage() {
           </Link>
         </div>
 
+        {/* Recently Asked in 2026 Exams */}
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-danger animate-pulse" />
+            <h2 className="text-sm font-semibold text-ink uppercase tracking-wide">Recently Asked in 2026 Exams</h2>
+          </div>
+          <p className="text-xs text-ink-muted mb-3">These practice tests contain questions reported by candidates who sat the real Life in the UK exam in 2026.</p>
+          <div className="grid grid-cols-1 gap-2">
+            {[
+              { n: 3,  label: 'History & Key Dates Focus' },
+              { n: 7,  label: 'Government & Parliament Focus' },
+              { n: 12, label: 'British Values & Society Focus' },
+              { n: 19, label: 'Patron Saints & Symbols Focus' },
+              { n: 24, label: 'Inventions & Famous People Focus' },
+            ].map(({ n, label }) => (
+              <Link
+                key={n}
+                href={`/mock-test/${n}`}
+                className="flex items-center justify-between bg-card border border-danger/20 hover:border-danger/40 rounded-xl px-4 py-3 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-danger/10 text-danger text-xs font-bold font-mono flex items-center justify-center flex-shrink-0">{n}</span>
+                  <div>
+                    <p className="text-sm font-semibold text-ink group-hover:text-brand-400 transition-colors">Mock Test {n}</p>
+                    <p className="text-xs text-ink-muted">{label}</p>
+                  </div>
+                </div>
+                <span className="text-xs bg-danger/10 text-danger px-2 py-0.5 rounded-full font-medium flex-shrink-0">2026 Exam</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* All 45 tests grid */}
+        <div className="mb-2">
+          <h2 className="text-sm font-semibold text-ink uppercase tracking-wide mb-3">All 45 Free Mock Tests</h2>
+        </div>
+
         {/* Test grid — shows pass/fail/score per test for returning users */}
         <MockTestGrid />
 
