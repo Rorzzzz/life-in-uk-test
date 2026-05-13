@@ -18,12 +18,13 @@ export default function MockTestClient({ testNumber, questions }) {
   const router = useRouter()
   const { completeExam } = useGame()
 
-  const [index, setIndex]       = useState(0)
-  const [correct, setCorrect]   = useState(0)
-  const correctRef              = useRef(0)
-  const [timeLeft, setTimeLeft] = useState(EXAM_DURATION_SECONDS)
-  const [started, setStarted]   = useState(false)
-  const [done, setDone]         = useState(false)
+  const [index, setIndex]           = useState(0)
+  const [correct, setCorrect]       = useState(0)
+  const correctRef                  = useRef(0)
+  const [wrongQuestions, setWrongQuestions] = useState([])
+  const [timeLeft, setTimeLeft]     = useState(EXAM_DURATION_SECONDS)
+  const [started, setStarted]       = useState(false)
+  const [done, setDone]             = useState(false)
 
   // Timer — handleFinish intentionally excluded: useRef pattern avoids stale closure
   useEffect(() => {
@@ -41,6 +42,8 @@ export default function MockTestClient({ testNumber, questions }) {
   function handleAnswer(isCorrect) {
     if (isCorrect) {
       setCorrect(c => { correctRef.current = c + 1; return c + 1 })
+    } else {
+      setWrongQuestions(wq => [...wq, questions[index]])
     }
   }
 
@@ -93,7 +96,8 @@ export default function MockTestClient({ testNumber, questions }) {
           score={correct}
           total={questions.length}
           xpEarned={correct === questions.length ? 200 : correct >= 18 ? 100 : 0}
-          onRetry={() => { setIndex(0); setCorrect(0); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS) }}
+          wrongQuestions={wrongQuestions}
+          onRetry={() => { setIndex(0); setCorrect(0); setWrongQuestions([]); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS) }}
           onHome={() => router.push('/')}
           onDifferentTest={() => {
             let n
