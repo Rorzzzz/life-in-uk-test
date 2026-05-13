@@ -78,16 +78,16 @@ export default function HomeDashboard({ chapters }) {
       {/* Quick links */}
       {totalAnswered === 0 ? (
         <div className="space-y-3">
-          {/* New user — Practice is the dominant CTA */}
-          <Link href="/practice" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
+          {/* New user — Mock Exam is the dominant CTA */}
+          <Link href="/mock-test" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
             <div className="bg-card border border-border rounded-2xl p-5 flex items-center justify-between gap-4 active:scale-[0.98] transition-transform">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-500/20">
-                  <Layers size={24} className="text-brand-400" />
+                  <ClipboardList size={24} className="text-brand-400" />
                 </div>
                 <div>
-                  <p className="font-display font-bold text-ink text-lg">Start Practising</p>
-                  <p className="text-sm text-ink-muted">570 questions · adaptive · free</p>
+                  <p className="font-display font-bold text-ink text-lg">Start Mock Test</p>
+                  <p className="text-sm text-ink-muted">45 free tests · real exam conditions</p>
                 </div>
               </div>
               <ChevronRight size={20} className="text-brand-400 flex-shrink-0" />
@@ -95,7 +95,7 @@ export default function HomeDashboard({ chapters }) {
           </Link>
           {/* Secondary options */}
           <div className="grid grid-cols-3 gap-3">
-            {QUICK_LINKS.filter(l => l.href !== '/practice').map(({ href, label, icon: Icon, colour, desc }) => (
+            {QUICK_LINKS.filter(l => l.href !== '/mock-test').map(({ href, label, icon: Icon, colour, desc }) => (
               <Link key={href} href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-2xl">
                 <div className="bg-card rounded-2xl p-3 flex flex-col gap-2 h-full active:scale-[0.98] transition-transform">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${colour}22` }}>
