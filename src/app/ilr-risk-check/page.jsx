@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ILRRiskClient from './ILRRiskClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function ILRRiskIntro() {
         <li>Overall risk level — low, medium, or high</li>
         <li>Links to fix each issue before you apply</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/ilr-risk-check"
+          title="Free ILR Refusal Risk Checker — Know Before You Apply 2026"
+          text="Free ILR refusal risk checker — know your weak spots before you apply 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

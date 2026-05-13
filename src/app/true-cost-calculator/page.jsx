@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import TrueCostClient from './TrueCostClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -32,6 +33,13 @@ function TrueCostIntro() {
         <li>EU citizens with Settled Status have a separate route — EUSS was free, no IHS, Settled Status replaced ILR at no cost</li>
         <li>Shareable result — copy your total and send it to anyone</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/true-cost-calculator"
+          title="True Cost of Becoming British — From £2,000 to £50,000+"
+          text="Free calculator: the true cost of British citizenship from visa to passport 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

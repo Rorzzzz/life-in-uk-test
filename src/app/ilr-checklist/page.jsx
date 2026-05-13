@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ILRChecklistClient from './ILRChecklistClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function ILRChecklistIntro() {
         <li>Print-ready for easy reference</li>
         <li>Updated for 2026 rules and fees</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/ilr-checklist"
+          title="Free ILR Document Checklist 2026 — By Visa Type, Printable"
+          text="Free printable ILR document checklist by visa type — never miss a document 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

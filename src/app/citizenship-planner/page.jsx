@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import CitizenshipPlannerClient from './CitizenshipPlannerClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function CitizenshipPlannerIntro() {
         <li>Full cost breakdown including ceremony fee</li>
         <li>Passport cost shown separately — it is optional and a separate process</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/citizenship-planner"
+          title="UK Citizenship Planner 2026 — Free Timeline & Cost Tool"
+          text="Free UK citizenship timeline planner — see your exact route to a British passport 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

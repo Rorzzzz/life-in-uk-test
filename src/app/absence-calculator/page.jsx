@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import AbsenceCalculatorClient from './AbsenceCalculatorClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function AbsenceCalculatorIntro() {
         <li>Instant pass or fail result</li>
         <li>Shows which window is worst if you have exceeded the limit</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/absence-calculator"
+          title="Free UK Absence Calculator — Check Your 180-Day ILR Rule"
+          text="Free UK absence calculator — check if your travel breaks the 180-day ILR rule 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

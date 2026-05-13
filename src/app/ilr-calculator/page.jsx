@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ILRCalculatorClient from './ILRCalculatorClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function ILRCalculatorIntro() {
         <li>Total cost estimate including the ILR fee, biometric enrolment, and test fees</li>
         <li>B1 English and Life in the UK test cost included where required</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/ilr-calculator"
+          title="Free ILR Eligibility Calculator UK — Get Your Date 2026"
+          text="Free ILR eligibility calculator — find out exactly when you can apply for ILR 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

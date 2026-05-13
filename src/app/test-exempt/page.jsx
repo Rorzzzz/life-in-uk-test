@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ExemptWizardClient from './ExemptWizardClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function TestExemptIntro() {
         <li>Explains what evidence you need if you are exempt</li>
         <li>Clear result: exempt or not exempt, with the reason</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/test-exempt"
+          title="Am I Exempt from the Life in the UK Test? Free Check 2026"
+          text="Free Life in the UK test exemption checker — find out instantly if you need to take it 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

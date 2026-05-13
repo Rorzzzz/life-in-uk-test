@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import StudyPlanClient from './StudyPlanClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function StudyPlanIntro() {
         <li>Adapts to the number of hours you have available each day</li>
         <li>Links directly to free practice tools and mock exams</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/study-plan-generator"
+          title="Free Life in the UK Test Study Plan — Personalised 2026"
+          text="Free personalised Life in the UK test study plan — pass first time 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

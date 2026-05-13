@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import B1CheckClient from './B1CheckClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function B1CheckIntro() {
         <li>Personalised recommendation on whether you are ready to book</li>
         <li>This is a practice tool — not an official UKVI-approved test</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/b1-check"
+          title="B1 English Level Check — Free 15-Question Test 2026"
+          text="Free B1 English level check — see if your English meets ILR and citizenship requirements 🇬🇧"
+        />
+      </div>
     </div>
   )
 }

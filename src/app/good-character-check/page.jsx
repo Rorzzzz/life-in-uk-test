@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import GoodCharacterClient from './GoodCharacterClient'
+import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
@@ -31,6 +32,13 @@ function GoodCharacterIntro() {
         <li>Overall risk level with explanation</li>
         <li>Links to professional advice if your situation is complex</li>
       </ul>
+      <div className="mt-4">
+        <ShareButton
+          url="https://passtheuktest.co.uk/good-character-check"
+          title="Free Good Character Check — ILR & Citizenship 2026"
+          text="Free good character checker for ILR and British citizenship applications 🇬🇧"
+        />
+      </div>
     </div>
   )
 }
