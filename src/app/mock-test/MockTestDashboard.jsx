@@ -8,11 +8,11 @@ function ReadinessMeter({ pct }) {
   const colour = pct >= 80 ? '#22d07a' : pct >= 60 ? '#f59e0b' : '#3381ff'
   const label  = pct >= 80 ? 'Ready to book' : pct >= 60 ? 'Getting there' : 'Keep practising'
   return (
-    <div className="bg-card rounded-2xl p-5 mb-6 border border-border">
+    <Link href="/readiness" className="block bg-card rounded-2xl p-5 mb-6 border border-border hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
       <div className="flex items-center justify-between mb-3">
         <div>
           <p className="font-semibold text-ink">Your readiness</p>
-          <p className="text-xs text-ink-muted">{label}</p>
+          <p className="text-xs text-ink-muted">{label} · tap for details</p>
         </div>
         <span className="text-3xl font-bold font-mono" style={{ color: colour }}>{pct}%</span>
       </div>
@@ -25,7 +25,7 @@ function ReadinessMeter({ pct }) {
       {pct >= 80 && (
         <p className="text-xs text-success mt-2">You are consistently scoring above 83% — you are ready to book your test.</p>
       )}
-    </div>
+    </Link>
   )
 }
 
