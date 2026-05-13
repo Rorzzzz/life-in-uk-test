@@ -5,13 +5,14 @@ import { useEffect } from 'react'
 
 export default function BadgeUnlock() {
   const { newBadges, clearNewBadges } = useBadges()
+  const count = newBadges.length
 
   useEffect(() => {
-    if (newBadges.length > 0) {
-      const t = setTimeout(clearNewBadges, 3500)
+    if (count > 0) {
+      const t = setTimeout(clearNewBadges, 3000)
       return () => clearTimeout(t)
     }
-  }, [newBadges, clearNewBadges])
+  }, [count, clearNewBadges])
 
   if (!newBadges.length) return null
 
