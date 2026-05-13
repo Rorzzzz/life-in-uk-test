@@ -68,10 +68,10 @@ export default function MockTestClient({ testNumber, questions }) {
             Start Test
           </button>
           <Link
-            href="/mock-test/1"
+            href="/mock-test"
             className="px-4 py-4 bg-card text-ink font-semibold rounded-2xl hover:bg-raised active:opacity-70 transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
           >
-            Other tests
+            Other Tests
           </Link>
         </div>
         <div className="flex gap-2">
