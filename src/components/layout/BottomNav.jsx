@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { href: '/',          label: 'Home',     icon: Home          },
   { href: '/practice',  label: 'Practice', icon: Layers        },
   { href: '/study',     label: 'Study',    icon: BookOpen      },
-  { href: '/exam',      label: 'Exam',     icon: ClipboardList },
+  { href: '/mock-test', label: 'Exam',     icon: ClipboardList },
   { href: '/progress',  label: 'Progress', icon: TrendingUp    },
 ]
 

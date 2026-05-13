@@ -28,7 +28,7 @@ export default function Navbar() {
             { href: '/',          label: 'Home' },
             { href: '/practice',  label: 'Practice' },
             { href: '/study',     label: 'Study' },
-            { href: '/exam',      label: 'Mock Exam' },
+            { href: '/mock-test', label: 'Mock Exam' },
             { href: '/articles',  label: 'Articles' },
             { href: '/videos',    label: 'Videos' },
             { href: '/progress',  label: 'Progress' },
