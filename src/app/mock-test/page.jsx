@@ -62,9 +62,10 @@ export default function MockTestIndexPage() {
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-2">
             Life in the UK Mock Tests
           </h1>
-          <p className="text-base text-ink-muted">
+          <p className="text-base text-ink-muted mb-2">
             45 full-length free practice exams — the closest thing to sitting the real test
           </p>
+          <p className="text-sm text-ink-muted">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Practice questions by topic →</Link></p>
         </div>
 
         {/* Stats bar */}
