@@ -106,17 +106,6 @@ export default function MockTestIndexPage() {
         {/* Personalised dashboard — shows readiness + next test for returning users */}
         <MockTestDashboard />
 
-        {/* First-timer CTA — only shown when no tests done yet (dashboard returns null) */}
-        <div className="bg-brand-500/10 border border-brand-500/20 rounded-2xl p-4 mb-6">
-          <p className="font-semibold text-ink mb-1">New here? Start with Test 1</p>
-          <p className="text-sm text-ink-muted mb-3">Work through the tests in order. Most people who pass first time score 20+ on at least 5 tests before booking.</p>
-          <Link
-            href="/mock-test/1"
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-400 active:opacity-70 text-white text-sm font-semibold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-          >
-            Start Mock Test 1 →
-          </Link>
-        </div>
 
         {/* Recently Asked in 2026 Exams */}
         <div className="mb-6">
