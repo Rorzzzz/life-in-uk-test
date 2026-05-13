@@ -5,23 +5,24 @@ import MockTestDashboard from './MockTestDashboard'
 import MockTestGrid from './MockTestGrid'
 
 export const metadata = {
-  title: { absolute: 'Free Life in the UK Mock Tests 2026 — 45 Full-Length Practice Exams' },
-  description: 'The closest thing to sitting the real test. 45 free full-length Life in the UK mock exams — 24 questions, 45-minute timer, instant results. No sign-up, no paywall.',
+  title: { absolute: 'Life in the UK Mock Test 2026 — Free Practice Exam Simulator' },
+  description: 'Free Life in the UK mock tests and practice exams for 2026. Simulate the real Life in the UK exam with 45 full-length tests — 24 questions, 45-minute timer, instant results. No sign-up needed.',
   alternates: { canonical: 'https://passtheuktest.co.uk/mock-test' },
   openGraph: {
-    title: 'Free Life in the UK Mock Tests 2026 — 45 Full-Length Practice Exams',
-    description: '45 free full-length mock exams for the Life in the UK citizenship test. 24 questions, timed, instant results.',
+    title: 'Life in the UK Mock Test 2026 — Free Practice Exam Simulator',
+    description: '45 free Life in the UK mock tests and practice exams. Simulate real exam conditions — 24 questions, 45-minute timer, instant results.',
     url: 'https://passtheuktest.co.uk/mock-test',
   },
+  keywords: ['life in the uk mock test', 'life in the uk practice exam', 'life in the uk test 2026', 'life in the uk exam', 'life in the uk test practice', 'life in the uk mock exam', 'free life in the uk test'],
 }
 
 const FAQS = [
-  { q: 'How many free mock tests are there?', a: '45 full-length mock tests, each with 24 unique questions — 1,080 practice questions in total. All completely free with no sign-up required.' },
-  { q: 'Are these mock tests similar to the real Life in the UK test?', a: 'Yes. Each mock test mirrors the real exam format exactly — 24 questions, 45 minutes, pass mark of 18/24 (75%). Questions are drawn from all five handbook chapters in the same proportions as the real test.' },
-  { q: 'How many mock tests should I do before the real test?', a: 'Most people who pass first time complete at least 5 mock tests scoring above 20/24 consistently. If you are scoring 22 or more on every test, you are ready.' },
-  { q: 'What is the pass mark for the Life in the UK test?', a: 'You need to answer 18 out of 24 questions correctly — that is 75%. You have 45 minutes to complete the test.' },
-  { q: 'Can I retake the mock tests as many times as I want?', a: 'Yes — all 45 tests are free and unlimited. Each test uses a fixed set of 24 questions so you can track your improvement over multiple attempts.' },
-  { q: 'Which mock test should I start with?', a: 'Start with Mock Test 1 and work through them in order. By test 10 you will have a clear picture of which topics need more revision. Use the cheat sheet alongside your practice.' },
+  { q: 'How many free Life in the UK mock tests are there?', a: '45 full-length Life in the UK mock tests, each with 24 unique questions — 1,080 practice questions in total. All completely free with no sign-up required.' },
+  { q: 'How similar is this to the real Life in the UK exam?', a: 'Each Life in the UK mock test mirrors the real exam format exactly — 24 questions, 45 minutes, pass mark of 18/24 (75%). Questions are drawn from all five handbook chapters in the same proportions as the official Life in the UK test.' },
+  { q: 'How many mock tests should I do before the real Life in the UK test?', a: 'Most people who pass first time complete at least 5 Life in the UK practice exams scoring above 20/24 consistently. If you are scoring 22 or more on every mock exam, you are ready to book.' },
+  { q: 'What is the pass mark for the Life in the UK test?', a: 'You need to answer 18 out of 24 questions correctly — that is 75%. You have 45 minutes to complete the Life in the UK exam.' },
+  { q: 'Is this Life in the UK test practice completely free?', a: 'Yes — all 45 mock tests and practice exams are completely free. No sign-up, no paywall, no premium tier. Every Life in the UK mock exam on this site is free forever.' },
+  { q: 'Which Life in the UK practice test should I start with?', a: 'Start with Life in the UK Mock Test 1 and work through them in order. By test 10 you will have a clear picture of which topics need more revision. Use the cheat sheet alongside your Life in the UK test practice.' },
 ]
 
 const itemListSchema = {
@@ -60,12 +61,12 @@ export default function MockTestIndexPage() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-2">
-            Life in the UK Mock Tests
+            Life in the UK Mock Tests & Practice Exams
           </h1>
           <p className="text-base text-ink-muted mb-2">
-            45 full-length free practice exams — the closest thing to sitting the real test
+            45 free Life in the UK practice exams for 2026 — simulate real exam conditions with 1,080 unique questions
           </p>
-          <p className="text-sm text-ink-muted">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Practice questions by topic →</Link></p>
+          <p className="text-sm text-ink-muted">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Life in the UK revision questions by topic →</Link></p>
         </div>
 
         {/* Stats bar */}
@@ -108,30 +109,30 @@ export default function MockTestIndexPage() {
 
         {/* Why use these tests */}
         <div className="bg-card rounded-2xl p-5 mb-6">
-          <h2 className="font-display font-bold text-ink mb-3">Why use these mock tests?</h2>
+          <h2 className="font-display font-bold text-ink mb-3">Why use our Life in the UK mock tests?</h2>
           <ul className="space-y-2 text-sm text-ink-muted">
-            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Matches the real exam exactly</strong> — 24 questions, 45-minute countdown, same chapter distribution as the official test</span></li>
-            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">1,080 unique questions</strong> — 45 tests with different questions each time so you never memorise patterns</span></li>
-            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Instant detailed results</strong> — see every answer explained, not just your score</span></li>
-            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Completely free</strong> — no sign-up, no paywall, no premium tier</span></li>
-            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Tracks your progress</strong> — XP, streaks and mastery scores across every session</span></li>
+            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Matches the real Life in the UK exam exactly</strong> — 24 questions, 45-minute countdown, same chapter distribution as the official test</span></li>
+            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">1,080 unique practice questions</strong> — 45 Life in the UK mock exams with different questions every time so you never memorise patterns</span></li>
+            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Instant detailed results</strong> — see every Life in the UK exam answer explained, not just your score</span></li>
+            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">100% free Life in the UK test practice</strong> — no sign-up, no paywall, no premium tier</span></li>
+            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Tracks your progress</strong> — readiness score, XP and streaks across every Life in the UK practice session</span></li>
           </ul>
         </div>
 
         {/* How to use */}
         <div className="bg-card rounded-2xl p-5 mb-6">
-          <h2 className="font-display font-bold text-ink mb-3">How to use these tests effectively</h2>
+          <h2 className="font-display font-bold text-ink mb-3">How to pass the Life in the UK test using mock exams</h2>
           <ol className="space-y-2 text-sm text-ink-muted list-none">
-            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">1</span><span>Do your first test cold — no revision. Your score tells you exactly where to focus.</span></li>
-            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">2</span><span>Read every explanation — right or wrong. The explanations contain the facts the test wants you to know.</span></li>
-            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">3</span><span>Use the <Link href="/cheat-sheet" className="text-brand-400 hover:text-brand-300">cheat sheet</Link> for weak areas — patron saints, key dates and inventions catch most people out.</span></li>
-            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">4</span><span>Book your test when you consistently score 20+ out of 24. Don&apos;t book earlier.</span></li>
+            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">1</span><span>Take your first Life in the UK practice exam cold — no revision. Your score shows exactly where to focus.</span></li>
+            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">2</span><span>Read every explanation after each mock test — right or wrong. The explanations contain the exact facts the Life in the UK exam tests.</span></li>
+            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">3</span><span>Use the <Link href="/cheat-sheet" className="text-brand-400 hover:text-brand-300">Life in the UK cheat sheet</Link> for weak areas — patron saints, key dates and inventions catch most people out.</span></li>
+            <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">4</span><span>Book your Life in the UK test when you consistently score 20+ out of 24 across multiple practice exams.</span></li>
           </ol>
         </div>
 
         {/* FAQ */}
         <div className="mb-6">
-          <h2 className="font-display font-bold text-ink mb-4">Frequently asked questions</h2>
+          <h2 className="font-display font-bold text-ink mb-4">Life in the UK mock test — frequently asked questions</h2>
           <div className="space-y-3">
             {FAQS.map(({ q, a }) => (
               <div key={q} className="bg-card rounded-xl p-4">
