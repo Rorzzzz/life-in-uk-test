@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
 import MockTestDashboard from './MockTestDashboard'
 import MockTestGrid from './MockTestGrid'
+import ShareButton from '@/components/ui/ShareButton'
 
 export const metadata = {
   title: { absolute: 'Life in the UK Test — Free Mock Exams & Practice Tests 2026' },
@@ -66,7 +67,12 @@ export default function MockTestIndexPage() {
           <p className="text-base text-ink-muted mb-2">
             45 free Life in the UK practice exams for 2026 — simulate real exam conditions with 1,080 unique questions
           </p>
-          <p className="text-sm text-ink-muted">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Life in the UK revision questions by topic →</Link></p>
+          <p className="text-sm text-ink-muted mb-4">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Life in the UK revision questions by topic →</Link></p>
+          <ShareButton
+            url="https://passtheuktest.co.uk/mock-test"
+            title="Life in the UK Test — Free Mock Exams & Practice Tests 2026"
+            text="45 free Life in the UK mock tests — pass first time with no sign-up needed! 🎯"
+          />
         </div>
 
         {/* Stats bar */}
