@@ -102,22 +102,36 @@ export default function MockTestClient({ testNumber, questions }) {
           }}
           isExam
           footer={
-            <div className="bg-card rounded-2xl p-4 mt-2">
-              <p className="text-sm font-semibold text-ink mb-3">Try another mock test</p>
+            <div className="bg-card rounded-2xl p-4 mt-2 space-y-3">
+              <p className="text-sm font-semibold text-ink">Try Another Mock Test</p>
               <div className="flex flex-wrap gap-2">
                 {prevTest && (
                   <Link href={`/mock-test/${prevTest}`} className="flex-1 py-3 bg-raised border border-border rounded-xl text-sm font-medium text-ink text-center hover:border-brand-500/40 active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
-                    ← Mock Test {prevTest}
+                    ← Test {prevTest}
                   </Link>
                 )}
                 {nextTest && (
                   <Link href={`/mock-test/${nextTest}`} className="flex-1 py-3 bg-brand-500/10 border border-brand-500/30 rounded-xl text-sm font-medium text-brand-400 text-center hover:bg-brand-500/20 active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
-                    Mock Test {nextTest} →
+                    Test {nextTest} →
                   </Link>
                 )}
                 <Link href="/mock-test" className="w-full py-3 bg-raised border border-border rounded-xl text-sm text-ink-muted text-center hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
-                  All 45 mock tests
+                  All 45 Mock Tests
                 </Link>
+              </div>
+              <div className="pt-1 border-t border-border">
+                <p className="text-xs text-ink-muted mb-2">What to do next</p>
+                <div className="grid grid-cols-3 gap-2">
+                  <Link href="/cheat-sheet" className="py-2.5 bg-raised rounded-xl text-xs text-ink-muted text-center hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+                    📄 Cheat Sheet
+                  </Link>
+                  <Link href="/practice" className="py-2.5 bg-raised rounded-xl text-xs text-ink-muted text-center hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+                    📚 Revise
+                  </Link>
+                  <Link href="/weak-spots" className="py-2.5 bg-raised rounded-xl text-xs text-ink-muted text-center hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+                    🎯 Weak Spots
+                  </Link>
+                </div>
               </div>
             </div>
           }
