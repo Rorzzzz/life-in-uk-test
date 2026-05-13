@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
-export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, onDifferentTest, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
+export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
   const pct     = Math.round((score / total) * 100)
   const passed  = isExam ? score >= 18 : pct >= 70
   const colour  = passed ? '#22d07a' : '#ff4d6d'
@@ -79,11 +79,6 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
             Change chapter
           </Button>
         )}
-        {onDifferentTest && (
-          <Button variant="secondary" fullWidth onClick={onDifferentTest}>
-            Try a Different Mock Test
-          </Button>
-        )}
         <Button variant="secondary" fullWidth onClick={onHome}>
           Back to Home
         </Button>
@@ -98,35 +93,35 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
           </div>
         )}
       </div>
-      {footer && <div className="w-full">{footer}</div>}
 
       {wrongQuestions.length > 0 && (
-        <div className="w-full mt-2">
-          <div className="bg-danger/10 border border-danger/20 rounded-2xl p-4 mb-3">
+        <div className="w-full">
+          <div className="bg-card rounded-2xl p-4 border border-border">
             <p className="font-semibold text-ink mb-0.5">Questions you got wrong ({wrongQuestions.length})</p>
-            <p className="text-xs text-ink-muted">Review these before your next attempt</p>
-          </div>
-          <div className="space-y-3 text-left">
-            {wrongQuestions.map((q, i) => (
-              <div key={q.id} className="bg-card rounded-2xl p-4 border border-border">
-                <p className="text-xs text-ink-muted font-mono mb-2">Question {i + 1}</p>
-                <p className="font-semibold text-ink text-sm mb-3">{q.q}</p>
-                <div className="bg-success/10 border border-success/20 rounded-xl px-3 py-2 mb-2">
-                  <p className="text-xs text-success font-semibold mb-0.5">✓ Correct answer</p>
-                  <p className="text-sm text-ink">{q.options[q.answer]}</p>
-                </div>
-                <p className="text-xs text-ink-muted leading-relaxed">{q.explanation}</p>
+            <p className="text-xs text-ink-muted mb-4">Review these before your next attempt</p>
+            <div className="space-y-3 text-left">
+              {wrongQuestions.map((q, i) => (
                 <Link
+                  key={q.id}
                   href={`/questions/${q.id}`}
-                  className="inline-block mt-2 text-xs text-brand-400 hover:text-brand-300 transition-colors"
+                  className="block bg-raised rounded-xl p-4 border border-border hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                 >
-                  View full explanation →
+                  <p className="text-xs text-ink-muted font-mono mb-1.5">Question {i + 1}</p>
+                  <p className="font-semibold text-ink text-sm mb-3">{q.q}</p>
+                  <div className="bg-success/10 border border-success/20 rounded-xl px-3 py-2 mb-2">
+                    <p className="text-xs text-success font-semibold mb-0.5">✓ Correct answer</p>
+                    <p className="text-sm text-ink">{q.options[q.answer]}</p>
+                  </div>
+                  <p className="text-xs text-ink-muted leading-relaxed">{q.explanation}</p>
+                  <p className="text-xs text-brand-400 mt-2">View full explanation →</p>
                 </Link>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       )}
+
+      {footer && <div className="w-full">{footer}</div>}
     </div>
   )
 }
