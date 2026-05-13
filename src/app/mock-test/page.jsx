@@ -60,37 +60,45 @@ export default function MockTestIndexPage() {
       <div className="max-w-2xl mx-auto px-4 py-6">
 
         {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-2">
+        <div className="mb-5">
+          <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-1">
             Life in the UK Mock Tests & Practice Exams
           </h1>
-          <p className="text-base text-ink-muted mb-2">
-            45 free Life in the UK practice exams for 2026 — simulate real exam conditions with 1,080 unique questions
+          <p className="text-sm text-ink-muted mb-4">
+            45 free practice exams · 1,080 questions · real exam conditions
           </p>
-          <p className="text-sm text-ink-muted mb-4">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Life in the UK revision questions by topic →</Link></p>
-          <ShareButton
-            url="https://passtheuktest.co.uk/mock-test"
-            title="Life in the UK Test — Free Mock Exams & Practice Tests 2026"
-            text="45 free Life in the UK mock tests — pass first time with no sign-up needed! 🎯"
-          />
+          <div className="flex items-center gap-3 mb-5">
+            <Link
+              href="/mock-test/1"
+              className="flex-1 py-3.5 bg-brand-500 hover:bg-brand-400 active:opacity-70 text-white text-sm font-bold rounded-xl text-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            >
+              Start Mock Test 1 →
+            </Link>
+            <ShareButton
+              url="https://passtheuktest.co.uk/mock-test"
+              title="Life in the UK Test — Free Mock Exams & Practice Tests 2026"
+              text="45 free Life in the UK mock tests — pass first time with no sign-up needed! 🎯"
+            />
+          </div>
+          <p className="text-xs text-ink-muted">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Practice questions by topic →</Link></p>
         </div>
 
         {/* Stats bar */}
-        <div className="bg-card rounded-2xl p-4 border border-border mb-6 grid grid-cols-4 gap-2 text-center">
+        <div className="bg-card rounded-2xl p-3 border border-border mb-6 grid grid-cols-4 gap-2 text-center">
           <div>
-            <p className="text-2xl font-bold font-mono text-ink">{MOCK_TEST_COUNT}</p>
+            <p className="text-xl font-bold font-mono text-ink">{MOCK_TEST_COUNT}</p>
             <p className="text-ink-muted text-xs mt-0.5">Free tests</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-ink">{EXAM_QUESTION_COUNT}</p>
+            <p className="text-xl font-bold font-mono text-ink">{EXAM_QUESTION_COUNT}</p>
             <p className="text-ink-muted text-xs mt-0.5">Questions</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-ink">45</p>
+            <p className="text-xl font-bold font-mono text-ink">45</p>
             <p className="text-ink-muted text-xs mt-0.5">Minutes</p>
           </div>
           <div>
-            <p className="text-2xl font-bold font-mono text-success">75%</p>
+            <p className="text-xl font-bold font-mono text-success">75%</p>
             <p className="text-ink-muted text-xs mt-0.5">Pass mark</p>
           </div>
         </div>
