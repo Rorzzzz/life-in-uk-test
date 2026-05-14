@@ -7,12 +7,12 @@ import ShareButton from '@/components/ui/ShareButton'
 import NightBeforeSection from './NightBeforeSection'
 
 export const metadata = {
-  title: 'Life in the UK Cheat Sheet PDF 2026 — Free, Printable & Shareable',
+  title: 'Life in the UK Cheat Sheet PDF 2026 — Free, Printable & Downloadable',
   description: 'Free Life in the UK cheat sheet PDF — print or save before your test. Key dates, patron saints, famous people, inventions — with test-likelihood ratings. Printable and shareable in one click.',
   alternates: { canonical: 'https://passtheuktest.co.uk/cheat-sheet' },
   keywords: ['life in the uk cheat sheet pdf', 'life in the uk cheat sheet', 'life in the uk test cheat sheet', 'life in the uk cheat sheet printable', 'life in the uk test pdf'],
   openGraph: {
-    title: 'Life in the UK Cheat Sheet PDF 2026 — Free, Printable & Shareable',
+    title: 'Life in the UK Cheat Sheet PDF 2026 — Free, Printable & Downloadable',
     description: 'Free Life in the UK cheat sheet PDF — print or save before your test. Key dates, patron saints, famous people, inventions and more.',
     url: 'https://passtheuktest.co.uk/cheat-sheet',
     type: 'website',
