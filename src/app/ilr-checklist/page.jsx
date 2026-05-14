@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free ILR Document Checklist 2026 — By Visa Type, Printable',
-    description: 'Free, personalised ILR document checklist by visa type. Covers Skilled Worker, Family, Long Residence and more. Tick items off as you gather them — printable.',
+    title: 'ILR Document Checklist 2026 — Free Printable by Visa Type',
+    description: 'Free ILR document checklist for 2026 — organised by visa route. Skilled Worker, Family, Long Residence and more. Print before your application. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-checklist' },
     openGraph: {
-      title: 'Free ILR Document Checklist 2026 — By Visa Type, Printable',
-      description: 'Free, personalised ILR document checklist by visa type. Covers Skilled Worker, Family, Long Residence and more. Tick items off as you gather them — printable.',
+      title: 'ILR Document Checklist 2026 — Free Printable by Visa Type',
+      description: 'Free ILR document checklist for 2026 — organised by visa route. Skilled Worker, Family, Long Residence and more. Print before your application. No sign-up.',
       url: 'https://passtheuktest.co.uk/ilr-checklist',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What documents do I need for ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'All ILR applicants need: a valid passport, evidence of current immigration status (eVisa), a Life in the UK test pass reference number, a full travel history for the qualifying period, and a booked biometric enrolment appointment. Additional documents depend on your visa route — Skilled Worker applicants need employment evidence; Family visa applicants need proof of the relationship.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need original documents or copies for ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ILR applications are submitted online through GOV.UK and documents are uploaded digitally. You do not post original documents. However, UKVCAS may ask you to bring originals to your biometric appointment for verification. Keep originals safe and accessible throughout the process.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if a document is not in English?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Any document not in English must be accompanied by a certified translation. The translator must confirm the translation is accurate and provide their name and contact details. UKVI will not accept uncertified translations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How far back do bank statements need to go for ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For most ILR routes, UKVI asks for 6 months of personal bank statements ending as close to the application date as possible. Some routes — particularly Long Residence — may require evidence going back further. Check the specific requirements for your visa route on GOV.UK.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the ILR biometric appointment?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The biometric appointment is a mandatory in-person visit to a UKVCAS service point where your fingerprints and photograph are recorded. It costs £19.20 for a standard appointment. You book through the UKVCAS website after submitting your online ILR application. You cannot complete your ILR application without attending this appointment.',
+      },
+    },
+  ],
+}
+
 function ILRChecklistIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        ILR Document Checklist 2026 — What You Need to Apply
+        ILR Document Checklist 2026 — Free Printable by Visa Type
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Select your visa type to get a personalised, printable checklist of every document you need for your ILR application. The documents required vary depending on your route — Skilled Worker, Family, Long Residence, or other. Tick items off as you gather them.
@@ -90,36 +137,34 @@ function ILRChecklistContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What form do I fill in for ILR?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What documents do I need for ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Most ILR applications use the SET(O) form (settlement — other categories). Spouse and family applicants may use SET(M). The correct form depends on your visa route. All applications are now submitted online through the UKVI system.
+        All ILR applicants need: a valid passport, evidence of current immigration status (eVisa), a Life in the UK test pass reference number, a full travel history for the qualifying period, and a booked biometric enrolment appointment. Additional documents depend on your visa route — Skilled Worker applicants need employment evidence; Family visa applicants need proof of the relationship. Use the checklist above to get the full list for your route.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Do I need a B1 English certificate for ILR?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Do I need original documents or copies for ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Most ILR applicants need to prove B1 English speaking and listening ability. Skilled Worker and Tier 2 visa holders are exempt (English was proved at visa stage). Nationals of certain countries are also exempt. Use our{' '}
-        <Link href="/b1-check" className="text-brand underline">B1 English level check</Link>{' '}
-        to see if you are ready to book.
+        ILR applications are submitted online through GOV.UK and documents are uploaded digitally — you do not post originals. However, UKVCAS may ask you to bring original documents to your biometric appointment for verification. Keep originals safe and accessible throughout the process.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can I apply for ILR online?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What if a document is not in English?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. ILR applications are submitted online through GOV.UK. You upload your documents digitally. You still need to attend a UKVCAS service point in person for biometric enrolment (fingerprints and photograph).
+        Any document not in English must be accompanied by a certified translation. The translator must confirm the translation is accurate and provide their name and contact details. UKVI will not accept uncertified translations.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What is biometric enrolment and how much does it cost?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">How far back do bank statements need to go for ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Biometric enrolment is the in-person appointment where UKVCAS records your fingerprints and photograph. It costs £19.20 for a standard appointment. Enhanced appointments (shorter wait times and longer slots) cost more. You book through the UKVCAS website after submitting your online application.
+        For most ILR routes, UKVI asks for 6 months of personal bank statements ending as close to the application date as possible. Some routes — particularly Long Residence — may require evidence going back further. Check the specific requirements for your visa route on GOV.UK before compiling your documents.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What happens if I submit the wrong documents?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the ILR biometric appointment?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        UKVI may contact you to request missing documents. However, in some cases a missing or incorrect document will result in a straight refusal. There is no guaranteed opportunity to correct errors after submission. Get your documents right before you apply.
+        The biometric appointment is a mandatory in-person visit to a UKVCAS service point where your fingerprints and photograph are recorded. It costs £19.20 for a standard appointment. You book through the UKVCAS website after submitting your online ILR application. You cannot complete your ILR application without attending this appointment.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">How long does ILR take to process?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Standard processing is usually within 6 months. The Home Office publishes current processing times on GOV.UK. Processing times can vary significantly — check before you apply if you have a time-sensitive situation.
+        Standard processing is usually within 6 months of your biometric enrolment appointment. The Home Office publishes current processing times on GOV.UK. Do not book international travel after submitting your application until your ILR is confirmed.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -144,6 +189,10 @@ function ILRChecklistContent() {
 export default function ILRChecklistPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ILRChecklistIntro />
       <ILRChecklistClient />
       <ILRChecklistContent />

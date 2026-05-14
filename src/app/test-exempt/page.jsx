@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Am I Exempt from the Life in the UK Test? Free Check 2026',
-    description: 'Life in the UK test exemptions apply for age, health, and some nationalities. Answer 5 questions and find out in 60 seconds if you need to take it — free.',
+    title: 'Am I Exempt From the Life in the UK Test? — Free 60-Second Check 2026',
+    description: 'Find out instantly if you are exempt from the Life in the UK test. Free 60-second checker — covers age, health, disability and visa exemptions. No sign-up required.',
     alternates: { canonical: 'https://passtheuktest.co.uk/test-exempt' },
     openGraph: {
-      title: 'Am I Exempt from the Life in the UK Test? Free Check 2026',
-      description: 'Life in the UK test exemptions apply for age, health, and some nationalities. Answer 5 questions and find out in 60 seconds if you need to take it — free.',
+      title: 'Am I Exempt From the Life in the UK Test? — Free 60-Second Check 2026',
+      description: 'Find out instantly if you are exempt from the Life in the UK test. Free 60-second checker — covers age, health, disability and visa exemptions. No sign-up required.',
       url: 'https://passtheuktest.co.uk/test-exempt',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Who is exempt from the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You are exempt from the Life in the UK test if you are under 18 or aged 65 or over at the time of your application, if you have a long-term physical or mental condition that prevents you sitting the test (with medical evidence), or if you are a national of certain exempt countries including Australia, Canada, USA, and New Zealand.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I get a medical exemption from the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. You can claim a medical exemption if you have a long-term physical or mental condition that prevents you from sitting the test. You need a letter from a doctor confirming the condition, plus any supporting medical reports. A short-term illness or temporary condition does not usually qualify.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are EU citizens exempt from the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'EU citizens are not automatically exempt from the Life in the UK test on nationality grounds. Unlike citizens of countries such as Australia, Canada, or the USA, EU citizens must still pass the Life in the UK test when applying for ILR or British citizenship unless they qualify under age or medical exemptions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the age exemption apply automatically?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. If you are under 18 or aged 65 or over at the date of your ILR or citizenship application, you are automatically exempt. You declare this on your application form — no separate evidence is required. Your age on the application date (not the test date) determines whether you qualify.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What if I have a disability — am I exempt from the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You may be exempt if your disability constitutes a long-term physical or mental condition that prevents you from sitting the test. You will need a letter from your doctor confirming this. A disability alone does not automatically grant exemption — the key question is whether the condition prevents you from taking the test.',
+      },
+    },
+  ],
+}
+
 function TestExemptIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        Life in the UK Test Exemption Checker — Do You Need to Take It?
+        Am I Exempt From the Life in the UK Test? Free 60-Second Check
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Not everyone needs to take the Life in the UK test. Find out in 60 seconds whether you are exempt by answering 5 questions about your age, nationality, visa type, and health. Get a clear yes or no with a full explanation of your exemption status.
@@ -93,34 +140,34 @@ function TestExemptContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Is the age 65 exemption based on age at application or test date?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Who is exempt from the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The exemption is based on your age at the date of your ILR or citizenship application — not the date you sit the test. If you turn 65 before you submit your application, you are exempt. If you are 64 when you apply, you are not.
+        You are exempt if you are under 18 or aged 65 or over at the time of your application, if you have a long-term physical or mental condition that prevents you sitting the test (with medical evidence), or if you are a national of certain exempt countries including Australia, Canada, USA, New Zealand, and others. Use the checker above to confirm your status.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Do children applying with parents need to take the test?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Can I get a medical exemption from the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Children under 18 are fully exempt from the Life in the UK test. They do not need to pass the test or obtain a B1 English certificate. Their age on the application form is sufficient.
+        Yes. If you have a long-term physical or mental condition that prevents you from sitting the test, you can claim a medical exemption. You need a letter from a doctor confirming the condition and explaining why it prevents you taking the test. The Home Office may also ask for supporting medical reports. A short-term illness or temporary condition does not usually qualify.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">I am from the USA — do I still need the Life in the UK test?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Are EU citizens exempt from the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. Citizens of the USA are on the exempt nationality list. You do not need to take the Life in the UK test or the B1 English test when applying for ILR or British citizenship.
+        No. EU citizens are not automatically exempt from the Life in the UK test on nationality grounds. Unlike citizens of countries such as Australia, Canada, and the USA, EU nationals must still pass the Life in the UK test when applying for ILR or British citizenship — unless they qualify under the age or medical exemptions.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Skilled Worker visa — am I exempt from the test?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Does the age exemption apply automatically?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Skilled Worker visa holders are exempt from the B1 English language test because they proved English ability when they applied for their visa. However, they are not automatically exempt from the Life in the UK test. Unless you are exempt on age or nationality grounds, you must still pass the Life in the UK test before applying for ILR.
+        Yes. If you are under 18 or aged 65 or over at the date of your ILR or citizenship application, you are automatically exempt — no extra evidence is needed. Your age on the application date (not the test date) is what matters. If you turn 65 before you submit your application, you are exempt.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What evidence do I need to claim a medical exemption?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What if I have a disability — am I exempt from the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        You need a letter from a doctor confirming you have a long-term physical or mental condition that prevents you from sitting the test. The Home Office may ask for additional medical reports. A short-term illness or temporary condition does not usually qualify.
+        You may be exempt if your disability constitutes a long-term physical or mental condition that prevents you from sitting the test. The key question is whether the condition makes it impossible for you to take the test — not simply whether it makes it more difficult. Get a letter from your doctor explaining why your condition prevents you from sitting the test.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">Can I take the Life in the UK test in Welsh or Scottish Gaelic?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. The test is available in Welsh (Cymraeg) and Scottish Gaelic at certain test centres. You must request this when booking. The content and pass mark are the same as the English-language test.
+        Yes. The test is available in Welsh (Cymraeg) and Scottish Gaelic at certain test centres. You must request this when booking. The content and pass mark are the same as the English-language version.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -144,6 +191,10 @@ function TestExemptContent() {
 export default function TestExemptPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <TestExemptIntro />
       <ExemptWizardClient />
       <TestExemptContent />

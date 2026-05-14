@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free UK Absence Calculator — Check Your 180-Day ILR Rule',
-    description: 'Add your trips outside the UK and instantly see if you have breached the 180-day ILR rule in any 12-month period. Free, no login, results in seconds.',
+    title: '180 Day Absence Calculator UK — Free ILR 180-Day Rule Checker 2026',
+    description: 'Free 180-day absence calculator for UK ILR applications. Check every rolling 12-month window instantly — see if your travel history breaches the limit. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/absence-calculator' },
     openGraph: {
-      title: 'Free UK Absence Calculator — Check Your 180-Day ILR Rule',
-      description: 'Add your trips outside the UK and instantly see if you have breached the 180-day ILR rule in any 12-month period. Free, no login, results in seconds.',
+      title: '180 Day Absence Calculator UK — Free ILR 180-Day Rule Checker 2026',
+      description: 'Free 180-day absence calculator for UK ILR applications. Check every rolling 12-month window instantly — see if your travel history breaches the limit. No sign-up.',
       url: 'https://passtheuktest.co.uk/absence-calculator',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the 180-day rule for ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'During your ILR qualifying period, you must not spend more than 180 days outside the UK in any single rolling 12-month period. The window is rolling — it can start on any date, not just 1 January — and every possible consecutive 12-month period within your qualifying period is checked.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the departure day count as an absence for ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Using the conservative approach that matches UKVI practice, your departure day counts as an absence day. Your arrival day back in the UK does not count as an absence.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if I breach the 180-day rule?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UKVI can refuse your ILR application if any rolling 12-month window shows more than 180 days outside the UK. The £3,226 application fee is not refunded if refused. In some cases UKVI may exercise discretion for genuine exceptional circumstances such as a medical emergency, but this is rare. Seek advice from an OISC-registered immigration adviser before applying.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do short trips outside the UK add up for ILR purposes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Short trips add up quickly. A two-week holiday, a week-long business trip, and a few weekend breaks can together amount to over a month of absences per year. Over a 5-year qualifying period, regular short trips can easily push you over the 180-day limit in a given 12-month window.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the 180-day absence rule a calendar year or rolling 12 months?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It is a rolling 12-month window — not a calendar year. Every possible consecutive 12-month period within your qualifying period is assessed. This is why a calculator that checks all possible windows (not just January to December) is essential.',
+      },
+    },
+  ],
+}
+
 function AbsenceCalculatorIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        UK Absence Calculator — Check Your 180-Day ILR Rule
+        180 Day Absence Calculator — Free ILR 180-Day Rule Checker
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Use our free absence calculator to check whether your trips outside the UK breach the 180-day rule for ILR eligibility. Enter your qualifying period start date and add each trip — the calculator checks every rolling 12-month window and shows whether you are within the limit.
@@ -94,34 +141,34 @@ function AbsenceCalculatorContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">How many days can I spend outside the UK for ILR?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the 180-day rule for ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        You can spend up to 180 days outside the UK in any rolling 12-month period. This is the maximum — not an allowance you are entitled to use every year. Your total absences across the qualifying period do not have a separate cap, but each 12-month window must stay at or below 180 days.
+        During your ILR qualifying period, you must not spend more than 180 days outside the UK in any single rolling 12-month period. The window is rolling — it can start on any date, not just 1 January — and every possible consecutive 12-month period within your qualifying period is checked.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Is the 180-day rule per calendar year or rolling?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Does the departure day count as an absence for ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        It is a rolling window. Every possible 12-month period within your qualifying period is checked — not just January to December. This is why this calculator checks all windows, not just calendar years.
+        Yes. Using the conservative approach that matches UKVI practice, your departure day counts as an absence day. Your arrival day back in the UK does not count as an absence. This calculator uses this conservative method to give you the safest possible result.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Do departure and return days count as absence days?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What happens if I breach the 180-day rule?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The conservative approach — and the one used by this calculator — counts your departure day as an absence. Your return day (when you arrive back in the UK) does not count as an absence. This matches the approach UKVI takes when assessing applications.
+        UKVI can refuse your ILR application if any rolling 12-month window shows more than 180 days outside the UK. The £3,226 application fee is not refunded if your application is refused. In rare cases UKVI may exercise discretion where there were genuine exceptional circumstances such as a serious medical emergency, but do not rely on this. Seek advice from an OISC-registered immigration adviser before applying if you have breached the rule.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What if I have already exceeded 180 days in one period?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Do short trips outside the UK add up?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        If the breached window is still within your qualifying period, your application is likely to be refused. You may need to wait until that window falls outside the start of your qualifying period, or seek professional advice. Do not apply until you have confirmed your position with an OISC-registered adviser.
+        Yes. Short trips add up quickly. A two-week holiday, a week-long business trip, and a few weekend breaks can together amount to over a month of absences per year. Over a 5-year qualifying period, regular short trips can easily push you over the 180-day limit in a given 12-month window — even if you never took a single long trip.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Does the 180-day rule apply to EU Settled Status holders?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Is the 180-day absence rule a calendar year or rolling 12 months?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        EU Settled Status has different absence rules. You must not spend more than 5 consecutive years outside the UK or your Settled Status lapses. The rolling 180-day rule described here applies to the standard ILR qualifying period for non-EU routes.
+        It is a rolling window. Every possible consecutive 12-month period within your qualifying period is checked — not just January to December each year. This is why this calculator checks all possible windows, not just calendar years. A period spanning, say, June 2023 to June 2024 is assessed just as rigorously as a January-to-December period.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can UKVI check my travel history?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Can UKVI check my travel history independently?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. The UK Border Force records entries and exits. UKVI cross-references your declared travel history on the application form against these records. Providing inaccurate information — even unintentionally — can lead to refusal and affect future applications.
+        Yes. The UK Border Force records entries and exits. UKVI cross-references your declared travel history on the application form against these records. Providing inaccurate information — even unintentionally — can lead to refusal on good character grounds and affect future applications.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -146,6 +193,10 @@ function AbsenceCalculatorContent() {
 export default function AbsenceCalculatorPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <AbsenceCalculatorIntro />
       <AbsenceCalculatorClient />
       <AbsenceCalculatorContent />

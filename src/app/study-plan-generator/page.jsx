@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free Life in the UK Test Study Plan — Personalised 2026',
-    description: 'Free personalised study plan for the Life in the UK test. Enter your test date and score — get a day-by-day schedule built around the time you have left.',
+    title: 'Free Life in the UK Test Study Plan — Personalised by Test Date 2026',
+    description: 'Generate a free personalised Life in the UK test study plan based on your test date. Get a week-by-week schedule covering all 5 chapters. Pass first time. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/study-plan-generator' },
     openGraph: {
-      title: 'Free Life in the UK Test Study Plan — Personalised 2026',
-      description: 'Free personalised study plan for the Life in the UK test. Enter your test date and score — get a day-by-day schedule built around the time you have left.',
+      title: 'Free Life in the UK Test Study Plan — Personalised by Test Date 2026',
+      description: 'Generate a free personalised Life in the UK test study plan based on your test date. Get a week-by-week schedule covering all 5 chapters. Pass first time. No sign-up.',
       url: 'https://passtheuktest.co.uk/study-plan-generator',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long should I study for the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most people need 3–6 weeks of consistent daily study to pass the Life in the UK test. If you are starting from zero knowledge of British history and culture, allow 6 weeks. If you have already read the handbook once, 3 weeks of active practice may be enough. Your current practice score is the best guide — aim to consistently score 21 or more out of 24 before booking.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What order should I study the Life in the UK test chapters?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Study the chapters in order. Chapter 3 (A Long and Illustrious History) is the longest and generates the most test questions — spend at least half your total study time here. Chapter 4 (A Modern, Thriving Society) covers arts, sport, and culture and is consistently under-revised. Do not skip it. The shorter chapters (1, 2, and 5) can be covered in a single session each.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How many practice questions should I do per day?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Aim for 20–40 questions per day during your revision period. Focus on questions you get wrong — revisit them the next day. Use chapter-by-chapter practice first to build knowledge area by area, then switch to full 24-question timed mock exams in the final 1–2 weeks before your test.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When should I book the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Book your test when you are consistently scoring 21 or more out of 24 in timed practice — not just the 18/24 pass mark. A 3-question buffer protects you against a harder-than-usual sitting. Do not book based on a calendar date alone — book based on your practice scores.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the best way to memorise key dates for the Life in the UK test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use active recall rather than passive reading. After reading a section, close the book and try to write down the dates and facts from memory. Use our free cheat sheet of key dates and facts to drill the most commonly tested numbers, years, and names. Spaced repetition — revisiting the same facts over several days — is far more effective than reading once.',
+      },
+    },
+  ],
+}
+
 function StudyPlanIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        Life in the UK Test Study Plan Generator — Free Personalised Plan
+        Free Life in the UK Test Study Plan — Personalised by Test Date
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Get a free personalised study plan for the Life in the UK test based on your test date and current practice score. Enter your details and we will generate a week-by-week revision schedule showing exactly what to study, when to take mock exams, and how many practice questions to do each day.
@@ -87,34 +134,36 @@ function StudyPlanContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">How many weeks do I need to study for the Life in the UK test?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">How long should I study for the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Most people need 3–6 weeks. If you are starting from zero knowledge of British history and culture, allow 6 weeks. If you have already read the handbook once, 3 weeks of active practice may be enough. Your current practice score is the best guide.
+        Most people need 3–6 weeks of consistent daily study. If you are starting from zero knowledge of British history and culture, allow 6 weeks. If you have already read the handbook once, 3 weeks of active practice may be enough. Your current practice score is the best guide — aim to consistently score 21 or more out of 24 before booking your test.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What is the best way to study for the Life in the UK test?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What order should I study the chapters?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Read the official handbook, then immediately practise questions on what you have read. Do not read the whole book before starting questions. Short daily sessions with spaced repetition are more effective than long irregular study sessions.
+        Study the chapters in order. Chapter 3 (A Long and Illustrious History) is the longest and generates the most test questions — spend at least half your total study time here. Chapter 4 (A Modern, Thriving Society) covers arts, sport, and culture and is consistently under-revised. The shorter chapters (1, 2, and 5) can be covered in a single session each.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">How many practice questions should I do per day?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Aim for 20–40 questions per day during your revision period. Focus on questions you get wrong — revisit them the next day. Use chapter-by-chapter practice first, then full 24-question mock exams in the final week before your test.
+        Aim for 20–40 questions per day during your revision period. Focus on questions you get wrong — revisit them the next day. Use chapter-by-chapter practice first to build knowledge area by area, then switch to full 24-question timed mock exams in the final 1–2 weeks before your test.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">When should I start doing mock exams?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">When should I book my test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Start full 24-question timed mock exams in the final 1–2 weeks before your test. Earlier in your revision, focus on chapter-by-chapter practice to build knowledge area by area. Mock exams confirm readiness — they are not the primary learning tool.
+        Book when you are consistently scoring 21 or more out of 24 in timed practice — not just the 18/24 pass mark. A 3-question buffer protects you against a harder-than-usual sitting. Do not book based on a calendar date — book based on your practice scores. If you are not hitting 21+, extend your preparation.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What is Chapter 3 about and why is it the hardest?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the best way to memorise key dates?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Chapter 3 — A Long and Illustrious History — covers British history from prehistoric times to the present. It is the longest chapter and generates the most test questions. It includes specific dates, monarchs, wars, and events that must be remembered accurately. Most people who fail the test do so because of gaps in Chapter 3 knowledge.
+        Use active recall rather than passive reading. After reading a section, close the book and try to write down the dates and facts from memory. Use our free{' '}
+        <Link href="/cheat-sheet" className="text-brand underline">cheat sheet</Link>{' '}
+        to drill the most commonly tested numbers, years, and names. Spaced repetition — revisiting the same facts over several days — is far more effective than reading once.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">Should I buy the official handbook?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. The official handbook (Life in the United Kingdom: A Guide for New Residents, 3rd edition) is the only source for test questions. All questions come directly from its text. It costs approximately £12–£15 and is available from bookshops and online retailers. Do not rely on a PDF copy — use the current 3rd edition.
+        Yes. The official handbook (Life in the United Kingdom: A Guide for New Residents, 3rd edition) is the only source for test questions. All questions come directly from its text. It costs approximately £12–£15 from bookshops and online retailers. Do not rely on a PDF copy — use the current 3rd edition.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -139,6 +188,10 @@ function StudyPlanContent() {
 export default function StudyPlanGeneratorPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <StudyPlanIntro />
       <StudyPlanClient />
       <StudyPlanContent />

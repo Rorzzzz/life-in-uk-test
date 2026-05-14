@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'B1 English Level Check — Free 15-Question Test 2026',
-    description: 'Free B1 English level check — 15 practice questions covering vocabulary, grammar, and reading. Find out if you are ready to book an official UKVI B1 test.',
+    title: 'B1 English Level Check — Free Practice Test for UK Citizenship 2026',
+    description: 'Free B1 English level check for UK citizenship applications. 15 questions covering listening and speaking topics — find out if you meet the B1 requirement. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/b1-check' },
     openGraph: {
-      title: 'B1 English Level Check — Free 15-Question Test 2026',
-      description: 'Free B1 English level check — 15 practice questions covering vocabulary, grammar, and reading. Find out if you are ready to book an official UKVI B1 test.',
+      title: 'B1 English Level Check — Free Practice Test for UK Citizenship 2026',
+      description: 'Free B1 English level check for UK citizenship applications. 15 questions covering listening and speaking topics — find out if you meet the B1 requirement. No sign-up.',
       url: 'https://passtheuktest.co.uk/b1-check',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the B1 English requirement for UK citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To apply for British citizenship by naturalisation, you must prove English speaking and listening ability at B1 level on the CEFR scale. You must pass a UKVI-approved B1 test such as Trinity GESE Grade 5, IELTS Life Skills B1, or LANGUAGECERT B1, unless you are exempt. B1 remains the requirement for citizenship — it has not changed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Has the English requirement changed for ILR in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. From 8 January 2026, the English language requirement for ILR (Indefinite Leave to Remain) increased from B1 to B2 level for most routes. B1 is still the requirement for British citizenship (naturalisation). If you are applying for ILR from January 2026 onwards, check whether you now need a B2 certificate rather than B1.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which English tests are accepted for UK citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Accepted tests for the B1 English requirement for citizenship include: Trinity College London GESE Grade 5, IELTS Life Skills B1, and LANGUAGECERT B1. All tests must be taken with a UKVI-approved provider. Check GOV.UK for the current approved provider list before booking.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a B1 English test cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'B1 English test costs vary by provider. LANGUAGECERT typically costs £150–£215 for the online proctored version. Trinity College London and IELTS Life Skills prices are similar. Check the provider\'s website for current prices as these change regularly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I be exempt from the English requirement for UK citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. You may be exempt if you hold a Skilled Worker or Tier 2 visa (English was proved at visa stage), if you are a national of an exempt country such as Australia, Canada, USA, or New Zealand, if you are aged 65 or over, or if you have a long-term physical or mental condition. Use our exemption checker to confirm your status.',
+      },
+    },
+  ],
+}
+
 function B1CheckIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        Free B1 English Level Check — Are You Ready for Your UK Visa Test?
+        B1 English Level Check — Free Practice Test for UK Citizenship
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Find out if your English is at B1 level with our free 15-question practice quiz. The B1 English test is required for most ILR and British citizenship applications. Answer questions covering vocabulary, grammar, and reading comprehension — and find out if you are ready to book an official UKVI-approved test.
@@ -86,36 +133,38 @@ function B1CheckContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Which B1 test should I take for ILR?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the B1 English requirement for UK citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        All three approved tests (Trinity GESE Grade 5, IELTS Life Skills B1, LANGUAGECERT B1) are accepted by the Home Office. The LANGUAGECERT online option is popular because you can take it from home without travelling to a test centre.
+        To apply for British citizenship by naturalisation, you must prove English speaking and listening ability at B1 level on the CEFR scale. You must pass a UKVI-approved B1 test such as Trinity GESE Grade 5, IELTS Life Skills B1, or LANGUAGECERT B1, unless you qualify for an exemption. B1 remains the standard for citizenship — it has not changed.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can I take a B1 test online from home?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Has the English requirement changed for ILR in 2026?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. LANGUAGECERT offers an online proctored B1 test you can take at home. Your computer camera and microphone are used by a remote invigilator. You need a stable internet connection and a quiet private space.
+        Yes. From 8 January 2026, the English language requirement for ILR increased from B1 to B2 level for most routes. B1 is still the requirement for British citizenship (naturalisation). If you are applying for ILR from January 2026 onwards, check whether you now need a B2 certificate rather than a B1. Use our{' '}
+        <Link href="/ilr-risk-check" className="text-brand underline">ILR risk checker</Link>{' '}
+        to flag this before you apply.
+      </p>
+
+      <h3 className="text-sm font-bold text-ink mb-1">Which English tests are accepted for UK citizenship?</h3>
+      <p className="text-sm text-ink-muted leading-relaxed mb-4">
+        Accepted tests for the B1 English requirement for citizenship include: Trinity College London GESE Grade 5, IELTS Life Skills B1, and LANGUAGECERT B1. All tests must be taken with a UKVI-approved provider. The LANGUAGECERT online option is popular because you can take it from home. Check GOV.UK for the current approved provider list before booking.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">How much does a B1 English test cost?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Costs vary by provider and location. LANGUAGECERT typically costs £150–£215. Trinity and IELTS Life Skills prices are similar. Check the provider website for current prices as these change regularly.
+        Costs vary by provider. LANGUAGECERT typically costs £150–£215 for the online proctored version. Trinity College London and IELTS Life Skills prices are similar. Check the provider website for current prices as these change regularly. B1 certificates are generally valid for 2 years — the certificate must be current at the time you submit your application.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">How long is a B1 certificate valid for?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Can I be exempt from the English requirement for UK citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        B1 certificates are generally valid for 2 years. For ILR and citizenship applications, the certificate must be current at the time you submit your application. Check the specific rules on GOV.UK before booking.
-      </p>
-
-      <h3 className="text-sm font-bold text-ink mb-1">Am I exempt from the B1 English test?</h3>
-      <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        You may be exempt if you hold a Skilled Worker or Tier 2 visa (you proved English at visa stage), if you are a national of an exempt country such as Australia, Canada, USA, or New Zealand, if you are aged 65 or over, or if you have a long-term physical or mental condition. Use our{' '}
+        Yes. You may be exempt if you hold a Skilled Worker or Tier 2 visa (English was proved at visa stage), if you are a national of an exempt country such as Australia, Canada, USA, or New Zealand, if you are aged 65 or over, or if you have a long-term physical or mental condition. Use our{' '}
         <Link href="/test-exempt" className="text-brand underline">exemption checker</Link>{' '}
         to confirm your status.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">Is the B1 test the same as the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. They are two separate requirements. The B1 English test proves your speaking and listening ability. The Life in the UK test is a knowledge test about British history, culture, and society. Most adult applicants must pass both.
+        No. They are two completely separate requirements. The B1 English test proves your speaking and listening ability in English. The Life in the UK test is a knowledge test about British history, culture, and society. Most adult applicants must pass both before applying for ILR or citizenship.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -139,6 +188,10 @@ function B1CheckContent() {
 export default function B1CheckPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <B1CheckIntro />
       <B1CheckClient />
       <B1CheckContent />

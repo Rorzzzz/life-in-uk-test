@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'True Cost of Becoming British — From £2,000 to £50,000+',
-    description: 'EU citizens pay from £2,000. Work visa routes reach £50,000+ for families. Calculate your exact total — every fee from first visa to British passport, free.',
+    title: 'True Cost of British Citizenship 2026 — Free Calculator (£2,000 to £50,000+)',
+    description: 'Calculate the true cost of British citizenship in 2026. ILR fee, citizenship fee, English test, Life in the UK test, legal costs — full breakdown from your visa to your passport. Free.',
     alternates: { canonical: 'https://passtheuktest.co.uk/true-cost-calculator' },
     openGraph: {
-      title: 'True Cost of Becoming British — From £2,000 to £50,000+',
-      description: 'EU citizens pay from £2,000. Work visa routes reach £50,000+ for families. Calculate your exact total — every fee from first visa to British passport, free.',
+      title: 'True Cost of British Citizenship 2026 — Free Calculator (£2,000 to £50,000+)',
+      description: 'Calculate the true cost of British citizenship in 2026. ILR fee, citizenship fee, English test, Life in the UK test, legal costs — full breakdown from your visa to your passport. Free.',
       url: 'https://passtheuktest.co.uk/true-cost-calculator',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does ILR cost in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The ILR application fee in 2026 is £3,226 per adult. This fee is not refunded if your application is refused. On top of this, you must pay £19.20 for a standard biometric enrolment appointment at UKVCAS. The total direct cost for one adult applying for ILR is at least £3,245.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does British citizenship cost in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'British citizenship (naturalisation) costs £1,709 per adult for the application fee, plus £130 for the mandatory citizenship ceremony — a total of £1,839 per adult. Child citizenship registration costs £1,000 per child. A British passport costs an additional £102 for adults and £66.50 for children and is applied for separately.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the ILR fee refundable?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The £3,226 ILR application fee is not refunded regardless of the outcome, even if your application is refused on a technicality. Similarly, the naturalisation fee of £1,709 is non-refundable. Always verify your eligibility before applying.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the total cost of British citizenship for a family in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A family of two adults and one child applying together faces approximately £4,678 in citizenship application and ceremony fees alone. The total cost of the entire immigration journey — including all visa renewals, Immigration Health Surcharge, English tests, Life in the UK tests, and ILR — typically reaches £41,000–£45,000 for a non-EU family of four on a standard work or family route.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are there any ways to reduce the costs of becoming British?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Options are limited. The most effective are: passing the Life in the UK test and English test first time to avoid retake fees; checking whether your employer will contribute to ILR costs; applying for citizenship as soon as you are eligible to stop paying the Immigration Health Surcharge; and checking whether you qualify for a fee waiver (available on human rights routes only). The main fees — visa, IHS, ILR, and citizenship — are fixed by the Home Office.',
+      },
+    },
+  ],
+}
+
 function TrueCostIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        True Cost of Becoming British — Full Journey Calculator
+        True Cost of British Citizenship 2026 — Full Journey Calculator (£2,000 to £50,000+)
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Most people applying for British citizenship only think about the citizenship fee. The real cost — from your first visa to your British passport — is dramatically higher. This calculator adds up every fee in the journey so you can plan ahead.
@@ -105,31 +152,31 @@ function TrueCostContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What is the total cost of becoming a British citizen?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">How much does ILR cost in 2026?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The total depends on your route. EU citizens with Settled Status pay from around £2,000 per person — the EUSS was free, no IHS was charged, and Settled Status replaced ILR at no cost. On all other routes, a single adult typically pays £12,000–£14,000. A family of four on a standard work or family route typically pays £41,000–£45,000 in total. Use the calculator above to get a figure for your specific situation.
+        The ILR application fee in 2026 is £3,226 per adult. On top of this, a standard biometric enrolment appointment at UKVCAS costs £19.20. The fee is not refunded if your application is refused — making pre-application checks essential. Use our{' '}
+        <Link href="/ilr-risk-check" className="text-brand underline">ILR risk checker</Link>{' '}
+        to identify potential issues before you apply.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Is the Immigration Health Surcharge refunded when you get ILR?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">How much does British citizenship cost in 2026?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. The IHS is not refunded at any stage. If you get ILR earlier than expected and paid IHS for years you did not end up using, you do not receive a refund for the unused portion. This is one of the most frustrating aspects of the IHS system for applicants who apply successfully before their visa expires.
+        British citizenship costs £1,709 per adult for the naturalisation application fee, plus £130 for the mandatory citizenship ceremony — a combined total of £1,839 per adult. Child citizenship registration costs £1,000 per child. A British passport costs an additional £102 for adults and £66.50 for children, applied for separately.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Are immigration fees refunded if your application is refused?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Is the ILR fee refundable?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. Immigration application fees — including the ILR fee of £3,226 and the naturalisation fee of £1,709 — are non-refundable regardless of the outcome. This makes it essential to ensure your application is complete and correct before submitting. Use our{' '}
-        <Link href="/ilr-calculator" className="text-brand underline">ILR calculator</Link>{' '}
-        to check your eligibility before applying.
+        No. The £3,226 ILR application fee is not refunded regardless of the outcome — even if refused on a technicality. Similarly, the £1,709 naturalisation fee is non-refundable. All immigration fees must be paid in full at the point of application with no instalment option.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can you pay immigration fees in instalments?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the total cost for a family in 2026?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. All immigration fees — visa applications, ILR, and naturalisation — must be paid in full at the point of application. There is no instalment option, deferred payment, or credit facility. This is why early financial planning is essential. Dividing your expected total cost by the number of months until your ILR qualifying date gives you a manageable monthly savings target.
+        A family of two adults and one child applying for citizenship together faces approximately £4,678 in citizenship application and ceremony fees. The total cost of the full immigration journey — including all visa renewals, Immigration Health Surcharge, English tests, Life in the UK tests, and ILR — typically reaches £41,000–£45,000 for a non-EU family of four on a standard work or family route. EU citizens with Settled Status pay significantly less.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">How can I reduce the total cost of becoming British?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Are there any ways to reduce the costs?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        There are limited options to reduce the total. The most effective are: passing the Life in the UK test and B1 English test first time (avoiding retake fees); checking whether your employer will contribute to ILR fees; applying for citizenship as soon as you are eligible to avoid additional years of IHS; and checking whether you qualify for a fee waiver (available on human rights routes only). The largest costs — visa fees, IHS, and ILR — are fixed by the Home Office and cannot be reduced on standard routes.
+        Options are limited on standard routes. The most effective are: passing the Life in the UK test and English test first time to avoid retake fees; checking whether your employer will contribute to ILR costs; applying for citizenship as soon as you are eligible to stop paying the Immigration Health Surcharge; and checking whether you qualify for a fee waiver (available on human rights routes only). The largest fees are fixed by the Home Office.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -156,6 +203,10 @@ function TrueCostContent() {
 export default function TrueCostCalculatorPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <TrueCostIntro />
       <TrueCostClient />
       <TrueCostContent />

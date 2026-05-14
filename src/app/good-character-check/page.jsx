@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free Good Character Check — ILR & Citizenship 2026',
-    description: 'Good character is required for ILR and British citizenship. Find out if something in your past might cause a problem — answer 6 questions, free, no login.',
+    title: 'Good Character Check — Free ILR & British Citizenship Checker 2026',
+    description: 'Free good character checker for ILR and British citizenship applications. Find out if criminal convictions, debts or immigration history could affect your application. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/good-character-check' },
     openGraph: {
-      title: 'Free Good Character Check — ILR & Citizenship 2026',
-      description: 'Good character is required for ILR and British citizenship. Find out if something in your past might cause a problem — answer 6 questions, free, no login.',
+      title: 'Good Character Check — Free ILR & British Citizenship Checker 2026',
+      description: 'Free good character checker for ILR and British citizenship applications. Find out if criminal convictions, debts or immigration history could affect your application. No sign-up.',
       url: 'https://passtheuktest.co.uk/good-character-check',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the good character requirement for ILR and citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The good character requirement is a holistic assessment UKVI makes before granting ILR or British citizenship. It covers criminal history, immigration conduct, financial honesty (including unpaid taxes and benefit fraud), and civic behaviour. There is no single pass/fail checklist — the caseworker considers the full picture of your history.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a spent conviction affect my ILR or citizenship application?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Unlike most other contexts, ILR and citizenship applications require you to declare all convictions including spent ones. The Rehabilitation of Offenders Act 1974 does not apply to these applications. Failure to declare a spent conviction is treated as deception — which is more serious in UKVI\'s eyes than the original conviction itself.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do unpaid debts affect good character for ILR or citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Unpaid debts can affect the good character assessment, particularly where they involve unpaid taxes, benefit fraud, or deliberate financial dishonesty. A County Court Judgment (CCJ) is noted on your record and may be taken into account. Ordinary consumer debt is less likely to cause a problem, but deliberate non-payment of public duties is viewed more seriously.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What about minor offences — do they affect ILR or citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Minor offences — such as a single caution, small fine, or non-custodial sentence many years ago with no subsequent offending — are assessed case by case. They do not automatically result in refusal. However, they must be declared. A pattern of minor offences is viewed more seriously than a single isolated incident.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I still apply for ILR or citizenship if I have a CCJ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A County Court Judgment (CCJ) does not automatically prevent you from applying for ILR or citizenship. UKVI considers the circumstances — including whether the debt has been paid and how long ago the judgment was issued. Unsatisfied CCJs showing ongoing financial irresponsibility are viewed more negatively. Seek advice from an OISC-registered immigration adviser if you have a CCJ.',
+      },
+    },
+  ],
+}
+
 function GoodCharacterIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        Good Character Check — ILR &amp; Citizenship Requirement 2026
+        Good Character Requirement Check — Free ILR &amp; British Citizenship Checker 2026
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         The good character requirement applies to everyone applying for ILR or British citizenship. Answer 6 questions about your criminal history, immigration record, and financial conduct to get an assessment of how your background might be viewed by the Home Office.
@@ -94,34 +141,34 @@ function GoodCharacterContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Does a criminal record mean automatic refusal for ILR?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the good character requirement for ILR and citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Not automatically. The severity and recency of the conviction matters. A minor offence many years ago with no subsequent issues may not prevent a successful application. Serious convictions with custodial sentences have fixed bars attached. Always seek advice from an OISC-registered adviser if you have any criminal history.
+        The good character requirement is a holistic assessment UKVI makes before granting ILR or British citizenship. It covers criminal history, immigration conduct, financial honesty (including unpaid taxes and benefit fraud), and civic behaviour. There is no single pass/fail checklist — the caseworker considers the full picture. Serious issues do not automatically mean refusal, but they must be declared. Failure to declare something UKVI later finds is treated more seriously than the original issue.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Do I need to declare spent convictions on a citizenship application?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Does a spent conviction affect my ILR or citizenship application?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. Unlike most other contexts, citizenship applications require you to declare all convictions including spent ones. The Rehabilitation of Offenders Act 1974 does not apply to citizenship applications. Failure to declare is treated as deception and is more serious than the conviction itself.
+        Yes. Unlike most other contexts, ILR and citizenship applications require you to declare all convictions including spent ones. The Rehabilitation of Offenders Act 1974 does not apply to these applications. Failure to declare a spent conviction is treated as deception — which is more serious in UKVI&apos;s eyes than the original conviction itself. If in doubt, declare it.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What counts as a minor offence for good character purposes?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Do unpaid debts affect good character for ILR or citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        There is no fixed legal definition of minor. The Home Office guidance considers the nature of the offence, the sentence given, how long ago it was, and whether there has been any repeat offending. A single caution or small fine many years ago with no pattern of further offending is typically treated more leniently than recent or repeat offences.
+        Unpaid debts can affect the good character assessment, particularly where they involve unpaid taxes, benefit fraud, or deliberate financial dishonesty. A County Court Judgment (CCJ) is noted on your record. Ordinary consumer debt is less likely to cause a problem on its own, but deliberate non-payment of public duties is viewed more seriously.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">I had a brief overstay years ago — will this affect my application?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What about minor offences — do they affect ILR or citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        A brief overstay is noted on your immigration record. Whether it affects your application depends on how long ago it was, how long the overstay lasted, and your conduct since then. UKVI may exercise discretion for a short and old overstay if there is a clear and innocent explanation. Seek professional advice before applying.
+        Minor offences are assessed case by case. The Home Office considers the nature of the offence, the sentence given, how long ago it was, and whether there has been any repeat offending. A single caution or small fine many years ago with no pattern of further offending is typically treated more leniently than recent or repeat offences.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can I still apply for ILR if I worked without permission?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Can I still apply for ILR or citizenship if I have a CCJ?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Working without permission is a serious immigration breach. It may result in a civil penalty and can affect your good character assessment for ILR and citizenship. The outcome depends on the circumstances. Get OISC-registered immigration advice before applying.
+        A County Court Judgment does not automatically prevent you from applying. UKVI considers whether the debt has been paid and how long ago the judgment was issued. Unsatisfied CCJs showing ongoing financial irresponsibility are viewed more negatively. Seek advice from an OISC-registered immigration adviser if you have a CCJ on your record.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">Where can I find an OISC-registered immigration adviser?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        You can search the OISC register on GOV.UK to find a regulated immigration adviser near you. Only use advisers registered with the OISC or solicitors regulated by the Solicitors Regulation Authority (SRA). Unregulated immigration advisers operate illegally and can cause serious harm to your application.
+        Search the OISC register on GOV.UK to find a regulated immigration adviser near you. Only use advisers registered with the OISC or solicitors regulated by the Solicitors Regulation Authority (SRA). Unregulated immigration advisers operate illegally and can cause serious harm to your application.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -145,6 +192,10 @@ function GoodCharacterContent() {
 export default function GoodCharacterCheckPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <GoodCharacterIntro />
       <GoodCharacterClient />
       <GoodCharacterContent />

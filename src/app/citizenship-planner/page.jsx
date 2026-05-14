@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'UK Citizenship Planner 2026 — Free Timeline & Cost Tool',
-    description: 'Free British citizenship timeline calculator — enter your ILR date and route to get your exact eligibility date, total cost, and step-by-step timeline.',
+    title: 'UK Citizenship Timeline Planner 2026 — Free Route to Your British Passport',
+    description: 'Free UK citizenship timeline planner — see your exact route from visa to British passport. ILR date, citizenship eligibility, processing times and total costs all in one place. 2026.',
     alternates: { canonical: 'https://passtheuktest.co.uk/citizenship-planner' },
     openGraph: {
-      title: 'UK Citizenship Planner 2026 — Free Timeline & Cost Tool',
-      description: 'Free British citizenship timeline calculator — enter your ILR date and route to get your exact eligibility date, total cost, and step-by-step timeline.',
+      title: 'UK Citizenship Timeline Planner 2026 — Free Route to Your British Passport',
+      description: 'Free UK citizenship timeline planner — see your exact route from visa to British passport. ILR date, citizenship eligibility, processing times and total costs all in one place. 2026.',
       url: 'https://passtheuktest.co.uk/citizenship-planner',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does it take to get British citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'On the standard route, it takes a minimum of approximately 6.5 years from arriving in the UK to receiving British citizenship: 5 years qualifying residence, then ILR, then 12 months with ILR before applying for citizenship, plus processing time. The spouse of a British citizen route takes around 3 years. EU Settled Status holders can apply 1 year after Settled Status is granted.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long after ILR can I apply for citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'On the standard route, you must hold ILR for at least 12 months immediately before applying for citizenship. Applying before 12 months have passed since your ILR was granted will result in a refused application.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the 450-day absence rule for citizenship?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For British citizenship by naturalisation, you must not have spent more than 450 days outside the UK in the 5 years before your application, and no more than 90 days outside the UK in the 12 months immediately before your application. These are separate from the ILR 180-day rule and must both be met.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does citizenship processing take in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'British citizenship (naturalisation) applications typically take within 6 months to process. The Home Office publishes current processing times on GOV.UK. After approval, you attend a citizenship ceremony at your local council before citizenship is formally confirmed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to give up my current passport to become British?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The UK allows dual nationality — becoming a British citizen does not require you to give up your existing citizenship or passport. However, your original country may not permit dual nationality. Check the rules of your home country before applying for British citizenship.',
+      },
+    },
+  ],
+}
+
 function CitizenshipPlannerIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        British Citizenship Planner — Timeline &amp; Cost Calculator 2026
+        UK Citizenship Timeline Planner 2026 — Your Free Route to a British Passport
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         Find out when you can apply for British citizenship and what it will cost. Enter your ILR date and route to get your exact eligibility date, a month-by-month timeline, and a full breakdown of fees. Updated for April 2026 Home Office fees.
@@ -96,36 +143,34 @@ function CitizenshipPlannerContent() {
         Frequently Asked Questions
       </h2>
 
+      <h3 className="text-sm font-bold text-ink mb-1">How long does it take to get British citizenship?</h3>
+      <p className="text-sm text-ink-muted leading-relaxed mb-4">
+        On the standard route, it takes a minimum of approximately 6.5 years from arriving in the UK: 5 years qualifying residence, then ILR, then 12 months with ILR before applying for citizenship, plus processing time. The spouse of a British citizen route takes around 3 years in the UK. EU Settled Status holders can apply 1 year after Settled Status is granted.
+      </p>
+
       <h3 className="text-sm font-bold text-ink mb-1">How long after ILR can I apply for citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        On the standard route, you must hold ILR for at least 12 months before applying for citizenship. If you apply before 12 months have passed since your ILR was granted, your application will be refused.
+        On the standard route, you must hold ILR for at least 12 months immediately before applying for citizenship. Applying before 12 months have passed will result in a refused application and a lost fee. Use the planner above to calculate your exact eligibility date.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What is the spouse route to British citizenship?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the 450-day absence rule for citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        If you are married to or in a civil partnership with a British citizen, you can apply for citizenship after 3 years of living in the UK. You do not need to hold ILR first. You must still pass the Life in the UK test, meet the English language requirement, and satisfy the good character requirement.
+        For British citizenship by naturalisation, you must not have spent more than 450 days outside the UK in the 5 years before your application, and no more than 90 days outside the UK in the 12 months immediately before your application. These limits are separate from the ILR 180-day rule and both must be met.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Is the citizenship ceremony fee included in the £1,709?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">How long does citizenship processing take in 2026?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. The total you pay when applying is £1,839 per adult — this covers the £1,709 naturalisation fee plus the £130 citizenship ceremony fee. You cannot opt out of the ceremony — it is a legal requirement before citizenship is confirmed.
+        British citizenship (naturalisation) applications typically take within 6 months to process. The Home Office publishes current processing times on GOV.UK. After approval, you attend a mandatory citizenship ceremony at your local council before citizenship is formally confirmed.
+      </p>
+
+      <h3 className="text-sm font-bold text-ink mb-1">Do I need to give up my current passport to become British?</h3>
+      <p className="text-sm text-ink-muted leading-relaxed mb-4">
+        No. The UK allows dual nationality — becoming a British citizen does not require you to give up your existing citizenship or passport. However, your original country may not permit dual nationality. Check the rules of your home country before applying for British citizenship.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">Does the proposed 10-year ILR rule affect my citizenship timeline?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        As of April 2026, the proposal to extend the ILR qualifying period from 5 to 10 years has been announced but is not yet law. If it becomes law it would significantly extend the path to citizenship for new visa holders. Check GOV.UK for the latest position before making plans.
-      </p>
-
-      <h3 className="text-sm font-bold text-ink mb-1">What is the good character requirement?</h3>
-      <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The Home Office assesses whether you are of good character before granting citizenship. This covers criminal convictions, immigration conduct, financial honesty, and civic behaviour. Use our{' '}
-        <Link href="/good-character-check" className="text-brand underline">good character checker</Link>{' '}
-        to assess how your background might be viewed.
-      </p>
-
-      <h3 className="text-sm font-bold text-ink mb-1">Will I lose my original nationality if I become British?</h3>
-      <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The UK allows dual nationality. Becoming a British citizen does not require you to give up your existing citizenship. However, your original country may not allow dual nationality — check the rules of your home country before applying.
+        As of May 2026, the proposal to extend the ILR qualifying period to 10 years (Earned Settlement) has been announced but is not yet law. If enacted, it would significantly extend the path to citizenship for new visa holders. Check GOV.UK for the latest position before making long-term plans.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -150,6 +195,10 @@ function CitizenshipPlannerContent() {
 export default function CitizenshipPlannerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <CitizenshipPlannerIntro />
       <CitizenshipPlannerClient />
       <CitizenshipPlannerContent />

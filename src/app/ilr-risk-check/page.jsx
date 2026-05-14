@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free ILR Refusal Risk Checker — Know Before You Apply 2026',
-    description: 'ILR refusal risk checker — find out if your absences, documents, or history could cause a refusal. Answer 9 questions and get a free assessment.',
+    title: 'Free ILR Refusal Risk Checker 2026 — Know Your Weak Spots Before You Apply',
+    description: 'Free ILR refusal risk checker — identify the factors most likely to cause your application to be refused before you apply. Updated for 2026 rule changes. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-risk-check' },
     openGraph: {
-      title: 'Free ILR Refusal Risk Checker — Know Before You Apply 2026',
-      description: 'ILR refusal risk checker — find out if your absences, documents, or history could cause a refusal. Answer 9 questions and get a free assessment.',
+      title: 'Free ILR Refusal Risk Checker 2026 — Know Your Weak Spots Before You Apply',
+      description: 'Free ILR refusal risk checker — identify the factors most likely to cause your application to be refused before you apply. Updated for 2026 rule changes. No sign-up.',
       url: 'https://passtheuktest.co.uk/ilr-risk-check',
       type: 'website',
     },
@@ -17,11 +17,58 @@ export async function generateMetadata() {
   }
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the most common reasons ILR is refused?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The most common reasons ILR is refused are: breaching the 180-day absence rule in any rolling 12-month period, not having passed the Life in the UK test, not meeting the English language requirement (B2 from January 2026, up from B1), gaps in continuous lawful residence, missing or inconsistent supporting documents, good character issues including convictions or past deception, and sponsor problems for Skilled Worker applicants.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the ILR refusal rate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Home Office does not publish a single headline ILR refusal rate. Refusal rates vary significantly by route and individual circumstances. The non-refundable £3,226 fee means the financial cost of a refusal is high — identifying and resolving risk factors before applying is essential.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I reapply after ILR refusal?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. There is no mandatory waiting period before reapplying for ILR after a refusal. However, you must fix the underlying reason for refusal before reapplying — submitting again with the same issue will result in a second refusal and a second lost fee. In most cases there is no right of appeal; you can request an administrative review if UKVI made a factual error.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a criminal record affect ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Criminal convictions are assessed as part of the good character requirement for ILR. The severity and recency of the conviction matters. Serious custodial sentences carry fixed bars. All convictions — including spent ones — must be declared. Failure to declare is treated as deception and is more serious than the original conviction.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if I have absences over 180 days for ILR?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If any rolling 12-month window within your qualifying period contains more than 180 days outside the UK, UKVI can refuse your application. The £3,226 fee is not refunded. You may need to wait until the offending window falls outside your qualifying period, or seek advice from an OISC-registered immigration adviser. Use our free 180-day absence calculator to check all your windows before applying.',
+      },
+    },
+  ],
+}
+
 function ILRRiskIntro() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-2">
-        ILR Refusal Risk Checker — Free Assessment Before You Apply
+        Free ILR Refusal Risk Checker 2026 — Know Your Weak Spots Before You Apply
       </h1>
       <p className="text-base text-ink leading-relaxed mb-3">
         ILR applications cost £3,226 per person — and the fee is not refunded if refused. Use our free ILR refusal risk checker to identify potential issues before you submit. Answer 9 questions about your qualifying period, documents, and eligibility to get a risk assessment with recommended next steps.
@@ -54,14 +101,17 @@ function ILRRiskContent() {
         UKVI publishes refusal reasons and these are well documented through immigration case law. The most common reasons are:
       </p>
       <ol className="text-sm text-ink-muted leading-relaxed space-y-2 mb-3 list-decimal list-inside">
-        <li>Breaching the 180-day absence rule in any 12-month period during the qualifying period</li>
+        <li>Breaching the 180-day absence rule in any rolling 12-month period during the qualifying period</li>
         <li>Not having passed the Life in the UK test before submitting the application</li>
-        <li>Not meeting the English language requirement (B1 level)</li>
+        <li>Not meeting the English language requirement — from January 2026 this is B2 level for ILR (up from B1)</li>
         <li>Gaps in continuous lawful residence — periods without valid leave to remain</li>
         <li>Insufficient or missing supporting documents</li>
         <li>Good character issues including convictions, civil penalties, or past deception</li>
         <li>Sponsor issues for Skilled Worker applicants — licence revoked, role changed without a new Certificate of Sponsorship</li>
       </ol>
+      <p className="text-base text-ink leading-relaxed mb-3">
+        <strong>2026 rule change:</strong> From 8 January 2026, the English language requirement for ILR increased from B1 to B2 for most routes. If you are applying for ILR from this date, confirm you have a valid B2 certificate — a B1 certificate alone will no longer satisfy the requirement for most applicants.
+      </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         The cost of a refused ILR application
@@ -107,36 +157,38 @@ function ILRRiskContent() {
         Frequently Asked Questions
       </h2>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can I appeal an ILR refusal?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What are the most common reasons ILR is refused?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        In most cases there is no right of appeal against an ILR refusal. You can request an administrative review if you believe UKVI made a factual error. Otherwise, you must address the reason for refusal and reapply — paying the full fee again. Get advice from an OISC-registered adviser before deciding your next step.
+        The most common reasons are: breaching the 180-day absence rule in any rolling 12-month window, not passing the Life in the UK test, not meeting the English language requirement (B2 from January 2026), gaps in continuous lawful residence, missing documents, good character issues, and sponsor problems for Skilled Worker applicants. Use the checker above to assess your risk across all these factors.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Is the £3,226 ILR fee refunded if my application is refused?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What is the ILR refusal rate?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. The ILR application fee is not refunded regardless of the outcome. This applies even if your application is refused on a technicality. Always check your eligibility carefully before applying.
+        The Home Office does not publish a single headline ILR refusal rate. Rates vary significantly by route and individual circumstances. What is consistent is that the £3,226 fee is non-refundable — making a thorough pre-application check essential for every applicant.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">How long must I wait before reapplying after a refusal?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Can I reapply after ILR refusal?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        There is no mandatory waiting period before reapplying for ILR after a refusal. However, you must fix the underlying reason for refusal before reapplying. Reapplying with the same issue will result in a second refusal.
+        Yes. There is no mandatory waiting period before reapplying for ILR after a refusal. However, you must fix the underlying reason for refusal first — submitting again with the same issue will result in a second refusal and a second lost fee. In most cases there is no right of appeal; you can request an administrative review if UKVI made a factual error.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Will a refused ILR application affect my future citizenship application?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Does a criminal record affect ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        A refusal is noted on your immigration record. When you later apply for citizenship, UKVI can see that a previous ILR application was refused and the reason for refusal. This does not automatically bar you from citizenship, but it may be taken into account — particularly if the reason involved dishonesty or a good character issue.
+        Yes. Criminal convictions are assessed as part of the good character requirement. The severity and recency of the conviction matters. Sentences of 4 years or more carry a permanent bar to citizenship; shorter sentences carry time-limited bars. All convictions — including spent ones — must be declared on the ILR application. Use our{' '}
+        <Link href="/good-character-check" className="text-brand underline">good character checker</Link>{' '}
+        to assess your position.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">What is the single most common reason ILR is refused?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">What happens if I have absences over 180 days?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Breaching the 180-day absence rule is one of the most frequent reasons for ILR refusal. Many applicants are unaware that the rule applies to every rolling 12-month window — not just each calendar year. Use our{' '}
-        <Link href="/absence-calculator" className="text-brand underline">absence calculator</Link>{' '}
-        to check all your windows before applying.
+        If any rolling 12-month window within your qualifying period contains more than 180 days outside the UK, UKVI can refuse your application. The £3,226 fee is not refunded. You may need to wait until the offending window falls outside your qualifying period. Use our{' '}
+        <Link href="/absence-calculator" className="text-brand underline">180-day absence calculator</Link>{' '}
+        to check every window before you apply.
       </p>
 
-      <h3 className="text-sm font-bold text-ink mb-1">Can I apply for ILR even if I have a spent conviction?</h3>
+      <h3 className="text-sm font-bold text-ink mb-1">Will a refused ILR application affect my citizenship application?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Spent convictions must still be declared on your ILR application. Whether they affect your outcome depends on the nature of the conviction, when it occurred, and your conduct since. Get advice from an OISC-registered adviser if you have any conviction history, including old or spent ones.
+        A refusal is noted on your immigration record and UKVI will see it when you later apply for citizenship. This does not automatically bar you, but it may be taken into account — particularly if the reason involved dishonesty or a good character issue.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -162,6 +214,10 @@ function ILRRiskContent() {
 export default function ILRRiskCheckPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ILRRiskIntro />
       <ILRRiskClient />
       <ILRRiskContent />
