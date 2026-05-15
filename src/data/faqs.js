@@ -31,7 +31,7 @@ export const FAQS = [
   {
     id: 5,
     question: 'What happens if you fail the Life in the UK test?',
-    answer: 'If you fail, you can resit as many times as you need by paying the £50 fee again. There is no waiting period between attempts, but you must book a new appointment.',
+    answer: 'If you fail, you can resit as many times as you need by paying the £50 fee again. You must wait at least 7 days before booking a new appointment — you cannot rebook within 7 days of a failed attempt.',
     category: 'About the Test',
   },
   {
