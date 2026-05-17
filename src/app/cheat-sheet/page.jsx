@@ -287,28 +287,6 @@ export default function CheatSheetPage() {
           </div>
         </section>
 
-        {/* Night Before section at bottom */}
-        <div className="mb-6">
-          <NightBeforeSection />
-        </div>
-
-        {/* Bottom share CTA */}
-        <div className="bg-brand-500/10 border border-brand-500/20 rounded-2xl p-5 text-center mb-6">
-          <p className="font-semibold text-ink mb-1">Found this useful?</p>
-          <p className="text-sm text-ink-muted mb-4">Share with anyone preparing for the Life in the UK test</p>
-          <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
-        </div>
-
-        <div className="bg-card rounded-2xl p-4 mt-4">
-          <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Practice Tests</p>
-          <div className="flex flex-wrap gap-2">
-            {[2, 7, 12, 20].map(n => (
-              <Link key={n} href={`/mock-test/${n}`} className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Mock Test {n}</Link>
-            ))}
-            <Link href="/mock-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">All 45 tests →</Link>
-          </div>
-        </div>
-
         {/* Key Acts & Legislation — additional static content for SEO */}
         <div className="bg-card rounded-2xl p-5 mt-6 mb-4">
           <h2 className="text-sm font-semibold text-ink uppercase tracking-wide mb-3">Key Acts & Legislation to Know</h2>
@@ -355,6 +333,28 @@ export default function CheatSheetPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Night Before section at bottom */}
+        <div className="mb-6">
+          <NightBeforeSection />
+        </div>
+
+        {/* Bottom share CTA */}
+        <div className="bg-brand-500/10 border border-brand-500/20 rounded-2xl p-5 text-center mb-6">
+          <p className="font-semibold text-ink mb-1">Found this useful?</p>
+          <p className="text-sm text-ink-muted mb-4">Share with anyone preparing for the Life in the UK test</p>
+          <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
+        </div>
+
+        <div className="bg-card rounded-2xl p-4 mt-4">
+          <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Practice Tests</p>
+          <div className="flex flex-wrap gap-2">
+            {[2, 7, 12, 20].map(n => (
+              <Link key={n} href={`/mock-test/${n}`} className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Mock Test {n}</Link>
+            ))}
+            <Link href="/mock-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">All 45 tests →</Link>
           </div>
         </div>
 
