@@ -26,7 +26,7 @@ const faqSchema = {
       name: 'What are the most common reasons ILR is refused?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The most common reasons ILR is refused are: breaching the 180-day absence rule in any rolling 12-month period, not having passed the Life in the UK test, not meeting the English language requirement (B2 from January 2026, up from B1), gaps in continuous lawful residence, missing or inconsistent supporting documents, good character issues including convictions or past deception, and sponsor problems for Skilled Worker applicants.',
+        text: 'The most common reasons ILR is refused are: breaching the 180-day absence rule in any rolling 12-month period, not having passed the Life in the UK test, not meeting the English language requirement (B1 required now; B2 from 26 March 2027), gaps in continuous lawful residence, missing or inconsistent supporting documents, good character issues including convictions or past deception, and sponsor problems for Skilled Worker applicants.',
       },
     },
     {
@@ -103,14 +103,14 @@ function ILRRiskContent() {
       <ol className="text-sm text-ink-muted leading-relaxed space-y-2 mb-3 list-decimal list-inside">
         <li>Breaching the 180-day absence rule in any rolling 12-month period during the qualifying period</li>
         <li>Not having passed the Life in the UK test before submitting the application</li>
-        <li>Not meeting the English language requirement — from January 2026 this is B2 level for ILR (up from B1)</li>
+        <li>Not meeting the English language requirement — B1 is required for ILR now; rising to B2 from 26 March 2027</li>
         <li>Gaps in continuous lawful residence — periods without valid leave to remain</li>
         <li>Insufficient or missing supporting documents</li>
         <li>Good character issues including convictions, civil penalties, or past deception</li>
         <li>Sponsor issues for Skilled Worker applicants — licence revoked, role changed without a new Certificate of Sponsorship</li>
       </ol>
       <p className="text-base text-ink leading-relaxed mb-3">
-        <strong>2026 rule change:</strong> From 8 January 2026, the English language requirement for ILR increased from B1 to B2 for most routes. If you are applying for ILR from this date, confirm you have a valid B2 certificate — a B1 certificate alone will no longer satisfy the requirement for most applicants.
+        <strong>Important:</strong> The English requirement for Skilled Worker visa applications (new grants) rose to B2 from 8 January 2026. ILR settlement applications still require B1 until 26 March 2027 — when B2 becomes the ILR standard. If your ILR application date falls after March 2027, start B2 preparation now.
       </p>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
@@ -159,7 +159,7 @@ function ILRRiskContent() {
 
       <h3 className="text-sm font-bold text-ink mb-1">What are the most common reasons ILR is refused?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        The most common reasons are: breaching the 180-day absence rule in any rolling 12-month window, not passing the Life in the UK test, not meeting the English language requirement (B2 from January 2026), gaps in continuous lawful residence, missing documents, good character issues, and sponsor problems for Skilled Worker applicants. Use the checker above to assess your risk across all these factors.
+        The most common reasons are: breaching the 180-day absence rule in any rolling 12-month window, not passing the Life in the UK test, not meeting the English language requirement (B1 now; B2 from 26 March 2027), gaps in continuous lawful residence, missing documents, good character issues, and sponsor problems for Skilled Worker applicants. Use the checker above to assess your risk across all these factors.
       </p>
 
       <h3 className="text-sm font-bold text-ink mb-1">What is the ILR refusal rate?</h3>

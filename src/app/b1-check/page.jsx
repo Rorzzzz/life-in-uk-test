@@ -34,7 +34,7 @@ const faqSchema = {
       name: 'Has the English requirement changed for ILR in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. From 8 January 2026, the English language requirement for ILR (Indefinite Leave to Remain) increased from B1 to B2 level for most routes. B1 is still the requirement for British citizenship (naturalisation). If you are applying for ILR from January 2026 onwards, check whether you now need a B2 certificate rather than B1.',
+        text: 'There are two separate changes. From 8 January 2026, Skilled Worker visa applications (new grants) require B2 English. For ILR settlement, B1 remains the requirement until 26 March 2027 — when ILR rises to B2. British citizenship still requires B1. If you are applying for ILR before March 2027, B1 is sufficient.',
       },
     },
     {
@@ -140,7 +140,7 @@ function B1CheckContent() {
 
       <h3 className="text-sm font-bold text-ink mb-1">Has the English requirement changed for ILR in 2026?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        Yes. From 8 January 2026, the English language requirement for ILR increased from B1 to B2 level for most routes. B1 is still the requirement for British citizenship (naturalisation). If you are applying for ILR from January 2026 onwards, check whether you now need a B2 certificate rather than a B1. Use our{' '}
+        There are two separate changes. From 8 January 2026, Skilled Worker visa applications (new grants) require B2 English. ILR settlement applications still require B1 until 26 March 2027 — when the ILR English standard rises to B2. British citizenship remains B1. If your ILR date falls after March 2027, start B2 preparation now. Use our{' '}
         <Link href="/ilr-risk-check" className="text-brand underline">ILR risk checker</Link>{' '}
         to flag this before you apply.
       </p>
