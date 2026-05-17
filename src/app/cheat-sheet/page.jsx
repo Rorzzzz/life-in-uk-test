@@ -45,6 +45,43 @@ function SectionHeader({ title, colour, stars }) {
   )
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is on the Life in the UK test cheat sheet?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Life in the UK test cheat sheet covers patron saints and national symbols, capital cities, key historical dates, key numbers (pass mark, MPs, jury size), famous British people, inventions and scientists, arts and architecture, music and composers, sports origins, and government and parliament facts.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use a cheat sheet in the Life in the UK test?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. You cannot take any notes or materials into the Life in the UK test room. The cheat sheet is for studying before your test — use it to memorise key facts in the days leading up to your appointment.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this Life in the UK cheat sheet free to download as a PDF?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. This cheat sheet is completely free. Use the Print / Save PDF button to save it as a PDF to your phone or computer, or print it directly. No sign-up required.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the patron saints of the UK?',
+      acceptedAnswer: { '@type': 'Answer', text: 'England: St George (23 April, Rose). Scotland: St Andrew (30 November, Thistle). Wales: St David (1 March, Daffodil). Northern Ireland: St Patrick (17 March, Shamrock).' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What key dates should I memorise for the Life in the UK test?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The most important dates are: 1066 (Battle of Hastings), 1215 (Magna Carta), 1707 (Act of Union — England and Scotland), 1918 (women over 30 get the vote), 1928 (all women over 21 get the vote), 1948 (NHS founded, Empire Windrush arrives), and 1999 (devolution — Scottish Parliament, Welsh Senedd, NI Assembly).' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the most important things to memorise for the Life in the UK test?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Focus on: patron saints and their dates, key dates from British history (especially 1066, 1215, 1707, 1918, 1928, 1948), famous British inventors and their inventions, the pass mark (18/24, 75%), the number of MPs (650), and the composition of Parliament.' },
+    },
+  ],
+}
+
 export default function CheatSheetPage() {
   const schema = {
     '@context': 'https://schema.org',
@@ -67,13 +104,15 @@ export default function CheatSheetPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Cheat Sheet', path: '/cheat-sheet' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
 
         {/* Header with action buttons */}
         <div className="mb-4">
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-1">Life in the UK Test Cheat Sheet</h1>
-          <p className="text-base text-ink-muted mb-3">Print or save this before your test — 2026 edition</p>
+          <p className="text-base text-ink-muted mb-2">Free PDF — print or save before your test. 2026 edition.</p>
+          <p className="text-sm text-ink-muted mb-3">Covers patron saints, key dates, famous people, inventions, government facts and sports origins — with test-likelihood star ratings on every section.</p>
           <div className="flex items-center gap-2">
             <ShareButton url={shareUrl} title={shareTitle} text={shareText} />
             <PrintButton />
@@ -267,6 +306,73 @@ export default function CheatSheetPage() {
               <Link key={n} href={`/mock-test/${n}`} className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Mock Test {n}</Link>
             ))}
             <Link href="/mock-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">All 45 tests →</Link>
+          </div>
+        </div>
+
+        {/* Key Acts & Legislation — additional static content for SEO */}
+        <div className="bg-card rounded-2xl p-5 mt-6 mb-4">
+          <h2 className="text-sm font-semibold text-ink uppercase tracking-wide mb-3">Key Acts & Legislation to Know</h2>
+          <div className="space-y-2 text-sm">
+            {[
+              { year: '1215', act: 'Magna Carta', detail: 'Limited royal power — signed by King John at Runnymede' },
+              { year: '1679', act: 'Habeas Corpus Act', detail: 'Prevents unlawful imprisonment' },
+              { year: '1689', act: 'Bill of Rights', detail: 'Established parliamentary sovereignty, limited royal power' },
+              { year: '1707', act: 'Act of Union', detail: 'United England and Scotland to form Great Britain' },
+              { year: '1801', act: 'Act of Union (Ireland)', detail: 'Ireland joins Great Britain to form the United Kingdom' },
+              { year: '1833', act: 'Slavery Abolition Act', detail: 'Abolished slavery throughout the British Empire' },
+              { year: '1918', act: 'Representation of the People Act', detail: 'Women over 30 with property get the vote' },
+              { year: '1928', act: 'Equal Franchise Act', detail: 'All women over 21 get equal voting rights with men' },
+            ].map(({ year, act, detail }) => (
+              <div key={year} className="flex items-start gap-3">
+                <span className="font-mono font-bold text-xs text-brand-400 w-10 flex-shrink-0 pt-0.5">{year}</span>
+                <div>
+                  <span className="font-semibold text-ink">{act}</span>
+                  <span className="text-ink-muted"> — {detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key Battles — additional static content for SEO */}
+        <div className="bg-card rounded-2xl p-5 mb-6">
+          <h2 className="text-sm font-semibold text-ink uppercase tracking-wide mb-3">Key Battles & Wars</h2>
+          <div className="space-y-2 text-sm">
+            {[
+              { year: '1066', battle: 'Battle of Hastings', detail: 'William the Conqueror defeats King Harold — Norman Conquest begins' },
+              { year: '1314', battle: 'Battle of Bannockburn', detail: 'Scotland defeats England — Robert the Bruce; Scotland remains independent' },
+              { year: '1455–1485', battle: 'Wars of the Roses', detail: 'House of York vs House of Lancaster for the English throne' },
+              { year: '1588', battle: 'Spanish Armada', detail: 'English fleet defeats the Spanish Armada under Queen Elizabeth I' },
+              { year: '1642–1651', battle: 'English Civil War', detail: 'Royalists (Cavaliers) vs Parliamentarians (Roundheads)' },
+              { year: '1914–1918', battle: 'First World War', detail: 'Britain fought alongside France, Russia and later the USA' },
+              { year: '1939–1945', battle: 'Second World War', detail: 'Britain led by Winston Churchill — D-Day landings 1944' },
+            ].map(({ year, battle, detail }) => (
+              <div key={year} className="flex items-start gap-3">
+                <span className="font-mono font-bold text-xs text-danger w-16 flex-shrink-0 pt-0.5">{year}</span>
+                <div>
+                  <span className="font-semibold text-ink">{battle}</span>
+                  <span className="text-ink-muted"> — {detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ section */}
+        <div className="bg-card rounded-2xl p-5 mb-6">
+          <h2 className="text-sm font-semibold text-ink uppercase tracking-wide mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              { q: 'Can I use a cheat sheet in the Life in the UK test?', a: 'No — you cannot take any notes or materials into the test room. Use this cheat sheet to memorise key facts in the days before your appointment.' },
+              { q: 'Is this cheat sheet free to download as a PDF?', a: 'Yes — completely free. Use the Print / Save PDF button to save it to your phone or computer. No sign-up required.' },
+              { q: 'What are the patron saints of the four UK nations?', a: 'England: St George (23 April). Scotland: St Andrew (30 November). Wales: St David (1 March). Northern Ireland: St Patrick (17 March).' },
+              { q: 'What is the pass mark for the Life in the UK test?', a: '18 out of 24 questions correct — that is 75%. You have 45 minutes to complete the test.' },
+            ].map(({ q, a }) => (
+              <div key={q}>
+                <p className="font-semibold text-ink text-sm mb-1">{q}</p>
+                <p className="text-sm text-ink-muted">{a}</p>
+              </div>
+            ))}
           </div>
         </div>
 
