@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free Life in the UK Test Study Plan — Personalised by Test Date 2026',
-    description: 'Generate a free personalised Life in the UK test study plan based on your test date. Get a week-by-week schedule covering all 5 chapters. Pass first time. No sign-up.',
+    title: 'How Long to Study for Life in the UK Test? Free Plan 2026',
+    description: 'Get a free personalised Life in the UK test study plan based on your test date. Week-by-week schedule, daily question targets and chapter priorities.',
     alternates: { canonical: 'https://passtheuktest.co.uk/study-plan-generator' },
     openGraph: {
-      title: 'Free Life in the UK Test Study Plan — Personalised by Test Date 2026',
-      description: 'Generate a free personalised Life in the UK test study plan based on your test date. Get a week-by-week schedule covering all 5 chapters. Pass first time. No sign-up.',
+      title: 'How Long to Study for Life in the UK Test? Free Plan 2026',
+      description: 'Get a free personalised Life in the UK test study plan based on your test date. Week-by-week schedule, daily question targets and chapter priorities.',
       url: 'https://passtheuktest.co.uk/study-plan-generator',
       type: 'website',
     },

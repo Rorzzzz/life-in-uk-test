@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'UK Citizenship Timeline Planner 2026 — Free Route to Your British Passport',
-    description: 'Free UK citizenship timeline planner — see your exact route from visa to British passport. ILR date, citizenship eligibility, processing times and total costs all in one place. 2026.',
+    title: 'When Can I Apply for British Citizenship? Free Timeline 2026',
+    description: 'Find out exactly when you can apply for British citizenship. Enter your details to see your eligibility date, timeline and total costs. Free, no sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/citizenship-planner' },
     openGraph: {
-      title: 'UK Citizenship Timeline Planner 2026 — Free Route to Your British Passport',
-      description: 'Free UK citizenship timeline planner — see your exact route from visa to British passport. ILR date, citizenship eligibility, processing times and total costs all in one place. 2026.',
+      title: 'When Can I Apply for British Citizenship? Free Timeline 2026',
+      description: 'Find out exactly when you can apply for British citizenship. Enter your details to see your eligibility date, timeline and total costs. Free, no sign-up.',
       url: 'https://passtheuktest.co.uk/citizenship-planner',
       type: 'website',
     },

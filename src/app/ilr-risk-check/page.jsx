@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Free ILR Refusal Risk Checker 2026 — Know Your Weak Spots Before You Apply',
-    description: 'Free ILR refusal risk checker — identify the factors most likely to cause your application to be refused before you apply. Updated for 2026 rule changes. No sign-up.',
+    title: 'Will My ILR Be Refused? Free Risk Check 2026',
+    description: 'Check the most common ILR refusal reasons — absences, English, documents, good character. Free instant risk assessment. Identify weak spots before you apply.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-risk-check' },
     openGraph: {
-      title: 'Free ILR Refusal Risk Checker 2026 — Know Your Weak Spots Before You Apply',
-      description: 'Free ILR refusal risk checker — identify the factors most likely to cause your application to be refused before you apply. Updated for 2026 rule changes. No sign-up.',
+      title: 'Will My ILR Be Refused? Free Risk Check 2026',
+      description: 'Check the most common ILR refusal reasons — absences, English, documents, good character. Free instant risk assessment. Identify weak spots before you apply.',
       url: 'https://passtheuktest.co.uk/ilr-risk-check',
       type: 'website',
     },

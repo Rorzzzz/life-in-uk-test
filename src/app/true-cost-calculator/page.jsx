@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'True Cost of British Citizenship 2026 — Free Calculator (£2,000 to £50,000+)',
-    description: 'Calculate the true cost of British citizenship in 2026. ILR fee, citizenship fee, English test, Life in the UK test, legal costs — full breakdown from your visa to your passport. Free.',
+    title: 'How Much Does British Citizenship Cost? Free Calculator 2026',
+    description: 'Calculate the total cost of British citizenship 2026 — ILR fee, citizenship fee, English test, Life in the UK test, health surcharge and more. Free.',
     alternates: { canonical: 'https://passtheuktest.co.uk/true-cost-calculator' },
     openGraph: {
-      title: 'True Cost of British Citizenship 2026 — Free Calculator (£2,000 to £50,000+)',
-      description: 'Calculate the true cost of British citizenship in 2026. ILR fee, citizenship fee, English test, Life in the UK test, legal costs — full breakdown from your visa to your passport. Free.',
+      title: 'How Much Does British Citizenship Cost? Free Calculator 2026',
+      description: 'Calculate the total cost of British citizenship 2026 — ILR fee, citizenship fee, English test, Life in the UK test, health surcharge and more. Free.',
       url: 'https://passtheuktest.co.uk/true-cost-calculator',
       type: 'website',
     },

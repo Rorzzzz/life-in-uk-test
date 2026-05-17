@@ -4,12 +4,12 @@ import ShareButton from '@/components/ui/ShareButton'
 
 export async function generateMetadata() {
   return {
-    title: 'Good Character Check — Free ILR & British Citizenship Checker 2026',
-    description: 'Free good character checker for ILR and British citizenship applications. Find out if criminal convictions, debts or immigration history could affect your application. No sign-up.',
+    title: 'What Is Good Character? Free ILR & Citizenship Check 2026',
+    description: 'Find out what counts as good character for ILR and citizenship. Criminal convictions, debts, immigration history — free instant check. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/good-character-check' },
     openGraph: {
-      title: 'Good Character Check — Free ILR & British Citizenship Checker 2026',
-      description: 'Free good character checker for ILR and British citizenship applications. Find out if criminal convictions, debts or immigration history could affect your application. No sign-up.',
+      title: 'What Is Good Character? Free ILR & Citizenship Check 2026',
+      description: 'Find out what counts as good character for ILR and citizenship. Criminal convictions, debts, immigration history — free instant check. No sign-up.',
       url: 'https://passtheuktest.co.uk/good-character-check',
       type: 'website',
     },
