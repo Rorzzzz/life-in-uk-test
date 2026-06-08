@@ -6,12 +6,12 @@ import MockTestGrid from './MockTestGrid'
 import ShareButton from '@/components/ui/ShareButton'
 
 export const metadata = {
-  title: { absolute: 'Life in the UK Mock Tests & Practice Exams — Free 2026' },
-  description: 'Pass the Life in the UK test first time. 45 free online practice tests & mock exams for 2026 — 1,080 questions, instant results, readiness score tracking. No sign-up. No paywall ever.',
+  title: { absolute: 'Free Life in the UK Mock Tests & Practice Exams 2026' },
+  description: 'Free Life in the UK test mock exams — 45 full practice tests, 1,080 questions based on the official 3rd edition handbook. Instant results, readiness tracking. Pass first time. No sign-up, ever.',
   alternates: { canonical: 'https://passtheuktest.co.uk/mock-test' },
   openGraph: {
-    title: 'Life in the UK Test — Free Mock Exams & Practice Tests 2026',
-    description: 'Pass the Life in the UK test first time. 45 free practice tests & mock exams — 1,080 questions, instant results, readiness tracking. No sign-up.',
+    title: 'Free Life in the UK Mock Tests & Practice Exams 2026',
+    description: 'Free Life in the UK test mock exams — 45 full practice tests, 1,080 questions based on the official 3rd edition handbook. Instant results, readiness tracking. No sign-up, ever.',
     url: 'https://passtheuktest.co.uk/mock-test',
   },
   keywords: ['life in the uk test', 'life in the uk mock test', 'life in the uk practice test', 'life in the uk mock exam', 'life in the uk exam', 'life in the uk test 2026', 'free life in the uk test'],
@@ -62,10 +62,13 @@ export default function MockTestIndexPage() {
         {/* Header */}
         <div className="mb-5">
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-1">
-            Life in the UK Mock Tests & Practice Exams
+            Free Life in the UK Mock Tests &amp; Practice Exams 2026
           </h1>
           <p className="text-sm text-ink-muted mb-4">
             45 free practice exams · 1,080 questions · real exam conditions
+          </p>
+          <p className="text-sm text-ink-muted leading-relaxed mb-4">
+            Take a completely free Life in the UK mock test — no sign-up, no paywall, ever. Each of our 45 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is written from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every practice exam doubles as a revision session. Start with Mock Test 1 below, or jump to whichever test matches what you need to work on.
           </p>
           <div className="flex items-center gap-3 mb-5">
             <Link
