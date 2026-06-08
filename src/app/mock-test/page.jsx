@@ -67,7 +67,7 @@ export default function MockTestIndexPage() {
           <p className="text-sm text-ink-muted mb-4">
             45 free practice exams · 1,080 questions · real exam conditions
           </p>
-          <p className="text-sm text-ink-muted leading-relaxed mb-4">
+          <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-4">
             Take a completely free Life in the UK mock test — no sign-up, no paywall, ever. Each of our 45 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is written from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every practice exam doubles as a revision session. Start with Mock Test 1 below, or jump to whichever test matches what you need to work on.
           </p>
           <div className="flex items-center gap-3 mb-5">
@@ -154,7 +154,7 @@ export default function MockTestIndexPage() {
         {/* Why use these tests */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-3">Why use our Life in the UK mock tests?</h2>
-          <ul className="space-y-2 text-sm text-ink-muted">
+          <ul className="space-y-2 text-sm md:text-base text-ink-muted">
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Matches the real Life in the UK exam exactly</strong> — 24 questions, 45-minute countdown, same chapter distribution as the official test</span></li>
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">1,080 unique practice questions</strong> — 45 Life in the UK mock exams with different questions every time so you never memorise patterns</span></li>
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Instant detailed results</strong> — see every Life in the UK exam answer explained, not just your score</span></li>
@@ -166,7 +166,7 @@ export default function MockTestIndexPage() {
         {/* How to use */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-3">How to pass the Life in the UK test using mock exams</h2>
-          <ol className="space-y-2 text-sm text-ink-muted list-none">
+          <ol className="space-y-2 text-sm md:text-base text-ink-muted list-none">
             <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">1</span><span>Take your first Life in the UK practice exam cold — no revision. Your score shows exactly where to focus.</span></li>
             <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">2</span><span>Read every explanation after each mock test — right or wrong. The explanations contain the exact facts the Life in the UK exam tests.</span></li>
             <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">3</span><span>Use the <Link href="/cheat-sheet" className="text-brand-400 hover:text-brand-300">Life in the UK cheat sheet</Link> for weak areas — patron saints, key dates and inventions catch most people out.</span></li>
@@ -180,8 +180,8 @@ export default function MockTestIndexPage() {
           <div className="space-y-3">
             {FAQS.map(({ q, a }) => (
               <div key={q} className="bg-card rounded-xl p-4">
-                <p className="font-semibold text-ink text-sm mb-1">{q}</p>
-                <p className="text-sm text-ink-muted leading-relaxed">{a}</p>
+                <p className="font-semibold text-ink text-sm md:text-base mb-1">{q}</p>
+                <p className="text-sm md:text-base text-ink-muted leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
