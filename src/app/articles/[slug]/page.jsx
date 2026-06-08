@@ -39,19 +39,19 @@ const CATEGORY_COLOURS = {
 // MDX component overrides — maps markdown elements to styled versions
 const components = {
   h2: ({ children }) => (
-    <h2 className="text-xl font-display font-bold text-ink mt-8 mb-3">{children}</h2>
+    <h2 className="text-xl md:text-2xl font-display font-bold text-ink mt-8 mb-3">{children}</h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-lg font-semibold text-ink mt-6 mb-2">{children}</h3>
+    <h3 className="text-lg md:text-xl font-semibold text-ink mt-6 mb-2">{children}</h3>
   ),
   p: ({ children }) => (
-    <p className="text-ink-muted leading-relaxed mb-4">{children}</p>
+    <p className="text-base md:text-lg text-ink-muted leading-relaxed mb-4">{children}</p>
   ),
   ul: ({ children }) => (
-    <ul className="list-disc list-inside text-ink-muted space-y-1.5 mb-4 ml-2">{children}</ul>
+    <ul className="list-disc list-inside text-base md:text-lg text-ink-muted space-y-1.5 mb-4 ml-2">{children}</ul>
   ),
   ol: ({ children }) => (
-    <ol className="list-decimal list-inside text-ink-muted space-y-1.5 mb-4 ml-2">{children}</ol>
+    <ol className="list-decimal list-inside text-base md:text-lg text-ink-muted space-y-1.5 mb-4 ml-2">{children}</ol>
   ),
   li: ({ children }) => (
     <li className="leading-relaxed">{children}</li>
@@ -70,11 +70,11 @@ const components = {
   hr: () => <hr className="border-border my-6" />,
   table: ({ children }) => (
     <div className="overflow-x-auto mb-6 rounded-xl border border-border">
-      <table className="w-full text-sm">{children}</table>
+      <table className="w-full text-sm md:text-base">{children}</table>
     </div>
   ),
   th: ({ children }) => (
-    <th className="text-left px-4 py-3 bg-raised text-xs font-semibold uppercase tracking-wide text-ink-muted border-b border-border">{children}</th>
+    <th className="text-left px-4 py-3 bg-raised text-xs md:text-sm font-semibold uppercase tracking-wide text-ink-muted border-b border-border">{children}</th>
   ),
   tr: ({ children }) => (
     <tr className="border-b border-border last:border-b-0">{children}</tr>
@@ -144,7 +144,7 @@ export default function ArticlePage({ params }) {
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink leading-snug mb-3">
             {article.title}
           </h1>
-          <p className="text-ink-muted leading-relaxed">
+          <p className="text-base md:text-lg text-ink-muted leading-relaxed">
             {article.description}
           </p>
         </header>
