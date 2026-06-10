@@ -84,6 +84,8 @@ const nextConfig = {
       { source: '/articles/ilr-continuous-residence-rule-explained', destination: '/articles/180-day-rule-ilr-uk', permanent: true },
       // Merge duplicate "topics" article into the more actionable chapter-by-chapter study order guide
       { source: '/articles/life-in-the-uk-test-topics', destination: '/articles/life-in-the-uk-test-chapter-by-chapter-guide', permanent: true },
+      // Merge cancellation/refund article into the higher-ranking reschedule guide (overlapping intent)
+      { source: '/articles/life-in-the-uk-test-cancellation-refund', destination: '/articles/how-to-reschedule-life-in-the-uk-test', permanent: true },
     ]
   },
 }
