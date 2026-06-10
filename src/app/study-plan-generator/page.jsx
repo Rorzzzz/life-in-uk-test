@@ -169,7 +169,7 @@ function StudyPlanContent() {
       <div className="mt-8 pt-6 border-t border-white/10">
         <p className="text-sm font-bold text-ink mb-2">Related guides and tools</p>
         <ul className="text-sm text-ink-muted space-y-1">
-          <li><Link href="/articles/life-in-the-uk-test-revision-plan" className="text-brand underline">Life in the UK test revision plan — full guide</Link></li>
+          <li><Link href="/articles/life-in-the-uk-test-study-plan" className="text-brand underline">Life in the UK test study plan — full guide</Link></li>
           <li><Link href="/articles/best-way-to-study-for-life-in-the-uk-test" className="text-brand underline">Best way to study for the Life in the UK test</Link></li>
           <li><Link href="/articles/how-long-does-it-take-to-study-for-the-life-in-the-uk-test" className="text-brand underline">How long does it take to study for the Life in the UK test?</Link></li>
           <li><Link href="/practice" className="text-brand underline">Chapter-by-chapter practice questions</Link></li>
