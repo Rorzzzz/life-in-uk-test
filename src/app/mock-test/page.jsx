@@ -26,6 +26,23 @@ const FAQS = [
   { q: 'Which Life in the UK practice test should I start with?', a: 'Start with Life in the UK Mock Test 1 and work through them in order. By test 10 you will have a clear picture of which topics need more revision. Use the cheat sheet alongside your Life in the UK test practice.' },
 ]
 
+const quizSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Quiz',
+  name: 'Life in the UK Free Mock Test 2026',
+  about: { '@type': 'Thing', name: 'Life in the UK Test' },
+  educationalLevel: 'Citizenship test preparation',
+  description: 'Free 24-question mock exam for the Life in the UK citizenship test, drawn from a bank of 1,080 questions across 45 full practice tests.',
+  isAccessibleForFree: true,
+  publisher: { '@type': 'Organization', name: 'PassTheUKTest', url: 'https://passtheuktest.co.uk' },
+  hasPart: Array.from({ length: MOCK_TEST_COUNT }, (_, i) => ({
+    '@type': 'Quiz',
+    name: `Life in the UK Mock Test ${i + 1}`,
+    url: `https://passtheuktest.co.uk/mock-test/${i + 1}`,
+    isAccessibleForFree: true,
+  })),
+}
+
 const itemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -53,6 +70,7 @@ const faqSchema = {
 export default function MockTestIndexPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(quizSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Mock Tests', path: '/mock-test' }]} />
@@ -161,6 +179,20 @@ export default function MockTestIndexPage() {
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">100% free Life in the UK test practice</strong> — no sign-up, no paywall, no premium tier</span></li>
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Tracks your progress</strong> — readiness score, XP and streaks across every Life in the UK practice session</span></li>
           </ul>
+        </div>
+
+        {/* How realistic */}
+        <div className="bg-card rounded-2xl p-5 mb-6">
+          <h2 className="font-display font-bold text-ink mb-3">How realistic is this Life in the UK mock test?</h2>
+          <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-3">
+            Every one of our 45 free Life in the UK mock tests is built the same way the real exam is structured, not just randomly pulled from a question pile. Each test draws 24 questions from the official handbook chapters in the same proportions as the real Life in the UK test: roughly 2 questions on values and principles, 3 on what is the UK, 10 on British history, 5 on modern society, and 4 on government and law. That weighting matters — history and government make up over half of every real exam, so a mock test that under-samples them would give you false confidence.
+          </p>
+          <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-3">
+            The 24 questions in each mock test are also fixed and repeatable — Mock Test 7 always contains the same 24 questions, drawn from across our full bank of 570 unique questions. That means you can retake a test later to check whether a topic that tripped you up has actually sunk in, while still having 44 other full exams with completely different questions to work through.
+          </p>
+          <p className="text-sm md:text-base text-ink-muted leading-relaxed">
+            Combined with the same 45-minute countdown and 18/24 (75%) pass mark as the real test, this is as close as free online practice gets to sitting the actual Life in the UK exam — short of booking it. For the official rules on what to expect on the day, see our <Link href="/articles/life-in-the-uk-test-what-to-expect-on-the-day" className="text-brand-400 hover:text-brand-300">test day guide</Link>.
+          </p>
         </div>
 
         {/* How to use */}
