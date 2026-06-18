@@ -6,19 +6,19 @@ import MockTestGrid from './MockTestGrid'
 import ShareButton from '@/components/ui/ShareButton'
 
 export const metadata = {
-  title: { absolute: 'Free Life in the UK Mock Tests & Practice Exams 2026' },
-  description: 'Free Life in the UK test mock exams — 45 full practice tests, 1,080 questions based on the official 3rd edition handbook. Instant results, readiness tracking. Pass first time. No sign-up, ever.',
+  title: { absolute: 'Life in the UK Mock Test — 45 Free Practice Exams 2026' },
+  description: 'Take a free Life in the UK mock test — 45 full-length exams, 1,080 questions, 45-minute timer, instant results. No sign-up. Matches the real 2026 exam exactly.',
   alternates: { canonical: 'https://passtheuktest.co.uk/mock-test' },
   openGraph: {
-    title: 'Free Life in the UK Mock Tests & Practice Exams 2026',
-    description: 'Free Life in the UK test mock exams — 45 full practice tests, 1,080 questions based on the official 3rd edition handbook. Instant results, readiness tracking. No sign-up, ever.',
+    title: 'Life in the UK Mock Test — 45 Free Practice Exams 2026',
+    description: 'Take a free Life in the UK mock test — 45 full-length exams, 1,080 questions, instant results. No sign-up. Matches the real 2026 exam exactly.',
     url: 'https://passtheuktest.co.uk/mock-test',
   },
-  keywords: ['life in the uk test', 'life in the uk mock test', 'life in the uk practice test', 'life in the uk mock exam', 'life in the uk exam', 'life in the uk test 2026', 'free life in the uk test'],
+  keywords: ['life in the uk mock test', 'life in the uk mock test 2026', 'free life in the uk mock test', 'life in the uk practice test', 'life in the uk mock exam', 'life in the uk test 2026', 'free life in the uk test'],
 }
 
 const FAQS = [
-  { q: 'How many free Life in the UK mock tests are there?', a: '45 full-length Life in the UK mock tests, each with 24 unique questions — 1,080 practice questions in total. All completely free with no sign-up required.' },
+  { q: 'How many free Life in the UK mock tests are there?', a: 'There are 45 full-length Life in the UK mock tests, each with 24 unique questions — 1,080 practice questions in total. Every Life in the UK mock test is completely free with no sign-up required.' },
   { q: 'How similar is this to the real Life in the UK exam?', a: 'Each Life in the UK mock test mirrors the real exam format exactly — 24 questions, 45 minutes, pass mark of 18/24 (75%). Questions are drawn from all five handbook chapters in the same proportions as the official Life in the UK test.' },
   { q: 'How many mock tests should I do before the real Life in the UK test?', a: 'Most people who pass first time complete at least 5 Life in the UK practice exams scoring above 20/24 consistently. If you are scoring 22 or more on every mock exam, you are ready to book.' },
   { q: 'What is the pass mark for the Life in the UK test?', a: 'You need to answer 18 out of 24 questions correctly — that is 75%. You have 45 minutes to complete the Life in the UK exam.' },
@@ -29,7 +29,7 @@ const FAQS = [
 const quizSchema = {
   '@context': 'https://schema.org',
   '@type': 'Quiz',
-  name: 'Life in the UK Free Mock Test 2026',
+  name: 'Life in the UK Mock Test — 45 Free Practice Exams 2026',
   about: { '@type': 'Thing', name: 'Life in the UK Test' },
   educationalLevel: 'Citizenship test preparation',
   description: 'Free 24-question mock exam for the Life in the UK citizenship test, drawn from a bank of 1,080 questions across 45 full practice tests.',
@@ -80,13 +80,13 @@ export default function MockTestIndexPage() {
         {/* Header */}
         <div className="mb-5">
           <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-1">
-            Free Life in the UK Mock Tests &amp; Practice Exams 2026
+            Life in the UK Mock Test — 45 Free Practice Exams 2026
           </h1>
           <p className="text-sm text-ink-muted mb-4">
-            45 free practice exams · 1,080 questions · real exam conditions
+            45 free mock tests · 1,080 questions · real exam conditions · no sign-up
           </p>
           <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-4">
-            Take a completely free Life in the UK mock test — no sign-up, no paywall, ever. Each of our 45 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is written from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every practice exam doubles as a revision session. Start with Mock Test 1 below, or jump to whichever test matches what you need to work on.
+            Take a free Life in the UK mock test with no sign-up, no paywall, ever. Each of our 45 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is drawn from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every Life in the UK mock test doubles as a revision session. Start with Mock Test 1 below, or jump straight to whichever test you need.
           </p>
           <div className="flex items-center gap-3 mb-5">
             <Link
