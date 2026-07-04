@@ -51,3 +51,27 @@ export function getArticleBySlug(slug) {
 export function getAllPublishedSlugs() {
   return getAllArticles().map(a => ({ slug: a.slug }))
 }
+
+export function extractFAQs(content) {
+  const normalised = content.replace(/\r\n/g, '\n')
+  const section = normalised.match(/## Frequently Asked Questions\n([\s\S]*?)(?=\n## |$)/)
+  if (!section) return []
+
+  return section[1]
+    .split(/^### /m)
+    .slice(1)
+    .map(block => {
+      const [question, ...rest] = block.split('\n')
+      const answer = rest
+        .join('\n')
+        .replace(/^---\s*$/gm, '')
+        .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+        .replace(/\*\*(.+?)\*\*/g, '$1')
+        .replace(/\*(.+?)\*/g, '$1')
+        .replace(/\n{2,}/g, ' ')
+        .replace(/\n/g, ' ')
+        .trim()
+      return { question: question.trim(), answer }
+    })
+    .filter(f => f.question && f.answer)
+}

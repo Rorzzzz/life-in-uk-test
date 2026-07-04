@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
-import { getAllPublishedSlugs, getArticleBySlug } from '@/lib/articles'
+import { getAllPublishedSlugs, getArticleBySlug, extractFAQs } from '@/lib/articles'
 import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ShareButton from '@/components/ui/ShareButton'
@@ -101,10 +101,25 @@ export default function ArticlePage({ params }) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://passtheuktest.co.uk/articles/${params.slug}` },
   }
 
+  // FAQPage schema — only when the article has 3+ Q&A pairs
+  const faqs = extractFAQs(article.content)
+  const faqSchema = faqs.length >= 3 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  } : null
+
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Articles', path: '/articles' }, { name: article.title, path: `/articles/${params.slug}` }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       <div className="max-w-2xl mx-auto px-4 py-8 pb-24">
         {/* Back link */}
