@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: '180 Day Absence Calculator UK — Free ILR 180-Day Rule Checker 2026',
     description: 'Free 180-day absence calculator for UK ILR applications. Check every rolling 12-month window instantly — see if your travel history breaches the limit. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/absence-calculator' },
+    keywords: ['180 day rule calculator', '180 day absence calculator', 'ilr absence calculator', 'rolling 12 month calculator ilr', 'how many days can i be out of the uk for ilr', '180 day rule ilr uk', 'ilr travel calculator'],
     openGraph: {
       title: '180 Day Absence Calculator UK — Free ILR 180-Day Rule Checker 2026',
       description: 'Free 180-day absence calculator for UK ILR applications. Check every rolling 12-month window instantly — see if your travel history breaches the limit. No sign-up.',

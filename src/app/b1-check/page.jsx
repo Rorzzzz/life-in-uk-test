@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'B1 English Level Check — Free Practice Test for UK Citizenship 2026',
     description: 'Free B1 English level check for UK citizenship applications. 15 questions covering listening and speaking topics — find out if you meet the B1 requirement. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/b1-check' },
+    keywords: ['b1 english test practice free', 'b1 english level check', 'free b1 english test online', 'trinity gese grade 5 practice test', 'ielts life skills b1 practice test', 'languagecert b1 practice test', 'b1 english test for uk citizenship', 'b1 english requirement for ilr'],
     openGraph: {
       title: 'B1 English Level Check — Free Practice Test for UK Citizenship 2026',
       description: 'Free B1 English level check for UK citizenship applications. 15 questions covering listening and speaking topics — find out if you meet the B1 requirement. No sign-up.',
@@ -113,6 +114,18 @@ function B1CheckContent() {
       <p className="text-base text-ink leading-relaxed mb-3">
         For the UKVI B1 test, the focus is on speaking and listening — not writing. You will have a short conversation with a trained assessor and answer questions on everyday topics. You do not need to write an essay or pass a written grammar test to meet this requirement.
       </p>
+
+      <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
+        Practising for Trinity GESE, IELTS Life Skills, or LANGUAGECERT B1
+      </h2>
+      <p className="text-base text-ink leading-relaxed mb-3">
+        Our free practice quiz is not tied to one specific provider — it checks the same B1-level vocabulary, grammar, and reading comprehension skills that Trinity GESE Grade 5, IELTS Life Skills B1, and LANGUAGECERT B1 all test. Use it to get a sense of your level before you book any of the three official exams.
+      </p>
+      <ul className="text-sm text-ink-muted leading-relaxed space-y-1 mb-3 list-disc list-inside">
+        <li><strong>Trinity GESE Grade 5</strong> — a spoken conversation with an examiner, taken in person at a Trinity exam centre.</li>
+        <li><strong>IELTS Life Skills B1</strong> — a speaking and listening test taken in person at a British Council or IDP centre.</li>
+        <li><strong>LANGUAGECERT B1</strong> — the only option you can take online from home, via a proctored video exam.</li>
+      </ul>
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How to book an official B1 test

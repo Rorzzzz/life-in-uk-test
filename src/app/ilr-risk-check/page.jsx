@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'Will My ILR Be Refused? Free Risk Check 2026',
     description: 'Check the most common ILR refusal reasons — absences, English, documents, good character. Free instant risk assessment. Identify weak spots before you apply.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-risk-check' },
+    keywords: ['why was my ilr refused', 'ilr refusal reasons', 'will my ilr be refused', 'ilr refusal risk checker', 'common reasons ilr is refused', 'ilr refused what to do'],
     openGraph: {
       title: 'Will My ILR Be Refused? Free Risk Check 2026',
       description: 'Check the most common ILR refusal reasons — absences, English, documents, good character. Free instant risk assessment. Identify weak spots before you apply.',

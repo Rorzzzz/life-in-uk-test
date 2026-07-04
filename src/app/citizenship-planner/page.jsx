@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'When Can I Apply for British Citizenship? Free Timeline 2026',
     description: 'Find out exactly when you can apply for British citizenship. Enter your details to see your eligibility date, timeline and total costs. Free, no sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/citizenship-planner' },
+    keywords: ['when can i apply for british citizenship', 'british citizenship eligibility calculator', 'citizenship timeline uk', 'how long does it take to get british citizenship', 'british citizenship planner'],
     openGraph: {
       title: 'When Can I Apply for British Citizenship? Free Timeline 2026',
       description: 'Find out exactly when you can apply for British citizenship. Enter your details to see your eligibility date, timeline and total costs. Free, no sign-up.',

@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'Am I Exempt From the Life in the UK Test? — Free 60-Second Check 2026',
     description: 'Find out instantly if you are exempt from the Life in the UK test. Free 60-second checker — covers age, health, disability and visa exemptions. No sign-up required.',
     alternates: { canonical: 'https://passtheuktest.co.uk/test-exempt' },
+    keywords: ['am i exempt from the life in the uk test', 'life in the uk test exemption checker', 'life in the uk test exemptions', 'over 65 exempt life in the uk test', 'life in the uk test disability exemption', 'who is exempt from life in the uk test'],
     openGraph: {
       title: 'Am I Exempt From the Life in the UK Test? — Free 60-Second Check 2026',
       description: 'Find out instantly if you are exempt from the Life in the UK test. Free 60-second checker — covers age, health, disability and visa exemptions. No sign-up required.',

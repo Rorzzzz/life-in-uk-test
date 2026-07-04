@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'How Long to Study for Life in the UK Test? Free Plan 2026',
     description: 'Get a free personalised Life in the UK test study plan based on your test date. Week-by-week schedule, daily question targets and chapter priorities.',
     alternates: { canonical: 'https://passtheuktest.co.uk/study-plan-generator' },
+    keywords: ['life in the uk test study plan', 'how long to study for the life in the uk test', 'life in the uk test revision plan', 'life in the uk test study schedule', 'best way to study for life in the uk test'],
     openGraph: {
       title: 'How Long to Study for Life in the UK Test? Free Plan 2026',
       description: 'Get a free personalised Life in the UK test study plan based on your test date. Week-by-week schedule, daily question targets and chapter priorities.',

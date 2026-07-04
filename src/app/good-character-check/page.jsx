@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'What Is Good Character? Free ILR & Citizenship Check 2026',
     description: 'Find out what counts as good character for ILR and citizenship. Criminal convictions, debts, immigration history — free instant check. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/good-character-check' },
+    keywords: ['good character requirement uk citizenship', 'good character requirement ilr', 'does a caution affect ilr', 'spent conviction british citizenship', 'good character check ilr', 'what disqualifies you from british citizenship'],
     openGraph: {
       title: 'What Is Good Character? Free ILR & Citizenship Check 2026',
       description: 'Find out what counts as good character for ILR and citizenship. Criminal convictions, debts, immigration history — free instant check. No sign-up.',

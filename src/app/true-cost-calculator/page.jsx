@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'How Much Does British Citizenship Cost? Free Calculator 2026',
     description: 'Calculate the total cost of British citizenship 2026 — ILR fee, citizenship fee, English test, Life in the UK test, health surcharge and more. Free.',
     alternates: { canonical: 'https://passtheuktest.co.uk/true-cost-calculator' },
+    keywords: ['true cost of becoming british', 'total cost of uk citizenship', 'cost of ilr and citizenship calculator', 'how much does it cost to become british', 'total cost uk immigration journey'],
     openGraph: {
       title: 'How Much Does British Citizenship Cost? Free Calculator 2026',
       description: 'Calculate the total cost of British citizenship 2026 — ILR fee, citizenship fee, English test, Life in the UK test, health surcharge and more. Free.',

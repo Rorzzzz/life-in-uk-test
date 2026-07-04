@@ -7,6 +7,7 @@ export async function generateMetadata() {
     title: 'ILR Document Checklist 2026 — Free Printable by Visa Type',
     description: 'Free ILR document checklist for 2026 — organised by visa route. Skilled Worker, Family, Long Residence and more. Print before your application. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-checklist' },
+    keywords: ['ilr document checklist', 'documents needed for ilr', 'ilr checklist 2026', 'what documents do i need for ilr', 'ilr documents required', 'ilr application checklist'],
     openGraph: {
       title: 'ILR Document Checklist 2026 — Free Printable by Visa Type',
       description: 'Free ILR document checklist for 2026 — organised by visa route. Skilled Worker, Family, Long Residence and more. Print before your application. No sign-up.',
