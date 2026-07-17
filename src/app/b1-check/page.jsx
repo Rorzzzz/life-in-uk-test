@@ -177,12 +177,15 @@ function B1CheckContent() {
 
       <h3 className="text-sm font-bold text-ink mb-1">Is the B1 test the same as the Life in the UK test?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
-        No. They are two completely separate requirements. The B1 English test proves your speaking and listening ability in English. The Life in the UK test is a knowledge test about British history, culture, and society. Most adult applicants must pass both before applying for ILR or citizenship.
+        No. They are two completely separate requirements. The B1 English test proves your speaking and listening ability in English. The Life in the UK test is a knowledge test about British history, culture, and society. Most adult applicants must pass both before applying for ILR or citizenship. See our{' '}
+        <Link href="/articles/is-the-life-in-the-uk-test-an-english-test" className="text-brand underline">full breakdown of the difference</Link>{' '}
+        for more detail.
       </p>
 
       <div className="mt-8 pt-6 border-t border-white/10">
         <p className="text-sm font-bold text-ink mb-2">Related guides and tools</p>
         <ul className="text-sm text-ink-muted space-y-1">
+          <li><Link href="/articles/is-the-life-in-the-uk-test-an-english-test" className="text-brand underline">Is the Life in the UK test an English test?</Link></li>
           <li><Link href="/articles/do-i-need-a-b1-english-test-for-ilr" className="text-brand underline">Do I need a B1 English test for ILR? — full guide</Link></li>
           <li><Link href="/articles/b1-english-test-practice" className="text-brand underline">B1 English test practice and tips</Link></li>
           <li><Link href="/articles/british-citizenship-requirements-2026" className="text-brand underline">British citizenship requirements 2026</Link></li>

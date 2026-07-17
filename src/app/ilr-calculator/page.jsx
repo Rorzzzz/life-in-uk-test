@@ -262,6 +262,7 @@ function ILRCalculatorContent() {
         <p className="text-sm font-bold text-ink mb-3">Related tools and guides</p>
         <div className="grid grid-cols-1 gap-2">
           {[
+            { href: '/articles/what-tests-do-you-need-for-ilr', label: 'What tests do you need for ILR?' },
             { href: '/absence-calculator', label: '180-day absence calculator' },
             { href: '/ilr-checklist', label: 'ILR document checklist by visa type' },
             { href: '/ilr-risk-check', label: 'ILR refusal risk checker' },
