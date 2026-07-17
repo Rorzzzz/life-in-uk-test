@@ -1830,10 +1830,10 @@ const QUESTIONS_BASE = [
   },
   {
     id: 196, chapter: 4,
-    q: 'Which of these is a long-running British soap opera?',
+    q: "Which of these is the UK's longest-running television soap opera?",
     options: ['Only Fools and Horses', 'Coronation Street', 'Fawlty Towers', 'Blackadder'],
     answer: 1,
-    explanation: 'Coronation Street is a long-running British soap opera, first broadcast in 1960 and set in a fictional area of Manchester. EastEnders is another well-known British soap opera.',
+    explanation: "Coronation Street is the UK's longest-running television soap opera, first broadcast in 1960 and set in a fictional area of Manchester. It is also the world's longest-running soap opera still in production. EastEnders is another well-known British soap opera.",
     difficulty: 'easy',
     tags: ['television', 'coronation street', 'soap opera', 'culture'],
   },
