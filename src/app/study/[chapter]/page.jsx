@@ -127,7 +127,7 @@ export default function StudyChapterPage({ params }) {
             href="/mock-test"
             className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
           >
-            All 45 tests →
+            Free Life in the UK Practice Test →
           </Link>
         </div>
         {topics.length > 0 && (

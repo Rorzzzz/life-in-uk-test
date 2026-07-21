@@ -2,7 +2,7 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'Life in the UK Test Pass Rate 2026 — Statistics & Facts',
+  title: 'Life in the UK Test Pass Rate 2026 — 67% Pass First Time',
   description: 'Around 67% of candidates pass the Life in the UK test first time. Full pass rate statistics, why people fail, and how to make sure you are in the majority.',
   alternates: { canonical: 'https://passtheuktest.co.uk/pass-rate' },
 }

@@ -14,7 +14,7 @@ export const metadata = {
     description: 'Take a free Life in the UK mock test — 45 full-length exams, 1,080 questions, instant results. No sign-up. Matches the real 2026 exam exactly.',
     url: 'https://passtheuktest.co.uk/mock-test',
   },
-  keywords: ['life in the uk mock test', 'life in the uk mock test 2026', 'free life in the uk mock test', 'life in the uk practice test', 'life in the uk mock exam', 'life in the uk test 2026', 'free life in the uk test'],
+  keywords: ['life in the uk mock test', 'life in the uk mock test 2026', 'free life in the uk mock test', 'life in the uk practice test', 'free life in the uk practice test', 'life in the uk mock exam', 'life in the uk test 2026', 'free life in the uk test'],
 }
 
 const FAQS = [
@@ -86,7 +86,7 @@ export default function MockTestIndexPage() {
             45 free mock tests · 1,080 questions · real exam conditions · no sign-up
           </p>
           <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-4">
-            Take a free Life in the UK mock test with no sign-up, no paywall, ever. Each of our 45 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is drawn from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every Life in the UK mock test doubles as a revision session. Start with Mock Test 1 below, or jump straight to whichever test you need.
+            Take a free Life in the UK mock test — or call it a Life in the UK practice test, they&apos;re the same thing here — with no sign-up, no paywall, ever. Each of our 45 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is drawn from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every Life in the UK mock test doubles as a revision session. Start with Mock Test 1 below, or jump straight to whichever test you need.
           </p>
           <div className="flex items-center gap-3 mb-5">
             <Link
