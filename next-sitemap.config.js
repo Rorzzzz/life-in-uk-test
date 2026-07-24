@@ -14,12 +14,16 @@ module.exports = {
           '/weak-spots',
           '/flashcards',
           '/daily',
+          '/badges',      // thin personal gamification pages — no SEO value
+          '/mastery',
+          '/readiness',
+          '/xp',
           '/_next/static/media/',  // font files and other static media — not indexable content
         ],
       },
     ],
   },
-  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/exam/info', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
+  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/badges', '/mastery', '/readiness', '/xp', '/exam/info', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,

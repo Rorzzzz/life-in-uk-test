@@ -86,6 +86,8 @@ const nextConfig = {
       { source: '/articles/life-in-the-uk-test-topics', destination: '/articles/life-in-the-uk-test-chapter-by-chapter-guide', permanent: true },
       // Merge cancellation/refund article into the higher-ranking reschedule guide (overlapping intent)
       { source: '/articles/life-in-the-uk-test-cancellation-refund', destination: '/articles/how-to-reschedule-life-in-the-uk-test', permanent: true },
+      // Merge the pass-rate article into the stronger /pass-rate page (both ranked p2 for "life in the uk test pass rate" — cannibalising)
+      { source: '/articles/life-in-the-uk-test-pass-rate', destination: '/pass-rate', permanent: true },
     ]
   },
 }
