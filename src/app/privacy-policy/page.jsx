@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
       </nav>
 
       <h1 className="text-3xl font-display font-bold text-ink mb-2">Privacy Policy</h1>
-      <p className="text-xs text-ink-muted mb-8">Last updated: April 2026</p>
+      <p className="text-xs text-ink-muted mb-8">Last updated: July 2026</p>
 
       <div className="space-y-8 text-base text-ink leading-relaxed">
 
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <h2 className="text-xl font-display font-bold text-ink mb-3">3. Cookies</h2>
-          <p>
+          <p className="mb-3">
             Google Analytics sets first-party cookies (<code className="text-brand-400 text-sm">_ga</code>,&nbsp;
             <code className="text-brand-400 text-sm">_ga_*</code>) to distinguish users and sessions.
             These cookies do not contain personally identifiable information. You can opt out of
@@ -65,19 +65,50 @@ export default function PrivacyPolicyPage() {
               Google Analytics Opt-out Browser Add-on
             </a>.
           </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-display font-bold text-ink mb-3">4. Third parties</h2>
           <p>
-            We use Google Analytics (operated by Google LLC). Google&apos;s privacy policy is available
-            at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-brand-400 underline hover:text-brand-300">policies.google.com/privacy</a>.
-            We do not sell, trade, or share your data with any other third parties.
+            Our advertising partners (see &ldquo;Advertising&rdquo; below) may also set cookies to serve
+            and measure ads. Where you are in the UK, EEA or Switzerland, these advertising cookies are
+            only set after you give consent through the cookie consent banner shown on your first visit,
+            and you can change or withdraw your choice at any time from that banner.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-display font-bold text-ink mb-3">5. Your rights (UK GDPR)</h2>
+          <h2 className="text-xl font-display font-bold text-ink mb-3">4. Advertising</h2>
+          <p className="mb-3">
+            This site is supported by advertising served through <strong>Google AdSense</strong>, a
+            service provided by Google LLC. Google and its partners use cookies and similar
+            technologies to serve ads based on your prior visits to this and other websites.
+          </p>
+          <p className="mb-3">
+            Google&apos;s use of advertising cookies enables it and its partners to serve ads to you
+            based on your visit to this site and/or other sites on the internet. You can opt out of
+            personalised advertising by visiting{' '}
+            <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-brand-400 underline hover:text-brand-300">Google Ads Settings</a>,
+            or opt out of third-party vendor cookies via{' '}
+            <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className="text-brand-400 underline hover:text-brand-300">aboutads.info</a>.
+          </p>
+          <p>
+            For visitors in the UK, EEA and Switzerland, personalised ads are only shown with your
+            consent, collected through a Google-certified consent management platform. You can review
+            how Google uses data from sites that use its services at{' '}
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-brand-400 underline hover:text-brand-300">policies.google.com/technologies/partner-sites</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-display font-bold text-ink mb-3">5. Third parties</h2>
+          <p>
+            We use Google Analytics and Google AdSense, both operated by Google LLC. Google&apos;s
+            privacy policy is available at{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-brand-400 underline hover:text-brand-300">policies.google.com/privacy</a>.
+            We do not sell your personal data. We do not share your data with any third parties other
+            than the analytics and advertising providers described in this policy.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-display font-bold text-ink mb-3">6. Your rights (UK GDPR)</h2>
           <p>
             Under UK GDPR you have the right to access, rectify, or erase personal data we hold
             about you. Because all quiz progress is stored locally on your device, you can delete
@@ -87,7 +118,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-display font-bold text-ink mb-3">6. Contact</h2>
+          <h2 className="text-xl font-display font-bold text-ink mb-3">7. Contact</h2>
           <p className="text-ink-muted">
             For privacy-related queries, email{' '}
             <a href="mailto:admin@passtheuktest.co.uk" className="text-brand-400 underline hover:text-brand-300">
