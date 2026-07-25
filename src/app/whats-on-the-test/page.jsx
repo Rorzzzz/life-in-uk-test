@@ -2,14 +2,14 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
-  title: { absolute: "What's Really on the Life in the UK Test? We Analysed the Official Handbook" },
+  title: { absolute: 'How Many Dates Are on the Life in the UK Test? We Counted Every One' },
   description:
-    'We ran OCR on all 93 pages of the official Life in the UK handbook. It references 172 different years — from 1066 to 2020. Here is exactly what you have to memorise.',
+    'We analysed all 93 pages of the official Life in the UK handbook: it references 172 different years, from 1066 to 2020. The data behind why the test is harder than it looks.',
   alternates: { canonical: 'https://passtheuktest.co.uk/whats-on-the-test' },
   openGraph: {
-    title: "What's Really on the Life in the UK Test? We Analysed the Official Handbook",
+    title: 'How Many Dates Are on the Life in the UK Test? We Counted Every One',
     description:
-      'The official handbook references 172 different years from 1066 to 2020 across 35,000 words. A data analysis of what the citizenship test actually asks you to memorise.',
+      'A data analysis of the official handbook — 172 different years across 35,000 words. Exactly how much history the citizenship test expects you to know, and why people underestimate it.',
     url: 'https://passtheuktest.co.uk/whats-on-the-test',
     type: 'article',
   },

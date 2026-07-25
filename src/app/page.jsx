@@ -72,6 +72,7 @@ export default function HomePage() {
             Pass the UK Test is the UK&apos;s most complete free resource for the Life in the UK citizenship test.
             Unlike other sites, we offer not just <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">free mock tests</Link> and <Link href="/practice" className="text-brand-400 hover:text-brand-300">practice questions</Link>,
             but a full suite of free immigration tools — ILR calculator, B1 English check, absence calculator and more.
+            We even <Link href="/whats-on-the-test" className="text-brand-400 hover:text-brand-300">analysed the official handbook</Link> to show exactly how much history the test expects you to learn.
             Everything is free. No sign-up. No paywall.
           </p>
         </div>

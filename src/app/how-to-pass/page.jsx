@@ -65,7 +65,7 @@ export default function HowToPassPage() {
               <h2 className="font-display font-bold text-ink">Focus on Chapter 3 (History)</h2>
             </div>
             <p className="text-base text-ink-muted leading-relaxed">
-              Chapter 3 (A Long and Illustrious History) has the most questions and is the hardest. It covers over 1,000 years of British history with specific dates, names, and events. Spend at least <strong className="text-ink">half your study time</strong> on this chapter. Use our <Link href="/cheat-sheet" className="text-brand-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">Key Dates Cheat Sheet</Link> to memorise the most important years.
+              Chapter 3 (A Long and Illustrious History) has the most questions and is the hardest. It covers over 1,000 years of British history with specific dates, names, and events — we analysed the official handbook to see <Link href="/whats-on-the-test" className="text-brand-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">exactly how many dates the test covers</Link>. Spend at least <strong className="text-ink">half your study time</strong> on this chapter. Use our <Link href="/cheat-sheet" className="text-brand-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">Key Dates Cheat Sheet</Link> to memorise the most important years.
             </p>
           </div>
 

@@ -39,7 +39,7 @@ export default function ExamFormatPage() {
           <div className="bg-card rounded-2xl p-5">
             <h2 className="font-semibold text-ink mb-2">What is the Life in the UK test?</h2>
             <p className="text-base text-ink-muted leading-relaxed">
-              The Life in the UK test is a mandatory computer-based test for anyone applying for Indefinite Leave to Remain (ILR/settlement) or British citizenship (naturalisation). It tests knowledge of British history, culture, government, law, and values — all drawn from the official handbook.
+              The Life in the UK test is a mandatory computer-based test for anyone applying for Indefinite Leave to Remain (ILR/settlement) or British citizenship (naturalisation). It tests knowledge of British history, culture, government, law, and values — all drawn from the official handbook. We <Link href="/whats-on-the-test" className="text-brand-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">analysed exactly what is in that handbook</Link> — including how much history it really expects you to know.
             </p>
           </div>
 
