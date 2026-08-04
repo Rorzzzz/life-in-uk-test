@@ -12,7 +12,7 @@ import LiteYouTube from '@/components/ui/LiteYouTube'
 
 const QUICK_LINKS = [
   { href: '/practice',   label: 'Practice',    icon: Layers,        colour: '#3381ff', desc: 'Adaptive questions', subDesc: 'Questions adapt to your performance every session' },
-  { href: '/mock-test',  label: 'Mock Exam',   icon: ClipboardList, colour: '#22d07a', desc: '45 free tests',      subDesc: 'Full exam conditions, instant results' },
+  { href: '/mock-test',  label: 'Mock Exam',   icon: ClipboardList, colour: '#22d07a', desc: '60 free tests',      subDesc: 'Full exam conditions, instant results' },
   { href: '/study',      label: 'Study Guide', icon: BookOpen,      colour: '#a855f7', desc: 'All 5 chapters'      },
   { href: '/flashcards', label: 'Flashcards',  icon: Star,          colour: '#f59e0b', desc: 'Flip to revise'      },
 ]
@@ -87,7 +87,7 @@ export default function HomeDashboard({ chapters }) {
                 </div>
                 <div>
                   <p className="font-display font-bold text-ink text-lg">Start Mock Test</p>
-                  <p className="text-sm text-ink-muted">45 free tests · real exam conditions</p>
+                  <p className="text-sm text-ink-muted">60 free tests · real exam conditions</p>
                 </div>
               </div>
               <ChevronRight size={20} className="text-brand-400 flex-shrink-0" />

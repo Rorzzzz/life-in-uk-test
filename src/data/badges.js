@@ -23,12 +23,12 @@ export const BADGES = [
   {
     id: 'completionist',
     name: 'Completionist',
-    description: 'Attempt all 570 questions at least once',
+    description: 'Attempt all 767 questions at least once',
     icon: '💯',
     colour: '#f59e0b',
     category: 'milestone',
     unlockCondition: (state) =>
-      Object.values(state.progress ?? {}).filter(p => (p.totalAnswered ?? 0) >= 1).length >= 570,
+      Object.values(state.progress ?? {}).filter(p => (p.totalAnswered ?? 0) >= 1).length >= 767,
   },
   {
     id: 'hat_trick',

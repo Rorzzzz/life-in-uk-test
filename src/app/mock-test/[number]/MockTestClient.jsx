@@ -120,7 +120,7 @@ export default function MockTestClient({ testNumber, questions }) {
                   </Link>
                 )}
                 <Link href="/mock-test" className="w-full py-3 bg-raised border border-border rounded-xl text-sm text-ink-muted text-center hover:text-ink hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
-                  All 45 Mock Tests
+                  All 60 Mock Tests
                 </Link>
               </div>
               <div className="pt-1 border-t border-border">

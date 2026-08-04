@@ -2577,7 +2577,7 @@ import { QUESTIONS_BATCH8 } from './questions_batch8'
 const ALL_QUESTIONS = [...QUESTIONS_BASE, ...QUESTIONS_BATCH2, ...QUESTIONS_BATCH3, ...QUESTIONS_BATCH4, ...QUESTIONS_BATCH5, ...QUESTIONS_BATCH6, ...QUESTIONS_BATCH7, ...QUESTIONS_BATCH8]
 
 export { ALL_QUESTIONS as QUESTIONS }
-export const QUESTION_COUNT = ALL_QUESTIONS.length // 570
+export const QUESTION_COUNT = ALL_QUESTIONS.length // 767
 export const getByChapter = (chapterId) => ALL_QUESTIONS.filter(q => q.chapter === chapterId)
 export const getById = (id) => ALL_QUESTIONS.find(q => q.id === id)
 export const getByDifficulty = (d) => ALL_QUESTIONS.filter(q => q.difficulty === d)

@@ -55,7 +55,7 @@ export default function AboutPage() {
             {[
               '767 practice questions drawn directly from the official handbook',
               'Adaptive learning — questions you find hard appear more often',
-              '45 mock exams replicating real test conditions (24 Qs, 45 mins)',
+              '60 mock exams replicating real test conditions (24 Qs, 45 mins)',
               'Spaced repetition flashcards using the SM-2 algorithm',
               'XP, streaks, levels and badges to keep you motivated',
               'Cheat sheet of key dates, names and facts — printable before your test',

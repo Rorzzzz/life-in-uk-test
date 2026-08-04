@@ -1,10 +1,10 @@
 // Pass the UK Test — Mock Test Generator
-// 45 unique mock tests, each 24 questions drawn from all 570 questions
+// 60 unique mock tests, each 24 questions drawn from all 767 questions
 // Real exam: 24 questions, 45 minutes, pass mark = 18/24 (75%)
 
 import { QUESTIONS } from './questions'
 
-export const MOCK_TEST_COUNT = 45
+export const MOCK_TEST_COUNT = 60
 export const MOCK_TEST_NUMBERS = Array.from({ length: MOCK_TEST_COUNT }, (_, i) => i + 1)
 export const EXAM_QUESTION_COUNT = 24
 export const EXAM_PASS_MARK = 18
