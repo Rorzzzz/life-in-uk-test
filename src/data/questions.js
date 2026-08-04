@@ -2568,8 +2568,9 @@ const QUESTIONS_BASE = [
 // ─────────────────────────────────────────────────────────────────────────────
 import { QUESTIONS_BATCH2 } from './questions_batch2'
 import { QUESTIONS_BATCH3 } from './questions_batch3'
+import { QUESTIONS_BATCH4 } from './questions_batch4'
 
-const ALL_QUESTIONS = [...QUESTIONS_BASE, ...QUESTIONS_BATCH2, ...QUESTIONS_BATCH3]
+const ALL_QUESTIONS = [...QUESTIONS_BASE, ...QUESTIONS_BATCH2, ...QUESTIONS_BATCH3, ...QUESTIONS_BATCH4]
 
 export { ALL_QUESTIONS as QUESTIONS }
 export const QUESTION_COUNT = ALL_QUESTIONS.length // 570
