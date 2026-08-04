@@ -56,7 +56,7 @@ export default function FAQPage() {
 
         <div className="bg-brand-500/10 border border-brand-500/30 rounded-2xl p-5 text-center">
           <p className="font-semibold text-ink mb-1">Ready to start practising?</p>
-          <p className="text-sm text-ink-muted mb-3">570 free questions with detailed explanations.</p>
+          <p className="text-sm text-ink-muted mb-3">767 free questions with detailed explanations.</p>
           <Link href="/practice" className="inline-block px-6 py-3 bg-brand-500 text-white rounded-xl font-semibold hover:bg-brand-600 active:opacity-80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
             Start Practising Free →
           </Link>

@@ -4,11 +4,11 @@ import HomeDashboard from './HomeDashboard'
 
 export const metadata = {
   title: { absolute: 'Pass the Life in the UK Test — Free Practice, Mock Tests & Immigration Tools' },
-  description: 'Everything you need to pass the Life in the UK test — 570 free practice questions, 45 mock exams, ILR calculator, B1 English check, absence calculator and more. All free, no sign-up ever.',
+  description: 'Everything you need to pass the Life in the UK test — 767 free practice questions, 45 mock exams, ILR calculator, B1 English check, absence calculator and more. All free, no sign-up ever.',
   alternates: { canonical: 'https://passtheuktest.co.uk' },
   openGraph: {
     title: 'Pass the Life in the UK Test — Free Practice, Mock Tests & Immigration Tools',
-    description: '570 free practice questions, 45 mock exams, ILR calculator, B1 check, absence calculator and more. All free.',
+    description: '767 free practice questions, 45 mock exams, ILR calculator, B1 check, absence calculator and more. All free.',
     url: 'https://passtheuktest.co.uk',
   },
   keywords: ['life in the uk test', 'pass life in the uk test', 'life in the uk test free', 'ilr calculator', 'b1 english check', 'life in the uk test preparation'],

@@ -217,7 +217,7 @@ export default function MockTestIndexPage() {
             That weighting is the part most free tests get wrong. History and government make up nearly 60% of every real exam, so a mock test that pulls questions at random — as most free ones do — over-samples the easy chapters and leaves you unprepared for the two that actually decide whether you pass.
           </p>
           <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-3">
-            The 24 questions in each mock test are also fixed and repeatable — Mock Test 7 always contains the same 24 questions, drawn from across our full bank of 570 unique questions. That means you can retake a test later to check whether a topic that tripped you up has actually sunk in, while still having 44 other full exams with completely different questions to work through.
+            The 24 questions in each mock test are also fixed and repeatable — Mock Test 7 always contains the same 24 questions, drawn from across our full bank of 767 unique questions. That means you can retake a test later to check whether a topic that tripped you up has actually sunk in, while still having 44 other full exams with completely different questions to work through.
           </p>
           <p className="text-sm md:text-base text-ink-muted leading-relaxed">
             Combined with the same 45-minute countdown and 18/24 (75%) pass mark as the real test, this is as close as free online practice gets to sitting the actual citizenship exam — short of booking it. For the official rules on what to expect on the day, see our <Link href="/articles/life-in-the-uk-test-what-to-expect-on-the-day" className="text-brand-400 hover:text-brand-300">test day guide</Link>.

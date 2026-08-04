@@ -3,12 +3,12 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHAPTERS, getByChapter } from '@/data/questions'
 
 export const metadata = {
-  title: { absolute: 'Life in the UK Test Revision Questions — 570 Free Questions by Chapter' },
-  description: 'Learn and revise for the Life in the UK test with 570 free questions by chapter. Adaptive practice, instant explanations, XP rewards. Master every topic before you sit the exam.',
+  title: { absolute: 'Life in the UK Test Revision Questions — 767 Free Questions by Chapter' },
+  description: 'Learn and revise for the Life in the UK test with 767 free questions by chapter. Adaptive practice, instant explanations, XP rewards. Master every topic before you sit the exam.',
   alternates: { canonical: 'https://passtheuktest.co.uk/practice' },
   openGraph: {
-    title: 'Life in the UK Test Revision Questions — 570 Free Questions by Chapter',
-    description: 'Adaptive revision for the Life in the UK test. 570 free questions by chapter with instant explanations.',
+    title: 'Life in the UK Test Revision Questions — 767 Free Questions by Chapter',
+    description: 'Adaptive revision for the Life in the UK test. 767 free questions by chapter with instant explanations.',
   },
 }
 
@@ -23,7 +23,7 @@ export default function PracticePage() {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Practice', path: '/practice' }]} />
       <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-1">Life in the UK Revision Questions</h1>
-      <p className="text-ink-muted text-base mb-4">570 free questions by chapter — learn and revise at your own pace with instant explanations.</p>
+      <p className="text-ink-muted text-base mb-4">767 free questions by chapter — learn and revise at your own pace with instant explanations.</p>
       <p className="text-sm text-ink-muted mb-6">Ready to simulate the real exam? <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">Take a timed mock test →</Link></p>
 
       <div className="flex flex-col gap-3">

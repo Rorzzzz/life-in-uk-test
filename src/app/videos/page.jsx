@@ -11,7 +11,7 @@ const VIDEOS = [
   {
     id: '4XKqOlGB3Bg',
     title: 'Free Life in the UK Test Practice 2026 + Mock Exams',
-    description: '570 free practice questions, adaptive learning, and full mock exams. No login. No paywall. Everything you need to pass first time.',
+    description: '767 free practice questions, adaptive learning, and full mock exams. No login. No paywall. Everything you need to pass first time.',
     date: 'May 2026',
   },
 ]
@@ -66,7 +66,7 @@ export default function VideosPage() {
         <p className="text-sm font-semibold text-ink mb-3">Start practising free</p>
         <div className="grid grid-cols-2 gap-3">
           <Link href="/practice" className="bg-card border border-border rounded-xl p-3 text-sm text-ink hover:bg-raised transition-colors text-center">
-            570 Practice Questions
+            767 Practice Questions
           </Link>
           <Link href="/exam" className="bg-card border border-border rounded-xl p-3 text-sm text-ink hover:bg-raised transition-colors text-center">
             Full Mock Exam

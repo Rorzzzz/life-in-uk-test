@@ -46,7 +46,7 @@ export default function HomeDashboard({ chapters }) {
           <h1 className="text-2xl font-display font-bold text-ink">
             Free Life in the UK Test Practice <span className="text-brand-500">2026</span>
           </h1>
-          <p className="text-base text-ink-muted">Pass first time — 570 questions, mock exams, adaptive learning</p>
+          <p className="text-base text-ink-muted">Pass first time — 767 questions, mock exams, adaptive learning</p>
         </div>
         <Link href="/readiness" className="text-right group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg p-1">
           <p className="text-xs text-ink-muted">Readiness</p>

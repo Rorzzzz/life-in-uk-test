@@ -18,7 +18,7 @@ export default function ReadinessPage() {
       label: 'Coverage',
       weight: '30%',
       colour: '#a855f7',
-      description: 'How many of the 570 questions you have attempted at least once. Full coverage is benchmarked at 200 questions — a strong sample across all chapters.',
+      description: 'How many of the 767 questions you have attempted at least once. Full coverage is benchmarked at 200 questions — a strong sample across all chapters.',
     },
     {
       label: 'Streak',

@@ -53,7 +53,7 @@ export default function AboutPage() {
           <h2 className="text-base font-semibold text-ink mb-4">What the site offers</h2>
           <ul className="space-y-2.5 text-sm text-ink-muted">
             {[
-              '570 practice questions drawn directly from the official handbook',
+              '767 practice questions drawn directly from the official handbook',
               'Adaptive learning — questions you find hard appear more often',
               '45 mock exams replicating real test conditions (24 Qs, 45 mins)',
               'Spaced repetition flashcards using the SM-2 algorithm',

@@ -93,7 +93,7 @@ export default function QuestionsPdfPage() {
           <li>{totalQuestions} questions across all chapters — answers and explanations included</li>
           <li>Written from the current 3rd edition handbook</li>
           <li>No sign-up, no email, no payment</li>
-          <li>For unlimited practice with all 570 questions, use our <Link href="/practice" className="text-brand underline">free practice tool</Link> instead</li>
+          <li>For unlimited practice with all 767 questions, use our <Link href="/practice" className="text-brand underline">free practice tool</Link> instead</li>
         </ul>
 
         <div className="flex items-center gap-3 mb-6 print:hidden">
@@ -129,7 +129,7 @@ export default function QuestionsPdfPage() {
               The Home Office publishes the study handbook but has never published a question bank in any format. Any file online claiming to be the &ldquo;official&rdquo; questions PDF is not from the government. These {totalQuestions} questions are written directly from the current 3rd edition handbook and dated so you can confirm they are current.
             </p>
             <p className="text-base text-ink leading-relaxed mb-3">
-              For the full 570-question bank with spaced repetition and a timed mock exam, use the{' '}
+              For the full 767-question bank with spaced repetition and a timed mock exam, use the{' '}
               <Link href="/practice" className="text-brand underline">free practice questions</Link>{' '}
               or read the full explanation in our guide on{' '}
               <Link href="/articles/life-in-the-uk-test-questions-pdf" className="text-brand underline">why no official Life in the UK test questions PDF exists</Link>.
@@ -169,7 +169,7 @@ export default function QuestionsPdfPage() {
             <p className="text-sm font-bold text-ink mb-2">Related guides and tools</p>
             <ul className="text-sm text-ink-muted space-y-1">
               <li><Link href="/articles/life-in-the-uk-test-questions-pdf" className="text-brand underline">Why no official Life in the UK test questions PDF exists</Link></li>
-              <li><Link href="/practice" className="text-brand underline">All 570 free practice questions</Link></li>
+              <li><Link href="/practice" className="text-brand underline">All 767 free practice questions</Link></li>
               <li><Link href="/mock-test" className="text-brand underline">Free timed mock exams</Link></li>
               <li><Link href="/cheat-sheet" className="text-brand underline">Key facts cheat sheet (also printable)</Link></li>
               <li><Link href="/articles/life-in-the-uk-test-official-handbook" className="text-brand underline">Official handbook study guide</Link></li>
