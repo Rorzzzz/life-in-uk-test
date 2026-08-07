@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { getMockTest, EXAM_DURATION_SECONDS } from '@/data/mockTests'
+import { getMockTest, EXAM_DURATION_SECONDS, MOCK_TEST_COUNT } from '@/data/mockTests'
 import { CHAPTERS } from '@/data/questions'
 import { useGame } from '@/context/GameContext'
 import QuestionCard from '@/components/game/QuestionCard'
@@ -20,7 +20,7 @@ export default function ExamPage() {
   const [questions, setQuestions] = useState(() => getMockTest(1))
 
   useEffect(() => {
-    setQuestions(getMockTest(Math.floor(Math.random() * 45) + 1))
+    setQuestions(getMockTest(Math.floor(Math.random() * MOCK_TEST_COUNT) + 1))
   }, [])
   const [index, setIndex]          = useState(0)
   const [correct, setCorrect]      = useState(0)
@@ -102,7 +102,7 @@ export default function ExamPage() {
           onRetry={() => { setIndex(0); setCorrect(0); setWrongByChapter({}); setDone(false); setStarted(false); setTimeLeft(EXAM_DURATION_SECONDS); scrollTop() }}
           onHome={() => router.push('/')}
           onDifferentTest={() => {
-            const n = Math.floor(Math.random() * 45) + 1
+            const n = Math.floor(Math.random() * MOCK_TEST_COUNT) + 1
             router.push(`/mock-test/${n}`)
           }}
           weakChapters={CHAPTERS

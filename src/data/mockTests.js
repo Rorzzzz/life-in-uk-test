@@ -49,7 +49,7 @@ export function getMockTest(testNumber) {
 export function getMockTestMeta(testNumber) {
   return {
     title: `Life in the UK Mock Test ${testNumber} — Free Full-Length Practice Exam 2026`,
-    description: `24 questions, 45-minute timer, instant results. The closest thing to sitting the real Life in the UK test — free, no sign-up, no paywall. Test ${testNumber} of 45.`,
+    description: `24 questions, 45-minute timer, instant results. The closest thing to sitting the real Life in the UK test — free, no sign-up, no paywall. Test ${testNumber} of ${MOCK_TEST_COUNT}.`,
     canonical: `https://passtheuktest.co.uk/mock-test/${testNumber}`,
   }
 }

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { TOPICS, getTopicBySlug, getTopicQuestions } from '@/data/topics'
+import { MOCK_TEST_COUNT } from '@/data/mockTests'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
@@ -7,7 +8,7 @@ function getTopicTests(slug) {
   const idx = TOPICS.findIndex(t => t.slug === slug)
   const set = new Set()
   for (let i = 1; set.size < 4; i++) {
-    set.add(((idx * 9 + i * 17) % 45) + 1)
+    set.add(((idx * 9 + i * 17) % MOCK_TEST_COUNT) + 1)
   }
   return [...set]
 }

@@ -1,13 +1,14 @@
 import { notFound } from 'next/navigation'
 import { QUESTIONS, getById, CHAPTERS } from '@/data/questions'
 import { TOPICS } from '@/data/topics'
+import { MOCK_TEST_COUNT } from '@/data/mockTests'
 import Link from 'next/link'
 
 // Deterministic: spread 4 tests across the 45 available based on question ID
 function getRelatedTests(id) {
   const set = new Set()
   for (let i = 1; set.size < 4; i++) {
-    set.add(((id * 7 + i * 13) % 45) + 1)
+    set.add(((id * 7 + i * 13) % MOCK_TEST_COUNT) + 1)
   }
   return [...set]
 }

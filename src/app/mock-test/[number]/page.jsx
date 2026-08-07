@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { MOCK_TEST_NUMBERS, getMockTest, getMockTestMeta } from '@/data/mockTests'
+import { MOCK_TEST_NUMBERS, MOCK_TEST_COUNT, getMockTest, getMockTestMeta } from '@/data/mockTests'
 import { TOPICS } from '@/data/topics'
 import { CHAPTERS } from '@/data/questions'
 import Link from 'next/link'
@@ -9,7 +9,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 function getRelatedTests(n) {
   const others = []
   for (let i = 1; others.length < 4; i++) {
-    const candidate = ((n + i - 1) % 45) + 1
+    const candidate = ((n + i - 1) % MOCK_TEST_COUNT) + 1
     if (candidate !== n) others.push(candidate)
   }
   return others
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const n = parseInt(params.number)
-  if (n < 1 || n > 45) return {}
+  if (n < 1 || n > MOCK_TEST_COUNT) return {}
   const meta = getMockTestMeta(n)
   return {
     title:       meta.title,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
 
 export default function MockTestPage({ params }) {
   const n = parseInt(params.number)
-  if (n < 1 || n > 45) return notFound()
+  if (n < 1 || n > MOCK_TEST_COUNT) return notFound()
 
   const questions     = getMockTest(n)
   const relatedTests  = getRelatedTests(n)

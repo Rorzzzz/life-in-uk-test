@@ -2,13 +2,14 @@ import { notFound } from 'next/navigation'
 import { STUDY_CHAPTERS, getChapterBySlug } from '@/data/studyGuide'
 import { CHAPTERS } from '@/data/questions'
 import { TOPICS } from '@/data/topics'
+import { MOCK_TEST_COUNT } from '@/data/mockTests'
 import Link from 'next/link'
 
 // Deterministic mock test spread for a chapter page
 function getChapterTests(chapterId) {
   const set = new Set()
   for (let i = 1; set.size < 4; i++) {
-    set.add(((chapterId * 11 + i * 17) % 45) + 1)
+    set.add(((chapterId * 11 + i * 17) % MOCK_TEST_COUNT) + 1)
   }
   return [...set]
 }

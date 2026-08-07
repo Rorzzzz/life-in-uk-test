@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { EXAM_DURATION_SECONDS } from '@/data/mockTests'
+import { EXAM_DURATION_SECONDS, MOCK_TEST_COUNT } from '@/data/mockTests'
 import { useGame } from '@/context/GameContext'
 import QuestionCard from '@/components/game/QuestionCard'
 import TimerBar from '@/components/game/TimerBar'
@@ -101,7 +101,7 @@ export default function MockTestClient({ testNumber, questions }) {
           onHome={() => router.push('/')}
           onDifferentTest={() => {
             let n
-            do { n = Math.floor(Math.random() * 45) + 1 } while (n === testNumber)
+            do { n = Math.floor(Math.random() * MOCK_TEST_COUNT) + 1 } while (n === testNumber)
             router.push(`/mock-test/${n}`)
           }}
           isExam
