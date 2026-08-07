@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ILRCalculatorClient from './ILRCalculatorClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -290,6 +291,7 @@ export default function ILRCalculatorPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'ILR Calculator', path: '/ilr-calculator' }]} />
       <ILRCalculatorIntro />
       <ILRCalculatorClient />
       <ILRCalculatorContent />

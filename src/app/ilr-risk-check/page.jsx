@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ILRRiskClient from './ILRRiskClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -219,6 +220,7 @@ export default function ILRRiskCheckPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'ILR Refusal Risk Checker', path: '/ilr-risk-check' }]} />
       <ILRRiskIntro />
       <ILRRiskClient />
       <ILRRiskContent />

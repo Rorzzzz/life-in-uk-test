@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import StudyPlanClient from './StudyPlanClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -193,6 +194,7 @@ export default function StudyPlanGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Study Plan Generator', path: '/study-plan-generator' }]} />
       <StudyPlanIntro />
       <StudyPlanClient />
       <StudyPlanContent />

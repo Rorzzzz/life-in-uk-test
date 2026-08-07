@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import B1CheckClient from './B1CheckClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -208,6 +209,7 @@ export default function B1CheckPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'B1 English Check', path: '/b1-check' }]} />
       <B1CheckIntro />
       <B1CheckClient />
       <B1CheckContent />

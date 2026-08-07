@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import AbsenceCalculatorClient from './AbsenceCalculatorClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -198,6 +199,7 @@ export default function AbsenceCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Absence Calculator', path: '/absence-calculator' }]} />
       <AbsenceCalculatorIntro />
       <AbsenceCalculatorClient />
       <AbsenceCalculatorContent />

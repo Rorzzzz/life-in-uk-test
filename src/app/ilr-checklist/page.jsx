@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ILRChecklistClient from './ILRChecklistClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -194,6 +195,7 @@ export default function ILRChecklistPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'ILR Document Checklist', path: '/ilr-checklist' }]} />
       <ILRChecklistIntro />
       <ILRChecklistClient />
       <ILRChecklistContent />

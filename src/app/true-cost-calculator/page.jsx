@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import TrueCostClient from './TrueCostClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -208,6 +209,7 @@ export default function TrueCostCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'True Cost Calculator', path: '/true-cost-calculator' }]} />
       <TrueCostIntro />
       <TrueCostClient />
       <TrueCostContent />

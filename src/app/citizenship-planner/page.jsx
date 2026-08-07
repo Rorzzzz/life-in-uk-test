@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import CitizenshipPlannerClient from './CitizenshipPlannerClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -200,6 +201,7 @@ export default function CitizenshipPlannerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Citizenship Planner', path: '/citizenship-planner' }]} />
       <CitizenshipPlannerIntro />
       <CitizenshipPlannerClient />
       <CitizenshipPlannerContent />

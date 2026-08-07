@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ExemptWizardClient from './ExemptWizardClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -196,6 +197,7 @@ export default function TestExemptPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Test Exemption Checker', path: '/test-exempt' }]} />
       <TestExemptIntro />
       <ExemptWizardClient />
       <TestExemptContent />
