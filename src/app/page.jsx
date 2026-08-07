@@ -79,7 +79,7 @@ export default function HomePage() {
 
         <div className="bg-card rounded-2xl p-5">
           <h2 className="font-display font-bold text-ink mb-4">Free Immigration Tools</h2>
-          <p className="text-sm text-ink-muted mb-4">10 free tools to help with every stage of your journey to ILR and British citizenship — available on no other Life in the UK test site.</p>
+          <p className="text-sm text-ink-muted mb-4">10 free tools to help with every stage of your journey to ILR and British citizenship — available on no other Life in the UK test site. <Link href="/tools" className="text-brand-400 hover:text-brand-300">See all tools in one place →</Link></p>
           <div className="space-y-3">
             {STATIC_TOOLS.map(({ href, label, desc }) => (
               <div key={href}>
@@ -90,6 +90,9 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <Link href="/tools" className="mt-4 inline-block text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors">
+            Browse all free tools →
+          </Link>
         </div>
       </section>
     </>
