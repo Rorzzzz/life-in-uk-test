@@ -80,7 +80,7 @@ export default function QuestionsIndexPage() {
               { href: '/cheat-sheet', label: 'Cheat sheet' },
               { href: '/tools', label: 'Free immigration tools' },
             ].map(({ href, label }) => (
-              <Link key={href} href={href} className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-brand-400 hover:text-brand-300 hover:border-brand-500/40 transition-colors">
+              <Link key={href} href={href} className="px-3 py-2 text-sm bg-raised border border-border rounded-lg text-brand-400 hover:text-brand-300 hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
                 {label}
               </Link>
             ))}

@@ -71,7 +71,7 @@ export default function ChapterQuestionsPage({ params }) {
             <li key={q.id}>
               <Link
                 href={`/questions/${q.id}`}
-                className="block py-2 px-3 -mx-1 rounded-lg text-sm text-ink-muted hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                className="block py-3 px-3 -mx-1 rounded-lg text-sm text-ink-muted hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
               >
                 {q.q}
               </Link>

@@ -99,6 +99,13 @@ export default function ToolsHubPage() {
 
       <div className="max-w-2xl mx-auto px-4 py-6">
 
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-ink-muted mb-6">
+          <Link href="/" className="px-2 py-1 hover:text-ink rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Home</Link>
+          <span>/</span>
+          <span className="px-2 py-1 text-ink">Tools</span>
+        </nav>
+
         {/* Header */}
         <h1 className="text-2xl md:text-3xl font-display font-bold text-ink mb-2">
           Free UK Immigration Tools &amp; Calculators

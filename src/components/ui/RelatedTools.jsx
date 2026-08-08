@@ -33,7 +33,7 @@ export default function RelatedTools({ current }) {
             <Link
               key={t.slug}
               href={`/${t.slug}`}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
             >
               <span className="text-base" aria-hidden="true">{t.emoji}</span>
               <span className="text-sm text-ink-muted hover:text-ink">{t.title}</span>
