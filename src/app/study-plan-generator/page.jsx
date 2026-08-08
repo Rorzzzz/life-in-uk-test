@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import StudyPlanClient from './StudyPlanClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -195,9 +196,11 @@ export default function StudyPlanGeneratorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Study Plan Generator', path: '/study-plan-generator' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "Life in the UK Test Study Plan Generator", "url": "https://passtheuktest.co.uk/study-plan-generator", "description": "Generate a personalised Life in the UK test study plan around your test date.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <StudyPlanIntro />
       <StudyPlanClient />
       <StudyPlanContent />
+    <RelatedTools current="study-plan-generator" />
     </>
   )
 }

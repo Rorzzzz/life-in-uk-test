@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import B1CheckClient from './B1CheckClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -210,9 +211,11 @@ export default function B1CheckPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'B1 English Check', path: '/b1-check' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "B1 English Level Check", "url": "https://passtheuktest.co.uk/b1-check", "description": "Check whether your English meets the B1 requirement for ILR or British citizenship.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <B1CheckIntro />
       <B1CheckClient />
       <B1CheckContent />
+    <RelatedTools current="b1-check" />
     </>
   )
 }

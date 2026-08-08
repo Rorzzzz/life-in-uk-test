@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import CitizenshipPlannerClient from './CitizenshipPlannerClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -202,9 +203,11 @@ export default function CitizenshipPlannerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Citizenship Planner', path: '/citizenship-planner' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "UK Citizenship Planner", "url": "https://passtheuktest.co.uk/citizenship-planner", "description": "Build a personalised timeline and cost breakdown for your route to British citizenship.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <CitizenshipPlannerIntro />
       <CitizenshipPlannerClient />
       <CitizenshipPlannerContent />
+    <RelatedTools current="citizenship-planner" />
     </>
   )
 }

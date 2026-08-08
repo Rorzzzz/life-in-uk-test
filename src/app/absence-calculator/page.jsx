@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import AbsenceCalculatorClient from './AbsenceCalculatorClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -200,9 +201,11 @@ export default function AbsenceCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Absence Calculator', path: '/absence-calculator' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "UK Absence Calculator", "url": "https://passtheuktest.co.uk/absence-calculator", "description": "Check every rolling 12-month window in your travel history against the 180-day ILR absence rule.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <AbsenceCalculatorIntro />
       <AbsenceCalculatorClient />
       <AbsenceCalculatorContent />
+    <RelatedTools current="absence-calculator" />
     </>
   )
 }

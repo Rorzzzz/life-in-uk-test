@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import TrueCostClient from './TrueCostClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -210,9 +211,11 @@ export default function TrueCostCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'True Cost Calculator', path: '/true-cost-calculator' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "True Cost of British Citizenship Calculator", "url": "https://passtheuktest.co.uk/true-cost-calculator", "description": "Add up every fee and surcharge on the journey to British citizenship.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <TrueCostIntro />
       <TrueCostClient />
       <TrueCostContent />
+    <RelatedTools current="true-cost-calculator" />
     </>
   )
 }

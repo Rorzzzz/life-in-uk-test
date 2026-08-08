@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import ExemptWizardClient from './ExemptWizardClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -198,9 +199,11 @@ export default function TestExemptPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Test Exemption Checker', path: '/test-exempt' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "Life in the UK Test Exemption Checker", "url": "https://passtheuktest.co.uk/test-exempt", "description": "Find out whether you are exempt from taking the Life in the UK test.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <TestExemptIntro />
       <ExemptWizardClient />
       <TestExemptContent />
+    <RelatedTools current="test-exempt" />
     </>
   )
 }

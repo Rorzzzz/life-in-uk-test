@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import GoodCharacterClient from './GoodCharacterClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -199,9 +200,11 @@ export default function GoodCharacterCheckPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'Good Character Checker', path: '/good-character-check' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "Good Character Checker", "url": "https://passtheuktest.co.uk/good-character-check", "description": "Check whether anything in your history could affect an ILR or citizenship decision.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <GoodCharacterIntro />
       <GoodCharacterClient />
       <GoodCharacterContent />
+    <RelatedTools current="good-character-check" />
     </>
   )
 }

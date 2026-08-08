@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import ILRCalculatorClient from './ILRCalculatorClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -292,9 +293,11 @@ export default function ILRCalculatorPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'ILR Calculator', path: '/ilr-calculator' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "ILR Eligibility Calculator", "url": "https://passtheuktest.co.uk/ilr-calculator", "description": "Free ILR calculator — find your exact eligibility date, check the 180-day absence rule and get a full cost breakdown.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <ILRCalculatorIntro />
       <ILRCalculatorClient />
       <ILRCalculatorContent />
+    <RelatedTools current="ilr-calculator" />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import ILRChecklistClient from './ILRChecklistClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -196,9 +197,11 @@ export default function ILRChecklistPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'ILR Document Checklist', path: '/ilr-checklist' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "ILR Document Checklist", "url": "https://passtheuktest.co.uk/ilr-checklist", "description": "Get a printable checklist of the documents your ILR application needs, by visa route.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <ILRChecklistIntro />
       <ILRChecklistClient />
       <ILRChecklistContent />
+    <RelatedTools current="ilr-checklist" />
     </>
   )
 }

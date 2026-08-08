@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import RelatedTools from '@/components/ui/RelatedTools'
 import ILRRiskClient from './ILRRiskClient'
 import ShareButton from '@/components/ui/ShareButton'
 
@@ -221,9 +222,11 @@ export default function ILRRiskCheckPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }, { name: 'Tools', path: '/tools' }, { name: 'ILR Refusal Risk Checker', path: '/ilr-risk-check' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "WebApplication", "name": "ILR Refusal Risk Checker", "url": "https://passtheuktest.co.uk/ilr-risk-check", "description": "Identify the factors that most often cause an ILR refusal before you apply.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "publisher": {"@type": "Organization", "name": "Pass the UK Test", "url": "https://passtheuktest.co.uk"}}) }} />
       <ILRRiskIntro />
       <ILRRiskClient />
       <ILRRiskContent />
+    <RelatedTools current="ilr-risk-check" />
     </>
   )
 }
