@@ -23,7 +23,7 @@ export async function generateMetadata() {
 export default function QuestionsIndexPage() {
   const byChapter = CHAPTERS.map(ch => ({
     chapter: ch,
-    questions: QUESTIONS.filter(q => q.chapter === ch.id),
+    count: QUESTIONS.filter(q => q.chapter === ch.id).length,
   }))
 
   const collectionSchema = {
@@ -51,35 +51,26 @@ export default function QuestionsIndexPage() {
           Prefer to practise interactively? Use <Link href="/practice" className="text-brand-400 hover:text-brand-300">adaptive practice by chapter</Link> or take a <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">free timed mock test</Link>.
         </p>
 
-        {/* Chapter jump nav */}
-        <nav aria-label="Jump to chapter" className="flex flex-wrap gap-2 mb-8">
-          {byChapter.map(({ chapter, questions }) => (
-            <a key={chapter.id} href={`#chapter-${chapter.id}`} className="px-3 py-1.5 text-sm bg-card border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors">
-              {chapter.title} <span className="text-ink-muted">({questions.length})</span>
-            </a>
+        {/* Chapter cards → per-chapter question lists */}
+        <div className="space-y-3 mb-8">
+          {byChapter.map(({ chapter, count }) => (
+            <Link
+              key={chapter.id}
+              href={`/questions/chapter/${chapter.id}`}
+              className="block bg-card border border-border rounded-2xl p-4 hover:border-brand-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="font-semibold text-ink" style={{ color: chapter.colour }}>{chapter.title}</p>
+                  <p className="text-xs text-ink-muted mt-0.5">{count} questions and answers</p>
+                </div>
+                <span className="text-brand-400 flex-shrink-0">→</span>
+              </div>
+            </Link>
           ))}
-        </nav>
+        </div>
 
-        {byChapter.map(({ chapter, questions }) => (
-          <section key={chapter.id} id={`chapter-${chapter.id}`} className="mb-10 scroll-mt-20">
-            <h2 className="text-lg font-display font-bold text-ink mb-1">{chapter.title}</h2>
-            <p className="text-sm text-ink-muted mb-4">{questions.length} questions · <Link href={`/practice/${chapter.id}`} className="text-brand-400 hover:text-brand-300">Practise this chapter →</Link></p>
-            <ol className="space-y-1">
-              {questions.map(q => (
-                <li key={q.id}>
-                  <Link
-                    href={`/questions/${q.id}`}
-                    className="block py-2 px-3 -mx-1 rounded-lg text-sm text-ink-muted hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-                  >
-                    {q.q}
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </section>
-        ))}
-
-        <div className="bg-card border border-border rounded-2xl p-5 mt-4">
+        <div className="bg-card border border-border rounded-2xl p-5">
           <p className="text-sm font-bold text-ink mb-3">Keep preparing</p>
           <div className="flex flex-wrap gap-2">
             {[

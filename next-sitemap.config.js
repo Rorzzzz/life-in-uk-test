@@ -31,16 +31,20 @@ module.exports = {
     const priorities = {
       '/':          { priority: 1.0, changefreq: 'weekly' },
       '/practice':  { priority: 0.9, changefreq: 'weekly' },
+      '/questions': { priority: 0.9, changefreq: 'weekly' },
+      '/tools':     { priority: 0.9, changefreq: 'weekly' },
+      '/mock-test': { priority: 0.9, changefreq: 'weekly' },
       '/study':     { priority: 0.8, changefreq: 'monthly' },
       '/exam/info': { priority: 0.7, changefreq: 'monthly' },
     }
-    const isQuestion = path.startsWith('/questions/')
+    const isChapterQ = path.startsWith('/questions/chapter/')
+    const isQuestion = path.startsWith('/questions/') && !isChapterQ
     const isChapter  = path.startsWith('/practice/') || path.startsWith('/study/')
     const isArticle  = path.startsWith('/articles/')
     return {
       loc: path,
-      changefreq: isArticle ? 'weekly' : isQuestion ? 'monthly' : isChapter ? 'weekly' : 'weekly',
-      priority: priorities[path]?.priority ?? (isArticle ? 0.9 : isQuestion ? 0.8 : isChapter ? 0.9 : 0.7),
+      changefreq: isArticle ? 'weekly' : isQuestion ? 'monthly' : 'weekly',
+      priority: priorities[path]?.priority ?? (isChapterQ ? 0.8 : isArticle ? 0.9 : isQuestion ? 0.8 : isChapter ? 0.9 : 0.7),
       lastmod: new Date().toISOString(),
     }
   },

@@ -24,7 +24,8 @@ export default function PracticePage() {
       <div className="max-w-2xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-display font-bold text-ink mb-1">Life in the UK Revision Questions</h1>
       <p className="text-ink-muted text-base mb-4">767 free questions by chapter — learn and revise at your own pace with instant explanations.</p>
-      <p className="text-sm text-ink-muted mb-6">Ready to simulate the real exam? <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">Take a timed mock test →</Link></p>
+      <p className="text-sm text-ink-muted mb-2">Ready to simulate the real exam? <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">Take a timed mock test →</Link></p>
+      <p className="text-sm text-ink-muted mb-6">Prefer to read? <Link href="/questions" className="text-brand-400 hover:text-brand-300">Browse all 767 questions and answers →</Link></p>
 
       <div className="flex flex-col gap-3">
         {chapterStats.map(ch => (
