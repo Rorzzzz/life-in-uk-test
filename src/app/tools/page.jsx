@@ -18,7 +18,7 @@ export async function generateMetadata() {
   }
 }
 
-// The 10 free tools, grouped into topical clusters
+// The free tools, grouped into topical clusters
 const GROUPS = [
   {
     heading: 'ILR & settlement tools',
@@ -35,6 +35,7 @@ const GROUPS = [
     blurb: 'Plan your route from ILR to a British passport, understand the true cost, and check the requirements that trip people up.',
     tools: [
       { href: '/citizenship-planner',  emoji: '🗺️', title: 'Citizenship Planner',        desc: 'Build a personalised timeline and cost breakdown for your route to British citizenship.' },
+      { href: '/citizenship-date-calculator', emoji: '🗓️', title: 'Citizenship Date Calculator', desc: 'Find the exact date you can apply for British citizenship from your ILR date — including the spouse rule.' },
       { href: '/true-cost-calculator', emoji: '💷', title: 'True Cost of Citizenship',    desc: 'Add up every fee and surcharge on the journey to British citizenship — the real total.' },
       { href: '/good-character-check', emoji: '✅', title: 'Good Character Checker',       desc: 'Check whether anything in your history could affect an ILR or citizenship decision.' },
       { href: '/b1-check',             emoji: '🗣️', title: 'B1 English Level Check',       desc: 'Test whether your English meets the B1 requirement for ILR or British citizenship.' },

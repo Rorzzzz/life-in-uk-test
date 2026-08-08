@@ -50,6 +50,7 @@ const STATIC_TOOLS = [
   { href: '/b1-check',             label: 'Free B1 English Level Check',         desc: 'Test your English level to see if you meet the B1 requirement for ILR or British citizenship.' },
   { href: '/true-cost-calculator', label: 'True Cost of British Citizenship',    desc: 'Calculate the full cost of your journey to British citizenship including all fees and surcharges.' },
   { href: '/citizenship-planner',  label: 'Free UK Citizenship Planner',         desc: 'Build a personalised timeline and cost breakdown for your route to British citizenship.' },
+  { href: '/citizenship-date-calculator', label: 'British Citizenship Date Calculator', desc: 'Find the exact date you can apply for British citizenship from your ILR date, including the spouse rule.' },
   { href: '/ilr-checklist',        label: 'Free ILR Document Checklist',         desc: 'Get a complete printable checklist of documents needed for your ILR application by visa type.' },
   { href: '/ilr-risk-check',       label: 'Free ILR Refusal Risk Checker',       desc: 'Identify factors that could cause your ILR application to be refused before you apply.' },
   { href: '/good-character-check', label: 'Free Good Character Checker',         desc: 'Check if anything in your history could affect your ILR or British citizenship application.' },
@@ -79,7 +80,7 @@ export default function HomePage() {
 
         <div className="bg-card rounded-2xl p-5">
           <h2 className="font-display font-bold text-ink mb-4">Free Immigration Tools</h2>
-          <p className="text-sm text-ink-muted mb-4">10 free tools to help with every stage of your journey to ILR and British citizenship — available on no other Life in the UK test site. <Link href="/tools" className="text-brand-400 hover:text-brand-300">See all tools in one place →</Link></p>
+          <p className="text-sm text-ink-muted mb-4">11 free tools to help with every stage of your journey to ILR and British citizenship — available on no other Life in the UK test site. <Link href="/tools" className="text-brand-400 hover:text-brand-300">See all tools in one place →</Link></p>
           <div className="space-y-3">
             {STATIC_TOOLS.map(({ href, label, desc }) => (
               <div key={href}>

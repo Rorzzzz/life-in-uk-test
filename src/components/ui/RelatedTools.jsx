@@ -7,6 +7,7 @@ const TOOLS = [
   { slug: 'ilr-checklist',        emoji: '📋', title: 'ILR Document Checklist' },
   { slug: 'ilr-risk-check',       emoji: '⚠️', title: 'ILR Refusal Risk Checker' },
   { slug: 'citizenship-planner',  emoji: '🗺️', title: 'Citizenship Planner' },
+  { slug: 'citizenship-date-calculator', emoji: '🗓️', title: 'Citizenship Date Calculator' },
   { slug: 'true-cost-calculator', emoji: '💷', title: 'True Cost of Citizenship' },
   { slug: 'good-character-check', emoji: '✅', title: 'Good Character Checker' },
   { slug: 'b1-check',             emoji: '🗣️', title: 'B1 English Level Check' },
