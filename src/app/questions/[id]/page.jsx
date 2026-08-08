@@ -46,6 +46,10 @@ export default function QuestionPage({ params }) {
   if (!question) return notFound()
 
   const chapter = CHAPTERS.find(c => c.id === question.chapter)
+  const total = QUESTIONS.length
+  const tagsStr = question.tags && question.tags.length
+    ? ` and covers ${question.tags.slice(0, 3).join(', ')}`
+    : ''
 
   // Related questions (same chapter, nearby IDs)
   const related = QUESTIONS
@@ -133,12 +137,24 @@ export default function QuestionPage({ params }) {
             ))}
           </div>
 
-          {/* Explanation */}
+          {/* Answer + explanation */}
           <div className="bg-raised rounded-xl p-4">
-            <p className="text-xs font-medium text-brand-400 uppercase tracking-wide mb-1">Explanation</p>
+            <p className="text-xs font-medium text-brand-400 uppercase tracking-wide mb-1">Answer &amp; explanation</p>
+            <p className="text-base text-ink leading-relaxed mb-2">
+              The correct answer is <strong>{question.options[question.answer]}</strong>.
+            </p>
             <p className="text-base text-ink leading-relaxed">{question.explanation}</p>
           </div>
         </div>
+
+        {/* Context — unique text + internal links */}
+        <p className="text-sm text-ink-muted leading-relaxed mb-6">
+          This is one of {total} free Life in the UK test questions on Pass the UK Test. It is taken from{' '}
+          <Link href={`/practice/${question.chapter}`} className="text-brand-400 hover:text-brand-300">{chapter?.title}</Link>
+          {tagsStr}. Every answer is based on the official <em>Life in the United Kingdom</em> handbook.{' '}
+          <Link href="/questions" className="text-brand-400 hover:text-brand-300">Browse all questions</Link> or{' '}
+          <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">take a free mock test</Link>.
+        </p>
 
         {/* Meta */}
         <div className="flex items-center gap-2 flex-wrap mb-6">
