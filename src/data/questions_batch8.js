@@ -321,5 +321,14 @@ export const QUESTIONS_BATCH8 = [
     difficulty: 'hard',
     tags: ['design', 'notable-people'],
   },
+  {
+    id: 767, chapter: 3,
+    q: 'During the Second World War, where did British code-breakers work to decipher enemy messages, including the German Enigma code?',
+    options: ['Portsmouth Dockyard', 'The Tower of London', 'Greenwich Royal Observatory', 'Bletchley Park'],
+    answer: 3,
+    explanation: 'During the Second World War, code-breakers based at Bletchley Park succeeded in deciphering enemy messages, including those encrypted by the German Enigma machine. Their work is believed to have significantly shortened the war.',
+    difficulty: 'medium',
+    tags: ['history', 'wwii'],
+  },
 
 ]
