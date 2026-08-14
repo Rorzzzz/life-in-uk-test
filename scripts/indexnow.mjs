@@ -10,7 +10,7 @@
 
 import { readFileSync } from 'node:fs'
 
-const KEY  = 'ab976e3f716e2f0c7113ca48b012f66c'
+const KEY  = 'f3f3638814b644f7b126cd2e43f4650a' // Bing Webmaster Tools-generated IndexNow key
 const HOST = 'passtheuktest.co.uk'
 const ENDPOINT = 'https://api.indexnow.org/indexnow'
 const SITEMAP = 'public/sitemap-0.xml'
