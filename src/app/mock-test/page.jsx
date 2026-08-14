@@ -24,6 +24,7 @@ const FAQS = [
   { q: 'What is the pass mark for the Life in the UK test?', a: 'You need to answer 18 out of 24 questions correctly — that is 75%. You have 45 minutes to complete it.' },
   { q: 'Is this Life in the UK test practice completely free?', a: 'Yes — all 60 tests and practice exams are completely free. No sign-up, no paywall, no premium tier. Every one on this site is free forever.' },
   { q: 'Which Life in the UK practice test should I start with?', a: 'Start with Test 1 and work through them in order. By test 10 you will have a clear picture of which topics need more revision. Use the cheat sheet alongside your revision.' },
+  { q: 'Is this a mock test or a practice test?', a: 'Both — a mock test and a practice test are the same thing here. Each of our 60 free practice tests is a full mock exam: 24 questions, 45 minutes and the 75% pass mark, exactly like the real Life in the UK test.' },
 ]
 
 const quizSchema = {
