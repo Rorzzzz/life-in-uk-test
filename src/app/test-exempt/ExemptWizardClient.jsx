@@ -310,9 +310,9 @@ export default function ExemptWizardClient() {
     <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           Am I Exempt from the Life in the UK Test?
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Answer a few questions to find out if you need to take the test — or if you qualify for
           an exemption. Takes about 60 seconds.

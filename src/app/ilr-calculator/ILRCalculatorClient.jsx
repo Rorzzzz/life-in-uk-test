@@ -208,9 +208,9 @@ export default function ILRCalculatorClient() {
 
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           ILR Eligibility &amp; Cost Calculator
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Enter your details to find out when you can apply for Indefinite Leave to Remain and
           get an estimated breakdown of the total cost.

@@ -189,9 +189,9 @@ export default function AbsenceCalculatorClient() {
     <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           UK Absence Calculator
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Check if your trips outside the UK breach the 180-day rule in any 12-month period of
           your ILR qualifying period. Days are counted from departure to return inclusive.

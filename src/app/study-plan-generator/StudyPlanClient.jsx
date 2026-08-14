@@ -299,9 +299,9 @@ export default function StudyPlanClient() {
     <div className="max-w-2xl mx-auto px-4 py-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           Study Plan Generator
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Enter your test date and current practice score to get a personalised week-by-week
           study plan for the Life in the UK test.

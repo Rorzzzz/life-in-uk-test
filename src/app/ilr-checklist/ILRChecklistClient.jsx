@@ -142,9 +142,9 @@ export default function ILRChecklistClient() {
 
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           ILR Document Checklist
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Select your visa type to get a personalised, interactive checklist of everything you
           need for your Indefinite Leave to Remain application.

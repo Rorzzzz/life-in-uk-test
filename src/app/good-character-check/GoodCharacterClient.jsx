@@ -298,9 +298,9 @@ export default function GoodCharacterClient() {
           <AlertTriangle size={18} className="text-amber-400" />
           <span className="text-xs text-ink-muted font-medium uppercase tracking-wider">Immigration Tool</span>
         </div>
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           Good Character Checker
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Answer 6 questions to get a clear, colour-coded assessment of whether your history
           might affect the good character requirement for ILR or British citizenship. Takes about

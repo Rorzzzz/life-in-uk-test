@@ -84,9 +84,9 @@ function IntroScreen({ onStart }) {
         <div className="w-16 h-16 rounded-2xl bg-brand-900 border border-brand-500/30 flex items-center justify-center mx-auto mb-4">
           <BookOpen size={32} className="text-brand-400" />
         </div>
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           B1 English Level Check
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed max-w-sm mx-auto">
           15 questions covering vocabulary, grammar and reading comprehension —
           the same skills tested in an official B1 SELT (Secure English Language Test).

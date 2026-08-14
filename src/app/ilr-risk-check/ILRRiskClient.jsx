@@ -445,9 +445,9 @@ export default function ILRRiskClient() {
           <ShieldAlert size={18} className="text-brand-400" />
           <span className="text-xs text-ink-muted font-medium uppercase tracking-wider">Immigration Tool</span>
         </div>
-        <h1 className="text-2xl font-display font-bold text-ink mb-2">
+        <h2 className="text-2xl font-display font-bold text-ink mb-2">
           ILR Refusal Risk Checker
-        </h1>
+        </h2>
         <p className="text-ink-muted text-sm leading-relaxed">
           Answer all 9 questions about your ILR situation. Results update as you answer — see
           which areas need attention before you apply.
