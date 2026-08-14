@@ -65,6 +65,9 @@ export const metadata = {
   verification: {
     // Add Google Search Console verification token after launch:
     // google: 'YOUR_VERIFICATION_TOKEN',
+    other: {
+      'msvalidate.01': 'c6137c47675f4c49a6db8183a507268d', // Bing Webmaster Tools
+    },
   },
 }
 
