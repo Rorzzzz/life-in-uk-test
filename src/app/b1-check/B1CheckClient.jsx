@@ -365,6 +365,28 @@ function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, 
           </motion.button>
         )}
       </AnimatePresence>
+
+      {/* Retention footer — subtle, always visible during quiz */}
+      <div className="mt-8 pt-5 border-t border-border">
+        <p className="text-xs text-ink-faint text-center mb-3">Also on PassTheUKTest</p>
+        <div className="flex flex-wrap justify-center gap-2">
+          {[
+            { href: '/practice', emoji: '📝', label: 'Practice questions' },
+            { href: '/exam',     emoji: '⏱️', label: 'Mock exam' },
+            { href: '/cheat-sheet', emoji: '📄', label: 'Cheat sheet' },
+            { href: '/faq',     emoji: '❓', label: 'Test FAQ' },
+          ].map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-raised border border-border text-xs text-ink-muted hover:text-ink hover:border-brand-400 transition-colors"
+            >
+              <span>{link.emoji}</span>
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </motion.div>
   )
 }
