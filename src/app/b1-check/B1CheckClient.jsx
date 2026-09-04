@@ -21,24 +21,24 @@ const QUIZ_META = [
     label: 'Quiz 1',
     focus: 'Core vocabulary · Present perfect · Modals',
     badge: 'Start here',
-    badgeStyle: 'bg-brand-900 text-brand-400 border-brand-500/30',
-    numStyle: 'bg-brand-900 border-brand-500/30 text-brand-400',
+    badgeStyle: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+    numStyle: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
   },
   {
     number: 2,
     label: 'Quiz 2',
     focus: 'Immigration vocab · Passive voice · Conditionals',
     badge: 'Citizenship focus',
-    badgeStyle: 'bg-success/10 text-success border-success/30',
-    numStyle: 'bg-success/10 border-success/30 text-success',
+    badgeStyle: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+    numStyle: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
   },
   {
     number: 3,
     label: 'Quiz 3',
     focus: 'Naturalisation terms · 2026 rule changes',
     badge: '2026 updates',
-    badgeStyle: 'bg-amber-400/10 text-amber-400 border-amber-400/30',
-    numStyle: 'bg-amber-400/10 border-amber-400/30 text-amber-400',
+    badgeStyle: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+    numStyle: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
   },
   {
     number: 4,
@@ -52,9 +52,9 @@ const QUIZ_META = [
 
 // ─── Section colour map ────────────────────────────────────────────────────────
 const SECTION_COLOURS = {
-  Vocabulary: 'bg-brand-900 text-brand-400 border-brand-500/30',
-  Grammar:    'bg-amber-400/10 text-amber-400 border-amber-400/30',
-  Reading:    'bg-success/10 text-success border-success/30',
+  Vocabulary: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+  Grammar:    'bg-amber-500/10 text-amber-400 border-amber-500/30',
+  Reading:    'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
 }
 
 // ─── Score band ────────────────────────────────────────────────────────────────
@@ -63,20 +63,20 @@ function getBand(score, total) {
   if (pct >= 0.87) return {
     label: 'Strong B1 level',
     sub:   'You are likely ready to book an official test.',
-    colour: 'text-success',
-    bg:    'bg-success/10 border-success/30',
+    colour: 'text-emerald-400',
+    bg:    'bg-emerald-500/10 border-emerald-500/30',
   }
   if (pct >= 0.67) return {
     label: 'Almost there',
     sub:   'A little more practice before booking is recommended.',
     colour: 'text-amber-400',
-    bg:    'bg-amber-400/10 border-amber-400/30',
+    bg:    'bg-amber-500/10 border-amber-500/30',
   }
   return {
     label: 'Keep practising',
     sub:   'More preparation will help before you book.',
-    colour: 'text-danger',
-    bg:    'bg-danger/10 border-danger/30',
+    colour: 'text-red-400',
+    bg:    'bg-red-500/10 border-red-500/30',
   }
 }
 
@@ -221,9 +221,9 @@ function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, 
 
           let optionStyle = 'border-border bg-raised text-ink hover:border-brand-400'
           if (revealed) {
-            if (isCorrect)             optionStyle = 'border-success bg-success/10 text-success'
-            else if (isSelected)       optionStyle = 'border-danger  bg-danger/10  text-danger'
-            else                       optionStyle = 'border-border  bg-raised     text-ink-muted opacity-50'
+            if (isCorrect)             optionStyle = 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
+            else if (isSelected)       optionStyle = 'border-red-500    bg-red-500/10    text-red-400'
+            else                       optionStyle = 'border-border     bg-raised        text-ink-muted opacity-50'
           } else if (isSelected) {
             optionStyle = 'border-brand-500 bg-brand-900 text-brand-400'
           }
@@ -245,15 +245,15 @@ function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, 
               <div className="flex items-center gap-3">
                 <span className={clsx(
                   'w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono font-bold flex-shrink-0 border',
-                  revealed && isCorrect ? 'bg-success border-success text-[#0d0f1a]' : '',
-                  revealed && isSelected && !isCorrect ? 'bg-danger border-danger text-white' : '',
+                  revealed && isCorrect ? 'bg-emerald-500 border-emerald-500 text-white' : '',
+                  revealed && isSelected && !isCorrect ? 'bg-red-500 border-red-500 text-white' : '',
                   (!revealed || (!isCorrect && !isSelected)) ? 'bg-raised border-border' : '',
                 )}>
                   {String.fromCharCode(65 + i)}
                 </span>
                 <span className="text-sm leading-snug">{opt}</span>
-                {revealed && isCorrect  && <CheckCircle2 size={16} className="text-success ml-auto flex-shrink-0" />}
-                {revealed && isSelected && !isCorrect && <XCircle size={16} className="text-danger ml-auto flex-shrink-0" />}
+                {revealed && isCorrect  && <CheckCircle2 size={16} className="text-emerald-400 ml-auto flex-shrink-0" />}
+                {revealed && isSelected && !isCorrect && <XCircle size={16} className="text-red-400 ml-auto flex-shrink-0" />}
               </div>
             </button>
           )
@@ -274,8 +274,8 @@ function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, 
             <div className={clsx(
               'p-4 rounded-xl border text-sm leading-relaxed',
               selectedAnswer === question.answer
-                ? 'bg-success/10 border-success/30 text-success'
-                : 'bg-danger/10  border-danger/30  text-danger'
+                ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                : 'bg-red-500/10    border-red-500/30    text-red-400'
             )}>
               <p className="font-semibold mb-1">
                 {selectedAnswer === question.answer ? 'Correct!' : 'Not quite.'}
