@@ -7,12 +7,12 @@ import ShareButton from '@/components/ui/ShareButton'
 export async function generateMetadata() {
   return {
     title: 'B1 English Level Check — Free Practice Test for UK Citizenship 2026',
-    description: 'Free B1 English level check for UK citizenship applications. 15 questions covering listening and speaking topics — find out if you meet the B1 requirement. No sign-up.',
+    description: 'Free B1 English level check for ILR and UK citizenship. 15 questions, instant results. Also try our 4 full B1 practice tests — 60 questions total. No sign-up needed.',
     alternates: { canonical: 'https://passtheuktest.co.uk/b1-check' },
     keywords: ['b1 english test practice free', 'b1 english level check', 'free b1 english test online', 'trinity gese grade 5 practice test', 'ielts life skills b1 practice test', 'languagecert b1 practice test', 'b1 english test for uk citizenship', 'b1 english requirement for ilr'],
     openGraph: {
       title: 'B1 English Level Check — Free Practice Test for UK Citizenship 2026',
-      description: 'Free B1 English level check for UK citizenship applications. 15 questions covering listening and speaking topics — find out if you meet the B1 requirement. No sign-up.',
+      description: 'Free B1 English level check for ILR and UK citizenship. 15 questions, instant results. Also try our 4 full B1 practice tests — 60 questions total. No sign-up needed.',
       url: 'https://passtheuktest.co.uk/b1-check',
       type: 'website',
     },
