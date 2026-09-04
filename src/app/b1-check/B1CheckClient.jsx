@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
 import {
-  BookOpen,
   CheckCircle2,
   XCircle,
   RotateCcw,
@@ -13,9 +12,43 @@ import {
   AlertTriangle,
   ExternalLink,
 } from 'lucide-react'
-import { B1_QUESTIONS } from '@/data/b1Questions'
+import { B1_PRACTICE_TESTS } from '@/data/b1Questions'
 
-const TOTAL = B1_QUESTIONS.length
+// ─── Quiz metadata ─────────────────────────────────────────────────────────────
+const QUIZ_META = [
+  {
+    number: 1,
+    label: 'Quiz 1',
+    focus: 'Core vocabulary · Present perfect · Modals',
+    badge: 'Start here',
+    badgeStyle: 'bg-brand-900 text-brand-400 border-brand-500/30',
+    numStyle: 'bg-brand-900 border-brand-500/30 text-brand-400',
+  },
+  {
+    number: 2,
+    label: 'Quiz 2',
+    focus: 'Immigration vocab · Passive voice · Conditionals',
+    badge: 'Citizenship focus',
+    badgeStyle: 'bg-success/10 text-success border-success/30',
+    numStyle: 'bg-success/10 border-success/30 text-success',
+  },
+  {
+    number: 3,
+    label: 'Quiz 3',
+    focus: 'Naturalisation terms · 2026 rule changes',
+    badge: '2026 updates',
+    badgeStyle: 'bg-amber-400/10 text-amber-400 border-amber-400/30',
+    numStyle: 'bg-amber-400/10 border-amber-400/30 text-amber-400',
+  },
+  {
+    number: 4,
+    label: 'Quiz 4',
+    focus: 'Advanced grammar · Third conditional · Indirect questions',
+    badge: 'Advanced',
+    badgeStyle: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
+    numStyle: 'bg-purple-500/10 border-purple-500/30 text-purple-400',
+  },
+]
 
 // ─── Section colour map ────────────────────────────────────────────────────────
 const SECTION_COLOURS = {
@@ -24,32 +57,30 @@ const SECTION_COLOURS = {
   Reading:    'bg-success/10 text-success border-success/30',
 }
 
-// ─── Score band helper ─────────────────────────────────────────────────────────
-function getBand(score) {
-  if (score >= 13) return {
-    label:   'Strong B1 level',
-    sub:     'You are likely ready to book an official test.',
-    colour:  'text-success',
-    bg:      'bg-success/10 border-success/30',
-    icon:    'strong',
+// ─── Score band ────────────────────────────────────────────────────────────────
+function getBand(score, total) {
+  const pct = score / total
+  if (pct >= 0.87) return {
+    label: 'Strong B1 level',
+    sub:   'You are likely ready to book an official test.',
+    colour: 'text-success',
+    bg:    'bg-success/10 border-success/30',
   }
-  if (score >= 10) return {
-    label:   'Almost there',
-    sub:     'A little more practice before booking is recommended.',
-    colour:  'text-amber-400',
-    bg:      'bg-amber-400/10 border-amber-400/30',
-    icon:    'almost',
+  if (pct >= 0.67) return {
+    label: 'Almost there',
+    sub:   'A little more practice before booking is recommended.',
+    colour: 'text-amber-400',
+    bg:    'bg-amber-400/10 border-amber-400/30',
   }
   return {
-    label:   'Keep practising',
-    sub:     'More preparation will help before you book.',
-    colour:  'text-danger',
-    bg:      'bg-danger/10 border-danger/30',
-    icon:    'keep',
+    label: 'Keep practising',
+    sub:   'More preparation will help before you book.',
+    colour: 'text-danger',
+    bg:    'bg-danger/10 border-danger/30',
   }
 }
 
-// ─── Progress bar (inline, no import needed) ───────────────────────────────────
+// ─── Progress bar ──────────────────────────────────────────────────────────────
 function QuizProgressBar({ current, total }) {
   const pct = ((current / total) * 100).toFixed(1)
   return (
@@ -70,67 +101,80 @@ function QuizProgressBar({ current, total }) {
   )
 }
 
-// ─── Intro screen ──────────────────────────────────────────────────────────────
-function IntroScreen({ onStart }) {
+// ─── Select screen ─────────────────────────────────────────────────────────────
+function SelectScreen({ onSelect }) {
   return (
     <motion.div
-      key="intro"
+      key="select"
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.25 }}
     >
       <div className="text-center mb-6">
-        <div className="w-16 h-16 rounded-2xl bg-brand-900 border border-brand-500/30 flex items-center justify-center mx-auto mb-4">
-          <BookOpen size={32} className="text-brand-400" />
-        </div>
         <h2 className="text-2xl font-display font-bold text-ink mb-2">
           B1 English Level Check
         </h2>
         <p className="text-ink-muted text-sm leading-relaxed max-w-sm mx-auto">
-          15 questions covering vocabulary, grammar and reading comprehension —
-          the same skills tested in an official B1 SELT (Secure English Language Test).
+          Four free quizzes — 15 questions each. Choose one to start. Each covers different
+          vocabulary, grammar and reading skills tested in official B1 SELTs.
         </p>
       </div>
 
-      <div className="bg-card rounded-2xl border border-border p-5 mb-5 space-y-3">
-        <div className="flex items-start gap-3 text-sm">
-          <span className="w-6 h-6 rounded-full bg-brand-900 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 font-mono font-bold mt-0.5">5</span>
-          <p className="text-ink-muted">Vocabulary questions — words you need to understand for immigration</p>
-        </div>
-        <div className="flex items-start gap-3 text-sm">
-          <span className="w-6 h-6 rounded-full bg-amber-400/10 text-amber-400 text-xs flex items-center justify-center flex-shrink-0 font-mono font-bold mt-0.5">5</span>
-          <p className="text-ink-muted">Grammar questions — tenses, modal verbs, determiners</p>
-        </div>
-        <div className="flex items-start gap-3 text-sm">
-          <span className="w-6 h-6 rounded-full bg-success/10 text-success text-xs flex items-center justify-center flex-shrink-0 font-mono font-bold mt-0.5">5</span>
-          <p className="text-ink-muted">Reading questions — short passages about the UK test and visa process</p>
-        </div>
+      <div className="space-y-3 mb-5">
+        {QUIZ_META.map(quiz => (
+          <button
+            key={quiz.number}
+            type="button"
+            onClick={() => onSelect(quiz.number)}
+            className="w-full text-left bg-card border border-border hover:border-brand-400 active:opacity-70 rounded-2xl p-4 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+          >
+            <div className="flex items-center gap-4">
+              {/* Number circle */}
+              <div className={clsx(
+                'w-12 h-12 rounded-xl border flex items-center justify-center flex-shrink-0 font-display font-bold text-xl',
+                quiz.numStyle
+              )}>
+                {quiz.number}
+              </div>
+
+              {/* Text */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap mb-0.5">
+                  <span className="text-base font-semibold text-ink group-hover:text-brand-400 transition-colors">
+                    {quiz.label}
+                  </span>
+                  <span className={clsx('text-xs font-medium px-2 py-0.5 rounded-full border', quiz.badgeStyle)}>
+                    {quiz.badge}
+                  </span>
+                </div>
+                <p className="text-sm text-ink-muted">{quiz.focus}</p>
+              </div>
+
+              {/* Arrow */}
+              <ArrowRight size={18} className="text-ink-muted group-hover:text-brand-400 transition-colors flex-shrink-0" />
+            </div>
+          </button>
+        ))}
       </div>
 
-      <div className="bg-amber-400/10 border border-amber-400/30 rounded-xl p-4 mb-5 flex items-start gap-3">
+      <div className="bg-amber-400/10 border border-amber-400/30 rounded-xl p-4 flex items-start gap-3">
         <AlertTriangle size={18} className="text-amber-400 flex-shrink-0 mt-0.5" />
         <p className="text-xs text-ink-muted leading-relaxed">
           <span className="font-semibold text-amber-400">Practice tool only.</span>{' '}
-          This quiz is not an official B1 test and cannot be used for visa applications.
-          You must book a test with an approved UKVI provider.
+          These quizzes cannot be used for visa applications.
+          You must book with an approved UKVI provider.
         </p>
       </div>
-
-      <button
-        onClick={onStart}
-        className="w-full py-4 rounded-2xl bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white font-semibold text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-      >
-        Start the quiz
-      </button>
     </motion.div>
   )
 }
 
 // ─── Question screen ───────────────────────────────────────────────────────────
-function QuestionScreen({ question, questionIndex, onAnswer, selectedAnswer, revealed, onNext }) {
+function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, selectedAnswer, revealed, onNext }) {
   const isReading     = question.section === 'Reading'
   const sectionColour = SECTION_COLOURS[question.section] ?? 'bg-raised text-ink-muted border-border'
+  const meta          = QUIZ_META.find(m => m.number === quizNumber)
 
   return (
     <motion.div
@@ -141,16 +185,20 @@ function QuestionScreen({ question, questionIndex, onAnswer, selectedAnswer, rev
       transition={{ duration: 0.22 }}
     >
       {/* Section badge + progress */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-1">
         <span className={clsx('text-xs font-semibold px-2.5 py-1 rounded-full border', sectionColour)}>
           {question.section}
         </span>
-        <span className="text-xs font-mono text-ink-muted">
-          {questionIndex + 1} / {TOTAL}
+        <span className="text-xs text-ink-muted">
+          <span className="font-semibold text-ink">{meta?.label}</span>
+          {' · '}
+          <span className="font-mono">{questionIndex + 1}/{total}</span>
         </span>
       </div>
 
-      <QuizProgressBar current={questionIndex + 1} total={TOTAL} />
+      <div className="mb-3">
+        <QuizProgressBar current={questionIndex + 1} total={total} />
+      </div>
 
       {/* Reading passage */}
       {isReading && question.passage && (
@@ -197,7 +245,7 @@ function QuestionScreen({ question, questionIndex, onAnswer, selectedAnswer, rev
               <div className="flex items-center gap-3">
                 <span className={clsx(
                   'w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono font-bold flex-shrink-0 border',
-                  revealed && isCorrect  ? 'bg-success  border-success  text-[#0d0f1a]' : '',
+                  revealed && isCorrect ? 'bg-success border-success text-[#0d0f1a]' : '',
                   revealed && isSelected && !isCorrect ? 'bg-danger border-danger text-white' : '',
                   (!revealed || (!isCorrect && !isSelected)) ? 'bg-raised border-border' : '',
                 )}>
@@ -238,7 +286,7 @@ function QuestionScreen({ question, questionIndex, onAnswer, selectedAnswer, rev
         )}
       </AnimatePresence>
 
-      {/* Next button — only shown after answering */}
+      {/* Next button */}
       <AnimatePresence>
         {revealed && (
           <motion.button
@@ -250,7 +298,7 @@ function QuestionScreen({ question, questionIndex, onAnswer, selectedAnswer, rev
             onClick={onNext}
             className="w-full py-4 rounded-2xl bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white font-semibold text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 flex items-center justify-center gap-2"
           >
-            {questionIndex + 1 < TOTAL ? (
+            {questionIndex + 1 < total ? (
               <>Next question <ArrowRight size={18} /></>
             ) : (
               <>See my results <ArrowRight size={18} /></>
@@ -263,8 +311,9 @@ function QuestionScreen({ question, questionIndex, onAnswer, selectedAnswer, rev
 }
 
 // ─── Results screen ────────────────────────────────────────────────────────────
-function ResultsScreen({ score, onRetry }) {
-  const band = getBand(score)
+function ResultsScreen({ score, total, quizNumber, onRetry, onChooseQuiz }) {
+  const band        = getBand(score, total)
+  const otherQuizzes = QUIZ_META.filter(m => m.number !== quizNumber)
 
   return (
     <motion.div
@@ -277,7 +326,7 @@ function ResultsScreen({ score, onRetry }) {
       {/* Score banner */}
       <div className={clsx('rounded-2xl border p-6 text-center mb-5', band.bg)}>
         <p className="text-5xl font-display font-bold text-ink mb-1">
-          {score}<span className="text-2xl text-ink-muted">/{TOTAL}</span>
+          {score}<span className="text-2xl text-ink-muted">/{total}</span>
         </p>
         <p className={clsx('text-lg font-semibold mt-2', band.colour)}>{band.label}</p>
         <p className="text-ink-muted text-sm mt-1">{band.sub}</p>
@@ -287,10 +336,38 @@ function ResultsScreen({ score, onRetry }) {
       <div className="bg-amber-400/10 border border-amber-400/30 rounded-xl p-4 mb-5 flex items-start gap-3">
         <AlertTriangle size={18} className="text-amber-400 flex-shrink-0 mt-0.5" />
         <p className="text-xs text-ink-muted leading-relaxed">
-          <span className="font-semibold text-amber-400">Important disclaimer:</span>{' '}
-          This quiz is a practice tool only. It is not an official B1 test and cannot be
-          used for visa applications. You must book a test with an approved UKVI provider.
+          <span className="font-semibold text-amber-400">Practice tool only.</span>{' '}
+          This quiz cannot be used for visa applications. You must book with an approved UKVI provider.
         </p>
+      </div>
+
+      {/* Try other quizzes */}
+      <div className="bg-card rounded-2xl border border-border p-5 mb-5">
+        <h2 className="text-sm font-semibold text-ink mb-3">Check out the other quizzes</h2>
+        <div className="space-y-2">
+          {otherQuizzes.map(quiz => (
+            <button
+              key={quiz.number}
+              type="button"
+              onClick={() => onChooseQuiz(quiz.number)}
+              className="w-full text-left flex items-center gap-3 p-3 rounded-xl border border-border bg-raised hover:border-brand-400 transition-colors group min-h-[44px]"
+            >
+              <div className={clsx(
+                'w-8 h-8 rounded-lg border flex items-center justify-center flex-shrink-0 text-sm font-bold font-mono',
+                quiz.numStyle
+              )}>
+                {quiz.number}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-ink group-hover:text-brand-400 transition-colors">
+                  {quiz.label}
+                </p>
+                <p className="text-xs text-ink-muted truncate">{quiz.focus}</p>
+              </div>
+              <ArrowRight size={14} className="text-ink-muted group-hover:text-brand-400 transition-colors flex-shrink-0" />
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Approved providers */}
@@ -307,10 +384,7 @@ function ResultsScreen({ score, onRetry }) {
               href={provider.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={clsx(
-                'flex items-center justify-between gap-3 p-3 rounded-xl border border-border',
-                'bg-raised hover:border-brand-400 transition-colors group min-h-[44px]'
-              )}
+              className="flex items-center justify-between gap-3 p-3 rounded-xl border border-border bg-raised hover:border-brand-400 transition-colors group min-h-[44px]"
             >
               <div>
                 <p className="text-sm font-medium text-ink group-hover:text-brand-400 transition-colors">
@@ -324,61 +398,48 @@ function ResultsScreen({ score, onRetry }) {
         </div>
       </div>
 
-      {/* Related links */}
-      <div className="bg-card rounded-2xl border border-border p-5 mb-5">
-        <h2 className="text-sm font-semibold text-ink mb-3">Related guides</h2>
-        <div className="space-y-2">
-          {[
-            { href: '/articles/do-i-need-a-b1-english-test-for-ilr', label: 'Do I need a B1 English test for ILR?' },
-            { href: '/practice',                                       label: 'Practice the Life in the UK test' },
-          ].map(item => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={clsx(
-                'flex items-center justify-between gap-3 p-3 rounded-xl border border-border',
-                'bg-raised hover:border-brand-400 transition-colors group min-h-[44px]'
-              )}
-            >
-              <span className="text-sm text-ink group-hover:text-brand-400 transition-colors">
-                {item.label}
-              </span>
-              <ArrowRight size={16} className="text-ink-muted flex-shrink-0 group-hover:text-brand-400 transition-colors" />
-            </Link>
-          ))}
-        </div>
+      {/* Retry / change quiz */}
+      <div className="space-y-3">
+        <button
+          type="button"
+          onClick={onRetry}
+          className="w-full py-4 rounded-2xl border border-border bg-raised hover:border-brand-400 active:opacity-70 text-ink font-semibold text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 flex items-center justify-center gap-2"
+        >
+          <RotateCcw size={18} />
+          Retry Quiz {quizNumber}
+        </button>
+        <button
+          type="button"
+          onClick={() => onChooseQuiz(null)}
+          className="w-full py-3 rounded-2xl text-ink-muted hover:text-ink text-sm transition-colors"
+        >
+          ← Back to quiz selection
+        </button>
       </div>
-
-      {/* Retry */}
-      <button
-        type="button"
-        onClick={onRetry}
-        className="w-full py-4 rounded-2xl border border-border bg-raised hover:border-brand-400 active:opacity-70 text-ink font-semibold text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 flex items-center justify-center gap-2"
-      >
-        <RotateCcw size={18} />
-        Try again
-      </button>
     </motion.div>
   )
 }
 
 // ─── Root component ────────────────────────────────────────────────────────────
 export default function B1CheckClient() {
-  // screen: 'intro' | 'quiz' | 'results'
-  const [screen,          setScreen]          = useState('intro')
-  const [questionIndex,   setQuestionIndex]   = useState(0)
-  const [selectedAnswer,  setSelectedAnswer]  = useState(null)
-  const [revealed,        setRevealed]        = useState(false)
-  const [score,           setScore]           = useState(0)
+  const [screen,         setScreen]         = useState('select')
+  const [quizNumber,     setQuizNumber]     = useState(null)
+  const [questionIndex,  setQuestionIndex]  = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [revealed,       setRevealed]       = useState(false)
+  const [score,          setScore]          = useState(0)
 
-  const question = B1_QUESTIONS[questionIndex]
+  const questions = quizNumber ? B1_PRACTICE_TESTS[quizNumber] : []
+  const total     = questions.length
+  const question  = questions[questionIndex]
 
-  function handleStart() {
-    setScreen('quiz')
+  function startQuiz(num) {
+    setQuizNumber(num)
     setQuestionIndex(0)
     setSelectedAnswer(null)
     setRevealed(false)
     setScore(0)
+    setScreen('quiz')
   }
 
   function handleAnswer(optionIndex) {
@@ -392,7 +453,7 @@ export default function B1CheckClient() {
 
   function handleNext() {
     const next = questionIndex + 1
-    if (next >= TOTAL) {
+    if (next >= total) {
       setScreen('results')
     } else {
       setQuestionIndex(next)
@@ -402,21 +463,33 @@ export default function B1CheckClient() {
   }
 
   function handleRetry() {
-    setScreen('intro')
+    startQuiz(quizNumber)
+  }
+
+  function handleChooseQuiz(num) {
+    if (num === null) {
+      // Back to selection screen
+      setScreen('select')
+      setQuizNumber(null)
+    } else {
+      startQuiz(num)
+    }
   }
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
       <AnimatePresence mode="wait">
-        {screen === 'intro' && (
-          <IntroScreen key="intro" onStart={handleStart} />
+        {screen === 'select' && (
+          <SelectScreen key="select" onSelect={startQuiz} />
         )}
 
         {screen === 'quiz' && question && (
           <QuestionScreen
-            key={`question-${questionIndex}`}
+            key={`question-${quizNumber}-${questionIndex}`}
             question={question}
             questionIndex={questionIndex}
+            total={total}
+            quizNumber={quizNumber}
             onAnswer={handleAnswer}
             selectedAnswer={selectedAnswer}
             revealed={revealed}
@@ -425,7 +498,14 @@ export default function B1CheckClient() {
         )}
 
         {screen === 'results' && (
-          <ResultsScreen key="results" score={score} onRetry={handleRetry} />
+          <ResultsScreen
+            key="results"
+            score={score}
+            total={total}
+            quizNumber={quizNumber}
+            onRetry={handleRetry}
+            onChooseQuiz={handleChooseQuiz}
+          />
         )}
       </AnimatePresence>
     </div>

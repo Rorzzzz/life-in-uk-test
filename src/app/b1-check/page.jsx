@@ -93,42 +93,9 @@ function B1CheckIntro() {
   )
 }
 
-function B1PracticeTestsBlock() {
-  const tests = [
-    { number: 1, label: 'Test 1', desc: 'Core vocab · Present perfect · Modals' },
-    { number: 2, label: 'Test 2', desc: 'Immigration vocab · Passive voice · Conditionals' },
-    { number: 3, label: 'Test 3', desc: 'Naturalisation terms · 2026 rule changes' },
-    { number: 4, label: 'Test 4', desc: 'Advanced grammar · Third conditional' },
-  ]
-  return (
-    <div className="bg-brand/5 border border-brand/20 rounded-2xl p-5 mb-6">
-      <h2 className="text-base font-display font-bold text-ink mb-1">
-        Want more B1 practice? Try all 4 free tests
-      </h2>
-      <p className="text-sm text-ink-muted mb-4">
-        60 questions total — vocabulary, grammar and reading with audio.
-      </p>
-      <div className="grid grid-cols-2 gap-2">
-        {tests.map(t => (
-          <Link
-            key={t.number}
-            href={`/b1-practice/${t.number}`}
-            className="flex flex-col gap-0.5 bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand/30 rounded-xl p-3 transition-all"
-          >
-            <span className="text-sm font-semibold text-ink">{t.label}</span>
-            <span className="text-xs text-ink-muted leading-snug">{t.desc}</span>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 function B1CheckContent() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
-
-      <B1PracticeTestsBlock />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Why do you need a B1 English test for ILR?
