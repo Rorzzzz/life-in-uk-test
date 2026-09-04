@@ -503,7 +503,7 @@ function ResultsScreen({ score, total, quizNumber, onRetry, onChooseQuiz }) {
 }
 
 // ─── Root component ────────────────────────────────────────────────────────────
-export default function B1CheckClient() {
+export default function B1CheckClient({ header, footer }) {
   const [screen,         setScreen]         = useState('select')
   const [quizNumber,     setQuizNumber]     = useState(null)
   const [questionIndex,  setQuestionIndex]  = useState(0)
@@ -571,8 +571,11 @@ export default function B1CheckClient() {
 
   return (
     <div>
-      {/* Scroll anchor — sits just above the quiz, below the page header */}
-      <div ref={topRef} style={{ scrollMarginTop: '80px' }} />
+      {/* Header + footer only shown on the select screen */}
+      {screen === 'select' && header}
+
+      {/* Scroll anchor — sits just above the quiz */}
+      <div ref={topRef} style={{ scrollMarginTop: '64px' }} />
 
       <AnimatePresence mode="wait">
         {screen === 'select' && (
@@ -607,6 +610,9 @@ export default function B1CheckClient() {
           />
         )}
       </AnimatePresence>
+
+      {/* Footer (RelatedTools) only shown on the select screen */}
+      {screen === 'select' && footer}
     </div>
   )
 }
