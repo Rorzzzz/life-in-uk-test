@@ -13,18 +13,20 @@ export const metadata = {
     title: 'Life in the UK Mock Test — 60 Free Practice Exams 2026',
     description: 'Take a free Life in the UK mock test — 60 full-length exams, 767 questions, instant results. No sign-up. Matches the real 2026 exam exactly.',
     url: 'https://passtheuktest.co.uk/mock-test',
+    type: 'website',
   },
-  keywords: ['life in the uk mock test', 'life in the uk mock test 2026', 'free life in the uk mock test', 'life in the uk practice test', 'free life in the uk practice test', 'life in the uk mock exam', 'life in the uk test 2026', 'free life in the uk test'],
+  twitter: { card: 'summary_large_image' },
+  keywords: ['life in the uk mock test', 'life in the uk mock test 2026', 'free life in the uk mock test', 'life in the uk mock exam', 'life in the uk mock test free', 'life in uk mock test', 'mock test life in the uk'],
 }
 
 const FAQS = [
-  { q: 'How many free Life in the UK mock tests are there?', a: 'There are 60 full-length practice exams, each with 24 questions drawn from our bank of 767 unique questions. Every one is completely free with no sign-up required.' },
+  { q: 'How many free Life in the UK mock tests are there?', a: 'There are 60 full-length mock tests, each with 24 questions drawn from our bank of 767 unique questions. Every one is completely free with no sign-up required.' },
   { q: 'How similar is this to the real Life in the UK exam?', a: 'Each one mirrors the real exam format exactly — 24 questions, 45 minutes, pass mark of 18/24 (75%). Questions are drawn from all five handbook chapters in the same proportions as the official test.' },
-  { q: 'How many mock tests should I do before the real Life in the UK test?', a: 'Most people who pass first time complete at least 5 full practice exams scoring above 20/24 consistently. If you are scoring 22 or more on every attempt, you are ready to book.' },
+  { q: 'How many mock tests should I do before the real Life in the UK test?', a: 'Most people who pass first time complete at least 5 full mock tests scoring above 20/24 consistently. If you are scoring 22 or more on every attempt, you are ready to book.' },
   { q: 'What is the pass mark for the Life in the UK test?', a: 'You need to answer 18 out of 24 questions correctly — that is 75%. You have 45 minutes to complete it.' },
-  { q: 'Is this Life in the UK test practice completely free?', a: 'Yes — all 60 tests and practice exams are completely free. No sign-up, no paywall, no premium tier. Every one on this site is free forever.' },
-  { q: 'Which Life in the UK practice test should I start with?', a: 'Start with Test 1 and work through them in order. By test 10 you will have a clear picture of which topics need more revision. Use the cheat sheet alongside your revision.' },
-  { q: 'Is this a mock test or a practice test?', a: 'Both — a mock test and a practice test are the same thing here. Each of our 60 free practice tests is a full mock exam: 24 questions, 45 minutes and the 75% pass mark, exactly like the real Life in the UK test.' },
+  { q: 'Is this Life in the UK mock test completely free?', a: 'Yes — all 60 mock tests are completely free. No sign-up, no paywall, no premium tier. Every one on this site is free forever.' },
+  { q: 'Which Life in the UK mock test should I start with?', a: 'Start with Mock Test 1 and work through them in order. By test 10 you will have a clear picture of which topics need more revision. Use the cheat sheet alongside your revision.' },
+  { q: 'Can I use these mock tests on mobile?', a: 'Yes — all 60 mock tests are fully optimised for mobile. The 45-minute timer, question layout and results screen all work on any device. Most people who take the real test book it after practising on their phone.' },
 ]
 
 const quizSchema = {
@@ -87,7 +89,7 @@ export default function MockTestIndexPage() {
             60 free mock tests · 767 questions · real exam conditions · no sign-up
           </p>
           <p className="text-sm md:text-base text-ink-muted leading-relaxed mb-4">
-            Take a free Life in the UK mock test — or call it a Life in the UK practice test, they&apos;re the same thing here — with no sign-up, no paywall, ever. Each of our 60 practice exams matches the real 2026 British citizenship test exactly: 24 multiple-choice questions, a 45-minute timer, and the same 75% pass mark. Every question is drawn from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong — so every attempt doubles as a revision session. Start with Test 1 below, or jump straight to whichever one you need.
+            Take a free Life in the UK mock test under full exam conditions — no sign-up, no paywall, ever. Each of our {MOCK_TEST_COUNT} mock tests matches the real 2026 citizenship exam exactly: 24 multiple-choice questions, a 45-minute countdown timer, and the same 75% pass mark. Every question is drawn from the official <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition) handbook, with a full explanation shown the moment you answer — right or wrong. Start with Mock Test 1 below, or jump straight to whichever one you need.
           </p>
           <div className="flex items-center gap-3 mb-5">
             <Link
@@ -102,7 +104,7 @@ export default function MockTestIndexPage() {
               text="60 free Life in the UK mock tests — pass first time with no sign-up needed! 🎯"
             />
           </div>
-          <p className="text-xs text-ink-muted">Want to revise by chapter first? <Link href="/practice" className="text-brand-400 hover:text-brand-300">Practice questions by topic →</Link></p>
+          <p className="text-xs text-ink-muted">Want to prepare gradually? Try our <Link href="/practice-test" className="text-brand-400 hover:text-brand-300">practice tests →</Link> or revise <Link href="/practice" className="text-brand-400 hover:text-brand-300">by chapter →</Link></p>
         </div>
 
         {/* Stats bar */}
@@ -238,7 +240,7 @@ export default function MockTestIndexPage() {
             When I was revising for my own test, every free mock I could find had the same flaw: the questions were pulled at random, so one test would be half history and the next would barely touch it. That is not how the real exam works — the chapter split is fixed, and Chapter 3 alone is around 40% of it. Practising on random tests gave me a score that meant nothing.
           </p>
           <p className="text-sm md:text-base text-ink-muted leading-relaxed">
-            So I built these 45 the way I wished mine had been: each one weighted to the real exam&apos;s chapter split, fixed so you can retake the exact same test and see if a weak topic has actually improved, and every question explained the moment you answer. It is the tool I needed and could not find — free, with no sign-up, because a citizenship test should not sit behind a paywall. <Link href="/about" className="text-brand-400 hover:text-brand-300">More about why I made this →</Link>
+            So I built these {MOCK_TEST_COUNT} mock tests the way I wished mine had been: each one weighted to the real exam&apos;s chapter split, fixed so you can retake the exact same test and see if a weak topic has actually improved, and every question explained the moment you answer. It is the tool I needed and could not find — free, with no sign-up, because a citizenship test should not sit behind a paywall. <Link href="/about" className="text-brand-400 hover:text-brand-300">More about why I made this →</Link>
           </p>
         </div>
 
@@ -274,8 +276,8 @@ export default function MockTestIndexPage() {
           <Link href="/faq" className="flex-1 py-3 bg-raised rounded-xl text-brand-400 hover:text-brand-300 active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
             FAQ
           </Link>
-          <Link href="/practice" className="flex-1 py-3 bg-raised rounded-xl text-brand-400 hover:text-brand-300 active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
-            Practice
+          <Link href="/practice-test" className="flex-1 py-3 bg-raised rounded-xl text-brand-400 hover:text-brand-300 active:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+            Practice Tests
           </Link>
         </div>
 

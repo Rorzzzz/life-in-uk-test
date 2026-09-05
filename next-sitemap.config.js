@@ -33,7 +33,9 @@ module.exports = {
       '/practice':  { priority: 0.9, changefreq: 'weekly' },
       '/questions': { priority: 0.9, changefreq: 'weekly' },
       '/tools':     { priority: 0.9, changefreq: 'weekly' },
-      '/mock-test': { priority: 0.9, changefreq: 'weekly' },
+      '/mock-test':                { priority: 0.9, changefreq: 'weekly' },
+      '/practice-test':           { priority: 0.9, changefreq: 'weekly' },
+      '/british-citizenship-test': { priority: 0.9, changefreq: 'weekly' },
       '/study':     { priority: 0.8, changefreq: 'monthly' },
       '/exam/info': { priority: 0.7, changefreq: 'monthly' },
     }
