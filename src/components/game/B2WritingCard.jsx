@@ -138,7 +138,7 @@ export default function B2WritingCard({ task, onNext, isLast }) {
               className="px-4 py-2 bg-brand-500 hover:bg-brand-600 active:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-xl transition-colors flex items-center gap-2"
             >
               {loading && <Loader2 size={14} className="animate-spin" />}
-              {loading ? 'Analysing...' : 'Get AI feedback →'}
+              {loading ? 'Analysing...' : 'Get feedback →'}
             </button>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function B2WritingCard({ task, onNext, isLast }) {
         </div>
       )}
 
-      {/* AI Feedback */}
+      {/* Feedback */}
       {(feedback || loading) && (
         <div ref={feedbackRef} className="bg-card rounded-2xl border border-border p-5">
           <div className="flex items-center gap-2 mb-4">
@@ -172,7 +172,7 @@ export default function B2WritingCard({ task, onNext, isLast }) {
               : <CheckCircle size={14} className="text-success" />
             }
             <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide">
-              {loading ? 'AI examiner is reviewing...' : 'AI Examiner Feedback'}
+              {loading ? 'Reviewing your response...' : 'Examiner Feedback'}
             </p>
           </div>
           <div className="text-sm text-ink-muted leading-relaxed whitespace-pre-line">

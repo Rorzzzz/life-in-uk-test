@@ -57,7 +57,7 @@ export default function B2WritingClient() {
         <div className="bg-card rounded-2xl p-6 text-center mb-6">
           <div className="text-3xl mb-2">✍️</div>
           <h2 className="text-xl font-display font-bold text-ink mb-1">Session complete</h2>
-          <p className="text-sm text-ink-muted mb-6">Review the AI feedback and model answers above before your next session.</p>
+          <p className="text-sm text-ink-muted mb-6">Review the feedback and model answers above before your next session.</p>
           <div className="flex flex-col gap-3">
             <button
               onClick={() => startNew(activeFilter)}
@@ -95,9 +95,9 @@ export default function B2WritingClient() {
     return (
       <div className="max-w-2xl mx-auto px-4 py-6">
         <h1 className="text-2xl font-display font-bold text-ink mb-1">B2 Writing Practice</h1>
-        <p className="text-ink-muted mb-2">Write your response — get instant AI examiner feedback.</p>
+        <p className="text-ink-muted mb-2">Write your response — get instant examiner feedback.</p>
         <p className="text-sm text-ink-muted mb-6">
-          Powered by Claude AI. Feedback covers task achievement, vocabulary, grammar and band score.
+          Feedback covers task achievement, vocabulary, grammar and band score.
         </p>
 
         <div className="bg-card rounded-2xl p-5 mb-5">
@@ -139,10 +139,10 @@ export default function B2WritingClient() {
         </div>
 
         <div className="bg-card rounded-2xl p-4 mb-5">
-          <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-2">How AI feedback works</p>
+          <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-2">How feedback works</p>
           <ul className="text-sm text-ink-muted space-y-1.5">
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Write your response in the text box</li>
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Hit &ldquo;Get AI feedback&rdquo; — results appear in ~3 seconds</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Hit &ldquo;Get feedback&rdquo; — results appear in ~3 seconds</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Feedback covers task achievement, vocabulary, grammar, estimated band</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Compare with the model Band 7 answer</li>
           </ul>
