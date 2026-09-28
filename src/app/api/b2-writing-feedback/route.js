@@ -21,10 +21,15 @@ Your feedback must follow this exact format with these exact headings:
 **Estimated Band**
 [Single number like: Band 6 — then one sentence explaining why]
 
+**B2 Verdict**
+[Write exactly one of these two lines:
+PASS — Band 5.5 or above meets the B2 requirement for UK settlement.
+FAIL — Band [X] is below the 5.5 threshold required for UK settlement.]
+
 **The One Thing to Improve**
 [One specific, actionable instruction. Not generic advice like "practise more". Tell them exactly what to change.]
 
-Keep the total response under 250 words. Be direct. Write like an examiner who respects the candidate's time.`
+Keep the total response under 280 words. Be direct. Write like an examiner who respects the candidate's time.`
 
 export async function POST(request) {
   try {

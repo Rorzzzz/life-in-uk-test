@@ -10,16 +10,33 @@ function wordCount(text) {
   return text.trim() ? text.trim().split(/\s+/).length : 0
 }
 
-// Render markdown bold (**text**) in feedback
 function FeedbackText({ text }) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/)
+  const lines = text.split('\n')
   return (
     <>
-      {parts.map((part, i) =>
-        part.startsWith('**') && part.endsWith('**')
-          ? <strong key={i} className="text-ink font-semibold">{part.slice(2, -2)}</strong>
-          : <span key={i}>{part}</span>
-      )}
+      {lines.map((line, li) => {
+        const isPass = /^PASS\s*—/.test(line.trim())
+        const isFail = /^FAIL\s*—/.test(line.trim())
+        if (isPass || isFail) {
+          return (
+            <div key={li} className={`flex items-center gap-2 my-3 px-4 py-3 rounded-xl font-semibold text-sm ${isPass ? 'bg-success/15 text-success' : 'bg-danger/15 text-danger'}`}>
+              <span className="text-lg">{isPass ? '✓' : '✗'}</span>
+              {line.trim()}
+            </div>
+          )
+        }
+        const parts = line.split(/(\*\*[^*]+\*\*)/)
+        return (
+          <span key={li}>
+            {parts.map((part, i) =>
+              part.startsWith('**') && part.endsWith('**')
+                ? <strong key={i} className="text-ink font-semibold">{part.slice(2, -2)}</strong>
+                : <span key={i}>{part}</span>
+            )}
+            {'\n'}
+          </span>
+        )
+      })}
     </>
   )
 }
