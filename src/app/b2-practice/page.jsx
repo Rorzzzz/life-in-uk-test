@@ -58,10 +58,10 @@ const SECTIONS = [
   {
     href: '/b2-practice/speaking',
     title: 'Speaking',
-    description: 'Parts 1, 2 and 3 prompts with sample answers and vocabulary tips',
+    description: 'Record your answer to Part 1, 2 and 3 questions — get instant examiner feedback with band score',
     colour: '#ff4d6d',
-    status: 'coming-soon',
-    count: 'Coming soon',
+    status: 'available',
+    count: '30 prompts',
   },
 ]
 
