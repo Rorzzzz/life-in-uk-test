@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { ChevronDown, ChevronUp, Loader2, CheckCircle } from 'lucide-react'
+import { ChevronDown, ChevronUp, Loader2 } from 'lucide-react'
 import clsx from 'clsx'
 
 const WORD_TARGETS = { 1: 150, 2: 250 }
@@ -167,10 +167,7 @@ export default function B2WritingCard({ task, onNext, isLast }) {
       {(feedback || loading) && (
         <div ref={feedbackRef} className="bg-card rounded-2xl border border-border p-5">
           <div className="flex items-center gap-2 mb-4">
-            {loading
-              ? <Loader2 size={14} className="animate-spin text-brand-400" />
-              : <CheckCircle size={14} className="text-success" />
-            }
+            {loading && <Loader2 size={14} className="animate-spin text-brand-400" />}
             <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide">
               {loading ? 'Reviewing your response...' : 'Examiner Feedback'}
             </p>
