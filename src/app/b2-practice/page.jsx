@@ -2,12 +2,12 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'B2 English Practice Free — 529 IELTS Questions for UK Visa 2026',
-  description: 'Free B2 English practice for UK settlement. 529 questions covering vocabulary, grammar, reading and writing — aligned to IELTS General Training format.',
+  title: 'B2 English Practice Free — IELTS Questions & AI Writing Feedback 2026',
+  description: 'Free B2 English practice for UK settlement. 529 questions + AI writing feedback — vocabulary, grammar, reading, writing. Aligned to IELTS General Training.',
   alternates: { canonical: 'https://passtheuktest.co.uk/b2-practice' },
   openGraph: {
-    title: 'B2 English Practice Free — 529 IELTS Questions for UK Visa 2026',
-    description: 'Free B2 English practice for UK settlement. 529 questions aligned to IELTS General Training.',
+    title: 'B2 English Practice Free — IELTS Questions & AI Writing Feedback 2026',
+    description: 'Free B2 English practice for UK settlement. 529 questions + AI writing feedback aligned to IELTS General Training.',
     url: 'https://passtheuktest.co.uk/b2-practice',
     type: 'website',
   },
@@ -50,10 +50,10 @@ const SECTIONS = [
   {
     href: '/b2-practice/writing',
     title: 'Writing',
-    description: 'Task 1 (formal letter) and Task 2 (essay) prompts with model answers',
+    description: 'Task 1 letters and Task 2 essays — write your response, get instant AI examiner feedback',
     colour: '#f59e0b',
-    status: 'coming-soon',
-    count: 'Coming soon',
+    status: 'available',
+    count: '30 prompts',
   },
   {
     href: '/b2-practice/speaking',
