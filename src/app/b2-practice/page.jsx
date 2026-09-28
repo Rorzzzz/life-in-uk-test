@@ -34,10 +34,10 @@ const SECTIONS = [
   {
     href: '/b2-practice/listening',
     title: 'Listening',
-    description: 'Audio passages with comprehension questions — 4 sections, everyday and academic contexts',
+    description: 'Listen to audio clips and answer comprehension questions — all 4 IELTS sections covered',
     colour: '#22d07a',
-    status: 'coming-soon',
-    count: 'Coming soon',
+    status: 'available',
+    count: '15 clips · 60 questions',
   },
   {
     href: '/b2-practice/reading',
