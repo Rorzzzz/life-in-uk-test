@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import QuestionCard from '@/components/game/QuestionCard'
+import B2ResultScreen from '@/components/game/B2ResultScreen'
 import { B2_VOCAB_QUESTIONS, B2_VOCAB_CATEGORIES } from '@/data/b2Vocabulary'
 
 const SESSION_SIZE = 20
@@ -28,13 +29,18 @@ export default function B2VocabClient() {
   const [session, setSession]               = useState(() => buildSession('all'))
   const [index, setIndex]                   = useState(0)
   const [correct, setCorrect]               = useState(0)
+  const [wrongQuestions, setWrongQuestions] = useState([])
   const [done, setDone]                     = useState(false)
   const [started, setStarted]               = useState(false)
 
   const current = session[index]
 
-  function handleAnswer(isCorrect) {
-    if (isCorrect) setCorrect(c => c + 1)
+  function handleAnswer(isCorrect, selectedIndex) {
+    if (isCorrect) {
+      setCorrect(c => c + 1)
+    } else {
+      setWrongQuestions(prev => [...prev, { ...session[index], selectedIndex }])
+    }
   }
 
   function handleNext() {
@@ -51,47 +57,21 @@ export default function B2VocabClient() {
     setSession(buildSession(cat))
     setIndex(0)
     setCorrect(0)
+    setWrongQuestions([])
     setDone(false)
     setStarted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const pct = Math.round((correct / session.length) * 100)
-
   if (done) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
-        <div className="bg-card rounded-2xl p-6 text-center mb-6">
-          <div className="text-4xl font-display font-bold text-ink mb-1">{correct}/{session.length}</div>
-          <div className="text-ink-muted mb-4">{pct}% correct</div>
-          <div className={`inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6 ${pct >= 75 ? 'bg-success/10 text-success' : pct >= 50 ? 'bg-xp/10 text-xp' : 'bg-danger/10 text-danger'}`}>
-            {pct >= 75 ? 'B2 Ready' : pct >= 50 ? 'Keep Practising' : 'Needs Work'}
-          </div>
-          <div className="flex flex-col gap-3">
-            <button
-              onClick={() => startNew(activeCategory)}
-              className="w-full py-3 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white font-semibold rounded-xl transition-colors"
-            >
-              New session →
-            </button>
-            <Link
-              href="/b2-practice"
-              className="w-full py-3 bg-raised border border-border hover:border-brand-500/40 text-ink-muted hover:text-ink rounded-xl text-sm font-medium transition-colors text-center"
-            >
-              ← B2 Practice hub
-            </Link>
-          </div>
-        </div>
-
-        <div className="bg-card rounded-2xl p-4">
-          <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Also practise</p>
-          <div className="flex flex-wrap gap-2">
-            <Link href="/b2-practice/grammar" className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors">B2 Grammar</Link>
-            <Link href="/practice" className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors">Life in the UK Test</Link>
-            <Link href="/mock-test" className="px-3 py-1.5 text-sm bg-raised border border-border rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/40 transition-colors">Mock Test</Link>
-          </div>
-        </div>
-      </div>
+      <B2ResultScreen
+        score={correct}
+        total={session.length}
+        wrongQuestions={wrongQuestions}
+        onRetry={() => startNew(activeCategory)}
+        onChangeCategory={() => { setDone(false); setStarted(false) }}
+      />
     )
   }
 
@@ -99,7 +79,7 @@ export default function B2VocabClient() {
     return (
       <div className="max-w-2xl mx-auto px-4 py-6">
         <h1 className="text-2xl font-display font-bold text-ink mb-1">B2 Vocabulary Practice</h1>
-        <p className="text-ink-muted mb-6">300 IELTS-style questions. Choose a category or mix all.</p>
+        <p className="text-ink-muted mb-6">240 IELTS-style questions. Choose a category or mix all.</p>
 
         <div className="bg-card rounded-2xl p-5 mb-5">
           <p className="font-semibold text-ink mb-3">Choose a category</p>
@@ -138,7 +118,6 @@ export default function B2VocabClient() {
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-2">What this tests</p>
           <ul className="text-sm text-ink-muted space-y-1.5">
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Words in context — choose the right word for a sentence</li>
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Word formation — prefixes, suffixes, noun/verb forms</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Collocations — natural word pairs used in IELTS</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Phrasal verbs — common verbs + particle combinations</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Academic vocabulary — formal word choices for writing/reading</li>
