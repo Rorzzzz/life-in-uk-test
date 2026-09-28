@@ -2,12 +2,12 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'B2 English Practice Free — 500 IELTS Questions for UK Visa 2026',
-  description: 'Free B2 English practice for UK settlement. 500 questions covering vocabulary, grammar, reading and writing — aligned to IELTS General Training format.',
+  title: 'B2 English Practice Free — 440 IELTS Questions for UK Visa 2026',
+  description: 'Free B2 English practice for UK settlement. 440 questions covering vocabulary, grammar, reading and writing — aligned to IELTS General Training format.',
   alternates: { canonical: 'https://passtheuktest.co.uk/b2-practice' },
   openGraph: {
-    title: 'B2 English Practice Free — 500 IELTS Questions for UK Visa 2026',
-    description: 'Free B2 English practice for UK settlement. 500 questions aligned to IELTS General Training.',
+    title: 'B2 English Practice Free — 440 IELTS Questions for UK Visa 2026',
+    description: 'Free B2 English practice for UK settlement. 440 questions aligned to IELTS General Training.',
     url: 'https://passtheuktest.co.uk/b2-practice',
     type: 'website',
   },
@@ -18,10 +18,10 @@ const SECTIONS = [
   {
     href: '/b2-practice/vocabulary',
     title: 'Vocabulary',
-    description: '300 questions — words in context, word formation, collocations, phrasal verbs, academic vocabulary',
+    description: '240 questions — words in context, collocations, phrasal verbs, academic vocabulary',
     colour: '#3381ff',
     status: 'available',
-    count: '300 questions',
+    count: '240 questions',
   },
   {
     href: '/b2-practice/grammar',
@@ -110,7 +110,7 @@ export default function B2PracticeHub() {
       <div className="max-w-2xl mx-auto px-4 py-6">
         <h1 className="text-2xl font-display font-bold text-ink mb-1">B2 English Practice — Free</h1>
         <p className="text-ink-muted mb-2">
-          500 free questions aligned to IELTS General Training format — the most common B2 test for UK settlement.
+          440 free questions aligned to IELTS General Training format — the most common B2 test for UK settlement.
         </p>
         <p className="text-sm text-ink-muted mb-6">
           From 26 March 2027, most ILR applications require B2 (up from B1).{' '}
