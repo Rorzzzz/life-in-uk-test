@@ -12,16 +12,16 @@ const TOTAL_MCQ = 20
 const TIME_SECONDS = 25 * 60
 
 const SECTION_INFO = {
-  listening:  { label: 'Listening',  colour: '#22d07a', questions: 4 },
   reading:    { label: 'Reading',    colour: '#06b6d4', questions: 4 },
   vocabulary: { label: 'Vocabulary', colour: '#3381ff', questions: 6 },
   grammar:    { label: 'Grammar',    colour: '#a855f7', questions: 6 },
+  listening:  { label: 'Listening',  colour: '#22d07a', questions: 4 },
   writing:    { label: 'Writing',    colour: '#f59e0b', questions: null },
   speaking:   { label: 'Speaking',   colour: '#ff4d6d', questions: null },
 }
 
-const MCQ_ORDER = ['listening', 'reading', 'vocabulary', 'grammar']
-const ALL_ORDER = ['listening', 'reading', 'vocabulary', 'grammar', 'writing', 'speaking']
+const MCQ_ORDER = ['reading', 'vocabulary', 'grammar', 'listening']
+const ALL_ORDER = ['reading', 'vocabulary', 'grammar', 'listening', 'writing', 'speaking']
 const MCQ_SIZES = { listening: 4, reading: 4, vocabulary: 6, grammar: 6 }
 
 function formatTime(s) {
@@ -353,7 +353,7 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
 
   function startTest() {
     setPhase('test')
-    setSection('listening')
+    setSection('reading')
     setStepIndex(0)
     setScore(0)
     setTimeLeft(TIME_SECONDS)
