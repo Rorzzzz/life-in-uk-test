@@ -52,7 +52,7 @@ export default function B2ListeningClient() {
     setTotal(s.length)
     setDone(false)
     setStarted(true)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo(0, 0); document.body.scrollTop = 0; document.documentElement.scrollTop = 0
   }
 
   function handleAnswer(isCorrect, selectedIndex) {
@@ -75,7 +75,7 @@ export default function B2ListeningClient() {
       setDone(true)
     } else {
       setStepIndex(i => i + 1)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo(0, 0); document.body.scrollTop = 0; document.documentElement.scrollTop = 0
     }
   }
 

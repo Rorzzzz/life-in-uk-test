@@ -57,7 +57,7 @@ export default function B2ReadingClient() {
     setWrongQuestions([])
     setDone(false)
     setStarted(true)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo(0, 0); document.body.scrollTop = 0; document.documentElement.scrollTop = 0
   }
 
   function handleAnswer(isCorrect, selectedIndex) {
