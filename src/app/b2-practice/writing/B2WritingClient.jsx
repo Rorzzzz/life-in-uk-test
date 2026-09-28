@@ -177,6 +177,7 @@ export default function B2WritingClient() {
       </div>
 
       <B2WritingCard
+        key={currentTask.id}
         task={currentTask}
         onNext={handleNext}
         isLast={taskIndex + 1 >= session.length}
