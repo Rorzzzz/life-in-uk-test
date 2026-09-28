@@ -762,5 +762,195 @@ export const B2_READING_PASSAGES = [
       }
     ],
     tags: ["environment","technology","society","section3"],
-  }
+  },
+
+  {
+    id: 16,
+    section: 1,
+    title: "Westbridge Public Library — Services and Opening Hours",
+    passage: "Westbridge Public Library offers a wide range of services to all residents of the borough. Membership is free and available to anyone who lives, works, or studies in Westbridge. Members may borrow up to six books, four DVDs, and two audiobooks at one time. The standard loan period is three weeks, with one renewal permitted if the item has not been reserved by another member.\n\nThe library also provides free internet access on twelve desktop computers. Sessions are limited to one hour per person per day. Printing costs 10p per black-and-white page and 25p per colour page.\n\nStudy rooms can be booked in advance at the front desk or online. Rooms hold between two and six people and are available for a maximum of two hours per booking. Bookings must be cancelled at least 24 hours in advance or a charge of £5 will apply.\n\nOpening hours: Monday to Friday 9am–7pm, Saturday 9am–5pm, Sunday 11am–4pm. The library is closed on all bank holidays.",
+    questions: [
+      {
+        id: 1,
+        q: "How many books can a library member borrow at one time?",
+        options: ["4", "6", "8", "10"],
+        answer: 1,
+        explanation: "The passage states members may borrow \"up to six books\" at one time.",
+      },
+      {
+        id: 2,
+        q: "What happens if a member does not cancel a study room booking at least 24 hours in advance?",
+        options: ["The booking is automatically moved", "The member is banned from future bookings", "A £5 charge applies", "The room is given to another user"],
+        answer: 2,
+        explanation: "The passage states that bookings must be cancelled at least 24 hours in advance \"or a charge of £5 will apply\".",
+      },
+      {
+        id: 3,
+        q: "What is the maximum number of people a study room can hold?",
+        options: ["2", "4", "6", "8"],
+        answer: 2,
+        explanation: "The passage says study rooms \"hold between two and six people\".",
+      },
+      {
+        id: 4,
+        q: "What are the library's opening hours on Sundays?",
+        options: ["9am–5pm", "10am–4pm", "11am–4pm", "Closed"],
+        answer: 2,
+        explanation: "The passage states Sunday hours are \"11am–4pm\".",
+      },
+    ],
+    tags: ["section1", "everyday-text", "community", "services"],
+  },
+
+  {
+    id: 17,
+    section: 2,
+    title: "Holloway & Sons — Health and Safety at Work Policy",
+    passage: "All employees at Holloway & Sons are required to follow the company health and safety policy at all times. This document outlines the key responsibilities of both the employer and individual members of staff.\n\nEMPLOYER RESPONSIBILITIES: The company will provide all necessary personal protective equipment (PPE) free of charge. Risk assessments will be carried out before any new task or process is introduced. Emergency exits will be kept clear at all times and fire drills will take place twice per year.\n\nEMPLOYEE RESPONSIBILITIES: Employees must wear PPE at all times in designated areas. Any accident, near-miss, or unsafe condition must be reported to the line manager immediately using the incident report form available in the office. Employees must not operate machinery without completing the required training, which is available on the company intranet.\n\nFailure to comply with this policy may result in disciplinary action. Employees with safety concerns should contact the designated Health and Safety Representative, whose details are posted on the staff noticeboard.",
+    questions: [
+      {
+        id: 1,
+        q: "Who pays for personal protective equipment at Holloway & Sons?",
+        options: ["The employee", "The employer", "The Health and Safety Representative", "It is shared equally"],
+        answer: 1,
+        explanation: "The policy states the company \"will provide all necessary personal protective equipment (PPE) free of charge\", meaning the employer pays.",
+      },
+      {
+        id: 2,
+        q: "How often do fire drills take place?",
+        options: ["Once a year", "Twice a year", "Every quarter", "Once a month"],
+        answer: 1,
+        explanation: "The policy states fire drills \"will take place twice per year\".",
+      },
+      {
+        id: 3,
+        q: "Where can employees find the incident report form?",
+        options: ["On the company intranet", "In the office", "On the staff noticeboard", "With the line manager"],
+        answer: 1,
+        explanation: "The policy states the incident report form is \"available in the office\".",
+      },
+      {
+        id: 4,
+        q: "What must employees complete before operating machinery?",
+        options: ["A written risk assessment", "A health check", "Required training available on the intranet", "A trial period supervised by a manager"],
+        answer: 2,
+        explanation: "The policy states employees \"must not operate machinery without completing the required training, which is available on the company intranet\".",
+      },
+    ],
+    tags: ["section2", "workplace", "health-safety", "policy"],
+  },
+
+  {
+    id: 18,
+    section: 3,
+    title: "The Rise of Urban Allotments",
+    passage: "In cities across the United Kingdom, the number of people growing their own food has increased significantly over the past decade. Urban allotments — small plots of land rented to individuals for personal cultivation — have seen waiting lists grow to record lengths, with some local councils reporting waits of up to seven years.\n\nThe reasons for this renewed interest are varied. For many, the motivation is economic: growing vegetables reduces the weekly shopping bill, particularly as food prices have risen sharply. Others cite environmental concerns, preferring to reduce the food miles associated with supermarket produce. A third group is drawn by the social dimension — allotments have long been spaces where neighbours meet and communities form.\n\nResearch published by the University of East London suggests that regular allotment holders report lower levels of stress and higher overall wellbeing than non-gardeners, a finding attributed both to physical activity and to the psychological benefits of working with nature.\n\nDespite this popularity, councils face practical challenges. Urban land is expensive and scarce, and the cost of maintaining allotment sites is rising. Some authorities have considered charging higher rents, though campaigners argue this would price out lower-income families — the very group that benefits most from affordable access to fresh food.",
+    questions: [
+      {
+        id: 1,
+        q: "According to the article, what is the maximum waiting time for an allotment reported by some councils?",
+        options: ["Two years", "Four years", "Five years", "Seven years"],
+        answer: 3,
+        explanation: "The passage states some councils are reporting \"waits of up to seven years\".",
+      },
+      {
+        id: 2,
+        q: "Which university published research on allotment holders' wellbeing?",
+        options: ["University of London", "University of East London", "University of Manchester", "University of Bristol"],
+        answer: 1,
+        explanation: "The passage specifically names \"the University of East London\" as the publisher of the wellbeing research.",
+      },
+      {
+        id: 3,
+        q: "What practical challenge do councils face regarding allotments?",
+        options: ["Lack of interest from residents", "Difficulty finding qualified gardeners", "Urban land is expensive and scarce", "Government restrictions on new sites"],
+        answer: 2,
+        explanation: "The passage states councils face challenges because \"urban land is expensive and scarce, and the cost of maintaining allotment sites is rising\".",
+      },
+      {
+        id: 4,
+        q: "What do campaigners argue would happen if councils raised allotment rents?",
+        options: ["Allotment quality would improve", "Lower-income families would be priced out", "Waiting lists would shorten", "Councils would face legal challenges"],
+        answer: 1,
+        explanation: "Campaigners argue higher rents \"would price out lower-income families — the very group that benefits most from affordable access to fresh food\".",
+      },
+    ],
+    tags: ["section3", "society", "environment", "community"],
+  },
+
+  {
+    id: 19,
+    section: 1,
+    title: "Kirkdale Community Centre — Autumn Classes 2024",
+    passage: "KIRKDALE COMMUNITY CENTRE — AUTUMN PROGRAMME 2024\n\nAll classes run Monday 7 October to Friday 13 December. Enrolment opens online from 1 September and in person from 9 September at the main reception.\n\nYOGA (Beginner) — Tuesdays 10am–11am. £4 per session or £40 for the block. Suitable for all abilities. Mats can be hired for £1.\n\nDIGITAL SKILLS — Wednesdays 2pm–4pm. Free to residents aged 60 and over. Laptop required. Topics: email, video calls, and online banking.\n\nART & CRAFT — Thursdays 6pm–8pm. £6 per session, all materials included. No experience necessary.\n\nFIRST AID — Saturday 19 October, 9am–5pm. One-day course. £25 per person. Certificate awarded on completion. Maximum 12 participants.\n\nBooking: All classes can be booked online at kirkdale.gov.uk or by calling 01622 445500. A non-refundable deposit of £5 is required to secure a place on paid classes.",
+    questions: [
+      {
+        id: 1,
+        q: "When does in-person enrolment open at the community centre?",
+        options: ["1 September", "7 September", "9 September", "7 October"],
+        answer: 2,
+        explanation: "The notice states that in-person enrolment opens \"from 9 September at the main reception\".",
+      },
+      {
+        id: 2,
+        q: "Who is the Digital Skills class free for?",
+        options: ["All residents", "Students in full-time education", "Residents aged 60 and over", "Residents on benefits"],
+        answer: 2,
+        explanation: "The notice states Digital Skills is \"Free to residents aged 60 and over\".",
+      },
+      {
+        id: 3,
+        q: "What is included in the Art & Craft class fee?",
+        options: ["A certificate of attendance", "All materials", "A laptop loan", "Refreshments"],
+        answer: 1,
+        explanation: "The notice states the Art & Craft fee of £6 per session has \"all materials included\".",
+      },
+      {
+        id: 4,
+        q: "What is the maximum number of participants for the First Aid course?",
+        options: ["6", "8", "10", "12"],
+        answer: 3,
+        explanation: "The notice states \"Maximum 12 participants\" for the First Aid course.",
+      },
+    ],
+    tags: ["section1", "everyday-text", "community", "classes"],
+  },
+
+  {
+    id: 20,
+    section: 2,
+    title: "Meridian Group — Flexible Working Policy",
+    passage: "The Meridian Group is committed to supporting flexible working arrangements for all employees who have completed a minimum of six months' continuous service.\n\nTYPES OF FLEXIBLE WORKING: Employees may apply for: (a) changes to working hours, including compressed hours or part-time arrangements; (b) changes to working patterns, such as flexitime; (c) changes to working location, including hybrid or fully remote working.\n\nHOW TO APPLY: Requests must be submitted in writing to the line manager and copied to Human Resources. Applications should include the proposed arrangement, the reasons for the request, and the employee's assessment of the impact on the team. The company will respond within 28 days of receiving a written request.\n\nGROUNDS FOR REFUSAL: The company may decline a request if it would result in a significant burden of additional costs, an inability to meet customer demand, or a negative impact on the quality of service. The decision will be explained in writing.\n\nEmployees may make one formal flexible working request in any 12-month period. Any agreed changes form a permanent variation to the contract unless stated otherwise.",
+    questions: [
+      {
+        id: 1,
+        q: "How long must an employee have worked at the company before applying for flexible working?",
+        options: ["Three months", "Six months", "One year", "Two years"],
+        answer: 1,
+        explanation: "The policy states flexible working applies to employees \"who have completed a minimum of six months' continuous service\".",
+      },
+      {
+        id: 2,
+        q: "Who must receive a copy of the flexible working application?",
+        options: ["The CEO", "The Health and Safety Representative", "Human Resources", "The company's legal team"],
+        answer: 2,
+        explanation: "The policy states requests must be submitted to the line manager \"and copied to Human Resources\".",
+      },
+      {
+        id: 3,
+        q: "Within how many days will the company respond to a flexible working request?",
+        options: ["14 days", "21 days", "28 days", "42 days"],
+        answer: 2,
+        explanation: "The policy states the company will respond \"within 28 days of receiving a written request\".",
+      },
+      {
+        id: 4,
+        q: "How many formal flexible working requests can an employee make in a 12-month period?",
+        options: ["One", "Two", "Three", "As many as needed"],
+        answer: 0,
+        explanation: "The policy states employees may make \"one formal flexible working request in any 12-month period\".",
+      },
+    ],
+    tags: ["section2", "workplace", "policy", "flexible-working"],
+  },
 ]

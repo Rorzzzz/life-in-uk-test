@@ -660,4 +660,222 @@ Regarding memory, sleep plays an active role in consolidation. Subjects tested o
     ],
     tags: ['section-4', 'academic-lecture', 'science', 'health'],
   },
+
+  // ─── SECTION 1 (continued) ───────────────────────────────────────────────
+
+  {
+    id: 16,
+    section: 1,
+    title: 'Phone enquiry about a language course',
+    audioScript: `A: Hello, I'd like to enrol on your intermediate Spanish course. Do you have spaces?
+B: Yes, the Tuesday evening class runs for eight weeks starting the third of October.
+A: How much does it cost?
+B: One hundred and twenty pounds for the full course. There's a twenty percent discount if you pay in full before the start date.
+A: What do I need to bring?
+B: Just a notebook — we provide all materials. Classes are in Room Seven on the ground floor.
+A: Can I pay by card over the phone?
+B: Yes, I can take your details now.`,
+    questions: [
+      {
+        id: 1,
+        q: 'When does the Tuesday evening Spanish course start?',
+        options: ['Third of September', 'Third of October', 'Third of November', 'Third of December'],
+        answer: 1,
+        explanation: 'The receptionist states the course starts "the third of October".',
+      },
+      {
+        id: 2,
+        q: 'How much is the discount for paying in full before the start date?',
+        options: ['10%', '15%', '20%', '25%'],
+        answer: 2,
+        explanation: 'The receptionist says there is "a twenty percent discount if you pay in full before the start date".',
+      },
+      {
+        id: 3,
+        q: 'What do students need to bring to the class?',
+        options: ['A textbook', 'A notebook', 'A dictionary', 'Their own materials'],
+        answer: 1,
+        explanation: 'The receptionist says "Just a notebook — we provide all materials".',
+      },
+      {
+        id: 4,
+        q: 'Where are the classes held?',
+        options: ['Room 4 on the first floor', 'Room 7 on the ground floor', 'Room 7 on the first floor', 'Room 4 on the ground floor'],
+        answer: 1,
+        explanation: 'The receptionist states classes are in "Room Seven on the ground floor".',
+      },
+    ],
+    tags: ['section-1', 'everyday-conversation', 'education', 'booking'],
+  },
+
+  {
+    id: 17,
+    section: 1,
+    title: 'Enquiry about a second-hand car',
+    audioScript: `A: I'm calling about the car you listed online. Is it still available?
+B: Yes, the Ford Focus. It's a twenty nineteen model with sixty thousand miles on it.
+A: What colour is it?
+B: Silver. It has a full service history and passed its MOT last month.
+A: Is the price negotiable? You listed it at six thousand five hundred.
+B: I could go to six thousand if you can collect this weekend.
+A: That works. Does it have parking sensors?
+B: Yes, front and rear. The sat nav is built in as well.`,
+    questions: [
+      {
+        id: 1,
+        q: 'What model year is the car?',
+        options: ['2017', '2018', '2019', '2020'],
+        answer: 2,
+        explanation: 'The seller says it is "a twenty nineteen model", meaning 2019.',
+      },
+      {
+        id: 2,
+        q: 'What is the agreed price if the buyer collects this weekend?',
+        options: ['£5,500', '£6,000', '£6,250', '£6,500'],
+        answer: 1,
+        explanation: 'The seller says "I could go to six thousand if you can collect this weekend".',
+      },
+      {
+        id: 3,
+        q: 'What happened to the car last month?',
+        options: ['It had a full service', 'It was resprayed', 'It passed its MOT', 'It had new tyres fitted'],
+        answer: 2,
+        explanation: 'The seller says it "passed its MOT last month".',
+      },
+      {
+        id: 4,
+        q: 'What additional feature does the car have alongside parking sensors?',
+        options: ['A reversing camera', 'Heated seats', 'A built-in sat nav', 'Bluetooth audio'],
+        answer: 2,
+        explanation: 'The seller says "The sat nav is built in as well" in addition to the parking sensors.',
+      },
+    ],
+    tags: ['section-1', 'everyday-conversation', 'shopping', 'negotiation'],
+  },
+
+  // ─── SECTION 2 (continued) ───────────────────────────────────────────────
+
+  {
+    id: 18,
+    section: 2,
+    title: 'Museum tour introduction',
+    audioScript: `Welcome to Ashford Hall. I am your guide for today. The hall was built in seventeen forty and has been open to the public since nineteen eighty-two. Our tour takes approximately ninety minutes and covers the ground and first floors. Photography is permitted in most rooms, but please keep your flash off near the paintings. The tearoom is open until four thirty. At the end of the tour there is a gift shop by the main entrance. If you have any questions during the tour, please do not hesitate to ask. Shall we begin?`,
+    questions: [
+      {
+        id: 1,
+        q: 'When was Ashford Hall built?',
+        options: ['1640', '1740', '1840', '1940'],
+        answer: 1,
+        explanation: 'The guide states the hall "was built in seventeen forty", which is 1740.',
+      },
+      {
+        id: 2,
+        q: 'How long does the tour take?',
+        options: ['60 minutes', '75 minutes', '90 minutes', '120 minutes'],
+        answer: 2,
+        explanation: 'The guide says the tour "takes approximately ninety minutes".',
+      },
+      {
+        id: 3,
+        q: 'What must visitors do when photographing near the paintings?',
+        options: ['Ask permission first', 'Use a phone only', 'Keep their flash off', 'Stay behind the rope'],
+        answer: 2,
+        explanation: 'The guide says "please keep your flash off near the paintings".',
+      },
+      {
+        id: 4,
+        q: 'Where is the gift shop located?',
+        options: ['On the first floor', 'Next to the tearoom', 'By the main entrance', 'In the basement'],
+        answer: 2,
+        explanation: 'The guide says there is "a gift shop by the main entrance".',
+      },
+    ],
+    tags: ['section-2', 'monologue', 'culture', 'tourism'],
+  },
+
+  // ─── SECTION 3 (continued) ───────────────────────────────────────────────
+
+  {
+    id: 19,
+    section: 3,
+    title: 'Students discussing a research project',
+    audioScript: `A: Have you decided on your topic for the research project yet?
+B: I'm thinking about food security in urban areas. There's a lot of data available.
+A: That sounds good. Are you doing a survey or using existing studies?
+B: Both. I want to survey at least fifty local residents and compare the results with the government report from last year.
+A: Will you need extra time for data collection?
+B: Probably two weeks. Professor Shah said we can request a two-week extension if we have a clear data plan.
+A: I might do something similar for my topic on transport costs.`,
+    questions: [
+      {
+        id: 1,
+        q: "What is Student B's research topic?",
+        options: ['Transport costs in cities', 'Food security in urban areas', 'Housing affordability', 'Urban green spaces'],
+        answer: 1,
+        explanation: 'Student B says "I\'m thinking about food security in urban areas".',
+      },
+      {
+        id: 2,
+        q: 'How many local residents does Student B plan to survey?',
+        options: ['At least 30', 'At least 40', 'At least 50', 'At least 60'],
+        answer: 2,
+        explanation: 'Student B says "I want to survey at least fifty local residents".',
+      },
+      {
+        id: 3,
+        q: 'What will Student B compare the survey results with?',
+        options: ['A university study from this year', 'The government report from last year', 'Data from other European cities', 'A local council survey'],
+        answer: 1,
+        explanation: 'Student B plans to "compare the results with the government report from last year".',
+      },
+      {
+        id: 4,
+        q: 'Under what condition can students request a two-week extension?',
+        options: ['If they are unwell', 'If they have supervisor approval', 'If they have a clear data plan', 'If their first draft is submitted on time'],
+        answer: 2,
+        explanation: 'Professor Shah said students can request an extension "if we have a clear data plan".',
+      },
+    ],
+    tags: ['section-3', 'academic-discussion', 'research', 'education'],
+  },
+
+  // ─── SECTION 4 (continued) ───────────────────────────────────────────────
+
+  {
+    id: 20,
+    section: 4,
+    title: 'Lecture on offshore wind energy in the UK',
+    audioScript: `Today I want to look at the growth of offshore wind energy in the UK. Britain currently has more offshore wind capacity than any other country, with over fourteen gigawatts installed as of last year. The government has set a target of fifty gigawatts by twenty thirty, which would power roughly half the country. The main advantages are the stronger and more consistent winds at sea compared to land, and the fact that offshore installations face far less local opposition than onshore wind farms. Construction costs have fallen by around sixty percent in the last decade, making offshore wind increasingly competitive with gas.`,
+    questions: [
+      {
+        id: 1,
+        q: 'How much offshore wind capacity does the UK currently have installed?',
+        options: ['Over 10 gigawatts', 'Over 12 gigawatts', 'Over 14 gigawatts', 'Over 20 gigawatts'],
+        answer: 2,
+        explanation: 'The lecturer states the UK has "over fourteen gigawatts installed as of last year".',
+      },
+      {
+        id: 2,
+        q: "What is the UK government's offshore wind target by 2030?",
+        options: ['25 gigawatts', '30 gigawatts', '40 gigawatts', '50 gigawatts'],
+        answer: 3,
+        explanation: 'The lecturer says the government target is "fifty gigawatts by twenty thirty".',
+      },
+      {
+        id: 3,
+        q: 'What is one advantage of offshore wind over onshore wind?',
+        options: ['It is cheaper to build', 'It faces less local opposition', 'It requires less maintenance', 'It produces more consistent power than solar'],
+        answer: 1,
+        explanation: 'The lecturer states offshore installations "face far less local opposition than onshore wind farms".',
+      },
+      {
+        id: 4,
+        q: 'By approximately how much have construction costs fallen in the last decade?',
+        options: ['30%', '45%', '60%', '75%'],
+        answer: 2,
+        explanation: 'The lecturer says construction costs "have fallen by around sixty percent in the last decade".',
+      },
+    ],
+    tags: ['section-4', 'academic-lecture', 'environment', 'energy'],
+  },
 ]
