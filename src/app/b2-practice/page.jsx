@@ -63,6 +63,14 @@ const SECTIONS = [
     status: 'available',
     count: '30 prompts',
   },
+  {
+    href: '/b2-practice/mock-test',
+    title: 'Mock Tests',
+    description: '10 full mock exams — listening, reading, vocabulary and grammar — 25 min timed, instant results',
+    colour: '#22d07a',
+    status: 'available',
+    count: '10 tests · 20 questions',
+  },
 ]
 
 const FAQS = [
