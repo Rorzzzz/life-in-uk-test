@@ -7,6 +7,8 @@ import { B2_LISTENING_TASKS } from '@/data/b2Listening'
 import { B2_READING_PASSAGES } from '@/data/b2Reading'
 import { B2_VOCAB_QUESTIONS } from '@/data/b2Vocabulary'
 import { B2_GRAMMAR_QUESTIONS } from '@/data/b2Grammar'
+import { B2_WRITING_TASKS } from '@/data/b2Writing'
+import { B2_SPEAKING_TASKS } from '@/data/b2Speaking'
 
 export async function generateStaticParams() {
   return B2_MOCK_TESTS.map(t => ({ number: t.number.toString() }))
@@ -48,8 +50,10 @@ export default function B2MockTestPage({ params }) {
   const readingPassage = B2_READING_PASSAGES.find(p => p.id === testData.readingPassageId)
   const vocabQuestions = testData.vocabIds.map(id => B2_VOCAB_QUESTIONS.find(q => q.id === id)).filter(Boolean)
   const grammarQuestions = testData.grammarIds.map(id => B2_GRAMMAR_QUESTIONS.find(q => q.id === id)).filter(Boolean)
+  const writingTask    = B2_WRITING_TASKS.find(t => t.id === testData.writingTaskId)
+  const speakingTask   = B2_SPEAKING_TASKS.find(t => t.id === testData.speakingTaskId)
 
-  if (!listeningClip || !readingPassage || vocabQuestions.length < 6 || grammarQuestions.length < 6) {
+  if (!listeningClip || !readingPassage || vocabQuestions.length < 6 || grammarQuestions.length < 6 || !writingTask || !speakingTask) {
     return notFound()
   }
 
@@ -82,6 +86,8 @@ export default function B2MockTestPage({ params }) {
         readingPassage={readingPassage}
         vocabQuestions={vocabQuestions}
         grammarQuestions={grammarQuestions}
+        writingTask={writingTask}
+        speakingTask={speakingTask}
       />
 
       <div className="max-w-2xl mx-auto px-4 pb-8">

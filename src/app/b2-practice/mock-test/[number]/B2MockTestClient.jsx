@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Loader2, Play, Volume2 } from 'lucide-react'
+import { Play, Volume2 } from 'lucide-react'
 import clsx from 'clsx'
+import B2WritingCard from '@/components/game/B2WritingCard'
+import B2SpeakingCard from '@/components/game/B2SpeakingCard'
 
 const PASS_MARK = 14
-const TOTAL_Q = 20
+const TOTAL_MCQ = 20
 const TIME_SECONDS = 25 * 60
 
 const SECTION_INFO = {
@@ -14,7 +16,13 @@ const SECTION_INFO = {
   reading:    { label: 'Reading',    colour: '#06b6d4', questions: 4 },
   vocabulary: { label: 'Vocabulary', colour: '#3381ff', questions: 6 },
   grammar:    { label: 'Grammar',    colour: '#a855f7', questions: 6 },
+  writing:    { label: 'Writing',    colour: '#f59e0b', questions: null },
+  speaking:   { label: 'Speaking',   colour: '#ff4d6d', questions: null },
 }
+
+const MCQ_ORDER = ['listening', 'reading', 'vocabulary', 'grammar']
+const ALL_ORDER = ['listening', 'reading', 'vocabulary', 'grammar', 'writing', 'speaking']
+const MCQ_SIZES = { listening: 4, reading: 4, vocabulary: 6, grammar: 6 }
 
 function formatTime(s) {
   const m = Math.floor(s / 60)
@@ -22,22 +30,22 @@ function formatTime(s) {
   return `${m}:${String(sec).padStart(2, '0')}`
 }
 
-// ─── Listening step ─────────────────────────────────────────────────────────
+function scrollTop() {
+  window.scrollTo(0, 0)
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
+}
+
+// ─── Listening step ────────────────────────────────────────────────────────
 
 function ListeningStep({ clip, questionIndex, onAnswer }) {
-  const [phase, setPhase]     = useState('ready')
+  const [phase, setPhase]       = useState('ready')
   const [selected, setSelected] = useState(null)
   const [revealed, setRevealed] = useState(false)
   const q = clip.questions[questionIndex]
 
-  useEffect(() => {
-    return () => window.speechSynthesis?.cancel()
-  }, [])
-
-  useEffect(() => {
-    setSelected(null)
-    setRevealed(false)
-  }, [questionIndex])
+  useEffect(() => { return () => window.speechSynthesis?.cancel() }, [])
+  useEffect(() => { setSelected(null); setRevealed(false) }, [questionIndex])
 
   function playAudio() {
     window.speechSynthesis?.cancel()
@@ -48,12 +56,6 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
     utt.onerror = () => setPhase('questions')
     setPhase('playing')
     window.speechSynthesis.speak(utt)
-  }
-
-  function handleSelect(i) {
-    if (revealed) return
-    setSelected(i)
-    setRevealed(true)
   }
 
   return (
@@ -98,7 +100,7 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
                 else style = 'bg-raised border-border text-ink-muted opacity-40'
               }
               return (
-                <button key={i} onClick={() => handleSelect(i)} disabled={revealed}
+                <button key={i} onClick={() => { if (!revealed) { setSelected(i); setRevealed(true) } }} disabled={revealed}
                   className={clsx('w-full text-left px-4 py-3 rounded-xl border text-sm font-medium transition-colors', style)}>
                   <span className="font-mono text-xs mr-2 opacity-60">{String.fromCharCode(65+i)}</span>{opt}
                 </button>
@@ -131,7 +133,7 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
   )
 }
 
-// ─── Reading step ────────────────────────────────────────────────────────────
+// ─── Reading step ──────────────────────────────────────────────────────────
 
 function ReadingStep({ passage, questionIndex, onAnswer }) {
   const [passageOpen, setPassageOpen] = useState(true)
@@ -199,7 +201,7 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
   )
 }
 
-// ─── MCQ step (vocab/grammar) ─────────────────────────────────────────────
+// ─── MCQ step (vocab / grammar) ────────────────────────────────────────────
 
 function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
   const [selected, setSelected] = useState(null)
@@ -249,11 +251,11 @@ function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
   )
 }
 
-// ─── Results screen ──────────────────────────────────────────────────────────
+// ─── Results screen ────────────────────────────────────────────────────────
 
 function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
   const passed = score >= PASS_MARK
-  const pct = Math.round((score / TOTAL_Q) * 100)
+  const pct = Math.round((score / TOTAL_MCQ) * 100)
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
@@ -262,8 +264,8 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
         <h2 className={clsx('text-2xl font-display font-bold mb-1', passed ? 'text-success' : 'text-danger')}>
           {passed ? 'PASS' : 'FAIL'}
         </h2>
-        <p className="text-3xl font-mono font-bold text-ink mb-1">{score}/{TOTAL_Q}</p>
-        <p className="text-sm text-ink-muted mb-1">{pct}% — pass mark is {Math.round((PASS_MARK/TOTAL_Q)*100)}%</p>
+        <p className="text-3xl font-mono font-bold text-ink mb-1">{score}/{TOTAL_MCQ}</p>
+        <p className="text-sm text-ink-muted mb-1">{pct}% — pass mark is {Math.round((PASS_MARK/TOTAL_MCQ)*100)}%</p>
         <p className="text-xs text-ink-muted">{passed ? 'You meet the B2 threshold for UK settlement.' : `You need ${PASS_MARK - score} more correct to reach B2 level.`}</p>
       </div>
 
@@ -272,7 +274,7 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
         <div className="space-y-3">
           {Object.entries(sectionScores).map(([section, { correct, total }]) => {
             const info = SECTION_INFO[section]
-            const pct = Math.round((correct/total)*100)
+            const sectionPct = Math.round((correct/total)*100)
             return (
               <div key={section}>
                 <div className="flex items-center justify-between mb-1">
@@ -280,11 +282,21 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
                   <span className="text-sm font-mono text-ink-muted">{correct}/{total}</span>
                 </div>
                 <div className="h-2 bg-raised rounded-full overflow-hidden">
-                  <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: info.colour }} />
+                  <div className="h-full rounded-full transition-all" style={{ width: `${sectionPct}%`, backgroundColor: info.colour }} />
                 </div>
               </div>
             )
           })}
+          <div className="pt-2 border-t border-border space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-ink">Writing</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-success/15 text-success font-medium">Completed ✓</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-ink">Speaking</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-success/15 text-success font-medium">Completed ✓</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -318,14 +330,15 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
   )
 }
 
-// ─── Main component ──────────────────────────────────────────────────────────
+// ─── Main component ────────────────────────────────────────────────────────
 
-export default function B2MockTestClient({ testData, listeningClip, readingPassage, vocabQuestions, grammarQuestions }) {
+export default function B2MockTestClient({ testData, listeningClip, readingPassage, vocabQuestions, grammarQuestions, writingTask, speakingTask }) {
   const [phase, setPhase]           = useState('intro')   // intro | test | done
   const [section, setSection]       = useState('listening')
   const [stepIndex, setStepIndex]   = useState(0)
   const [score, setScore]           = useState(0)
   const [timeLeft, setTimeLeft]     = useState(TIME_SECONDS)
+  const [timerActive, setTimerActive] = useState(false)
   const [sectionScores, setSectionScores] = useState({
     listening:  { correct: 0, total: 4 },
     reading:    { correct: 0, total: 4 },
@@ -344,16 +357,18 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
     setStepIndex(0)
     setScore(0)
     setTimeLeft(TIME_SECONDS)
+    setTimerActive(true)
     setSectionScores({ listening: { correct: 0, total: 4 }, reading: { correct: 0, total: 4 }, vocabulary: { correct: 0, total: 6 }, grammar: { correct: 0, total: 6 } })
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
-        if (t <= 1) { clearInterval(timerRef.current); setPhase('done'); return 0 }
+        if (t <= 1) { clearInterval(timerRef.current); setSection('writing'); setStepIndex(0); setTimerActive(false); return 0 }
         return t - 1
       })
     }, 1000)
+    scrollTop()
   }
 
-  function handleAnswer(isCorrect) {
+  function handleMCQAnswer(isCorrect) {
     if (isCorrect) {
       setScore(s => s + 1)
       setSectionScores(prev => ({
@@ -362,27 +377,26 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
       }))
     }
 
-    const sectionSizes = { listening: 4, reading: 4, vocabulary: 6, grammar: 6 }
-    const sectionOrder = ['listening', 'reading', 'vocabulary', 'grammar']
-    const currentSize = sectionSizes[section]
+    const currentSize = MCQ_SIZES[section]
     const nextStep = stepIndex + 1
 
     if (nextStep >= currentSize) {
-      const currentIdx = sectionOrder.indexOf(section)
-      if (currentIdx + 1 >= sectionOrder.length) {
+      const currentIdx = MCQ_ORDER.indexOf(section)
+      if (currentIdx + 1 >= MCQ_ORDER.length) {
+        // MCQ done — stop timer, move to writing
         clearInterval(timerRef.current)
+        setTimerActive(false)
         window.speechSynthesis?.cancel()
-        setPhase('done')
+        setSection('writing')
+        setStepIndex(0)
       } else {
-        setSection(sectionOrder[currentIdx + 1])
+        setSection(MCQ_ORDER[currentIdx + 1])
         setStepIndex(0)
       }
     } else {
       setStepIndex(nextStep)
     }
-    window.scrollTo(0, 0)
-    document.body.scrollTop = 0
-    document.documentElement.scrollTop = 0
+    scrollTop()
   }
 
   function retry() {
@@ -391,13 +405,71 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
     setPhase('intro')
   }
 
-  const sectionOrder = ['listening', 'reading', 'vocabulary', 'grammar']
-  const sectionSizes = { listening: 4, reading: 4, vocabulary: 6, grammar: 6 }
-  const globalQ = sectionOrder.slice(0, sectionOrder.indexOf(section)).reduce((a, s) => a + sectionSizes[s], 0) + stepIndex + 1
+  const isMCQSection = MCQ_ORDER.includes(section)
+  const globalQ = MCQ_ORDER.slice(0, MCQ_ORDER.indexOf(section)).reduce((a, s) => a + MCQ_SIZES[s], 0) + stepIndex + 1
   const timerWarning = timeLeft < 300
 
   if (phase === 'done') {
     return <ResultsScreen score={score} sectionScores={sectionScores} testNumber={testData.number} onRetry={retry} />
+  }
+
+  // ── Writing section ──
+  if (phase === 'test' && section === 'writing') {
+    return (
+      <div className="max-w-2xl mx-auto px-4 py-6">
+        <div className="flex items-center justify-between mb-5">
+          <div>
+            <div className="flex items-center gap-2 mb-0.5">
+              {ALL_ORDER.map((s) => (
+                <div key={s} className={clsx('h-1.5 rounded-full transition-all',
+                  s === 'writing' ? 'w-8 bg-amber-400' :
+                  MCQ_ORDER.includes(s) ? 'w-3 bg-success' :
+                  'w-3 bg-raised border border-border'
+                )} />
+              ))}
+            </div>
+            <p className="text-xs text-ink-muted mt-1">Writing — untimed</p>
+          </div>
+          <span className="text-xs px-2.5 py-1 rounded-full bg-amber-400/15 text-amber-400 font-semibold">Untimed</span>
+        </div>
+        <B2WritingCard
+          key={`writing-${testData.number}`}
+          task={writingTask}
+          onNext={() => { setSection('speaking'); setStepIndex(0); scrollTop() }}
+          isLast={false}
+        />
+      </div>
+    )
+  }
+
+  // ── Speaking section ──
+  if (phase === 'test' && section === 'speaking') {
+    return (
+      <div className="max-w-2xl mx-auto px-4 py-6">
+        <div className="flex items-center justify-between mb-5">
+          <div>
+            <div className="flex items-center gap-2 mb-0.5">
+              {ALL_ORDER.map((s) => (
+                <div key={s} className={clsx('h-1.5 rounded-full transition-all',
+                  s === 'speaking' ? 'w-8 bg-red-400' :
+                  s === 'writing' ? 'w-3 bg-success' :
+                  MCQ_ORDER.includes(s) ? 'w-3 bg-success' :
+                  'w-3 bg-raised border border-border'
+                )} />
+              ))}
+            </div>
+            <p className="text-xs text-ink-muted mt-1">Speaking — untimed</p>
+          </div>
+          <span className="text-xs px-2.5 py-1 rounded-full bg-red-400/15 text-red-400 font-semibold">Untimed</span>
+        </div>
+        <B2SpeakingCard
+          key={`speaking-${testData.number}`}
+          task={speakingTask}
+          onNext={() => { setPhase('done'); scrollTop() }}
+          isLast={true}
+        />
+      </div>
+    )
   }
 
   if (phase === 'intro') {
@@ -411,17 +483,19 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
 
         <div className="bg-card rounded-2xl p-5 border border-border mb-5">
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Test format</p>
-          <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="grid grid-cols-2 gap-2 mb-4">
             {Object.entries(SECTION_INFO).map(([key, info]) => (
               <div key={key} className="bg-raised rounded-xl p-3 border border-border">
                 <p className="text-xs font-semibold mb-0.5" style={{ color: info.colour }}>{info.label}</p>
-                <p className="text-sm font-mono text-ink">{info.questions} questions</p>
+                <p className="text-sm font-mono text-ink">
+                  {info.questions ? `${info.questions} questions` : '1 task — untimed'}
+                </p>
               </div>
             ))}
           </div>
           <div className="grid grid-cols-3 gap-3 text-center">
-            <div><p className="text-xl font-mono font-bold text-ink">{TOTAL_Q}</p><p className="text-xs text-ink-muted">Questions</p></div>
-            <div><p className="text-xl font-mono font-bold text-ink">25</p><p className="text-xs text-ink-muted">Minutes</p></div>
+            <div><p className="text-xl font-mono font-bold text-ink">{TOTAL_MCQ}</p><p className="text-xs text-ink-muted">MCQ questions</p></div>
+            <div><p className="text-xl font-mono font-bold text-ink">25</p><p className="text-xs text-ink-muted">Min (MCQ)</p></div>
             <div><p className="text-xl font-mono font-bold text-success">70%</p><p className="text-xs text-ink-muted">Pass mark</p></div>
           </div>
         </div>
@@ -429,10 +503,10 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
         <div className="bg-card rounded-2xl p-4 border border-border mb-5">
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-2">Before you start</p>
           <ul className="text-sm text-ink-muted space-y-1.5">
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> The timer starts when you press Start</li>
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Listening: press Play, then answer questions</li>
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Reading: passage stays visible while you answer</li>
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Writing and speaking are not timed — practise separately</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> 25-minute timer starts when you press Start — covers Listening, Reading, Vocabulary and Grammar</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Writing and Speaking follow after — untimed, with instant examiner feedback</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Listening: press Play, then answer after the audio ends</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Speaking: you will need a microphone to record your answer</li>
           </ul>
         </div>
 
@@ -444,37 +518,41 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
     )
   }
 
+  // ── MCQ test in progress ──
   return (
     <div className="max-w-2xl mx-auto px-4 py-6">
-      {/* Progress bar + timer */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          {sectionOrder.map((s, i) => (
-            <div key={s} className={clsx('h-1.5 rounded-full transition-all', s === section ? 'w-8' : 'w-3', i < sectionOrder.indexOf(section) ? 'bg-success' : s === section ? 'bg-brand-500' : 'bg-raised border border-border')} />
+          {ALL_ORDER.map((s) => (
+            <div key={s} className={clsx('h-1.5 rounded-full transition-all',
+              s === section ? 'w-8' : 'w-3',
+              MCQ_ORDER.indexOf(s) < MCQ_ORDER.indexOf(section) ? 'bg-success' :
+              s === section ? 'bg-brand-500' :
+              'bg-raised border border-border'
+            )} />
           ))}
-          <span className="text-xs text-ink-muted ml-1">Q{globalQ}/{TOTAL_Q}</span>
+          <span className="text-xs text-ink-muted ml-1">Q{globalQ}/{TOTAL_MCQ}</span>
         </div>
         <span className={clsx('text-sm font-mono font-bold', timerWarning ? 'text-danger animate-pulse' : 'text-ink')}>
           {formatTime(timeLeft)}
         </span>
       </div>
 
-      {/* Section label */}
       <p className="text-xs font-semibold uppercase tracking-wide mb-4" style={{ color: SECTION_INFO[section].colour }}>
         {SECTION_INFO[section].label}
       </p>
 
       {section === 'listening' && (
-        <ListeningStep key={`l-${stepIndex}`} clip={listeningClip} questionIndex={stepIndex} onAnswer={handleAnswer} />
+        <ListeningStep key={`l-${stepIndex}`} clip={listeningClip} questionIndex={stepIndex} onAnswer={handleMCQAnswer} />
       )}
       {section === 'reading' && (
-        <ReadingStep key={`r-${stepIndex}`} passage={readingPassage} questionIndex={stepIndex} onAnswer={handleAnswer} />
+        <ReadingStep key={`r-${stepIndex}`} passage={readingPassage} questionIndex={stepIndex} onAnswer={handleMCQAnswer} />
       )}
       {section === 'vocabulary' && (
-        <MCQStep key={`v-${stepIndex}`} question={vocabQuestions[stepIndex]} sectionLabel="Vocabulary" questionIndex={stepIndex} total={6} onAnswer={handleAnswer} />
+        <MCQStep key={`v-${stepIndex}`} question={vocabQuestions[stepIndex]} sectionLabel="Vocabulary" questionIndex={stepIndex} total={6} onAnswer={handleMCQAnswer} />
       )}
       {section === 'grammar' && (
-        <MCQStep key={`g-${stepIndex}`} question={grammarQuestions[stepIndex]} sectionLabel="Grammar" questionIndex={stepIndex} total={6} onAnswer={handleAnswer} />
+        <MCQStep key={`g-${stepIndex}`} question={grammarQuestions[stepIndex]} sectionLabel="Grammar" questionIndex={stepIndex} total={6} onAnswer={handleMCQAnswer} />
       )}
     </div>
   )
