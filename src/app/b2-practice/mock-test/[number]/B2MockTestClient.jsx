@@ -503,8 +503,8 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
         <div className="bg-card rounded-2xl p-4 border border-border mb-5">
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-2">Before you start</p>
           <ul className="text-sm text-ink-muted space-y-1.5">
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> 25-minute timer starts when you press Start — covers Listening, Reading, Vocabulary and Grammar</li>
-            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Writing and Speaking follow after — untimed, with instant examiner feedback</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> 25-minute timer covers the MCQ sections — Writing starts automatically as soon as you finish all questions, even if time remains</li>
+            <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Writing and Speaking are untimed — take as long as you need for instant examiner feedback</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Listening: press Play, then answer after the audio ends</li>
             <li className="flex items-start gap-2"><span className="text-brand-400 mt-0.5">→</span> Speaking: you will need a microphone to record your answer</li>
           </ul>
