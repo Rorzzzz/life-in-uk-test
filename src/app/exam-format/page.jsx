@@ -148,7 +148,7 @@ export default function ExamFormatPage() {
               Your result (pass or fail) is displayed on screen immediately when you submit the test. If you pass, you receive a <strong className="text-ink">pass notification letter</strong> from the test centre — keep this document carefully, as you will need it for your ILR or citizenship application.
             </p>
             <p className="text-base text-ink-muted leading-relaxed">
-              If you fail, the screen shows your score. You can rebook and retake the test as soon as a slot is available — there is no mandatory waiting period. Each retake costs £50.
+              If you fail, the screen shows your score. You must wait at least 7 days before booking a new appointment. Each retake costs £50.
             </p>
           </div>
 
@@ -165,7 +165,7 @@ export default function ExamFormatPage() {
             <h2 className="font-semibold text-ink mb-2">What to bring on test day</h2>
             <ul className="space-y-2 text-base text-ink-muted">
               {[
-                'Valid photo ID — passport or Biometric Residence Permit (BRP). Driving licences are not accepted.',
+                'Valid physical photo ID — passport, Biometric Residence Permit (BRP), or national identity card (EU/EEA nationals). An eVisa is not accepted as it is a digital record, not a physical document. Driving licences are not accepted.',
                 'Your booking confirmation email or reference number.',
                 'Arrive at least 15 minutes before your appointment — late arrival may result in losing your slot and fee.',
               ].map(item => (

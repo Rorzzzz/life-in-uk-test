@@ -231,11 +231,11 @@ export default function ExemptWizardClient() {
 
   function handleQ2(value) {
     setAnswers(a => ({ ...a, nationality: value }))
-    if (value === 'ireland') {
+    if (value === 'Ireland') {
       resolve(
         true,
-        'Irish citizens are exempt from the Life in the UK test for both ILR/settlement and citizenship applications. Ireland has a special arrangement due to the Common Travel Area.',
-        'Different rules apply depending on whether you are applying for ILR or citizenship. Always verify your specific situation at GOV.UK.'
+        'Irish citizens are exempt from the Life in the UK test for British citizenship (naturalisation) applications. Irish nationals have a special arrangement under the Common Travel Area and do not follow the standard ILR route.',
+        'Always verify your specific situation at GOV.UK before submitting your application.'
       )
     } else if (EXEMPT_NATIONALITIES.includes(value) && value !== 'Ireland') {
       resolve(
