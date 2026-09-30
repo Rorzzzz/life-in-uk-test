@@ -93,6 +93,8 @@ export default function RootLayout({ children }) {
       <head>
         {/* Theme + Consent Mode v2 init — must run before any ad/analytics scripts */}
         <script dangerouslySetInnerHTML={{ __html: headInitScript }} />
+        {/* AdSense — inline in <head> so it appears in static HTML for crawler verification */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9877949460965281" crossOrigin="anonymous" />
       </head>
 
       {/* Google Analytics 4 */}
@@ -103,14 +105,6 @@ export default function RootLayout({ children }) {
         gtag('js', new Date());
         gtag('config', 'G-XN3L6SC1QL');
       `}</Script>
-
-      {/* Google AdSense — replace XXXXXXXXXXXXXXXX with your ca-pub ID */}
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9877949460965281"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
 
       <body className="font-body antialiased bg-surface text-ink" suppressHydrationWarning>
         <ThemeProvider>
