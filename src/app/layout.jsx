@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/context/ThemeContext'
 import Navbar from '@/components/layout/Navbar'
 import BottomNav from '@/components/layout/BottomNav'
 import Footer from '@/components/layout/Footer'
+import CookieBanner from '@/components/ui/CookieBanner'
 import './globals.css'
 
 // Clash Display — local variable font
@@ -71,9 +72,17 @@ export const metadata = {
   },
 }
 
-// Inline script that runs synchronously before hydration to set the theme class,
-// preventing a flash of wrong theme and the forced repaint that delays LCP.
-const themeInitScript = `(function(){try{var t=localStorage.getItem('passtheuktest_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t);}catch(e){}})();`
+// Runs before hydration: sets theme class and initialises Google Consent Mode v2
+// with all storage denied by default. If the user has already consented (returning
+// visitor), grants immediately so GA/AdSense load in full mode from the start.
+const headInitScript = `(function(){
+  try{var t=localStorage.getItem('passtheuktest_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t);}catch(e){}
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag=gtag;
+  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  try{if(localStorage.getItem('ptukt_consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}
+})();`
 
 export default function RootLayout({ children }) {
   return (
@@ -82,16 +91,27 @@ export default function RootLayout({ children }) {
       className={`${clashDisplay.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
     >
       <head>
-        {/* Theme init: runs before hydration to prevent repaint that delays LCP */}
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* Theme + Consent Mode v2 init — must run before any ad/analytics scripts */}
+        <script dangerouslySetInnerHTML={{ __html: headInitScript }} />
       </head>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XN3L6SC1QL" strategy="lazyOnload" />
-      <Script id="google-analytics" strategy="lazyOnload">{`
+
+      {/* Google Analytics 4 */}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XN3L6SC1QL" strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-XN3L6SC1QL');
       `}</Script>
+
+      {/* Google AdSense — replace XXXXXXXXXXXXXXXX with your ca-pub ID */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
+
       <body className="font-body antialiased bg-surface text-ink" suppressHydrationWarning>
         <ThemeProvider>
         <GameProvider>
@@ -115,6 +135,7 @@ export default function RootLayout({ children }) {
 
           <Footer />
           <BottomNav />
+          <CookieBanner />
         </GameProvider>
         </ThemeProvider>
       </body>

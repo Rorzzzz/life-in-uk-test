@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Privacy Policy — Pass the UK Test',
   description: 'Privacy policy for PassTheUKTest. Learn how we handle your data — we store nothing on our servers.',
   alternates: { canonical: 'https://passtheuktest.co.uk/privacy-policy' },
-  robots: { index: false },
+
 }
 
 export default function PrivacyPolicyPage() {
