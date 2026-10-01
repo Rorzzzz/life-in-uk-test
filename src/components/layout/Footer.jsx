@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import CookieSettingsButton from '@/components/ui/CookieSettingsButton'
 
 const LINKS = [
   { href: '/tools',          label: 'Free Tools' },
@@ -43,6 +44,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li><CookieSettingsButton /></li>
             </ul>
           </nav>
         </div>
