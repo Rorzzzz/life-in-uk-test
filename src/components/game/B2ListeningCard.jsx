@@ -87,8 +87,8 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
         </p>
       </div>
 
-      {/* Audio player — shown on first question or before audio played */}
-      {(phase === 'ready' || phase === 'playing' || (phase === 'questions' && questionIndex === 0)) && (
+      {/* Audio player — shown only before questions appear */}
+      {(phase === 'ready' || phase === 'playing') && (
         <div className="bg-card rounded-2xl border border-border p-5">
           <div className="flex items-center gap-3 mb-4">
             <Volume2 size={16} className="text-brand-400" />
