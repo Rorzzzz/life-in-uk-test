@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Play, RotateCcw, Volume2 } from 'lucide-react'
+import { Play, RotateCcw, Volume2, SkipForward } from 'lucide-react'
 import clsx from 'clsx'
 
 const SECTION_LABELS = {
@@ -108,17 +108,26 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
           </div>
 
           {phase === 'playing' ? (
-            <div className="flex items-center gap-3 py-3">
-              <div className="flex gap-1">
-                {[0,1,2,3,4].map(i => (
-                  <div
-                    key={i}
-                    className="w-1 bg-brand-400 rounded-full animate-pulse"
-                    style={{ height: `${12 + (i % 3) * 8}px`, animationDelay: `${i * 0.15}s` }}
-                  />
-                ))}
+            <div className="flex items-center justify-between gap-3 py-3">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1">
+                  {[0,1,2,3,4].map(i => (
+                    <div
+                      key={i}
+                      className="w-1 bg-brand-400 rounded-full animate-pulse"
+                      style={{ height: `${12 + (i % 3) * 8}px`, animationDelay: `${i * 0.15}s` }}
+                    />
+                  ))}
+                </div>
+                <span className="text-sm text-ink-muted">Playing...</span>
               </div>
-              <span className="text-sm text-ink-muted">Playing...</span>
+              <button
+                onClick={() => { window.speechSynthesis?.cancel(); setPhase('questions'); setPlayCount(c => c + 1) }}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-raised border border-border hover:border-brand-500/40 text-ink-muted hover:text-ink text-xs rounded-xl transition-colors"
+              >
+                <SkipForward size={13} />
+                Skip
+              </button>
             </div>
           ) : (
             <div className="flex gap-2">
