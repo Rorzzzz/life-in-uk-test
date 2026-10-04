@@ -80,7 +80,7 @@ const headInitScript = `(function(){
   window.dataLayer=window.dataLayer||[];
   function gtag(){dataLayer.push(arguments);}
   window.gtag=gtag;
-  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:2000});
   try{if(localStorage.getItem('ptukt_consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}
 })();`
 
