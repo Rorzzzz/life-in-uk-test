@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, Layers, ClipboardList, Star, ChevronRight, Target, Calculator, Languages, Plane, ShieldCheck, ClipboardCheck, CalendarDays, Scale, AlertTriangle, PoundSterling } from 'lucide-react'
+import { BookOpen, Layers, ClipboardList, Star, ChevronRight, Target, Calculator, Languages, Plane, ShieldCheck, ClipboardCheck, CalendarDays, Scale, AlertTriangle, PoundSterling, Mic, Pen, Headphones, BookMarked } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { useStreak } from '@/hooks/useStreak'
 import { useReadiness } from '@/hooks/useReadiness'
@@ -196,6 +196,50 @@ export default function HomeDashboard({ chapters }) {
             </Link>
           ))}
         </div>
+      </div>
+
+      {/* B2 English Practice */}
+      <div className="bg-card rounded-2xl p-4">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h2 className="font-semibold text-ink">B2 English Practice</h2>
+            <p className="text-xs text-ink-muted">Required for ILR &amp; British citizenship</p>
+          </div>
+          <Link href="/b2-practice" className="text-xs text-brand-400 hover:text-brand-300 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded">
+            All skills →
+          </Link>
+        </div>
+        <div className="grid grid-cols-3 gap-2 mb-3">
+          {[
+            { href: '/b2-practice/grammar',    label: 'Grammar',    icon: BookMarked,  colour: '#3381ff' },
+            { href: '/b2-practice/vocabulary', label: 'Vocabulary', icon: Layers,      colour: '#a855f7' },
+            { href: '/b2-practice/reading',    label: 'Reading',    icon: BookOpen,    colour: '#22d07a' },
+            { href: '/b2-practice/listening',  label: 'Listening',  icon: Headphones,  colour: '#f59e0b' },
+            { href: '/b2-practice/writing',    label: 'Writing',    icon: Pen,         colour: '#f43f5e' },
+            { href: '/b2-practice/speaking',   label: 'Speaking',   icon: Mic,         colour: '#10b981' },
+          ].map(({ href, label, icon: Icon, colour }) => (
+            <Link key={href} href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-xl">
+              <div className="bg-raised rounded-xl p-3 flex flex-col items-center gap-1.5 text-center active:scale-[0.97] transition-transform">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${colour}22` }}>
+                  <Icon size={16} style={{ color: colour }} />
+                </div>
+                <p className="text-xs font-medium text-ink">{label}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <Link href="/b2-practice/mock-test" className="flex items-center justify-between bg-raised rounded-xl px-4 py-3 active:scale-[0.98] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-brand-500/20">
+              <ClipboardList size={16} className="text-brand-400" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-ink">B2 Mock Tests</p>
+              <p className="text-xs text-ink-muted">Full-length practice exams</p>
+            </div>
+          </div>
+          <ChevronRight size={14} className="text-ink-muted" />
+        </Link>
       </div>
 
       {/* Immigration tools */}
