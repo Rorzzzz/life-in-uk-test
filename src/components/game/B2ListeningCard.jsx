@@ -87,8 +87,8 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
         </p>
       </div>
 
-      {/* Audio player — shown only before questions appear */}
-      {(phase === 'ready' || phase === 'playing') && (
+      {/* Audio player — always shown */}
+      {true && (
         <div className="bg-card rounded-2xl border border-border p-5">
           <div className="flex items-center gap-3 mb-4">
             <Volume2 size={16} className="text-brand-400" />
@@ -112,13 +112,24 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
               <span className="text-sm text-ink-muted">Playing...</span>
             </div>
           ) : (
-            <button
-              onClick={playAudio}
-              className="flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white text-sm font-semibold rounded-xl transition-colors"
-            >
-              <Play size={14} />
-              {playCount === 0 ? 'Play audio' : 'Play again'}
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={playAudio}
+                className="flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white text-sm font-semibold rounded-xl transition-colors"
+              >
+                <Play size={14} />
+                Play audio
+              </button>
+              {playCount > 0 && (
+                <button
+                  onClick={playAudio}
+                  className="flex items-center gap-1.5 text-xs text-ink-muted hover:text-ink transition-colors"
+                >
+                  <RotateCcw size={12} />
+                  Replay
+                </button>
+              )}
+            </div>
           )}
         </div>
       )}
