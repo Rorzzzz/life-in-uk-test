@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Play, RotateCcw, Volume2, SkipForward } from 'lucide-react'
+import { Play, RotateCcw, Volume2 } from 'lucide-react'
 import clsx from 'clsx'
 
 const SECTION_LABELS = {
@@ -24,9 +24,7 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
   const isCorrect = selected === question.answer
 
   useEffect(() => {
-    return () => {
-      window.speechSynthesis?.cancel()
-    }
+    return () => { window.speechSynthesis?.cancel() }
   }, [])
 
   // Cancel speech when question changes
@@ -37,52 +35,30 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
     setReplaying(false)
   }, [questionIndex])
 
-  function playAudio() {
+  function speak(onEnd) {
     if (!window.speechSynthesis) return
     window.speechSynthesis.cancel()
-
-    // Strip speaker labels for cleaner TTS (replace "A: " "B: " etc with a pause)
     const cleanScript = task.audioScript
       .replace(/^[A-C]:\s*/gm, '')
       .replace(/\n/g, ' ')
-
     const utterance = new SpeechSynthesisUtterance(cleanScript)
-    utterance.rate = 0.92
+    utterance.rate  = 0.92
     utterance.pitch = 1
-    utterance.lang = 'en-GB'
-
-    utterance.onend = () => {
-      setPhase('questions')
-      setReplaying(false)
-      setPlayCount(c => c + 1)
-    }
-    utterance.onerror = () => { setPhase('questions'); setReplaying(false) }
-
+    utterance.lang  = 'en-GB'
+    utterance.onend   = onEnd
+    utterance.onerror = onEnd
     utteranceRef.current = utterance
-    setPhase('playing')
     window.speechSynthesis.speak(utterance)
+  }
+
+  function playAudio() {
+    setPhase('playing')
+    speak(() => { setPhase('questions'); setReplaying(false); setPlayCount(c => c + 1) })
   }
 
   function listenAgain() {
-    if (!window.speechSynthesis) return
-    window.speechSynthesis.cancel()
-    const cleanScript = task.audioScript
-      .replace(/^[A-C]:\s*/gm, '')
-      .replace(/\n/g, ' ')
-    const utterance = new SpeechSynthesisUtterance(cleanScript)
-    utterance.rate = 0.92
-    utterance.pitch = 1
-    utterance.lang = 'en-GB'
-    utterance.onend  = () => { setReplaying(false); setPlayCount(c => c + 1) }
-    utterance.onerror = () => setReplaying(false)
-    utteranceRef.current = utterance
     setReplaying(true)
-    window.speechSynthesis.speak(utterance)
-  }
-
-  function skipReplay() {
-    window.speechSynthesis?.cancel()
-    setReplaying(false)
+    speak(() => { setReplaying(false); setPlayCount(c => c + 1) })
   }
 
   function handleSelect(idx) {
@@ -95,9 +71,6 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
   function handleNext() {
     onAnswer(selected === question.answer, selected)
   }
-
-  const isFirstQuestion = questionIndex === 0
-  const showAudioControls = isFirstQuestion || phase === 'ready'
 
   return (
     <div className="flex flex-col gap-4">
@@ -114,7 +87,7 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
         </p>
       </div>
 
-      {/* Audio player */}
+      {/* Audio player — shown on first question or before audio played */}
       {(phase === 'ready' || phase === 'playing' || (phase === 'questions' && questionIndex === 0)) && (
         <div className="bg-card rounded-2xl border border-border p-5">
           <div className="flex items-center gap-3 mb-4">
@@ -126,45 +99,26 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
           </div>
 
           {phase === 'playing' ? (
-            <div className="flex items-center justify-between gap-3 py-3">
-              <div className="flex items-center gap-3">
-                <div className="flex gap-1">
-                  {[0,1,2,3,4].map(i => (
-                    <div
-                      key={i}
-                      className="w-1 bg-brand-400 rounded-full animate-pulse"
-                      style={{ height: `${12 + (i % 3) * 8}px`, animationDelay: `${i * 0.15}s` }}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm text-ink-muted">Playing...</span>
+            <div className="flex items-center gap-3 py-3">
+              <div className="flex gap-1">
+                {[0,1,2,3,4].map(i => (
+                  <div
+                    key={i}
+                    className="w-1 bg-brand-400 rounded-full animate-pulse"
+                    style={{ height: `${12 + (i % 3) * 8}px`, animationDelay: `${i * 0.15}s` }}
+                  />
+                ))}
               </div>
-              <button
-                onClick={() => { window.speechSynthesis?.cancel(); setPhase('questions'); setPlayCount(c => c + 1) }}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-raised border border-border hover:border-brand-500/40 text-ink-muted hover:text-ink text-xs rounded-xl transition-colors"
-              >
-                <SkipForward size={13} />
-                Skip
-              </button>
+              <span className="text-sm text-ink-muted">Playing...</span>
             </div>
           ) : (
-            <div className="flex gap-2">
-              <button
-                onClick={playAudio}
-                className="flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white text-sm font-semibold rounded-xl transition-colors"
-              >
-                <Play size={14} />
-                {playCount === 0 ? 'Play audio' : 'Play again'}
-              </button>
-              {phase === 'questions' && (
-                <button
-                  onClick={() => setPhase('questions')}
-                  className="flex items-center gap-2 px-4 py-2.5 bg-raised border border-border hover:border-brand-500/40 text-ink-muted hover:text-ink text-sm rounded-xl transition-colors"
-                >
-                  Answer questions →
-                </button>
-              )}
-            </div>
+            <button
+              onClick={playAudio}
+              className="flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white text-sm font-semibold rounded-xl transition-colors"
+            >
+              <Play size={14} />
+              {playCount === 0 ? 'Play audio' : 'Play again'}
+            </button>
           )}
         </div>
       )}
@@ -197,22 +151,17 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
             })}
           </div>
 
-          {/* Listen again — keeps questions visible */}
+          {/* Listen again — keeps questions visible, no skip */}
           {!revealed && (
             replaying ? (
-              <div className="flex items-center justify-between mt-3 px-3 py-2 bg-raised rounded-xl border border-border">
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-0.5">
-                    {[0,1,2,3,4].map(i => (
-                      <div key={i} className="w-0.5 bg-brand-400 rounded-full animate-pulse"
-                        style={{ height: `${8 + (i % 3) * 5}px`, animationDelay: `${i * 0.15}s` }} />
-                    ))}
-                  </div>
-                  <span className="text-xs text-ink-muted">Playing again...</span>
+              <div className="flex items-center gap-2 mt-3">
+                <div className="flex gap-0.5">
+                  {[0,1,2,3,4].map(i => (
+                    <div key={i} className="w-0.5 bg-brand-400 rounded-full animate-pulse"
+                      style={{ height: `${8 + (i % 3) * 5}px`, animationDelay: `${i * 0.15}s` }} />
+                  ))}
                 </div>
-                <button onClick={skipReplay} className="flex items-center gap-1 text-xs text-ink-muted hover:text-ink transition-colors">
-                  <SkipForward size={12} /> Skip
-                </button>
+                <span className="text-xs text-ink-muted">Playing again...</span>
               </div>
             ) : (
               <button
