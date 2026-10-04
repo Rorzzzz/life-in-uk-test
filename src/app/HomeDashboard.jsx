@@ -170,34 +170,6 @@ export default function HomeDashboard({ chapters }) {
         }
       </div>
 
-      {/* Chapter progress */}
-      <div className="bg-card rounded-2xl p-4">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="font-semibold text-ink">Chapters</h2>
-          <Link href="/practice" className="px-3 py-2 text-xs text-brand-400 font-medium hover:text-brand-300 active:opacity-70 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Practice all →</Link>
-        </div>
-        <div className="space-y-3">
-          {chapters.map(ch => (
-            <Link
-              key={ch.id}
-              href={`/practice/${ch.id}`}
-              className="flex items-center gap-3 group min-h-[44px] active:opacity-70 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-            >
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-mono flex-shrink-0"
-                style={{ backgroundColor: `${ch.colour}22`, color: ch.colour }}>
-                {ch.id}
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-base font-medium text-ink truncate group-hover:text-brand-400 transition-colors">
-                  {ch.title}
-                </p>
-              </div>
-              <ChevronRight size={14} className="text-ink-muted flex-shrink-0" />
-            </Link>
-          ))}
-        </div>
-      </div>
-
       {/* B2 English Practice */}
       <div className="bg-card rounded-2xl p-4">
         <div className="flex items-center justify-between mb-3">
@@ -240,6 +212,34 @@ export default function HomeDashboard({ chapters }) {
           </div>
           <ChevronRight size={14} className="text-ink-muted" />
         </Link>
+      </div>
+
+      {/* Chapter progress */}
+      <div className="bg-card rounded-2xl p-4">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="font-semibold text-ink">Chapters</h2>
+          <Link href="/practice" className="px-3 py-2 text-xs text-brand-400 font-medium hover:text-brand-300 active:opacity-70 rounded-lg hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Practice all →</Link>
+        </div>
+        <div className="space-y-3">
+          {chapters.map(ch => (
+            <Link
+              key={ch.id}
+              href={`/practice/${ch.id}`}
+              className="flex items-center gap-3 group min-h-[44px] active:opacity-70 rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+            >
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-mono flex-shrink-0"
+                style={{ backgroundColor: `${ch.colour}22`, color: ch.colour }}>
+                {ch.id}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-base font-medium text-ink truncate group-hover:text-brand-400 transition-colors">
+                  {ch.title}
+                </p>
+              </div>
+              <ChevronRight size={14} className="text-ink-muted flex-shrink-0" />
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Immigration tools */}
