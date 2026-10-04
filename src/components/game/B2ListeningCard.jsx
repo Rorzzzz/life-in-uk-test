@@ -13,6 +13,7 @@ const SECTION_LABELS = {
 
 export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQuestions, globalIndex }) {
   const [phase, setPhase]         = useState('ready')   // ready | playing | questions
+  const [replaying, setReplaying] = useState(false)
   const [playCount, setPlayCount] = useState(0)
   const [selected, setSelected]   = useState(null)
   const [revealed, setRevealed]   = useState(false)
@@ -33,6 +34,7 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
     window.speechSynthesis?.cancel()
     setSelected(null)
     setRevealed(false)
+    setReplaying(false)
   }, [questionIndex])
 
   function playAudio() {
@@ -51,20 +53,36 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
 
     utterance.onend = () => {
       setPhase('questions')
+      setReplaying(false)
       setPlayCount(c => c + 1)
     }
-    utterance.onerror = () => setPhase('questions')
+    utterance.onerror = () => { setPhase('questions'); setReplaying(false) }
 
     utteranceRef.current = utterance
     setPhase('playing')
     window.speechSynthesis.speak(utterance)
   }
 
-  function replay() {
-    setPhase('ready')
-    setSelected(null)
-    setRevealed(false)
+  function listenAgain() {
+    if (!window.speechSynthesis) return
+    window.speechSynthesis.cancel()
+    const cleanScript = task.audioScript
+      .replace(/^[A-C]:\s*/gm, '')
+      .replace(/\n/g, ' ')
+    const utterance = new SpeechSynthesisUtterance(cleanScript)
+    utterance.rate = 0.92
+    utterance.pitch = 1
+    utterance.lang = 'en-GB'
+    utterance.onend  = () => { setReplaying(false); setPlayCount(c => c + 1) }
+    utterance.onerror = () => setReplaying(false)
+    utteranceRef.current = utterance
+    setReplaying(true)
+    window.speechSynthesis.speak(utterance)
+  }
+
+  function skipReplay() {
     window.speechSynthesis?.cancel()
+    setReplaying(false)
   }
 
   function handleSelect(idx) {
@@ -179,15 +197,32 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
             })}
           </div>
 
-          {/* Replay option while answering */}
+          {/* Listen again — keeps questions visible */}
           {!revealed && (
-            <button
-              onClick={replay}
-              className="flex items-center gap-1.5 mt-3 text-xs text-ink-muted hover:text-ink transition-colors"
-            >
-              <RotateCcw size={12} />
-              Listen again before answering
-            </button>
+            replaying ? (
+              <div className="flex items-center justify-between mt-3 px-3 py-2 bg-raised rounded-xl border border-border">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {[0,1,2,3,4].map(i => (
+                      <div key={i} className="w-0.5 bg-brand-400 rounded-full animate-pulse"
+                        style={{ height: `${8 + (i % 3) * 5}px`, animationDelay: `${i * 0.15}s` }} />
+                    ))}
+                  </div>
+                  <span className="text-xs text-ink-muted">Playing again...</span>
+                </div>
+                <button onClick={skipReplay} className="flex items-center gap-1 text-xs text-ink-muted hover:text-ink transition-colors">
+                  <SkipForward size={12} /> Skip
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={listenAgain}
+                className="flex items-center gap-1.5 mt-3 text-xs text-ink-muted hover:text-ink transition-colors"
+              >
+                <RotateCcw size={12} />
+                Listen again
+              </button>
+            )
           )}
         </div>
       )}
