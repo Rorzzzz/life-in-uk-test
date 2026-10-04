@@ -78,6 +78,7 @@ export default function B2ReadingClient() {
   }
 
   function handleNext() {
+    window.scrollTo(0, 0)
     if (stepIndex + 1 >= steps.length) {
       setDone(true)
     } else {

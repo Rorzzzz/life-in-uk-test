@@ -44,6 +44,7 @@ export default function B2GrammarClient() {
   }
 
   function handleNext() {
+    window.scrollTo(0, 0)
     if (index + 1 >= session.length) {
       setDone(true)
     } else {

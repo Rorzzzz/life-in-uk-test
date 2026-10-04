@@ -48,6 +48,7 @@ export default function MockTestClient({ testNumber, questions }) {
   }
 
   function handleNext() {
+    window.scrollTo(0, 0)
     if (index + 1 >= questions.length) {
       handleFinish(correctRef.current)
     } else {
