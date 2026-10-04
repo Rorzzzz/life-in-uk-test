@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Play, Volume2 } from 'lucide-react'
+import { Play, Volume2, RotateCcw } from 'lucide-react'
 import clsx from 'clsx'
 import B2WritingCard from '@/components/game/B2WritingCard'
 import B2SpeakingCard from '@/components/game/B2SpeakingCard'
@@ -39,21 +39,22 @@ function scrollTop() {
 // ─── Listening step ────────────────────────────────────────────────────────
 
 function ListeningStep({ clip, questionIndex, onAnswer }) {
-  const [phase, setPhase]       = useState('ready')
-  const [selected, setSelected] = useState(null)
-  const [revealed, setRevealed] = useState(false)
+  const [phase, setPhase]         = useState('ready')
+  const [playCount, setPlayCount] = useState(0)
+  const [selected, setSelected]   = useState(null)
+  const [revealed, setRevealed]   = useState(false)
   const q = clip.questions[questionIndex]
 
   useEffect(() => { return () => window.speechSynthesis?.cancel() }, [])
   useEffect(() => { setSelected(null); setRevealed(false) }, [questionIndex])
 
-  function playAudio() {
+  function speak() {
     window.speechSynthesis?.cancel()
     const clean = clip.audioScript.replace(/^[A-C]:\s*/gm, '').replace(/\n/g, ' ')
     const utt = new SpeechSynthesisUtterance(clean)
     utt.rate = 0.92; utt.lang = 'en-GB'
-    utt.onend = () => setPhase('questions')
-    utt.onerror = () => setPhase('questions')
+    utt.onend   = () => { setPhase('questions'); setPlayCount(c => c + 1) }
+    utt.onerror = () => { setPhase('questions'); setPlayCount(c => c + 1) }
     setPhase('playing')
     window.speechSynthesis.speak(utt)
   }
@@ -65,55 +66,56 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
         <p className="font-semibold text-ink text-sm">{clip.title}</p>
       </div>
 
-      {(phase === 'ready' || phase === 'playing') && (
-        <div className="bg-card rounded-2xl border border-border p-5">
-          <div className="flex items-center gap-2 mb-3">
-            <Volume2 size={16} className="text-brand-400" />
-            <p className="text-sm font-semibold text-ink">Audio clip</p>
-          </div>
-          {phase === 'playing' ? (
-            <div className="flex items-center gap-3 py-2">
-              <div className="flex gap-1">
-                {[0,1,2,3,4].map(i => (
-                  <div key={i} className="w-1 bg-brand-400 rounded-full animate-pulse" style={{ height: `${12 + (i%3)*8}px`, animationDelay: `${i*0.15}s` }} />
-                ))}
-              </div>
-              <span className="text-sm text-ink-muted">Playing...</span>
+      {/* Audio player — always visible */}
+      <div className="bg-card rounded-2xl border border-border p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Volume2 size={16} className="text-brand-400" />
+          <p className="text-sm font-semibold text-ink">Audio clip</p>
+          {playCount > 0 && <span className="text-xs text-ink-muted ml-auto">Played {playCount}×</span>}
+        </div>
+        {phase === 'playing' ? (
+          <div className="flex items-center gap-3 py-2">
+            <div className="flex gap-1">
+              {[0,1,2,3,4].map(i => (
+                <div key={i} className="w-1 bg-brand-400 rounded-full animate-pulse" style={{ height: `${12 + (i%3)*8}px`, animationDelay: `${i*0.15}s` }} />
+              ))}
             </div>
-          ) : (
-            <button onClick={playAudio} className="flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-xl transition-colors">
-              <Play size={14} />{questionIndex === 0 ? 'Play audio' : 'Play again'}
-            </button>
-          )}
-        </div>
-      )}
-
-      {phase === 'questions' && (
-        <div className="bg-card rounded-2xl border border-border p-5">
-          <p className="text-sm font-semibold text-ink mb-4">{q.q}</p>
-          <div className="flex flex-col gap-2">
-            {q.options.map((opt, i) => {
-              let style = 'bg-raised border-border text-ink-muted hover:border-brand-500/40 hover:text-ink'
-              if (revealed) {
-                if (q.answer === i) style = 'bg-success/15 border-success/50 text-success'
-                else if (selected === i) style = 'bg-danger/15 border-danger/50 text-danger'
-                else style = 'bg-raised border-border text-ink-muted opacity-40'
-              }
-              return (
-                <button key={i} onClick={() => { if (!revealed) { setSelected(i); setRevealed(true) } }} disabled={revealed}
-                  className={clsx('w-full text-left px-4 py-3 rounded-xl border text-sm font-medium transition-colors', style)}>
-                  <span className="font-mono text-xs mr-2 opacity-60">{String.fromCharCode(65+i)}</span>{opt}
-                </button>
-              )
-            })}
+            <span className="text-sm text-ink-muted">Playing...</span>
           </div>
-          {!revealed && (
-            <button onClick={() => setPhase('ready')} className="mt-3 text-xs text-ink-muted hover:text-ink transition-colors underline">
-              Listen again
+        ) : (
+          <div className="flex items-center gap-3">
+            <button onClick={speak} className="flex items-center gap-2 px-4 py-2.5 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-xl transition-colors">
+              <Play size={14} />Play audio
             </button>
-          )}
+            {playCount > 0 && (
+              <button onClick={speak} className="flex items-center gap-1.5 text-xs text-ink-muted hover:text-ink transition-colors">
+                <RotateCcw size={12} />Replay
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Question — always visible */}
+      <div className="bg-card rounded-2xl border border-border p-5">
+        <p className="text-sm font-semibold text-ink mb-4">{q.q}</p>
+        <div className="flex flex-col gap-2">
+          {q.options.map((opt, i) => {
+            let style = 'bg-raised border-border text-ink-muted hover:border-brand-500/40 hover:text-ink'
+            if (revealed) {
+              if (q.answer === i) style = 'bg-success/15 border-success/50 text-success'
+              else if (selected === i) style = 'bg-danger/15 border-danger/50 text-danger'
+              else style = 'bg-raised border-border text-ink-muted opacity-40'
+            }
+            return (
+              <button key={i} onClick={() => { if (!revealed) { setSelected(i); setRevealed(true) } }} disabled={revealed}
+                className={clsx('w-full text-left px-4 py-3 rounded-xl border text-sm font-medium transition-colors', style)}>
+                <span className="font-mono text-xs mr-2 opacity-60">{String.fromCharCode(65+i)}</span>{opt}
+              </button>
+            )
+          })}
         </div>
-      )}
+      </div>
 
       {revealed && (
         <>
