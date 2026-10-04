@@ -22,7 +22,8 @@ export function resetConsent() {
 }
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible]     = useState(false)
+  const [expanded, setExpanded]   = useState(false)
 
   useEffect(() => {
     function show() { setVisible(true) }
@@ -64,6 +65,7 @@ export default function CookieBanner() {
           We don&apos;t sell your data.{' '}
           <Link href="/privacy-policy" className="text-brand-400 underline">Privacy policy</Link>
         </p>
+
         <button
           type="button"
           onClick={accept}
@@ -71,15 +73,35 @@ export default function CookieBanner() {
         >
           Accept — keep it free
         </button>
-        <div className="text-center">
-          <button
-            type="button"
-            onClick={reject}
-            className="text-xs text-ink-muted hover:text-ink transition-colors"
-          >
-            Reject non-essential cookies
-          </button>
-        </div>
+
+        {!expanded ? (
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => setExpanded(true)}
+              className="text-xs text-ink-muted hover:text-ink transition-colors"
+            >
+              More options ↓
+            </button>
+          </div>
+        ) : (
+          <div className="flex gap-2 pt-1">
+            <button
+              type="button"
+              onClick={accept}
+              className="flex-1 py-2 bg-raised border border-border hover:border-brand-500/40 text-ink text-xs font-medium rounded-xl transition-colors"
+            >
+              Accept all
+            </button>
+            <button
+              type="button"
+              onClick={reject}
+              className="flex-1 py-2 bg-raised border border-border hover:border-border text-ink-muted text-xs rounded-xl transition-colors"
+            >
+              Reject non-essential
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
