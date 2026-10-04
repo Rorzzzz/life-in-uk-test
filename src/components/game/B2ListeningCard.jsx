@@ -123,8 +123,8 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
         </div>
       )}
 
-      {/* Questions — only show after audio played */}
-      {phase === 'questions' && (
+      {/* Questions — always visible */}
+      {(phase === 'playing' || phase === 'questions') && (
         <div className="bg-card rounded-2xl border border-border p-5">
           <p className="text-sm font-semibold text-ink mb-4">{question.q}</p>
           <div className="flex flex-col gap-2">
