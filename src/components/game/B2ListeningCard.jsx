@@ -151,28 +151,6 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
             })}
           </div>
 
-          {/* Listen again — keeps questions visible, no skip */}
-          {!revealed && (
-            replaying ? (
-              <div className="flex items-center gap-2 mt-3">
-                <div className="flex gap-0.5">
-                  {[0,1,2,3,4].map(i => (
-                    <div key={i} className="w-0.5 bg-brand-400 rounded-full animate-pulse"
-                      style={{ height: `${8 + (i % 3) * 5}px`, animationDelay: `${i * 0.15}s` }} />
-                  ))}
-                </div>
-                <span className="text-xs text-ink-muted">Playing again...</span>
-              </div>
-            ) : (
-              <button
-                onClick={listenAgain}
-                className="flex items-center gap-1.5 mt-3 text-xs text-ink-muted hover:text-ink transition-colors"
-              >
-                <RotateCcw size={12} />
-                Listen again
-              </button>
-            )
-          )}
         </div>
       )}
 
