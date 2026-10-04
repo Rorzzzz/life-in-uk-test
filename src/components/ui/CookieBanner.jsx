@@ -69,7 +69,7 @@ export default function CookieBanner() {
           onClick={accept}
           className="w-full py-3 bg-brand-500 hover:bg-brand-400 active:opacity-70 text-white text-sm font-bold rounded-xl transition-colors mb-2"
         >
-          Accept &amp; continue
+          Accept — keep it free
         </button>
         <div className="text-center">
           <button
