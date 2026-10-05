@@ -126,7 +126,7 @@ export default function MockTestClient({ testNumber, questions }) {
               </div>
               <div className="pt-1 border-t border-border">
                 <p className="text-xs text-ink-muted mb-2">What to do next</p>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-4 gap-2">
                   <Link href="/cheat-sheet" className="py-2.5 bg-raised rounded-xl text-xs text-ink-muted text-center hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
                     📄 Cheat Sheet
                   </Link>
@@ -135,6 +135,9 @@ export default function MockTestClient({ testNumber, questions }) {
                   </Link>
                   <Link href="/weak-spots" className="py-2.5 bg-raised rounded-xl text-xs text-ink-muted text-center hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
                     🎯 Weak Spots
+                  </Link>
+                  <Link href="/faq" className="py-2.5 bg-raised rounded-xl text-xs text-ink-muted text-center hover:text-ink hover:bg-card transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+                    ❓ FAQ
                   </Link>
                 </div>
               </div>

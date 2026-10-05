@@ -47,7 +47,6 @@ module.exports = {
       loc: path,
       changefreq: isArticle ? 'weekly' : isQuestion ? 'monthly' : 'weekly',
       priority: priorities[path]?.priority ?? (isChapterQ ? 0.8 : isArticle ? 0.9 : isQuestion ? 0.8 : isChapter ? 0.9 : 0.7),
-      lastmod: new Date().toISOString(),
     }
   },
 }

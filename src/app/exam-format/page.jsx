@@ -2,9 +2,15 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'Life in the UK Test Format 2026 — Question Types, Timer & Interface Explained',
+  title: 'Life in the UK Test Format 2026 — What to Expect',
   description: 'Complete guide to the Life in the UK test format: 24 questions, 45 minutes, 4 question types, practice test, timer alerts, and how to flag and review answers.',
   alternates: { canonical: 'https://passtheuktest.co.uk/exam-format' },
+  openGraph: {
+    title: 'Life in the UK Test Format 2026 — What to Expect',
+    description: 'Complete guide to the Life in the UK test format: 24 questions, 45 minutes, 4 question types, timer alerts, and how to flag and review answers.',
+    url: 'https://passtheuktest.co.uk/exam-format',
+    type: 'website',
+  },
 }
 
 export default function ExamFormatPage() {

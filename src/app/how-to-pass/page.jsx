@@ -2,9 +2,15 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'How to Pass the Life in the UK Test — Study Strategy Guide 2026',
+  title: 'How to Pass the Life in the UK Test — Study Guide 2026',
   description: 'Step-by-step guide to passing the Life in the UK test first time. Study plan, common mistakes, test day tips, and how to use practice questions effectively.',
   alternates: { canonical: 'https://passtheuktest.co.uk/how-to-pass' },
+  openGraph: {
+    title: 'How to Pass the Life in the UK Test — Study Guide 2026',
+    description: 'Step-by-step guide to passing the Life in the UK test first time. Study plan, common mistakes, and test day tips.',
+    url: 'https://passtheuktest.co.uk/how-to-pass',
+    type: 'website',
+  },
 }
 
 export default function HowToPassPage() {

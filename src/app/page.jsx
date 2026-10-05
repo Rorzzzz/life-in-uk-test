@@ -3,7 +3,7 @@ import { CHAPTERS } from '@/data/questions'
 import HomeDashboard from './HomeDashboard'
 
 export const metadata = {
-  title: { absolute: 'Pass the Life in the UK Test — Free Practice, Mock Tests & Immigration Tools' },
+  title: { absolute: 'Life in the UK Test Practice — Free, 767 Questions & Mock Tests' },
   description: 'Everything you need to pass the Life in the UK test — 767 free practice questions, 60 mock exams, ILR calculator, B1 English check, absence calculator and more. All free, no sign-up ever.',
   alternates: { canonical: 'https://passtheuktest.co.uk' },
   openGraph: {

@@ -29,10 +29,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const q = getById(parseInt(params.id))
   if (!q) return {}
-  const shortQ = q.q.length > 55 ? q.q.slice(0, 55) + '...' : q.q
+  const shortQ = q.q.length > 35 ? q.q.slice(0, 35) + '...' : q.q
   return {
     title: `${shortQ} — Life in the UK Test`,
-    description: `Answer: ${q.options[q.answer]}. ${q.explanation.slice(0, 120)}`,
+    description: `Life in the UK test: ${q.options[q.answer]}. ${q.explanation.slice(0, 100)}`,
     openGraph: {
       title:       shortQ,
       description: q.explanation.slice(0, 150),
