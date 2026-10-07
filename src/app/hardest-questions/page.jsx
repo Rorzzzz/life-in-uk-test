@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import QuestionStatsBadge from '@/components/ui/QuestionStatsBadge'
 import { QUESTIONS } from '@/data/questions'
 
 export const metadata = {
@@ -57,11 +58,14 @@ export default function HardestQuestionsPage() {
                     <p className="text-base font-medium text-ink mb-1">{q.q}</p>
                     <p className="text-sm text-success">✓ {q.options[q.answer]}</p>
                   </div>
-                  <span className={`text-xs px-2 py-0.5 rounded-full flex-shrink-0 ${
-                    q.difficulty === 'hard' ? 'bg-danger/10 text-danger' : 'bg-xp/10 text-xp'
-                  }`}>
-                    {q.difficulty}
-                  </span>
+                  <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                    <span className={`text-xs px-2 py-0.5 rounded-full ${
+                      q.difficulty === 'hard' ? 'bg-danger/10 text-danger' : 'bg-xp/10 text-xp'
+                    }`}>
+                      {q.difficulty}
+                    </span>
+                    <QuestionStatsBadge questionId={q.id} />
+                  </div>
                 </div>
               </div>
             </Link>

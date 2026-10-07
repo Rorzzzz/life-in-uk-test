@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { CHAPTERS, getByChapter } from '@/data/questions'
 import Link from 'next/link'
 import PracticeClient from './PracticeClient'
+import QuestionStatsBadge from '@/components/ui/QuestionStatsBadge'
 
 const CHAPTER_SEO = {
   1: {
@@ -99,6 +100,7 @@ export default function PracticePage({ params }) {
                   <p className="text-sm text-ink group-hover:text-brand-400 transition-colors leading-snug">{q.q}</p>
                   <p className="text-xs text-brand-400 mt-0.5">Answer: {q.options[q.answer]}</p>
                 </div>
+                <QuestionStatsBadge questionId={q.id} />
               </Link>
             ))}
           </div>

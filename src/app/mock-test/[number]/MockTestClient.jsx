@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { EXAM_DURATION_SECONDS, MOCK_TEST_COUNT } from '@/data/mockTests'
 import { useGame } from '@/context/GameContext'
@@ -16,7 +16,12 @@ const ConfettiBlast = dynamic(() => import('@/components/game/ConfettiBlast'), {
 
 export default function MockTestClient({ testNumber, questions }) {
   const router = useRouter()
-  const { completeExam } = useGame()
+  const { state, completeExam } = useGame()
+
+  const seenCount = useMemo(() => {
+    const progress = state.progress ?? {}
+    return questions.filter(q => (progress[q.id]?.totalAnswered ?? 0) > 0).length
+  }, [questions, state.progress])
 
   const [index, setIndex]           = useState(0)
   const [correct, setCorrect]       = useState(0)
@@ -63,6 +68,13 @@ export default function MockTestClient({ testNumber, questions }) {
         <div>
           <h1 className="text-2xl font-display font-bold text-ink mb-1">Mock Test {testNumber}</h1>
           <p className="text-ink-muted">24 questions · 45 minutes · Pass mark: 18/24</p>
+          {seenCount > 0 && (
+            <p className="text-xs text-ink-muted mt-1">
+              <span className="text-success">{questions.length - seenCount} new</span>
+              {' · '}
+              <span>{seenCount} seen before</span>
+            </p>
+          )}
         </div>
         <div className="flex gap-3 w-full max-w-xs">
           <button

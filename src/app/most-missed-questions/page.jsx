@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import QuestionStatsBadge from '@/components/ui/QuestionStatsBadge'
 import { QUESTIONS } from '@/data/questions'
 import { MOST_MISSED_IDS } from '@/data/mostMissed'
 
@@ -55,6 +56,7 @@ export default function MostMissedPage() {
                     <p className="text-base font-medium text-ink mb-1">{q.q}</p>
                     <p className="text-sm text-success">✓ {q.options[q.answer]}</p>
                   </div>
+                  <QuestionStatsBadge questionId={q.id} />
                 </div>
               </div>
             </Link>
