@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
 import MockTestDashboard from './MockTestDashboard'
 import MockTestGrid from './MockTestGrid'
+import SmartExamCard from './SmartExamCard'
 import ShareButton from '@/components/ui/ShareButton'
 
 export const metadata = {
@@ -106,6 +107,9 @@ export default function MockTestIndexPage() {
           </div>
           <p className="text-xs text-ink-muted">Want to prepare gradually? Try our <Link href="/practice-test" className="text-brand-400 hover:text-brand-300">practice tests →</Link> or revise <Link href="/practice" className="text-brand-400 hover:text-brand-300">by chapter →</Link></p>
         </div>
+
+        {/* Smart Exam card */}
+        <SmartExamCard />
 
         {/* Stats bar */}
         <div className="bg-card rounded-2xl p-3 border border-border mb-6 grid grid-cols-4 gap-2 text-center">
