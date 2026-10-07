@@ -40,6 +40,11 @@ export default function SmartExamCard() {
             {stats.weak === 0 && <> questions</>}.
             Same 24-question format, same 45-minute timer.
           </p>
+          {stats.unseen > 700 && (
+            <p className="text-xs text-xp mt-2">
+              💡 Answer more questions or take mock tests first — Smart Exam improves as you build up history.
+            </p>
+          )}
         </div>
       </div>
       <button
