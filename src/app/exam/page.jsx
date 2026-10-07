@@ -153,11 +153,9 @@ export default function ExamPage() {
                   Prioritises your {adaptiveStats.unseen} unseen questions and {adaptiveStats.weak} weak spots.
                   Best for filling gaps.
                 </p>
-                {adaptiveStats.unseen > 700 && (
-                  <p className="text-xs text-xp mt-2">
-                    💡 Answer more questions or take mock tests first — Smart Exam improves as you build up history.
-                  </p>
-                )}
+                <p className="text-xs text-xp mt-2">
+                  💡 Answer more questions or take mock tests first — Smart Exam improves as you build up history.
+                </p>
               </div>
             </div>
           </button>
