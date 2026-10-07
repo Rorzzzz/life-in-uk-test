@@ -111,6 +111,18 @@ export default function ExamPage() {
   }
 
   function handleRetry() {
+    // Restart in the same mode — no need to go back through the picker
+    const qs = mode === 'adaptive'
+      ? buildAdaptiveTest(state.progress ?? {})
+      : getMockTest(Math.floor(Math.random() * MOCK_TEST_COUNT) + 1)
+    setQuestions(qs)
+    setIndex(0); setCorrect(0); correctRef.current = 0
+    setWrongByChapter({}); setDone(false)
+    setTimeLeft(EXAM_DURATION_SECONDS)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  function handleChangMode() {
     setIndex(0); setCorrect(0); correctRef.current = 0
     setWrongByChapter({}); setDone(false); setStarted(false)
     setTimeLeft(EXAM_DURATION_SECONDS); setMode(null)
@@ -180,11 +192,10 @@ export default function ExamPage() {
           total={questions.length}
           xpEarned={correct === questions.length ? 200 : correct >= 18 ? 100 : 0}
           onRetry={handleRetry}
+          retryLabel={mode === 'adaptive' ? '🧠 Another Smart Exam' : '🎲 Another Random Exam'}
           onHome={() => router.push('/')}
-          onDifferentTest={() => {
-            const n = Math.floor(Math.random() * MOCK_TEST_COUNT) + 1
-            router.push(`/mock-test/${n}`)
-          }}
+          onDifferentTest={handleChangMode}
+          differentTestLabel="Change mode"
           weakChapters={CHAPTERS
             .filter(ch => wrongByChapter[ch.id] > 0)
             .sort((a, b) => (wrongByChapter[b.id] ?? 0) - (wrongByChapter[a.id] ?? 0))

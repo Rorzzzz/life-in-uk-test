@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
-export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, onDifferentTest, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
+export default function ResultScreen({ score, total, xpEarned, onRetry, retryLabel, onHome, onDifferentTest, differentTestLabel, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
   const pct     = Math.round((score / total) * 100)
   const passed  = isExam ? score >= 18 : pct >= 70
   const colour  = passed ? '#22d07a' : '#ff4d6d'
@@ -71,7 +71,7 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
       <div className="flex flex-col gap-3 w-full max-w-xs">
         {onRetry && (
           <Button variant="primary" fullWidth onClick={onRetry}>
-            {isExam ? 'Try Again' : 'New adaptive session'}
+            {retryLabel ?? (isExam ? 'Try Again' : 'New adaptive session')}
           </Button>
         )}
         {onChangeChapter && (
@@ -81,7 +81,7 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, onHome, 
         )}
         {onDifferentTest && (
           <Button variant="secondary" fullWidth onClick={onDifferentTest}>
-            Try a Different Mock Test
+            {differentTestLabel ?? 'Try a Different Mock Test'}
           </Button>
         )}
         <Button variant="secondary" fullWidth onClick={onHome}>
