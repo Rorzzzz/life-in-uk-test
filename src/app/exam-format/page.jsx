@@ -70,7 +70,7 @@ export default function ExamFormatPage() {
                 <p className="text-sm text-ink-muted mb-2">Some questions explicitly ask you to select <strong className="text-ink">two</strong> correct answers from four options. The question will state this clearly. Both must be correct to earn the mark.</p>
                 <div className="bg-surface rounded-lg p-3 text-sm">
                   <p className="text-ink-muted italic mb-2">&ldquo;Which TWO of the following are roles of the Prime Minister?&rdquo;</p>
-                  <p className="text-xs text-ink-muted">☑ <span className="text-success font-medium">Appointing Cabinet ministers</span> &nbsp; ☐ Signing all laws &nbsp; ☑ <span className="text-success font-medium">Recommending appointments to the Queen</span> &nbsp; ☐ Chairing the Supreme Court</p>
+                  <p className="text-xs text-ink-muted">☑ <span className="text-success font-medium">Appointing Cabinet ministers</span> &nbsp; ☐ Signing all laws &nbsp; ☑ <span className="text-success font-medium">Recommending appointments to the King</span> &nbsp; ☐ Chairing the Supreme Court</p>
                 </div>
               </div>
 

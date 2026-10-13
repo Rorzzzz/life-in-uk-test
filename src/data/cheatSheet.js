@@ -5,7 +5,7 @@
 export const CHEAT_SHEET = {
   keyDates: [
     { date: '43 AD',    fact: 'Romans invade Britain under Emperor Claudius' },
-    { date: '400 AD',   fact: 'Romans leave Britain' },
+    { date: '410 AD',   fact: 'Romans leave Britain' },
     { date: '789',      fact: 'Vikings begin raiding Britain' },
     { date: '1066',     fact: 'Battle of Hastings — Norman Conquest. William the Conqueror becomes king' },
     { date: '1215',     fact: 'Magna Carta signed by King John at Runnymede' },
@@ -58,7 +58,7 @@ export const CHEAT_SHEET = {
     { number: '18',       fact: 'Minimum voting age' },
     { number: '56',       fact: 'Member states in the Commonwealth' },
     { number: '1,000+',   fact: 'Islands making up the UK' },
-    { number: '4,406m',   fact: 'Height of Ben Nevis — highest peak in the UK' },
+    { number: '1,345m',   fact: 'Height of Ben Nevis — highest peak in the UK (4,413 feet)' },
     { number: '354 km',   fact: 'Length of River Severn — longest river in the UK (River Thames is second)' },
     { number: '1989',     fact: 'Year Tim Berners-Lee invented the World Wide Web' },
     { number: '1876',     fact: 'Year Alexander Graham Bell invented the telephone' },

@@ -31,13 +31,13 @@ export const FAQS = [
   {
     id: 5,
     question: 'What happens if you fail the Life in the UK test?',
-    answer: 'If you fail, you can resit as many times as you need by paying the £50 fee again. You must wait at least 7 days before booking a new appointment — you cannot rebook within 7 days of a failed attempt.',
+    answer: 'If you fail, you can resit as many times as you need by paying the £50 fee again. You can rebook immediately, but test centres will not allow you to sit again until at least 7 days after your previous attempt. GOV.UK does not publish a formal waiting period — the 7-day gap is consistently reported by candidates.',
     category: 'About the Test',
   },
   {
     id: 6,
     question: 'What ID do you need for the Life in the UK test?',
-    answer: 'You must bring a valid physical photo ID: a passport, a pre-2025 Biometric Residence Permit (BRP), or a national identity card (EU/EEA). An eVisa is not valid — it is a digital record, not a physical document. A driving licence is not accepted.',
+    answer: 'You must bring valid photo ID. Accepted documents include a passport, a national identity card (EU/EEA), or a Biometric Residence Permit (BRP). If you have an eVisa (issued after BRPs were phased out in late 2024), use a share code when booking — GOV.UK lists eVisa with share code as a valid booking ID. A driving licence is not accepted.',
     category: 'About the Test',
   },
   {
@@ -119,7 +119,7 @@ export const FAQS = [
   {
     id: 19,
     question: 'What should you bring to the Life in the UK test?',
-    answer: 'Bring your booking confirmation (email printout or on your phone) and a valid physical photo ID — passport, pre-2025 BRP, or EU/EEA national identity card. An eVisa is not valid ID. Arrive 15 minutes early. You cannot bring notes, phones, or any study materials into the exam room.',
+    answer: 'Bring your booking confirmation (email printout or on your phone) and valid photo ID — a passport, EU/EEA national identity card, or BRP. If you have an eVisa, use a share code when booking (GOV.UK accepts eVisa with share code). Arrive 15 minutes early. You cannot bring notes, phones, or any study materials into the exam room.',
     category: 'Test Day',
   },
   {
