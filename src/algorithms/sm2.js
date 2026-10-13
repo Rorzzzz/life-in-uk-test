@@ -49,7 +49,9 @@ export function sm2Update(current, isCorrect, responseMs = null) {
   }
 
   let { easeFactor, interval, repetitions } = q
-  easeFactor = easeFactor ?? 2.5
+  easeFactor  = easeFactor  ?? 2.5
+  interval    = interval    ?? 1
+  repetitions = repetitions ?? 0
 
   if (quality >= 3) {
     // Correct
