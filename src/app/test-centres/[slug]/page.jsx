@@ -1,7 +1,30 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { MapPin, AlertTriangle, Clock, PoundSterling, CheckCircle } from 'lucide-react'
+import { MapPin, AlertTriangle, Clock, PoundSterling, CheckCircle, Train } from 'lucide-react'
 import { TEST_CENTRES, getCentreSlug, getCentreBySlug, getCentresByRegion } from '@/data/testCentres'
+
+// Slug-specific local tips (added from article content during Phase 1 content consolidation)
+const CITY_TIPS = {
+  'birmingham-city-centre': {
+    transport: 'Plan your route and parking in advance — Birmingham city centre has a complex one-way road system. New Street station is walkable (approx 10 minutes). If driving, check the parking situation before you set off.',
+    alternatives: [
+      { name: 'Solihull', address: 'B91 3AA', href: '/test-centres/solihull' },
+      { name: 'Coventry', address: 'CV1 1BA', href: '/test-centres/coventry' },
+      { name: 'Wolverhampton', address: 'WV1 1AB', href: '/test-centres/wolverhampton' },
+    ],
+    accessibility: 'If you need accessibility adjustments (extra time, adapted equipment), these must be arranged when booking — not on the day. Contact the test centre through the GOV.UK booking system before your appointment.',
+  },
+  'manchester-city': {
+    transport: 'Use TfGM\'s journey planner (tfgm.com) to plan your route by Metrolink, bus or train. Piccadilly and Victoria stations are both within walking distance of the city centre.',
+    alternatives: [
+      { name: 'Salford', address: 'M5 4DT', href: '/test-centres/salford' },
+      { name: 'Bolton', address: 'BL1 1PS', href: '/test-centres/bolton' },
+      { name: 'Stockport', address: 'SK1 3NW', href: '/test-centres/stockport' },
+      { name: 'Bury', address: 'BL9 0SZ', href: '/test-centres/bury' },
+    ],
+    accessibility: 'If you need accessibility adjustments (extra time, adapted equipment), these must be arranged when booking — not on the day. Contact the test centre through the GOV.UK booking system before your appointment.',
+  },
+}
 
 export async function generateStaticParams() {
   return TEST_CENTRES.map(centre => ({ slug: getCentreSlug(centre) }))
@@ -23,6 +46,7 @@ export default function TestCentreCityPage({ params }) {
   if (!centre) notFound()
 
   const cityName = centre.city.replace(' — ', ' ')
+  const cityTips = CITY_TIPS[params.slug] ?? null
   const nearbycentres = getCentresByRegion(centre.region)
     .filter(c => getCentreSlug(c) !== params.slug)
     .slice(0, 4)
@@ -157,6 +181,39 @@ export default function TestCentreCityPage({ params }) {
             ))}
           </ul>
         </div>
+
+        {/* City-specific transport and accessibility tips */}
+        {cityTips && (
+          <div className="bg-card rounded-2xl p-5 mb-4 space-y-4">
+            <div className="flex items-start gap-3">
+              <Train size={16} className="text-brand-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-semibold text-ink mb-1">Getting there</p>
+                <p className="text-sm text-ink-muted">{cityTips.transport}</p>
+              </div>
+            </div>
+            {cityTips.alternatives.length > 0 && (
+              <div>
+                <p className="text-sm font-semibold text-ink mb-2">Nearby alternatives if slots are full</p>
+                <div className="flex flex-wrap gap-2">
+                  {cityTips.alternatives.map(alt => (
+                    <Link
+                      key={alt.name}
+                      href={alt.href}
+                      className="px-3 py-1.5 text-sm bg-raised rounded-lg text-ink-muted hover:text-ink hover:border-brand-500/50 border border-border transition-colors"
+                    >
+                      {alt.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="flex items-start gap-3">
+              <AlertTriangle size={14} className="text-amber-400 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-ink-muted">{cityTips.accessibility}</p>
+            </div>
+          </div>
+        )}
 
         {/* Nearby centres */}
         {nearbycentres.length > 0 && (

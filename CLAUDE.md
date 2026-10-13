@@ -177,7 +177,7 @@ passport-next/
     │   ├── mastery.js                ← getMasteryLevel, getChapterMastery
     │   └── getDueToday.js            ← Daily review queue count
     └── data/
-        ├── questions.js              ← 570 questions (THE source of truth)
+        ├── questions.js              ← 767 questions across 8 batch files (THE source of truth)
         ├── badges.js                 ← 13 badge definitions
         ├── levels.js                 ← XP level thresholds
         ├── studyGuide.js             ← Handbook content by chapter/section
