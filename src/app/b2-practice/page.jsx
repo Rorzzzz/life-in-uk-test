@@ -12,7 +12,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 english practice', 'b2 english test free', 'b2 english for uk settlement', 'ielts general training practice', 'b2 english practice questions', 'b2 ielts practice free 2026', 'b2 english requirement uk visa', 'ielts band 5.5 practice'],
 }
 
 const SECTIONS = [

@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 grammar practice', 'ielts grammar practice', 'b2 english grammar', 'conditional sentences b2', 'passive voice practice ielts', 'reported speech practice', 'b2 grammar exercises free', 'ielts grammar questions'],
 }
 
 const FAQS = [

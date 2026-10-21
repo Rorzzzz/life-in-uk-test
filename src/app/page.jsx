@@ -11,7 +11,6 @@ export const metadata = {
     description: '767 free practice questions, 60 mock exams, ILR calculator, B1 check, absence calculator and more. All free.',
     url: 'https://passtheuktest.co.uk',
   },
-  keywords: ['life in the uk test', 'pass life in the uk test', 'life in the uk test free', 'ilr calculator', 'b1 english check', 'life in the uk test preparation'],
 }
 
 const orgSchema = {

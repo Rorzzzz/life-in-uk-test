@@ -9,7 +9,6 @@ export async function generateMetadata() {
     title: { absolute: 'When Can I Apply for British Citizenship? Free Date Calculator 2026' },
     description: 'Free calculator — find the exact date you can apply for British citizenship from your ILR date. Handles the 12-month wait and the spouse-of-a-British-citizen exception. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/citizenship-date-calculator' },
-    keywords: ['when can i apply for british citizenship', 'british citizenship date calculator', 'citizenship application date', 'how long after ilr can i apply for citizenship', '12 month rule citizenship', 'naturalisation date calculator'],
     openGraph: {
       title: 'When Can I Apply for British Citizenship? Free Date Calculator',
       description: 'Find the exact date you can apply for British citizenship from your ILR date — including the spouse exception. Free, no sign-up.',

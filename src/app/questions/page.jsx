@@ -9,7 +9,6 @@ export async function generateMetadata() {
     title: { absolute: `Life in the UK Test Questions & Answers — All ${TOTAL} Free Questions` },
     description: `Browse all ${TOTAL} free Life in the UK test questions and answers, grouped by handbook chapter. Every question has a detailed explanation. No sign-up, updated for 2026.`,
     alternates: { canonical: 'https://passtheuktest.co.uk/questions' },
-    keywords: ['life in the uk test questions', 'life in the uk test questions and answers', 'life in the uk test practice questions', 'life in the uk questions by chapter', 'free life in the uk test questions'],
     openGraph: {
       title: `Life in the UK Test Questions & Answers — All ${TOTAL} Free Questions`,
       description: `Browse all ${TOTAL} free Life in the UK test questions and answers by chapter. Every question has a detailed explanation.`,

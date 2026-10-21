@@ -8,7 +8,6 @@ export async function generateMetadata() {
     title: 'Life in the UK Test Questions PDF — Free Download',
     description: 'Download 50 free Life in the UK test practice questions with answers and explanations as a printable PDF — based on the current handbook, no sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/life-in-the-uk-test-questions-pdf' },
-    keywords: ['life in the uk test questions pdf', 'life in the uk test questions and answers pdf', 'life in the uk test practice questions pdf free download', 'printable life in the uk test questions'],
     openGraph: {
       title: 'Life in the UK Test Questions PDF — Free Download',
       description: 'Download 50 free Life in the UK test practice questions with answers and explanations as a printable PDF — based on the current handbook, no sign-up.',

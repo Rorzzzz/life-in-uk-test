@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 listening practice', 'ielts listening practice free', 'b2 english listening', 'ielts general training listening', 'ielts listening comprehension practice', 'b2 listening exercises free', 'ielts listening sections practice 2026'],
 }
 
 const FAQS = [

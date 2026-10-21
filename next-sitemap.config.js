@@ -41,12 +41,14 @@ module.exports = {
     }
     const isChapterQ = path.startsWith('/questions/chapter/')
     const isQuestion = path.startsWith('/questions/') && !isChapterQ
+    // Individual question pages (/questions/123) — noindex, exclude from sitemap
+    if (isQuestion && /^\/questions\/\d+$/.test(path)) return null
     const isChapter  = path.startsWith('/practice/') || path.startsWith('/study/')
     const isArticle  = path.startsWith('/articles/')
     return {
       loc: path,
-      changefreq: isArticle ? 'weekly' : isQuestion ? 'monthly' : 'weekly',
-      priority: priorities[path]?.priority ?? (isChapterQ ? 0.8 : isArticle ? 0.9 : isQuestion ? 0.8 : isChapter ? 0.9 : 0.7),
+      changefreq: isArticle ? 'weekly' : 'weekly',
+      priority: priorities[path]?.priority ?? (isChapterQ ? 0.8 : isArticle ? 0.9 : isChapter ? 0.9 : 0.7),
     }
   },
 }

@@ -17,7 +17,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['life in the uk mock test', 'life in the uk mock test 2026', 'free life in the uk mock test', 'life in the uk mock exam', 'life in the uk mock test free', 'life in uk mock test', 'mock test life in the uk'],
 }
 
 const FAQS = [

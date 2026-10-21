@@ -16,16 +16,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: [
-    'life in the uk practice test',
-    'life in the uk practice test free',
-    'life in the uk practice test 2026',
-    'uk citizenship test practice',
-    'british citizenship test practice',
-    'life in the uk test free',
-    'life in the uk free practice test',
-    'life in the uk test 2026 practice',
-  ],
 }
 
 const FAQS = [

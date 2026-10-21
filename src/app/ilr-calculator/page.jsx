@@ -9,7 +9,6 @@ export async function generateMetadata() {
     title: 'ILR Calculator UK 2026 — Free Eligibility Date & Absence Check',
     description: 'Free ILR calculator UK — find your exact eligibility date, check the 180-day absence rule and get a full cost breakdown. Updated for 2026 Earned Settlement changes. No sign-up.',
     alternates: { canonical: 'https://passtheuktest.co.uk/ilr-calculator' },
-    keywords: ['ilr calculator', 'ilr calculator uk', 'ilr eligibility calculator', 'ilr calculator 2026', 'when can i apply for ilr', 'ilr date calculator', 'indefinite leave to remain calculator'],
     openGraph: {
       title: 'ILR Calculator UK 2026 — Free Eligibility Date & Absence Check',
       description: 'Free ILR calculator — find your exact eligibility date, check absences and get a full cost breakdown. Updated for 2026.',

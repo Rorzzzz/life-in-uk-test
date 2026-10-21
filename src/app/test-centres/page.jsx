@@ -8,13 +8,6 @@ export const metadata = {
   title: 'Life in the UK Test Centres Near You — All 60+ Locations 2026',
   description: `Find your nearest Life in the UK test centre. ${TEST_CENTRES.length} approved test venues across England, Scotland, Wales and Northern Ireland — addresses, maps links and booking info.`,
   alternates: { canonical: 'https://passtheuktest.co.uk/test-centres' },
-  keywords: [
-    'life in the uk test centre near me',
-    'life in the uk test centres near me',
-    'nearest life in the uk test centre',
-    'life in the uk test centre locations',
-    'life in the uk test venues 2026',
-  ],
   openGraph: {
     title: 'Life in the UK Test Centres Near You — All 60+ Locations 2026',
     description: `Find your nearest Life in the UK test centre. ${TEST_CENTRES.length} approved venues across England, Scotland, Wales and Northern Ireland.`,

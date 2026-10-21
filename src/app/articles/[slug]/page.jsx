@@ -17,7 +17,6 @@ export async function generateMetadata({ params }) {
   return {
     title: article.title,
     description: article.description,
-    keywords: article.keywords?.join(', '),
     alternates: { canonical: `https://passtheuktest.co.uk/articles/${params.slug}` },
     openGraph: {
       title: article.title,

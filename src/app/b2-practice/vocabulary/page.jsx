@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 vocabulary practice', 'ielts vocabulary practice', 'b2 english vocabulary', 'b2 words in context', 'b2 collocations practice', 'phrasal verbs b2', 'ielts general training vocabulary', 'b2 academic vocabulary free'],
 }
 
 const FAQS = [

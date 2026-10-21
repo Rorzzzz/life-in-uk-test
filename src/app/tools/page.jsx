@@ -7,7 +7,6 @@ export async function generateMetadata() {
     title: { absolute: 'Free UK Immigration Tools & Calculators 2026 — Pass the UK Test' },
     description: 'Every free UK immigration tool in one place — ILR calculator, 180-day absence check, B1 English test, citizenship planner, cost calculator and more. No sign-up, no paywall, updated for 2026.',
     alternates: { canonical: 'https://passtheuktest.co.uk/tools' },
-    keywords: ['uk immigration tools', 'ilr calculator', 'free immigration calculator uk', 'uk citizenship calculator', 'life in the uk test tools', 'ilr eligibility tools', '180 day rule calculator'],
     openGraph: {
       title: 'Free UK Immigration Tools & Calculators 2026',
       description: 'Every free UK immigration tool in one place — ILR calculator, absence check, B1 test, citizenship planner, cost calculator and more. No sign-up.',

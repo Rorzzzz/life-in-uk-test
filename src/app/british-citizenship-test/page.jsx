@@ -16,18 +16,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: [
-    'british citizenship test',
-    'british citizenship test practice',
-    'british citizenship test free',
-    'british citizenship test 2026',
-    'british citizenship test mock',
-    'british citizenship test questions',
-    'uk citizenship test',
-    'uk citizenship test practice',
-    'uk citizenship test free',
-    'citizenship test uk',
-  ],
 }
 
 const FAQS = [

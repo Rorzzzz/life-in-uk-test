@@ -15,7 +15,6 @@ export async function generateMetadata({ params }) {
     title: { absolute: `${ch.title} — ${count} Life in the UK Test Questions & Answers` },
     description: `All ${count} free Life in the UK test questions and answers for "${ch.title}". Every question has a detailed explanation. No sign-up, updated for 2026.`,
     alternates: { canonical: `https://passtheuktest.co.uk/questions/chapter/${ch.id}` },
-    keywords: [`${ch.title.toLowerCase()} life in the uk test`, 'life in the uk test questions', `life in the uk test chapter ${ch.id}`, `${ch.title.toLowerCase()} questions`],
     openGraph: {
       title: `${ch.title} — ${count} Life in the UK Test Questions`,
       description: `All ${count} free questions and answers for "${ch.title}".`,

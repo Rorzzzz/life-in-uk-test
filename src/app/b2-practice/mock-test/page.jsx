@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 english mock test', 'b2 english test practice', 'b2 english practice test', 'b2 level english test', 'b2 english exam practice', 'b2 ielts mock test', 'english b2 test free'],
 }
 
 const FAQS = [

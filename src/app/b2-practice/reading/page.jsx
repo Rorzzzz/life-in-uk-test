@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 reading practice', 'ielts general training reading', 'b2 english reading', 'ielts reading passages free', 'b2 reading comprehension', 'ielts general training reading passages', 'ielts reading practice free 2026'],
 }
 
 const FAQS = [

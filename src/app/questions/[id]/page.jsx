@@ -38,6 +38,7 @@ export async function generateMetadata({ params }) {
       description: q.explanation.slice(0, 150),
     },
     alternates: { canonical: `https://passtheuktest.co.uk/questions/${params.id}` },
+    robots: { index: false, follow: true },
   }
 }
 

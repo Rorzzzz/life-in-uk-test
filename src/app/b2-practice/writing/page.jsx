@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 writing practice', 'ielts writing practice free', 'b2 english writing', 'ielts general training writing', 'ielts task 1 letter writing practice', 'ielts task 2 essay practice', 'b2 writing feedback', 'ielts band 5.5 writing'],
 }
 
 const FAQS = [

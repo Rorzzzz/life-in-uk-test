@@ -13,7 +13,6 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  keywords: ['b2 speaking practice', 'ielts speaking practice free', 'b2 english speaking', 'ielts speaking part 1 practice', 'ielts speaking part 2 cue card', 'ielts speaking feedback', 'b2 speaking test preparation 2026', 'ielts speaking band 5.5'],
 }
 
 const FAQS = [
