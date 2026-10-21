@@ -23,7 +23,7 @@ function seededShuffle(arr, seed) {
 }
 
 // Returns 24 questions for a given test number (1–45)
-// Stratified by chapter to mirror the real exam distribution
+// Stratified by chapter based on handbook content length analysis (Home Office publishes no official weighting)
 export function getMockTest(testNumber) {
   if (testNumber < 1 || testNumber > MOCK_TEST_COUNT) return []
 
