@@ -70,9 +70,10 @@ export const metadata = {
   },
 }
 
-// Runs before hydration: sets theme class and initialises Google Consent Mode v2
-// with all storage denied by default. If the user has already consented (returning
-// visitor), grants immediately so GA/AdSense load in full mode from the start.
+// Runs before hydration: sets theme class, initialises Google Consent Mode v2
+// (all denied by default), and signals Google Funding Choices is present.
+// Funding Choices (the certified CMP) handles consent for EEA/UK users automatically.
+// For returning visitors who already consented, grants immediately.
 const headInitScript = `(function(){
   try{var t=localStorage.getItem('passtheuktest_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t);}catch(e){}
   window.dataLayer=window.dataLayer||[];
@@ -80,6 +81,7 @@ const headInitScript = `(function(){
   window.gtag=gtag;
   gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:2000});
   try{if(localStorage.getItem('ptukt_consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}
+  (function signalGfc(){if(!window.frames['googlefcPresent']){if(document.body){var i=document.createElement('iframe');i.style.cssText='width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;display:none';i.name='googlefcPresent';document.body.appendChild(i);}else{setTimeout(signalGfc,0);}}})();
 })();`
 
 export default function RootLayout({ children }) {
@@ -93,6 +95,9 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: headInitScript }} />
         {/* AdSense — inline in <head> so it appears in static HTML for crawler verification */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9877949460965281" crossOrigin="anonymous" />
+        {/* Google Funding Choices — IAB TCF 2.2 certified CMP for EEA/UK consent */}
+        {/* Configure the message at: AdSense → Privacy & messaging → GDPR */}
+        <script async src="https://fundingchoicesmessages.google.com/i/pub-9877949460965281/prompt.js" />
       </head>
 
       {/* Google Analytics 4 */}

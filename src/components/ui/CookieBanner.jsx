@@ -26,20 +26,28 @@ export default function CookieBanner() {
   const [expanded, setExpanded]   = useState(false)
 
   useEffect(() => {
-    function show() { setVisible(true) }
+    let mounted = true
+    function show() { if (mounted) setVisible(true) }
     window.addEventListener('show-cookie-banner', show)
     try {
       const stored = localStorage.getItem(CONSENT_KEY)
       if (!stored) {
-        const t = setTimeout(() => setVisible(true), 2000)
-        return () => { clearTimeout(t); window.removeEventListener('show-cookie-banner', show) }
+        // Wait 2.5s so Google Funding Choices can initialise first.
+        // If FC is active for this user (EEA/UK), it shows its own certified CMP
+        // and we suppress our banner to avoid a double-banner.
+        const t = setTimeout(() => {
+          if (!mounted) return
+          if (window.googlefc?.callbackQueue) return // Funding Choices is handling this user
+          setVisible(true)
+        }, 2500)
+        return () => { mounted = false; clearTimeout(t); window.removeEventListener('show-cookie-banner', show) }
       } else {
         updateConsent(stored === 'accepted')
       }
     } catch {
-      setVisible(true)
+      if (mounted) setVisible(true)
     }
-    return () => window.removeEventListener('show-cookie-banner', show)
+    return () => { mounted = false; window.removeEventListener('show-cookie-banner', show) }
   }, [])
 
   function accept() {
