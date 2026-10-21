@@ -49,9 +49,11 @@ export function sm2Update(current, isCorrect, responseMs = null) {
   }
 
   let { easeFactor, interval, repetitions } = q
-  easeFactor  = easeFactor  ?? 2.5
-  interval    = interval    ?? 1
-  repetitions = repetitions ?? 0
+  // Use Number.isFinite — nullish coalescing (?? 1) doesn't protect against NaN/Infinity
+  // stored from a prior corrupted session, which would propagate and crash toISOString().
+  easeFactor  = (Number.isFinite(easeFactor)  && easeFactor  >= 1.3) ? easeFactor  : 2.5
+  interval    = (Number.isFinite(interval)    && interval    >  0)   ? interval    : 1
+  repetitions = (Number.isFinite(repetitions) && repetitions >= 0)   ? Math.floor(repetitions) : 0
 
   if (quality >= 3) {
     // Correct
@@ -71,7 +73,10 @@ export function sm2Update(current, isCorrect, responseMs = null) {
   // Calculate next due date
   const due = new Date()
   due.setDate(due.getDate() + interval)
-  const dueDate = due.toISOString().split('T')[0]
+  // Guard: setDate with a bad interval (shouldn't reach here, but belt-and-braces)
+  const dueDate = isNaN(due.getTime())
+    ? new Date(Date.now() + 86400000).toISOString().split('T')[0]
+    : due.toISOString().split('T')[0]
 
   // Update mastery level
   const mastery = calcMastery(repetitions, totalAnswered, totalCorrect)

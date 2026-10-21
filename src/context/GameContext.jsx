@@ -37,9 +37,24 @@ function loadState() {
   }
 }
 
+function sanitizeProgress(progress) {
+  if (!progress || typeof progress !== 'object') return {}
+  const out = {}
+  for (const [id, q] of Object.entries(progress)) {
+    if (!q || typeof q !== 'object') continue
+    out[id] = {
+      ...q,
+      easeFactor:  (Number.isFinite(q.easeFactor)  && q.easeFactor  >= 1.3) ? q.easeFactor  : 2.5,
+      interval:    (Number.isFinite(q.interval)    && q.interval    >  0)   ? q.interval    : 1,
+      repetitions: (Number.isFinite(q.repetitions) && q.repetitions >= 0)   ? Math.floor(q.repetitions) : 0,
+    }
+  }
+  return out
+}
+
 function migrateState(state) {
-  // Ensure all fields exist (handles old saves)
-  return { ...DEFAULT_STATE, ...state, version: 2 }
+  // Ensure all fields exist (handles old saves) and sanitize NaN SM-2 values
+  return { ...DEFAULT_STATE, ...state, progress: sanitizeProgress(state.progress), version: 2 }
 }
 
 function saveState(state) {
