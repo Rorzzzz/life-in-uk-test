@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
+import AdSlot from '@/components/ui/AdSlot'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 import {
   CheckCircle2,
   XCircle,
@@ -632,6 +634,19 @@ export default function B1CheckClient({ header, footer }) {
           />
         )}
       </AnimatePresence>
+
+      {/* Ads below the quiz/results only — not on the select screen.
+          In-quiz ad changes every EXAM_AD_REFRESH_EVERY questions, only on Next. */}
+      {screen === 'quiz' && (
+        <AdSlot
+          slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH}
+          refreshKey={Math.floor(questionIndex / EXAM_AD_REFRESH_EVERY)}
+          className="mt-12"
+        />
+      )}
+      {screen === 'results' && (
+        <AdSlot slot={AD_SLOTS.results} refreshKey="b1check-results" className="mt-8" />
+      )}
 
       {/* Footer (RelatedTools) only shown on the select screen */}
       {screen === 'select' && footer}

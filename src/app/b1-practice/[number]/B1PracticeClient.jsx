@@ -6,6 +6,8 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { Volume2, VolumeX, ChevronRight, RotateCcw, Trophy } from 'lucide-react'
 import { useAudioNarration } from '@/hooks/useAudioNarration'
+import AdSlot from '@/components/ui/AdSlot'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -440,6 +442,21 @@ export default function B1PracticeClient({ questions, testNumber, totalTests }) 
             />
           )}
         </AnimatePresence>
+        {/* Below the quiz/results only — never on the intro. In-quiz ad changes every
+            EXAM_AD_REFRESH_EVERY questions, only after the user answers. */}
+        {screen === 'intro' && (
+          <AdSlot slot={AD_SLOTS.examInline} refreshKey="b1-intro" className="px-4 mt-4 mb-8" />
+        )}
+        {screen === 'quiz' && (
+          <AdSlot
+            slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH}
+            refreshKey={Math.floor(questionIndex / EXAM_AD_REFRESH_EVERY)}
+            className="px-4 mt-12 mb-8"
+          />
+        )}
+        {screen === 'results' && (
+          <AdSlot slot={AD_SLOTS.results} refreshKey="b1-results" className="px-4 mt-8 mb-8" />
+        )}
       </div>
     </div>
   )

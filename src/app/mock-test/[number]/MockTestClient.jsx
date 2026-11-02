@@ -11,6 +11,9 @@ import PrintTest from '@/components/game/PrintTest'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import AdSlot from '@/components/ui/AdSlot'
+import WithAdRail from '@/components/ui/AdRail'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 
 const ConfettiBlast = dynamic(() => import('@/components/game/ConfettiBlast'), { ssr: false })
 
@@ -63,7 +66,8 @@ export default function MockTestClient({ testNumber, questions }) {
 
   if (!started) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col items-center text-center gap-6">
+      <WithAdRail>
+      <div className="flex flex-col items-center text-center gap-6">
         <p className="text-5xl">📋</p>
         <div>
           <h1 className="text-2xl font-display font-bold text-ink mb-1">Mock Test {testNumber}</h1>
@@ -94,7 +98,11 @@ export default function MockTestClient({ testNumber, questions }) {
           <Link href="/cheat-sheet" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Cheat Sheet</Link>
           <Link href="/faq" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">FAQ</Link>
         </div>
+        {/* Intro ad: below the link row (buffer from Start Test), all screen sizes.
+            Unmounts when the test starts. */}
+        <AdSlot slot={AD_SLOTS.examInline} refreshKey="intro" className="mt-4 max-w-sm" />
       </div>
+      </WithAdRail>
     )
   }
 
@@ -103,9 +111,10 @@ export default function MockTestClient({ testNumber, questions }) {
     const nextTest = testNumber < 45 ? testNumber + 1 : null
 
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
+      <WithAdRail>
         <ConfettiBlast trigger={correct >= 18} />
         <ResultScreen
+          showAds
           score={correct}
           total={questions.length}
           xpEarned={correct === questions.length ? 200 : correct >= 18 ? 100 : 0}
@@ -160,12 +169,12 @@ export default function MockTestClient({ testNumber, questions }) {
         <div className="mt-4 flex justify-center">
           <PrintTest testNumber={testNumber} score={correct} total={questions.length} questions={questions} />
         </div>
-      </div>
+      </WithAdRail>
     )
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <WithAdRail>
       <BadgeUnlock />
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-medium text-ink-muted">Mock Test {testNumber}</span>
@@ -181,6 +190,14 @@ export default function MockTestClient({ testNumber, questions }) {
         onNext={handleNext}
         countForStreak={false}
       />
-    </div>
+      {/* In-exam ad: below the question card with a clear gap from the answers/Next.
+          refreshKey only changes when the user clicks Next (index advances), so a new
+          ad loads every EXAM_AD_REFRESH_EVERY questions — never on a timer. */}
+      <AdSlot
+        slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH}
+        refreshKey={Math.floor(index / EXAM_AD_REFRESH_EVERY)}
+        className="mt-12"
+      />
+    </WithAdRail>
   )
 }

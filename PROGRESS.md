@@ -11,6 +11,19 @@
 
 ---
 
+## 2026-11-02 — AdSense manual ad slots (account approved + ID verified)
+
+- `src/data/ads.js` — slot IDs (Exam inline 6119884815, Results 9470479023, Sidebar 5544722630),
+  `EXAM_AD_REFRESH_EVERY = 1`, `INLINE_AD_MIN_WIDTH = 768`, `RESULTS_AD_EVERY = 5`
+- `src/components/ui/AdSlot.jsx` — fixed-height reserved box (zero CLS); new ad only when `refreshKey`
+  changes on a user action (Next), never on a timer
+- `src/components/ui/AdRail.jsx` — desktop (≥1024px) sticky 300×600 sidebar
+- Applied to every quiz: mock tests, /exam, practice chapters, B1 practice, B1 check, B2 mock + sections.
+  Intro screen ad (all sizes, buffered from Start), in-quiz ad (≥768px only — on phones the auto-scroll
+  keeps it off-screen / next to Next), results ads (all sizes).
+- Auto Ads (dashboard): anchor at TOP, vignettes off, mock-test intro placement excluded.
+- Review after 2–4 weeks: Active View viewability + CTR on "Exam inline", CWV/INP in Search Console.
+
 ## WHAT WAS BUILT THIS SESSION
 
 ### Data layer

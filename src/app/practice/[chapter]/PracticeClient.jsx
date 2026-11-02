@@ -7,6 +7,9 @@ import { useGame } from '@/context/GameContext'
 import QuestionCard from '@/components/game/QuestionCard'
 import ResultScreen from '@/components/game/ResultScreen'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
+import AdSlot from '@/components/ui/AdSlot'
+import WithAdRail from '@/components/ui/AdRail'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 
 export default function PracticeClient({ chapter }) {
   const { state, completeChapter } = useGame()
@@ -46,8 +49,9 @@ export default function PracticeClient({ chapter }) {
 
   if (done) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
+      <WithAdRail>
         <ResultScreen
+          showAds
           score={correct}
           total={session.length}
           xpEarned={correct * 10 + 25}
@@ -55,13 +59,13 @@ export default function PracticeClient({ chapter }) {
           onHome={() => router.push('/')}
           onChangeChapter={() => router.push('/practice')}
         />
-      </div>
+      </WithAdRail>
     )
   }
 
   if (!started) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
+      <WithAdRail>
         <div className="flex items-center gap-3 mb-6">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center font-bold font-mono"
@@ -95,12 +99,14 @@ export default function PracticeClient({ chapter }) {
         >
           Start session →
         </button>
-      </div>
+        {/* Intro ad: extra gap from the full-width Start button, all screen sizes */}
+        <AdSlot slot={AD_SLOTS.examInline} refreshKey="practice-intro" className="mt-12" />
+      </WithAdRail>
     )
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <WithAdRail>
       <BadgeUnlock />
 
       <div className="flex items-center gap-3 mb-6">
@@ -125,6 +131,12 @@ export default function PracticeClient({ chapter }) {
           onNext={handleNext}
         />
       )}
-    </div>
+      {/* New ad every EXAM_AD_REFRESH_EVERY questions, only on the user's Next click */}
+      <AdSlot
+        slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH}
+        refreshKey={Math.floor(index / EXAM_AD_REFRESH_EVERY)}
+        className="mt-12"
+      />
+    </WithAdRail>
   )
 }

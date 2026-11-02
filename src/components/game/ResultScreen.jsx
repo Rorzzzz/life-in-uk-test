@@ -5,10 +5,13 @@ import { Target } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import ProgressRing from '@/components/ui/ProgressRing'
 import dynamic from 'next/dynamic'
+import { Fragment } from 'react'
+import AdSlot from '@/components/ui/AdSlot'
+import { AD_SLOTS, RESULTS_AD_EVERY } from '@/data/ads'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
-export default function ResultScreen({ score, total, xpEarned, onRetry, retryLabel, onHome, onDifferentTest, differentTestLabel, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [] }) {
+export default function ResultScreen({ score, total, xpEarned, onRetry, retryLabel, onHome, onDifferentTest, differentTestLabel, onChangeChapter, weakChapters = [], isExam = false, footer, wrongQuestions = [], showAds = false }) {
   const pct     = Math.round((score / total) * 100)
   const passed  = isExam ? score >= 18 : pct >= 70
   const colour  = passed ? '#22d07a' : '#ff4d6d'
@@ -99,6 +102,8 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, retryLab
         )}
       </div>
 
+      {showAds && <AdSlot slot={AD_SLOTS.results} refreshKey="results-top" className="mt-4" />}
+
       {wrongQuestions.length > 0 && (
         <div className="w-full">
           <div className="bg-card rounded-2xl p-4 border border-border">
@@ -106,7 +111,11 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, retryLab
             <p className="text-xs text-ink-muted mb-4">Review these before your next attempt</p>
             <div className="space-y-3 text-left">
               {wrongQuestions.map((q, i) => (
-                <div key={q.id} className="bg-raised rounded-xl p-4 border border-border">
+                <Fragment key={q.id}>
+                {showAds && i > 0 && i % RESULTS_AD_EVERY === 0 && (
+                  <AdSlot slot={AD_SLOTS.results} refreshKey={`results-${i}`} className="py-2" />
+                )}
+                <div className="bg-raised rounded-xl p-4 border border-border">
                   <p className="text-xs text-ink-muted font-mono mb-1.5">Question {i + 1}</p>
                   <p className="font-semibold text-ink text-sm mb-3">{q.q}</p>
                   <div className="bg-danger/10 border border-danger/20 rounded-xl px-3 py-2 mb-2">
@@ -119,6 +128,7 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, retryLab
                   </div>
                   <p className="text-xs text-ink-muted leading-relaxed">{q.explanation}</p>
                 </div>
+                </Fragment>
               ))}
             </div>
           </div>

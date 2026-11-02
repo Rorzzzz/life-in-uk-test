@@ -10,6 +10,9 @@ import TimerBar from '@/components/game/TimerBar'
 import ResultScreen from '@/components/game/ResultScreen'
 import BadgeUnlock from '@/components/game/BadgeUnlock'
 import dynamic from 'next/dynamic'
+import AdSlot from '@/components/ui/AdSlot'
+import WithAdRail from '@/components/ui/AdRail'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 
 const ConfettiBlast = dynamic(() => import('@/components/game/ConfettiBlast'), { ssr: false })
 
@@ -132,7 +135,8 @@ export default function ExamPage() {
   // ── Mode picker ──────────────────────────────────────────────────────────────
   if (!started) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col items-center text-center gap-6">
+      <WithAdRail>
+      <div className="flex flex-col items-center text-center gap-6">
         <p className="text-5xl">🎓</p>
         <div>
           <h1 className="text-2xl font-display font-bold text-ink mb-2">Mock Exam</h1>
@@ -181,16 +185,20 @@ export default function ExamPage() {
           For fixed numbered tests, use{' '}
           <a href="/mock-test" className="text-brand-400 hover:underline">Mock Tests 1–60</a>
         </p>
+        {/* Intro ad: below the mode buttons + link row, all screen sizes */}
+        <AdSlot slot={AD_SLOTS.examInline} refreshKey="exam-intro" className="mt-4 max-w-sm" />
       </div>
+      </WithAdRail>
     )
   }
 
   // ── Results ──────────────────────────────────────────────────────────────────
   if (done) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
+      <WithAdRail>
         <ConfettiBlast trigger={correct >= 18} />
         <ResultScreen
+          showAds
           score={correct}
           total={questions.length}
           xpEarned={correct === questions.length ? 200 : correct >= 18 ? 100 : 0}
@@ -205,13 +213,13 @@ export default function ExamPage() {
             .map(ch => ({ id: ch.id, title: ch.title, colour: ch.colour, wrong: wrongByChapter[ch.id] }))}
           isExam
         />
-      </div>
+      </WithAdRail>
     )
   }
 
   // ── Active exam ───────────────────────────────────────────────────────────────
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <WithAdRail>
       <BadgeUnlock />
       <div className="mb-6">
         <TimerBar secondsRemaining={timeLeft} totalSeconds={EXAM_DURATION_SECONDS} />
@@ -224,6 +232,12 @@ export default function ExamPage() {
         onNext={handleNext}
         countForStreak={false}
       />
-    </div>
+      {/* New ad every EXAM_AD_REFRESH_EVERY questions, only on the user's Next click */}
+      <AdSlot
+        slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH}
+        refreshKey={Math.floor(index / EXAM_AD_REFRESH_EVERY)}
+        className="mt-12"
+      />
+    </WithAdRail>
   )
 }

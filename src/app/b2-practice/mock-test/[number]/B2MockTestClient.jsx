@@ -6,6 +6,9 @@ import { Play, Volume2, RotateCcw } from 'lucide-react'
 import clsx from 'clsx'
 import B2WritingCard from '@/components/game/B2WritingCard'
 import B2SpeakingCard from '@/components/game/B2SpeakingCard'
+import AdSlot from '@/components/ui/AdSlot'
+import WithAdRail from '@/components/ui/AdRail'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 
 const PASS_MARK = 14
 const TOTAL_MCQ = 20
@@ -319,6 +322,8 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
         </Link>
       </div>
 
+      <AdSlot slot={AD_SLOTS.results} refreshKey="b2-results" className="mb-5" />
+
       <div className="bg-card rounded-2xl p-4 border border-border">
         <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Also practise</p>
         <div className="flex flex-wrap gap-2">
@@ -440,6 +445,7 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
           onNext={() => { setSection('speaking'); setStepIndex(0); scrollTop() }}
           isLast={false}
         />
+        <AdSlot slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH} refreshKey="b2-writing" className="mt-12" />
       </div>
     )
   }
@@ -470,13 +476,14 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
           onNext={() => { setPhase('done'); scrollTop() }}
           isLast={true}
         />
+        <AdSlot slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH} refreshKey="b2-speaking" className="mt-12" />
       </div>
     )
   }
 
   if (phase === 'intro') {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
+      <WithAdRail>
         <div className="mb-2">
           <span className="text-xs px-2.5 py-1 rounded-full bg-brand-500/20 text-brand-400 font-semibold">B2 English</span>
         </div>
@@ -516,13 +523,15 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
           className="w-full py-4 bg-brand-500 hover:bg-brand-600 active:opacity-70 text-white font-bold rounded-xl transition-colors text-lg">
           Start Mock Test {testData.number} →
         </button>
-      </div>
+        {/* Intro ad: extra gap from the full-width Start button, all screen sizes */}
+        <AdSlot slot={AD_SLOTS.examInline} refreshKey="b2-intro" className="mt-12" />
+      </WithAdRail>
     )
   }
 
   // ── MCQ test in progress ──
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6">
+    <WithAdRail>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           {ALL_ORDER.map((s) => (
@@ -556,6 +565,12 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
       {section === 'grammar' && (
         <MCQStep key={`g-${stepIndex}`} question={grammarQuestions[stepIndex]} sectionLabel="Grammar" questionIndex={stepIndex} total={6} onAnswer={handleMCQAnswer} />
       )}
-    </div>
+      {/* New ad every EXAM_AD_REFRESH_EVERY questions, only on the user's answer/Next */}
+      <AdSlot
+        slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH}
+        refreshKey={Math.floor((globalQ - 1) / EXAM_AD_REFRESH_EVERY)}
+        className="mt-12"
+      />
+    </WithAdRail>
   )
 }

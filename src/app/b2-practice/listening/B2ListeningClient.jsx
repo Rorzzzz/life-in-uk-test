@@ -1,5 +1,7 @@
 'use client'
 
+import AdSlot from '@/components/ui/AdSlot'
+import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 import { useState } from 'react'
 import Link from 'next/link'
 import B2ListeningCard from '@/components/game/B2ListeningCard'
@@ -197,6 +199,8 @@ export default function B2ListeningClient() {
         globalIndex={stepIndex}
         onAnswer={handleAnswer}
       />
+      {/* New ad only after the user moves on — never on a timer */}
+      <AdSlot slot={AD_SLOTS.examInline} minWidth={INLINE_AD_MIN_WIDTH} refreshKey={Math.floor(stepIndex / EXAM_AD_REFRESH_EVERY)} className="mt-12" />
     </div>
   )
 }

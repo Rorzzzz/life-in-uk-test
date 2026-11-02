@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import ProgressRing from '@/components/ui/ProgressRing'
 import dynamic from 'next/dynamic'
+import AdSlot from '@/components/ui/AdSlot'
+import { AD_SLOTS } from '@/data/ads'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
@@ -64,6 +66,8 @@ export default function B2ResultScreen({ score, total, wrongQuestions = [], onRe
           ← B2 Practice hub
         </Link>
       </div>
+
+      <AdSlot slot={AD_SLOTS.results} refreshKey="b2-section-results" className="mb-6" />
 
       {/* Wrong question review */}
       {wrongQuestions.length > 0 && (
