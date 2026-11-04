@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import B2VocabClient from './B2VocabClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'B2 Vocabulary Practice Free — 240 IELTS Vocabulary Questions for UK Visa 2026',
@@ -89,6 +90,9 @@ export default function B2VocabPage() {
             At Band 5.5, you need to recognise and use common vocabulary accurately, demonstrate some collocation awareness, and avoid consistent misuse of frequent words. You do not need a wide range of rare or specialist vocabulary — precise use of everyday vocabulary at B2 level is enough to meet the UK settlement threshold.
           </p>
         </div>
+
+        {/* Between the explainer text and the FAQ: no controls nearby */}
+        <ContentAd id="1" className="my-8" />
 
         <div>
           <h2 className="font-display font-bold text-ink mb-4">B2 vocabulary — frequently asked questions</h2>

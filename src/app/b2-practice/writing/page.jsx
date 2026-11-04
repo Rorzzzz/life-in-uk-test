@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import B2WritingClient from './B2WritingClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'B2 Writing Practice Free — Examiner Feedback on IELTS Letters & Essays 2026',
@@ -87,6 +88,9 @@ export default function B2WritingPage() {
             The examiner feedback gives you a PASS or FAIL verdict, a band score estimate, and specific comments on Task Achievement, Vocabulary, Grammar and Cohesion — plus a model Band 7 answer you can compare your response against. This is the closest free alternative to paying for official IELTS marking, and the only way to get written feedback on your writing before sitting the real exam.
           </p>
         </div>
+
+        {/* Between the explainer text and the FAQ: no controls nearby */}
+        <ContentAd id="1" className="my-8" />
 
         <div>
           <h2 className="font-display font-bold text-ink mb-4">B2 writing — frequently asked questions</h2>

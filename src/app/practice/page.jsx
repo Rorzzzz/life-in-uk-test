@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHAPTERS, getByChapter } from '@/data/questions'
+import ContentAd from '@/components/ui/ContentAd'
 
 // Accurate one-line summaries of the 5 official handbook chapters — used for
 // ItemList/Course structured data (the chapter rich-result carousel).
@@ -98,6 +99,29 @@ export default function PracticePage() {
           <p className="text-sm text-ink-muted">Fix what you miss</p>
         </Link>
       </div>
+
+      {/* Real revision guidance; the ad sits inside this text, away from the cards */}
+      <section className="mt-10 space-y-3">
+        <h2 className="text-lg font-display font-bold text-ink">How to revise by chapter</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          Every question in the Life in the UK test comes from one of the five chapters of the official handbook,
+          Life in the United Kingdom: A Guide for New Residents. Practising one chapter at a time helps you build
+          knowledge in a logical order instead of jumping between centuries and topics. Each session gives you an
+          explanation after every answer, so you learn from mistakes straight away.
+        </p>
+      </section>
+
+      <ContentAd id="1" />
+
+      <section className="space-y-3 mb-4">
+        <h2 className="text-lg font-display font-bold text-ink">Which chapter should you start with?</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          The history chapter is the longest in the handbook, so it produces the most questions and needs the most
+          time. Many people start with the shorter chapters on values and on what the UK is, to build confidence,
+          then spend most of their revision on history and on the chapters about modern society and government.
+          When you are scoring well on every chapter, switch to full mock tests to practise under the real time limit.
+        </p>
+      </section>
     </div>
     </>
   )

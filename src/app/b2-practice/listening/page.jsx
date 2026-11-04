@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import B2ListeningClient from './B2ListeningClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'B2 Listening Practice Free — IELTS Audio Comprehension Questions 2026',
@@ -89,6 +90,9 @@ export default function B2ListeningPage() {
             The key skill IELTS Listening tests is catching specific information — numbers, names, times, conditions — on a single listen. Practising with the text hidden trains this skill directly. After you answer, the transcript and explanation are revealed so you can identify exactly what you missed and why.
           </p>
         </div>
+
+        {/* Between the explainer text and the FAQ: no controls nearby */}
+        <ContentAd id="1" className="my-8" />
 
         <div>
           <h2 className="font-display font-bold text-ink mb-4">B2 listening — frequently asked questions</h2>

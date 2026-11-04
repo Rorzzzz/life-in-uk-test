@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import B2ReadingClient from './B2ReadingClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'B2 Reading Practice Free — IELTS General Training Passages & Questions 2026',
@@ -88,6 +89,9 @@ export default function B2ReadingPage() {
             IELTS General Training Reading is generally considered more accessible than IELTS Academic — the texts are shorter and closer to everyday life — but time pressure is still the main challenge. Practising the three section types separately lets you identify which text format causes the most errors, so you can target that area before your exam.
           </p>
         </div>
+
+        {/* Between the explainer text and the FAQ: no controls nearby */}
+        <ContentAd id="1" className="my-8" />
 
         <div>
           <h2 className="font-display font-bold text-ink mb-4">B2 reading — frequently asked questions</h2>

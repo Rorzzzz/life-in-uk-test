@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import B2GrammarClient from './B2GrammarClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'B2 Grammar Practice Free — 200 IELTS Grammar Questions for UK Visa 2026',
@@ -90,6 +91,9 @@ export default function B2GrammarPage() {
             You do not need perfect grammar to reach B2. IELTS Band 5.5 allows occasional minor errors in complex structures, as long as meaning is clear. The pass mark for UK settlement is reaching this threshold across all four skills — grammar accuracy in writing and speaking is assessed alongside reading and listening comprehension.
           </p>
         </div>
+
+        {/* Between the explainer text and the FAQ: no controls nearby */}
+        <ContentAd id="1" className="my-8" />
 
         <div>
           <h2 className="font-display font-bold text-ink mb-4">B2 grammar — frequently asked questions</h2>

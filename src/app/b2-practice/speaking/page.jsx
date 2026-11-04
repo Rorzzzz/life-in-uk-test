@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import B2SpeakingClient from './B2SpeakingClient'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'B2 Speaking Practice Free — Record & Get Examiner Feedback 2026',
@@ -88,6 +89,9 @@ export default function B2SpeakingPage() {
             Unlike most speaking practice tools, this gives you a written PASS/FAIL verdict and a band score estimate for every response. The examiner feedback is specific — it tells you which criterion is dragging your score down and how to fix it, not just whether you passed. Recording yourself and reading the feedback is one of the fastest ways to move from B1 to B2 speaking level.
           </p>
         </div>
+
+        {/* Between the explainer text and the FAQ: no controls nearby */}
+        <ContentAd id="1" className="my-8" />
 
         <div>
           <h2 className="font-display font-bold text-ink mb-4">B2 speaking — frequently asked questions</h2>
