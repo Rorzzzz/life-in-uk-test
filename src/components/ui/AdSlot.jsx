@@ -13,19 +13,22 @@ const IS_DEV = process.env.NODE_ENV === 'development'
  *   it in response to a user action (e.g. Next click) — never on a timer.
  * - `minWidth`: only render when the viewport is at least this wide (e.g. 1024
  *   for the desktop sidebar), so we never request an ad into a hidden box.
+ * - `maxWidth`: only render when the viewport is at most this wide (phones-only units).
  * - `heightClass`: Tailwind height for the reserved box + ad (fixed size).
  */
-export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]', minWidth = 0, className }) {
-  const [enabled, setEnabled] = useState(minWidth === 0)
+export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]', minWidth = 0, maxWidth = 0, className }) {
+  const responsive = minWidth > 0 || maxWidth > 0
+  const [enabled, setEnabled] = useState(!responsive)
 
   useEffect(() => {
-    if (minWidth === 0) return
-    const mq = window.matchMedia(`(min-width: ${minWidth}px)`)
+    if (!responsive) return
+    const query = [minWidth > 0 && `(min-width: ${minWidth}px)`, maxWidth > 0 && `(max-width: ${maxWidth}px)`].filter(Boolean).join(' and ')
+    const mq = window.matchMedia(query)
     setEnabled(mq.matches)
     const onChange = e => setEnabled(e.matches)
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
-  }, [minWidth])
+  }, [responsive, minWidth, maxWidth])
 
   useEffect(() => {
     if (!slot || !enabled) return
@@ -40,9 +43,9 @@ export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]'
   if (!slot && !IS_DEV) return null
 
   return (
-    <aside aria-label="Advertisement" className={clsx('w-full', className)}>
+    <aside aria-label="Advertisements" className={clsx('w-full', className)}>
       <p className="text-[10px] uppercase tracking-wider text-ink-muted text-center mb-1 select-none">
-        Advertisement
+        Advertisements
       </p>
       <div className={clsx('w-full overflow-hidden rounded-xl', heightClass)}>
         {slot ? (

@@ -188,6 +188,7 @@ export default function MockTestClient({ testNumber, questions }) {
         totalQuestions={questions.length}
         onAnswer={handleAnswer}
         onNext={handleNext}
+        showMobileAd
         countForStreak={false}
       />
       {/* In-exam ad: below the question card with a clear gap from the answers/Next.

@@ -253,6 +253,7 @@ export default function ExamPage() {
         totalQuestions={questions.length}
         onAnswer={handleAnswer}
         onNext={handleNext}
+        showMobileAd
         countForStreak={false}
       />
       {/* New ad every EXAM_AD_REFRESH_EVERY questions, only on the user's Next click */}

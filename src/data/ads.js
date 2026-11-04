@@ -8,6 +8,7 @@ export const AD_SLOTS = {
   examInline: '6119884815', // below the question card during a mock test
   results:    '9470479023', // mock-test results screen
   sidebar:    '5544722630', // desktop sticky sidebar (300×600)
+  quizMobile: '6823972680', // phones only: after answering, above the explanation
 }
 
 // Load a fresh in-exam ad every N questions (only on the user's Next click).
@@ -19,6 +20,13 @@ export const EXAM_AD_REFRESH_EVERY = 1
 // means next to the Next button (accidental clicks) — mobile relies on the
 // Auto Ads top anchor instead. Results-screen ads still show on mobile.
 export const INLINE_AD_MIN_WIDTH = 768
+
+// Phones (< INLINE_AD_MIN_WIDTH) get the "Quiz mobile" unit instead: shown only
+// AFTER the user answers (answer buttons are locked), between the question card
+// and the explanation, never next to Next. Small 100px box keeps mobile ad
+// density well under the Better Ads 30% limit alongside the top anchor.
+// Kill switch: set to false if this unit's CTR goes above ~2–3%.
+export const QUIZ_MOBILE_AD_ENABLED = true // user overrode the policy-officer veto 2026-11-04; see research/decisions.md
 
 // On the results screen, insert an ad after every N reviewed wrong answers.
 export const RESULTS_AD_EVERY = 5

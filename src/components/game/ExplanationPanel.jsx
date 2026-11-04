@@ -3,7 +3,7 @@
 import { CheckCircle, XCircle, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
-export default function ExplanationPanel({ isCorrect, explanation, xpGained, questionId, onNext }) {
+export default function ExplanationPanel({ isCorrect, explanation, xpGained, questionId, onNext, keepNextClearOfAd = false }) {
   return (
     <div
       className={`rounded-2xl p-5 border-2 animate-slide-up ${isCorrect ? 'border-success/30 bg-success/5' : 'border-danger/30 bg-danger/5'}`}
@@ -25,7 +25,9 @@ export default function ExplanationPanel({ isCorrect, explanation, xpGained, que
       </div>
 
       {/* Explanation */}
-      <p className="text-base text-ink-muted leading-relaxed mb-4">{explanation}</p>
+      {/* With the phone ad above this panel, a min-height keeps Next >=150px below the
+          ad even for one-line explanations (16 gap + 2 + 20 + 24 + 12 + 64 + 16 = 154px). */}
+      <p className={`text-base text-ink-muted leading-relaxed mb-4 ${keepNextClearOfAd ? 'max-md:min-h-[64px]' : ''}`}>{explanation}</p>
 
       {/* Links + Next */}
       <div className="flex items-center justify-between gap-2">

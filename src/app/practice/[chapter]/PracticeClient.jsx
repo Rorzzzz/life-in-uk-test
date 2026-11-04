@@ -129,6 +129,7 @@ export default function PracticeClient({ chapter }) {
           totalQuestions={session.length}
           onAnswer={handleAnswer}
           onNext={handleNext}
+          showMobileAd
         />
       )}
       {/* New ad every EXAM_AD_REFRESH_EVERY questions, only on the user's Next click */}

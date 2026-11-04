@@ -8,6 +8,8 @@ import ExplanationPanel from './ExplanationPanel'
 import XPPopup from './XPPopup'
 import { useAudioNarration } from '@/hooks/useAudioNarration'
 import { useGame } from '@/context/GameContext'
+import AdSlot from '@/components/ui/AdSlot'
+import { AD_SLOTS, INLINE_AD_MIN_WIDTH, QUIZ_MOBILE_AD_ENABLED } from '@/data/ads'
 
 export default function QuestionCard({
   question,
@@ -16,6 +18,7 @@ export default function QuestionCard({
   onNext,
   onAnswer,             // optional: called with (isCorrect) after answer selected
   showProgress = true,
+  showMobileAd = false,   // phones only: ad after answering (main quiz flows only)
   countForStreak = true, // false during exams — exam answers don't count toward daily streak
 }) {
   const [selected, setSelected]     = useState(null)
@@ -144,6 +147,17 @@ export default function QuestionCard({
           </div>
         </div>
 
+      {/* Phones only, AFTER answering (answers are locked): between the card and
+          the explanation, so Next stays a full explanation-panel away. */}
+      {answered && showMobileAd && QUIZ_MOBILE_AD_ENABLED && (
+        <AdSlot
+          slot={AD_SLOTS.quizMobile}
+          refreshKey={question.id}
+          maxWidth={INLINE_AD_MIN_WIDTH - 1}
+          heightClass="h-[100px]"
+        />
+      )}
+
       {/* Explanation */}
       {answered && (
         <div ref={explanationRef}>
@@ -153,6 +167,7 @@ export default function QuestionCard({
             xpGained={xpGained}
             questionId={question.id}
             onNext={onNext}
+            keepNextClearOfAd={showMobileAd && QUIZ_MOBILE_AD_ENABLED}
           />
         </div>
       )}
