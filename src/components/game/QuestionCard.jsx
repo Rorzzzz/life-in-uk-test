@@ -154,22 +154,18 @@ export default function QuestionCard({
         </div>
 
       {/* Phones only: one ad per question, shown from the start (user's choice,
-          2026-11-04, overriding the policy-officer veto). A non-clickable info strip
-          keeps it >=150px below the answer buttons (16 gap + 134 strip + 16 gap), and
-          after answering the explanation appears below it with Next >=150px further
+          2026-11-04, overriding the policy-officer veto). Placed directly under the answers
+          with no label (user's choice, 2026-11-04, overriding the policy-officer veto); after answering the explanation appears below it with Next >=150px further
           down (keepNextClearOfAd). Kill switch: QUIZ_MOBILE_AD_ENABLED in data/ads.js. */}
       {showMobileAd && QUIZ_MOBILE_AD_ENABLED && (
         <>
-          <div className="md:hidden min-h-[134px] flex flex-col items-center justify-center gap-1 text-center select-none" aria-hidden="true">
-            <p className="text-xs font-mono text-ink-muted">Chapter {question.chapter} · Life in the UK handbook</p>
-            <p className="text-xs text-ink-muted">{answered ? 'Read the explanation below' : 'Tap an answer above to see the explanation'}</p>
-          </div>
-          <div ref={mobileAdRef}>
+          <div ref={mobileAdRef} className="-mt-4">
             <AdSlot
               slot={AD_SLOTS.quizMobile}
               refreshKey={question.id}
               maxWidth={INLINE_AD_MIN_WIDTH - 1}
               heightClass="h-[100px]"
+              showLabel={false}
             />
           </div>
         </>

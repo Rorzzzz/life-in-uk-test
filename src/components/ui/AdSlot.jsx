@@ -16,7 +16,7 @@ const IS_DEV = process.env.NODE_ENV === 'development'
  * - `maxWidth`: only render when the viewport is at most this wide (phones-only units).
  * - `heightClass`: Tailwind height for the reserved box + ad (fixed size).
  */
-export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]', minWidth = 0, maxWidth = 0, className }) {
+export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]', minWidth = 0, maxWidth = 0, showLabel = true, className }) {
   const responsive = minWidth > 0 || maxWidth > 0
   const [enabled, setEnabled] = useState(!responsive)
 
@@ -44,9 +44,11 @@ export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]'
 
   return (
     <aside aria-label="Advertisements" className={clsx('w-full print:hidden', className)}>
-      <p className="text-[10px] uppercase tracking-wider text-ink-muted text-center mb-1 select-none">
-        Advertisements
-      </p>
+      {showLabel && (
+        <p className="text-[10px] uppercase tracking-wider text-ink-muted text-center mb-1 select-none">
+          Advertisements
+        </p>
+      )}
       <div className={clsx('w-full overflow-hidden rounded-xl', heightClass)}>
         {slot ? (
           <ins
