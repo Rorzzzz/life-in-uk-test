@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ContentAd from '@/components/ui/ContentAd'
 import { MapPin, AlertTriangle, Train } from 'lucide-react'
 import { TEST_CENTRES, getCentreSlug } from '@/data/testCentres'
 
@@ -103,6 +104,8 @@ export default function LondonTestCentresPage() {
             </ul>
           </div>
         </div>
+
+        <ContentAd id="1" className="mt-4 mb-10" />
 
         {/* Safety disclaimer */}
         <div className="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-4 mb-6 flex gap-3">

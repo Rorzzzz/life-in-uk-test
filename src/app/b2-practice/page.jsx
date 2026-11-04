@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 import { B2_MOCK_TEST_COUNT } from '@/data/b2MockTests'
 
 export const metadata = {
@@ -181,6 +182,8 @@ export default function B2PracticeHub() {
             <Link href="/articles/b2-vs-b1-english" className="text-brand-400 hover:text-brand-300">B2 vs B1 comparison →</Link>
           </p>
         </div>
+
+        <ContentAd id="1" className="mt-4 mb-10" />
 
         <div className="mb-8">
           <h2 className="text-base font-semibold text-ink mb-4">Common Questions</h2>

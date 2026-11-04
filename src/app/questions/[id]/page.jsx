@@ -3,6 +3,7 @@ import { QUESTIONS, getById, CHAPTERS } from '@/data/questions'
 import { TOPICS } from '@/data/topics'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
 import Link from 'next/link'
+import ContentAd from '@/components/ui/ContentAd'
 
 // Deterministic: spread 4 tests across the 45 available based on question ID
 function getRelatedTests(id) {
@@ -150,6 +151,8 @@ export default function QuestionPage({ params }) {
             <p className="text-base text-ink leading-relaxed">{question.explanation}</p>
           </div>
         </div>
+
+        <ContentAd id="1" className="my-8" />
 
         {/* Context — unique text + internal links */}
         <p className="text-sm text-ink-muted leading-relaxed mb-6">

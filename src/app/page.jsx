@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CHAPTERS } from '@/data/questions'
 import HomeDashboard from './HomeDashboard'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: { absolute: 'Life in the UK Test Practice — Free, 767 Questions & Mock Tests' },
@@ -77,6 +78,8 @@ export default function HomePage() {
             Everything is free. No sign-up. No paywall.
           </p>
         </div>
+
+        <ContentAd id="1" />
 
         <div className="bg-card rounded-2xl p-5">
           <h2 className="font-display font-bold text-ink mb-4">Free Immigration Tools</h2>

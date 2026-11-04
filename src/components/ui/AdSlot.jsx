@@ -43,7 +43,7 @@ export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]'
   if (!slot && !IS_DEV) return null
 
   return (
-    <aside aria-label="Advertisements" className={clsx('w-full', className)}>
+    <aside aria-label="Advertisements" className={clsx('w-full print:hidden', className)}>
       <p className="text-[10px] uppercase tracking-wider text-ink-muted text-center mb-1 select-none">
         Advertisements
       </p>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'Life in the UK Test Format 2026 — What to Expect',
@@ -94,6 +95,8 @@ export default function ExamFormatPage() {
             </div>
           </div>
 
+          <ContentAd id="1" className="my-6" />
+
           {/* Practice test */}
           <div className="bg-card rounded-2xl p-5">
             <h2 className="font-semibold text-ink mb-2">The 4-question practice test</h2>
@@ -146,6 +149,8 @@ export default function ExamFormatPage() {
               <li>Use the review screen before submitting to confirm no questions are blank</li>
             </ol>
           </div>
+
+          <ContentAd id="2" className="my-6" />
 
           {/* Results */}
           <div className="bg-card rounded-2xl p-5">

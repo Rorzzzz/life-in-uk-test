@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -166,6 +167,8 @@ export default function ToolsHubPage() {
             ))}
           </div>
         </section>
+
+        <ContentAd id="1" />
 
         {/* FAQ */}
         <section className="mb-4">

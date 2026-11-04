@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import ContentAd from '@/components/ui/ContentAd'
 import { MapPin, AlertTriangle, Clock, PoundSterling, CheckCircle, Train } from 'lucide-react'
 import { TEST_CENTRES, getCentreSlug, getCentreBySlug, getCentresByRegion } from '@/data/testCentres'
 
@@ -144,6 +145,8 @@ export default function TestCentreCityPage({ params }) {
             <strong className="text-ink">Always verify the address on your booking confirmation</strong> before you travel. Test centre addresses can change. The address shown here was last verified April 2026 — do not rely solely on this page.
           </p>
         </div>
+
+        <ContentAd id="1" className="mt-4 mb-10" />
 
         {/* Test info */}
         <div className="bg-card rounded-2xl p-5 mb-4">

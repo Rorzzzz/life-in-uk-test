@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import CitizenshipPlannerClient from './CitizenshipPlannerClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -110,6 +111,8 @@ function CitizenshipPlannerContent() {
         <li>Total minimum from arriving in the UK to citizenship: approximately 6.5 years on the standard route</li>
       </ul>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         British citizenship requirements
       </h2>
@@ -149,6 +152,8 @@ function CitizenshipPlannerContent() {
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
         On the standard route, it takes a minimum of approximately 6.5 years from arriving in the UK: 5 years qualifying residence, then ILR, then 12 months with ILR before applying for citizenship, plus processing time. The spouse of a British citizen route takes around 3 years in the UK. EU Settled Status holders can apply 1 year after Settled Status is granted.
       </p>
+
+      <ContentAd id="2" />
 
       <h3 className="text-sm font-bold text-ink mb-1">How long after ILR can I apply for citizenship?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 import { B2_MOCK_TESTS, B2_MOCK_TEST_COUNT, B2_MOCK_TEST_QUESTIONS, B2_MOCK_TEST_TIME_MINUTES, B2_MOCK_TEST_PASS_MARK } from '@/data/b2MockTests'
 
 export const metadata = {
@@ -213,6 +214,8 @@ export default function B2MockTestIndexPage() {
           </p>
         </div>
 
+        <ContentAd id="1" className="mt-4 mb-10" />
+
         {/* Why B2 matters */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-3">Why B2 English matters for UK settlement</h2>
@@ -234,6 +237,8 @@ export default function B2MockTestIndexPage() {
             <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">4</span><span>Book the real test when you consistently score 16+ across multiple mock tests. Scoring 17+ every attempt means you are ready.</span></li>
           </ol>
         </div>
+
+        <ContentAd id="2" className="mt-4 mb-10" />
 
         {/* FAQ */}
         <div className="mb-6">

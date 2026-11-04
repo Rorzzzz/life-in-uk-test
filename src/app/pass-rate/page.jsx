@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'Life in the UK Test Pass Rate 2026 — Statistics & Facts',
@@ -62,6 +63,8 @@ export default function PassRatePage() {
           </div>
         </div>
 
+        <ContentAd id="1" className="my-6" />
+
         <div className="bg-card rounded-2xl p-5">
           <h2 className="font-semibold text-ink mb-2">How does the pass rate compare to the pass mark?</h2>
           <p className="text-base text-ink-muted leading-relaxed mb-3">
@@ -99,6 +102,8 @@ export default function PassRatePage() {
             If you fail, you can retake the test as many times as needed. There is no limit on attempts and no mandatory waiting period between sittings. Each retake costs £50. Failed attempts are not reported to the Home Office — your visa status is not affected by failing the test. See our full guide on <Link href="/articles/what-happens-if-you-fail-the-life-in-the-uk-test" className="text-brand-400 hover:underline">what happens if you fail</Link>.
           </p>
         </div>
+
+        <ContentAd id="2" className="my-6" />
 
         <div className="bg-card rounded-2xl p-5">
           <h2 className="font-semibold text-ink mb-2">How to be in the 67% who pass first time</h2>

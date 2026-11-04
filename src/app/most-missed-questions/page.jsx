@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 import QuestionStatsBadge from '@/components/ui/QuestionStatsBadge'
 import { QUESTIONS } from '@/data/questions'
 import { MOST_MISSED_IDS } from '@/data/mostMissed'
@@ -42,6 +43,7 @@ export default function MostMissedPage() {
         <p className="text-ink-muted text-base mb-2">
           These {questions.length} questions are the ones candidates fail most often in the Life in the UK test. They cover areas where the official handbook buries specific facts that are easy to overlook — exact years, legislation names, and statistics.
         </p>
+        <ContentAd id="1" className="my-8" />
         <p className="text-sm text-ink-muted mb-6">
           Study these before anything else. Click any question to see the full explanation, then take a <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">free mock test</Link> to see if you have them locked in.
         </p>

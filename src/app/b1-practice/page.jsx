@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ContentAd from '@/components/ui/ContentAd'
 import { B1_TEST_NUMBERS } from '@/data/b1Questions'
 
 export const metadata = {
@@ -128,6 +129,8 @@ export default function B1PracticeIndexPage() {
             </Link>
           ))}
         </div>
+
+        <ContentAd id="1" />
 
         {/* What's tested section */}
         <div className="bg-[#131629] border border-white/5 rounded-2xl p-6 mb-8">

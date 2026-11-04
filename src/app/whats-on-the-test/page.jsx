@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: { absolute: 'How Many Dates Are on the Life in the UK Test? We Counted Every One' },
@@ -113,6 +114,8 @@ export default function WhatsOnTheTestPage() {
           </p>
         </div>
 
+        <ContentAd id="1" className="mt-4 mb-10" />
+
         {/* Era distribution chart */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-1">When those 172 years fall</h2>
@@ -168,6 +171,8 @@ export default function WhatsOnTheTestPage() {
             ))}
           </div>
         </div>
+
+        <ContentAd id="2" className="mt-4 mb-10" />
 
         {/* What it means for you */}
         <div className="bg-card rounded-2xl p-5 mb-6">

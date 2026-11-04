@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import GoodCharacterClient from './GoodCharacterClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -106,6 +107,8 @@ function GoodCharacterContent() {
         The main factors are: criminal history, immigration conduct, financial honesty (including unpaid taxes and benefit fraud), and civic behaviour. Serious issues do not automatically mean refusal — but they must be declared. Failure to declare something that UKVI later finds is treated more seriously than the original issue.
       </p>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What affects the good character assessment?
       </h2>
@@ -138,6 +141,8 @@ function GoodCharacterContent() {
         <Link href="/ilr-risk-check" className="text-brand underline">ILR refusal risk checker</Link>{' '}
         to assess other potential issues before you apply.
       </p>
+
+      <ContentAd id="2" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Frequently Asked Questions

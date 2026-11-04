@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import ExemptWizardClient from './ExemptWizardClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -112,6 +113,8 @@ function TestExemptContent() {
         Note: Skilled Worker visa holders are exempt from the B1 English language requirement but are not automatically exempt from the Life in the UK test. These are two separate requirements.
       </p>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Exempt nationalities (full list)
       </h2>
@@ -137,6 +140,8 @@ function TestExemptContent() {
         <li>Health exemptions need a completed form from a doctor plus supporting medical reports</li>
         <li>If you were exempt when you got ILR, you still need to submit a new exemption declaration for your citizenship application</li>
       </ul>
+
+      <ContentAd id="2" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Frequently Asked Questions

@@ -4,6 +4,8 @@ import { CHAPTERS } from '@/data/questions'
 import { TOPICS } from '@/data/topics'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
 import Link from 'next/link'
+import { Fragment } from 'react'
+import ContentAd from '@/components/ui/ContentAd'
 
 // Deterministic mock test spread for a chapter page
 function getChapterTests(chapterId) {
@@ -81,7 +83,10 @@ export default function StudyChapterPage({ params }) {
       {/* Sections */}
       <div className="space-y-6">
         {ch.sections.map((section, i) => (
-          <div key={i} className="bg-card rounded-2xl p-5">
+          <Fragment key={i}>
+          {/* Ads after section 2 and (long chapters) after section 6 */}
+          {(i === 2 || (i === 6 && ch.sections.length >= 9)) && <ContentAd id={`s${i}`} className="my-4" />}
+          <div className="bg-card rounded-2xl p-5">
             <h2 className="font-display font-bold text-ink mb-3">{section.heading}</h2>
             <div className="text-base text-ink-muted leading-relaxed whitespace-pre-line space-y-1">
               {section.content.split('\n').map((line, j) => {
@@ -95,6 +100,7 @@ export default function StudyChapterPage({ params }) {
               })}
             </div>
           </div>
+          </Fragment>
         ))}
       </div>
 

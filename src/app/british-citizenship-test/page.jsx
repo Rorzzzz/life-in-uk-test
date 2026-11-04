@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
 import MockTestDashboard from '@/app/mock-test/MockTestDashboard'
 import MockTestGrid from '@/app/mock-test/MockTestGrid'
@@ -221,6 +222,8 @@ export default function BritishCitizenshipTestPage() {
           </p>
         </div>
 
+        <ContentAd id="1" className="mt-4 mb-10" />
+
         {/* How to pass */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-3">How to pass the British citizenship test first time</h2>
@@ -248,6 +251,8 @@ export default function BritishCitizenshipTestPage() {
             So I built this: {MOCK_TEST_COUNT} full citizenship test practice tests, every question matched to the real chapter weighting, completely free with no sign-up. The £50 test fee is a significant cost — you should not also have to pay to prepare for it. <Link href="/about" className="text-brand-400 hover:text-brand-300">More about why I made this →</Link>
           </p>
         </div>
+
+        <ContentAd id="2" className="mt-4 mb-10" />
 
         {/* FAQ */}
         <div className="mb-6">

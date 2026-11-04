@@ -4,6 +4,7 @@ import { MOCK_TEST_COUNT, EXAM_QUESTION_COUNT } from '@/data/mockTests'
 import MockTestDashboard from '@/app/mock-test/MockTestDashboard'
 import MockTestGrid from '@/app/mock-test/MockTestGrid'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: { absolute: 'Life in the UK Practice Test — 60 Free Tests 2026' },
@@ -184,6 +185,8 @@ export default function PracticeTestIndexPage() {
           </ul>
         </div>
 
+        <ContentAd id="1" className="mt-4 mb-10" />
+
         {/* How to use */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-3">How to use practice tests effectively</h2>
@@ -225,6 +228,8 @@ export default function PracticeTestIndexPage() {
             <li className="flex items-start gap-3"><span className="w-5 h-5 rounded-full bg-brand-500/20 text-brand-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">4</span><span>Book your test when you consistently score 20+ out of 24 across at least five practice tests.</span></li>
           </ol>
         </div>
+
+        <ContentAd id="2" className="mt-4 mb-10" />
 
         {/* FAQ */}
         <div className="mb-6">

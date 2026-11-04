@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 import QuestionStatsBadge from '@/components/ui/QuestionStatsBadge'
 import { QUESTIONS } from '@/data/questions'
 
@@ -42,6 +43,7 @@ export default function HardestQuestionsPage() {
         <p className="text-ink-muted text-base mb-2">
           These 50 questions are the ones candidates most commonly get wrong. They cover specific dates, statistics, arts and culture — areas where the handbook gives precise facts that are easy to misremember under exam conditions.
         </p>
+        <ContentAd id="1" className="my-8" />
         <p className="text-sm text-ink-muted mb-6">
           Difficulty is based on tagging in our question bank: <span className="text-danger font-medium">hard</span> questions require exact recall of a number, name or date; <span className="text-xp font-medium">medium</span> questions test concepts that are commonly confused. Master these first, then take a <Link href="/mock-test" className="text-brand-400 hover:text-brand-300">mock test</Link> to confirm your readiness.
         </p>

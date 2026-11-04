@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import ILRRiskClient from './ILRRiskClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -115,6 +116,8 @@ function ILRRiskContent() {
         <strong>Important:</strong> The English requirement for Skilled Worker visa applications (new grants) rose to B2 from 8 January 2026. ILR settlement applications still require B1 until 26 March 2027 — when B2 becomes the ILR standard. If your ILR application date falls after March 2027, start B2 preparation now.
       </p>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         The cost of a refused ILR application
       </h2>
@@ -163,6 +166,8 @@ function ILRRiskContent() {
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
         The most common reasons are: breaching the 180-day absence rule in any rolling 12-month window, not passing the Life in the UK test, not meeting the English language requirement (B1 now; B2 from 26 March 2027), gaps in continuous lawful residence, missing documents, good character issues, and sponsor problems for Skilled Worker applicants. Use the checker above to assess your risk across all these factors.
       </p>
+
+      <ContentAd id="2" />
 
       <h3 className="text-sm font-bold text-ink mb-1">What is the ILR refusal rate?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">

@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import ShareButton from '@/components/ui/ShareButton'
 import CitizenshipDateClient from './CitizenshipDateClient'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -74,6 +75,8 @@ function Content() {
       <p className="text-base text-ink leading-relaxed mb-3">
         The big exception: if you are <strong>married to or in a civil partnership with a British citizen</strong>, the 12-month wait does not apply. You can apply as soon as you have ILR, as long as you have lived in the UK for at least 3 years.
       </p>
+
+      <ContentAd id="1" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">The other requirements</h2>
       <p className="text-base text-ink leading-relaxed mb-3">Meeting the date is only part of it. To naturalise you also need to:</p>

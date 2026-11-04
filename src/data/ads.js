@@ -8,7 +8,8 @@ export const AD_SLOTS = {
   examInline: '6119884815', // below the question card during a mock test
   results:    '9470479023', // mock-test results screen
   sidebar:    '5544722630', // desktop sticky sidebar (300×600)
-  quizMobile: '6823972680', // phones only: after answering, above the explanation
+  quizMobile: '6823972680', // phones only: in quiz flows, below the answers
+  contentInline: '7534244111', // content + tool pages (ContentAd): in the text, away from controls
 }
 
 // Load a fresh in-exam ad every N questions (only on the user's Next click).

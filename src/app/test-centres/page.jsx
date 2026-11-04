@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { TEST_CENTRES, REGIONS, getCentresByRegion, getCentreSlug } from '@/data/testCentres'
 import { MapPin, AlertTriangle } from 'lucide-react'
 import PostcodeSearch from '@/components/ui/PostcodeSearch'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'Life in the UK Test Centres Near You — All 60+ Locations 2026',
@@ -107,6 +108,8 @@ export default function TestCentresPage() {
             </p>
           </div>
         </div>
+
+        <ContentAd id="1" className="mt-4 mb-10" />
 
         {REGIONS.map(region => {
           const centres = getCentresByRegion(region)

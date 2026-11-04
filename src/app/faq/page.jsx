@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import { FAQS, getFAQsByCategory, FAQ_CATEGORIES } from '@/data/faqs'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
+
+// In-content ads go before these category headings (8 and 18 answers in)
+const AD_BEFORE = { 'Eligibility': '1', 'Test Day': '2' }
 
 export const metadata = {
   title: 'Life in the UK Test FAQ — 35 Questions Answered',
@@ -39,6 +43,7 @@ export default function FAQPage() {
           if (!faqs) return null
           return (
             <div key={cat} className="mb-8">
+              {AD_BEFORE[cat] && <ContentAd id={AD_BEFORE[cat]} className="mt-0 mb-10" />}
               <h2 className="text-lg font-display font-bold text-ink mb-3 border-b border-border pb-2">
                 {cat}
               </h2>

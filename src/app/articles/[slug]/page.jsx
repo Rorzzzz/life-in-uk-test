@@ -6,6 +6,7 @@ import { getAllPublishedSlugs, getArticleBySlug, extractFAQs, getRelatedArticles
 import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateStaticParams() {
   return getAllPublishedSlugs()
@@ -33,6 +34,43 @@ const CATEGORY_COLOURS = {
   'Test Day':    'bg-success/10 text-success',
   'Test Info':   'bg-amber-500/10 text-amber-400',
   'Immigration': 'bg-purple-500/10 text-purple-400',
+}
+
+// ── In-article ads ─────────────────────────────────────────────────────────────
+// Ad 1 goes before the first H2 (i.e. after the intro); ad 2 before the H2 nearest
+// the middle of long articles (1,200+ words). Ad 3 sits after the body. Never
+// before the FAQ heading, never closer than ~500 words to the previous ad.
+const norm = t => String(t).toLowerCase().replace(/[^a-z0-9]+/g, '')
+function textOf(node) {
+  if (node == null || typeof node === 'boolean') return ''
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(textOf).join('')
+  return textOf(node.props?.children)
+}
+function countWords(content) {
+  return content.split(/\s+/).filter(Boolean).length
+}
+function pickAdHeadings(content) {
+  const lines = content.replace(/\r\n/g, '\n').split('\n')
+  const h2 = []
+  let words = 0
+  for (const line of lines) {
+    const m = line.match(/^## (.+)$/)
+    if (m) h2.push({ key: norm(m[1]), faq: /frequently asked/i.test(m[1]), at: words })
+    else words += line.split(/\s+/).filter(Boolean).length
+  }
+  const picks = []
+  const first = h2.find(h => h.at >= 40 && !h.faq)
+  if (first) picks.push(first)
+  if (words >= 1200 && h2.length >= 4) {
+    let best = null
+    for (const h of h2) {
+      if (h.faq || picks.some(p => Math.abs(p.at - h.at) < 500)) continue
+      if (!best || Math.abs(h.at - words / 2) < Math.abs(best.at - words / 2)) best = h
+    }
+    if (best) picks.push(best)
+  }
+  return new Map(picks.map((p, i) => [p.key, `in-${i + 1}`]))
 }
 
 // MDX component overrides — maps markdown elements to styled versions
@@ -87,6 +125,20 @@ export default function ArticlePage({ params }) {
   const article = getArticleBySlug(params.slug)
   if (!article) notFound()
   const related = getRelatedArticles(params.slug)
+  const adHeadings = pickAdHeadings(article.content)
+  const showEndAd = countWords(article.content) >= 600
+  const mdxComponents = {
+    ...components,
+    h2: ({ children }) => {
+      const adId = adHeadings.get(norm(textOf(children)))
+      return (
+        <>
+          {adId && <ContentAd id={adId} />}
+          {components.h2({ children })}
+        </>
+      )
+    },
+  }
 
   // Article schema for Google
   const schema = {
@@ -168,10 +220,12 @@ export default function ArticlePage({ params }) {
         <article className="prose-custom">
           <MDXRemote
             source={article.content}
-            components={components}
+            components={mdxComponents}
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
           />
         </article>
+
+        {showEndAd && <ContentAd id="end" />}
 
         {/* Author byline */}
         <div className="mt-8 flex items-center gap-2">

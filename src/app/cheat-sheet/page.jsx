@@ -3,6 +3,7 @@ import Image from 'next/image'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { CHEAT_SHEET } from '@/data/cheatSheet'
 import PrintButton from './PrintButton'
+import ContentAd from '@/components/ui/ContentAd'
 import ShareButton from '@/components/ui/ShareButton'
 import NightBeforeSection from './NightBeforeSection'
 
@@ -167,6 +168,8 @@ export default function CheatSheetPage() {
           </div>
         </section>
 
+        <ContentAd id="1" />
+
         {/* Parliament */}
         <section className="mb-8">
           <SectionHeader title="Parliament & Government" colour={SECTION_COLOURS.parliament} stars="⭐⭐" />
@@ -272,7 +275,10 @@ export default function CheatSheetPage() {
           </div>
         </section>
 
+        <ContentAd id="2" />
+
         {/* Key Dates */}
+
         <section className="mb-8">
           <SectionHeader title="Key Dates" colour={SECTION_COLOURS.dates} stars="⭐⭐⭐" />
           <div className="space-y-1.5">

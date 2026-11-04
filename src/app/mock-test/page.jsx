@@ -5,6 +5,7 @@ import MockTestDashboard from './MockTestDashboard'
 import MockTestGrid from './MockTestGrid'
 import SmartExamCard from './SmartExamCard'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: { absolute: 'Life in the UK Mock Test — 60 Free Practice Exams 2026' },
@@ -187,6 +188,8 @@ export default function MockTestIndexPage() {
           </ul>
         </div>
 
+        <ContentAd id="1" className="mt-4 mb-10" />
+
         {/* How realistic */}
         <div className="bg-card rounded-2xl p-5 mb-6">
           <h2 className="font-display font-bold text-ink mb-3">How realistic is this Life in the UK mock test?</h2>
@@ -246,6 +249,8 @@ export default function MockTestIndexPage() {
             So I built these {MOCK_TEST_COUNT} mock tests the way I wished mine had been: each one weighted to the real exam&apos;s chapter split, fixed so you can retake the exact same test and see if a weak topic has actually improved, and every question explained the moment you answer. It is the tool I needed and could not find — free, with no sign-up, because a citizenship test should not sit behind a paywall. <Link href="/about" className="text-brand-400 hover:text-brand-300">More about why I made this →</Link>
           </p>
         </div>
+
+        <ContentAd id="2" className="mt-4 mb-10" />
 
         {/* How to use */}
         <div className="bg-card rounded-2xl p-5 mb-6">

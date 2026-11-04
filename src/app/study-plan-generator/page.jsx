@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import StudyPlanClient from './StudyPlanClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -106,6 +107,8 @@ function StudyPlanContent() {
         20 minutes of active practice every day is more effective than a 3-hour session once a week. The brain retains information better through regular, spaced repetition than through cramming. This study plan uses that principle — it breaks your revision into short, daily sessions with rest built in.
       </p>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What to study (and what not to study)
       </h2>
@@ -131,6 +134,8 @@ function StudyPlanContent() {
       <p className="text-base text-ink leading-relaxed mb-3">
         Take at least 2 full 24-question timed mock exams before booking. Do not book based on a calendar date — book based on your practice scores. If you are not consistently hitting 21+, extend your preparation rather than booking early.
       </p>
+
+      <ContentAd id="2" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Frequently Asked Questions

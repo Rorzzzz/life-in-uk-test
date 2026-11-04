@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import ILRChecklistClient from './ILRChecklistClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -110,6 +111,8 @@ function ILRChecklistContent() {
         <li>Biometric enrolment appointment booked at UKVCAS (£19.20 standard slot)</li>
       </ul>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Why getting documents right matters
       </h2>
@@ -143,6 +146,8 @@ function ILRChecklistContent() {
       <p className="text-sm text-ink-muted leading-relaxed mb-4">
         All ILR applicants need: a valid passport, evidence of current immigration status (eVisa), a Life in the UK test pass reference number, a full travel history for the qualifying period, and a booked biometric enrolment appointment. Additional documents depend on your visa route — Skilled Worker applicants need employment evidence; Family visa applicants need proof of the relationship. Use the checklist above to get the full list for your route.
       </p>
+
+      <ContentAd id="2" />
 
       <h3 className="text-sm font-bold text-ink mb-1">Do I need original documents or copies for ILR?</h3>
       <p className="text-sm text-ink-muted leading-relaxed mb-4">

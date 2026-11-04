@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import TrueCostClient from './TrueCostClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -110,6 +111,8 @@ function TrueCostContent() {
         <li>A family of four on a standard work or family visa typically spends £41,000&ndash;£45,000 in total — EU families with Settled Status pay significantly less</li>
       </ul>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         The biggest cost most people forget — the Immigration Health Surcharge
       </h2>
@@ -149,6 +152,8 @@ function TrueCostContent() {
         <Link href="/articles/why-is-ilr-so-expensive" className="text-brand underline">why ILR is so expensive</Link>{' '}
         for the full picture.
       </p>
+
+      <ContentAd id="2" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Frequently Asked Questions

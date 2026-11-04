@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import ILRCalculatorClient from './ILRCalculatorClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -130,6 +131,8 @@ function ILRCalculatorContent() {
         For most visa routes, you must hold ILR for at least 12 months before you can apply for British citizenship. Getting ILR is the step between a time-limited visa and becoming a British citizen.
       </p>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         ILR qualifying periods by visa route
       </h2>
@@ -178,6 +181,8 @@ function ILRCalculatorContent() {
         <p className="text-sm font-semibold text-ink mb-1">Example</p>
         <p className="text-sm text-ink-muted">If you left the UK on 1 January 2024 and returned on 1 July 2024, that is 181 days outside the UK in that window — a breach of the rule, even if all other periods were fine.</p>
       </div>
+
+      <ContentAd id="2" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         What the ILR application costs in 2026

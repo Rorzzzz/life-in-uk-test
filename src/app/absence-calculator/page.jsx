@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import RelatedTools from '@/components/ui/RelatedTools'
 import AbsenceCalculatorClient from './AbsenceCalculatorClient'
 import ShareButton from '@/components/ui/ShareButton'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateMetadata() {
   return {
@@ -106,6 +107,8 @@ function AbsenceCalculatorContent() {
         For example: if you left the UK on 1 January 2025 and returned on 1 July 2025, that is 181 days outside the UK in that particular window. That would be a breach of the rule, even if you were in the UK for all other periods.
       </p>
 
+      <ContentAd id="1" />
+
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         How are days outside the UK counted?
       </h2>
@@ -138,6 +141,8 @@ function AbsenceCalculatorContent() {
       <p className="text-base text-ink leading-relaxed mb-3">
         Use this calculator regularly — not just before you apply. Checking your running total every few months means you can adjust your travel plans if you are approaching the limit, rather than discovering a problem when it is too late.
       </p>
+
+      <ContentAd id="2" />
 
       <h2 className="text-lg font-display font-bold text-ink mb-3 mt-8">
         Frequently Asked Questions

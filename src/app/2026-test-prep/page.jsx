@@ -2,6 +2,7 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { QUESTION_COUNT } from '@/data/questions'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'How to Prepare for the Life in the UK Test 2026 — Free Complete Guide',
@@ -116,6 +117,8 @@ export default function TestPrep2026Page() {
           ))}
         </div>
       </section>
+
+      <ContentAd id="1" />
 
       {/* Tips */}
       <section className="mb-8">
