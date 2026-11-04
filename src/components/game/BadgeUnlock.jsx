@@ -25,14 +25,16 @@ export default function BadgeUnlock() {
       </p>
       <div
         aria-hidden="true"
-        className="fixed top-20 inset-x-4 z-50 mx-auto max-w-sm animate-slide-up"
+        // Phones: compact card over the bottom nav (never an ad there), so it can't
+        // cover the in-quiz phone ad or the top anchor. Taps pass through.
+        className="fixed top-20 inset-x-4 z-50 mx-auto max-w-sm animate-slide-up pointer-events-none max-md:top-auto max-md:bottom-[calc(env(safe-area-inset-bottom)+4px)]"
       >
-        <div className="bg-card border-2 border-brand-500/40 rounded-2xl p-4 flex items-center gap-4 shadow-2xl">
-          <span className="text-4xl">{badge.icon}</span>
+        <div className="bg-card border-2 border-brand-500/40 rounded-2xl p-4 max-md:p-2 max-md:px-3 flex items-center gap-4 max-md:gap-3 shadow-2xl">
+          <span className="text-4xl max-md:text-2xl">{badge.icon}</span>
           <div>
             <p className="text-xs font-medium text-brand-400 uppercase tracking-wide">Badge Unlocked!</p>
-            <p className="font-display font-bold text-ink">{badge.name}</p>
-            <p className="text-xs text-ink-muted">{badge.description}</p>
+            <p className="font-display font-bold text-ink max-md:text-sm">{badge.name}</p>
+            <p className="text-xs text-ink-muted max-md:hidden">{badge.description}</p>
           </div>
         </div>
       </div>

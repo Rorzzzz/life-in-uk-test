@@ -21,9 +21,9 @@ export const EXAM_AD_REFRESH_EVERY = 1
 // Auto Ads top anchor instead. Results-screen ads still show on mobile.
 export const INLINE_AD_MIN_WIDTH = 768
 
-// Phones (< INLINE_AD_MIN_WIDTH) get the "Quiz mobile" unit instead: shown only
-// AFTER the user answers (answer buttons are locked), between the question card
-// and the explanation, never next to Next. Small 100px box keeps mobile ad
+// Phones (< INLINE_AD_MIN_WIDTH) get the "Quiz mobile" unit instead: shown from
+// the start of each question, below a 150px non-clickable strip under the answers;
+// the explanation (and Next, >=150px away) appears below it. Small 100px box keeps mobile ad
 // density well under the Better Ads 30% limit alongside the top anchor.
 // Kill switch: set to false if this unit's CTR goes above ~2–3%.
 export const QUIZ_MOBILE_AD_ENABLED = true // user overrode the policy-officer veto 2026-11-04; see research/decisions.md

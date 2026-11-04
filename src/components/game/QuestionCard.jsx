@@ -30,6 +30,7 @@ export default function QuestionCard({
   const { toggle, isSpeaking, isSupported } = useAudioNarration()
   const explanationRef              = useRef(null)
   const topRef                      = useRef(null)
+  const mobileAdRef                 = useRef(null)
 
   // Reset on new question and scroll back to top
   useEffect(() => {
@@ -51,7 +52,12 @@ export default function QuestionCard({
         if (!el) return
         const rect = el.getBoundingClientRect()
         const bottomNavHeight = 72 // h-16 (64px) + a little breathing room
-        const scrollBy = rect.bottom - window.innerHeight + bottomNavHeight
+        let scrollBy = rect.bottom - window.innerHeight + bottomNavHeight
+        // Never scroll the phone quiz ad up into the top-anchor zone (an ad must
+        // not touch or sit under another ad). If Next doesn't fit, the user scrolls.
+        const ad = mobileAdRef.current?.getBoundingClientRect()
+        const ANCHOR_ZONE = 110
+        if (ad && ad.height > 0) scrollBy = Math.min(scrollBy, ad.top - ANCHOR_ZONE)
         if (scrollBy > 0) {
           window.scrollBy({ top: scrollBy, behavior: 'smooth' })
         }
@@ -147,15 +153,26 @@ export default function QuestionCard({
           </div>
         </div>
 
-      {/* Phones only, AFTER answering (answers are locked): between the card and
-          the explanation, so Next stays a full explanation-panel away. */}
-      {answered && showMobileAd && QUIZ_MOBILE_AD_ENABLED && (
-        <AdSlot
-          slot={AD_SLOTS.quizMobile}
-          refreshKey={question.id}
-          maxWidth={INLINE_AD_MIN_WIDTH - 1}
-          heightClass="h-[100px]"
-        />
+      {/* Phones only: one ad per question, shown from the start (user's choice,
+          2026-11-04, overriding the policy-officer veto). A non-clickable info strip
+          keeps it >=150px below the answer buttons (16 gap + 134 strip + 16 gap), and
+          after answering the explanation appears below it with Next >=150px further
+          down (keepNextClearOfAd). Kill switch: QUIZ_MOBILE_AD_ENABLED in data/ads.js. */}
+      {showMobileAd && QUIZ_MOBILE_AD_ENABLED && (
+        <>
+          <div className="md:hidden min-h-[134px] flex flex-col items-center justify-center gap-1 text-center select-none" aria-hidden="true">
+            <p className="text-xs font-mono text-ink-muted">Chapter {question.chapter} · Life in the UK handbook</p>
+            <p className="text-xs text-ink-muted">{answered ? 'Read the explanation below' : 'Tap an answer above to see the explanation'}</p>
+          </div>
+          <div ref={mobileAdRef}>
+            <AdSlot
+              slot={AD_SLOTS.quizMobile}
+              refreshKey={question.id}
+              maxWidth={INLINE_AD_MIN_WIDTH - 1}
+              heightClass="h-[100px]"
+            />
+          </div>
+        </>
       )}
 
       {/* Explanation */}

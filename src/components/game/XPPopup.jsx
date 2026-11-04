@@ -7,7 +7,7 @@ export default function XPPopup({ amount, visible, onHide }) {
     <AnimatePresence>
       {visible && amount > 0 && (
         <m.div
-          className="fixed top-1/3 left-1/2 z-50 pointer-events-none"
+          className="fixed top-1/3 left-1/2 z-50 pointer-events-none max-md:top-auto max-md:bottom-24"
           initial={{ opacity: 1, y: 0, x: '-50%' }}
           animate={{ opacity: 0, y: -60, x: '-50%' }}
           exit={{ opacity: 0 }}
