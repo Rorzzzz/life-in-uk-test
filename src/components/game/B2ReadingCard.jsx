@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import AnswerButton from './AnswerButton'
 import ExplanationPanel from './ExplanationPanel'
 import XPPopup from './XPPopup'
+import QuizMobileAd from '@/components/ui/QuizMobileAd'
 
 export default function B2ReadingCard({
   passage,          // { id, title, passage, questions }
@@ -142,6 +143,8 @@ export default function B2ReadingCard({
         </div>
       </div>
 
+      {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
+      <QuizMobileAd refreshKey={`read-${question.id}`} />
       {/* Explanation */}
       {answered && (
         <div ref={explanationRef}>

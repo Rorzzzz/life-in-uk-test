@@ -8,6 +8,7 @@ import { Volume2, VolumeX, ChevronRight, RotateCcw, Trophy } from 'lucide-react'
 import { useAudioNarration } from '@/hooks/useAudioNarration'
 import AdSlot from '@/components/ui/AdSlot'
 import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
+import QuizMobileAd from '@/components/ui/QuizMobileAd'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -237,6 +238,8 @@ function QuestionScreen({ question, questionIndex, total, onAnswer }) {
         })}
       </div>
 
+      {/* Phone ad under the answers once checked (a Check button sits under the options before that) */}
+      {confirmed && <QuizMobileAd refreshKey={`b1-${questionIndex}`} className="px-4 mb-5" />}
       {/* Explanation (shown after confirm) */}
       <AnimatePresence>
         {confirmed && (

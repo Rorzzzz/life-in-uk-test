@@ -19,6 +19,7 @@ import {
   HelpCircle,
 } from 'lucide-react'
 import { B1_PRACTICE_TESTS } from '@/data/b1Questions'
+import QuizMobileAd from '@/components/ui/QuizMobileAd'
 
 // ─── Quiz metadata ─────────────────────────────────────────────────────────────
 const QUIZ_META = [
@@ -321,6 +322,8 @@ function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, 
         })}
       </div>
 
+      {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
+      <QuizMobileAd refreshKey={`b1check-${quizNumber}-${questionIndex}`} />
       {/* Explanation */}
       <AnimatePresence>
         {revealed && (

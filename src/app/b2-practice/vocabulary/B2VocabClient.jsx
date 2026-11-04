@@ -158,6 +158,7 @@ export default function B2VocabClient() {
 
       {current && (
         <QuestionCard
+          showMobileAd
           question={current}
           questionNumber={index + 1}
           totalQuestions={session.length}

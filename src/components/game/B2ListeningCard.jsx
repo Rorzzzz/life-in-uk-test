@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Play, RotateCcw, Volume2 } from 'lucide-react'
 import clsx from 'clsx'
+import QuizMobileAd from '@/components/ui/QuizMobileAd'
 
 const SECTION_LABELS = {
   1: 'Section 1 — Everyday conversation',
@@ -163,6 +164,8 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
 
       </div>
 
+      {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
+      <QuizMobileAd refreshKey={`listen-${task.id}-${questionIndex}`} />
       {/* Explanation */}
       {revealed && (
         <div ref={answerRef} className={clsx('rounded-2xl border p-4', isCorrect ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>

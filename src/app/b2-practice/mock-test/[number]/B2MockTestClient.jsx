@@ -9,6 +9,7 @@ import B2SpeakingCard from '@/components/game/B2SpeakingCard'
 import AdSlot from '@/components/ui/AdSlot'
 import WithAdRail from '@/components/ui/AdRail'
 import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
+import QuizMobileAd from '@/components/ui/QuizMobileAd'
 
 const PASS_MARK = 14
 const TOTAL_MCQ = 20
@@ -120,6 +121,8 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
         </div>
       </div>
 
+      {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
+      <QuizMobileAd refreshKey={`listen-${clip.id}-${questionIndex}`} />
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === q.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -188,6 +191,8 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
         </div>
       </div>
 
+      {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
+      <QuizMobileAd refreshKey={`read-${passage.id}-${questionIndex}`} />
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === q.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -238,6 +243,8 @@ function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
         </div>
       </div>
 
+      {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
+      <QuizMobileAd refreshKey={`mcq-${sectionLabel}-${question.id}`} />
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === question.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
