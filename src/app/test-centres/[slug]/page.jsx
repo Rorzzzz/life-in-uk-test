@@ -47,15 +47,18 @@ export default function TestCentreCityPage({ params }) {
 
   const cityName = centre.city.replace(' — ', ' ')
   const cityTips = CITY_TIPS[params.slug] ?? null
+  // Only link to nearby centres that actually have a page (no 404 links).
+  const liveSlugs = new Set(TEST_CENTRES.map(getCentreSlug))
+  const liveAlternatives = (cityTips?.alternatives ?? []).filter(alt => liveSlugs.has(alt.href.replace('/test-centres/', '')))
   const nearbycentres = getCentresByRegion(centre.region)
     .filter(c => getCentreSlug(c) !== params.slug)
     .slice(0, 4)
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'GovernmentOffice',
+    '@type': 'LocalBusiness',
     name: `Life in the UK Test Centre — ${cityName}`,
-    description: `Official Life in the UK citizenship test centre in ${cityName}.`,
+    description: `Life in the UK citizenship test centre in ${cityName}.`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: centre.address.split(',')[0],
@@ -96,7 +99,7 @@ export default function TestCentreCityPage({ params }) {
           Life in the UK Test Centre — {cityName}
         </h1>
         <p className="text-ink-muted text-base mb-6">
-          Official test centre address and booking information for {cityName}.
+          Test centre address and booking information for {cityName}. An independent guide, not affiliated with the Home Office.
         </p>
 
         {/* Address card */}
@@ -192,11 +195,11 @@ export default function TestCentreCityPage({ params }) {
                 <p className="text-sm text-ink-muted">{cityTips.transport}</p>
               </div>
             </div>
-            {cityTips.alternatives.length > 0 && (
+            {liveAlternatives.length > 0 && (
               <div>
                 <p className="text-sm font-semibold text-ink mb-2">Nearby alternatives if slots are full</p>
                 <div className="flex flex-wrap gap-2">
-                  {cityTips.alternatives.map(alt => (
+                  {liveAlternatives.map(alt => (
                     <Link
                       key={alt.name}
                       href={alt.href}

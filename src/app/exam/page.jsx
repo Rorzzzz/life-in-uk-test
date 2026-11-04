@@ -185,7 +185,30 @@ export default function ExamPage() {
           For fixed numbered tests, use{' '}
           <a href="/mock-test" className="text-brand-400 hover:underline">Mock Tests 1–60</a>
         </p>
-        {/* Intro ad: below the mode buttons + link row, all screen sizes */}
+
+        {/* Real intro content: a screen that is only buttons + links counts as a
+            navigation screen, where Google bans ads (Publisher Policy 11112688). */}
+        <section className="w-full max-w-sm text-left bg-card border border-border rounded-2xl p-5 space-y-3">
+          <h2 className="font-bold text-ink">How this mock exam matches the real test</h2>
+          <p className="text-sm text-ink-muted leading-relaxed">
+            The official Life in the UK test has 24 multiple-choice questions, and you have 45 minutes to answer
+            them. You need 18 correct answers (75%) to pass. Every question comes from the official handbook,
+            Life in the United Kingdom: A Guide for New Residents (3rd edition), so this exam uses the same format,
+            the same timer and the same pass mark.
+          </p>
+          <p className="text-sm text-ink-muted leading-relaxed">
+            Smart Exam is the better choice once you have practised for a while: it builds your 24 questions
+            around the topics you get wrong most often and the questions you have never seen. Random Exam is the
+            closest thing to test day, because it draws questions from every chapter with no weighting.
+          </p>
+          <p className="text-sm text-ink-muted leading-relaxed">
+            A good rule before booking is to score 20 or more out of 24 on several practice exams in a row, so
+            you have a safety margin above the pass mark. The real test costs £50 per attempt, and if you fail you must wait at least 7 days before
+            you can take it again.
+          </p>
+        </section>
+
+        {/* Intro ad: below the intro content, all screen sizes */}
         <AdSlot slot={AD_SLOTS.examInline} refreshKey="exam-intro" className="mt-4 max-w-sm" />
       </div>
       </WithAdRail>

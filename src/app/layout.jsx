@@ -6,7 +6,6 @@ import { ThemeProvider } from '@/context/ThemeContext'
 import Navbar from '@/components/layout/Navbar'
 import BottomNav from '@/components/layout/BottomNav'
 import Footer from '@/components/layout/Footer'
-import CookieBanner from '@/components/ui/CookieBanner'
 import './globals.css'
 
 // Clash Display — local variable font
@@ -70,17 +69,21 @@ export const metadata = {
   },
 }
 
-// Runs before hydration: sets theme class, initialises Google Consent Mode v2
-// (all denied by default), and signals Google Funding Choices is present.
-// Funding Choices (the certified CMP) handles consent for EEA/UK users automatically.
-// For returning visitors who already consented, grants immediately.
+// Runs before hydration: sets theme class, initialises Google Consent Mode v2,
+// and signals Google Funding Choices is present.
+// Consent: denied by default in the UK/EEA/Switzerland (opt-in law), where
+// Funding Choices (the Google-certified CMP) is the ONLY source of consent.
+// Elsewhere (opt-out regimes) the default is granted. The legacy custom banner
+// and its 'ptukt_consent' flag were removed 2026-11-04: the flag could override
+// a "Do not consent" given in Funding Choices (ICO/PECR + Google consent policy).
 const headInitScript = `(function(){
   try{var t=localStorage.getItem('passtheuktest_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.add(t);}catch(e){}
   window.dataLayer=window.dataLayer||[];
   function gtag(){dataLayer.push(arguments);}
   window.gtag=gtag;
-  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:2000});
-  try{if(localStorage.getItem('ptukt_consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}}catch(e){}
+  gtag('consent','default',{ad_storage:'granted',analytics_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+  gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:2000,region:['GB','CH','AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO']});
+  try{localStorage.removeItem('ptukt_consent');}catch(e){}
   (function signalGfc(){if(!window.frames['googlefcPresent']){if(document.body){var i=document.createElement('iframe');i.style.cssText='width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;display:none';i.name='googlefcPresent';document.body.appendChild(i);}else{setTimeout(signalGfc,0);}}})();
 })();`
 
@@ -132,7 +135,6 @@ export default function RootLayout({ children }) {
 
           <Footer />
           <BottomNav />
-          <CookieBanner />
         </GameProvider>
         </ThemeProvider>
       </body>

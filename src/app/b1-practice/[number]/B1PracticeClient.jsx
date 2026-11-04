@@ -124,6 +124,27 @@ function IntroScreen({ testNumber, totalTests, questionCount, onStart }) {
       <Link href="/b1-practice" className="mt-4 text-sm text-slate-500 hover:text-slate-300 transition-colors">
         ← All practice tests
       </Link>
+
+      {/* Real intro content: a screen that is only a Start button + link counts as a
+          navigation screen, where Google bans ads (Publisher Policy 11112688). */}
+      <section className="w-full max-w-xs mt-8 text-left bg-white/5 rounded-2xl p-5 space-y-3">
+        <h2 className="font-bold text-white">What this practice test helps with</h2>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          The B1 English test you take for settlement or citizenship checks speaking and listening only. There
+          is no written paper. You talk with an examiner, answer questions about everyday topics and show that
+          you can follow and take part in a simple conversation.
+        </p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          You cannot practise a conversation alone, but you can build what it depends on: everyday vocabulary,
+          correct grammar for talking about the past, present and future, and understanding short texts on
+          familiar subjects. That is what these questions cover. Use the listen button on reading passages to
+          hear the words spoken as well as read them.
+        </p>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          Aim for 75% or more on several tests in a row. Then practise speaking out loud: describe your day,
+          your job or your family to a friend for two minutes without stopping.
+        </p>
+      </section>
     </motion.div>
   )
 }

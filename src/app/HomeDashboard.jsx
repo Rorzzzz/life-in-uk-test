@@ -311,7 +311,7 @@ export default function HomeDashboard({ chapters }) {
           { href: '/faq',               label: 'FAQ' },
           { href: '/cheat-sheet',       label: 'Cheat Sheet' },
           { href: '/test-centres',      label: 'Test Centres' },
-          { href: '/how-to-pass',       label: 'How to Pass' },
+          { href: '/articles/how-to-pass-the-life-in-the-uk-test-first-time',       label: 'How to Pass' },
           { href: '/exam-format',       label: 'Exam Format' },
           { href: '/pass-rate',         label: 'Pass Rates' },
           { href: '/hardest-questions', label: 'Hardest Questions' },

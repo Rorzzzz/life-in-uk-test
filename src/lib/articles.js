@@ -75,3 +75,28 @@ export function extractFAQs(content) {
     })
     .filter(f => f.question && f.answer)
 }
+
+// Up to `limit` related articles: shared keyword words (stopwords removed)
+// plus a bonus for the same category. Deterministic, so it works with SSG.
+const STOP = new Set(['the','a','an','to','of','in','for','and','or','uk','is','do','i','you','how','what','test','life','2026','2027','your','my','can','does','with','after','be','it','on','are'])
+function words(a) {
+  const text = [a.title, ...(Array.isArray(a.keywords) ? a.keywords : [])].join(' ').toLowerCase()
+  return new Set(text.split(/[^a-z0-9]+/).filter(w => w && !STOP.has(w)))
+}
+export function getRelatedArticles(slug, limit = 3) {
+  const all = getAllArticles()
+  const current = all.find(a => a.slug === slug)
+  if (!current) return []
+  const cw = words(current)
+  return all
+    .filter(a => a.slug !== slug)
+    .map(a => {
+      let score = a.category && a.category === current.category ? 2 : 0
+      for (const w of words(a)) if (cw.has(w)) score += 1
+      return { a, score }
+    })
+    .filter(x => x.score > 2)
+    .sort((x, y) => y.score - x.score || new Date(y.a.date) - new Date(x.a.date))
+    .slice(0, limit)
+    .map(({ a }) => ({ slug: a.slug, title: a.title, description: a.description }))
+}

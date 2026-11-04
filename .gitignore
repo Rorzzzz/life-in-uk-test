@@ -3,3 +3,8 @@ node_modules
 .env
 .env.local
 .env*.local
+
+# AdSense kit — local data and earnings analysis (repo is public)
+/data/
+/research/
+STATE.md

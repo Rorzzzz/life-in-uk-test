@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import { B2_MOCK_TEST_COUNT } from '@/data/b2MockTests'
 
 export const metadata = {
   title: 'B2 English Practice Free — IELTS Questions & Examiner Feedback 2026',
@@ -66,7 +67,7 @@ const SECTIONS = [
   {
     href: '/b2-practice/mock-test',
     title: 'Mock Tests',
-    description: '20 full mock exams — listening, reading, vocabulary and grammar — 25 min timed, instant results',
+    description: `${B2_MOCK_TEST_COUNT} full mock exams — listening, reading, vocabulary and grammar — 25 min timed, instant results`,
     colour: '#22d07a',
     status: 'available',
     count: '20 tests · 20 questions',

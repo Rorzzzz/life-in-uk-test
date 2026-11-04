@@ -53,8 +53,11 @@ export default function QuestionPage({ params }) {
     : ''
 
   // Related questions (same chapter, nearby IDs)
+  // Previously always the chapter's first 4; now the 4 closest by ID, so every
+  // page links somewhere different (better pages per session).
   const related = QUESTIONS
     .filter(q => q.chapter === question.chapter && q.id !== question.id)
+    .sort((a, b) => Math.abs(a.id - question.id) - Math.abs(b.id - question.id) || a.id - b.id)
     .slice(0, 4)
 
   const relatedTests  = getRelatedTests(question.id)

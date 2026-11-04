@@ -353,14 +353,14 @@ function ResultsPanel({ answers, onRestart }) {
             </Link>
           ))}
           <Link
-            href="/articles/ilr-refusal-reasons-2026"
+            href="/articles/good-character-requirement-ilr-citizenship"
             className={clsx(
               'flex items-center justify-between gap-3 p-3 rounded-xl border border-border',
               'bg-raised hover:border-brand-400 transition-colors group min-h-[44px]'
             )}
           >
             <span className="text-sm text-ink group-hover:text-brand-400 transition-colors">
-              ILR refusal reasons 2026 — full guide
+              Good character requirement — a common refusal reason
             </span>
             <ArrowRight size={16} className="text-ink-muted flex-shrink-0 group-hover:text-brand-400 transition-colors" />
           </Link>

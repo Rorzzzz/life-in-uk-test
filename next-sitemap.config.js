@@ -23,7 +23,7 @@ module.exports = {
       },
     ],
   },
-  exclude: ['/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/badges', '/mastery', '/readiness', '/xp', '/exam/info', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
+  exclude: ['/how-to-pass', '/life-in-the-uk-test-questions-pdf', '/terms', '/exam', '/progress', '/weak-spots', '/flashcards', '/daily', '/badges', '/mastery', '/readiness', '/xp', '/exam/info', '/*.svg', '/*.png', '/*.ico', '/*.jpg', '/*.jpeg', '/*.webp'],
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,

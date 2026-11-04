@@ -108,7 +108,7 @@ export default function MockTestClient({ testNumber, questions }) {
 
   if (done) {
     const prevTest = testNumber > 1  ? testNumber - 1 : null
-    const nextTest = testNumber < 45 ? testNumber + 1 : null
+    const nextTest = testNumber < MOCK_TEST_COUNT ? testNumber + 1 : null
 
     return (
       <WithAdRail>

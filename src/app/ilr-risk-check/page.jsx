@@ -196,7 +196,7 @@ function ILRRiskContent() {
       <div className="mt-8 pt-6 border-t border-white/10">
         <p className="text-sm font-bold text-ink mb-2">Related guides and tools</p>
         <ul className="text-sm text-ink-muted space-y-1">
-          <li><Link href="/articles/ilr-refusal-reasons-2026" className="text-brand underline">ILR refusal reasons 2026 — full guide</Link></li>
+          <li><Link href="/articles/good-character-requirement-ilr-citizenship" className="text-brand underline">Good character requirement — a common refusal reason</Link></li>
           <li><Link href="/articles/how-much-does-ilr-cost-2026" className="text-brand underline">How much does ILR cost in 2026?</Link></li>
           <li><Link href="/absence-calculator" className="text-brand underline">180-day absence calculator</Link></li>
           <li><Link href="/ilr-checklist" className="text-brand underline">ILR document checklist</Link></li>

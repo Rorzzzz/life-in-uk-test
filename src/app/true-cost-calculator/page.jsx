@@ -125,7 +125,7 @@ function TrueCostContent() {
       </ul>
       <p className="text-base text-ink leading-relaxed mb-3">
         Once you have ILR, you stop paying the IHS. That is one of the most significant financial benefits of reaching ILR. For more detail, read our guide to the{' '}
-        <Link href="/articles/immigration-health-surcharge-ilr" className="text-brand underline">Immigration Health Surcharge and how it works</Link>.
+        <Link href="/articles/why-is-ilr-so-expensive" className="text-brand underline">why ILR is so expensive (including the IHS)</Link>.
       </p>
       <p className="text-base text-ink leading-relaxed mb-3">
         <strong>EU citizens with Settled Status were exempt from the IHS entirely.</strong>{' '}
@@ -186,7 +186,6 @@ function TrueCostContent() {
         <ul className="text-sm text-ink-muted space-y-1">
           <li><Link href="/articles/how-much-does-ilr-cost-2026" className="text-brand underline">How much does ILR cost in 2026?</Link></li>
           <li><Link href="/articles/how-much-does-british-citizenship-cost-2026" className="text-brand underline">How much does British citizenship cost in 2026?</Link></li>
-          <li><Link href="/articles/immigration-health-surcharge-ilr" className="text-brand underline">Immigration Health Surcharge — the full guide</Link></li>
           <li><Link href="/articles/why-is-ilr-so-expensive" className="text-brand underline">Why is ILR so expensive?</Link></li>
           <li><Link href="/ilr-calculator" className="text-brand underline">ILR eligibility calculator</Link></li>
           <li><Link href="/citizenship-planner" className="text-brand underline">British citizenship planner</Link></li>

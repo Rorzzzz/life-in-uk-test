@@ -493,7 +493,6 @@ export default function TrueCostClient() {
                 { href: '/ilr-calculator',                                          label: 'ILR eligibility calculator — find your qualifying date' },
                 { href: '/citizenship-planner',                                     label: 'Citizenship planner — timeline and step-by-step breakdown' },
                 { href: '/articles/how-much-does-ilr-cost-2026',                   label: 'How much does ILR cost in 2026?' },
-                { href: '/articles/immigration-health-surcharge-ilr',               label: 'Immigration Health Surcharge — the hidden giant cost' },
                 { href: '/articles/how-much-does-british-citizenship-cost-2026',    label: 'How much does British citizenship cost in 2026?' },
                 { href: '/practice',                                                label: 'Practise for the Life in the UK test — free' },
               ].map(item => (

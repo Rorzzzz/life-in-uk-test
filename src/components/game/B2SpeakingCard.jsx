@@ -217,6 +217,12 @@ export default function B2SpeakingCard({ task, onNext, isLast }) {
               {task.part === 2 ? 'Start preparation (1 min)' : 'Start recording'}
             </button>
           )}
+          {phase === 'ready' && (
+            <p className="text-xs text-ink-muted text-center mt-3">
+              Your recording is sent to OpenAI to turn it into text, and the text to Anthropic for feedback.
+              We don&apos;t keep it. <a href="/privacy-policy" className="text-brand-400 underline">Privacy policy</a>
+            </p>
+          )}
           {phase === 'recording' && (
             <div className="flex flex-col items-center gap-4">
               <div className="flex items-center gap-3">

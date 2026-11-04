@@ -3,12 +3,12 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { B2_MOCK_TESTS, B2_MOCK_TEST_COUNT, B2_MOCK_TEST_QUESTIONS, B2_MOCK_TEST_TIME_MINUTES, B2_MOCK_TEST_PASS_MARK } from '@/data/b2MockTests'
 
 export const metadata = {
-  title: { absolute: 'B2 English Mock Test — 20 Free Practice Exams for UK Settlement 2026' },
-  description: 'Take a free B2 English mock test — 20 full practice exams, 20 questions each covering listening, reading, vocabulary and grammar. Pass mark 14/20. No sign-up.',
+  title: { absolute: `B2 English Mock Test — ${B2_MOCK_TEST_COUNT} Free Practice Exams for UK Settlement 2026` },
+  description: `Take a free B2 English mock test — ${B2_MOCK_TEST_COUNT} full practice exams, 20 questions each covering listening, reading, vocabulary and grammar. Pass mark 14/20. No sign-up.`,
   alternates: { canonical: 'https://passtheuktest.co.uk/b2-practice/mock-test' },
   openGraph: {
-    title: 'B2 English Mock Test — 20 Free Practice Exams for UK Settlement 2026',
-    description: 'Free B2 English mock tests — 20 full exams, 20 questions, 25-minute timer, instant results. No sign-up. Covers listening, reading, vocabulary and grammar.',
+    title: `B2 English Mock Test — ${B2_MOCK_TEST_COUNT} Free Practice Exams for UK Settlement 2026`,
+    description: `Free B2 English mock tests — ${B2_MOCK_TEST_COUNT} full exams, 20 questions, 25-minute timer, instant results. No sign-up. Covers listening, reading, vocabulary and grammar.`,
     url: 'https://passtheuktest.co.uk/b2-practice/mock-test',
     type: 'website',
   },
@@ -21,14 +21,14 @@ const FAQS = [
   { q: 'What is the pass mark for the B2 English test?', a: `You need to answer ${B2_MOCK_TEST_PASS_MARK} out of ${B2_MOCK_TEST_QUESTIONS} questions correctly — that is 70%. This corresponds to IELTS Band 5.5, which is the B2 threshold required for UK settlement (Indefinite Leave to Remain).` },
   { q: 'Which English test do I need for UK settlement?', a: 'For Indefinite Leave to Remain (ILR) or Citizenship, you need to prove B2 English — usually through IELTS Life Skills B1, IELTS Academic or General Training at Band 5.5+, or an approved Secure English Language Test (SELT). These mock tests help you prepare for any of those routes.' },
   { q: 'How is B2 English different from B1?', a: 'B2 (upper intermediate) requires stronger reading comprehension, more precise vocabulary, and the ability to understand abstract or academic texts. B1 tests are required for spouse/partner visas; B2 is required for ILR and citizenship. IELTS Band 5.5 = B2; Band 4.0 = B1.' },
-  { q: 'Are these B2 mock tests completely free?', a: 'Yes — all 20 mock tests are completely free. No sign-up, no paywall, no premium tier. Every test and every explanation is free forever.' },
+  { q: 'Are these B2 mock tests completely free?', a: `Yes — all ${B2_MOCK_TEST_COUNT} mock tests are completely free. No sign-up, no paywall, no premium tier. Every test and every explanation is free forever.` },
   { q: 'How many mock tests should I do before the real B2 exam?', a: 'Most people who pass first time score consistently above 16/20 across at least 5 full mock tests. If you are scoring 17 or more every time, you are ready. Focus extra revision on any section where you lose more than 2 marks.' },
 ]
 
 const quizSchema = {
   '@context': 'https://schema.org',
   '@type': 'Quiz',
-  name: 'B2 English Mock Test — 20 Free Practice Exams for UK Settlement',
+  name: `B2 English Mock Test — ${B2_MOCK_TEST_COUNT} Free Practice Exams for UK Settlement`,
   about: { '@type': 'Thing', name: 'B2 English Language Test for UK Settlement' },
   educationalLevel: 'B2 CEFR',
   description: 'Free 20-question B2 English mock tests covering listening, reading, vocabulary and grammar. Pass mark 14/20 (70%) — equivalent to IELTS Band 5.5.',
@@ -45,7 +45,7 @@ const quizSchema = {
 const itemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'B2 English Mock Tests — 20 Free Practice Exams',
+  name: `B2 English Mock Tests — ${B2_MOCK_TEST_COUNT} Free Practice Exams`,
   description: 'Free full-length B2 English mock tests for UK settlement visa preparation',
   numberOfItems: B2_MOCK_TEST_COUNT,
   itemListElement: B2_MOCK_TESTS.map((t, i) => ({
@@ -146,7 +146,7 @@ export default function B2MockTestIndexPage() {
           </div>
         </div>
 
-        {/* All 20 tests grid */}
+        {/* All tests grid */}
         <div className="mb-6">
           <h2 className="text-sm font-semibold text-ink uppercase tracking-wide mb-3">All {B2_MOCK_TEST_COUNT} Free B2 Mock Tests</h2>
           <div className="grid grid-cols-1 gap-2">

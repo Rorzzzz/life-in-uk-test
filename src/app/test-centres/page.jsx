@@ -170,7 +170,7 @@ export default function TestCentresPage() {
               FAQ about booking
             </Link>
             <Link
-              href="/how-to-pass"
+              href="/articles/how-to-pass-the-life-in-the-uk-test-first-time"
               className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
             >
               How to prepare

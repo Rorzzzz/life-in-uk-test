@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
-import { getAllPublishedSlugs, getArticleBySlug, extractFAQs } from '@/lib/articles'
+import { getAllPublishedSlugs, getArticleBySlug, extractFAQs, getRelatedArticles } from '@/lib/articles'
 import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ShareButton from '@/components/ui/ShareButton'
@@ -86,6 +86,7 @@ const components = {
 export default function ArticlePage({ params }) {
   const article = getArticleBySlug(params.slug)
   if (!article) notFound()
+  const related = getRelatedArticles(params.slug)
 
   // Article schema for Google
   const schema = {
@@ -202,6 +203,26 @@ export default function ArticlePage({ params }) {
           </div>
         </div>
 
+        {/* Related articles — keeps readers on the site (pages per session) */}
+        {related.length > 0 && (
+          <nav aria-label="Related articles" className="mt-8">
+            <p className="text-xs text-ink-muted mb-3 font-medium uppercase tracking-wide">Related guides</p>
+            <ul className="space-y-2">
+              {related.map(r => (
+                <li key={r.slug}>
+                  <Link
+                    href={`/articles/${r.slug}`}
+                    className="block bg-card border border-border hover:border-brand-400 rounded-xl p-4 min-h-[44px] transition-colors"
+                  >
+                    <span className="block text-sm font-semibold text-ink">{r.title}</span>
+                    {r.description && <span className="block text-xs text-ink-muted mt-1 line-clamp-2">{r.description}</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         {/* Bottom share */}
         <div className="flex items-center gap-2 mt-4 mb-2">
           <span className="text-xs text-ink-muted">Found this useful?</span>
@@ -220,7 +241,7 @@ export default function ArticlePage({ params }) {
             <Link href="/cheat-sheet" className="text-sm text-brand-400 hover:underline">Key facts cheat sheet</Link>
             <Link href="/faq" className="text-sm text-brand-400 hover:underline">Test FAQ</Link>
             <Link href="/exam-format" className="text-sm text-brand-400 hover:underline">Exam format</Link>
-            <Link href="/how-to-pass" className="text-sm text-brand-400 hover:underline">How to pass</Link>
+            <Link href="/articles/how-to-pass-the-life-in-the-uk-test-first-time" className="text-sm text-brand-400 hover:underline">How to pass</Link>
             <Link href="/articles" className="text-sm text-brand-400 hover:underline">All articles</Link>
           </div>
           <p className="text-xs text-ink-muted mt-4 mb-2 font-medium uppercase tracking-wide">Practice by topic</p>

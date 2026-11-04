@@ -1,13 +1,20 @@
+import { B2_LISTENING_TASKS } from '@/data/b2Listening'
+import { B2_READING_PASSAGES } from '@/data/b2Reading'
+import { B2_VOCAB_QUESTIONS } from '@/data/b2Vocabulary'
+import { B2_GRAMMAR_QUESTIONS } from '@/data/b2Grammar'
+import { B2_WRITING_TASKS } from '@/data/b2Writing'
+import { B2_SPEAKING_TASKS } from '@/data/b2Speaking'
+
 // Each mock test: 1 listening clip (4 Q) + 1 reading passage (4 Q) + 6 vocab + 6 grammar = 20 MCQ
 // + 1 writing task (Task 1 or 2) + 1 speaking task (Part 2 cue card)
 // Pass mark: 14/20 (70%) on MCQ section — equivalent to IELTS Band 5.5 (B2 threshold)
 
-export const B2_MOCK_TEST_COUNT = 20
 export const B2_MOCK_TEST_QUESTIONS = 20
 export const B2_MOCK_TEST_PASS_MARK = 14
 export const B2_MOCK_TEST_TIME_MINUTES = 25
 
-export const B2_MOCK_TESTS = [
+// Every test that is defined (some may be waiting for content).
+const ALL_B2_MOCK_TESTS = [
   {
     number: 1,
     title: 'B2 English Mock Test 1',
@@ -229,6 +236,24 @@ export const B2_MOCK_TESTS = [
     focus: 'Workplace & grammar range',
   },
 ]
+
+// Only publish tests whose referenced content all exists, so we never list,
+// link to or sitemap a test page that would 404 (tests 16–20 need vocab 91–120).
+function isComplete(t) {
+  return (
+    B2_LISTENING_TASKS.some(x => x.id === t.listeningClipId) &&
+    B2_READING_PASSAGES.some(x => x.id === t.readingPassageId) &&
+    t.vocabIds.filter(id => B2_VOCAB_QUESTIONS.some(q => q.id === id)).length >= 6 &&
+    t.grammarIds.filter(id => B2_GRAMMAR_QUESTIONS.some(q => q.id === id)).length >= 6 &&
+    B2_WRITING_TASKS.some(x => x.id === t.writingTaskId) &&
+    B2_SPEAKING_TASKS.some(x => x.id === t.speakingTaskId)
+  )
+}
+
+// Complete tests are numbered 1..N with no gaps (getRelatedTests relies on it).
+export const B2_MOCK_TESTS = ALL_B2_MOCK_TESTS.filter(isComplete)
+  .filter((t, i) => t.number === i + 1)
+export const B2_MOCK_TEST_COUNT = B2_MOCK_TESTS.length
 
 export function getB2MockTest(number) {
   return B2_MOCK_TESTS.find(t => t.number === number) ?? null
