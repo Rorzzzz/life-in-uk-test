@@ -3,6 +3,7 @@ import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { getAllArticles } from '@/lib/articles'
 import { BookOpen } from 'lucide-react'
 import ArticlesSearchClient from './ArticlesSearchClient'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'Life in the UK Test Guides 2026 — Tips, Study Help & Free Advice',
@@ -40,6 +41,21 @@ export default function ArticlesIndexPage() {
       <ArticlesSearchClient articles={articles} />
 
       {/* Internal links for SEO */}
+      {/* Real guidance text with the ad inside it, never against the links (2026-11-04) */}
+      <section className="mt-10 space-y-3">
+        <h2 className="text-lg font-display font-bold text-ink">How these guides are written</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          Every guide is written by Rory Stephenson, who passed the Life in the UK test, and checked against GOV.UK and the official handbook, Life in the United Kingdom: A Guide for New Residents. Fees, rules and dates are reviewed when the Home Office changes them, and each guide shows when it was published.
+        </p>
+      </section>
+      <ContentAd id="1" />
+      <section className="space-y-3 mb-8">
+        <h2 className="text-lg font-display font-bold text-ink">Where to start</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          If your test is coming up, start with the guides on how the test works and how to pass it first time. If you are planning your settlement or citizenship application, read the guides on costs, requirements and timelines, then use the free calculators to check your own dates.
+        </p>
+      </section>
+
       <div className="mt-10 pt-6 border-t border-border">
         <p className="text-sm text-ink-muted mb-3">Ready to start practising?</p>
         <div className="flex flex-wrap gap-2">

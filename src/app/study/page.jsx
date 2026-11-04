@@ -2,6 +2,7 @@ import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import { STUDY_CHAPTERS } from '@/data/studyGuide'
 import { CHAPTERS } from '@/data/questions'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'Life in the UK Test Study Guide 2026 — All Chapters, Free',
@@ -41,6 +42,21 @@ export default function StudyPage() {
           )
         })}
       </div>
+
+      {/* Real guidance text with the ad inside it, never against the links (2026-11-04) */}
+      <section className="mt-10 space-y-3">
+        <h2 className="text-lg font-display font-bold text-ink">How to use the study guide</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          The study guide summarises each of the five chapters of the official handbook in plain English. Read one chapter, then practise that chapter straight away while it is fresh. Short daily sessions work better than long ones, because you remember more when you come back to the same facts over several days.
+        </p>
+      </section>
+      <ContentAd id="1" />
+      <section className="space-y-3 mb-8">
+        <h2 className="text-lg font-display font-bold text-ink">When are you ready to book?</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          You are ready when you can pass full mock tests comfortably, not just once but several times in a row. Aim for 20 or more out of 24, which gives you a safety margin above the pass mark of 18. Use the cheat sheet for a final review of dates, numbers and names the day before your test.
+        </p>
+      </section>
 
       <div className="mt-6 flex gap-3 justify-center">
         <Link href="/cheat-sheet" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">

@@ -3,6 +3,7 @@ import { TOPICS, getTopicBySlug, getTopicQuestions } from '@/data/topics'
 import { MOCK_TEST_COUNT } from '@/data/mockTests'
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 function getTopicTests(slug) {
   const idx = TOPICS.findIndex(t => t.slug === slug)
@@ -68,6 +69,21 @@ export default function TopicPage({ params }) {
       </div>
 
       {/* Practice Tests + Related Topics */}
+      {/* Real guidance text with the ad inside it, never against the links (2026-11-04) */}
+      <section className="mt-10 space-y-3">
+        <h2 className="text-lg font-display font-bold text-ink">How to revise {topic.title}</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          Read through the questions and answers above, then test yourself on them in practice mode. Questions on {topic.title.toLowerCase()} come from the official handbook, so the same facts can appear in different wording in the real test. Learning why each answer is right helps you recognise them however they are asked.
+        </p>
+      </section>
+      <ContentAd id="1" />
+      <section className="space-y-3 mb-8">
+        <h2 className="text-lg font-display font-bold text-ink">Pass the test, not just this topic</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          The real test has 24 questions from every chapter of the handbook, and you need 18 correct to pass. Use topic practice to fix your weak areas, then take full mock tests to check you are ready across everything.
+        </p>
+      </section>
+
       <div className="mt-6 bg-card rounded-2xl p-4">
         <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Practice Tests</p>
         <div className="flex flex-wrap gap-2">

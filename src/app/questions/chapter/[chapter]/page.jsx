@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { QUESTIONS, CHAPTERS } from '@/data/questions'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 export async function generateStaticParams() {
   return CHAPTERS.map(c => ({ chapter: c.id.toString() }))
@@ -79,6 +80,21 @@ export default function ChapterQuestionsPage({ params }) {
         </ol>
 
         {/* Other chapters */}
+        {/* Real guidance text with the ad inside it, never against the links (2026-11-04) */}
+        <section className="mt-10 space-y-3">
+          <h2 className="text-lg font-display font-bold text-ink">How to revise {ch.title}</h2>
+          <p className="text-base text-ink-muted leading-relaxed">
+            Read through the questions and answers below, then practise this chapter with instant explanations. Questions you get wrong are brought back later, so you spend your time on what you do not know yet. When you can answer most of them without looking, move on to the next chapter.
+          </p>
+        </section>
+        <ContentAd id="1" />
+        <section className="space-y-3 mb-8">
+          <h2 className="text-lg font-display font-bold text-ink">How this chapter appears in the test</h2>
+          <p className="text-base text-ink-muted leading-relaxed">
+            The real test has 24 questions drawn from all five chapters of the handbook, and you need 18 correct answers to pass. You will not know in advance how many questions come from this chapter, so revise every chapter, then take full mock tests to practise under the 45-minute time limit.
+          </p>
+        </section>
+
         <div className="bg-card border border-border rounded-2xl p-5">
           <p className="text-sm font-bold text-ink mb-3">Questions from other chapters</p>
           <div className="flex flex-col gap-1">

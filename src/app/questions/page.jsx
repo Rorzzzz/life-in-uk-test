@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { QUESTIONS, CHAPTERS } from '@/data/questions'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
+import ContentAd from '@/components/ui/ContentAd'
 
 const TOTAL = QUESTIONS.length
 
@@ -68,6 +69,21 @@ export default function QuestionsIndexPage() {
             </Link>
           ))}
         </div>
+
+        {/* Real guidance text with the ad inside it, never against the links (2026-11-04) */}
+        <section className="mt-10 space-y-3">
+          <h2 className="text-lg font-display font-bold text-ink">How to use these questions</h2>
+          <p className="text-base text-ink-muted leading-relaxed">
+            Each question page shows the correct answer with a short explanation taken from the official handbook. Read through one chapter at a time, then test yourself in practice mode, where you answer first and see the explanation afterwards. Testing yourself is far more effective than reading answers alone.
+          </p>
+        </section>
+        <ContentAd id="1" />
+        <section className="space-y-3 mb-8">
+          <h2 className="text-lg font-display font-bold text-ink">Are these the real test questions?</h2>
+          <p className="text-base text-ink-muted leading-relaxed">
+            No. The Home Office does not publish the real test questions. These questions are written from the current 3rd edition handbook in the same multiple-choice format as the test, so they cover the same facts you will be asked about.
+          </p>
+        </section>
 
         <div className="bg-card border border-border rounded-2xl p-5">
           <p className="text-sm font-bold text-ink mb-3">Keep preparing</p>

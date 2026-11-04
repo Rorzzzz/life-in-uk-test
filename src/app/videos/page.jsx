@@ -1,5 +1,6 @@
 import LiteYouTube from '@/components/ui/LiteYouTube'
 import Link from 'next/link'
+import ContentAd from '@/components/ui/ContentAd'
 
 export const metadata = {
   title: 'Free Life in the UK Test Videos 2026 — PassTheUKTest',
@@ -49,6 +50,21 @@ export default function VideosPage() {
           </div>
         ))}
       </div>
+
+      {/* Real guidance text with the ad inside it, never against the links (2026-11-04) */}
+      <section className="mt-10 space-y-3">
+        <h2 className="text-lg font-display font-bold text-ink">Learning with video</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          Videos are a good way to review topics you find hard to remember from reading, especially history and how the UK is governed. Watch a video, then answer practice questions on the same topic straight away, so you check what you remembered.
+        </p>
+      </section>
+      <ContentAd id="1" />
+      <section className="space-y-3 mb-8">
+        <h2 className="text-lg font-display font-bold text-ink">Videos are not enough on their own</h2>
+        <p className="text-base text-ink-muted leading-relaxed">
+          The test checks specific facts from the official handbook, such as dates, names and numbers. Use videos alongside the study guide and practice questions, not instead of them.
+        </p>
+      </section>
 
       <div className="mt-8 p-5 bg-card rounded-2xl border border-border text-center">
         <p className="text-sm text-ink-muted mb-3">More videos coming soon.</p>
