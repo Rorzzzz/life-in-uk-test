@@ -1,10 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { AD_CLIENT } from '@/data/ads'
 
 const IS_DEV = process.env.NODE_ENV === 'development'
+
+// Lazy loading: request the ad only when its box is within this distance of the
+// viewport. Fewer never-seen impressions -> higher viewability and price per
+// impression (added 2026-11-04). Ads already on screen load immediately.
+const LAZY_ROOT_MARGIN = '500px 0px'
 
 /**
  * Manual AdSense unit with a fixed-height reserved box (zero CLS).
@@ -15,10 +20,14 @@ const IS_DEV = process.env.NODE_ENV === 'development'
  *   for the desktop sidebar), so we never request an ad into a hidden box.
  * - `maxWidth`: only render when the viewport is at most this wide (phones-only units).
  * - `heightClass`: Tailwind height for the reserved box + ad (fixed size).
+ * - Lazy-loaded: the ad is requested when the box comes within LAZY_ROOT_MARGIN
+ *   of the viewport (immediately if already visible, or if IntersectionObserver
+ *   isn't supported).
  */
 export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]', minWidth = 0, maxWidth = 0, showLabel = true, className }) {
   const responsive = minWidth > 0 || maxWidth > 0
   const [enabled, setEnabled] = useState(!responsive)
+  const boxRef = useRef(null)
 
   useEffect(() => {
     if (!responsive) return
@@ -32,11 +41,23 @@ export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]'
 
   useEffect(() => {
     if (!slot || !enabled) return
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    } catch (err) {
-      if (IS_DEV) console.warn('[AdSlot]', err)
+    let loaded = false
+    const load = () => {
+      if (loaded) return
+      loaded = true
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({})
+      } catch (err) {
+        if (IS_DEV) console.warn('[AdSlot]', err)
+      }
     }
+    const box = boxRef.current
+    if (!box || typeof IntersectionObserver === 'undefined') { load(); return }
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { io.disconnect(); load() }
+    }, { rootMargin: LAZY_ROOT_MARGIN })
+    io.observe(box)
+    return () => io.disconnect()
   }, [slot, enabled, refreshKey])
 
   if (!enabled) return null
@@ -49,7 +70,7 @@ export default function AdSlot({ slot, refreshKey = 0, heightClass = 'h-[250px]'
           Advertisements
         </p>
       )}
-      <div className={clsx('w-full overflow-hidden rounded-xl', heightClass)}>
+      <div ref={boxRef} className={clsx('w-full overflow-hidden rounded-xl', heightClass)}>
         {slot ? (
           <ins
             key={refreshKey}
