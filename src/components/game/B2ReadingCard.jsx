@@ -144,7 +144,7 @@ export default function B2ReadingCard({
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <QuizMobileAd refreshKey={`read-${question.id}`} />
+      <QuizMobileAd refreshKey={`read-${question.id}`} answered={answered} />
       {/* Explanation */}
       {answered && (
         <div ref={explanationRef}>

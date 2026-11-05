@@ -126,7 +126,7 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <div ref={adRef}><QuizMobileAd refreshKey={`listen-${clip.id}-${questionIndex}`} /></div>
+      <div ref={adRef}><QuizMobileAd refreshKey={`listen-${clip.id}-${questionIndex}`} answered={revealed} /></div>
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === q.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -199,7 +199,7 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <div ref={adRef}><QuizMobileAd refreshKey={`read-${passage.id}-${questionIndex}`} /></div>
+      <div ref={adRef}><QuizMobileAd refreshKey={`read-${passage.id}-${questionIndex}`} answered={revealed} /></div>
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === q.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -254,7 +254,7 @@ function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <div ref={adRef}><QuizMobileAd refreshKey={`mcq-${sectionLabel}-${question.id}`} /></div>
+      <div ref={adRef}><QuizMobileAd refreshKey={`mcq-${sectionLabel}-${question.id}`} answered={revealed} /></div>
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === question.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>

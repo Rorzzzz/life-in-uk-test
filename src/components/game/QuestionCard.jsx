@@ -8,8 +8,8 @@ import ExplanationPanel from './ExplanationPanel'
 import XPPopup from './XPPopup'
 import { useAudioNarration } from '@/hooks/useAudioNarration'
 import { useGame } from '@/context/GameContext'
-import AdSlot from '@/components/ui/AdSlot'
-import { AD_SLOTS, INLINE_AD_MIN_WIDTH, QUIZ_MOBILE_AD_ENABLED } from '@/data/ads'
+import QuizMobileAd from '@/components/ui/QuizMobileAd'
+import { QUIZ_MOBILE_AD_ENABLED } from '@/data/ads'
 
 export default function QuestionCard({
   question,
@@ -160,13 +160,7 @@ export default function QuestionCard({
       {showMobileAd && QUIZ_MOBILE_AD_ENABLED && (
         <>
           <div ref={mobileAdRef} className="-mt-4">
-            <AdSlot
-              slot={AD_SLOTS.quizMobile}
-              refreshKey={question.id}
-              maxWidth={INLINE_AD_MIN_WIDTH - 1}
-              heightClass="h-[100px]"
-              showLabel={false}
-            />
+            <QuizMobileAd refreshKey={question.id} answered={answered} />
           </div>
         </>
       )}

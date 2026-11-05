@@ -165,7 +165,7 @@ export default function B2ListeningCard({ task, onAnswer, questionIndex, totalQu
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <QuizMobileAd refreshKey={`listen-${task.id}-${questionIndex}`} />
+      <QuizMobileAd refreshKey={`listen-${task.id}-${questionIndex}`} answered={revealed} />
       {/* Explanation */}
       {revealed && (
         <div ref={answerRef} className={clsx('rounded-2xl border p-4', isCorrect ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>

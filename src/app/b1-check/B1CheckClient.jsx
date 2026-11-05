@@ -323,7 +323,7 @@ function QuestionScreen({ question, questionIndex, total, quizNumber, onAnswer, 
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <QuizMobileAd refreshKey={`b1check-${quizNumber}-${questionIndex}`} />
+      <QuizMobileAd refreshKey={`b1check-${quizNumber}-${questionIndex}`} answered={revealed} />
       {/* Explanation */}
       <AnimatePresence>
         {revealed && (

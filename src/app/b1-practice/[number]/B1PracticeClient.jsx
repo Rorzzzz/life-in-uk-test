@@ -243,7 +243,7 @@ function QuestionScreen({ question, questionIndex, total, onAnswer }) {
       </div>
 
       {/* Phone ad under the answers once checked (a Check button sits under the options before that) */}
-      {confirmed && <div ref={adRef}><QuizMobileAd refreshKey={`b1-${questionIndex}`} className="px-4 mb-5" /></div>}
+      {confirmed && <div ref={adRef}><QuizMobileAd refreshKey={`b1-${questionIndex}`} answered className="px-4 mb-5" /></div>}
       {/* Explanation (shown after confirm) */}
       <AnimatePresence>
         {confirmed && (
