@@ -48,6 +48,7 @@ const STATIC_TOOLS = [
   { href: '/ilr-calculator',       label: 'Free ILR Eligibility Calculator',    desc: 'Find out if you qualify for Indefinite Leave to Remain and calculate your earliest application date.' },
   { href: '/absence-calculator',   label: 'Free UK Absence Calculator',          desc: 'Check if your time abroad breaks the 180-day rule for ILR or citizenship applications.' },
   { href: '/b1-check',             label: 'Free B1 English Level Check',         desc: 'Test your English level to see if you meet the B1 requirement for ILR or British citizenship.' },
+  { href: '/b2-english-checker',   label: 'Do I Need B1 or B2 English? (2027)',  desc: 'Check if the 26 March 2027 B2 English rule applies to your ILR application, and which tests count.' },
   { href: '/true-cost-calculator', label: 'True Cost of British Citizenship',    desc: 'Calculate the full cost of your journey to British citizenship including all fees and surcharges.' },
   { href: '/citizenship-planner',  label: 'Free UK Citizenship Planner',         desc: 'Build a personalised timeline and cost breakdown for your route to British citizenship.' },
   { href: '/citizenship-date-calculator', label: 'British Citizenship Date Calculator', desc: 'Find the exact date you can apply for British citizenship from your ILR date, including the spouse rule.' },

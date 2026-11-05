@@ -39,6 +39,7 @@ const GROUPS = [
       { href: '/true-cost-calculator', emoji: '💷', title: 'True Cost of Citizenship',    desc: 'Add up every fee and surcharge on the journey to British citizenship — the real total.' },
       { href: '/good-character-check', emoji: '✅', title: 'Good Character Checker',       desc: 'Check whether anything in your history could affect an ILR or citizenship decision.' },
       { href: '/b1-check',             emoji: '🗣️', title: 'B1 English Level Check',       desc: 'Test whether your English meets the B1 requirement for ILR or British citizenship.' },
+      { href: '/b2-english-checker',   emoji: '🇬🇧', title: 'B1 or B2 English Checker',     desc: 'See whether the 26 March 2027 B2 rule applies to your ILR application, and which tests count.' },
     ],
   },
   {

@@ -11,6 +11,7 @@ const TOOLS = [
   { slug: 'true-cost-calculator', emoji: '💷', title: 'True Cost of Citizenship' },
   { slug: 'good-character-check', emoji: '✅', title: 'Good Character Checker' },
   { slug: 'b1-check',             emoji: '🗣️', title: 'B1 English Level Check' },
+  { slug: 'b2-english-checker',    emoji: '🇬🇧', title: 'B1 or B2 English Checker (2027)' },
   { slug: 'study-plan-generator', emoji: '📚', title: 'Study Plan Generator' },
   { slug: 'test-exempt',          emoji: '🎓', title: 'Test Exemption Checker' },
 ]

@@ -78,7 +78,7 @@ const SECTIONS = [
 const FAQS = [
   {
     q: 'Do I need B2 English for ILR?',
-    a: 'On many routes, yes. ILR applications made on or after 26 March 2027 on routes such as Skilled Worker, Global Talent, Scale-up and UK Ancestry need B2 English, one level above the current B1. If you apply before 26 March 2027, B1 is still enough. Spouse and partner visas (Appendix FM) are not changed by HC 1691.',
+    a: 'Yes, for most routes. ILR applications made on or after 26 March 2027 need B2 English, one level above the current B1. This includes Skilled Worker, Global Talent, UK Ancestry and spouse or partner ILR on the family route. If you apply before 26 March 2027, B1 is still enough. British citizenship stays at B1.',
   },
   {
     q: 'Which tests count for B2 English for UK visa?',
@@ -131,7 +131,7 @@ export default function B2PracticeHub() {
           529 free questions aligned to IELTS General Training format — the most common B2 test for UK settlement.
         </p>
         <p className="text-sm text-ink-muted mb-6">
-          From 26 March 2027, ILR applications on routes such as Skilled Worker need B2 (up from B1).{' '}
+          From 26 March 2027, ILR applications on routes such as Skilled Worker need B2 (up from B1). <Link href="/b2-english-checker" className="text-brand-400 hover:text-brand-300 underline">Check if it applies to you</Link>.{' '}
           <Link href="/articles/b2-english-requirement-2027" className="text-brand-400 hover:text-brand-300 underline-offset-2 hover:underline">What changes and who it affects →</Link>
         </p>
 
