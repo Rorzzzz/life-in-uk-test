@@ -166,7 +166,7 @@ export default function B2ListeningClient() {
         <div className="bg-card rounded-2xl p-4">
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-2">Related</p>
           <div className="flex flex-wrap gap-2">
-            <Link href="/articles/b2-english-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Test Guide</Link>
+            <Link href="/articles/english-language-requirements-ilr-2026" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Test Guide</Link>
             <Link href="/b2-practice/speaking" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">Speaking Practice</Link>
           </div>
         </div>

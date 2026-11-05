@@ -109,7 +109,7 @@ function Result({ res }) {
     <p className="text-sm text-ink-muted leading-relaxed">A degree taught or researched in English can meet the English requirement instead of a test. You need it confirmed by Ecctis (the Home Office&apos;s qualification assessment provider). Check GOV.UK that your degree is accepted at the level you need{res.afterB2 ? ' (B2 for many routes from 26 March 2027)' : ''}.</p>)
 
   if (res.kind === 'unsure') return box('text-brand-400', 'ℹ️ It depends on your route',
-    <p className="text-sm text-ink-muted leading-relaxed">From 26 March 2027 the B2 rule applies to ILR on almost every route that has an English requirement, including the family route, Skilled Worker, Global Talent and UK Ancestry. {res.afterB2 ? 'If your route is one of them, you will need B2.' : 'If you apply before 26 March 2027, B1 is still enough on every route.'} Read the <Link href="/articles/b2-english-requirement-2027" className="text-brand-400 underline">full list of affected routes</Link>.</p>)
+    <p className="text-sm text-ink-muted leading-relaxed">From 26 March 2027 the B2 rule applies to ILR on almost every route that has an English requirement, including the family route, Skilled Worker, Global Talent and UK Ancestry. {res.afterB2 ? 'If your route is one of them, you will need B2.' : 'If you apply before 26 March 2027, B1 is still enough on every route.'} Read the <Link href="/articles/english-language-requirements-ilr-2026" className="text-brand-400 underline">full list of affected routes</Link>.</p>)
 
   if (res.kind === 'b2') return box('text-danger', '⚠️ You need B2 English',
     <>
@@ -121,7 +121,7 @@ function Result({ res }) {
       <p className="text-sm text-ink-muted leading-relaxed mt-3"><strong className="text-ink">Can&apos;t reach B2?</strong> The new rules accept evidence of at least 75 guided learning hours (not self-study) in the 12 months before you apply, plus a teacher&apos;s view that you are unlikely to reach B2 with more study.</p>
       <div className="flex flex-wrap gap-2 mt-4">
         <Link href="/b2-practice" className="px-4 py-2.5 bg-brand-500 text-white rounded-xl text-sm font-semibold">Start free B2 practice →</Link>
-        <Link href="/articles/b2-english-test" className="px-4 py-2.5 bg-raised border border-border rounded-xl text-sm text-ink">Compare B2 tests</Link>
+        <Link href="/articles/english-language-requirements-ilr-2026" className="px-4 py-2.5 bg-raised border border-border rounded-xl text-sm text-ink">Compare B2 tests</Link>
       </div>
     </>)
 

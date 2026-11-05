@@ -132,7 +132,7 @@ export default function B2PracticeHub() {
         </p>
         <p className="text-sm text-ink-muted mb-6">
           From 26 March 2027, ILR applications on routes such as Skilled Worker need B2 (up from B1). <Link href="/b2-english-checker" className="text-brand-400 hover:text-brand-300 underline">Check if it applies to you</Link>.{' '}
-          <Link href="/articles/b2-english-requirement-2027" className="text-brand-400 hover:text-brand-300 underline-offset-2 hover:underline">What changes and who it affects →</Link>
+          <Link href="/articles/english-language-requirements-ilr-2026" className="text-brand-400 hover:text-brand-300 underline-offset-2 hover:underline">What changes and who it affects →</Link>
         </p>
 
         <div className="space-y-3 mb-8">
@@ -179,7 +179,7 @@ export default function B2PracticeHub() {
           </p>
           <p className="text-sm text-ink-muted leading-relaxed">
             B1 tested only speaking and listening. B2 adds reading and writing — that is the main difference in difficulty. See our{' '}
-            <Link href="/articles/b2-vs-b1-english" className="text-brand-400 hover:text-brand-300">B2 vs B1 comparison →</Link>
+            <Link href="/articles/english-language-requirements-ilr-2026" className="text-brand-400 hover:text-brand-300">B2 vs B1 comparison →</Link>
           </p>
         </div>
 
@@ -208,11 +208,8 @@ export default function B2PracticeHub() {
         <div className="bg-card rounded-2xl p-4">
           <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">B2 English Guides</p>
           <div className="flex flex-wrap gap-2">
-            <Link href="/articles/b2-english-requirement-2027" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Requirement 2027</Link>
-            <Link href="/articles/b2-english-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">Which B2 Test?</Link>
-            <Link href="/articles/b2-vs-b1-english" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 vs B1</Link>
-            <Link href="/articles/ielts-life-skills-b2" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">IELTS Life Skills B2?</Link>
-            <Link href="/articles/languagecert-b2" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">LanguageCert B2</Link>
+            <Link href="/articles/english-language-requirements-ilr-2026" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Requirement 2027</Link>
+            <Link href="/b2-english-checker" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">Do I need B1 or B2? (checker)</Link>
           </div>
         </div>
       </div>

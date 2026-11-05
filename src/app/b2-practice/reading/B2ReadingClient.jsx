@@ -161,7 +161,7 @@ export default function B2ReadingClient() {
           <div className="flex flex-wrap gap-2">
             <Link href="/b2-practice/vocabulary" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Vocabulary</Link>
             <Link href="/b2-practice/grammar" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Grammar</Link>
-            <Link href="/articles/b2-english-test" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Test Guide</Link>
+            <Link href="/articles/english-language-requirements-ilr-2026" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">B2 Test Guide</Link>
           </div>
         </div>
       </div>

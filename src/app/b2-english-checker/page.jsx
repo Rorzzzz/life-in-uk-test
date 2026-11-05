@@ -122,11 +122,8 @@ export default function B2EnglishCheckerPage() {
           <p className="text-sm font-bold text-ink mb-3">Related guides and practice</p>
           <div className="grid grid-cols-1 gap-2">
             {[
-              { href: '/articles/b2-english-requirement-2027', label: 'B2 English requirement 2027: what changes and when' },
-              { href: '/articles/b2-english-test', label: 'Which B2 English test should you take?' },
-              { href: '/articles/b2-vs-b1-english', label: 'B2 vs B1: how much harder is B2?' },
+              { href: '/articles/english-language-requirements-ilr-2026', label: 'B2 English requirement 2027: what changes and when' },
               { href: '/b2-practice', label: 'Free B2 English practice and mock tests' },
-              { href: '/articles/english-language-requirements-ilr-2026', label: 'ILR English requirements 2026' },
               { href: '/tools', label: 'All free immigration tools' },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="text-sm text-brand-400 hover:text-brand-300 transition-colors">→ {label}</Link>
