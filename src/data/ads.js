@@ -9,6 +9,7 @@ export const AD_SLOTS = {
   results:    '9470479023', // mock-test results screen
   sidebar:    '5544722630', // desktop sticky sidebar (300×600)
   quizMobile: '6823972680', // phones only: in quiz flows, below the answers (small, 100px)
+  multiplex: '5362164896', // 'Content end multiplex': grid at the END of articles, cheat sheet, mock-test review (MultiplexAd)
   quizMobileLarge: '6327762206', // phones only: replaces quizMobile once the user has answered (300x250 class, 250px)
   contentInline: '7534244111', // content + tool pages (ContentAd): in the text, away from controls
 }

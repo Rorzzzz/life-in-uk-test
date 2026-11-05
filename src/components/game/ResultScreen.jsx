@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import { Fragment } from 'react'
 import AdSlot from '@/components/ui/AdSlot'
 import { AD_SLOTS, RESULTS_AD_EVERY } from '@/data/ads'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
@@ -46,6 +47,10 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, retryLab
           <span className="text-ink-muted text-sm">earned</span>
         </div>
       )}
+
+      {/* Results ad straight after the score: the moment of highest attention.
+          300x250 box, with a 40px gap above the weak-spot links and buttons. */}
+      {showAds && <AdSlot slot={AD_SLOTS.results} refreshKey="results-top" className="w-full max-w-sm mb-4" />}
 
       {isExam && weakChapters.length > 0 && (
         <div className="w-full max-w-xs bg-card border border-border rounded-2xl p-4 text-left">
@@ -102,7 +107,6 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, retryLab
         )}
       </div>
 
-      {showAds && <AdSlot slot={AD_SLOTS.results} refreshKey="results-top" className="mt-4" />}
 
       {wrongQuestions.length > 0 && (
         <div className="w-full">
@@ -134,6 +138,9 @@ export default function ResultScreen({ score, total, xpEarned, onRetry, retryLab
           </div>
         </div>
       )}
+
+      {/* Multiplex after the wrong-answer review (end of the results screen) */}
+      {showAds && <MultiplexAd id="results-end" className="my-6" />}
 
       {footer && <div className="w-full">{footer}</div>}
     </div>

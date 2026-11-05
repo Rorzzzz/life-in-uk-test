@@ -6,6 +6,7 @@ import PrintButton from './PrintButton'
 import ContentAd from '@/components/ui/ContentAd'
 import ShareButton from '@/components/ui/ShareButton'
 import NightBeforeSection from './NightBeforeSection'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 export const metadata = {
   title: 'Life in the UK Cheat Sheet — Free PDF & Printable',
@@ -380,6 +381,9 @@ export default function CheatSheetPage() {
             ))}
           </div>
         </div>
+
+        {/* Multiplex after the last content section, 40px clear of the links below */}
+        <MultiplexAd id="cheat-end" className="mt-8 mb-10" />
 
         <div className="flex gap-2 justify-center mt-4 flex-wrap">
           <Link href="/articles/what-is-the-life-in-the-uk-test" className="px-4 py-3 text-sm text-brand-400 hover:text-brand-300 active:opacity-70 rounded-xl hover:bg-brand-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">What Is the Test?</Link>

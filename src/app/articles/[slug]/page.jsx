@@ -7,6 +7,7 @@ import { BookOpen, Clock, ChevronLeft } from 'lucide-react'
 import BreadcrumbSchema from '@/components/ui/BreadcrumbSchema'
 import ShareButton from '@/components/ui/ShareButton'
 import ContentAd from '@/components/ui/ContentAd'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 export async function generateStaticParams() {
   return getAllPublishedSlugs()
@@ -307,6 +308,9 @@ export default function ArticlePage({ params }) {
             <Link href="/practice/5" className="text-sm text-brand-400 hover:underline">Government &amp; Law</Link>
           </div>
         </div>
+
+        {/* Multiplex at the very end of the article, clear of the link lists */}
+        <MultiplexAd id="article-end" className="mt-12 mb-4" />
 
       </div>
     </>
