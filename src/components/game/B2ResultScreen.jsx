@@ -5,6 +5,7 @@ import ProgressRing from '@/components/ui/ProgressRing'
 import dynamic from 'next/dynamic'
 import AdSlot from '@/components/ui/AdSlot'
 import { AD_SLOTS } from '@/data/ads'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 const ConfettiBlast = dynamic(() => import('./ConfettiBlast'), { ssr: false })
 
@@ -45,6 +46,9 @@ export default function B2ResultScreen({ score, total, wrongQuestions = [], onRe
         </span>
       </div>
 
+      {/* Results ad straight after the score (highest attention), 40px above the buttons */}
+      <AdSlot slot={AD_SLOTS.results} refreshKey="b2-section-results" className="mb-10" />
+
       {/* Actions */}
       <div className="flex flex-col gap-3 mb-8">
         <button
@@ -66,8 +70,6 @@ export default function B2ResultScreen({ score, total, wrongQuestions = [], onRe
           ← B2 Practice hub
         </Link>
       </div>
-
-      <AdSlot slot={AD_SLOTS.results} refreshKey="b2-section-results" className="mb-6" />
 
       {/* Wrong question review */}
       {wrongQuestions.length > 0 && (
@@ -104,6 +106,8 @@ export default function B2ResultScreen({ score, total, wrongQuestions = [], onRe
           <Link href="/articles/english-language-requirements-ilr-2026" className="px-3 py-1.5 text-sm text-brand-400 hover:text-brand-300 rounded-lg hover:bg-brand-500/10 transition-colors">Which B2 Test?</Link>
         </div>
       </div>
+      {/* Multiplex at the end of the results */}
+      <MultiplexAd id="b2-section-end" className="mt-6" />
     </div>
   )
 }

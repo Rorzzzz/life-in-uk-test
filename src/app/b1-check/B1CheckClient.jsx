@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { B1_PRACTICE_TESTS } from '@/data/b1Questions'
 import QuizMobileAd from '@/components/ui/QuizMobileAd'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 // ─── Quiz metadata ─────────────────────────────────────────────────────────────
 const QUIZ_META = [
@@ -428,6 +429,9 @@ function ResultsScreen({ score, total, quizNumber, onRetry, onChooseQuiz }) {
         </p>
       </div>
 
+      {/* Results ad straight after the score (highest attention), 40px above the buttons */}
+      <AdSlot slot={AD_SLOTS.results} refreshKey="b1check-results" className="mb-10" />
+
       {/* Try other quizzes */}
       <div className="bg-card rounded-2xl border border-border p-5 mb-5">
         <h2 className="text-sm font-semibold text-ink mb-3">Try the other quizzes</h2>
@@ -648,7 +652,7 @@ export default function B1CheckClient({ header, footer }) {
         />
       )}
       {screen === 'results' && (
-        <AdSlot slot={AD_SLOTS.results} refreshKey="b1check-results" className="mt-8" />
+        <MultiplexAd id="b1-check-end" className="mt-8" />
       )}
 
       {/* Footer (RelatedTools) only shown on the select screen */}

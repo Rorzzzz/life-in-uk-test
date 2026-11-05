@@ -81,6 +81,7 @@ export default function B2MockTestPage({ params }) {
       ]} />
 
       <B2MockTestClient
+        testCount={B2_MOCK_TEST_COUNT}
         testData={testData}
         listeningClip={listeningClip}
         readingPassage={readingPassage}

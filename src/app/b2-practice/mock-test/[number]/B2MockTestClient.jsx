@@ -11,6 +11,7 @@ import WithAdRail from '@/components/ui/AdRail'
 import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 import QuizMobileAd from '@/components/ui/QuizMobileAd'
 import { useRevealScroll } from '@/hooks/useRevealScroll'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 const PASS_MARK = 14
 const TOTAL_MCQ = 20
@@ -275,7 +276,7 @@ function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
 
 // ─── Results screen ────────────────────────────────────────────────────────
 
-function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
+function ResultsScreen({ score, sectionScores, testNumber, testCount, onRetry }) {
   const passed = score >= PASS_MARK
   const pct = Math.round((score / TOTAL_MCQ) * 100)
 
@@ -290,6 +291,9 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
         <p className="text-sm text-ink-muted mb-1">{pct}% — pass mark is {Math.round((PASS_MARK/TOTAL_MCQ)*100)}%</p>
         <p className="text-xs text-ink-muted">{passed ? 'You meet the B2 threshold for UK settlement.' : `You need ${PASS_MARK - score} more correct to reach B2 level.`}</p>
       </div>
+
+      {/* Results ad straight after the score (highest attention), 40px above the buttons */}
+      <AdSlot slot={AD_SLOTS.results} refreshKey="b2-results" className="mb-5" />
 
       <div className="bg-card rounded-2xl p-5 border border-border mb-5">
         <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Section breakdown</p>
@@ -327,7 +331,7 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
           className="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-colors">
           Retry Mock Test {testNumber} →
         </button>
-        {testNumber < 10 && (
+        {testNumber < testCount && (
           <Link href={`/b2-practice/mock-test/${testNumber + 1}`}
             className="w-full py-3 bg-raised border border-border hover:border-brand-500/40 text-ink-muted hover:text-ink rounded-xl text-sm font-medium transition-colors text-center">
             Next: Mock Test {testNumber + 1} →
@@ -339,7 +343,8 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
         </Link>
       </div>
 
-      <AdSlot slot={AD_SLOTS.results} refreshKey="b2-results" className="mb-5" />
+      {/* Multiplex after the actions, before the practice links */}
+      <MultiplexAd id="b2-mock-end" className="mt-6 mb-10" />
 
       <div className="bg-card rounded-2xl p-4 border border-border">
         <p className="text-xs font-semibold text-ink-muted uppercase tracking-wide mb-3">Also practise</p>
@@ -356,7 +361,7 @@ function ResultsScreen({ score, sectionScores, testNumber, onRetry }) {
 
 // ─── Main component ────────────────────────────────────────────────────────
 
-export default function B2MockTestClient({ testData, listeningClip, readingPassage, vocabQuestions, grammarQuestions, writingTask, speakingTask }) {
+export default function B2MockTestClient({ testData, testCount, listeningClip, readingPassage, vocabQuestions, grammarQuestions, writingTask, speakingTask }) {
   const [phase, setPhase]           = useState('intro')   // intro | test | done
   const [section, setSection]       = useState('listening')
   const [stepIndex, setStepIndex]   = useState(0)
@@ -434,7 +439,7 @@ export default function B2MockTestClient({ testData, listeningClip, readingPassa
   const timerWarning = timeLeft < 300
 
   if (phase === 'done') {
-    return <ResultsScreen score={score} sectionScores={sectionScores} testNumber={testData.number} onRetry={retry} />
+    return <ResultsScreen score={score} sectionScores={sectionScores} testNumber={testData.number} testCount={testCount} onRetry={retry} />
   }
 
   // ── Writing section ──

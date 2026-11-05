@@ -10,6 +10,7 @@ import AdSlot from '@/components/ui/AdSlot'
 import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 import QuizMobileAd from '@/components/ui/QuizMobileAd'
 import { useRevealScroll } from '@/hooks/useRevealScroll'
+import MultiplexAd from '@/components/ui/MultiplexAd'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -327,6 +328,9 @@ function ResultsScreen({ score, total, testNumber, totalTests, onRetry }) {
           <span className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-mono)' }}>{pct}%</span>
           <span className="text-xs text-slate-500">score</span>
         </div>
+
+      {/* Results ad straight after the score (highest attention), 40px above the buttons */}
+      <AdSlot slot={AD_SLOTS.results} refreshKey="b1-results" className="w-full max-w-xs mb-10" />
       </div>
 
       {/* Feedback */}
@@ -484,7 +488,7 @@ export default function B1PracticeClient({ questions, testNumber, totalTests }) 
           />
         )}
         {screen === 'results' && (
-          <AdSlot slot={AD_SLOTS.results} refreshKey="b1-results" className="px-4 mt-8 mb-8" />
+          <MultiplexAd id="b1-practice-end" className="px-4 mt-8 mb-8" />
         )}
       </div>
     </div>
