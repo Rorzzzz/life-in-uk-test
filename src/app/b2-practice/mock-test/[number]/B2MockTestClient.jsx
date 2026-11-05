@@ -10,6 +10,7 @@ import AdSlot from '@/components/ui/AdSlot'
 import WithAdRail from '@/components/ui/AdRail'
 import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 import QuizMobileAd from '@/components/ui/QuizMobileAd'
+import { useRevealScroll } from '@/hooks/useRevealScroll'
 
 const PASS_MARK = 14
 const TOTAL_MCQ = 20
@@ -47,6 +48,9 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
   const [playCount, setPlayCount] = useState(0)
   const [selected, setSelected]   = useState(null)
   const [revealed, setRevealed]   = useState(false)
+  const nextRef = useRef(null)
+  const adRef = useRef(null)
+  useRevealScroll(revealed, nextRef, adRef)
   const q = clip.questions[questionIndex]
 
   useEffect(() => { return () => window.speechSynthesis?.cancel() }, [])
@@ -122,7 +126,7 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <QuizMobileAd refreshKey={`listen-${clip.id}-${questionIndex}`} />
+      <div ref={adRef}><QuizMobileAd refreshKey={`listen-${clip.id}-${questionIndex}`} /></div>
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === q.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -131,7 +135,7 @@ function ListeningStep({ clip, questionIndex, onAnswer }) {
             </p>
             <p className="text-xs text-ink-muted">{q.explanation}</p>
           </div>
-          <button onClick={() => onAnswer(selected === q.answer)}
+          <button ref={nextRef} onClick={() => onAnswer(selected === q.answer)}
             className="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-colors">
             Next →
           </button>
@@ -147,6 +151,9 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
   const [passageOpen, setPassageOpen] = useState(true)
   const [selected, setSelected]       = useState(null)
   const [revealed, setRevealed]       = useState(false)
+  const nextRef = useRef(null)
+  const adRef = useRef(null)
+  useRevealScroll(revealed, nextRef, adRef)
   const q = passage.questions[questionIndex]
 
   useEffect(() => { setSelected(null); setRevealed(false) }, [questionIndex])
@@ -192,7 +199,7 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <QuizMobileAd refreshKey={`read-${passage.id}-${questionIndex}`} />
+      <div ref={adRef}><QuizMobileAd refreshKey={`read-${passage.id}-${questionIndex}`} /></div>
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === q.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -201,7 +208,7 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
             </p>
             <p className="text-xs text-ink-muted">{q.explanation}</p>
           </div>
-          <button onClick={() => onAnswer(selected === q.answer)}
+          <button ref={nextRef} onClick={() => onAnswer(selected === q.answer)}
             className="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-colors">
             Next →
           </button>
@@ -216,6 +223,9 @@ function ReadingStep({ passage, questionIndex, onAnswer }) {
 function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
   const [selected, setSelected] = useState(null)
   const [revealed, setRevealed] = useState(false)
+  const nextRef = useRef(null)
+  const adRef = useRef(null)
+  useRevealScroll(revealed, nextRef, adRef)
 
   return (
     <div className="flex flex-col gap-4">
@@ -244,7 +254,7 @@ function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
       </div>
 
       {/* Phone ad directly under the answers (same as Life in the UK mock tests) */}
-      <QuizMobileAd refreshKey={`mcq-${sectionLabel}-${question.id}`} />
+      <div ref={adRef}><QuizMobileAd refreshKey={`mcq-${sectionLabel}-${question.id}`} /></div>
       {revealed && (
         <>
           <div className={clsx('rounded-2xl border p-4', selected === question.answer ? 'bg-success/10 border-success/30' : 'bg-danger/10 border-danger/30')}>
@@ -253,7 +263,7 @@ function MCQStep({ question, sectionLabel, questionIndex, total, onAnswer }) {
             </p>
             <p className="text-xs text-ink-muted">{question.explanation}</p>
           </div>
-          <button onClick={() => onAnswer(selected === question.answer)}
+          <button ref={nextRef} onClick={() => onAnswer(selected === question.answer)}
             className="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-colors">
             Next →
           </button>

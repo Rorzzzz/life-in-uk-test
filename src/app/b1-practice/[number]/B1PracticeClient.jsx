@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -9,6 +9,7 @@ import { useAudioNarration } from '@/hooks/useAudioNarration'
 import AdSlot from '@/components/ui/AdSlot'
 import { AD_SLOTS, EXAM_AD_REFRESH_EVERY, INLINE_AD_MIN_WIDTH } from '@/data/ads'
 import QuizMobileAd from '@/components/ui/QuizMobileAd'
+import { useRevealScroll } from '@/hooks/useRevealScroll'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -153,6 +154,9 @@ function IntroScreen({ testNumber, totalTests, questionCount, onStart }) {
 function QuestionScreen({ question, questionIndex, total, onAnswer }) {
   const [selected, setSelected] = useState(null)
   const [confirmed, setConfirmed] = useState(false)
+  const nextRef = useRef(null)
+  const adRef = useRef(null)
+  useRevealScroll(confirmed, nextRef, adRef, 450) // wait for the explanation slide-open animation
   const colours = SECTION_COLOURS[question.section] || SECTION_COLOURS.Vocabulary
 
   function handleSelect(idx) {
@@ -239,7 +243,7 @@ function QuestionScreen({ question, questionIndex, total, onAnswer }) {
       </div>
 
       {/* Phone ad under the answers once checked (a Check button sits under the options before that) */}
-      {confirmed && <QuizMobileAd refreshKey={`b1-${questionIndex}`} className="px-4 mb-5" />}
+      {confirmed && <div ref={adRef}><QuizMobileAd refreshKey={`b1-${questionIndex}`} className="px-4 mb-5" /></div>}
       {/* Explanation (shown after confirm) */}
       <AnimatePresence>
         {confirmed && (
@@ -271,6 +275,7 @@ function QuestionScreen({ question, questionIndex, total, onAnswer }) {
           </button>
         ) : (
           <button
+            ref={nextRef}
             onClick={handleNext}
             className="w-full py-4 rounded-2xl font-bold text-sm bg-brand-500 hover:bg-brand-600 text-white transition-all active:scale-95 flex items-center justify-center gap-2"
           >
