@@ -78,7 +78,7 @@ const SECTIONS = [
 const FAQS = [
   {
     q: 'Do I need B2 English for ILR?',
-    a: 'From 26 March 2027, yes. Most ILR applications will require B2 English — one level above the current B1 requirement. If your ILR date is before 26 March 2027, you still need B1. The change is confirmed law under HC 1691.',
+    a: 'On many routes, yes. ILR applications made on or after 26 March 2027 on routes such as Skilled Worker, Global Talent, Scale-up and UK Ancestry need B2 English, one level above the current B1. If you apply before 26 March 2027, B1 is still enough. Spouse and partner visas (Appendix FM) are not changed by HC 1691.',
   },
   {
     q: 'Which tests count for B2 English for UK visa?',
@@ -131,7 +131,7 @@ export default function B2PracticeHub() {
           529 free questions aligned to IELTS General Training format — the most common B2 test for UK settlement.
         </p>
         <p className="text-sm text-ink-muted mb-6">
-          From 26 March 2027, most ILR applications require B2 (up from B1).{' '}
+          From 26 March 2027, ILR applications on routes such as Skilled Worker need B2 (up from B1).{' '}
           <Link href="/articles/b2-english-requirement-2027" className="text-brand-400 hover:text-brand-300 underline-offset-2 hover:underline">What changes and who it affects →</Link>
         </p>
 
@@ -175,7 +175,7 @@ export default function B2PracticeHub() {
             B2 is the fourth level on the CEFR scale — above B1, below C1. At B2 you can understand the main ideas of complex texts, interact fluently with native speakers, and produce clear, detailed written text on a range of subjects.
           </p>
           <p className="text-sm text-ink-muted leading-relaxed mb-3">
-            For UK immigration, B2 is tested in all four skills: listening, reading, writing, and speaking. The most common approved test is IELTS for UKVI — a score of 5.5 in all four components is the B2 benchmark.
+            For settlement the rule is B2 speaking and listening, but every B2 test on the Home Office&apos;s approved list today covers all four skills: listening, reading, writing and speaking. The most common is IELTS for UKVI, where B2 means 5.5 in each of the four components.
           </p>
           <p className="text-sm text-ink-muted leading-relaxed">
             B1 tested only speaking and listening. B2 adds reading and writing — that is the main difference in difficulty. See our{' '}

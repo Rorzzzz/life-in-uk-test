@@ -222,7 +222,7 @@ export default function B2MockTestIndexPage() {
           <ul className="space-y-2 text-sm md:text-base text-ink-muted">
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">ILR (Indefinite Leave to Remain)</strong> — requires B1 speaking/listening plus Life in the UK test. B2 reading and writing strengthen your overall application.</span></li>
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">British Citizenship</strong> — same requirement: B1 SELT plus Life in the UK test. B2 skills help you pass both comfortably.</span></li>
-            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Skilled Worker Visa</strong> — requires B1 in all four skills. B2-level practice gives you a strong buffer above the pass mark.</span></li>
+            <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">Skilled Worker Visa</strong> — new applications since 8 January 2026 need B2 in all four skills. These mock tests practise exactly that level.</span></li>
             <li className="flex items-start gap-2"><span className="text-success mt-0.5">✓</span> <span><strong className="text-ink">IELTS General Training</strong> — Band 5.5 overall with no band below 5.0 is the standard B2 benchmark. These tests directly mirror that format.</span></li>
           </ul>
         </div>
